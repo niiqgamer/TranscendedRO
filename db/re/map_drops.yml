@@ -3062,3 +3062,23 @@ Body:
       - Index: 1
         Item: Zelunium_Ore
         Rate: 50000
+  - Map: bl_death
+    GlobalDrops:
+      - Index: 0
+        Item: Etel_Dust
+        Rate: 20000
+  - Map: bl_grass
+    GlobalDrops:
+      - Index: 0
+        Item: Etel_Dust
+        Rate: 20000
+  - Map: bl_ice
+    GlobalDrops:
+      - Index: 0
+        Item: Etel_Dust
+        Rate: 20000
+  - Map: bl_lava
+    GlobalDrops:
+      - Index: 0
+        Item: Etel_Dust
+        Rate: 20000
