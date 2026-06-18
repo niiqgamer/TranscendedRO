@@ -3058,27 +3058,137 @@ Body:
     GlobalDrops:
       - Index: 0
         Item: Zelunium
-        Rate: 20000
+        Rate: 650
       - Index: 1
         Item: Zelunium_Ore
-        Rate: 50000
+        Rate: 1000
   - Map: bl_death
     GlobalDrops:
       - Index: 0
         Item: Etel_Dust
-        Rate: 20000
+        Rate: 5000
   - Map: bl_grass
     GlobalDrops:
       - Index: 0
         Item: Etel_Dust
-        Rate: 20000
+        Rate: 5000
   - Map: bl_ice
     GlobalDrops:
       - Index: 0
         Item: Etel_Dust
-        Rate: 20000
+        Rate: 5000
   - Map: bl_lava
     GlobalDrops:
       - Index: 0
         Item: Etel_Dust
-        Rate: 20000
+        Rate: 5000
+      - Index: 1
+        Item: Weapon_Ore_1
+        Rate: 5000
+      - Index: 2
+        Item: Armor_Ore_1
+        Rate: 5000
+      - Index: 3
+        Item: Acc_Ore_1
+        Rate: 5000
+      - Index: 4
+        Item: Weapon_Stone_1
+        Rate: 5000
+      - Index: 5
+        Item: Armor_Stone_1
+        Rate: 5000
+      - Index: 6
+        Item: Acc_Stone_1
+        Rate: 5000
+      - Index: 7
+        Item: Flame_Barmund_Rune
+        Rate: 5000
+      - Index: 8
+        Item: Flame_Barmund_Rune2
+        Rate: 5000
+      - Index: 9
+        Item: Barmund_Flame_Essence
+        Rate: 5000
+    SpecificDrops:
+      - Monster: ECO_EXPLOSION
+        Drops:
+          - Index: 0
+            Item: Etel_Dust
+            Rate: 5000
+          - Index: 1
+            Item: Barmund_Greave
+            Rate: 5000
+      - Monster: ECO_DELETER
+        Drops:
+          - Index: 0
+            Item: Etel_Dust
+            Rate: 5000
+          - Index: 1
+            Item: Barmund_Armor
+            Rate: 5000
+      - Monster: ECO_JAKK
+        Drops:
+          - Index: 0
+            Item: Etel_Dust
+            Rate: 5000
+          - Index: 1
+            Item: Barmund_Manteau
+            Rate: 5000
+      - Monster: ECO_LAVA_GOLEM
+        Drops:
+          - Index: 0
+            Item: Etel_Dust
+            Rate: 5000
+          - Index: 1
+            Item: Barmund_Greave
+            Rate: 5000
+      - Monster: ECO_MAJORUROS
+        Drops:
+          - Index: 0
+            Item: Etel_Dust
+            Rate: 5000
+          - Index: 1
+            Item: Barmund_Armor
+            Rate: 5000
+      - Monster: ECO_HYDRO
+        Drops:
+          - Index: 0
+            Item: Etel_Dust
+            Rate: 5000
+          - Index: 1
+            Item: ST_Naga_Armor
+            Rate: 5000
+      - Monster: ECO_ACIDUS
+        Drops:
+          - Index: 0
+            Item: Etel_Dust
+            Rate: 5000
+          - Index: 1
+            Item: ST_Orleans_Glove
+            Rate: 5000
+      - Monster: ECO_DETALE
+        Drops:
+          - Index: 0
+            Item: Etel_Dust
+            Rate: 5000
+          - Index: 1
+            Item: Weapon_Stone_1
+            Rate: 5000
+          - Index: 2
+            Item: Armor_Stone_1
+            Rate: 5000
+          - Index: 3
+            Item: Acc_Stone_1
+            Rate: 5000
+          - Index: 4
+            Item: Weapon_Stone_2
+            Rate: 5000
+          - Index: 5
+            Item: Armor_Stone_2
+            Rate: 5000
+          - Index: 6
+            Item: Acc_Stone_2
+            Rate: 5000
+          - Index: 7
+            Item: ST_Naga_Armor
+            Rate: 5000
