@@ -1,0 +1,33 @@
+-	script	#GiveItem	-1,{
+OnInit:
+	bindatcmd "giveitem",strnpcinfo(3)+"::OnGiveItem",99,99;
+	end;
+
+OnGiveItem:
+	.@gm_id = getcharid(3);
+	mes "Input ItemID.";
+	mes "9955500 - Transcended Coin";
+	mes "6635 - Blacksmith Blessing";
+	mes "1000322 - Etel Dust";
+	mes "1000323 - Etel Stone";
+	input $@item;
+	next;
+	mes "Input Amount.";
+	mes "1 - 5000 ea.";
+	input $@amount;
+	if (.@item_amount <= 0) {
+		.@item_amount = 1;
+	} else if (.@item_amount > 5000) {
+		.@item_amount = 5000;
+	}
+	$@total_received = 0;
+	addrid(0);
+	getitem $@item,$@amount;
+	$@total_received++;
+	message strcharinfo(0),"[System]: You received ["+ $@amount + "x "+ getitemname($@item) +"] from GM.";
+	if (getcharid(3) == .@gm_id) {
+		sleep2 100; 
+		dispbottom "^FFFF00[Report]: Successfully gave item(s) to [" + $@total_received + "] character(s).^000000";
+	}
+	end;
+}

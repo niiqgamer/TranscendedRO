@@ -1,0 +1,132 @@
+Header:
+  Type: ITEM_DB
+  Version: 3
+
+Body:
+  - Id: 9950000
+    AegisName: Autohunt_Physical_Box
+    Name: "Autohunt in Box (Physical)"
+    Type: Usable
+    Weight: 0
+    Script: |
+      rentitem 9950001,86400;
+  - Id: 9950001
+    AegisName: Autohunt_Physical
+    Name: "Autohunt Tablet (Physical)"
+    Type: DelayConsume
+    Weight: 0
+    Flags:
+      NoConsume: true
+    Trade:
+      NoDrop: true
+      NoTrade: true
+      NoCart: true
+      NoStorage: true
+      NoGuildStorage: true
+      NoMail: true
+      NoAuction: true
+      NoSell: true
+    Script: |
+       bonus2 bFixedCastRate,"AG_FROZEN_SLASH",-100;
+       bonus2 bVariableCastRate,"AG_FROZEN_SLASH",-100;
+       bonus2 bSkillCooldown,"AG_FROZEN_SLASH",-450;
+       useatcmd "@autohunt";
+  - Id: 9955500
+    AegisName: Transcended_Coin
+    Name: Transcended Coin
+    Type: Usable
+    Weight: 0
+    Flags:
+      BuyingStore: true
+      DropEffect: CLIENT
+    Trade:
+      NoSell: true
+    Script: |
+      specialeffect2 18;
+      #CASHPOINTS += countitem(9955500)+1;
+      delitem 9955500,countitem(9955500);
+      dispbottom "Now you have " +#CASHPOINTS+ " Cash Point(s).";
+  - Id: 9955501
+    AegisName: Transcended_Coin_100
+    Name: "Transcended Coin Box (100 Cash)"
+    Type: Usable
+    Weight: 0
+    Flags:
+      BuyingStore: true
+      DropEffect: CLIENT
+    Trade:
+      NoSell: true
+    Script: |
+      specialeffect2 18;
+      #CASHPOINTS += (countitem(9955501)+1)*100;
+      delitem 9955501,countitem(9955501);
+      dispbottom "Now you have " +#CASHPOINTS+ " Cash Points.";
+  - Id: 9955502
+    AegisName: Transcended_Coin_1000
+    Name: "Transcended Coin Container (1,000 Cash)"
+    Type: Usable
+    Weight: 0
+    Flags:
+      BuyingStore: true
+      DropEffect: CLIENT
+    Trade:
+      NoSell: true
+    Script: |
+      specialeffect2 18;
+      #CASHPOINTS += (countitem(9955502)+1)*1000;
+      delitem 9955502,countitem(9955502);
+      dispbottom "Now you have " +#CASHPOINTS+ " Cash Points.";
+  - Id: 9955503
+    AegisName: Transcended_Coin_10000
+    Name: "Transcended Coin Treasury (10,000 Cash)"
+    Type: Usable
+    Weight: 0
+    Flags:
+      BuyingStore: true
+      DropEffect: CLIENT
+    Trade:
+      NoSell: true
+    Script: |
+      specialeffect2 18;
+      #CASHPOINTS += (countitem(9955503)+1)*10000;
+      delitem 9955503,countitem(9955503);
+      dispbottom "Now you have " +#CASHPOINTS+ " Cash Points.";
+  - Id: 9955504
+    AegisName: Hunting_Coin_1000
+    Name: "Hunting's Coin Box (1,000)"
+    Type: Usable
+    Weight: 0
+    Flags:
+      BuyingStore: true
+      DropEffect: CLIENT
+    Trade:
+      NoSell: true
+    Script: |
+      specialeffect2 18;
+      getitem 9900001,1000;
+  - Id: 9955505
+    AegisName: MVP_Point
+    Name: MVP Point
+    Type: Usable
+    Weight: 0
+    Flags:
+      DropEffect: CLIENT
+      BuyingStore: true
+    Script: |
+      specialeffect2 68;
+      #MVPPoint += countitem(9955505)+1;
+      delitem 9955505,countitem(9955505);
+      dispbottom "Now you have " +#MVPPoint+ " MVP Points.";
+  - Id: 9955506
+    AegisName: Ceremonial_Matcha_1000
+    Name: "Ceremonial Matcha Box (1,000)"
+    Type: Usable
+    Weight: 0
+    Flags:
+      BuyingStore: true
+      DropEffect: CLIENT
+    Trade:
+      NoSell: true
+    Script: |
+      specialeffect2 18;
+      getitem 9900000,1000;

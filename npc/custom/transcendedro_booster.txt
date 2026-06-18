@@ -1,0 +1,203 @@
+grademk,40,169,4	script	Booster Operator	4_M_VACATION_MARAM,{
+	mes "[" + strnpcinfo(1) + "]";
+	mes "Hello, new adventurer. You're here to talk to me today. What do you want me to do?";
+	next;
+	switch( select( 
+	" ~ ^E50B99Other raw materials^000000", 
+	" ~ ^AA0000Booster Armor (Level 100+)^000000", 
+	" ~~~ ^AA0000[Enchant] Booster Costume (Up-Mid-Low)^000000", 
+	" ~~~ ^AA0000[Enchant] Booster Costume (Garment)^000000", 
+	" ~ ^00AA00Booster Weapon (Level 100+)^000000", 
+	" ~ ^0000AARacing Cap (Level 100+)^000000", 
+	" ~~~ ^0000AA[Enchant] Racing Cap (Selection)^000000", 
+	" ~ ^AA0000Noblesse Set (Level 100+)^000000", 
+	" ~ ^00AA00Imperial Set (Level 125+)^000000", 
+	" ~ ^0000AAIllusion Set 17.1 (Level 130+)^000000", 
+	" ~~~ ^0000AA[Enchant] Illusion Armor A-B^000000", 
+	" ~~~ ^0000AA[Enchant] Illusion Engine A-B^000000", 
+	" ~~~ ^0000AA[Enchant] Illusion Leg A-B^000000", 
+	" ~~~ ^0000AA[Enchant] Illusion (Accessory) R^000000", 
+	" ~~~ ^0000AA[Enchant] Illusion (Accessory) L^000000", 
+	" ~ ^AA0000Grace Set (Level 150+)^000000", 
+	" ~ ^00AA00Automatic Set 17.2 (Level 160+)^000000", 
+	" ~~~ ^00AA00[Enchant] Automatic Armor A-B^000000", 
+	" ~~~ ^00AA00[Enchant] Automatic Engine A-B^000000", 
+	" ~~~ ^00AA00[Enchant] Automatic Leg A-B^000000", 
+	" ~~~ ^00AA00[Enchant] Automatic (Accessory) R^000000", 
+	" ~~~ ^00AA00[Enchant] Automatic (Accessory) L^000000", 
+	" ~ Nothing, bye." ) ) {
+	case 1:
+		mes "[" + strnpcinfo(1) + "]";
+		mes " ";
+		mes "Hmm... (makes a rummaging through things) If it's anything else, I have some. Try digging around and see if it's useful to you.";
+		close2;
+		callshop "BoosterOthers";
+		end;
+	case 2:
+		mes "[" + strnpcinfo(1) + "]";
+		mes " ";
+		mes "Sure... I hope you have prepared your items. You can see the list of items I accept in exchange.";
+		close2;
+		callshop "BoosterArmors";
+		end;
+	case 3:
+		mes "[" + strnpcinfo(1) + "]";
+		mes " ";
+		mes "[Enchant] Booster Costume (Up-Mid-Low)";
+		mes "Let's go!!!";
+		close2;
+		item_enchant(37);
+		end;
+	case 4:
+		mes "[" + strnpcinfo(1) + "]";
+		mes " ";
+		mes "[Enchant] Booster Costume (Garment)";
+		mes "Let's go!!!";
+		close2;
+		item_enchant(38);
+		end;
+	case 5:
+		mes "[" + strnpcinfo(1) + "]";
+		mes " ";
+		mes "A weapon? Go ahead and choose one that suits your job.";
+		close2;
+		callshop "BoosterWeapons";
+		end;
+	case 6:
+		mes "[" + strnpcinfo(1) + "]";
+		mes " ";
+		mes "Racing!!! Brillent!!!.";
+		close2;
+		callshop "RacingCap";
+		end;
+	case 7:
+		mes "[" + strnpcinfo(1) + "]";
+		mes " ";
+		mes "Go enchant your Racing Cap!";
+		close2;
+		item_enchant(165);
+		end;
+	case 8:
+		mes "[" + strnpcinfo(1) + "]";
+		mes " ";
+		mes "Noblesse Set, huh? Alright, let's check it out.";
+		close2;
+		callshop "NoblesseSet";
+		end;
+	case 9:
+		mes "[" + strnpcinfo(1) + "]";
+		mes " ";
+		mes "Imperial Set, huh? Alright, let's check it out.";
+		close2;
+		callshop "ImperialSet";
+		end;
+	case 10:
+		mes "[" + strnpcinfo(1) + "]";
+		mes " ";
+		mes "Oh, these suit you, Illusion 17.1 Set. Here you go!";
+		close2;
+		callshop "IllusionSet171";
+		end;
+	case 11:
+		mes "[" + strnpcinfo(1) + "]";
+		mes " ";
+		mes "[Enchant] Illusion Armor A-B";
+		mes "Let's go!!!";
+		close2;
+		item_enchant(34);
+		end;
+	case 12:
+		mes "[" + strnpcinfo(1) + "]";
+		mes " ";
+		mes "[Enchant] Illusion Engine A-B";
+		mes "Let's go!!!";
+		close2;
+		item_enchant(39);
+		end;
+	case 13:
+		mes "[" + strnpcinfo(1) + "]";
+		mes " ";
+		mes "[Enchant] Illusion Leg A-B";
+		mes "Let's go!!!";
+		close2;
+		item_enchant(40);
+		end;
+	case 14:
+		mes "[" + strnpcinfo(1) + "]";
+		mes " ";
+		mes "[Enchant] Illusion (Accessory) R";
+		mes "Let's go!!!";
+		close2;
+		item_enchant(42);
+		end;
+	case 15:
+		mes "[" + strnpcinfo(1) + "]";
+		mes " ";
+		mes "[Enchant] Illusion (Accessory) L";
+		mes "Let's go!!!";
+		close2;
+		item_enchant(43);
+		end;
+	case 16:
+		mes "[" + strnpcinfo(1) + "]";
+		mes " ";
+		mes "Grace Set, huh? Alright, let's check it out.";
+		close2;
+		callshop "GraceSet";
+		end;
+	case 17:
+		mes "[" + strnpcinfo(1) + "]";
+		mes " ";
+		mes "Finally, Automatic Set 17.2!";
+		mes "I believe this will be the final set I’ll be able to get for you.";
+		close2;
+		callshop "AutomaticSet172";
+		end;
+	case 18:
+		mes "[" + strnpcinfo(1) + "]";
+		mes " ";
+		mes "[Enchant] Automatic Armor A-B";
+		mes "Let's go!!!";
+		close2;
+		item_enchant(44);
+		end;
+	case 19:
+		mes "[" + strnpcinfo(1) + "]";
+		mes " ";
+		mes "[Enchant] Automatic Engine A-B";
+		mes "Let's go!!!";
+		close2;
+		item_enchant(45);
+		end;
+	case 20:
+		mes "[" + strnpcinfo(1) + "]";
+		mes " ";
+		mes "[Enchant] Automatic Leg A-B";
+		mes "Let's go!!!";
+		close2;
+		item_enchant(46);
+		end;
+	case 21:
+		mes "[" + strnpcinfo(1) + "]";
+		mes " ";
+		mes "[Enchant] Automatic (Accessory) R";
+		mes "Let's go!!!";
+		close2;
+		item_enchant(41);
+		end;
+	case 22:
+		mes "[" + strnpcinfo(1) + "]";
+		mes " ";
+		mes "[Enchant] Automatic (Accessory) L";
+		mes "Let's go!!!";
+		close2;
+		item_enchant(35);
+		end;
+	case 23:
+		mes "[" + strnpcinfo(1) + "]";
+		mes " ";
+		mes "See you next time. I'm around here too. Feel free to call me. Hello.";
+		close;
+	}
+	end;
+}

@@ -1,0 +1,17 @@
+izlude,128,142,4	script	HOTWEEK	OBJ_A2,{
+
+	mes "<FONT SIZE = 20><B>^AA0000HOTWEEK ประจำสัปดาห์ 05/09/2025^000000</B></FONT>";
+	mes " ";
+	mes " ^i[1000322] " + mesitemlink( 1000322 ) + " คงเหลือ <B>^00AA00456^000000</B> ชิ้น";
+	mes " ^i[20943] " + mesitemlink( 20943 ) + " คงเหลือ <B>^00AA0024^000000</B> ชิ้น";
+	mes " ^i[15074] " + mesitemlink( 15074 ) + " คงเหลือ <B>^00AA0032^000000</B> ชิ้น";
+	mes " ^i[7336] " + mesitemlink( 7336 ) + " คงเหลือ <B>^00AA00302^000000</B> ชิ้น";
+	mes " ^i[2161]  " + mesitemlink( 2161 ) + " คงเหลือ <B>^00AA002^000000</B> ชิ้น";
+	mes " ^i[6671] " + mesitemlink( 6671 ) + " คงเหลือ <B>^00AA005032^000000</B> ชิ้น";
+	mes " ";
+	mes "<FONT SIZE = 16><B>^AA0000ข้ามีของให้แลกตามนี้ เจ้าจะแลกมั้ย?^000000</B></FONT>";
+	setdialogalign(DIALOG_ALIGN_MIDDLE);
+	setdialogalign(DIALOG_ALIGN_CENTER);
+	setdialogsize(500,350);
+	close;
+}

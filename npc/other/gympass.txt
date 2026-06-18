@@ -148,3 +148,5 @@ payon,173,141,4	script	Ripped Cabus#GymPass	899,{
 		}
 	}
 }
+
+moc_para01,24,20,5	duplicate(Ripped Cabus#GymPass)	Ripped Cabus#GymPasspara	899

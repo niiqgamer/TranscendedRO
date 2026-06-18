@@ -133388,3 +133388,350 @@ Body:
             Amount: 100
           - Index: 1
             Item: Cubic_Dia
+  - Group: D_Gw_Extractor
+    SubGroups:
+      - SubGroup: 0
+        Algorithm: Random
+        List:
+          - Index: 0
+            Item: Snow_F_Ore
+            Amount: 1
+            Rate: 100
+          - Index: 1
+            Item: Snow_F_Ore
+            Amount: 2
+            Rate: 100
+          - Index: 2
+            Item: Snow_F_Ore
+            Amount: 3
+            Rate: 100
+          - Index: 3
+            Item: Snow_F_Ore
+            Amount: 4
+            Rate: 100
+          - Index: 4
+            Item: EP19_D_P_Ore
+            Amount: 1
+            Rate: 100
+          - Index: 5
+            Item: EP19_D_P_Ore
+            Amount: 2
+            Rate: 100
+          - Index: 6
+            Item: EP19_D_P_Ore
+            Amount: 3
+            Rate: 100
+          - Index: 7
+            Item: EP19_D_P_Ore
+            Amount: 4
+            Rate: 100
+          - Index: 8
+            Item: EP19_N_P_Ore
+            Amount: 1
+            Rate: 100
+          - Index: 9
+            Item: EP19_N_P_Ore
+            Amount: 2
+            Rate: 100
+          - Index: 10
+            Item: EP19_N_P_Ore
+            Amount: 3
+            Rate: 100
+          - Index: 11
+            Item: Snow_F_Stone1
+            Amount: 1
+            Rate: 100
+          - Index: 12
+            Item: Snow_F_Stone1
+            Amount: 2
+            Rate: 100
+          - Index: 13
+            Item: Snow_F_Stone1
+            Amount: 3
+            Rate: 100
+          - Index: 14
+            Item: Snow_F_Stone2
+            Amount: 1
+            Rate: 100
+          - Index: 15
+            Item: Snow_F_Stone2
+            Amount: 2
+            Rate: 100
+          - Index: 16
+            Item: Snow_F_Stone2
+            Amount: 3
+            Rate: 100
+          - Index: 17
+            Item: Snow_F_Stone3
+            Amount: 1
+            Rate: 100
+          - Index: 18
+            Item: Snow_F_Stone3
+            Amount: 2
+            Rate: 100
+          - Index: 19
+            Item: EP19_D_P_Crystal
+            Amount: 1
+            Rate: 100
+          - Index: 20
+            Item: EP19_D_P_Crystal
+            Amount: 2
+            Rate: 100
+          - Index: 21
+            Item: EP19_N_P_Crystal
+            Amount: 1
+            Rate: 100
+          - Index: 22
+            Item: EP19_N_P_Crystal
+            Amount: 2
+            Rate: 100
+          - Index: 23
+            Item: EP19_S_F_1_Extract
+            Amount: 1
+            Rate: 100
+          - Index: 24
+            Item: EP19_S_F_2_Extract
+            Amount: 1
+            Rate: 100
+          - Index: 25
+            Item: EP19_S_F_3_Extract
+            Amount: 1
+            Rate: 100
+          - Index: 26
+            Item: EP19_Gla_Extract
+            Amount: 1
+            Rate: 100
+          - Index: 27
+            Item: EP19_D_P_Stone
+            Amount: 1
+            Rate: 100
+      - SubGroup: 1
+        Algorithm: Random
+        List:
+          - Index: 0
+            Item: Snow_F_Ore
+            Amount: 2
+            Rate: 100
+          - Index: 1
+            Item: Snow_F_Ore
+            Amount: 4
+            Rate: 100
+          - Index: 2
+            Item: Snow_F_Ore
+            Amount: 6
+            Rate: 100
+          - Index: 3
+            Item: Snow_F_Ore
+            Amount: 8
+            Rate: 100
+          - Index: 4
+            Item: EP19_D_P_Ore
+            Amount: 2
+            Rate: 100
+          - Index: 5
+            Item: EP19_D_P_Ore
+            Amount: 4
+            Rate: 100
+          - Index: 6
+            Item: EP19_D_P_Ore
+            Amount: 6
+            Rate: 100
+          - Index: 7
+            Item: EP19_D_P_Ore
+            Amount: 8
+            Rate: 100
+          - Index: 8
+            Item: EP19_N_P_Ore
+            Amount: 2
+            Rate: 100
+          - Index: 9
+            Item: EP19_N_P_Ore
+            Amount: 4
+            Rate: 100
+          - Index: 10
+            Item: EP19_N_P_Ore
+            Amount: 6
+            Rate: 100
+          - Index: 11
+            Item: Snow_F_Stone1
+            Amount: 2
+            Rate: 100
+          - Index: 12
+            Item: Snow_F_Stone1
+            Amount: 4
+            Rate: 100
+          - Index: 13
+            Item: Snow_F_Stone1
+            Amount: 6
+            Rate: 100
+          - Index: 14
+            Item: Snow_F_Stone2
+            Amount: 2
+            Rate: 100
+          - Index: 15
+            Item: Snow_F_Stone2
+            Amount: 4
+            Rate: 100
+          - Index: 16
+            Item: Snow_F_Stone2
+            Amount: 6
+            Rate: 100
+          - Index: 17
+            Item: Snow_F_Stone3
+            Amount: 2
+            Rate: 100
+          - Index: 18
+            Item: Snow_F_Stone3
+            Amount: 4
+            Rate: 100
+          - Index: 19
+            Item: EP19_D_P_Crystal
+            Amount: 2
+            Rate: 100
+          - Index: 20
+            Item: EP19_D_P_Crystal
+            Amount: 4
+            Rate: 100
+          - Index: 21
+            Item: EP19_N_P_Crystal
+            Amount: 2
+            Rate: 100
+          - Index: 22
+            Item: EP19_N_P_Crystal
+            Amount: 4
+            Rate: 100
+          - Index: 23
+            Item: EP19_S_F_1_Extract
+            Amount: 2
+            Rate: 100
+          - Index: 24
+            Item: EP19_S_F_2_Extract
+            Amount: 2
+            Rate: 100
+          - Index: 25
+            Item: EP19_S_F_3_Extract
+            Amount: 2
+            Rate: 100
+          - Index: 26
+            Item: EP19_Gla_Extract
+            Amount: 2
+            Rate: 100
+          - Index: 27
+            Item: EP19_D_P_Stone
+            Amount: 2
+            Rate: 100
+      - SubGroup: 3
+        Algorithm: Random
+        List:
+          - Index: 0
+            Item: Snow_F_Ore
+            Amount: 3
+            Rate: 100
+          - Index: 1
+            Item: Snow_F_Ore
+            Amount: 6
+            Rate: 100
+          - Index: 2
+            Item: Snow_F_Ore
+            Amount: 9
+            Rate: 100
+          - Index: 3
+            Item: Snow_F_Ore
+            Amount: 12
+            Rate: 100
+          - Index: 4
+            Item: EP19_D_P_Ore
+            Amount: 3
+            Rate: 100
+          - Index: 5
+            Item: EP19_D_P_Ore
+            Amount: 6
+            Rate: 100
+          - Index: 6
+            Item: EP19_D_P_Ore
+            Amount: 9
+            Rate: 100
+          - Index: 7
+            Item: EP19_D_P_Ore
+            Amount: 12
+            Rate: 100
+          - Index: 8
+            Item: EP19_N_P_Ore
+            Amount: 3
+            Rate: 100
+          - Index: 9
+            Item: EP19_N_P_Ore
+            Amount: 6
+            Rate: 100
+          - Index: 10
+            Item: EP19_N_P_Ore
+            Amount: 9
+            Rate: 100
+          - Index: 11
+            Item: Snow_F_Stone1
+            Amount: 3
+            Rate: 100
+          - Index: 12
+            Item: Snow_F_Stone1
+            Amount: 6
+            Rate: 100
+          - Index: 13
+            Item: Snow_F_Stone1
+            Amount: 9
+            Rate: 100
+          - Index: 14
+            Item: Snow_F_Stone2
+            Amount: 3
+            Rate: 100
+          - Index: 15
+            Item: Snow_F_Stone2
+            Amount: 6
+            Rate: 100
+          - Index: 16
+            Item: Snow_F_Stone2
+            Amount: 9
+            Rate: 100
+          - Index: 17
+            Item: Snow_F_Stone3
+            Amount: 3
+            Rate: 100
+          - Index: 18
+            Item: Snow_F_Stone3
+            Amount: 6
+            Rate: 100
+          - Index: 19
+            Item: EP19_D_P_Crystal
+            Amount: 3
+            Rate: 100
+          - Index: 20
+            Item: EP19_D_P_Crystal
+            Amount: 6
+            Rate: 100
+          - Index: 21
+            Item: EP19_N_P_Crystal
+            Amount: 3
+            Rate: 100
+          - Index: 22
+            Item: EP19_N_P_Crystal
+            Amount: 6
+            Rate: 100
+          - Index: 23
+            Item: EP19_S_F_1_Extract
+            Amount: 3
+            Rate: 100
+          - Index: 24
+            Item: EP19_S_F_2_Extract
+            Amount: 3
+            Rate: 100
+          - Index: 25
+            Item: EP19_S_F_3_Extract
+            Amount: 3
+            Rate: 100
+          - Index: 26
+            Item: EP19_Gla_Extract
+            Amount: 3
+            Rate: 100
+          - Index: 27
+            Item: EP19_D_P_Stone
+            Amount: 3
+            Rate: 100

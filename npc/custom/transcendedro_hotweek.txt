@@ -1,0 +1,731 @@
+// ==========================
+// HOTWEEK Main NPC
+// ==========================
+sec_in02,156,184,4	script	H O T W E E K !	OBJ_A2,{
+
+	mes "^i[12828] <font size = 18><b>^0000AA[ H O T W E E K ! ]^000000</b></font> ^i[12828]";
+	mes "========================";
+	mes "<font size = 14>Spins: <font size = 18><b>^AA0000" + callfunc("F_InsertComma",HOTWEEK_COUNT) + "^000000</b></font> times.</font>";
+	mes "<font size = 10>^FF0000* Reset to 0 weekly^000000</font>";
+	mes "========================";
+	mes "<font size = 14>Guarantee Points: <font size = 18><b>^0066FF" + callfunc("F_InsertComma",GUARANTEE_POINT) + "^000000</b></font> Points.</font>";
+	mes "<font size = 10>^FF0000* Not reset, used for Guarantee Shop^000000</font>";
+	mes "========================";
+	mes "<font size = 14>Hotweek Overall: <font size = 18><b>^00AA00" + callfunc("F_InsertComma",HOTWEEK_POINT) + "^000000</b></font> times.</font>";
+	mes "<font size = 10>^FF0000* Not reset, All Time Record.^000000</font>";
+	setdialogalign(DIALOG_ALIGN_MIDDLE);
+	setdialogalign(DIALOG_ALIGN_CENTER);
+	setdialogsize(375,315);
+	next;
+
+	if (!callfunc("IsWeekend") && getgmlevel() < 99) {
+		mes "This event is only open on ^8500FFSaturdays^000000 and ^FF0000Sundays^000000!";
+		close;
+	}
+
+	if (getgmlevel() >= 99) {
+		// GM Menu
+		set .@main, select(" ~ ^FF0000START SPIN!!!^000000: ~~ Guarantee Shop: ~~ ^00AA00Recycle Shop^000000: ~~ Trash Exchange Shop: ~ Hotweek Top 20: ~ All Hotweek List: ^0066AA~~~~~~~~~~~~~~ GM Add Item^000000:^0066AA ~~~~~~~~~~~~~~ GM Delete Pool^000000:^0066AA ~~~~~~~~~~~~~~ GM Delete Trash^000000");
+		if (.@main == 1) goto L_Roll;
+		if (.@main == 2) goto L_Guarantee;
+		if (.@main == 3) goto L_Recycle;
+		if (.@main == 4) goto L_TrashExchange;
+		if (.@main == 5) goto L_GMTop;
+		if (.@main == 6) goto L_ViewPool;
+		if (.@main == 7) goto L_GMAdd;
+		if (.@main == 8) goto L_GMRemovePool;
+		if (.@main == 9) goto L_GMRemoveTrash;
+	} else {
+		// Player Menu
+		set .@main, select(" ~ ^FF0000START SPIN!!!^000000: ~~ Guarantee Shop: ~~ ^00AA00Recycle Shop^000000: ~~ Trash Exchange Shop: ~ Hotweek Top 20: ~ All Hotweek List");
+		if (.@main == 1) goto L_Roll;
+		if (.@main == 2) goto L_Guarantee;
+		if (.@main == 3) goto L_Recycle;
+		if (.@main == 4) goto L_TrashExchange;
+		if (.@main == 5) goto L_GMTop;
+		if (.@main == 6) goto L_ViewPool;
+	}
+	close;
+
+// ==== Roll ====
+L_Roll:
+	mes "<font size = 18><b>^FF00BB1 SPIN = 99 CASH^000000";
+	mes "     ";
+	mes "How many times to spin?";
+	mes "(1 - 1,000)</b></font>";
+	next;
+	input .@count, 1, 1000;
+	set .@total_cost, .@count * 99;
+	mes "<font size = 18><b>PAY ^FF0000" + .@total_cost + " CASH^000000</b></font>";
+	mes "<font size = 18><b>FOR ^0099FF" + .@count + " SPINS^000000</b></font>";
+	mes "     ";
+	mes "<font size = 16><b>Correct?</b></font>";
+	mes "     ";
+	mes "<b>^FF00BBCAUTION! CANNOT STOP WHILE SPINNING!^000000</b>";
+	mes "<b>^FF00BBCheck your weight and items before spin.^000000</b>";
+	next;
+	if (#CASHPOINTS < .@total_cost) {
+		mes "You don't have enough Cash.";
+		close;
+	}
+
+	for (set .@i, 0; .@i < getarraysize($hotweek_trash1); set .@i, .@i + 1) {
+		if (countitem($hotweek_trash1[.@i]) >= 15000) {
+			mes "[ H O T W E E K ! ]";
+			mes "Sorry, you have " + getitemname($hotweek_trash1[.@i]) + " more than ^FF0000 15,000 ^000000 ea.";
+			mes "Please manage your items before continuing spin.";
+			close;
+		}
+	}
+	for (set .@i, 0; .@i < getarraysize($hotweek_trash2); set .@i, .@i + 1) {
+		if (countitem($hotweek_trash2[.@i]) >= 15000) {
+			mes "[ H O T W E E K ! ]";
+			mes "Sorry, you have " + getitemname($hotweek_trash2[.@i]) + " more than ^FF0000 15,000 ^000000 ea.";
+			mes "Please manage your items before continuing spin.";
+			close;
+		}
+	}
+	for (set .@i, 0; .@i < getarraysize($hotweek_trash3); set .@i, .@i + 1) {
+		if (countitem($hotweek_trash3[.@i]) >= 15000) {
+			mes "[ H O T W E E K ! ]";
+			mes "Sorry, you have " + getitemname($hotweek_trash3[.@i]) + " more than ^FF0000 15,000 ^000000 ea.";
+			mes "Please manage your items before continuing spin.";
+			close;
+		}
+	}
+
+	if (select("^AA0000 ~ Confirm to SPIN!!!^000000: ~ Nah, not yet.") == 2) close;
+	set #CASHPOINTS, #CASHPOINTS - .@total_cost;
+	dispbottom "Now you have " +#CASHPOINTS+ " Cash Points.";
+
+	set .@hotweek_hits, 0;
+	set .@guarantee_gained, 0;
+
+	for (set .@i, 0; .@i < .@count; set .@i, .@i + 1) {
+		specialeffect2 EF_STEAL;
+		set HOTWEEK_COUNT, HOTWEEK_COUNT + 1;
+		set HOTWEEK_POINT, HOTWEEK_POINT + 1;
+
+		set .@roll, rand(10000);
+		set .@got_item, 0;
+
+		// Pool 1 - Ultimate Rare (0.05% = 5/10000)
+		if (.@roll < 5 && getarraysize($hotweek_pool1) > 0) {
+			set .@item, $hotweek_pool1[rand(getarraysize($hotweek_pool1))];
+			getitem .@item, 1;
+			set .@hotweek_hits, .@hotweek_hits + 1;
+			set .@got_item, 1;
+			set GUARANTEE_POINT, GUARANTEE_POINT + 100;
+			set .@guarantee_gained, .@guarantee_gained + 100;
+			specialeffect2 EF_MVP;
+			announce "[ H O T W E E K ! ] " + strcharinfo(0) + " received [ UR ] " + getitemname(.@item) + "!", bc_all;
+		}
+		// Pool 2 - New Items (1% = 100/10000)
+		else if (.@roll < 105 && getarraysize($hotweek_pool2) > 0) {
+			set .@item, $hotweek_pool2[rand(getarraysize($hotweek_pool2))];
+			getitem .@item, 1;
+			set .@hotweek_hits, .@hotweek_hits + 1;
+			set .@got_item, 1;
+			set GUARANTEE_POINT, GUARANTEE_POINT + 3;
+			set .@guarantee_gained, .@guarantee_gained + 3;
+			specialeffect2 EF_MVP;
+			announce "[ H O T W E E K ! ] " + strcharinfo(0) + " received [ NEW ] " + getitemname(.@item) + "!", bc_all;
+		}
+		// Pool 3 - Rerun Items (0.4% = 40/10000)
+		else if (.@roll < 145 && getarraysize($hotweek_pool3) > 0) {
+			set .@item, $hotweek_pool3[rand(getarraysize($hotweek_pool3))];
+			getitem .@item, 1;
+			set .@hotweek_hits, .@hotweek_hits + 1;
+			set .@got_item, 1;
+			set GUARANTEE_POINT, GUARANTEE_POINT + 1;
+			set .@guarantee_gained, .@guarantee_gained + 1;
+			specialeffect2 EF_MVP;
+			announce "[ H O T W E E K ! ] " + strcharinfo(0) + " received [ Rerun ] " + getitemname(.@item) + "!", bc_all;
+		}
+
+		if (.@got_item == 0) {
+			.@troll = rand(100);
+			if (.@troll < 80 && getarraysize($hotweek_trash3) > 0) {
+				getitem $hotweek_trash3[rand(getarraysize($hotweek_trash3))], 1;
+			} else if (.@troll < 95 && getarraysize($hotweek_trash2) > 0) {
+				getitem $hotweek_trash2[rand(getarraysize($hotweek_trash2))], 1;
+			} else if (getarraysize($hotweek_trash1) > 0) {
+				getitem $hotweek_trash1[rand(getarraysize($hotweek_trash1))], 1;
+			}
+		}
+		sleep2 100;
+	}
+
+	setd("HOTWEEK_RANK_" + getcharid(3), getd("HOTWEEK_RANK_" + getcharid(3)) + .@count);
+	setd("HOTWEEK_NAME_" + getcharid(3) + "$", strcharinfo(0));
+
+	mes "[ H O T W E E K ! ]";
+	mes "Done. Are you feel lucky?";
+	mes "     ";
+	mes "<font size = 16><b>Jackpot: ^AA0000" + .@hotweek_hits + "^000000 time(s).</b></font>";
+	mes "<font size = 12><b>Hotweek Overall: " + callfunc("F_InsertComma",HOTWEEK_POINT) + " times.</b></font>";
+	if (.@guarantee_gained > 0) {
+		mes "     ";
+		mes "<font size = 16><b>^0066FFGuarantee Points Gained: +" + .@guarantee_gained + "^000000</B></font>";
+		mes "<font size = 12><b>Total Guarantee Points: " + callfunc("F_InsertComma",GUARANTEE_POINT) + " points.</b></font>";
+	}
+	close;
+
+// ==== Guarantee ====
+L_Guarantee:
+	mes "<font size = 16><b>You have </b></font>";
+	mes "<font size = 18><b>^FF00BB" + callfunc("F_InsertComma",GUARANTEE_POINT) + "^000000</b></font>";
+	mes "<font size = 16><b>Guarantee Points.</b></font>";
+	mes "     ";
+	mes "<font size = 14>Guarantee Shop is ready.</font>";
+	mes "<font size = 14>Let's shop your guaranteed item.</font>";
+	close2;
+	callshop "HOTWEEK_POINTSHOP",1;
+	npcshopattach "HOTWEEK_POINTSHOP";
+	end;
+
+// ==== Recycle System ====
+L_Recycle:
+	mes "<font size = 16><b>Recycle your Hotweek items</b></font>";
+	mes "<font size = 16><b>for Guarantee Points!</b></font>";
+	mes "     ";
+	mes "<font size = 18><b>^00AA001 : 1 Guarantee Point.^000000</b></font>";
+	mes "     ";
+	mes "<font size = 14>Put the items you want to recycle</font>";
+	mes "<font size = 14>into the trade window.</font>";
+	mes "<font size = 14>I'll calculate the Guarantee Points.</font>";
+	deletearray @sold_nameid[0], getarraysize(@sold_nameid);
+	close2;
+	callshop "hotweek_recycle_shop", 2;
+	npcshopattach "hotweek_recycle_shop";
+	end;
+
+// ==== Trash Exchange System ====
+L_TrashExchange:
+	close2;
+	callshop "HotweekExchange";
+	end;
+
+// ==== Top 20 ====
+L_GMTop:
+	callfunc "S_SortTop";
+	mes "[HOTWEEK TOP 20]";
+	for (set .@i, 0; .@i < 20 && .@i < getarraysize($@rank_aid); set .@i, .@i + 1) {
+		set .@aid, $@rank_aid[.@i];
+		set .@name$, getd("HOTWEEK_NAME_" + .@aid + "$");
+		set .@score, getd("HOTWEEK_RANK_" + .@aid);
+		mes (.@i + 1) + ". " + .@name$ + " - " + .@score + " spins.";
+	}
+	close;
+
+// ==== View Pool ====
+L_ViewPool:
+	mes "<font size = 16><b>^FF0000[ Ultimate Rare ]^000000</b></font>";
+	mes "= Rate: 0.05% | +100 Guarantee Points =";
+	if (getarraysize($hotweek_pool1) > 0) {
+		for (set .@i, 0; .@i < getarraysize($hotweek_pool1); set .@i, .@i + 1)
+			mes (.@i + 1) + ". ^i[" + $hotweek_pool1[.@i] + "] <ITEM>" + getitemname($hotweek_pool1[.@i]) + "<INFO>" + $hotweek_pool1[.@i] + "</INFO></ITEM>";
+	} else {
+		mes "- Nothing to show.";
+	}
+
+	mes "     ";
+	mes "<font size = 16><b>^00AA00[ New Items (Rate Up!!) ]^000000</b></font>";
+	mes "= Rate: from 0.4 up to 1% | +3 Guarantee Points =";
+	if (getarraysize($hotweek_pool2) > 0) {
+		for (set .@i, 0; .@i < getarraysize($hotweek_pool2); set .@i, .@i + 1)
+			mes (.@i + 1) + ". ^i[" + $hotweek_pool2[.@i] + "] <ITEM>" + getitemname($hotweek_pool2[.@i]) + "<INFO>" + $hotweek_pool2[.@i] + "</INFO></ITEM>";
+	} else {
+		mes "- Nothing to show.";
+	}
+
+	mes "     ";
+	mes "<font size = 16><b>^0066AA[ Rerun Items ]^000000</b></font>";
+	mes "= Rate: 0.4% | +1 Guarantee Points =";
+	if (getarraysize($hotweek_pool3) > 0) {
+		for (set .@i, 0; .@i < getarraysize($hotweek_pool3); set .@i, .@i + 1)
+			mes (.@i + 1) + ". ^i[" + $hotweek_pool3[.@i] + "] <ITEM>" + getitemname($hotweek_pool3[.@i]) + "<INFO>" + $hotweek_pool3[.@i] + "</INFO></ITEM>";
+	} else {
+		mes "- Nothing to show.";
+	}
+
+	mes "     ";
+	mes "<font size = 14><b>^AA0000[ Unlucky List ]^000000</b></font>";
+	set .@idx, 1;
+
+	if (getarraysize($hotweek_trash1) > 0) {
+		for (set .@i, 0; .@i < getarraysize($hotweek_trash1); set .@i, .@i + 1) {
+			mes (.@idx) + ". ^i[" + $hotweek_trash1[.@i] + "] <ITEM>" + getitemname($hotweek_trash1[.@i]) + "<INFO>" + $hotweek_trash1[.@i] + "</INFO></ITEM>";
+			set .@idx, .@idx + 1;
+		}
+	}
+	if (getarraysize($hotweek_trash2) > 0) {
+		for (set .@i, 0; .@i < getarraysize($hotweek_trash2); set .@i, .@i + 1) {
+			mes (.@idx) + ". ^i[" + $hotweek_trash2[.@i] + "] <ITEM>" + getitemname($hotweek_trash2[.@i]) + "<INFO>" + $hotweek_trash2[.@i] + "</INFO></ITEM>";
+			set .@idx, .@idx + 1;
+		}
+	}
+	if (getarraysize($hotweek_trash3) > 0) {
+		for (set .@i, 0; .@i < getarraysize($hotweek_trash3); set .@i, .@i + 1) {
+			mes (.@idx) + ". ^i[" + $hotweek_trash3[.@i] + "] <ITEM>" + getitemname($hotweek_trash3[.@i]) + "<INFO>" + $hotweek_trash3[.@i] + "</INFO></ITEM>";
+			set .@idx, .@idx + 1;
+		}
+	}
+	if (.@idx == 1) {
+		mes "- Nothing to show.";
+	}
+	setdialogsize(375,600);
+	close;
+
+// ==== GM Add ====
+L_GMAdd:
+	mes "[GM Add Item]";
+	mes "Add item to which pool/trash?";
+	set .@type, select("Ultimate Rare Pool (0.05%):New Items Pool (1%):Rerun Items Pool (0.4%):Trash Tier 1:Trash Tier 2:Trash Tier 3");
+	mes "Enter Item ID:";
+	input .@item;
+	
+	if (.@type == 1) {
+		set $hotweek_pool1[getarraysize($hotweek_pool1)], .@item;
+		mes "Added to Ultimate Rare Pool: " + getitemname(.@item);
+	}
+	else if (.@type == 2) {
+		set $hotweek_pool2[getarraysize($hotweek_pool2)], .@item;
+		mes "Added to New Items Pool: " + getitemname(.@item);
+	}
+	else if (.@type == 3) {
+		set $hotweek_pool3[getarraysize($hotweek_pool3)], .@item;
+		mes "Added to Rerun Items Pool: " + getitemname(.@item);
+	}
+	else if (.@type == 4) {
+		set $hotweek_trash1[getarraysize($hotweek_trash1)], .@item;
+		mes "Added to Trash Tier 1: " + getitemname(.@item);
+	}
+	else if (.@type == 5) {
+		set $hotweek_trash2[getarraysize($hotweek_trash2)], .@item;
+		mes "Added to Trash Tier 2: " + getitemname(.@item);
+	}
+	else if (.@type == 6) {
+		set $hotweek_trash3[getarraysize($hotweek_trash3)], .@item;
+		mes "Added to Trash Tier 3: " + getitemname(.@item);
+	}
+
+	if (.@type <= 3) {
+	npcshopdelitem "HOTWEEK_POINTSHOP", 512;
+		for (set .@i, 0; .@i < getarraysize($hotweek_pool1); set .@i, .@i + 1) {
+			npcshopdelitem "HOTWEEK_POINTSHOP", $hotweek_pool1[.@i];
+			npcshopadditem "HOTWEEK_POINTSHOP", $hotweek_pool1[.@i], 2000;
+		}
+		for (set .@i, 0; .@i < getarraysize($hotweek_pool2); set .@i, .@i + 1) {
+			npcshopdelitem "HOTWEEK_POINTSHOP", $hotweek_pool2[.@i];
+			npcshopadditem "HOTWEEK_POINTSHOP", $hotweek_pool2[.@i], 200;
+		}
+		for (set .@i, 0; .@i < getarraysize($hotweek_pool3); set .@i, .@i + 1) {
+			npcshopdelitem "HOTWEEK_POINTSHOP", $hotweek_pool3[.@i];
+			npcshopadditem "HOTWEEK_POINTSHOP", $hotweek_pool3[.@i], 100;
+		}
+		mes "Shop updated successfully.";
+	}
+	close;
+
+// ==== GM Remove Pool ====
+L_GMRemovePool:
+	set .@total_pools, getarraysize($hotweek_pool1) + getarraysize($hotweek_pool2) + getarraysize($hotweek_pool3);
+	
+	if (.@total_pools <= 0) {
+		mes "No items in any pool";
+		close;
+	}
+
+	mes "[Delete Pool Item]";
+	mes "Select item to delete:";
+
+	set .@menu$, "";
+	set .@counter, 0;
+
+	for (set .@i, 0; .@i < getarraysize($hotweek_pool1); set .@i, .@i + 1) {
+		if (.@counter > 0) set .@menu$, .@menu$ + ":";
+		set .@menu$, .@menu$ + "[UR] " + getitemname($hotweek_pool1[.@i]);
+		set .@counter, .@counter + 1;
+	}
+
+	for (set .@i, 0; .@i < getarraysize($hotweek_pool2); set .@i, .@i + 1) {
+		if (.@counter > 0) set .@menu$, .@menu$ + ":";
+		set .@menu$, .@menu$ + "[NEW] " + getitemname($hotweek_pool2[.@i]);
+		set .@counter, .@counter + 1;
+	}
+
+	for (set .@i, 0; .@i < getarraysize($hotweek_pool3); set .@i, .@i + 1) {
+		if (.@counter > 0) set .@menu$, .@menu$ + ":";
+		set .@menu$, .@menu$ + "[RR] " + getitemname($hotweek_pool3[.@i]);
+		set .@counter, .@counter + 1;
+	}
+	
+	set .@menu$, .@menu$ + ":Cancel";
+	
+	set .@choice, select(.@menu$);
+
+	if (.@choice > .@total_pools) close;
+
+	set .@selected_pool, 0;
+	set .@selected_index, 0;
+	set .@item_name$, "";
+
+	if (.@choice <= getarraysize($hotweek_pool1)) {
+		set .@selected_pool, 1;
+		set .@selected_index, .@choice - 1;
+		set .@item_name$, getitemname($hotweek_pool1[.@selected_index]);
+	}
+	else if (.@choice <= getarraysize($hotweek_pool1) + getarraysize($hotweek_pool2)) {
+		set .@selected_pool, 2;
+		set .@selected_index, .@choice - getarraysize($hotweek_pool1) - 1;
+		set .@item_name$, getitemname($hotweek_pool2[.@selected_index]);
+	}
+	else {
+		set .@selected_pool, 3;
+		set .@selected_index, .@choice - getarraysize($hotweek_pool1) - getarraysize($hotweek_pool2) - 1;
+		set .@item_name$, getitemname($hotweek_pool3[.@selected_index]);
+	}
+
+	mes "Confirm delete: ^FF0000" + .@item_name$ + "^000000";
+	mes "From Pool " + .@selected_pool + " index " + (.@selected_index + 1);
+	if (select("Confirm:Cancel") == 2) close;
+
+	if (.@selected_pool == 1) {
+	set .@delitem, $hotweek_pool1[.@selected_index];
+	deletearray $hotweek_pool1[.@selected_index], 1;
+	}
+	else if (.@selected_pool == 2) {
+		set .@delitem, $hotweek_pool2[.@selected_index];
+		deletearray $hotweek_pool2[.@selected_index], 1;
+	}
+	else if (.@selected_pool == 3) {
+		set .@delitem, $hotweek_pool3[.@selected_index];
+		deletearray $hotweek_pool3[.@selected_index], 1;
+	}
+	npcshopdelitem "HOTWEEK_POINTSHOP", .@delitem;
+
+	npcshopdelitem "HOTWEEK_POINTSHOP", 512;
+		for (set .@i, 0; .@i < getarraysize($hotweek_pool1); set .@i, .@i + 1) {
+			npcshopdelitem "HOTWEEK_POINTSHOP", $hotweek_pool1[.@i];
+			npcshopadditem "HOTWEEK_POINTSHOP", $hotweek_pool1[.@i], 2000;
+		}
+		for (set .@i, 0; .@i < getarraysize($hotweek_pool2); set .@i, .@i + 1) {
+			npcshopdelitem "HOTWEEK_POINTSHOP", $hotweek_pool2[.@i];
+			npcshopadditem "HOTWEEK_POINTSHOP", $hotweek_pool2[.@i], 200;
+		}
+		for (set .@i, 0; .@i < getarraysize($hotweek_pool3); set .@i, .@i + 1) {
+			npcshopdelitem "HOTWEEK_POINTSHOP", $hotweek_pool3[.@i];
+			npcshopadditem "HOTWEEK_POINTSHOP", $hotweek_pool3[.@i], 100;
+		}
+		mes "Shop updated successfully.";
+	end;
+
+// ==== GM Remove Trash ====
+L_GMRemoveTrash:
+	set .@total_items, getarraysize($hotweek_trash1) + getarraysize($hotweek_trash2) + getarraysize($hotweek_trash3);
+	
+	if (.@total_items <= 0) {
+		mes "No items in Trash";
+		close;
+	}
+	
+	mes "[Delete Trash Item]";
+	mes "Select item to delete:";
+
+	set .@menu$, "";
+	set .@counter, 0;
+
+	for (set .@i, 0; .@i < getarraysize($hotweek_trash1); set .@i, .@i + 1) {
+		if (.@counter > 0) set .@menu$, .@menu$ + ":";
+		set .@menu$, .@menu$ + "T1-" + (.@i + 1) + ". " + getitemname($hotweek_trash1[.@i]);
+		set .@counter, .@counter + 1;
+	}
+
+	for (set .@i, 0; .@i < getarraysize($hotweek_trash2); set .@i, .@i + 1) {
+		if (.@counter > 0) set .@menu$, .@menu$ + ":";
+		set .@menu$, .@menu$ + "T2-" + (.@i + 1) + ". " + getitemname($hotweek_trash2[.@i]);
+		set .@counter, .@counter + 1;
+	}
+
+	for (set .@i, 0; .@i < getarraysize($hotweek_trash3); set .@i, .@i + 1) {
+		if (.@counter > 0) set .@menu$, .@menu$ + ":";
+		set .@menu$, .@menu$ + "T3-" + (.@i + 1) + ". " + getitemname($hotweek_trash3[.@i]);
+		set .@counter, .@counter + 1;
+	}
+	
+	set .@menu$, .@menu$ + ":Cancel";
+	
+	set .@choice, select(.@menu$);
+
+	if (.@choice > .@total_items) close;
+
+	set .@current_pos, 0;
+	set .@selected_array, 0;
+	set .@selected_index, 0;
+	set .@item_name$, "";
+
+	if (.@choice <= getarraysize($hotweek_trash1)) {
+		set .@selected_array, 1;
+		set .@selected_index, .@choice - 1;
+		set .@item_name$, getitemname($hotweek_trash1[.@selected_index]);
+	}
+	else if (.@choice <= getarraysize($hotweek_trash1) + getarraysize($hotweek_trash2)) {
+		set .@selected_array, 2;
+		set .@selected_index, .@choice - getarraysize($hotweek_trash1) - 1;
+		set .@item_name$, getitemname($hotweek_trash2[.@selected_index]);
+	}
+	else {
+		set .@selected_array, 3;
+		set .@selected_index, .@choice - getarraysize($hotweek_trash1) - getarraysize($hotweek_trash2) - 1;
+		set .@item_name$, getitemname($hotweek_trash3[.@selected_index]);
+	}
+
+	mes "Confirm delete: ^FF0000" + .@item_name$ + "^000000";
+	mes "From Trash Array " + .@selected_array + " index " + (.@selected_index + 1);
+	if (select("Confirm:Cancel") == 2) close;
+
+	if (.@selected_array == 1) {
+		deletearray $hotweek_trash1[.@selected_index], 1;
+	}
+	else if (.@selected_array == 2) {
+		deletearray $hotweek_trash2[.@selected_index], 1;
+	}
+	else if (.@selected_array == 3) {
+		deletearray $hotweek_trash3[.@selected_index], 1;
+	}
+	
+	mes "Deleted ^00FF00" + .@item_name$ + "^000000 successfully";
+	close;
+
+OnBuyItem:
+	.@size = getarraysize(@bought_nameid);
+	.@need = 0;
+	for (set .@i, 0; .@i < .@size; set .@i, .@i + 1) {
+		.@item_price = callfunc("GetItemPrice", @bought_nameid[.@i]);
+		.@need += @bought_quantity[.@i] * .@item_price;
+	}
+
+	if (GUARANTEE_POINT < .@need) {
+		mes "[ H O T W E E K ! ]";
+		mes "You don't have enough Guarantee Points!";
+		mes "Required: ^FF0000" + callfunc("F_InsertComma",.@need) + "^000000 Guarantee Points.";
+		mes "You have: ^00AA00" + callfunc("F_InsertComma",GUARANTEE_POINT) + "^000000 Guarantee Points.";
+		dispbottom "The deal was unsuccessful.", 0xFF0000;
+		close;
+	}
+	for (set .@i, 0; .@i < .@size; set .@i, .@i + 1) {
+		getitem @bought_nameid[.@i], @bought_quantity[.@i];
+		.@item_price = callfunc("GetItemPrice", @bought_nameid[.@i]);
+		.@item_total = @bought_quantity[.@i] * .@item_price;
+		dispbottom "Redeemed " + @bought_quantity[.@i] + "x " + getitemname(@bought_nameid[.@i]) + " (-" + callfunc("F_InsertComma",.@item_total) + " Guarantee Points.)";
+	}
+	set GUARANTEE_POINT, GUARANTEE_POINT - .@need;
+
+	mes "[ H O T W E E K ! ]";
+	mes "Successfully redeemed! Your Hotweek Points have been deducted.";
+	mes "Remaining Guarantee Points: " + callfunc("F_InsertComma",GUARANTEE_POINT);
+	close;
+
+OnSellItem:
+	mes "Items to recycle:";
+	mes "==================";
+
+	deletearray .@valid_items[0], 200;
+	deletearray .@valid_amounts[0], 200;
+	set .@total_points, 0;
+	set .@valid_count, 0;
+	
+	for (set .@i, 0; .@i < getarraysize(@sold_nameid); set .@i, .@i + 1) {
+		set .@item_id, @sold_nameid[.@i];
+		set .@is_recyclable, 0;
+		
+		// Check if item is in any pool
+		for (set .@j, 0; .@j < getarraysize($hotweek_pool1) && !.@is_recyclable; set .@j, .@j + 1) {
+			if ($hotweek_pool1[.@j] == .@item_id) set .@is_recyclable, 1;
+		}
+		for (set .@j, 0; .@j < getarraysize($hotweek_pool2) && !.@is_recyclable; set .@j, .@j + 1) {
+			if ($hotweek_pool2[.@j] == .@item_id) set .@is_recyclable, 1;
+		}
+		for (set .@j, 0; .@j < getarraysize($hotweek_pool3) && !.@is_recyclable; set .@j, .@j + 1) {
+			if ($hotweek_pool3[.@j] == .@item_id) set .@is_recyclable, 1;
+		}
+		
+		if (.@is_recyclable) {
+			set .@valid_items[.@valid_count], .@item_id;
+			set .@valid_amounts[.@valid_count], @sold_quantity[.@i];
+			set .@valid_count, .@valid_count + 1;
+			set .@total_points, .@total_points + @sold_quantity[.@i];
+			mes "  ^00AA00" + @sold_quantity[.@i] + "x " + getitemname(.@item_id) + "^000000";
+		} else {
+			mes "  ^FF0000" + @sold_quantity[.@i] + "x " + getitemname(.@item_id) + " (Unrecyclable)^000000";
+		}
+	}
+	
+	deletearray @sold_nameid[0], getarraysize(@sold_nameid);
+	deletearray @sold_quantity[0], getarraysize(@sold_quantity);
+	
+	if (.@valid_count == 0) {
+		mes "==================";
+		mes "^FF0000No valid items to recycle!^000000";
+		mes "Only Hotweek items can be recycled.";
+		close;
+	}
+	
+	mes "==================";
+	mes "Total: ^0066FF" + .@total_points + " Guarantee Points^000000";
+	mes "Proceed with recycling?";
+	next;
+	
+	if (select(" ~ ^AA0000Recycle Now!^000000: ~ ^777777Cancel^000000") == 2) {
+		mes "[Hotweek Recycle]";
+		mes "     ";
+		mes "Recycling cancelled.";
+		close;
+	}
+	
+	// Remove items and give points
+	for (set .@i, 0; .@i < .@valid_count; set .@i, .@i + 1) {
+		delitem .@valid_items[.@i], .@valid_amounts[.@i];
+	}
+	
+	set GUARANTEE_POINT, GUARANTEE_POINT + .@total_points;
+	
+	mes "[Hotweek Recycle]";
+	mes "^00AA00Recycling successful!^000000";
+	mes "     ";
+	mes "You gained ^0066FF" + .@total_points + " Guarantee Points^000000";
+	mes "Total Guarantee Points: ^0066FF" + callfunc("F_InsertComma",GUARANTEE_POINT) + "^000000";
+	
+	// Announce if significant amount
+	if (.@total_points >= 10) {
+		announce "[HOTWEEK RECYCLE] " + strcharinfo(0) + " recycled items for " + .@total_points + " Guarantee Points!", bc_all;
+	}
+	close;
+
+OnInit:
+	delwaitingroom;
+//	waitingroom "H O T W E E K !",0;
+
+	setarray $hotweek_trash1, 6635,616,12246,6228,6232;
+	setarray $hotweek_trash2, 9955500,984,985,6223,6224,1000322,1000405,6417;
+	setarray $hotweek_trash3, 23221,23222,23223,23224,23225,23226;
+
+	npcshopdelitem "hotweek_recycle_shop", 909;
+	npcshopdelitem "HOTWEEK_POINTSHOP", 512;
+		for (set .@i, 0; .@i < getarraysize($hotweek_pool1); set .@i, .@i + 1) {
+			npcshopdelitem "HOTWEEK_POINTSHOP", $hotweek_pool1[.@i];
+			npcshopadditem "HOTWEEK_POINTSHOP", $hotweek_pool1[.@i], 2000;
+		}
+		for (set .@i, 0; .@i < getarraysize($hotweek_pool2); set .@i, .@i + 1) {
+			npcshopdelitem "HOTWEEK_POINTSHOP", $hotweek_pool2[.@i];
+			npcshopadditem "HOTWEEK_POINTSHOP", $hotweek_pool2[.@i], 200;
+		}
+		for (set .@i, 0; .@i < getarraysize($hotweek_pool3); set .@i, .@i + 1) {
+			npcshopdelitem "HOTWEEK_POINTSHOP", $hotweek_pool3[.@i];
+			npcshopadditem "HOTWEEK_POINTSHOP", $hotweek_pool3[.@i], 100;
+		}
+	end;
+}
+
+-	shop	HOTWEEK_POINTSHOP	-1,512:-1
+-	shop	hotweek_recycle_shop	-1,909:-1
+
+// ==========================
+// HOTWEEK Functions
+// ==========================
+function	script	IsWeekend	{
+	set .@dow, gettime(4);
+	return (.@dow == 0 || .@dow == 6);
+}
+
+function	script	GiveRankReward	{
+	setarray .@rare, 9955503;
+	for (set .@i, 0; .@i < getarraysize($@rank_aid) && .@i < 3; set .@i, .@i + 1) {
+		set .@aid, $@rank_aid[.@i];
+		set .@name$, getd("HOTWEEK_NAME_" + .@aid + "$");
+
+		if (.@i == 0) set .@amount, 50;
+		else if (.@i == 1) set .@amount, 25;
+		else set .@amount, 10;
+
+		getitem 9955503, .@amount, .@aid;
+		announce "[ H O T W E E K ! ] " + .@name$ + " received rank " + (.@i+1) + " reward x" + .@amount, bc_all;
+	}
+	end;
+}
+
+function	script	S_SortTop	{
+	deletearray $@rank_aid[0], 1000;
+	set .@size, 0;
+	set .@aid, 2000000;
+	set .@empty_count, 0;
+	while (.@aid <= 2100000) {
+		if (getd("HOTWEEK_RANK_" + .@aid) > 0) {
+			set $@rank_aid[.@size], .@aid;
+			set .@size, .@size + 1;
+			.@empty_count = 0;
+			if (.@size >= 1000) break;
+		} else {
+			.@empty_count++;
+			if (.@empty_count >= 100) break;
+		}
+		set .@aid, .@aid + 1;
+	}
+	for (set .@i, 0; .@i < .@size; set .@i, .@i + 1) {
+		for (set .@j, .@i + 1; .@j < .@size; set .@j, .@j + 1) {
+			if (getd("HOTWEEK_RANK_" + $@rank_aid[.@j]) > getd("HOTWEEK_RANK_" + $@rank_aid[.@i])) {
+				set .@tmp, $@rank_aid[.@i];
+				set $@rank_aid[.@i], $@rank_aid[.@j];
+				set $@rank_aid[.@j], .@tmp;
+			}
+		}
+	}
+	return;
+}
+
+function	script	S_ResetHotweek	{
+	for (set .@aid, 2000000; .@aid <= 2100000; set .@aid, .@aid + 1) {
+		if (getd("HOTWEEK_RANK_" + .@aid)) {
+			setd("HOTWEEK_RANK_" + .@aid, 0);
+			setd("HOTWEEK_NAME_" + .@aid + "$", "");
+		}
+	}
+	set HOTWEEK_COUNT, 0;
+	announce "[ H O T W E E K ! ] The weekly ranking has been reset!", bc_all;
+	end;
+}
+
+function	script	GetItemPrice	{
+	set .@item_id, getarg(0);
+	for (set .@i, 0; .@i < getarraysize($hotweek_pool1); set .@i, .@i + 1) {
+		if ($hotweek_pool1[.@i] == .@item_id) return 2000;
+	}
+	for (set .@i, 0; .@i < getarraysize($hotweek_pool2); set .@i, .@i + 1) {
+		if ($hotweek_pool2[.@i] == .@item_id) return 200;
+	}
+	for (set .@i, 0; .@i < getarraysize($hotweek_pool3); set .@i, .@i + 1) {
+		if ($hotweek_pool3[.@i] == .@item_id) return 100;
+	}
+	return 100;
+}
+
+// ==========================
+// HOTWEEK System Controller
+// ==========================
+-	script	HOTWEEK_EVENTS	-1,{
+
+OnHour00:
+	// Check if it's Sunday 23:00 (end of weekend)
+	if (gettime(4) == 0 && gettime(3) == 23) {
+		callfunc "S_SortTop";
+		callfunc "GiveRankReward";
+	}
+	// Check if it's Monday 00:00 (reset time)
+	if (gettime(4) == 1 && gettime(3) == 0) {
+		callfunc "S_ResetHotweek";
+	}
+	end;
+}
+
+izlude,102,134,4	duplicate(H O T W E E K !)	H O T W E E K !#iz	CLEAR_NPC

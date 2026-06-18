@@ -18073,6 +18073,44 @@ Body:
     HitCount: 1
     Duration1: 60000
     Status: Relieve_off
+  - Id: 773
+    Name: NPC_LOCKON_LASER
+    Description: Lockon Laser
+    MaxLevel: 5
+    TargetType: Attack
+    DamageFlags:
+      NoDamage: true
+    Flags:
+      IsNpc: true
+    HitCount: 1
+    Duration1:
+      - Level: 1
+        Time: 4000
+      - Level: 2
+        Time: 6000
+      - Level: 3
+        Time: 8000
+      - Level: 4
+        Time: 10000
+      - Level: 5
+        Time: 12000
+    Status: Lockon_Laser
+  - Id: 774
+    Name: NPC_LOCKON_LASER_ATK
+    Description: Lockon Laser Attack
+    MaxLevel: 5
+    Type: Magic
+    TargetType: Attack
+    DamageFlags:
+      IgnoreFlee: true
+      IgnoreDefense: true
+      IgnoreDefCard: true
+      IgnoreMres: true
+    Flags:
+      IsNpc: true
+    Hit: Single
+    HitCount: 1
+    SplashArea: 3
   - Id: 776
     Name: NPC_DEADLYCURSE
     Description: Deadly Curse
@@ -27521,7 +27559,7 @@ Body:
       Interval: 500
       Target: Enemy
       Flag:
-        NoOverlap: true
+        NoOverlap: false
         PathCheck: true
   - Id: 2450
     Name: SO_CLOUD_KILL
@@ -35184,7 +35222,7 @@ Body:
       Interval: 300
       Target: Enemy
       Flag:
-        NoOverlap: true
+        NoOverlap: false
         PathCheck: true
   - Id: 5218
     Name: AG_VIOLENT_QUAKE
@@ -35433,7 +35471,7 @@ Body:
       Interval: 300
       Target: Enemy
       Flag:
-        NoOverlap: true
+        NoOverlap: false
         PathCheck: true
     Status: Climax_Bloom
   - Id: 5223
@@ -41275,7 +41313,7 @@ Body:
       Interval: 300
       Target: Enemy
       Flag:
-        NoOverlap: true
+        NoOverlap: false
         PathCheck: true
   - Id: 5446
     Name: SH_HYUN_ROK_CANNON

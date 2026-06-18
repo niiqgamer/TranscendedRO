@@ -46,8 +46,11 @@ Body:
     Name: Player
     Level: 0
     Commands:
-      changedress: true
-      resurrect: true
+      rates: true
+      mobinfo: true
+      iteminfo: true
+      whodrops: true
+      load: true
     Permissions:
       # without this basic permissions regular players could not trade or party
       can_trade: true
@@ -182,6 +185,10 @@ Body:
     Commands:
       rates: true
       who: true
+      mobinfo: true
+      iteminfo: true
+      whodrops: true
+      load: true
   - Id: 10
     Name: Law Enforcement
     Inherit:

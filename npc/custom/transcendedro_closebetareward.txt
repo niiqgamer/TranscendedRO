@@ -1,0 +1,24 @@
+izlude,136,105,4	script	Close Beta Reward	10364,{
+	if(#cbtreward == 1) {
+		mes "You have received rewards to test various systems on our server.";
+		mes "If that's not enough, please register a new ID.";
+		close;
+    }
+	else {
+		getitem 1000254,20000;
+		getitem 25464,20000;
+		getitem 1000322,20000;
+		getitem 1000405,20000;
+		getitem 9900000,20000;
+		Zeny += 2000000000;
+		#CASHPOINTS += 10000000;
+		mes "Thank you for joining us in Close Beta Testing.";
+		mes "If you find any bugs or incomplete information, please report in the Discord #ReportCBT room.";
+		set #cbtreward,1;
+		close;
+	}
+
+OnInit:
+	delwaitingroom;
+	waitingroom("Close Beta Reward", 0);
+}

@@ -287,6 +287,7 @@ Body:
                 DowngradeAmount: 1
           - Level: 15
             Bonus: 3600
+            BlacksmithBlessingAmount: 29
             BroadcastSuccess: true
             BroadcastFailure: true
             Chances:
@@ -301,8 +302,13 @@ Body:
                 Price: 100000
                 Material: HD_Carnium
                 DowngradeAmount: 1
+              - Type: Super
+                Rate: 10000
+                Price: 10000000
+                Material: T_A1_Refining
           - Level: 16
             Bonus: 4000
+            BlacksmithBlessingAmount: 37
             BroadcastSuccess: true
             BroadcastFailure: true
             Chances:
@@ -317,8 +323,13 @@ Body:
                 Price: 100000
                 Material: HD_Carnium
                 DowngradeAmount: 1
+              - Type: Super
+                Rate: 10000
+                Price: 10000000
+                Material: T_A1_Refining
           - Level: 17
             Bonus: 4500
+            BlacksmithBlessingAmount: 46
             BroadcastSuccess: true
             BroadcastFailure: true
             Chances:
@@ -333,8 +344,13 @@ Body:
                 Price: 100000
                 Material: HD_Carnium
                 DowngradeAmount: 1
+              - Type: Super
+                Rate: 10000
+                Price: 10000000
+                Material: T_A1_Refining
           - Level: 18
             Bonus: 5000
+            BlacksmithBlessingAmount: 56
             BroadcastSuccess: true
             BroadcastFailure: true
             Chances:
@@ -349,8 +365,13 @@ Body:
                 Price: 100000
                 Material: HD_Carnium
                 DowngradeAmount: 1
+              - Type: Super
+                Rate: 10000
+                Price: 10000000
+                Material: T_A1_Refining
           - Level: 19
             Bonus: 5500
+            BlacksmithBlessingAmount: 67
             BroadcastSuccess: true
             BroadcastFailure: true
             Chances:
@@ -365,8 +386,13 @@ Body:
                 Price: 100000
                 Material: HD_Carnium
                 DowngradeAmount: 1
+              - Type: Super
+                Rate: 10000
+                Price: 10000000
+                Material: T_A1_Refining
           - Level: 20
             Bonus: 6000
+            BlacksmithBlessingAmount: 79
             BroadcastSuccess: true
             BroadcastFailure: true
             Chances:
@@ -381,6 +407,10 @@ Body:
                 Price: 100000
                 Material: HD_Carnium
                 DowngradeAmount: 1
+              - Type: Super
+                Rate: 10000
+                Price: 10000000
+                Material: T_A1_Refining
       - Level: 2
         RefineLevels:
           - Level: 1
@@ -572,6 +602,7 @@ Body:
                 BreakingRate: 10000
           - Level: 15
             Bonus: 4320
+            BlacksmithBlessingAmount: 29
             BroadcastSuccess: true
             BroadcastFailure: true
             Chances:
@@ -585,8 +616,13 @@ Body:
                 Price: 100000
                 Material: HD_Ethernium
                 BreakingRate: 10000
+              - Type: Super
+                Rate: 10000
+                Price: 20000000
+                Material: T_A2_Refining
           - Level: 16
             Bonus: 4800
+            BlacksmithBlessingAmount: 37
             BroadcastSuccess: true
             BroadcastFailure: true
             Chances:
@@ -600,8 +636,13 @@ Body:
                 Price: 100000
                 Material: HD_Etel_Carnium
                 BreakingRate: 10000
+              - Type: Super
+                Rate: 10000
+                Price: 20000000
+                Material: T_A2_Refining
           - Level: 17
             Bonus: 5400
+            BlacksmithBlessingAmount: 46
             BroadcastSuccess: true
             BroadcastFailure: true
             Chances:
@@ -615,8 +656,13 @@ Body:
                 Price: 100000
                 Material: HD_Etel_Carnium
                 BreakingRate: 10000
+              - Type: Super
+                Rate: 10000
+                Price: 20000000
+                Material: T_A2_Refining
           - Level: 18
             Bonus: 6000
+            BlacksmithBlessingAmount: 56
             BroadcastSuccess: true
             BroadcastFailure: true
             Chances:
@@ -630,8 +676,13 @@ Body:
                 Price: 100000
                 Material: HD_Etel_Carnium
                 BreakingRate: 10000
+              - Type: Super
+                Rate: 10000
+                Price: 20000000
+                Material: T_A2_Refining
           - Level: 19
             Bonus: 6600
+            BlacksmithBlessingAmount: 67
             BroadcastSuccess: true
             BroadcastFailure: true
             Chances:
@@ -645,8 +696,13 @@ Body:
                 Price: 100000
                 Material: HD_Etel_Carnium
                 BreakingRate: 10000
+              - Type: Super
+                Rate: 10000
+                Price: 20000000
+                Material: T_A2_Refining
           - Level: 20
             Bonus: 7200
+            BlacksmithBlessingAmount: 79
             BroadcastSuccess: true
             BroadcastFailure: true
             Chances:
@@ -660,6 +716,10 @@ Body:
                 Price: 100000
                 Material: HD_Etel_Carnium
                 BreakingRate: 10000
+              - Type: Super
+                Rate: 10000
+                Price: 20000000
+                Material: T_A2_Refining
   - Group: Weapon
     Levels:
       - Level: 1
@@ -900,6 +960,7 @@ Body:
           - Level: 15
             Bonus: 3000
             RandomBonus: 2400
+            BlacksmithBlessingAmount: 29
             BroadcastSuccess: true
             BroadcastFailure: true
             Chances:
@@ -914,9 +975,14 @@ Body:
                 Price: 100000
                 Material: HD_Bradium
                 DowngradeAmount: 1
+              - Type: Super
+                Rate: 10000
+                Price: 10000000
+                Material: T_W1_Refining
           - Level: 16
             Bonus: 4800
             RandomBonus: 2700
+            BlacksmithBlessingAmount: 37
             BroadcastSuccess: true
             BroadcastFailure: true
             Chances:
@@ -931,9 +997,14 @@ Body:
                 Price: 100000
                 Material: HD_Bradium
                 DowngradeAmount: 1
+              - Type: Super
+                Rate: 10000
+                Price: 10000000
+                Material: T_W1_Refining
           - Level: 17
             Bonus: 5100
             RandomBonus: 3000
+            BlacksmithBlessingAmount: 46
             BroadcastSuccess: true
             BroadcastFailure: true
             Chances:
@@ -948,9 +1019,14 @@ Body:
                 Price: 100000
                 Material: HD_Bradium
                 DowngradeAmount: 1
+              - Type: Super
+                Rate: 10000
+                Price: 10000000
+                Material: T_W1_Refining
           - Level: 18
             Bonus: 5400
             RandomBonus: 3300
+            BlacksmithBlessingAmount: 56
             BroadcastSuccess: true
             BroadcastFailure: true
             Chances:
@@ -965,9 +1041,14 @@ Body:
                 Price: 100000
                 Material: HD_Bradium
                 DowngradeAmount: 1
+              - Type: Super
+                Rate: 10000
+                Price: 10000000
+                Material: T_W1_Refining
           - Level: 19
             Bonus: 5700
             RandomBonus: 3600
+            BlacksmithBlessingAmount: 67
             BroadcastSuccess: true
             BroadcastFailure: true
             Chances:
@@ -982,9 +1063,14 @@ Body:
                 Price: 100000
                 Material: HD_Bradium
                 DowngradeAmount: 1
+              - Type: Super
+                Rate: 10000
+                Price: 10000000
+                Material: T_W1_Refining
           - Level: 20
             Bonus: 6000
             RandomBonus: 3900
+            BlacksmithBlessingAmount: 79
             BroadcastSuccess: true
             BroadcastFailure: true
             Chances:
@@ -999,6 +1085,10 @@ Body:
                 Price: 100000
                 Material: HD_Bradium
                 DowngradeAmount: 1
+              - Type: Super
+                Rate: 10000
+                Price: 10000000
+                Material: T_W1_Refining
       - Level: 2
         RefineLevels:
           - Level: 1
@@ -1241,6 +1331,7 @@ Body:
           - Level: 15
             Bonus: 4500
             RandomBonus: 4500
+            BlacksmithBlessingAmount: 29
             BroadcastSuccess: true
             BroadcastFailure: true
             Chances:
@@ -1255,9 +1346,14 @@ Body:
                 Price: 100000
                 Material: HD_Bradium
                 DowngradeAmount: 1
+              - Type: Super
+                Rate: 10000
+                Price: 10000000
+                Material: T_W1_Refining
           - Level: 16
             Bonus: 8000
             RandomBonus: 5000
+            BlacksmithBlessingAmount: 37
             BroadcastSuccess: true
             BroadcastFailure: true
             Chances:
@@ -1272,9 +1368,14 @@ Body:
                 Price: 100000
                 Material: HD_Bradium
                 DowngradeAmount: 1
+              - Type: Super
+                Rate: 10000
+                Price: 10000000
+                Material: T_W1_Refining
           - Level: 17
             Bonus: 8500
             RandomBonus: 5500
+            BlacksmithBlessingAmount: 46
             BroadcastSuccess: true
             BroadcastFailure: true
             Chances:
@@ -1289,9 +1390,14 @@ Body:
                 Price: 100000
                 Material: HD_Bradium
                 DowngradeAmount: 1
+              - Type: Super
+                Rate: 10000
+                Price: 10000000
+                Material: T_W1_Refining
           - Level: 18
             Bonus: 9000
             RandomBonus: 6000
+            BlacksmithBlessingAmount: 56
             BroadcastSuccess: true
             BroadcastFailure: true
             Chances:
@@ -1306,9 +1412,14 @@ Body:
                 Price: 100000
                 Material: HD_Bradium
                 DowngradeAmount: 1
+              - Type: Super
+                Rate: 10000
+                Price: 10000000
+                Material: T_W1_Refining
           - Level: 19
             Bonus: 9500
             RandomBonus: 6500
+            BlacksmithBlessingAmount: 67
             BroadcastSuccess: true
             BroadcastFailure: true
             Chances:
@@ -1323,9 +1434,14 @@ Body:
                 Price: 100000
                 Material: HD_Bradium
                 DowngradeAmount: 1
+              - Type: Super
+                Rate: 10000
+                Price: 10000000
+                Material: T_W1_Refining
           - Level: 20
             Bonus: 10000
             RandomBonus: 7000
+            BlacksmithBlessingAmount: 79
             BroadcastSuccess: true
             BroadcastFailure: true
             Chances:
@@ -1340,6 +1456,10 @@ Body:
                 Price: 100000
                 Material: HD_Bradium
                 DowngradeAmount: 1
+              - Type: Super
+                Rate: 10000
+                Price: 10000000
+                Material: T_W1_Refining
       - Level: 3
         RefineLevels:
           - Level: 1
@@ -1586,6 +1706,7 @@ Body:
           - Level: 15
             Bonus: 7500
             RandomBonus: 8000
+            BlacksmithBlessingAmount: 29
             BroadcastSuccess: true
             BroadcastFailure: true
             Chances:
@@ -1600,9 +1721,14 @@ Body:
                 Price: 100000
                 Material: HD_Bradium
                 DowngradeAmount: 1
+              - Type: Super
+                Rate: 10000
+                Price: 10000000
+                Material: T_W1_Refining
           - Level: 16
             Bonus: 11200
             RandomBonus: 8800
+            BlacksmithBlessingAmount: 37
             BroadcastSuccess: true
             BroadcastFailure: true
             Chances:
@@ -1617,9 +1743,14 @@ Body:
                 Price: 100000
                 Material: HD_Bradium
                 DowngradeAmount: 1
+              - Type: Super
+                Rate: 10000
+                Price: 10000000
+                Material: T_W1_Refining
           - Level: 17
             Bonus: 11900
             RandomBonus: 9600
+            BlacksmithBlessingAmount: 46
             BroadcastSuccess: true
             BroadcastFailure: true
             Chances:
@@ -1634,9 +1765,14 @@ Body:
                 Price: 100000
                 Material: HD_Bradium
                 DowngradeAmount: 1
+              - Type: Super
+                Rate: 10000
+                Price: 10000000
+                Material: T_W1_Refining
           - Level: 18
             Bonus: 12600
             RandomBonus: 10400
+            BlacksmithBlessingAmount: 56
             BroadcastSuccess: true
             BroadcastFailure: true
             Chances:
@@ -1651,9 +1787,14 @@ Body:
                 Price: 100000
                 Material: HD_Bradium
                 DowngradeAmount: 1
+              - Type: Super
+                Rate: 10000
+                Price: 10000000
+                Material: T_W1_Refining
           - Level: 19
             Bonus: 13300
             RandomBonus: 11200
+            BlacksmithBlessingAmount: 67
             BroadcastSuccess: true
             BroadcastFailure: true
             Chances:
@@ -1668,9 +1809,14 @@ Body:
                 Price: 100000
                 Material: HD_Bradium
                 DowngradeAmount: 1
+              - Type: Super
+                Rate: 10000
+                Price: 10000000
+                Material: T_W1_Refining
           - Level: 20
             Bonus: 14000
             RandomBonus: 12000
+            BlacksmithBlessingAmount: 79
             BroadcastSuccess: true
             BroadcastFailure: true
             Chances:
@@ -1685,6 +1831,10 @@ Body:
                 Price: 100000
                 Material: HD_Bradium
                 DowngradeAmount: 1
+              - Type: Super
+                Rate: 10000
+                Price: 10000000
+                Material: T_W1_Refining
       - Level: 4
         RefineLevels:
           - Level: 1
@@ -1935,6 +2085,7 @@ Body:
           - Level: 15
             Bonus: 10500
             RandomBonus: 15400
+            BlacksmithBlessingAmount: 29
             BroadcastSuccess: true
             BroadcastFailure: true
             Chances:
@@ -1949,9 +2100,14 @@ Body:
                 Price: 100000
                 Material: HD_Bradium
                 DowngradeAmount: 1
+              - Type: Super
+                Rate: 10000
+                Price: 10000000
+                Material: T_W1_Refining
           - Level: 16
             Bonus: 16000
             RandomBonus: 16800
+            BlacksmithBlessingAmount: 37
             BroadcastSuccess: true
             BroadcastFailure: true
             Chances:
@@ -1966,9 +2122,14 @@ Body:
                 Price: 100000
                 Material: HD_Bradium
                 DowngradeAmount: 1
+              - Type: Super
+                Rate: 10000
+                Price: 10000000
+                Material: T_W1_Refining
           - Level: 17
             Bonus: 17000
             RandomBonus: 18200
+            BlacksmithBlessingAmount: 46
             BroadcastSuccess: true
             BroadcastFailure: true
             Chances:
@@ -1983,9 +2144,14 @@ Body:
                 Price: 100000
                 Material: HD_Bradium
                 DowngradeAmount: 1
+              - Type: Super
+                Rate: 10000
+                Price: 10000000
+                Material: T_W1_Refining
           - Level: 18
             Bonus: 18000
             RandomBonus: 19600
+            BlacksmithBlessingAmount: 56
             BroadcastSuccess: true
             BroadcastFailure: true
             Chances:
@@ -2000,9 +2166,14 @@ Body:
                 Price: 100000
                 Material: HD_Bradium
                 DowngradeAmount: 1
+              - Type: Super
+                Rate: 10000
+                Price: 10000000
+                Material: T_W1_Refining
           - Level: 19
             Bonus: 19000
             RandomBonus: 21000
+            BlacksmithBlessingAmount: 67
             BroadcastSuccess: true
             BroadcastFailure: true
             Chances:
@@ -2017,9 +2188,14 @@ Body:
                 Price: 100000
                 Material: HD_Bradium
                 DowngradeAmount: 1
+              - Type: Super
+                Rate: 10000
+                Price: 10000000
+                Material: T_W1_Refining
           - Level: 20
             Bonus: 20000
             RandomBonus: 22400
+            BlacksmithBlessingAmount: 79
             BroadcastSuccess: true
             BroadcastFailure: true
             Chances:
@@ -2034,6 +2210,10 @@ Body:
                 Price: 100000
                 Material: HD_Bradium
                 DowngradeAmount: 1
+              - Type: Super
+                Rate: 10000
+                Price: 10000000
+                Material: T_W1_Refining
       - Level: 5
         RefineLevels:
           - Level: 1
@@ -2225,6 +2405,7 @@ Body:
                 BreakingRate: 10000
           - Level: 15
             Bonus: 12000
+            BlacksmithBlessingAmount: 29
             BroadcastSuccess: true
             BroadcastFailure: true
             Chances:
@@ -2238,8 +2419,13 @@ Body:
                 Price: 100000
                 Material: HD_Etherdeocon
                 BreakingRate: 10000
+              - Type: Super
+                Rate: 10000
+                Price: 20000000
+                Material: T_W2_Refining
           - Level: 16
             Bonus: 12800
+            BlacksmithBlessingAmount: 37
             BroadcastSuccess: true
             BroadcastFailure: true
             Chances:
@@ -2253,8 +2439,13 @@ Body:
                 Price: 100000
                 Material: HD_Etel_Bradium
                 BreakingRate: 10000
+              - Type: Super
+                Rate: 10000
+                Price: 20000000
+                Material: T_W2_Refining
           - Level: 17
             Bonus: 13600
+            BlacksmithBlessingAmount: 46
             BroadcastSuccess: true
             BroadcastFailure: true
             Chances:
@@ -2268,8 +2459,13 @@ Body:
                 Price: 100000
                 Material: HD_Etel_Bradium
                 BreakingRate: 10000
+              - Type: Super
+                Rate: 10000
+                Price: 20000000
+                Material: T_W2_Refining
           - Level: 18
             Bonus: 14400
+            BlacksmithBlessingAmount: 56
             BroadcastSuccess: true
             BroadcastFailure: true
             Chances:
@@ -2283,8 +2479,13 @@ Body:
                 Price: 100000
                 Material: HD_Etel_Bradium
                 BreakingRate: 10000
+              - Type: Super
+                Rate: 10000
+                Price: 20000000
+                Material: T_W2_Refining
           - Level: 19
             Bonus: 15200
+            BlacksmithBlessingAmount: 67
             BroadcastSuccess: true
             BroadcastFailure: true
             Chances:
@@ -2298,8 +2499,13 @@ Body:
                 Price: 100000
                 Material: HD_Etel_Bradium
                 BreakingRate: 10000
+              - Type: Super
+                Rate: 10000
+                Price: 20000000
+                Material: T_W2_Refining
           - Level: 20
             Bonus: 16000
+            BlacksmithBlessingAmount: 79
             BroadcastSuccess: true
             BroadcastFailure: true
             Chances:
@@ -2313,6 +2519,10 @@ Body:
                 Price: 100000
                 Material: HD_Etel_Bradium
                 BreakingRate: 10000
+              - Type: Super
+                Rate: 10000
+                Price: 20000000
+                Material: T_W2_Refining
   - Group: Shadow_Armor
     Levels:
       - Level: 1
@@ -2425,6 +2635,9 @@ Body:
                 Material: Enriched_Elunium
                 BreakingRate: 10000
           - Level: 8
+            BlacksmithBlessingAmount: 1
+            BroadcastSuccess: true
+            BroadcastFailure: true
             Chances:
               - Type: Normal
                 Rate: 2000
@@ -2442,6 +2655,9 @@ Body:
                 Material: Enriched_Elunium
                 BreakingRate: 10000
           - Level: 9
+            BlacksmithBlessingAmount: 2
+            BroadcastSuccess: true
+            BroadcastFailure: true
             Chances:
               - Type: Normal
                 Rate: 2000
@@ -2459,6 +2675,9 @@ Body:
                 Material: Enriched_Elunium
                 BreakingRate: 10000
           - Level: 10
+            BlacksmithBlessingAmount: 4
+            BroadcastSuccess: true
+            BroadcastFailure: true
             Chances:
               - Type: Normal
                 Rate: 900
@@ -2475,6 +2694,190 @@ Body:
                 Price: 10000
                 Material: Enriched_Elunium
                 BreakingRate: 10000
+          - Level: 11
+            BlacksmithBlessingAmount: 7
+            BroadcastSuccess: true
+            BroadcastFailure: true
+            Chances:
+              - Type: Normal
+                Rate: 800
+                Price: 100000
+                Material: Carnium
+                BreakingRate: 2000
+                DowngradeAmount: 3
+              - Type: HD
+                Rate: 800
+                Price: 100000
+                Material: HD_Carnium
+                DowngradeAmount: 1
+          - Level: 12
+            BlacksmithBlessingAmount: 11
+            BroadcastSuccess: true
+            BroadcastFailure: true
+            Chances:
+              - Type: Normal
+                Rate: 800
+                Price: 100000
+                Material: Carnium
+                BreakingRate: 2000
+                DowngradeAmount: 3
+              - Type: HD
+                Rate: 800
+                Price: 100000
+                Material: HD_Carnium
+                DowngradeAmount: 1
+          - Level: 13
+            BlacksmithBlessingAmount: 16
+            BroadcastSuccess: true
+            BroadcastFailure: true
+            Chances:
+              - Type: Normal
+                Rate: 800
+                Price: 100000
+                Material: Carnium
+                BreakingRate: 2000
+                DowngradeAmount: 3
+              - Type: HD
+                Rate: 800
+                Price: 100000
+                Material: HD_Carnium
+                DowngradeAmount: 1
+          - Level: 14
+            BlacksmithBlessingAmount: 22
+            BroadcastSuccess: true
+            BroadcastFailure: true
+            Chances:
+              - Type: Normal
+                Rate: 800
+                Price: 100000
+                Material: Carnium
+                BreakingRate: 2000
+                DowngradeAmount: 3
+              - Type: HD
+                Rate: 800
+                Price: 100000
+                Material: HD_Carnium
+                DowngradeAmount: 1
+          - Level: 15
+            BlacksmithBlessingAmount: 29
+            BroadcastSuccess: true
+            BroadcastFailure: true
+            Chances:
+              - Type: Normal
+                Rate: 700
+                Price: 100000
+                Material: Carnium
+                BreakingRate: 2000
+                DowngradeAmount: 3
+              - Type: HD
+                Rate: 700
+                Price: 100000
+                Material: HD_Carnium
+                DowngradeAmount: 1
+              - Type: Super
+                Rate: 10000
+                Price: 10000000
+                Material: T_A1_Refining
+          - Level: 16
+            BlacksmithBlessingAmount: 37
+            BroadcastSuccess: true
+            BroadcastFailure: true
+            Chances:
+              - Type: Normal
+                Rate: 700
+                Price: 100000
+                Material: Carnium
+                BreakingRate: 2000
+                DowngradeAmount: 3
+              - Type: HD
+                Rate: 700
+                Price: 100000
+                Material: HD_Carnium
+                DowngradeAmount: 1
+              - Type: Super
+                Rate: 10000
+                Price: 10000000
+                Material: T_A1_Refining
+          - Level: 17
+            BlacksmithBlessingAmount: 46
+            BroadcastSuccess: true
+            BroadcastFailure: true
+            Chances:
+              - Type: Normal
+                Rate: 700
+                Price: 100000
+                Material: Carnium
+                BreakingRate: 2000
+                DowngradeAmount: 3
+              - Type: HD
+                Rate: 700
+                Price: 100000
+                Material: HD_Carnium
+                DowngradeAmount: 1
+              - Type: Super
+                Rate: 10000
+                Price: 10000000
+                Material: T_A1_Refining
+          - Level: 18
+            BlacksmithBlessingAmount: 56
+            BroadcastSuccess: true
+            BroadcastFailure: true
+            Chances:
+              - Type: Normal
+                Rate: 700
+                Price: 100000
+                Material: Carnium
+                BreakingRate: 2000
+                DowngradeAmount: 3
+              - Type: HD
+                Rate: 700
+                Price: 100000
+                Material: HD_Carnium
+                DowngradeAmount: 1
+              - Type: Super
+                Rate: 10000
+                Price: 10000000
+                Material: T_A1_Refining
+          - Level: 19
+            BlacksmithBlessingAmount: 67
+            BroadcastSuccess: true
+            BroadcastFailure: true
+            Chances:
+              - Type: Normal
+                Rate: 500
+                Price: 100000
+                Material: Carnium
+                BreakingRate: 2000
+                DowngradeAmount: 3
+              - Type: HD
+                Rate: 500
+                Price: 100000
+                Material: HD_Carnium
+                DowngradeAmount: 1
+              - Type: Super
+                Rate: 10000
+                Price: 10000000
+                Material: T_A1_Refining
+          - Level: 20
+            BlacksmithBlessingAmount: 79
+            BroadcastSuccess: true
+            BroadcastFailure: true
+            Chances:
+              - Type: Normal
+                Rate: 500
+                Price: 100000
+                Material: Carnium
+                BreakingRate: 2000
+                DowngradeAmount: 3
+              - Type: HD
+                Rate: 500
+                Price: 100000
+                Material: HD_Carnium
+                DowngradeAmount: 1
+              - Type: Super
+                Rate: 10000
+                Price: 10000000
+                Material: T_A1_Refining
   - Group: Shadow_Weapon
     Levels:
       - Level: 1
@@ -2587,6 +2990,9 @@ Body:
                 Material: Enriched_Oridecon
                 BreakingRate: 10000
           - Level: 8
+            BlacksmithBlessingAmount: 1
+            BroadcastSuccess: true
+            BroadcastFailure: true
             Chances:
               - Type: Normal
                 Rate: 2000
@@ -2604,6 +3010,9 @@ Body:
                 Material: Enriched_Oridecon
                 BreakingRate: 10000
           - Level: 9
+            BlacksmithBlessingAmount: 2
+            BroadcastSuccess: true
+            BroadcastFailure: true
             Chances:
               - Type: Normal
                 Rate: 2000
@@ -2621,6 +3030,9 @@ Body:
                 Material: Enriched_Oridecon
                 BreakingRate: 10000
           - Level: 10
+            BlacksmithBlessingAmount: 4
+            BroadcastSuccess: true
+            BroadcastFailure: true
             Chances:
               - Type: Normal
                 Rate: 900
@@ -2637,3 +3049,187 @@ Body:
                 Price: 10000
                 Material: Enriched_Oridecon
                 BreakingRate: 10000
+          - Level: 11
+            BlacksmithBlessingAmount: 7
+            BroadcastSuccess: true
+            BroadcastFailure: true
+            Chances:
+              - Type: Normal
+                Rate: 800
+                Price: 100000
+                Material: Bradium
+                BreakingRate: 2000
+                DowngradeAmount: 3
+              - Type: HD
+                Rate: 800
+                Price: 100000
+                Material: HD_Bradium
+                DowngradeAmount: 1
+          - Level: 12
+            BlacksmithBlessingAmount: 11
+            BroadcastSuccess: true
+            BroadcastFailure: true
+            Chances:
+              - Type: Normal
+                Rate: 800
+                Price: 100000
+                Material: Bradium
+                BreakingRate: 2000
+                DowngradeAmount: 3
+              - Type: HD
+                Rate: 800
+                Price: 100000
+                Material: HD_Bradium
+                DowngradeAmount: 1
+          - Level: 13
+            BlacksmithBlessingAmount: 16
+            BroadcastSuccess: true
+            BroadcastFailure: true
+            Chances:
+              - Type: Normal
+                Rate: 800
+                Price: 100000
+                Material: Bradium
+                BreakingRate: 2000
+                DowngradeAmount: 3
+              - Type: HD
+                Rate: 800
+                Price: 100000
+                Material: HD_Bradium
+                DowngradeAmount: 1
+          - Level: 14
+            BlacksmithBlessingAmount: 22
+            BroadcastSuccess: true
+            BroadcastFailure: true
+            Chances:
+              - Type: Normal
+                Rate: 800
+                Price: 100000
+                Material: Bradium
+                BreakingRate: 2000
+                DowngradeAmount: 3
+              - Type: HD
+                Rate: 800
+                Price: 100000
+                Material: HD_Bradium
+                DowngradeAmount: 1
+          - Level: 15
+            BlacksmithBlessingAmount: 29
+            BroadcastSuccess: true
+            BroadcastFailure: true
+            Chances:
+              - Type: Normal
+                Rate: 700
+                Price: 100000
+                Material: Bradium
+                BreakingRate: 2000
+                DowngradeAmount: 3
+              - Type: HD
+                Rate: 700
+                Price: 100000
+                Material: HD_Bradium
+                DowngradeAmount: 1
+              - Type: Super
+                Rate: 10000
+                Price: 10000000
+                Material: T_W1_Refining
+          - Level: 16
+            BlacksmithBlessingAmount: 37
+            BroadcastSuccess: true
+            BroadcastFailure: true
+            Chances:
+              - Type: Normal
+                Rate: 700
+                Price: 100000
+                Material: Bradium
+                BreakingRate: 2000
+                DowngradeAmount: 3
+              - Type: HD
+                Rate: 700
+                Price: 100000
+                Material: HD_Bradium
+                DowngradeAmount: 1
+              - Type: Super
+                Rate: 10000
+                Price: 10000000
+                Material: T_W1_Refining
+          - Level: 17
+            BlacksmithBlessingAmount: 46
+            BroadcastSuccess: true
+            BroadcastFailure: true
+            Chances:
+              - Type: Normal
+                Rate: 700
+                Price: 100000
+                Material: Bradium
+                BreakingRate: 2000
+                DowngradeAmount: 3
+              - Type: HD
+                Rate: 700
+                Price: 100000
+                Material: HD_Bradium
+                DowngradeAmount: 1
+              - Type: Super
+                Rate: 10000
+                Price: 10000000
+                Material: T_W1_Refining
+          - Level: 18
+            BlacksmithBlessingAmount: 56
+            BroadcastSuccess: true
+            BroadcastFailure: true
+            Chances:
+              - Type: Normal
+                Rate: 700
+                Price: 100000
+                Material: Bradium
+                BreakingRate: 2000
+                DowngradeAmount: 3
+              - Type: HD
+                Rate: 700
+                Price: 100000
+                Material: HD_Bradium
+                DowngradeAmount: 1
+              - Type: Super
+                Rate: 10000
+                Price: 10000000
+                Material: T_W1_Refining
+          - Level: 19
+            BlacksmithBlessingAmount: 67
+            BroadcastSuccess: true
+            BroadcastFailure: true
+            Chances:
+              - Type: Normal
+                Rate: 500
+                Price: 100000
+                Material: Bradium
+                BreakingRate: 2000
+                DowngradeAmount: 3
+              - Type: HD
+                Rate: 500
+                Price: 100000
+                Material: HD_Bradium
+                DowngradeAmount: 1
+              - Type: Super
+                Rate: 10000
+                Price: 10000000
+                Material: T_W1_Refining
+          - Level: 20
+            BlacksmithBlessingAmount: 79
+            BroadcastSuccess: true
+            BroadcastFailure: true
+            Chances:
+              - Type: Normal
+                Rate: 500
+                Price: 100000
+                Material: Bradium
+                BreakingRate: 2000
+                DowngradeAmount: 3
+              - Type: HD
+                Rate: 500
+                Price: 100000
+                Material: HD_Bradium
+                DowngradeAmount: 1
+              - Type: Super
+                Rate: 10000
+                Price: 10000000
+                Material: T_W1_Refining

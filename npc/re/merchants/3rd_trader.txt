@@ -127,11 +127,11 @@ alberta,105,52,7	duplicate(pss)	Point Merchant#Alberta	8_F_GIRL
 aldebaran,133,114,5	duplicate(pss)	Point Merchant#Aldebaran	8_F_GIRL
 comodo,193,159,5	duplicate(pss)	Point Merchant#Comodo	8_F_GIRL
 geffen,129,49,5	duplicate(pss)	Point Merchant#Geffen	8_F_GIRL
-izlude,138,163,5	duplicate(pss)	Point Merchant#Izlude	8_F_GIRL	// Old coordinates: izlude (135,121)
-izlude_a,138,163,5	duplicate(pss)	Point Merchant#Izlude_a	8_F_GIRL
-izlude_b,138,163,5	duplicate(pss)	Point Merchant#Izlude_b	8_F_GIRL
-izlude_c,138,163,5	duplicate(pss)	Point Merchant#Izlude_c	8_F_GIRL
-izlude_d,138,163,5	duplicate(pss)	Point Merchant#Izlude_d	8_F_GIRL
+//izlude,138,163,5	duplicate(pss)	Point Merchant#Izlude	8_F_GIRL	// Old coordinates: izlude (135,121)
+//izlude_a,138,163,5	duplicate(pss)	Point Merchant#Izlude_a	8_F_GIRL
+//izlude_b,138,163,5	duplicate(pss)	Point Merchant#Izlude_b	8_F_GIRL
+//izlude_c,138,163,5	duplicate(pss)	Point Merchant#Izlude_c	8_F_GIRL
+//izlude_d,138,163,5	duplicate(pss)	Point Merchant#Izlude_d	8_F_GIRL
 malangdo,214,163,5	duplicate(pss)	Point Merchant#Malangdo	8_F_GIRL
 mora,115,118,3	duplicate(pss)	Point Merchant#Mora	8_F_GIRL
 ra_in01,256,273,3	duplicate(pss)	Point Merchant#Rachel	8_F_GIRL

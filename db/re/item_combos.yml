@@ -59318,3 +59318,1753 @@ Body:
     Script: |
       bonus2 bExpAddRace,RC_All,5;
       bonus bFixedCast,-200;
+  - Combos:
+      - Combo:
+          - Fenrir_Staff_US    # 550169
+          - Fenrir_Card    # 4556
+    Script: |
+      .@r = getequiprefinerycnt(EQI_HAND_R);
+      skill "EM_SPELL_ENCHANTING",5;
+      bonus bSpl,30;
+      bonus bCon,30;
+      bonus2 bMagicAddRace,RC_All,40;
+      if (.@r>=14) {
+         bonus2 bSkillAtk,"WL_COMET",120;
+         bonus2 bSkillAtk,"AG_SOUL_VC_STRIKE",120;
+         bonus bVariableCastRate,-30;
+         bonus bDelayRate,-30;
+      }
+  - Combos:
+      - Combo:
+          - 21Anni2_W_Shadow_TW    # 24881 Corrupted Shadow Weapon
+          - S_Runeknight_Shield    # 24301
+      - Combo:
+          - 21Anni2_W_Shadow_TW    # 24881 Corrupted Shadow Weapon
+          - S_Royalguard_Shield    # 24302
+      - Combo:
+          - 21Anni2_W_Shadow_TW    # 24881 Corrupted Shadow Weapon
+          - S_Mechanic_Shield    # 24303
+      - Combo:
+          - 21Anni2_W_Shadow_TW    # 24881 Corrupted Shadow Weapon
+          - S_Genetic_Shield    # 24304
+      - Combo:
+          - 21Anni2_W_Shadow_TW    # 24881 Corrupted Shadow Weapon
+          - S_Archbishop_Shield    # 24305
+      - Combo:
+          - 21Anni2_W_Shadow_TW    # 24881 Corrupted Shadow Weapon
+          - S_Sura_Shield    # 24306
+      - Combo:
+          - 21Anni2_W_Shadow_TW    # 24881 Corrupted Shadow Weapon
+          - S_Guillotine_Shield    # 24307
+      - Combo:
+          - 21Anni2_W_Shadow_TW    # 24881 Corrupted Shadow Weapon
+          - S_Shadowchaser_Shield    # 24308
+      - Combo:
+          - 21Anni2_W_Shadow_TW    # 24881 Corrupted Shadow Weapon
+          - S_Warlock_Shield    # 24309
+      - Combo:
+          - 21Anni2_W_Shadow_TW    # 24881 Corrupted Shadow Weapon
+          - S_Sorcerer_Shield    # 24310
+      - Combo:
+          - 21Anni2_W_Shadow_TW    # 24881 Corrupted Shadow Weapon
+          - S_Ranger_Shield    # 24311
+      - Combo:
+          - 21Anni2_W_Shadow_TW    # 24881 Corrupted Shadow Weapon
+          - S_Minstrel_Shield    # 24312
+      - Combo:
+          - 21Anni2_W_Shadow_TW    # 24881 Corrupted Shadow Weapon
+          - S_Wanderer_Shield    # 24313
+      - Combo:
+          - 21Anni2_W_Shadow_TW    # 24881 Corrupted Shadow Weapon
+          - S_Kagerou_Shoes    # 24406
+      - Combo:
+          - 21Anni2_W_Shadow_TW    # 24881 Corrupted Shadow Weapon
+          - S_Oboro_Shoes    # 24407
+      - Combo:
+          - 21Anni2_W_Shadow_TW    # 24881 Corrupted Shadow Weapon
+          - S_Star_Emperor_Shoes    # 24413
+      - Combo:
+          - 21Anni2_W_Shadow_TW    # 24881 Corrupted Shadow Weapon
+          - S_Soul_Reaper_Shoes    # 24415
+      - Combo:
+          - 21Anni2_W_Shadow_TW    # 24881 Corrupted Shadow Weapon
+          - S_DoramPhysical_Shoes    # 24409
+      - Combo:
+          - 21Anni2_W_Shadow_TW    # 24881 Corrupted Shadow Weapon
+          - S_DoramMagical_Shoes    # 24411
+      - Combo:
+          - 21Anni2_W_Shadow_TW    # 24881 Corrupted Shadow Weapon
+          - S_SuperNovice_Shield    # 24318
+      - Combo:
+          - 21Anni2_W_Shadow_TW    # 24881 Corrupted Shadow Weapon
+          - S_Rebellion_Shoes    # 24405
+      - Combo:
+          - 21Anni2_W_Shadow_TW    # 24881 Corrupted Shadow Weapon
+          - Clear_Shield_Shadow3_TW    # 1270049 Sanctified Shadow Shield
+#      - Combo:
+#          - 21Anni2_W_Shadow_TW    # 24881 Corrupted Shadow Weapon
+#          - Clear_Shield_Shadow2_TW    # 1270048 Corrupted Shadow Shield
+#      - Combo:
+#          - 21Anni2_W_Shadow_TW    # 24881 Corrupted Shadow Weapon
+#          - Clear_Shield_Shadow1_TW    # 1270047 Purity Shadow Shield
+    Script: |
+      bonus2 bIgnoreDefRaceRate,RC_All,30;
+      bonus2 bIgnoreDefRaceRate,RC_Player_Doram,-30;
+      bonus2 bIgnoreDefRaceRate,RC_Player_Human,-30;
+      bonus2 bIgnoreMdefRaceRate,RC_All,30;
+      bonus2 bIgnoreMdefRaceRate,RC_Player_Doram,-30;
+      bonus2 bIgnoreMdefRaceRate,RC_Player_Human,-30;
+  - Combos:
+      - Combo:
+          - 21Anni2_W_Shadow_TW    # 24881 Corrupted Shadow Weapon
+          - Clear_Shield_Shadow3_TW    # 1270049 Sanctified Shadow Shield
+    Script: |
+      bonus bPAtk,5;
+      bonus bSMatk,5;
+      bonus2 bIgnoreResRaceRate,RC_All,30;
+      bonus2 bIgnoreResRaceRate,RC_Player_Doram,-30;
+      bonus2 bIgnoreResRaceRate,RC_Player_Human,-30;
+      bonus2 bIgnoreMResRaceRate,RC_All,30;
+      bonus2 bIgnoreMResRaceRate,RC_Player_Doram,-30;
+      bonus2 bIgnoreMResRaceRate,RC_Player_Human,-30;
+  - Combos:
+      - Combo:
+          - 21Anni3_W_Shadow_TW    # 24882 Sanctified Shadow Weapon
+          - Clear_Shield_Shadow3_TW    # 1270049 Sanctified Shadow Shield
+    Script: |
+      bonus bPAtk,15;
+      bonus bSMatk,15;
+      bonus2 bIgnoreResRaceRate,RC_All,50;
+      bonus2 bIgnoreResRaceRate,RC_Player_Doram,-50;
+      bonus2 bIgnoreResRaceRate,RC_Player_Human,-50;
+      bonus2 bIgnoreMResRaceRate,RC_All,50;
+      bonus2 bIgnoreMResRaceRate,RC_Player_Doram,-50;
+      bonus2 bIgnoreMResRaceRate,RC_Player_Human,-50;
+  - Combos:
+      - Combo:
+          - Love_Ring_US    # 490681
+          - Hate_Ring_US    # 490720
+    Script: |
+      bonus bSpeedRate,20;
+      bonus2 bDropAddRace,RC_All,20;
+  - Combos:
+      - Combo:
+          - Juncea_Follower_US    # 480681
+          - Simulation_Juncea_Card    # 300378
+    Script: |
+      bonus bPAtk,30;
+      bonus bSMatk,30;
+      bonus2 bAddClass,Class_All,40;
+      bonus2 bMagicAddClass,Class_All,40;
+      bonus2 bIgnoreDefRaceRate,RC_All,75;
+      bonus2 bIgnoreMdefRaceRate,RC_All,75;
+  - Combos:
+      - Combo:
+          - Juncea_Follower_US    # 480681
+          - R_Superior_Rgan_Card    # 300379
+    Script: |
+      bonus bPow,3;
+      bonus bSpl,3;
+      bonus bCon,3;
+      bonus bRes,50;
+      bonus bMRes,50;
+      bonus2 bSubSize,Size_All,30;
+  - Combos:
+      - Combo:
+          - Juncea_Follower_US    # 480681
+          - E_Inter_Rgan_Card    # 300380
+    Script: |
+      bonus bPow,3;
+      bonus bSpl,3;
+      bonus bCon,3;
+      bonus bCRate,5;
+      bonus bCritAtkRate,15;
+  - Combos:
+      - Combo:
+          - BP2_Middle_LT_US    # 410496
+          - Glacier_M_Mace    # 590039
+      - Combo:
+          - BP2_Middle_LT_US    # 410496
+          - Glacier_Mace    # 590038
+      - Combo:
+          - BP2_Middle_LT_US    # 410496
+          - Glacier_Whip    # 590030
+      - Combo:
+          - BP2_Middle_LT_US    # 410496
+          - Glacier_Violin    # 570029
+      - Combo:
+          - BP2_Middle_LT_US    # 410496
+          - Glacier_Knuckle    # 560032
+      - Combo:
+          - BP2_Middle_LT_US    # 410496
+          - Glacier_Foxtail    # 550070
+      - Combo:
+          - BP2_Middle_LT_US    # 410496
+          - Glacier_Wand    # 550069
+      - Combo:
+          - BP2_Middle_LT_US    # 410496
+          - Glacier_Book    # 540049
+      - Combo:
+          - BP2_Middle_LT_US    # 410496
+          - Glacier_Spear    # 530025
+      - Combo:
+          - BP2_Middle_LT_US    # 410496
+          - Glacier_Axe    # 520017
+      - Combo:
+          - BP2_Middle_LT_US    # 410496
+          - Glacier_B_Knife    # 510062
+      - Combo:
+          - BP2_Middle_LT_US    # 410496
+          - Glacier_R_Knife    # 510061
+      - Combo:
+          - BP2_Middle_LT_US    # 410496
+          - Glacier_B_Sword    # 500050
+      - Combo:
+          - BP2_Middle_LT_US    # 410496
+          - Glacier_Sword    # 500049
+      - Combo:
+          - BP2_Middle_LT_US    # 410496
+          - Glacier_Launcher    # 840009
+      - Combo:
+          - BP2_Middle_LT_US    # 410496
+          - Glacier_Gatling    # 830013
+      - Combo:
+          - BP2_Middle_LT_US    # 410496
+          - Glacier_Shotgun    # 820008
+      - Combo:
+          - BP2_Middle_LT_US    # 410496
+          - Glacier_Rifle    # 810010
+      - Combo:
+          - BP2_Middle_LT_US    # 410496
+          - Glacier_Revolver    # 800014
+      - Combo:
+          - BP2_Middle_LT_US    # 410496
+          - Glacier_Bow    # 700052
+      - Combo:
+          - BP2_Middle_LT_US    # 410496
+          - Glacier_Humma    # 650025
+      - Combo:
+          - BP2_Middle_LT_US    # 410496
+          - Glacier_Staff    # 640033
+      - Combo:
+          - BP2_Middle_LT_US    # 410496
+          - Glacier_Lance    # 630018
+      - Combo:
+          - BP2_Middle_LT_US    # 410496
+          - Glacier_T_Axe    # 620017
+      - Combo:
+          - BP2_Middle_LT_US    # 410496
+          - Glacier_Katar    # 610037
+      - Combo:
+          - BP2_Middle_LT_US    # 410496
+          - Glacier_T_Sword    # 600027
+      - Combo:
+          - BP2_Middle_LT_US    # 410496
+          - D_Glacier_M_Mace    # 590048
+      - Combo:
+          - BP2_Middle_LT_US    # 410496
+          - D_Glacier_Mace    # 590047
+      - Combo:
+          - BP2_Middle_LT_US    # 410496
+          - D_Glacier_Whip    # 590033
+      - Combo:
+          - BP2_Middle_LT_US    # 410496
+          - D_Glacier_Rifle    # 810015
+      - Combo:
+          - BP2_Middle_LT_US    # 410496
+          - D_Glacier_Violin    # 570032
+      - Combo:
+          - BP2_Middle_LT_US    # 410496
+          - D_Glacier_Knuckle    # 560037
+      - Combo:
+          - BP2_Middle_LT_US    # 410496
+          - D_Glacier_Foxtail    # 550090
+      - Combo:
+          - BP2_Middle_LT_US    # 410496
+          - D_Glacier_Wand    # 550089
+      - Combo:
+          - BP2_Middle_LT_US    # 410496
+          - D_Glacier_Book    # 540056
+      - Combo:
+          - BP2_Middle_LT_US    # 410496
+          - D_Glacier_Spear    # 530034
+      - Combo:
+          - BP2_Middle_LT_US    # 410496
+          - D_Glacier_Axe    # 520021
+      - Combo:
+          - BP2_Middle_LT_US    # 410496
+          - D_Glacier_B_Knife    # 510076
+      - Combo:
+          - BP2_Middle_LT_US    # 410496
+          - D_Glacier_R_Knife    # 510075
+      - Combo:
+          - BP2_Middle_LT_US    # 410496
+          - D_Glacier_B_Sword    # 500055
+      - Combo:
+          - BP2_Middle_LT_US    # 410496
+          - D_Glacier_Sword    # 500054
+      - Combo:
+          - BP2_Middle_LT_US    # 410496
+          - D_Glacier_Launcher    # 840010
+      - Combo:
+          - BP2_Middle_LT_US    # 410496
+          - D_Glacier_Gatling    # 830015
+      - Combo:
+          - BP2_Middle_LT_US    # 410496
+          - D_Glacier_Shotgun    # 820011
+      - Combo:
+          - BP2_Middle_LT_US    # 410496
+          - D_Glacier_Revolver    # 800015
+      - Combo:
+          - BP2_Middle_LT_US    # 410496
+          - D_Glacier_Bow    # 700059
+      - Combo:
+          - BP2_Middle_LT_US    # 410496
+          - D_Glacier_Humma    # 650028
+      - Combo:
+          - BP2_Middle_LT_US    # 410496
+          - D_Glacier_Staff    # 640034
+      - Combo:
+          - BP2_Middle_LT_US    # 410496
+          - D_Glacier_Lance    # 630019
+      - Combo:
+          - BP2_Middle_LT_US    # 410496
+          - D_Glacier_T_Axe    # 620019
+      - Combo:
+          - BP2_Middle_LT_US    # 410496
+          - D_Glacier_Katar    # 610041
+      - Combo:
+          - BP2_Middle_LT_US    # 410496
+          - D_Glacier_T_Sword    # 600030
+    Script: |
+      bonus bBaseAtk,300;
+      bonus bMatk,300;
+      bonus bPow,10;
+      bonus bSpl,10;
+      bonus2 bAddSize,Size_All,30;
+      bonus2 bMagicAddSize,Size_All,30;
+  - Combos:
+      - Combo:
+          - Comet_Cavalry_US    # 480621
+          - Ktullanux_Card    # 4419
+      - Combo:
+          - Comet_Cavalry_US    # 480621
+          - AwakenKtullanux_Card    # 27113
+      - Combo:
+          - Comet_Cavalry_US    # 480621
+          - Gaia_Pol_Card    # 300445
+    Script: |
+      bonus bPow,20;
+      bonus bSpl,20;
+      bonus2 bAddClass,Class_All,40;
+      bonus2 bMagicAddClass,Class_All,40;
+  - Combos:
+      - Combo:
+          - Comet_Cavalry_US    # 480621
+          - Sealed_Ktullanux_Card    # 4481
+    Script: |
+      bonus bPow,10;
+      bonus bSpl,10;
+      bonus2 bAddClass,Class_All,20;
+      bonus2 bMagicAddClass,Class_All,20;
+  - Combos:
+      - Combo:
+          - Corruption_Boots_US    # 470343
+          - Zombie_Slaughter_Card    # 4435
+    Script: |
+      bonus2 bMagicAtkEle,Ele_All,15;
+  - Combos:
+      - Combo:
+          - Corruption_Boots_US    # 470343
+          - Fallen_Bishop_Card    # 4441
+    Script: |
+      .@r = getequiprefinerycnt(EQI_SHOES);
+      bonus2 bMagicAtkEle,Ele_All,40;
+      if (.@r>=14) {
+         autobonus "{ bonus bInt,200; bonus bDex,200; bonus bLuk,200; bonus bSpl,50; }",50,10000,BF_MAGIC;
+      }
+  - Combos:
+      - Combo:
+          - Corruption_Boots_US    # 470343
+          - Sealed_F_Bishop_Card    # 4539
+    Script: |
+      .@r = getequiprefinerycnt(EQI_SHOES);
+      bonus2 bMagicAtkEle,Ele_All,20;
+      if (.@r>=14) {
+         autobonus "{ bonus bInt,100; bonus bDex,100; bonus bLuk,100; bonus bSpl,25; }",20,5000,BF_MAGIC;
+      }
+  - Combos:
+      - Combo:
+          - Kitten_Shield_US    # 460106
+          - Cat_FF_Hat    # 400758
+    Script: |
+      .@r = getequiprefinerycnt(EQI_HAND_L);
+      bonus bShortAtkRate,30;
+      bonus bLongAtkRate,30;
+      bonus bBaseAtk,50*(.@r/2);
+      bonus bPow,3*(.@r/3);
+  - Combos:
+      - Combo:
+          - Kitten_Shield_US    # 460106
+          - Cat_FF_Hat2    # 400759
+    Script: |
+      .@r = getequiprefinerycnt(EQI_HAND_L);
+      bonus2 bMagicAtkEle,Ele_All,30;
+      bonus bMatk,50*(.@r/2);
+      bonus bSpl,3*(.@r/3);
+  - Combos:
+      - Combo:
+          - Violent_D_S_Armor_LT    # 450357
+          - Nidhogg_Shadow_Card    # 4456
+    Script: |
+      bonus bSMatk,15;
+      bonus2 bMagicAddClass,Class_All,30;
+      bonus2 bIgnoreMDefClassRate,Class_All,50;
+      bonus2 bSubEle,Ele_All,-20;
+  - Combos:
+      - Combo:
+          - Violent_D_S_Armor_LT    # 450357
+          - Piece_Of_Angent_Skin    # 4456
+    Script: |
+      .@a = getequiprefinerycnt(EQI_ARMOR)/2;
+      .@r = (getequiprefinerycnt(EQI_ARMOR)+getequiprefinerycnt(EQI_GARMENT))/6;
+      bonus2 bMagicAddRace,RC_All,12;
+      bonus2 bMagicAddRace,RC_Player_Doram,-12;
+      bonus2 bMagicAddRace,RC_Player_Human,-12;
+      bonus2 bMagicAddEle,Ele_All,(2*.@a)+(7*.@r);
+  - Combos:
+      - Combo:
+          - Star_Cosmic_US    # 420569
+          - Star_Cluster_Of_Pow3    # 310676
+    Script: |
+      .@r = getequiprefinerycnt(EQI_ARMOR);
+      bonus bPow,10;
+      bonus bPAtk,15;
+      bonus2 bAddSize,Size_All,10*(.@r/3);
+  - Combos:
+      - Combo:
+          - Star_Cosmic_US    # 420569
+          - Star_Cluster_Of_Sta3    # 310679
+    Script: |
+      .@r = getequiprefinerycnt(EQI_ARMOR);
+      bonus bSta,10;
+      bonus bMaxHPrate,20+10*(.@r/3);
+  - Combos:
+      - Combo:
+          - Star_Cosmic_US    # 420569
+          - Star_Cluster_Of_Con3    # 310682
+    Script: |
+      .@r = getequiprefinerycnt(EQI_ARMOR);
+      bonus bCon,10;
+      bonus bPAtk,15;
+      bonus bLongAtkRate,10*(.@r/3);
+  - Combos:
+      - Combo:
+          - Star_Cosmic_US    # 420569
+          - Star_Cluster_Of_Crt3    # 310685
+    Script: |
+      .@r = getequiprefinerycnt(EQI_ARMOR);
+      bonus bCrt,10;
+      bonus bPAtk,15;
+      bonus bCritAtkRate,10*(.@r/3);
+  - Combos:
+      - Combo:
+          - Star_Cosmic_US    # 420569
+          - Star_Cluster_Of_Spl3    # 310688
+    Script: |
+      .@r = getequiprefinerycnt(EQI_ARMOR);
+      bonus bSpl,10;
+      bonus bSMatk,15;
+      bonus2 bMagicAddSize,Size_All,10*(.@r/3);
+  - Combos:
+      - Combo:
+          - Star_Cosmic_US    # 420569
+          - Star_Cluster_Of_Wis3    # 310691
+    Script: |
+      .@r = getequiprefinerycnt(EQI_ARMOR);
+      bonus bWis,10;
+      bonus bHPlus,15;
+      bonus bMaxSPrate,20;
+      bonus bMatk,200*(.@r/3);
+  - Combos:
+      - Combo:
+          - Nebula_Nec    # 490552
+          - Star_Armor_Of_Pow    # 450169
+    Script: |
+      bonus bCritAtkRate,35;
+      if (getenchantgrade(EQI_ARMOR) >= ENCHANTGRADE_C) {
+         bonus2 bAddRace,RC_All,12;
+      }
+      if (getenchantgrade(EQI_ARMOR) >= ENCHANTGRADE_A) {
+         bonus2 bAddRace,RC_All,15;
+      }
+  - Combos:
+      - Combo:
+          - Nebula_Nec    # 490552
+          - Star_Armor_Of_Sta    # 450170
+    Script: |
+      bonus bLongAtkDef,8;
+      if (getenchantgrade(EQI_ARMOR) >= ENCHANTGRADE_C) {
+         bonus bLongAtkDef,12;
+      }
+      if (getenchantgrade(EQI_ARMOR) >= ENCHANTGRADE_A) {
+         bonus bLongAtkDef,15;
+      }
+  - Combos:
+      - Combo:
+          - Nebula_Nec    # 490552
+          - Star_Suit_Of_Con    # 450171
+    Script: |
+      bonus2 bAddSize,Size_All,12;
+      if (getenchantgrade(EQI_ARMOR) >= ENCHANTGRADE_C) {
+         bonus2 bAddRace,RC_All,12;
+      }
+      if (getenchantgrade(EQI_ARMOR) >= ENCHANTGRADE_A) {
+         bonus2 bAddRace,RC_All,15;
+      }
+  - Combos:
+      - Combo:
+          - Nebula_Nec    # 490552
+          - Star_Suit_Of_Crt    # 450172
+    Script: |
+      bonus bLongAtkRate,15;
+      if (getenchantgrade(EQI_ARMOR) >= ENCHANTGRADE_C) {
+         bonus2 bAddEle,Ele_All,12;
+      }
+      if (getenchantgrade(EQI_ARMOR) >= ENCHANTGRADE_A) {
+         bonus2 bAddEle,Ele_All,15;
+      }
+  - Combos:
+      - Combo:
+          - Nebula_Nec    # 490552
+          - Star_Robe_Of_Spl    # 450173
+    Script: |
+      bonus2 bMagicAddSize,Size_All,12;
+      if (getenchantgrade(EQI_ARMOR) >= ENCHANTGRADE_C) {
+         bonus2 bMagicAddEle,Ele_All,12;
+      }
+      if (getenchantgrade(EQI_ARMOR) >= ENCHANTGRADE_A) {
+         bonus2 bMagicAddEle,Ele_All,15;
+      }
+  - Combos:
+      - Combo:
+          - Nebula_Nec    # 490552
+          - Star_Robe_Of_Wis    # 450174
+    Script: |
+      bonus bNearAtkDef,8;
+      if (getenchantgrade(EQI_ARMOR) >= ENCHANTGRADE_C) {
+         bonus bNearAtkDef,12;
+      }
+      if (getenchantgrade(EQI_ARMOR) >= ENCHANTGRADE_A) {
+         bonus bNearAtkDef,15;
+      }
+  - Combos:
+      - Combo:
+          - Nebula_Nec_LT_TH    # 490809
+          - Star_Armor_Of_Pow    # 450169
+    Script: |
+      bonus2 bAddSize,Size_All,15;
+      if (getenchantgrade(EQI_ARMOR) >= ENCHANTGRADE_D) {
+         bonus2 bAddEle,Ele_All,15;
+      }
+      if (getenchantgrade(EQI_ARMOR) >= ENCHANTGRADE_B) {
+         bonus2 bAddRace,RC_All,15;
+      }
+  - Combos:
+      - Combo:
+          - Nebula_Nec_LT_TH    # 490809
+          - Star_Armor_Of_Sta    # 450170
+    Script: |
+      bonus bLongAtkDef,10;
+      if (getenchantgrade(EQI_ARMOR) >= ENCHANTGRADE_D) {
+         bonus bLongAtkDef,15;
+      }
+      if (getenchantgrade(EQI_ARMOR) >= ENCHANTGRADE_B) {
+         bonus bLongAtkDef,15;
+      }
+  - Combos:
+      - Combo:
+          - Nebula_Nec_LT_TH    # 490809
+          - Star_Suit_Of_Con    # 450171
+    Script: |
+      bonus2 bAddSize,Size_All,15;
+      if (getenchantgrade(EQI_ARMOR) >= ENCHANTGRADE_D) {
+         bonus2 bAddEle,Ele_All,15;
+      }
+      if (getenchantgrade(EQI_ARMOR) >= ENCHANTGRADE_B) {
+         bonus2 bAddRace,RC_All,15;
+      }
+  - Combos:
+      - Combo:
+          - Nebula_Nec_LT_TH    # 490809
+          - Star_Suit_Of_Crt    # 450172
+    Script: |
+      bonus bLongAtkRate,15;
+      bonus bShortAtkRate,15;
+      if (getenchantgrade(EQI_ARMOR) >= ENCHANTGRADE_D) {
+         bonus2 bAddEle,Ele_All,15;
+      }
+      if (getenchantgrade(EQI_ARMOR) >= ENCHANTGRADE_B) {
+         bonus2 bAddRace,RC_All,15;
+      }
+  - Combos:
+      - Combo:
+          - Nebula_Nec_LT_TH    # 490809
+          - Star_Robe_Of_Spl    # 450173
+    Script: |
+      bonus2 bMagicAddSize,Size_All,15;
+      if (getenchantgrade(EQI_ARMOR) >= ENCHANTGRADE_D) {
+         bonus2 bMagicAddEle,Ele_All,15;
+      }
+      if (getenchantgrade(EQI_ARMOR) >= ENCHANTGRADE_B) {
+         bonus2 bMagicAddRace,RC_All,15;
+      }
+  - Combos:
+      - Combo:
+          - Nebula_Nec_LT_TH    # 490809
+          - Star_Robe_Of_Wis    # 450174
+    Script: |
+      bonus bNearAtkDef,10;
+      if (getenchantgrade(EQI_ARMOR) >= ENCHANTGRADE_D) {
+         bonus bNearAtkDef,15;
+      }
+      if (getenchantgrade(EQI_ARMOR) >= ENCHANTGRADE_B) {
+         bonus bNearAtkDef,15;
+      }
+  - Combos:
+      - Combo:
+          - Snow_Fox_TH    # 410549
+          - Glacier_M_Mace    # 590039
+      - Combo:
+          - Snow_Fox_TH    # 410549
+          - Glacier_Mace    # 590038
+      - Combo:
+          - Snow_Fox_TH    # 410549
+          - Glacier_Whip    # 590030
+      - Combo:
+          - Snow_Fox_TH    # 410549
+          - Glacier_Violin    # 570029
+      - Combo:
+          - Snow_Fox_TH    # 410549
+          - Glacier_Knuckle    # 560032
+      - Combo:
+          - Snow_Fox_TH    # 410549
+          - Glacier_Foxtail    # 550070
+      - Combo:
+          - Snow_Fox_TH    # 410549
+          - Glacier_Wand    # 550069
+      - Combo:
+          - Snow_Fox_TH    # 410549
+          - Glacier_Book    # 540049
+      - Combo:
+          - Snow_Fox_TH    # 410549
+          - Glacier_Spear    # 530025
+      - Combo:
+          - Snow_Fox_TH    # 410549
+          - Glacier_Axe    # 520017
+      - Combo:
+          - Snow_Fox_TH    # 410549
+          - Glacier_B_Knife    # 510062
+      - Combo:
+          - Snow_Fox_TH    # 410549
+          - Glacier_R_Knife    # 510061
+      - Combo:
+          - Snow_Fox_TH    # 410549
+          - Glacier_B_Sword    # 500050
+      - Combo:
+          - Snow_Fox_TH    # 410549
+          - Glacier_Sword    # 500049
+      - Combo:
+          - Snow_Fox_TH    # 410549
+          - Glacier_Launcher    # 840009
+      - Combo:
+          - Snow_Fox_TH    # 410549
+          - Glacier_Gatling    # 830013
+      - Combo:
+          - Snow_Fox_TH    # 410549
+          - Glacier_Shotgun    # 820008
+      - Combo:
+          - Snow_Fox_TH    # 410549
+          - Glacier_Rifle    # 810010
+      - Combo:
+          - Snow_Fox_TH    # 410549
+          - Glacier_Revolver    # 800014
+      - Combo:
+          - Snow_Fox_TH    # 410549
+          - Glacier_Bow    # 700052
+      - Combo:
+          - Snow_Fox_TH    # 410549
+          - Glacier_Humma    # 650025
+      - Combo:
+          - Snow_Fox_TH    # 410549
+          - Glacier_Staff    # 640033
+      - Combo:
+          - Snow_Fox_TH    # 410549
+          - Glacier_Lance    # 630018
+      - Combo:
+          - Snow_Fox_TH    # 410549
+          - Glacier_T_Axe    # 620017
+      - Combo:
+          - Snow_Fox_TH    # 410549
+          - Glacier_Katar    # 610037
+      - Combo:
+          - Snow_Fox_TH    # 410549
+          - Glacier_T_Sword    # 600027
+      - Combo:
+          - Snow_Fox_TH    # 410549
+          - D_Glacier_M_Mace    # 590048
+      - Combo:
+          - Snow_Fox_TH    # 410549
+          - D_Glacier_Mace    # 590047
+      - Combo:
+          - Snow_Fox_TH    # 410549
+          - D_Glacier_Whip    # 590033
+      - Combo:
+          - Snow_Fox_TH    # 410549
+          - D_Glacier_Rifle    # 810015
+      - Combo:
+          - Snow_Fox_TH    # 410549
+          - D_Glacier_Violin    # 570032
+      - Combo:
+          - Snow_Fox_TH    # 410549
+          - D_Glacier_Knuckle    # 560037
+      - Combo:
+          - Snow_Fox_TH    # 410549
+          - D_Glacier_Foxtail    # 550090
+      - Combo:
+          - Snow_Fox_TH    # 410549
+          - D_Glacier_Wand    # 550089
+      - Combo:
+          - Snow_Fox_TH    # 410549
+          - D_Glacier_Book    # 540056
+      - Combo:
+          - Snow_Fox_TH    # 410549
+          - D_Glacier_Spear    # 530034
+      - Combo:
+          - Snow_Fox_TH    # 410549
+          - D_Glacier_Axe    # 520021
+      - Combo:
+          - Snow_Fox_TH    # 410549
+          - D_Glacier_B_Knife    # 510076
+      - Combo:
+          - Snow_Fox_TH    # 410549
+          - D_Glacier_R_Knife    # 510075
+      - Combo:
+          - Snow_Fox_TH    # 410549
+          - D_Glacier_B_Sword    # 500055
+      - Combo:
+          - Snow_Fox_TH    # 410549
+          - D_Glacier_Sword    # 500054
+      - Combo:
+          - Snow_Fox_TH    # 410549
+          - D_Glacier_Launcher    # 840010
+      - Combo:
+          - Snow_Fox_TH    # 410549
+          - D_Glacier_Gatling    # 830015
+      - Combo:
+          - Snow_Fox_TH    # 410549
+          - D_Glacier_Shotgun    # 820011
+      - Combo:
+          - Snow_Fox_TH    # 410549
+          - D_Glacier_Revolver    # 800015
+      - Combo:
+          - Snow_Fox_TH    # 410549
+          - D_Glacier_Bow    # 700059
+      - Combo:
+          - Snow_Fox_TH    # 410549
+          - D_Glacier_Humma    # 650028
+      - Combo:
+          - Snow_Fox_TH    # 410549
+          - D_Glacier_Staff    # 640034
+      - Combo:
+          - Snow_Fox_TH    # 410549
+          - D_Glacier_Lance    # 630019
+      - Combo:
+          - Snow_Fox_TH    # 410549
+          - D_Glacier_T_Axe    # 620019
+      - Combo:
+          - Snow_Fox_TH    # 410549
+          - D_Glacier_Katar    # 610041
+      - Combo:
+          - Snow_Fox_TH    # 410549
+          - D_Glacier_T_Sword    # 600030
+    Script: |
+      bonus bDelayrate,-5;
+      bonus bAllTraitStats,3;
+      bonus bBaseAtk,100;
+      bonus bMatk,100;
+  - Combos:
+      - Combo:
+          - Snow_Fox_TH_LT    # 410561
+          - Glacier_M_Mace    # 590039
+      - Combo:
+          - Snow_Fox_TH_LT    # 410561
+          - Glacier_Mace    # 590038
+      - Combo:
+          - Snow_Fox_TH_LT    # 410561
+          - Glacier_Whip    # 590030
+      - Combo:
+          - Snow_Fox_TH_LT    # 410561
+          - Glacier_Violin    # 570029
+      - Combo:
+          - Snow_Fox_TH_LT    # 410561
+          - Glacier_Knuckle    # 560032
+      - Combo:
+          - Snow_Fox_TH_LT    # 410561
+          - Glacier_Foxtail    # 550070
+      - Combo:
+          - Snow_Fox_TH_LT    # 410561
+          - Glacier_Wand    # 550069
+      - Combo:
+          - Snow_Fox_TH_LT    # 410561
+          - Glacier_Book    # 540049
+      - Combo:
+          - Snow_Fox_TH_LT    # 410561
+          - Glacier_Spear    # 530025
+      - Combo:
+          - Snow_Fox_TH_LT    # 410561
+          - Glacier_Axe    # 520017
+      - Combo:
+          - Snow_Fox_TH_LT    # 410561
+          - Glacier_B_Knife    # 510062
+      - Combo:
+          - Snow_Fox_TH_LT    # 410561
+          - Glacier_R_Knife    # 510061
+      - Combo:
+          - Snow_Fox_TH_LT    # 410561
+          - Glacier_B_Sword    # 500050
+      - Combo:
+          - Snow_Fox_TH_LT    # 410561
+          - Glacier_Sword    # 500049
+      - Combo:
+          - Snow_Fox_TH_LT    # 410561
+          - Glacier_Launcher    # 840009
+      - Combo:
+          - Snow_Fox_TH_LT    # 410561
+          - Glacier_Gatling    # 830013
+      - Combo:
+          - Snow_Fox_TH_LT    # 410561
+          - Glacier_Shotgun    # 820008
+      - Combo:
+          - Snow_Fox_TH_LT    # 410561
+          - Glacier_Rifle    # 810010
+      - Combo:
+          - Snow_Fox_TH_LT    # 410561
+          - Glacier_Revolver    # 800014
+      - Combo:
+          - Snow_Fox_TH_LT    # 410561
+          - Glacier_Bow    # 700052
+      - Combo:
+          - Snow_Fox_TH_LT    # 410561
+          - Glacier_Humma    # 650025
+      - Combo:
+          - Snow_Fox_TH_LT    # 410561
+          - Glacier_Staff    # 640033
+      - Combo:
+          - Snow_Fox_TH_LT    # 410561
+          - Glacier_Lance    # 630018
+      - Combo:
+          - Snow_Fox_TH_LT    # 410561
+          - Glacier_T_Axe    # 620017
+      - Combo:
+          - Snow_Fox_TH_LT    # 410561
+          - Glacier_Katar    # 610037
+      - Combo:
+          - Snow_Fox_TH_LT    # 410561
+          - Glacier_T_Sword    # 600027
+      - Combo:
+          - Snow_Fox_TH_LT    # 410561
+          - D_Glacier_M_Mace    # 590048
+      - Combo:
+          - Snow_Fox_TH_LT    # 410561
+          - D_Glacier_Mace    # 590047
+      - Combo:
+          - Snow_Fox_TH_LT    # 410561
+          - D_Glacier_Whip    # 590033
+      - Combo:
+          - Snow_Fox_TH_LT    # 410561
+          - D_Glacier_Rifle    # 810015
+      - Combo:
+          - Snow_Fox_TH_LT    # 410561
+          - D_Glacier_Violin    # 570032
+      - Combo:
+          - Snow_Fox_TH_LT    # 410561
+          - D_Glacier_Knuckle    # 560037
+      - Combo:
+          - Snow_Fox_TH_LT    # 410561
+          - D_Glacier_Foxtail    # 550090
+      - Combo:
+          - Snow_Fox_TH_LT    # 410561
+          - D_Glacier_Wand    # 550089
+      - Combo:
+          - Snow_Fox_TH_LT    # 410561
+          - D_Glacier_Book    # 540056
+      - Combo:
+          - Snow_Fox_TH_LT    # 410561
+          - D_Glacier_Spear    # 530034
+      - Combo:
+          - Snow_Fox_TH_LT    # 410561
+          - D_Glacier_Axe    # 520021
+      - Combo:
+          - Snow_Fox_TH_LT    # 410561
+          - D_Glacier_B_Knife    # 510076
+      - Combo:
+          - Snow_Fox_TH_LT    # 410561
+          - D_Glacier_R_Knife    # 510075
+      - Combo:
+          - Snow_Fox_TH_LT    # 410561
+          - D_Glacier_B_Sword    # 500055
+      - Combo:
+          - Snow_Fox_TH_LT    # 410561
+          - D_Glacier_Sword    # 500054
+      - Combo:
+          - Snow_Fox_TH_LT    # 410561
+          - D_Glacier_Launcher    # 840010
+      - Combo:
+          - Snow_Fox_TH_LT    # 410561
+          - D_Glacier_Gatling    # 830015
+      - Combo:
+          - Snow_Fox_TH_LT    # 410561
+          - D_Glacier_Shotgun    # 820011
+      - Combo:
+          - Snow_Fox_TH_LT    # 410561
+          - D_Glacier_Revolver    # 800015
+      - Combo:
+          - Snow_Fox_TH_LT    # 410561
+          - D_Glacier_Bow    # 700059
+      - Combo:
+          - Snow_Fox_TH_LT    # 410561
+          - D_Glacier_Humma    # 650028
+      - Combo:
+          - Snow_Fox_TH_LT    # 410561
+          - D_Glacier_Staff    # 640034
+      - Combo:
+          - Snow_Fox_TH_LT    # 410561
+          - D_Glacier_Lance    # 630019
+      - Combo:
+          - Snow_Fox_TH_LT    # 410561
+          - D_Glacier_T_Axe    # 620019
+      - Combo:
+          - Snow_Fox_TH_LT    # 410561
+          - D_Glacier_Katar    # 610041
+      - Combo:
+          - Snow_Fox_TH_LT    # 410561
+          - D_Glacier_T_Sword    # 600030
+    Script: |
+      bonus bDelayrate,-10;
+      bonus bAllTraitStats,5;
+      bonus bBaseAtk,200;
+      bonus bMatk,200;
+  - Combos:
+      - Combo:
+          - SH_Evil_Ring_TH    # 490856
+          - Darkness_Foxtail_Model    # 550115
+    Script: |
+      .@r = getequiprefinerycnt(EQI_HAND_R);
+      bonus2 bMagicAddSize,Size_All,15;
+      bonus2 bSkillAtk,"SH_HYUN_ROK_CANNON",15;
+      bonus2 bSkillAtk,"SH_HYUN_ROKS_BREEZE",15;
+      if (.@r >= 10) {
+         bonus2 bMagicAddSize,Size_All,15;
+         bonus2 bSkillAtk,"SH_HYUN_ROK_CANNON",15;
+         bonus2 bSkillAtk,"SH_HYUN_ROKS_BREEZE",15;
+      }
+      if (getenchantgrade(EQI_HAND_R) >= ENCHANTGRADE_C) {
+         bonus bMatkRate,15;
+         bonus2 bSkillCooldown,"SH_HYUN_ROKS_BREEZE",-2000;
+         bonus2 bSkillAtk,"SH_HYUN_ROK_CANNON",20;
+         bonus2 bSkillAtk,"SH_HYUN_ROKS_BREEZE",20;
+      }
+  - Combos:
+      - Combo:
+          - SH_Evil_Ring_TH    # 490856
+          - Injustice_Power    # 312021
+    Script: |
+      bonus bSMatk,10;
+      bonus2 bSkillCooldown,"SH_HYUN_ROKS_BREEZE",-500;
+      bonus2 bMagicAddRace,RC_All,20;
+  - Combos:
+      - Combo:
+          - AM_Evil_Ring_TH    # 490874
+          - Devil_Wing_Staff    # 640036
+    Script: |
+      .@r = getequiprefinerycnt(EQI_HAND_R);
+      bonus2 bMagicAddSize,Size_All,15;
+      bonus2 bSkillAtk,"AG_SOUL_VC_STRIKE",15;
+      bonus2 bSkillAtk,"AG_MYSTERY_ILLUSION",15;
+      if (.@r >= 10) {
+         bonus2 bMagicAddSize,Size_All,15;
+         bonus2 bSkillAtk,"AG_SOUL_VC_STRIKE",15;
+         bonus2 bSkillAtk,"AG_MYSTERY_ILLUSION",15;
+      }
+      if (getenchantgrade(EQI_HAND_R) >= ENCHANTGRADE_C) {
+         bonus bMatkRate,15;
+         bonus2 bSkillCooldown,"AG_SOUL_VC_STRIKE",-500;
+         bonus2 bSkillCooldown,"AG_MYSTERY_ILLUSION",-1500;
+         bonus2 bSkillAtk,"AG_SOUL_VC_STRIKE",20;
+         bonus2 bSkillAtk,"AG_MYSTERY_ILLUSION",20;
+      }
+  - Combos:
+      - Combo:
+          - AM_Evil_Ring_TH    # 490874
+          - Injustice_Power    # 312021
+    Script: |
+      bonus2 bMagicAddEle,Ele_All,15;
+      bonus4 bAutoSpellOnSkill,"AG_SOUL_VC_STRIKE","AG_MYSTERY_ILLUSION",max(getskilllv("AG_MYSTERY_ILLUSION"),1),400;
+  - Combos:
+      - Combo:
+          - AM_Good_Ring_TH    # 490888
+          - Destiny_Staff    # 640037
+    Script: |
+      .@r = getequiprefinerycnt(EQI_HAND_R);
+      bonus2 bMagicAddSize,Size_All,15;
+      bonus2 bSkillAtk,"AG_FROZEN_SLASH",15;
+      bonus2 bSkillAtk,"AG_RAIN_OF_CRYSTAL",15;
+      if (.@r >= 10) {
+         bonus2 bMagicAddSize,Size_All,15;
+         bonus2 bSkillAtk,"AG_FROZEN_SLASH",15;
+         bonus2 bSkillAtk,"AG_RAIN_OF_CRYSTAL",15;
+      }
+      if (getenchantgrade(EQI_HAND_R) >= ENCHANTGRADE_C) {
+         bonus bMatkRate,15;
+         bonus2 bSkillCooldown,"AG_FROZEN_SLASH",-200;
+         bonus2 bSkillCooldown,"AG_RAIN_OF_CRYSTAL",-2000;
+         bonus2 bSkillAtk,"AG_FROZEN_SLASH",20;
+         bonus2 bSkillAtk,"AG_RAIN_OF_CRYSTAL",20;
+      }
+  - Combos:
+      - Combo:
+          - AM_Good_Ring_TH    # 490888
+          - Justice_Power    # 312014
+    Script: |
+      bonus2 bMagicAddEle,Ele_All,15;
+      bonus4 bAutoSpellOnSkill,"AG_FROZEN_SLASH","AG_RAIN_OF_CRYSTAL",max(getskilllv("AG_RAIN_OF_CRYSTAL"),1),400;
+  - Combos:
+      - Combo:
+          - WK_Mantle_All_TH_LT    # 480640
+          - Spirit_Of_Star_07_CN    # 312444
+    Script: |
+      bonus2 bAddClass,Class_Boss,15;
+      bonus2 bMagicAddClass,Class_Boss,15;
+      bonus2 bSkillAtk,"DK_HACKANDSLASHER",25;
+      bonus2 bSkillAtk,"IG_CROSS_RAIN",25;
+      bonus2 bSkillAtk,"AG_ALL_BLOOM",25;
+      bonus2 bSkillAtk,"EM_LIGHTNING_LAND",25;
+      bonus2 bSkillAtk,"MT_MIGHTY_SMASH",25;
+      bonus2 bSkillAtk,"BO_MAYHEMIC_THORNS",25;
+      bonus2 bSkillAtk,"SHC_SAVAGE_IMPACT",25;
+      bonus2 bSkillAtk,"ABC_FRENZY_SHOT",25;
+      bonus2 bSkillAtk,"CD_PETITIO",25;
+      bonus2 bSkillAtk,"IQ_THIRD_FLAME_BOMB",25;
+      bonus2 bSkillAtk,"WH_CRESCIVE_BOLT",25;
+      bonus2 bSkillAtk,"TR_METALIC_FURY",25;
+      bonus2 bSkillAtk,"SKE_NOON_BLAST",25;
+      bonus2 bSkillAtk,"SOA_TALISMAN_OF_FOUR_BEARING_GOD",25;
+      bonus2 bSkillAtk,"SS_KUNAIKAITEN",25;
+      bonus2 bSkillAtk,"SS_REIKETSUHOU",25;
+      bonus2 bSkillAtk,"NW_SPIRAL_SHOOTING",25;
+      bonus2 bSkillAtk,"SH_HOGOGONG_STRIKE",25;
+      bonus2 bSkillAtk,"HN_NAPALM_VULCAN_STRIKE",25;
+  - Combos:
+      - Combo:
+          - Heroic_Hairband_AG    # 400814
+          - Iron_Staff_LT    # 640027
+    Script: |
+      .@r = getequiprefinerycnt(EQI_HAND_R);
+      bonus2 bMagicAddSize,Size_All,10;
+      bonus2 bSkillAtk,"AG_ALL_BLOOM",4*(.@r/3);
+      bonus2 bSkillAtk,"AG_VIOLENT_QUAKE",4*(.@r/3);
+  - Combos:
+      - Combo:
+          - Heroic_Hairband_AG    # 400814
+          - Blue_Crystal_Staff_LT    # 640028
+    Script: |
+      .@r = getequiprefinerycnt(EQI_HAND_R);
+      bonus2 bMagicAddSize,Size_All,10;
+      bonus2 bSkillAtk,"AG_FROZEN_SLASH",4*(.@r/3);
+      bonus2 bSkillAtk,"AG_SOUL_VC_STRIKE",4*(.@r/3);
+  - Combos:
+      - Combo:
+          - Heroic_Hairband_AG_LT    # 400817
+          - Iron_Staff_LT    # 640027
+    Script: |
+      .@r = getequiprefinerycnt(EQI_HAND_R);
+      bonus2 bMagicAddSize,Size_All,15;
+      bonus2 bSkillAtk,"AG_ALL_BLOOM",6*(.@r/3);
+      bonus2 bSkillAtk,"AG_VIOLENT_QUAKE",6*(.@r/3);
+      if (getenchantgrade(EQI_HAND_R) >= ENCHANTGRADE_C) {
+         bonus2 bSkillCooldown,"AG_ALL_BLOOM",-2000;
+         bonus2 bSkillCooldown,"AG_VIOLENT_QUAKE",-2000;
+      }
+  - Combos:
+      - Combo:
+          - Heroic_Hairband_AG_LT    # 400817
+          - Blue_Crystal_Staff_LT    # 640028
+    Script: |
+      .@r = getequiprefinerycnt(EQI_HAND_R);
+      bonus2 bMagicAddSize,Size_All,15;
+      bonus2 bSkillAtk,"AG_FROZEN_SLASH",6*(.@r/3);
+      bonus2 bSkillAtk,"AG_SOUL_VC_STRIKE",6*(.@r/3);
+      if (getenchantgrade(EQI_HAND_R) >= ENCHANTGRADE_C) {
+         bonus2 bSkillAtk,"AG_FROZEN_SLASH",15;
+         bonus2 bSkillAtk,"AG_SOUL_VC_STRIKE",15;
+      }
+  - Combos:
+      - Combo:
+          - Iron_Staff_LT    # 640027
+          - Hero_Valor_AG_1    # 314033
+    Script: |
+      .@r = getequiprefinerycnt(EQI_HAND_R);
+      bonus2 bMagicAddRace,RC_All,5;
+      bonus2 bSkillAtk,"AG_ALL_BLOOM",2*(.@r/3);
+      bonus2 bSkillAtk,"AG_VIOLENT_QUAKE",2*(.@r/3);
+      if (getenchantgrade(EQI_HAND_R) >= ENCHANTGRADE_C) {
+         bonus2 bSkillAtk,"AG_ALL_BLOOM",5;
+         bonus2 bSkillAtk,"AG_VIOLENT_QUAKE",5;
+      }
+  - Combos:
+      - Combo:
+          - Blue_Crystal_Staff_LT    # 640028
+          - Hero_Valor_AG_1    # 314033
+    Script: |
+      .@r = getequiprefinerycnt(EQI_HAND_R);
+      bonus2 bMagicAddSize,Size_All,5;
+      bonus2 bSkillAtk,"AG_FROZEN_SLASH",2*(.@r/3);
+      bonus2 bSkillAtk,"AG_SOUL_VC_STRIKE",2*(.@r/3);
+      if (getenchantgrade(EQI_HAND_R) >= ENCHANTGRADE_C) {
+         bonus2 bSkillAtk,"AG_FROZEN_SLASH",5;
+         bonus2 bSkillAtk,"AG_SOUL_VC_STRIKE",5;
+      }
+  - Combos:
+      - Combo:
+          - Iron_Staff_LT    # 640027
+          - Hero_Valor_AG_2    # 314034
+    Script: |
+      .@r = getequiprefinerycnt(EQI_HAND_R);
+      bonus2 bMagicAddRace,RC_All,10;
+      bonus2 bSkillAtk,"AG_ALL_BLOOM",4*(.@r/3);
+      bonus2 bSkillAtk,"AG_VIOLENT_QUAKE",4*(.@r/3);
+      if (getenchantgrade(EQI_HAND_R) >= ENCHANTGRADE_C) {
+         bonus2 bSkillAtk,"AG_ALL_BLOOM",10;
+         bonus2 bSkillAtk,"AG_VIOLENT_QUAKE",10;
+      }
+  - Combos:
+      - Combo:
+          - Blue_Crystal_Staff_LT    # 640028
+          - Hero_Valor_AG_2    # 314034
+    Script: |
+      .@r = getequiprefinerycnt(EQI_HAND_R);
+      bonus2 bMagicAddSize,Size_All,10;
+      bonus2 bSkillAtk,"AG_FROZEN_SLASH",4*(.@r/3);
+      bonus2 bSkillAtk,"AG_SOUL_VC_STRIKE",4*(.@r/3);
+      if (getenchantgrade(EQI_HAND_R) >= ENCHANTGRADE_C) {
+         bonus2 bSkillAtk,"AG_FROZEN_SLASH",10;
+         bonus2 bSkillAtk,"AG_SOUL_VC_STRIKE",10;
+      }
+  - Combos:
+      - Combo:
+          - Iron_Staff_LT    # 640027
+          - Hero_Valor_AG_3    # 314035
+    Script: |
+      .@r = getequiprefinerycnt(EQI_HAND_R);
+      bonus2 bMagicAddRace,RC_All,15;
+      bonus2 bSkillAtk,"AG_ALL_BLOOM",6*(.@r/3);
+      bonus2 bSkillAtk,"AG_VIOLENT_QUAKE",6*(.@r/3);
+      if (getenchantgrade(EQI_HAND_R) >= ENCHANTGRADE_C) {
+         bonus2 bSkillAtk,"AG_ALL_BLOOM",10;
+         bonus2 bSkillAtk,"AG_VIOLENT_QUAKE",10;
+         bonus2 bSkillCooldown,"AG_ALL_BLOOM",-1000;
+         bonus2 bSkillCooldown,"AG_VIOLENT_QUAKE",-1000;
+      }
+  - Combos:
+      - Combo:
+          - Blue_Crystal_Staff_LT    # 640028
+          - Hero_Valor_AG_3    # 314035
+    Script: |
+      .@r = getequiprefinerycnt(EQI_HAND_R);
+      bonus2 bMagicAddSize,Size_All,15;
+      bonus2 bSkillAtk,"AG_FROZEN_SLASH",6*(.@r/3);
+      bonus2 bSkillAtk,"AG_SOUL_VC_STRIKE",6*(.@r/3);
+      if (getenchantgrade(EQI_HAND_R) >= ENCHANTGRADE_C) {
+         bonus2 bSkillAtk,"AG_FROZEN_SLASH",20;
+         bonus2 bSkillAtk,"AG_SOUL_VC_STRIKE",20;
+      }
+  - Combos:
+      - Combo:
+          - Volcano_H_Ring_TH    # 490680
+          - Iron_Staff_LT    # 640027
+    Script: |
+      .@r = getequiprefinerycnt(EQI_HAND_R);
+      bonus2 bMagicAddSize,Size_All,15;
+      bonus2 bSkillAtk,"AG_ALL_BLOOM",10;
+      bonus2 bSkillAtk,"AG_VIOLENT_QUAKE",10;
+      if (.@r>=10) {
+         bonus bMatkRate,20;
+         bonus2 bSkillAtk,"AG_ALL_BLOOM",10;
+         bonus2 bSkillAtk,"AG_VIOLENT_QUAKE",10;
+      }
+      if (getenchantgrade(EQI_HAND_R) >= ENCHANTGRADE_C) {
+         bonus bSMatk,5;
+         bonus2 bSkillAtk,"AG_ALL_BLOOM",15;
+         bonus2 bSkillAtk,"AG_VIOLENT_QUAKE",15;
+      }
+  - Combos:
+      - Combo:
+          - HeroAcc_AG1    # 313786
+          - Hero_Token_AG    # 490152
+    Script: |
+      bonus2 bSkillAtk,"AG_ALL_BLOOM",15;
+      bonus2 bSkillAtk,"AG_VIOLENT_QUAKE",15;
+  - Combos:
+      - Combo:
+          - HeroAcc_AG1    # 313786
+          - Hero_Boots_LT    # 470094
+    Script: |
+      if (getenchantgrade(EQI_SHOES) >= ENCHANTGRADE_B) {
+         autobonus "{ bonus bSpl,100; bonus bSMatk,20; }",30,10000,BF_MAGIC,"{ specialeffect2 EF_MVP; showscript \"I'm Hero\"; }";
+      } else {
+         autobonus "{ bonus bSpl,50; bonus bSMatk,10; }",30,10000,BF_MAGIC,"{ specialeffect2 EF_MVP; showscript \"I'm Hero\"; }";
+      }
+  - Combos:
+      - Combo:
+          - HeroAcc_WL1    # 313787
+          - Iron_Staff_LT    # 640027
+    Script: |
+      .@r = getequiprefinerycnt(EQI_HAND_R);
+      bonus2 bSkillCooldown,"AG_ALL_BLOOM",-2000;
+      bonus2 bSkillCooldown,"AG_VIOLENT_QUAKE",-2000;
+      bonus2 bSkillAtk,"AG_ALL_BLOOM",2*(.@r/2);
+      bonus2 bSkillAtk,"AG_VIOLENT_QUAKE",2*(.@r/2);
+  - Combos:
+      - Combo:
+          - HeroAcc_WL1    # 313787
+          - HeroInsignia_INT    # 310917
+    Script: |
+      bonus2 bMagicAddClass,Class_All,10;
+  - Combos:
+      - Combo:
+          - HeroAcc_WL1    # 313787
+          - HeroBoots_INT    # 310911
+    Script: |
+      bonus2 bSkillAtk,"AG_ALL_BLOOM",10;
+      bonus2 bSkillAtk,"AG_VIOLENT_QUAKE",10;
+  - Combos:
+      - Combo:
+          - S_BP8_Magic_W    # 1270146
+          - S_BP8_Magic_S    # 1270147
+    Script: |
+      bonus bSMatk,10;
+      bonus2 bIgnoreMResRaceRate,RC_All,30;
+  - Combos:
+      - Combo:
+          - S_BP9_Magic_A    # 1270192
+          - S_BP9_Magic_S    # 1270193
+    Script: |
+      .@r = getequiprefinerycnt(EQI_SHADOW_ARMOR) + getequiprefinerycnt(EQI_SHADOW_SHOES);
+      bonus2 bMagicAtkEle,Ele_All,4;
+      if (.@r>19) {
+         bonus bNoWalkDelay;
+      }
+  - Combos:
+      - Combo:
+          - Polluted_Follower_US    # 540124
+          - Polluted_Dark_L_Card    # 27363
+    Script: |
+      bonus bAllTraitStats,20;
+      autobonus "{ bonus bStr,250; bonus bPow,250; }",70,7000,BF_MAGIC|BF_WEAPON;
+  - Combos:
+      - Combo:
+          - Tiara_Follower_US    # 540124
+          - Tiara_Card    # 300193
+    Script: |
+      bonus bSMatk,40;
+      bonus2 bMagicAddClass,Class_All,40;
+      if (getenchantgrade(EQI_ARMOR) >= ENCHANTGRADE_A) {
+         skill "AG_CRIMSON_ARROW",5;
+         bonus2 bIgnoreMdefRaceRate,RC_All,100;
+      }
+  - Combos:
+      - Combo:
+          - Tiara_Follower_US    # 540124
+          - Knight_Sakray_Card    # 27184
+    Script: |
+      bonus bSpl,5;
+      bonus2 bMagicAtkEle,Ele_All,20;
+  - Combos:
+      - Combo:
+          - Tiara_Follower_US    # 540124
+          - LivingDead_Card    # 27103
+    Script: |
+      .@r = getequiprefinerycnt(EQI_ARMOR);
+      if (.@r>11) {
+         bonus2 bMagicAddEle,Ele_All,20;
+         bonus2 bSkillAtk,"AG_CRIMSON_ARROW",30;
+      }
+  - Combos:
+      - Combo:
+          - Cocytus_Armor_US    # 450481
+          - AngerGazeti_Card    # 27110
+    Script: |
+      bonus4 bAutoSpellOnSkill,"MG_COLDBOLT","WL_FROSTMISTY",5,200;
+      bonus2 bMagicAtkEle,Ele_Water,20;
+  - Combos:
+      - Combo:
+          - Cocytus_Armor_US    # 450481
+          - Garm_Card    # 4324
+    Script: |
+      bonus bSpl,25;
+      bonus2 bMagicAtkEle,Ele_Water,40;
+  - Combos:
+      - Combo:
+          - Nebula_Orb_US    # 420438
+          - Star_Armor_Of_Pow    # 450169
+    Script: |
+      .@r = getequiprefinerycnt(EQI_ARMOR);
+      bonus bSpeedRate,25;
+      bonus bPow,10;
+      bonus bPAtk,15;
+      bonus2 bAddSize,Size_All,12*(.@r/3);
+  - Combos:
+      - Combo:
+          - Nebula_Orb_US    # 420438
+          - Star_Armor_Of_Sta    # 450170
+    Script: |
+      .@r = getequiprefinerycnt(EQI_ARMOR);
+      bonus bSpeedRate,25;
+      bonus bSta,10;
+      bonus bMaxHPrate,20+12*(.@r/3);
+  - Combos:
+      - Combo:
+          - Nebula_Orb_US    # 420438
+          - Star_Suit_Of_Con    # 450171
+    Script: |
+      .@r = getequiprefinerycnt(EQI_ARMOR);
+      bonus bSpeedRate,25;
+      bonus bCon,10;
+      bonus bPAtk,15;
+      bonus bLongAtkRate,12*(.@r/3);
+  - Combos:
+      - Combo:
+          - Nebula_Orb_US    # 420438
+          - Star_Suit_Of_Crt    # 450172
+    Script: |
+      .@r = getequiprefinerycnt(EQI_ARMOR);
+      bonus bSpeedRate,25;
+      bonus bCrt,10;
+      bonus bPAtk,15;
+      bonus bCritAtkRate,12*(.@r/3);
+  - Combos:
+      - Combo:
+          - Nebula_Orb_US    # 420438
+          - Star_Robe_Of_Spl    # 450173
+    Script: |
+      .@r = getequiprefinerycnt(EQI_ARMOR);
+      bonus bSpeedRate,25;
+      bonus bSpl,10;
+      bonus bSMatk,15;
+      bonus2 bMagicAddSize,Size_All,12*(.@r/3);
+  - Combos:
+      - Combo:
+          - Nebula_Orb_US    # 420438
+          - Star_Robe_Of_Wis    # 450174
+    Script: |
+      .@r = getequiprefinerycnt(EQI_ARMOR);
+      bonus bSpeedRate,25;
+      bonus bWis,10;
+      bonus bHPlus,15;
+      bonus bMaxSPrate,20;
+      bonus bMatk,120*(.@r/3);
+  - Combos:
+      - Combo:
+          - Dragon_Shoes_US    # 470345
+          - Violent_D_S_Armor_LT    # 450357
+    Script: |
+      .@r = getequiprefinerycnt(EQI_SHOES);
+      bonus bMatk,200;
+      bonus2 bMagicAddEle,Ele_All,20;
+      if (.@r>=13) {
+         bonus2 bMagicAddClass,Class_All,25;
+         autobonus "{ bonus bInt,150; bonus bDex,150; bonus bLuk,150; }",50,2000,BF_MAGIC;
+      }
+  - Combos:
+      - Combo:
+          - Old_Moroc_Acc_LT    # 410553
+          - Marduk_Card    #  4112
+    Script: |
+      bonus bDelayRate,-10;
+      bonus bAllStats,10;
+      bonus2 bAddEle,Ele_All,15;
+      bonus2 bMagicAddEle,Ele_All,15;
+  - Combos:
+      - Combo:
+          - Old_Moroc_Acc_LT    # 410553
+          - Pharaoh_Card    #  4148
+    Script: |
+      bonus bIntravision;
+      bonus bDelayRate,-20;
+      bonus bAllTraitStats,10;
+      bonus2 bAddEle,Ele_All,30;
+      bonus2 bMagicAddEle,Ele_All,30;
+  - Combos:
+      - Combo:
+          - AG_Dim_Ring_TH    # 490941
+          - D_Glacier_Staff    #  640034
+    Script: |
+      .@r = getequiprefinerycnt(EQI_HAND_R);
+      bonus2 bMagicAddSize,Size_All,20;
+      bonus2 bSkillAtk,"AG_MYSTERY_ILLUSION",20;
+      if (.@r >= 10) {
+        bonus2 bMagicAtkEle,Ele_All,20;
+        bonus2 bSkillAtk,"AG_MYSTERY_ILLUSION",20;
+      }
+      if (getenchantgrade(EQI_HAND_R) >= ENCHANTGRADE_C) {
+         bonus bSMatk,15;
+         bonus2 bSkillAtk,"AG_MYSTERY_ILLUSION",25;
+      }
+  - Combos:
+      - Combo:
+          - AG_Dim_Ring_TH    # 490941
+          - D_Glacier_Wand    #  550089
+    Script: |
+      .@r = getequiprefinerycnt(EQI_HAND_R);
+      bonus2 bMagicAddSize,Size_All,15;
+      bonus2 bSkillAtk,"AG_MYSTERY_ILLUSION",15;
+      if (.@r >= 10) {
+        bonus2 bMagicAtkEle,Ele_All,15;
+        bonus2 bSkillAtk,"AG_MYSTERY_ILLUSION",15;
+      }
+      if (getenchantgrade(EQI_HAND_R) >= ENCHANTGRADE_C) {
+         bonus bSMatk,10;
+         bonus2 bSkillAtk,"AG_MYSTERY_ILLUSION",20;
+      }
+  - Combos:
+      - Combo:
+          - DimAcc_AG    # 314985
+          - D_Glacier_Staff    #  640034
+    Script: |
+      .@r = getequiprefinerycnt(EQI_HAND_R);
+      bonus2 bMagicAtkEle,Ele_All,15;
+      bonus2 bSkillAtk,"AG_MYSTERY_ILLUSION",5*(.@r/2);
+      bonus2 bSkillAtk,"WL_COMET",20*(.@r/2);
+      if (getenchantgrade(EQI_HAND_R) >= ENCHANTGRADE_C) {
+         bonus2 bSubClass,Class_All,30;
+         bonus2 bSkillCooldown,"AG_MYSTERY_ILLUSION",-1650;
+         if (.@r >= 12) {
+            bonus2 bSkillCooldown,"AG_MYSTERY_ILLUSION",-1650;
+            bonus2 bSkillCooldown,"WL_COMET",-20000;
+            bonus2 bSkillAtk,"AG_MYSTERY_ILLUSION",20;
+            bonus2 bSkillAtk,"WL_COMET",50;
+         }
+      }
+  - Combos:
+      - Combo:
+          - DimAcc_AG    # 314985
+          - D_Glacier_Wand    #  550089
+    Script: |
+      .@r = getequiprefinerycnt(EQI_HAND_R);
+      bonus2 bMagicAtkEle,Ele_All,10;
+      bonus2 bSkillAtk,"AG_MYSTERY_ILLUSION",4*(.@r/2);
+      bonus2 bSkillAtk,"WL_COMET",10*(.@r/2);
+      if (getenchantgrade(EQI_HAND_R) >= ENCHANTGRADE_C) {
+         bonus2 bSkillCooldown,"AG_MYSTERY_ILLUSION",-1500;
+         if (.@r >= 12) {
+            bonus2 bSkillCooldown,"AG_MYSTERY_ILLUSION",-1500;
+            bonus2 bSkillAtk,"AG_MYSTERY_ILLUSION",15;
+            bonus2 bSkillAtk,"WL_COMET",25;
+         }
+      }
+  - Combos:
+      - Combo:
+          - Glacier_Helm_LT_TH    # 401237
+          - Glacier_M_Mace    # 590039
+      - Combo:
+          - Glacier_Helm_LT_TH    # 401237
+          - Glacier_Mace    # 590038
+      - Combo:
+          - Glacier_Helm_LT_TH    # 401237
+          - Glacier_Whip    # 590030
+      - Combo:
+          - Glacier_Helm_LT_TH    # 401237
+          - Glacier_Violin    # 570029
+      - Combo:
+          - Glacier_Helm_LT_TH    # 401237
+          - Glacier_Knuckle    # 560032
+      - Combo:
+          - Glacier_Helm_LT_TH    # 401237
+          - Glacier_Foxtail    # 550070
+      - Combo:
+          - Glacier_Helm_LT_TH    # 401237
+          - Glacier_Wand    # 550069
+      - Combo:
+          - Glacier_Helm_LT_TH    # 401237
+          - Glacier_Book    # 540049
+      - Combo:
+          - Glacier_Helm_LT_TH    # 401237
+          - Glacier_Spear    # 530025
+      - Combo:
+          - Glacier_Helm_LT_TH    # 401237
+          - Glacier_Axe    # 520017
+      - Combo:
+          - Glacier_Helm_LT_TH    # 401237
+          - Glacier_B_Knife    # 510062
+      - Combo:
+          - Glacier_Helm_LT_TH    # 401237
+          - Glacier_R_Knife    # 510061
+      - Combo:
+          - Glacier_Helm_LT_TH    # 401237
+          - Glacier_B_Sword    # 500050
+      - Combo:
+          - Glacier_Helm_LT_TH    # 401237
+          - Glacier_Sword    # 500049
+      - Combo:
+          - Glacier_Helm_LT_TH    # 401237
+          - Glacier_Launcher    # 840009
+      - Combo:
+          - Glacier_Helm_LT_TH    # 401237
+          - Glacier_Gatling    # 830013
+      - Combo:
+          - Glacier_Helm_LT_TH    # 401237
+          - Glacier_Shotgun    # 820008
+      - Combo:
+          - Glacier_Helm_LT_TH    # 401237
+          - Glacier_Rifle    # 810010
+      - Combo:
+          - Glacier_Helm_LT_TH    # 401237
+          - Glacier_Revolver    # 800014
+      - Combo:
+          - Glacier_Helm_LT_TH    # 401237
+          - Glacier_Bow    # 700052
+      - Combo:
+          - Glacier_Helm_LT_TH    # 401237
+          - Glacier_Humma    # 650025
+      - Combo:
+          - Glacier_Helm_LT_TH    # 401237
+          - Glacier_Staff    # 640033
+      - Combo:
+          - Glacier_Helm_LT_TH    # 401237
+          - Glacier_Lance    # 630018
+      - Combo:
+          - Glacier_Helm_LT_TH    # 401237
+          - Glacier_T_Axe    # 620017
+      - Combo:
+          - Glacier_Helm_LT_TH    # 401237
+          - Glacier_Katar    # 610037
+      - Combo:
+          - Glacier_Helm_LT_TH    # 401237
+          - Glacier_T_Sword    # 600027
+      - Combo:
+          - Glacier_Helm_LT_TH    # 401237
+          - D_Glacier_M_Mace    # 590048
+      - Combo:
+          - Glacier_Helm_LT_TH    # 401237
+          - D_Glacier_Mace    # 590047
+      - Combo:
+          - Glacier_Helm_LT_TH    # 401237
+          - D_Glacier_Whip    # 590033
+      - Combo:
+          - Glacier_Helm_LT_TH    # 401237
+          - D_Glacier_Rifle    # 810015
+      - Combo:
+          - Glacier_Helm_LT_TH    # 401237
+          - D_Glacier_Violin    # 570032
+      - Combo:
+          - Glacier_Helm_LT_TH    # 401237
+          - D_Glacier_Knuckle    # 560037
+      - Combo:
+          - Glacier_Helm_LT_TH    # 401237
+          - D_Glacier_Foxtail    # 550090
+      - Combo:
+          - Glacier_Helm_LT_TH    # 401237
+          - D_Glacier_Wand    # 550089
+      - Combo:
+          - Glacier_Helm_LT_TH    # 401237
+          - D_Glacier_Book    # 540056
+      - Combo:
+          - Glacier_Helm_LT_TH    # 401237
+          - D_Glacier_Spear    # 530034
+      - Combo:
+          - Glacier_Helm_LT_TH    # 401237
+          - D_Glacier_Axe    # 520021
+      - Combo:
+          - Glacier_Helm_LT_TH    # 401237
+          - D_Glacier_B_Knife    # 510076
+      - Combo:
+          - Glacier_Helm_LT_TH    # 401237
+          - D_Glacier_R_Knife    # 510075
+      - Combo:
+          - Glacier_Helm_LT_TH    # 401237
+          - D_Glacier_B_Sword    # 500055
+      - Combo:
+          - Glacier_Helm_LT_TH    # 401237
+          - D_Glacier_Sword    # 500054
+      - Combo:
+          - Glacier_Helm_LT_TH    # 401237
+          - D_Glacier_Launcher    # 840010
+      - Combo:
+          - Glacier_Helm_LT_TH    # 401237
+          - D_Glacier_Gatling    # 830015
+      - Combo:
+          - Glacier_Helm_LT_TH    # 401237
+          - D_Glacier_Shotgun    # 820011
+      - Combo:
+          - Glacier_Helm_LT_TH    # 401237
+          - D_Glacier_Revolver    # 800015
+      - Combo:
+          - Glacier_Helm_LT_TH    # 401237
+          - D_Glacier_Bow    # 700059
+      - Combo:
+          - Glacier_Helm_LT_TH    # 401237
+          - D_Glacier_Humma    # 650028
+      - Combo:
+          - Glacier_Helm_LT_TH    # 401237
+          - D_Glacier_Staff    # 640034
+      - Combo:
+          - Glacier_Helm_LT_TH    # 401237
+          - D_Glacier_Lance    # 630019
+      - Combo:
+          - Glacier_Helm_LT_TH    # 401237
+          - D_Glacier_T_Axe    # 620019
+      - Combo:
+          - Glacier_Helm_LT_TH    # 401237
+          - D_Glacier_Katar    # 610041
+      - Combo:
+          - Glacier_Helm_LT_TH    # 401237
+          - D_Glacier_T_Sword    # 600030
+    Script: |
+      .@r = getequiprefinerycnt(EQI_HAND_R);
+      bonus bAtkRate,8;
+      bonus bMatkRate,8;
+      bonus bBaseAtk,100;
+      bonus bMatk,100;
+      bonus bAspdRate,8*(.@r/3);
+      bonus bShortAtkRate,8*(.@r/3);
+      bonus bLongAtkRate,8*(.@r/3);
+      bonus2 bMagicAtkEle,Ele_All,12*(.@r/3);
+  - Combos:
+      - Combo:
+          - Secret_Illusion_Ring_TH    # 490310
+          - Improve_Orb_L_Vit    #  29547
+    Script: |
+      bonus bVariableCastRate,-20;
+  - Combos:
+      - Combo:
+          - Secret_Illusion_Ring_TH    # 490310
+          - Improve_Orb_L_INT    #  29548
+    Script: |
+      bonus2 bIgnoreMdefRaceRate,RC_All,50;
+      bonus2 bIgnoreMdefRaceRate,RC_Player_Human,-50;
+      bonus2 bIgnoreMdefRaceRate,RC_Player_Doram,-50;
+  - Combos:
+      - Combo:
+          - Secret_Illusion_Ring_TH    # 490310
+          - Improve_Orb_L_DEX    #  29549
+    Script: |
+      bonus bPerfectHitAddRate,20;
+  - Combos:
+      - Combo:
+          - Secret_Illusion_Ring_TH    # 490310
+          - Improve_Orb_L_STR    #  29550
+    Script: |
+      bonus bMaxHPrate,15;
+  - Combos:
+      - Combo:
+          - Secret_Illusion_Ring_TH    # 490310
+          - Improve_Orb_L_AGI    #  29551
+    Script: |
+      bonus bLongAtkRate,8;
+  - Combos:
+      - Combo:
+          - Secret_Illusion_Ring_TH    # 490310
+          - Improve_Orb_L_LUK    #  29552
+    Script: |
+      bonus bFlee,40;
+  - Combos:
+      - Combo:
+          - Glittering_Cat_Choker_TH    # 7000001
+          - Improve_Orb_L_LUK    #  29552
+    Script: |
+      bonus bFixedCast,-3000;
+  - Combos:
+      - Combo:
+          - SH_Dim_Ring_TH    # 491009
+          - D_Glacier_Foxtail    #  550090
+    Script: |
+      .@r = getequiprefinerycnt(EQI_HAND_R);
+      bonus2 bMagicAtkEle,Ele_All,10;
+      bonus2 bSkillAtk,"SH_HYUN_ROKS_BREEZE",4*(.@r/2);
+      if (getenchantgrade(EQI_HAND_R) >= ENCHANTGRADE_C) {
+         bonus2 bSkillCooldown,"SH_HYUN_ROKS_BREEZE",-2500;
+         if (.@r >= 12) {
+            bonus2 bSkillCooldown,"SU_LOPE",-3000;
+            autobonus "{ bonus bSpl,60; bonus bSMatk,15; }",40,10000,BF_MAGIC,"{ specialeffect2 EF_MVP; }";
+            bonus2 bSkillAtk,"SH_HYUN_ROKS_BREEZE",15;
+         }
+      }
+  - Combos:
+      - Combo:
+          - Floating_Ball_LT    # 410644
+          - Mistress_Card    #  4132
+    Script: |
+      bonus bDelayRate,-15;
+      bonus bSMatk,15;
+      bonus2 bMagicAddEle,Ele_All,20;
+  - Combos:
+      - Combo:
+          - Release_Of_Magic    # 29371
+          - aegis_314484    # 314484
+    Script: |
+      bonus2 bSkillCooldown,"SH_HYUN_ROKS_BREEZE",-500;
+      bonus2 bSkillCooldown,"SU_CN_METEOR",500;
+  - Combos:
+      - Combo:
+          - LMN_AG_Staff    # 640070
+          - Orrivane_Enc_AG    #  315288
+    Script: |
+      .@r = getequiprefinerycnt(EQI_HAND_R);
+      bonus bMatkRate,10;
+      bonus2 bSkillAtk,"AG_MYSTERY_ILLUSION",4*(.@r/2);
+      bonus2 bSkillAtk,"AG_SOUL_VC_STRIKE",4*(.@r/2);
+      if (getenchantgrade(EQI_HAND_R) >= ENCHANTGRADE_C) {
+         bonus bSMatk,10;
+         bonus2 bSkillCooldown,"AG_MYSTERY_ILLUSION",-1300;
+         bonus2 bSkillCooldown,"AG_SOUL_VC_STRIKE",-700;
+         if (.@r >= 10) {
+            bonus2 bSkillCooldown,"AG_MYSTERY_ILLUSION",-1300;
+            bonus2 bSkillCooldown,"WL_TELEKINESIS_INTENSE",-200000;
+            bonus4 bAutoSpellOnSkill,"AG_SOUL_VC_STRIKE","AG_SOUL_VC_STRIKE",max(getskilllv("AG_SOUL_VC_STRIKE"),1),300;
+            bonus2 bSkillAtk,"AG_MYSTERY_ILLUSION",20;
+            bonus2 bSkillAtk,"AG_SOUL_VC_STRIKE",20;
+         }
+      }
+  - Combos:
+      - Combo:
+          - Abysmal_Follower_US    # 480823
+          - ILL_Abysmal_Witch_Card    #  300145
+    Script: |
+      .@r = getequiprefinerycnt(EQI_GARMENT);
+      bonus bSMatk,30;
+      bonus bCon,30;
+      bonus2 bMagicAddClass,Class_All,40;
+      autobonus "{ bonus bSpl,150; }",70,7000,BF_MAGIC|BF_WEAPON,"{ specialeffect2 EF_POTION_BERSERK; }";
+  - Combos:
+      - Combo:
+          - Abysmal_Follower_US    # 480823
+          - ILL_Strouf_Card    #  300148
+    Script: |
+      bonus bNoKnockback;
+      bonus2 bMagicAtkEle,Ele_Fire,30;
+      bonus2 bMagicAtkEle,Ele_Dark,30;
+  - Combos:
+      - Combo:
+          - Abysmal_Follower_US    # 480823
+          - ILL_Deviace_Card    #  300142
+    Script: |
+      bonus bMatk,250;
+      bonus2 bMagicAtkEle,Ele_Fire,30;
+  - Combos:
+      - Combo:
+          - Abysmal_Follower_US    # 480823
+          - ILL_Sropho_Card    #  300140
+    Script: |
+      bonus bMatk,250;
+      bonus2 bMagicAtkEle,Ele_Dark,30;

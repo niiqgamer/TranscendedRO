@@ -1,0 +1,62 @@
+moc_para01,40,38,4	script	Monsters Shop	4_F_SE_SUN,{
+	if (#MobPoint < 1){
+		mes "[Monsters Shop]";
+		mes "";
+		mes "What the hell... Poor guy, you've never faced a single monster before?";
+		close;
+	}
+	mes "[Monsters Shop]";
+	mes "Now you have";
+	mes "^AA0000<FONT SIZE = 16><B>"+ callfunc("F_InsertComma",#MobPoint) +"</B></FONT>^000000 Monsters Points";
+	mes "What do you want to exchange?";
+	close2;
+		dispbottom "Now you have [ "+ callfunc("F_InsertComma",#MobPoint) +" ] Monsters Points";
+		callshop "monsters_shop",1;
+		npcshopattach "monsters_shop";
+	end;
+
+OnBuyItem:
+	.@size = getarraysize(@bought_nameid);
+	for (.@i = 0; .@i < .@size; .@i++) {
+		.@j = inarray(.Shop, @bought_nameid[.@i]);
+		.@cost += (.Shop[.@j+1] * @bought_quantity[.@i]);
+	}
+	mes "[Monsters Shop]";
+	mes "";
+	if (.@cost > #MobPoint)
+		mes "Hey, NOOB! You've never killed a monster before, and how dare you trick me! Go away!!!";
+	else {
+		for (.@i = 0; .@i < .@size; .@i++) {
+			getitem @bought_nameid[.@i], @bought_quantity[.@i];
+			dispbottom "Purchased " + @bought_quantity[.@i] + "x " + getitemname(@bought_nameid[.@i]) + ".";
+		}
+		#MobPoint -= .@cost;
+		mes "Exchange completed. Thank you very much.";
+		emotion ET_MONEY;
+	}
+	deletearray @bought_nameid[0], .@size;
+	deletearray @bought_quantity[0], .@size;
+	close;
+
+OnInit:
+//	waitingroom "Monsters Shop",0;
+	setarray .Shop[0],
+		9955500,50,
+		9955501,5000,
+		9955502,50000,
+		9955503,500000;
+	npcshopdelitem "monsters_shop",512;
+	for (.@i = 0; .@i < getarraysize(.Shop); .@i += 2)
+		npcshopadditem "monsters_shop", .Shop[.@i], .Shop[.@i+1];
+	end;
+}
+-	shop	monsters_shop	-1,512:-1
+
+-	script	MonsterKill#MOB	-1,{
+OnNPCKillEvent:
+	if( getmonsterinfo(killedrid, MOB_BASEEXP) ){
+	set #MobPoint,#MobPoint+1;
+	}
+}
+
+//izlude,163,168,4	duplicate(Monsters Shop)	Monsters Shop#para	4_F_SE_SUN

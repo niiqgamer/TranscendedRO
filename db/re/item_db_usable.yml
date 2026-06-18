@@ -8459,6 +8459,8 @@ Body:
     AegisName: N_Fly_Wing
     Name: Novice Fly Wing
     Type: DelayConsume
+    Buy: 10
+    Weight: 0
     NoUse:
       Sitting: true
     Trade:
@@ -8475,6 +8477,8 @@ Body:
     AegisName: N_Butterfly_Wing
     Name: Novice Butterfly Wing
     Type: DelayConsume
+    Buy: 20
+    Weight: 0
     NoUse:
       Sitting: true
     Trade:
@@ -62001,7 +62005,10 @@ Body:
       NoMail: true
       NoAuction: true
     Script: |
-      /* TODO */
+      vip_time(60*24*30);
+      getitem 23165,1;
+      bonus_script "{ bonus2 bExpAddRace,RC_All,100; bonus2 bDropAddRace,RC_All,100; }",2592000,1,0,EFST_OVERSEAEXPUP;
+      dispbottom "You have activated VIP status for 30 days.";
   - Id: 23209
     AegisName: Premium_Box_1d
     Name: "[1Day] Premium Subscription Box"

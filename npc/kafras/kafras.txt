@@ -405,7 +405,7 @@ cmd_fild07,136,134,4	script	Kafra Employee::kaf_cmd_fild07	721,{
 // Izlude
 //============================================================
 -	script	::kaf_izlude	-1,{
-	cutin "kafra_01",2;
+	cutin "kafra_nova1",2;
 	callfunc "F_KafSet";
 	mes "[Kafra Employee]";
 	mes "Welcome to the";

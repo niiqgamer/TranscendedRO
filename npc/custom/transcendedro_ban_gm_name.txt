@@ -1,0 +1,19 @@
+-	script	ban_gm_name	-1,{
+
+	OnPCLoginEvent:
+	if(getgmlevel() >=99) {
+		atcommand "@speed 50";
+	}
+	end;
+
+	.@name$ = strcharinfo(0);
+
+	if( compare( .@name$,"GM" ) || compare( .@name$,"Admin" ) || compare( .@name$,"®’‡ÕÁ¡" ) || compare( .@name$,"·Õ¥¡‘π" ) ){
+		mes "[GM]";
+		mes "<FONT SIZE = 18><B>From the name you set, you will be banned because it contains these words. ^FF0000®’‡ÕÁ¡ / GM^000000 or/and ^FF0000·Õ¥¡‘π / Admin^000000, please delete the character and give it a suitable new name.</B></FONT>";
+		sleep2 3500;
+		atcommand "@jail "+.@name$;
+		globalmes .@name$+" The character has been banned due to inappropriate naming.";
+	}
+	end;
+}

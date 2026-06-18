@@ -1,0 +1,30 @@
+sec_in02,133,178,4	script	Battle Pass S2	10468,{
+	mes "[Battle Pass S2]";
+	mes "";
+	mes "Hi, what do you want?";
+	next;
+	switch(select(
+	
+	"~ ^AA0000Enchant my equipment!^000000",
+	"~ ^00AA00Exchange materials.^000000",
+	"~ ^0000AAWarp me to BATTLE AREA!!!^000000",
+	"Cancle"
+	
+	)) {
+		case 1:
+			item_enchant(164);
+			end;
+		case 2:
+			callshop "battle_pass_s2";
+			end;
+		case 3:
+			end;
+		case 4:
+			mes "[Battle Pass S2]";
+			mes "";
+			mes "Anytime.";
+	}
+	close;
+}
+
+sec_in02,131,178,4	duplicate(dummy_cloaked_npc)	Battle Pass S2#hid1	10468

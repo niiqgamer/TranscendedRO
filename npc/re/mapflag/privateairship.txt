@@ -357,6 +357,7 @@ yuno_fild08	mapflag	privateairship_source
 yuno_fild09	mapflag	privateairship_source
 yuno_fild11	mapflag	privateairship_source
 yuno_fild12	mapflag	privateairship_source
+icecastle	mapflag	privateairship_source
 
 //============================================================
 // Available Destinations
@@ -708,3 +709,4 @@ yuno_fild08	mapflag	privateairship_destination
 yuno_fild09	mapflag	privateairship_destination
 yuno_fild11	mapflag	privateairship_destination
 yuno_fild12	mapflag	privateairship_destination
+icecastle	mapflag	privateairship_destination

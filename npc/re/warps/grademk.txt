@@ -1,0 +1,23 @@
+// ===== Entrance to GradeMK from anywhere ===== //
+
+//firstcity,226,144,0	warp	firstcity2grademk	1,1,grademk,45,179
+//grademk,51,179,0	warp	grademk2firstcity	1,1,firstcity,222,144
+
+grademk,51,179,0	warp	mkiz	1,1,izlude,158,125
+izlude,162,125,0	warp	izlude2grademk	1,1,grademk,45,179
+
+prontera,50,293,0	warp	prontera2grademk	1,1,grademk,45,179
+
+// ===== From GradeMK to other floor ===== //
+
+grademk,9,172,0	warp	grademk2grademain	1,1,grademk,141,64
+grademk,145,64,0	warp	grademain2grademk	1,1,grademk,13,171
+
+grademk,145,52,0	warp	grademain2grade2ndleft	1,1,grademk,90,177
+grademk,85,177,0	warp	grade2ndleft2grademain	1,1,grademk,141,52
+grademk,134,155,0	warp	grade2ndright2grademain	1,1,grademk,141,52
+
+// ===== From GradeMK to ParaMK ===== //
+
+grademk,50,52,0	warp	grademain2paramk	1,1,paramk,54,52
+paramk,50,52,0	warp	paramk2grademain	1,1,grademk,54,52

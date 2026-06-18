@@ -125,7 +125,9 @@ OnInit:
 
 // = Portals
 //============================================================
-prontera,50,293,0	warp	Grademk_Int	1,1,grademk,13,172
-grademk,9,172,0	warp	Grademk_Out	1,1,prontera,50,290
+//prontera,50,293,0	warp	Grademk_Int	1,1,grademk,13,172
+//grademk,9,172,0	warp	Grademk_Out	1,1,prontera,50,290
 paramk,8,171,0	warp	grade_in	1,1,paramk,141,64
 paramk,145,64,0	warp	grade_out	1,1,paramk,11,171
+
+morocc_in,74,35,2	duplicate(Sratos#sratos)	Sratos#sratos1	4_JP_GARM_H

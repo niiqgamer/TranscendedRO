@@ -34,6 +34,8 @@ izlude_in,172,139,0	warp	iz07	3,2,izlude_in,172,161
 izlude_in,172,158,0	warp	iz07-1	3,2,izlude_in,172,136
 izlude_in,172,116,0	warp	iz06-1	3,2,izlude_in,172,94
 izlude_in,171,97,0	warp	iz06	3,2,izlude_in,172,119
+//izlude,162,125,0	warp	izmk	2,1,grademk,45,179
+//grademk,51,179,0	warp	mkiz	1,1,izlude,158,125
 
 //= Izlude & Prontera Field 8 Duplicates =====================
 prt_fild08a,371,212,0	warp	prtf005_a	3,3,izlude_a,24,98

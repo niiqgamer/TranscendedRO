@@ -16,15 +16,15 @@
 
 prt_in,28,73,4	script	Wise Old Woman#eAcustom	78,{
 
-	set .zenycost,200000;    // base cost of the card remover services (in Zeny)
-	set .percardcost,25000;  // cost per card of the card remover services (in Zeny)
-	set .faildestroy,1;      // should the card remover have a chance of failure that destroys items? (1=yes, 0=no)
+	set .zenycost,100000;    // base cost of the card remover services (in Zeny)
+	set .percardcost,50000;  // cost per card of the card remover services (in Zeny)
+	set .faildestroy,0;      // should the card remover have a chance of failure that destroys items? (1=yes, 0=no)
 
 	disable_items;
 	mes "[Wise Old Woman]";
 	mes "Good day, young one. I have the power to remove cards that you have compounded onto your equipment. Does this idea please you?";
 	next;
-	switch(select("Yes, it does.:What do you charge?:No thanks.")) {
+	switch(select("^00AA00Yes, it does.^000000:^AA0000Buy New Type Advanced Lubricant^000000:^555555What do you charge?^000000:No thanks.")) {
 	case 1:
 		mes "[Wise Old Woman]";
 		mes "Very well. Which item shall I examine for you?";
@@ -59,37 +59,29 @@ prt_in,28,73,4	script	Wise Old Woman#eAcustom	78,{
 			close;
 		}
 		mes "[Wise Old Woman]";
-		mes "This item has " + .@cardcount + " cards compounded on it. To perform my magic, I will need " + (.zenycost+(.@cardcount * .percardcost)) + " zeny, a ^0000FFStar Crumb^000000, and a ^0000FFYellow Gemstone^000000.";
+		mes "This item has " + .@cardcount + " cards compounded on it. To perform my magic, I will need " + (.zenycost+(.@cardcount * .percardcost)) + " zeny, and 1 ^i[25239] .";
 		next;
-		if(select("Very well. Do it.:Never mind.") == 2) {
+		if(select("^00AA00Very well. Do it.^000000:Never mind.") == 2) {
 			mes "[Wise Old Woman]";
 			mes "Very well. Return at once if you seek my services.";
 			close;
 		}
-		if((zeny < (.zenycost+(.@cardcount * .percardcost))) || (countitem(1000) < 1) || (countitem(715) < 1)) {
+		if((zeny < (.zenycost+(.@cardcount * .percardcost))) || (countitem(25239) < 1)) {
 			mes "[Wise Old Woman]";
 			mes "You do not have all the items I require to work my magic, child. Come again when you do.";
 			close;
 		}
 		mes "[Wise Old Woman]";
-		mes "Before I begin, I must warn you--I may fail. If I do, I may destroy the cards, the item, or both. I do not give refunds. That being said, which is more important to you: The cards, or the item?";
+		mes "<FONT SIZE = 16><B>^AA0000Are you SURE?^000000</B></FONT>";
 		next;
-		switch(select("I changed my mind about this.:The item.:The cards.")) {
+		switch(select("^AA0000I changed my mind about this.^000000:^00AA00Yes, SURE.^000000")) {
 		case 1:
 			mes "[Wise Old Woman]";
 			mes "Very well. Return at once if you seek my services.";
 			close;
 		case 2:
-			set .@failtype,1;
 			break;
-		case 3:
-			set .@failtype,2;
 		}
-		mes "[Wise Old Woman]";
-		mes "Very well. I shall begin.";
-		set Zeny, Zeny - (.zenycost+(.@cardcount * .percardcost));
-		delitem 1000,1; //Star_Crumb
-		delitem 715,1; //Yellow_Gemstone
 		
 		// Replace the constants in the next 3 lines with failure chance values defined in refine_db.txt
 		// First value = Total failure chance (item and cards destroyed)
@@ -132,18 +124,33 @@ prt_in,28,73,4	script	Wise Old Woman#eAcustom	78,{
 			mes "I have failed to remove the cards. Luckily, however, both the item and the cards are still okay.";
 			close;
 		}
-		next;
+		
 		successremovecards .@part;
+		set Zeny, Zeny - (.zenycost+(.@cardcount * .percardcost));
+		delitem 25239,1; //New Type Advanced Lubricant
+		specialeffect2 EF_PERFECTION;
+		specialeffect2 EF_MAXPOWER;
+		
 		mes "[Wise Old Woman]";
+		mes "<FONT SIZE = 16><B>WOW!!!</B></FONT>";
 		mes "The process was a success. Here are your cards and your item. Farewell.";
 		close;
 	case 2:
 		mes "[Wise Old Woman]";
-		mes "I charge a flat fee of "+callfunc("F_InsertComma",.zenycost)+" zeny, plus "+callfunc("F_InsertComma",.percardcost)+" zeny for each card I remove from the item. In addition, I need a star crumb and a yellow gemstone to work my magic.";
-		close;
+		mes "OK, here you go with this rates.";
+		mes "1 ^i[25239] = 1 ^i[6417]";
+		close2;
+		callshop "LubExchange";
+		end;
 	case 3:
+		mes "[Wise Old Woman]";
+		mes "I charge a flat fee of "+callfunc("F_InsertComma",.zenycost)+" zeny, plus "+callfunc("F_InsertComma",.percardcost)+" zeny for each card I remove from the item. In addition, I need 1 ^i[25239] to work my magic.";
+		close;
+	case 4:
 		mes "[Wise Old Woman]";
 		mes "Very well. Return at once if you seek my services.";
 		close;
 	}
 }
+
+grademk,26,166,6	duplicate(Wise Old Woman#eAcustom)	Wise Old Woman#grademk	840

@@ -4,7 +4,7 @@
 //= 1.0 First Version. [Capuche]
 //============================================================
 
-itemmall,14,50,3	script	Equipment Reform PR Agent#it01	4_F_ZONDAGIRL,{
+itemmall,14,50,3	script	Reform PR Agent#it01	4_F_ZONDAGIRL,{
 	mes "[Equipment Reform PR Agent]";
 	mes "Hello, adventurer!";
 	mes "Are you unhappy with your equipment now?";
@@ -31,8 +31,14 @@ itemmall,14,50,3	script	Equipment Reform PR Agent#it01	4_F_ZONDAGIRL,{
 		mes "If you're interested later, come back!";
 		close;
 	}
+
+OnInit:
+//	waitingroom "Item Reform",0;
+	end;
 }
-lighthalzen,99,156,3	duplicate(Equipment Reform PR Agent#it01)	Equipment Reform PR Agent#lh01	4_F_ZONDAGIRL
+
+lighthalzen,99,156,3	duplicate(Reform PR Agent#it01)	Reform PR Agent#lh01	4_F_ZONDAGIRL
+grademk,49,166,3	duplicate(Reform PR Agent#it01)	Reform PR Agent#grademk	4_F_ZONDAGIRL
 
 rgsr_in,112,167,7	script	Enchant Researcher#rg02-1	MD_ED_M_SCIENCE,{
 	mes "[Torus]";
@@ -419,7 +425,7 @@ rgsr_in,128,174,5	script	Director#rg02	1_M_LIBRARYMASTER,{
 rgsr_in,122,160,5	script	Exit Guard#rg01	4_M_LGTGUARD,{
 	mes "[Exit guard]";
 	mes "Are you done?";
-	mes "^FF0000Return to Lighthalzen^000000?";
+	mes "^FF0000Return to Refine & Grade^000000?";
 	next;
 	if (select( "Return.", "Work remaining." ) == 2) {
 		mes "[Exit guard]";
@@ -429,7 +435,11 @@ rgsr_in,122,160,5	script	Exit Guard#rg01	4_M_LGTGUARD,{
 	mes "[Exit guard]";
 	mes "Let me guide you on the way back.";
 	close2;
-	warp "lighthalzen",101,156;
+	warp "grademk",46,166;
+	end;
+
+OnInit:
+	waitingroom "Return to Refine & Grade",0;
 	end;
 }
 

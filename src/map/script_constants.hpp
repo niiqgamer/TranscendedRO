@@ -2004,6 +2004,7 @@
 	export_constant(SC_WATER_CHARM_POWER);
 	export_constant(SC_WIND_CHARM_POWER);
 	export_constant(SC_GROUND_CHARM_POWER);
+	export_constant(SC_LOCKON_LASER);
 
 /// Do not modify code below this, until the end of the API hook, since it will be automatically generated again
 /// @APIHOOK_START(EFST_CONST)
@@ -7420,6 +7421,7 @@
 	export_constant(IG_RT_CH01_YGGLEAF_A);
 	export_constant(IG_RT_CH01_YGGLEAF_C);
 	export_constant(IG_RT_CH01_YGGLEAF_3);
+	export_constant(IG_D_GW_EXTRACTOR);
 
 	/* unit stop walking */
 	export_constant(USW_NONE);
@@ -7475,6 +7477,7 @@
 	export_constant(REFINE_COST_NORMAL);
 	export_constant(REFINE_COST_HD);
 	export_constant(REFINE_COST_ENRICHED);
+	export_constant(REFINE_COST_SUPER);
 	export_constant(REFINE_COST_MAX);
 
 	/* refine information types */
@@ -8798,6 +8801,7 @@
 	export_constant_npc(JT_ROZ_MQ_XAVIER);
 	export_constant_npc(JT_ROZ_MQ_MOCLORD);
 	export_constant_npc(JT_ROZ_MQ_SKULD);
+	export_constant_npc(JT_KAFRA_NOVA);
 	export_constant_npc(JT_NEW_NPC_3RD_END);
 	#undef export_constant_npc
 
@@ -10418,6 +10422,8 @@
 	export_constant(NK_IGNORELONGCARD);
 	export_constant(NK_CRITICAL);
 	export_constant(NK_SIMPLEDEFENSE);
+	export_constant(NK_IGNORERES);
+	export_constant(NK_IGNOREMRES);
 
 	/* skill inf */
 	export_constant(INF_PASSIVE_SKILL);

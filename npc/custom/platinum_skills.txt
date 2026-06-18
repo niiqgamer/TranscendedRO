@@ -32,3 +32,5 @@ prontera,128,200,6	script	Platinum Skill NPC	94,{
 	mes "There you go!";
 	close;
 }
+
+izlude,141,165,6	duplicate(Platinum Skill NPC)	Platinum Skill NPC#iz	4_EVT_SULKI

@@ -1,0 +1,13 @@
+-	script	VIP_TIME	-1,{
+	OnPCLoginEvent:
+	OnPCZoneChangeEvent:
+		if (vip_status(1)) {
+			dispbottom "=================================================";
+			dispbottom "Your VIP time remaining: " + Time2Str(vip_status(VIP_STATUS_REMAINING) + gettimetick(2));
+			dispbottom "=================================================";
+			showscript "V I P time remaining: " + Time2Str(vip_status(VIP_STATUS_REMAINING) + gettimetick(2)), playerattached(), SELF;
+			bonus_script "{}",vip_status(VIP_STATUS_REMAINING)*1000,1,0,EFST_OVERSEAEXPUP;
+			end;
+		}
+		end;
+	}

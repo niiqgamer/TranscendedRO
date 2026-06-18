@@ -1,0 +1,40 @@
+-	script	Level Up Reward	-1,{
+
+OnPCBaseLvUpEvent:
+
+	.@charid = getcharid(0);
+	.@sender$ = "GM Transcended RO";
+	.@title$ = "Level "+BaseLevel+" Reward";
+	.@body$ = "You have earned this reward through your great effort.";
+	.@zeny = 0;
+	
+	if ( BaseLevel == 100) {
+		setarray .@mailitem[0], 9955501;
+		setarray .@mailamount[0], 2;
+		mail .@charid, .@sender$, .@title$, .@body$, .@zeny, .@mailitem, .@mailamount;
+		dispbottom "Congrats on reaching Level "+BaseLevel+" ! Check your RODEX to receive your reward(s).",0xFF33FF;
+	} else if ( BaseLevel == 150) {
+		setarray .@mailitem[0], 9955501;
+		setarray .@mailamount[0], 3;
+		mail .@charid, .@sender$, .@title$, .@body$, .@zeny, .@mailitem, .@mailamount;
+		dispbottom "Congrats on reaching Level "+BaseLevel+" ! Check your RODEX to receive your reward(s).",0xFF33FF;
+	} else if ( BaseLevel == 200) {
+		setarray .@mailitem[0], 9955501;
+		setarray .@mailamount[0], 5;
+		mail .@charid, .@sender$, .@title$, .@body$, .@zeny, .@mailitem, .@mailamount;
+		dispbottom "Congrats on reaching Level "+BaseLevel+" ! Check your RODEX to receive your reward(s).",0xFF33FF;
+	} else if ( BaseLevel == 250) {
+		setarray .@mailitem[0], 9955502;
+		setarray .@mailamount[0], 1;
+		mail .@charid, .@sender$, .@title$, .@body$, .@zeny, .@mailitem, .@mailamount;
+		dispbottom "Congrats on reaching Level "+BaseLevel+" ! Check your RODEX to receive your reward(s).",0xFF33FF;
+	} else if ( BaseLevel == 275) {
+		setarray .@mailitem[0], 9955502;
+		setarray .@mailamount[0], 5;
+		mail .@charid, .@sender$, .@title$, .@body$, .@zeny, .@mailitem, .@mailamount;
+		dispbottom "Congrats on reaching Level "+BaseLevel+" ! Check your RODEX to receive your reward(s).",0xFF33FF;
+	} else {
+		end;
+	}
+	end;
+}

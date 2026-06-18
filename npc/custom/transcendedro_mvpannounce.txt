@@ -1,0 +1,71 @@
+moc_para01,44,38,4	script	MVP Shop	4_F_FENRIR,{
+	if (#MVPPoint < 1){
+		mes "[MVP Shop]";
+		mes "";
+		mes "Have you never defeated any MVPs?";
+		mes "Or have you already redeemed all your points??";
+		mes "Let's talk later.";
+		close;
+	}
+	mes "[MVP Shop]";
+	mes "";
+	mes "You currently have";
+	mes "^AA0000<FONT SIZE = 16><B>" + callfunc("F_InsertComma",#MVPPoint) +"</B></FONT> MVP Points.";
+	mes "";
+	mes "Okay, what do you want to do with it?";
+	close2;		
+		dispbottom "You have [ "+ callfunc("F_InsertComma",#MVPPoint) +" ] MVP Points.";
+		callshop "mvp_shop",1;
+		npcshopattach "mvp_shop";
+	end;
+
+OnBuyItem:
+	.@size = getarraysize(@bought_nameid);
+	for (.@i = 0; .@i < .@size; .@i++) {
+		.@j = inarray(.Shop, @bought_nameid[.@i]);
+		.@cost += (.Shop[.@j+1] * @bought_quantity[.@i]);
+	}
+	mes "[MVP Shop]";
+	mes "";
+	if (.@cost > #MVPPoint)
+		mes "Don't mess with me. You don't have enough MVP Points to buy things in my shop. Go away!";
+	else {
+		for (.@i = 0; .@i < .@size; .@i++) {
+			getitem @bought_nameid[.@i], @bought_quantity[.@i];
+			dispbottom "Purchased " + @bought_quantity[.@i] + "x " + getitemname(@bought_nameid[.@i]) + ".";
+		}
+		#MVPPoint -= .@cost;
+		mes "Successful transaction. Thank you very much.";
+		emotion ET_MONEY;
+	}
+	deletearray @bought_nameid[0], .@size;
+	deletearray @bought_quantity[0], .@size;
+	close;
+
+OnInit:
+//	waitingroom "MVP Shop",0;
+	setarray .Shop[0],
+		9955505,1,
+		25377,1,
+		25375,50,
+		7925,50,
+		22829,500,
+		23719,500;
+	npcshopdelitem "mvp_shop",512;
+	for (.@i = 0; .@i < getarraysize(.Shop); .@i += 2)
+		npcshopadditem "mvp_shop", .Shop[.@i], .Shop[.@i+1];
+	end;
+}
+-	shop	mvp_shop	-1,512:-1
+
+-	script	MonsterKill#MVP	-1,{
+OnNPCKillEvent:
+	if (getmonsterinfo(killedrid,MOB_MVPEXP) != 0) {
+		set #MVPPoint,#MVPPoint+1;
+		dispbottom "You recieved 1 MVP Point. Now you have [ "+ callfunc("F_InsertComma",#MVPPoint) +" ] MVP Points.";
+		announce "“Congrats to '"+ strcharinfo(0) +"' for successfully defeating '"+ getmonsterinfo(killedrid,MOB_NAME)+"' !!!”",bc_blue|bc_all;
+	}
+	end;
+}
+
+//izlude,168,168,4	duplicate(MVP Shop)	MVP Shop#para	4_F_FENRIR

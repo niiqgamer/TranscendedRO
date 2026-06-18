@@ -35,3 +35,36 @@ alb_ship,0,0	monster	Strange Mouse	2057,25
 // prontera,259,66	monster	Dummy Lv100	2410,1,5000
 // prontera,251,55	monster	Dummy Lv150	2411,1,5000
 // prontera,259,55	monster	Dummy Lv150	2411,1,5000
+
+izlude,130,216	monster	2B-100%#0	21065,1,5000
+izlude,126,216	monster	2B-100%#1	21065,1,5000
+izlude,122,216	monster	2B-100%#2	21065,1,5000
+
+izlude,130,224	monster	2B-10%#0	21067,1,5000
+izlude,126,224	monster	2B-10%#1	21067,1,5000
+izlude,122,224	monster	2B-10%#2	21067,1,5000
+
+izlude,130,232	monster	2B-1%#0	21077,1,5000
+izlude,126,232	monster	2B-1%#1	21077,1,5000
+izlude,122,232	monster	2B-1%#2	21077,1,5000
+
+izlude,134,216,6	script	Punching Bag 100%	4_BULLETIN_BOARD2,{
+OnInit:
+	delwaitingroom;
+	waitingroom "Damage 100%", 0;
+	end;
+}
+
+izlude,134,224,6	script	Punching Bag 10%	4_BULLETIN_BOARD2,{
+OnInit:
+	delwaitingroom;
+	waitingroom "Damage 10%", 0;
+	end;
+}
+
+izlude,134,232,6	script	Punching Bag 1%	4_BULLETIN_BOARD2,{
+OnInit:
+	delwaitingroom;
+	waitingroom "Damage 1%", 0;
+	end;
+}

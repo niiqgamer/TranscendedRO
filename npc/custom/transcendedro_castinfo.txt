@@ -1,0 +1,18 @@
+-	script	atcmd_castinfo	-1,{
+
+	OnAtcmd:
+		.@vct = readparam(bVariableCastrate);
+		.@fct_ms = readparam(bFixedCast);
+		.@acd = readparam(bDelayRate);
+
+		dispbottom "=== [ Cast Information from Equipments ] ===";
+		dispbottom "1. Variable Cast Time (VCT) = " + .@vct + "%";
+		dispbottom "2. Fixed Cast Time (FCT) = " + .@fct_ms + " ms";
+		dispbottom "3. After Cast Delay (ACD) = " + .@acd + "%";
+		dispbottom "==============================";
+		end;
+
+	OnInit:
+		bindatcmd "castinfo", strnpcinfo(3)+"::OnAtcmd";
+		end;
+}

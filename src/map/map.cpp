@@ -60,9 +60,9 @@ std::string default_codepage = "";
 
 int32 map_server_port = 3306;
 std::string map_server_ip = "127.0.0.1";
-std::string map_server_id = "ragnarok";
-std::string map_server_pw = "";
-std::string map_server_db = "ragnarok";
+std::string map_server_id = "RoCafe032211162";
+std::string map_server_pw = "RoCafe032201868";
+std::string map_server_db = "transcendedro";
 Sql* mmysql_handle;
 Sql* qsmysql_handle; /// For query_sql
 
@@ -96,8 +96,8 @@ char guild_storage_log_table[32] = "guild_storage_log";
 // log database
 std::string log_db_ip = "127.0.0.1";
 uint16 log_db_port = 3306;
-std::string log_db_id = "ragnarok";
-std::string log_db_pw = "";
+std::string log_db_id = "RoCafe032211162";
+std::string log_db_pw = "RoCafe032201868";
 std::string log_db_db = "log";
 Sql* logmysql_handle;
 

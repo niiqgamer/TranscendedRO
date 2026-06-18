@@ -365,7 +365,7 @@ ein_in01,38,29,0	script	Paul Spanner	63,{
 			.@item_cost = 150;
 			.@item_weight = 200;
 			mes "[Paul Spanner]";
-			mes "You definitely need this furnace to process ores!";
+			mes "You definately need this furnce to process ores!";
 			next;
 			break;
 		case 2:
@@ -537,7 +537,7 @@ prt_in,63,60,0	script	Hollgrehenn	4_M_03,{
 	}
 }
 
-morocc_in,73,38,6	script	Aragham	4W_M_03,{
+morocc_in,72,37,5	script	Aragham	1_M_SMITH,{
 	if( getbattleflag( "feature.refineui" ) ){
 		mes "[Aragham]";
 		mes "De~ sert~ Blacksmith~";
@@ -548,6 +548,20 @@ morocc_in,73,38,6	script	Aragham	4W_M_03,{
 		end;
 	}else{
 		callfunc "refinemain","Aragham",0;
+		end;
+	}
+}
+
+grademk,23,185,4	script	Kunishige Rokuhira	531,{
+	if( getbattleflag( "feature.refineui" ) ){
+		mes "[Kunishige Rokuhira]";
+		mes " ";
+		mes "Let's do it~";
+		close2;
+		refineui();
+		end;
+	}else{
+		callfunc "refinemain","Kagurabachi",0;
 		end;
 	}
 }
@@ -995,6 +1009,10 @@ lhz_in02,278,24,3	script	Krugg	86,{
 	callfunc "phramain","Krugg";
 	end;
 }
+//grademk,37,163,3	script	Sunny	86,{
+//	callfunc "phramain","Sunny";
+//	end;
+//}
 
 // Material Salesmen Functions
 //============================================================
@@ -1109,6 +1127,10 @@ lhz_in02,281,24,5	script	Fruel	84,{
 	callfunc "orimain","Fruel";
 	end;
 }
+//grademk,26,166,5	script	Ethan	84,{
+//	callfunc "orimain","Ethan";
+//	end;
+//}
 
 // Ori/Elu Functions
 //============================================================
@@ -1188,6 +1210,16 @@ alberta_in,31,65,4	script	Repairman#alb	86,{
 }
 
 moc_ruins,107,94,4	script	Repairman#moc	99,{
+	callfunc "repairmain","Repairman";
+	end;
+}
+
+morocc_in,68,31,0	script	Repairman#mocin	4_M_ORIENT01,{
+	callfunc "repairmain","Repairman";
+	end;
+}
+
+grademk,17,181,6	script	Repairman#grademk	4_M_ORIENT01,{
 	callfunc "repairmain","Repairman";
 	end;
 }

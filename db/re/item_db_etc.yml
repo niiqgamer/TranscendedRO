@@ -33765,6 +33765,7 @@ Body:
     Name: Poison Cannon Ball
     Type: Ammo
     SubType: Cannonball
+    Buy: 50
     Weight: 1
     Attack: 120
     Jobs:

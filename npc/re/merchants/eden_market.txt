@@ -37,9 +37,9 @@ function	script	F_CoolDown	{
 
 // Shop NPC
 // Limited
--	marketshop	para_coin10	FAKE_NPC,6304:500000:10,6080:100000:10,6081:300000:10,6380:1000000:1000,6004:100000:1
+-	marketshop	para_coin10	FAKE_NPC,6304:500000:99999,6080:100000:99999,6081:300000:99999,6380:1000000:99999,6004:100000:99999
 
--	marketshop	para_hei10	FAKE_NPC,6608:150000:1,6607:20000:1,6755:200000:1,7642:10000:1,22687:200000:1,23016:1000000:1
+-	marketshop	para_hei10	FAKE_NPC,6608:150000:99999,6607:20000:99999,6755:200000:99999,7642:10000:99999,22687:200000:99999,23016:1000000:99999
 
 -	marketshop	para_key10	FAKE_NPC,7026:100000:10,7027:100000:10 // todo
 
@@ -51,7 +51,7 @@ function	script	F_CoolDown	{
 
 -	marketshop	para_ptn10	FAKE_NPC,505:40000:100,12679:100000:500,12676:30000:500,12680:50000:100
 
--	marketshop	para_itm00	FAKE_NPC,12106:1500000:100,12107:500000:100,616:2500000:100,12194:200000:100
+-	marketshop	para_itm00	FAKE_NPC,12106:1500000:100,12107:500000:100,12194:200000:100
 
 -	marketshop	para_itm10	FAKE_NPC,12008:5000:99999,12009:5000:99999,12012:5000:100,12010:5000:100,12011:5000:100,12013:20000:100,12014:80000:100,7931:5000:100
 
@@ -85,17 +85,17 @@ function	script	F_CoolDown	{
 -	script	Update_Shop	-1,{
 OnInit:
 OnClock0000:
-	npcshopupdate "para_coin10",6304,0,1;
-	npcshopupdate "para_coin10",6080,0,1;
-	npcshopupdate "para_coin10",6081,0,1;
-	npcshopupdate "para_coin10",6380,0,1;
-	npcshopupdate "para_coin10",6004,0,1;
-	npcshopupdate "para_hei10",6608,0,1;
-	npcshopupdate "para_hei10",6607,0,1;
-	npcshopupdate "para_hei10",6755,0,1;
-	npcshopupdate "para_hei10",7642,0,1;
-	npcshopupdate "para_hei10",22687,0,1;
-	npcshopupdate "para_hei10",23016,0,1;
+	npcshopupdate "para_coin10",6304,0,99999;
+	npcshopupdate "para_coin10",6080,0,99999;
+	npcshopupdate "para_coin10",6081,0,99999;
+	npcshopupdate "para_coin10",6380,0,99999;
+	npcshopupdate "para_coin10",6004,0,99999;
+	npcshopupdate "para_hei10",6608,0,99999;
+	npcshopupdate "para_hei10",6607,0,99999;
+	npcshopupdate "para_hei10",6755,0,99999;
+	npcshopupdate "para_hei10",7642,0,99999;
+	npcshopupdate "para_hei10",22687,0,99999;
+	npcshopupdate "para_hei10",23016,0,99999;
 	npcshopupdate "para_key10",7026,0,10;
 	npcshopupdate "para_key10",7027,0,10;
 	npcshopupdate "para_wp00",1181,0,1;
@@ -113,7 +113,7 @@ OnClock0000:
 	npcshopupdate "para_ptn10",12680,0,100;
 	npcshopupdate "para_itm00",12106,0,100;
 	npcshopupdate "para_itm00",12107,0,100;
-	npcshopupdate "para_itm00",616,0,100;
+//	npcshopupdate "para_itm00",616,0,100;
 	npcshopupdate "para_itm00",12194,0,100;
 	npcshopupdate "para_itm10",12008,0,99999;
 	npcshopupdate "para_itm10",12009,0,99999;

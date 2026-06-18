@@ -16,9 +16,11 @@
 -	script	Healer	-1,{
 
 	.@Price = 0;	// Zeny required for heal
-	.@Buffs = 0;	// Also buff players? (1: yes / 0: no)
-	.@Delay = 0;	// Heal delay, in seconds
+	.@Buffs = 1;	// Also buff players? (1: yes / 0: no)
+	.@Delay = 5;	// Heal delay, in seconds
 
+	getinventorylist;
+	
 	if (@HD > gettimetick(2))
 		end;
 	if (.@Price) {
@@ -29,58 +31,149 @@
 			end;
 		Zeny -= .@Price;
 	}
+	
 	specialeffect2 EF_HEAL2;
 	percentheal 100,100;
 	if (.@Buffs) {
+		if (getgroupid() > 4) {
+			sc_start2 SC_S_LIFEPOTION,3600000,-5,5;
+			sc_start2 SC_L_LIFEPOTION,3600000,-7,4;
+			sc_start2 SC_M_LIFEPOTION,3600000,-4,3;
+			sc_start2 SC_M_DEFSCROLL,3600000,500,200;
+			sc_start2 SC_S_MANAPOTION,3600000,-5,5;
+			sc_start SC_ALMIGHTY,3600000,30;
+			sc_start SC_INFINITY_DRINK,3600000,0;
+			sc_start SC_FLEEFOOD,3600000,30;
+			sc_start SC_HITFOOD,3600000,30;
+			sc_start SC_ATKPOTION,3600000,20;
+			sc_start SC_MATKPOTION,3600000,20;
+			sc_start4 SC_LIMIT_POWER_BOOSTER,3600000,30,1,5,0;
+			sc_start SC_SPEEDUP0,3600000,25;
+			sc_start SC_POEMBRAGI,3600000,10;
+			sc_start SC_SOULGOLEM,3600000,10;
+			sc_start SC_KYRIE,3600000,10;
+			sc_start SC_ADRENALINE2,3600000,1;
+			sc_start SC_WEAPONPERFECTION,3600000,5;
+			sc_start SC_ENDURE,3600000,10;
+			sc_start SC_CP_WEAPON,3600000,5;
+			sc_start SC_CP_ARMOR,3600000,5;
+			sc_start SC_CP_SHIELD,3600000,5;
+			sc_start SC_CP_HELM,3600000,5;
+			sc_start SC_MEDIALE,3600000,5;
+			sc_start SC_WINDWALK,3600000,10;
+			sc_start SC_AURABLADE,3600000,5;
+			sc_start SC_SECRAMENT,3600000,5;
+			sc_start SC_EXPIATIO,3600000,5;
+			sc_start SC_RENOVATIO,3600000,5;
+			sc_start SC_ASSUMPTIO,3600000,5;
+			sc_start SC_BENEDICTUM,3600000,5;
+			sc_start SC_RELIGIO,3600000,5;
+			sc_start SC_COMPETENTIA,3600000,5;
+			sc_start SC_MAGICPOWER,3600000,10;
+			sc_start SC_SPELL_ENCHANTING,3600000,5;
+			sc_start SC_STRIKING,3600000,5;
+			sc_start SC_TWOHANDQUICKEN,3600000,10;
+			sc_start SC_POTENT_VENOM,3600000,10;
+			sc_start SC_UNLIMIT,3600000,5;
+			sc_start SC_PRESTIGE,3600000,5;
+			sc_start SC_ABYSS_SLAYER,3600000,5;
+			sc_start SC_TEMPORARY_COMMUNION,3600000,5;
+			sc_start SC_SPEEDUP1,3600000,50;
+		}
 		specialeffect2 EF_INCAGILITY;
-		sc_start SC_INCREASEAGI,240000,10;
+		sc_start SC_INCREASEAGI,600000,5;
 		specialeffect2 EF_BLESSING;
-		sc_start SC_BLESSING,240000,10;
+		sc_start SC_BLESSING,500000,5;
+		specialeffect2 300;
+		sc_start SC_STRFOOD,600000,5;
+		sc_start SC_AGIFOOD,600000,5;
+		sc_start SC_VITFOOD,600000,5;
+		sc_start SC_INTFOOD,600000,5;
+		sc_start SC_DEXFOOD,600000,5;
+		sc_start SC_LUKFOOD,600000,5;
+		specialeffect2 154;
+		repairall;
+// remove status
+		sc_end SC_STONE;
+		sc_end SC_FREEZE;
+		sc_end SC_STUN;
+		sc_end SC_SLEEP;
+		sc_end SC_POISON;
+		sc_end SC_CURSE;
+		sc_end SC_SILENCE;
+		sc_end SC_CONFUSION;
+		sc_end SC_BLIND;
+		sc_end SC_BLOODING;
+		sc_end SC_DPOISON;
+		sc_end SC_FEAR;
+		sc_end SC_COLD;
+		sc_end SC_BURNING;
+		sc_end SC_DEEP_SLEEP;
+		sc_end SC_DEC_AGI;
+		sc_end SC_BROKENARMOR;
+		sc_end SC_BROKENWEAPON;
+		sc_end SC_NOEQUIPWEAPON;
+		sc_end SC_NOEQUIPSHIELD;
+		sc_end SC_NOEQUIPARMOR;
+		sc_end SC_NOEQUIPHELM;
+		sc_end SC__STRIPACCESSARY;
+		sc_end SC_PROPERTYUNDEAD;
+		sc_end SC_ORCISH;
+		sc_end SC_BERSERK;
+		sc_end SC_SKE;
+		sc_end SC_SWOO;
+		sc_end SC_SKA;
+		specialeffect2 EF_CLEARTIME;
+		specialeffect2 EF_DETECT3;
 	}
+	for(set .@i,0; .@i<@inventorylist_count; set .@i,.@i+1) {
+		if (@inventorylist_identify[.@i]) continue;
+			delitem2 @inventorylist_id[.@i],1,0,0,0,0,0,0,0;
+			getitem @inventorylist_id[.@i],1;
+		}
 	if (.@Delay)
 		@HD = gettimetick(2) + .@Delay;
-	end;
+	end;	
 }
-
 
 // Duplicates
 //============================================================
-alberta,25,240,6	duplicate(Healer)	Healer#alb	909
-aldebaran,135,118,6	duplicate(Healer)	Healer#alde	909
-amatsu,200,79,4	duplicate(Healer)	Healer#ama	909
-ayothaya,207,169,6	duplicate(Healer)	Healer#ayo	909
-comodo,184,158,6	duplicate(Healer)	Healer#com	909
-einbech,57,36,6	duplicate(Healer)	Healer#einbe	909
-einbroch,57,202,6	duplicate(Healer)	Healer#einbr	909
-geffen,115,72,6	duplicate(Healer)	Healer#gef	909
-gonryun,156,122,6	duplicate(Healer)	Healer#gon	909
-hugel,89,150,6	duplicate(Healer)	Healer#hug	909
-izlude,121,150,6	duplicate(Healer)	Healer#izl	909	//Pre-RE: (125,118)
-jawaii,250,139,4	duplicate(Healer)	Healer#jaw	909
-lighthalzen,152,100,6	duplicate(Healer)	Healer#lhz	909
-louyang,226,103,4	duplicate(Healer)	Healer#lou	909
-manuk,272,144,6	duplicate(Healer)	Healer#man	909
-mid_camp,203,289,6	duplicate(Healer)	Healer#mid	909
-moc_ruins,72,164,4	duplicate(Healer)	Healer#moc	909
-morocc,153,97,6	duplicate(Healer)	Healer#mor	909
-moscovia,220,191,4	duplicate(Healer)	Healer#mos	909
-niflheim,212,182,5	duplicate(Healer)	Healer#nif	909
-payon,179,106,4	duplicate(Healer)	Healer#pay	909
-prontera,162,193,4	duplicate(Healer)	Healer#prt	909
-rachel,125,116,6	duplicate(Healer)	Healer#rac	909
-splendide,201,153,4	duplicate(Healer)	Healer#spl	909
-thor_camp,249,74,4	duplicate(Healer)	Healer#thor	909
-umbala,105,148,3	duplicate(Healer)	Healer#umb	909
-veins,217,121,4	duplicate(Healer)	Healer#ve	909
-xmas,143,136,4	duplicate(Healer)	Healer#xmas	909
-yuno,164,45,4	duplicate(Healer)	Healer#yuno	909
+alberta,25,240,6	duplicate(Healer)	Healer#alb	3527
+aldebaran,135,118,6	duplicate(Healer)	Healer#alde	3527
+amatsu,200,79,4	duplicate(Healer)	Healer#ama	3527
+ayothaya,207,169,6	duplicate(Healer)	Healer#ayo	3527
+comodo,184,158,6	duplicate(Healer)	Healer#com	3527
+einbech,57,36,6	duplicate(Healer)	Healer#einbe	3527
+einbroch,57,202,6	duplicate(Healer)	Healer#einbr	3527
+geffen,115,72,6	duplicate(Healer)	Healer#gef	3527
+gonryun,156,122,6	duplicate(Healer)	Healer#gon	3527
+hugel,89,150,6	duplicate(Healer)	Healer#hug	3527
+izlude,121,146,6	duplicate(Healer)	Healer#izl	3527	//Pre-RE: (125,118)
+jawaii,250,139,4	duplicate(Healer)	Healer#jaw	3527
+lighthalzen,152,100,6	duplicate(Healer)	Healer#lhz	3527
+louyang,226,103,4	duplicate(Healer)	Healer#lou	3527
+manuk,272,144,6	duplicate(Healer)	Healer#man	3527
+mid_camp,203,289,6	duplicate(Healer)	Healer#mid	3527
+moc_ruins,72,164,4	duplicate(Healer)	Healer#moc	3527
+morocc,153,97,6	duplicate(Healer)	Healer#mor	3527
+moscovia,220,191,4	duplicate(Healer)	Healer#mos	3527
+niflheim,212,182,5	duplicate(Healer)	Healer#nif	3527
+payon,179,106,4	duplicate(Healer)	Healer#pay	3527
+prontera,162,193,4	duplicate(Healer)	Healer#prt	3527
+rachel,125,116,6	duplicate(Healer)	Healer#rac	3527
+splendide,201,153,4	duplicate(Healer)	Healer#spl	3527
+thor_camp,249,74,4	duplicate(Healer)	Healer#thor	3527
+umbala,105,148,3	duplicate(Healer)	Healer#umb	3527
+veins,217,121,4	duplicate(Healer)	Healer#ve	3527
+xmas,143,136,4	duplicate(Healer)	Healer#xmas	3527
+yuno,164,45,4	duplicate(Healer)	Healer#yuno	3527
 
 // Duplicates (Renewal)
 //============================================================
-brasilis,194,221,6	duplicate(Healer)	Healer#bra	909
-dewata,195,187,4	duplicate(Healer)	Healer#dew	909
-dicastes01,201,194,4	duplicate(Healer)	Healer#dic	909
-ecl_in01,45,60,4	duplicate(Healer)	Healer#ecl	909
-malangdo,132,114,6	duplicate(Healer)	Healer#mal	909
-malaya,227,204,6	duplicate(Healer)	Healer#ma	909
-mora,55,152,4	duplicate(Healer)	Healer#mora	909
+brasilis,194,221,6	duplicate(Healer)	Healer#bra	3527
+dewata,195,187,4	duplicate(Healer)	Healer#dew	3527
+dicastes01,201,194,4	duplicate(Healer)	Healer#dic	3527
+ecl_in01,45,60,4	duplicate(Healer)	Healer#ecl	3527
+malangdo,132,114,6	duplicate(Healer)	Healer#mal	3527
+malaya,227,204,6	duplicate(Healer)	Healer#ma	3527
+mora,55,152,4	duplicate(Healer)	Healer#mora	3527

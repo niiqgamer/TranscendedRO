@@ -23,6 +23,18 @@
 //= 2.1 Moved Pet Groomer merchants. [Haydrich]
 //============================================================
 
+izlude,119,156,4	shop	Tool Dealer#izm	456,23207:99,12323:-1,12324:-1,545:-1,546:-1,547:-1,645:-1,656:-1,657:-1,512:-1,513:-1,514:-1,515:-1,567:-1,11602:-1,516:-1,517:-1,519:-1,1771:-1,713:-1,1025:-1,6124:-1,1000311:-1,523:-1,715:-1,716:-1,717:-1,720:-1,728:-1,719:-1,1000321:-1,1750:-1,1751:-1,1752:-1,1753:-1,1754:-1,1755:-1,1756:-1,1757:-1,1758:-1,1759:-1,1760:-1,1761:-1,1762:-1,1763:-1,1764:-1,1765:-1,1766:-1,1767:-1,1768:-1,1769:-1,1770:-1,1772:-1,1773:-1,1774:-1,12114:20000,12115:20000,12116:20000,12117:20000,13200:-1,13201:-1,13202:-1,13203:-1,13204:-1,13205:-1,13206:-1,13207:-1,13250:-1,13251:-1,13252:-1,13253:-1,13254:-1,13255:-1,13256:-1,13257:-1,13258:-1,13259:-1,7521:-1,7522:-1,7523:-1,7524:-1,18000:-1,18001:-1,18002:-1,18003:-1,18004:-1,18005:-1,18006:-1,18007:-1,18008:-1,18009:-1,1000563:30,101117:15000,6360:-1,6363:-1,6361:-1,6362:-1,1000291:-1,1000292:-1,1000293:-1,1000294:-1,1000295:-1
+
+//moc_para01,24,22,6
+grademk,44,185,6	shop	Paradise Weapon Dealer	762,520010:99,700036:99,510035:99,550033:99,590025:99,800004:99,550032:99,500032:99,590026:99,500034:99,610024:99,610025:99,700040:99,570021:99,520011:99,620011:99,530017:99,500033:99,580021:99,550038:99,550039:99,26100:99,800005:99,810003:99,700038:99,700039:99,630014:99,600020:99,560023:99,560022:99,650011:99,650010:99,590027:99,550036:99,700037:99,510036:99,540027:99,540028:99,510037:99,550037:99,540029:99,540030:99,550040:99,500035:99,550034:99,550035:99,26101:99,590029:99,550041:99,590028:99,500037:99,610026:99,610027:99,650013:99,650012:99,520012:99,620012:99,570023:99,570022:99,700042:99,700043:99,830004:99,800006:99,530018:99,500036:99,630015:99,600021:99,700041:99,510038:99,540031:99,540032:99,640026:99,640025:99,540034:99,540033:99,550042:99,550043:99,510039:99,550044:99,560025:99,560024:99,580023:99,580022:99,640023:99,640024:99
+
+//moc_para01,20,22,6
+grademk,47,185,4	shop	Paradise Armor Dealer	763,400137:99,400138:99,450183:99,450184:99,480103:99,480104:99,470067:99,470068:99,490122:99,490123:99,490124:99,490125:99,490126:99,400139:99,400140:99,450185:99,450186:99,480105:99,480106:99,470069:99,470093:99,490126:99,490127:99,490128:99,490129:99,24689:99,24691:99,24692:99,24688:99,24690:99,24687:99,24694:99,24693:99,24695:99,24696:99,24697:99,24698:99,24699:99,24700:99,24701:99,24702:99,24703:99,24704:99,24705:99,24706:99,24707:99,24708:99,24709:99,24710:99,24711:99,24712:99,24713:99,24714:99,24715:99
+
+ba_pw02,88,99,6	shop	Yggdrasil Seller	10302,610:100000
+
+ba_in01,18,140,6	shop	Quest Items Seller	20696,7110:100000,7326:100000
+
 //=======================================================
 // Alberta
 //=======================================================
@@ -68,21 +80,21 @@ geffen_in,78,169,3	shop	Advanced Potion Merchant#gef	1_F_03,11621:-1,11622:-1,11
 //=======================================================
 // Izlude
 //=======================================================
-izlude,124,165,4	shop	Fruit Gardener#iz	53,512:-1,513:-1,515:-1,516:-1
-izlude_a,124,165,4	duplicate(Fruit Gardener#iz)	Fruit Gardener#iz_a	53
-izlude_b,124,165,4	duplicate(Fruit Gardener#iz)	Fruit Gardener#iz_b	53
-izlude_c,124,165,4	duplicate(Fruit Gardener#iz)	Fruit Gardener#iz_c	53
-izlude_d,124,165,4	duplicate(Fruit Gardener#iz)	Fruit Gardener#iz_d	53
-izlude,160,186,0	shop	Butcher#iz	54,517:-1
-izlude_a,160,186,0	duplicate(Butcher#iz)	Butcher#iz_a	54
-izlude_b,160,186,0	duplicate(Butcher#iz)	Butcher#iz_b	54
-izlude_c,160,186,0	duplicate(Butcher#iz)	Butcher#iz_c	54
-izlude_d,160,186,0	duplicate(Butcher#iz)	Butcher#iz_d	54
-izlude,128,158,7	shop	Vendor from Milk Ranch#i	90,519:-1
-izlude_a,128,158,7	duplicate(Vendor from Milk Ranch#i)	Vendor from Milk Ranch#a	90
-izlude_b,128,158,7	duplicate(Vendor from Milk Ranch#i)	Vendor from Milk Ranch#b	90
-izlude_c,128,158,7	duplicate(Vendor from Milk Ranch#i)	Vendor from Milk Ranch#c	90
-izlude_d,128,158,7	duplicate(Vendor from Milk Ranch#i)	Vendor from Milk Ranch#d	90
+//izlude,124,165,4	shop	Fruit Gardener#iz	53,512:-1,513:-1,515:-1,516:-1
+//izlude_a,124,165,4	duplicate(Fruit Gardener#iz)	Fruit Gardener#iz_a	53
+//izlude_b,124,165,4	duplicate(Fruit Gardener#iz)	Fruit Gardener#iz_b	53
+//izlude_c,124,165,4	duplicate(Fruit Gardener#iz)	Fruit Gardener#iz_c	53
+//izlude_d,124,165,4	duplicate(Fruit Gardener#iz)	Fruit Gardener#iz_d	53
+//izlude,160,186,0	shop	Butcher#iz	54,517:-1
+//izlude_a,160,186,0	duplicate(Butcher#iz)	Butcher#iz_a	54
+//izlude_b,160,186,0	duplicate(Butcher#iz)	Butcher#iz_b	54
+//izlude_c,160,186,0	duplicate(Butcher#iz)	Butcher#iz_c	54
+//izlude_d,160,186,0	duplicate(Butcher#iz)	Butcher#iz_d	54
+//izlude,128,158,7	shop	Vendor from Milk Ranch#i	90,519:-1
+//izlude_a,128,158,7	duplicate(Vendor from Milk Ranch#i)	Vendor from Milk Ranch#a	90
+//izlude_b,128,158,7	duplicate(Vendor from Milk Ranch#i)	Vendor from Milk Ranch#b	90
+//izlude_c,128,158,7	duplicate(Vendor from Milk Ranch#i)	Vendor from Milk Ranch#c	90
+//izlude_d,128,158,7	duplicate(Vendor from Milk Ranch#i)	Vendor from Milk Ranch#d	90
 izlude_in,57,110,0	shop	Tool Dealer#iz	47,611:-1,501:-1,502:-1,503:-1,504:-1,506:-1,645:-1,656:-1,601:-1,602:-1,1065:-1,1750:-1
 izlude_in,72,102,3	shop	Trading Merchant#iz	900,13200:-1,13221:-1,13222:-1,13150:-1,13102:-1,13151:-1,13154:-1,13155:-1,13163:-1,13165:-1,13168:-1
 izlude_in,59,113,5	shop	Advanced Potion Merchant#iz	4_F_ALCHE_A,11621:-1,11622:-1,11623:-1,11624:-1

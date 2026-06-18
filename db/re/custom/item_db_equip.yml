@@ -1,0 +1,2465 @@
+Header:
+  Type: ITEM_DB
+  Version: 3
+
+Body:
+  - Id: 24881
+    AegisName: 21Anni2_W_Shadow_TW
+    Name: Corrupted Shadow Weapon
+    Type: ShadowGear
+    Locations:
+      Shadow_Weapon: true
+    EquipLevelMin: 1
+    Refineable: true
+    Script: |
+      .@r = getrefine();
+      bonus bBaseAtk,8*(.@r/2);
+      bonus bMatk,8*(.@r/2);
+      if (.@r>=7) {
+         bonus2 bAddRace,RC_All,5;
+         bonus2 bMagicAddRace,RC_All,5;
+         if (.@r>=9) {
+             bonus2 bAddClass,Class_Boss,5;
+             bonus2 bMagicAddClass,Class_Boss,5;
+             if (.@r>=10) {
+                  bonus bFixedCast,-100;
+             }
+         }
+      }
+  - Id: 24882
+    AegisName: 21anni3_w_shadow_tw
+    Name: Sanctified Shadow Weapon
+    Type: ShadowGear
+    Locations:
+      Shadow_Weapon: true
+    EquipLevelMin: 1
+    Refineable: true
+    Script: |
+      .@r = getrefine();
+      bonus bBaseAtk,15*(.@r/2);
+      bonus bMatk,15*(.@r/2);
+      bonus bFixedCast,-100*(.@r/3);
+      if (.@r>=7) {
+         bonus2 bAddRace,RC_All,10;
+         bonus2 bMagicAddRace,RC_All,10;
+         if (.@r>=9) {
+             bonus2 bAddClass,Class_Boss,10;
+             bonus2 bMagicAddClass,Class_Boss,10;
+             if (.@r>=10) {
+                  bonus2 bIgnoreDefRaceRate,RC_All,100;
+                  bonus2 bIgnoreDefRaceRate,RC_Player_Human,-100;
+                  bonus2 bIgnoreDefRaceRate,RC_Player_Doram,-100;
+                  bonus2 bIgnoreMdefRaceRate,RC_All,100;
+                  bonus2 bIgnoreMdefRaceRate,RC_Player_Human,-100;
+                  bonus2 bIgnoreMdefRaceRate,RC_Player_Doram,-100;
+             }
+         }
+      }
+  - Id: 400814
+    AegisName: Heroic_Hairband_AG
+    Name: Heroic Hairband (Arch Mage)
+    Type: Armor
+    Weight: 100
+    Defense: 10
+    Slots: 1
+    Jobs:
+      Wizard: true
+    Classes:
+      Fourth: true
+    Locations:
+      Head_Top: true
+    ArmorLevel: 1
+    EquipLevelMin: 200
+    Refineable: true
+    View: 2659
+    Script: |
+      .@r = getrefine();
+      bonus bMatkRate,4*(.@r/3);
+      if (.@r>=7) {
+         bonus bVariableCastRate,-10;
+         if (.@r>=9) {
+            bonus2 bMagicAtkEle,Ele_All,10;
+            if (.@r>=11) {
+               bonus2 bMagicAddEle,Ele_All,15;
+            }
+         }
+      }
+  - Id: 400817
+    AegisName: Heroic_Hairband_AG_LT
+    Name: Heroic Hairband (Arch Mage) - LT
+    Type: Armor
+    Weight: 100
+    Defense: 10
+    Slots: 1
+    Jobs:
+      Wizard: true
+    Classes:
+      Fourth: true
+    Locations:
+      Head_Top: true
+    ArmorLevel: 2
+    EquipLevelMin: 200
+    Refineable: true
+    View: 2659
+    Script: |
+      .@g = getenchantgrade();
+      .@r = getrefine();
+      bonus bMatkRate,5*(.@r/3);
+      if (.@r>=7) {
+         bonus bVariableCastRate,-15;
+         if (.@r>=9) {
+            bonus2 bMagicAtkEle,Ele_All,15;
+            if (.@r>=11) {
+               bonus2 bMagicAddEle,Ele_All,20;
+            }
+         }
+      }
+      if (.@g>=ENCHANTGRADE_D) {
+         bonus2 bMagicAtkEle,Ele_All,5;
+         if (.@g>=ENCHANTGRADE_C) {
+            bonus bSpl,2;
+            bonus bSMatk,2;
+            if (.@g>=ENCHANTGRADE_B) {
+               if (.@r>=12) {
+                  bonus bFixedCast,-500;
+               }
+            }
+         }
+      }
+  - Id: 401237
+    AegisName: Glacier_Helm_LT_TH
+    Name: "Issgard Supreme Crown-LT"
+    Type: Armor
+    Weight: 100
+    Defense: 20
+    Slots: 1
+    Locations:
+      Head_Top: true
+    ArmorLevel: 2
+    EquipLevelMin: 230
+    Refineable: true
+    View: 1117
+    Script: |
+      .@g = getenchantgrade();
+      .@r = getrefine();
+      bonus bShortAtkRate,10;
+      bonus bLongAtkRate,10;
+      bonus2 bMagicAtkEle,Ele_All,12;
+      bonus bAtkRate,3*(.@r/2);
+      bonus bMatkRate,3*(.@r/2);
+      bonus2 bAddSize,Size_All,8*(.@r/3);
+      bonus2 bMagicAddSize,Size_All,4*(.@r/3);
+      if (.@r>=7) {
+         bonus bDelayRate,-10;
+         if (.@r>=9) {
+            bonus bPAtk,10;
+            bonus bSMatk,10;
+            bonus bShortAtkRate,10;
+            bonus bLongAtkRate,10;
+            bonus2 bMagicAtkEle,Ele_All,12;
+         }
+      }
+      if (.@g>=ENCHANTGRADE_D) {
+         bonus bPAtk,10;
+         bonus bSMatk,10;
+         if (.@g>=ENCHANTGRADE_C) {
+            bonus bDef,150;
+            bonus bMdef,30;
+            if (.@g>=ENCHANTGRADE_B) {
+               bonus bPow,10;
+               bonus bCon,10;
+               bonus bSpl,10;
+               if (.@g>=ENCHANTGRADE_A) {
+                  bonus bRes,100;
+                  bonus bMRes,100;
+               }
+            }
+         }
+      }
+  - Id: 410493
+    AegisName: BP2_Middle_US
+    Name: "[S2] Authority of Issgard"
+    Type: Armor
+    Weight: 300
+    Slots: 1
+    Locations:
+      Head_Mid: true
+    ArmorLevel: 1
+    EquipLevelMin: 1
+    Script: |
+      bonus bAllStats,5;
+      bonus bAllTraitStats,5;
+      bonus2 bExpAddRace,RC_All,5;
+      bonus2 bDropAddRace,RC_All,5;
+      bonus bDelayrate,-5;
+  - Id: 410496
+    AegisName: BP2_Middle_LT_US
+    Name: "[S2] Authority of Issgard-VG"
+    Type: Armor
+    Weight: 100
+    Slots: 1
+    Locations:
+      Head_Mid: true
+    ArmorLevel: 1
+    EquipLevelMin: 1
+    Script: |
+      bonus bAllStats,15;
+      bonus bAllTraitStats,15;
+      bonus2 bExpAddRace,RC_All,15;
+      bonus2 bDropAddRace,RC_All,15;
+      bonus bDelayrate,-15;
+  - Id: 410549
+    AegisName: Snow_Fox_TH
+    Name: Snow Fox
+    Type: Armor
+    Weight: 0
+    Slots: 1
+    Locations:
+      Head_Mid: true
+    ArmorLevel: 1
+    EquipLevelMin: 200
+    Script: |
+      bonus bAllTraitStats,2;
+  - Id: 410553
+    AegisName: Old_Moroc_Acc_LT
+    Name: Ancient Morocc Noble Jewelry-LT
+    Type: Armor
+    Weight: 10
+    Slots: 1
+    Locations:
+      Head_Mid: true
+    ArmorLevel: 1
+    EquipLevelMin: 100
+    View: 335
+    Script: |
+      .@a = readparam(bStr);
+      .@b = readparam(bAgi);
+      .@c = readparam(bVit);
+      .@d = readparam(bInt);
+      .@e = readparam(bDex);
+      .@f = readparam(bLuk);
+      if (.@a>119) {
+         bonus bBaseAtk,100;
+         bonus bShortAtkRate,15;
+      }
+      if (.@b>119) {
+         bonus bAspdRate,10;
+         bonus bPerfectHitAddRate,20;
+      }
+      if (.@c>119) {
+         bonus bMaxHPRate,10;
+         bonus bRes,50;
+         bonus bMRes,50;
+      }
+      if (.@d>119) {
+         bonus bMatk,100;
+         bonus bMatkRate,15;
+      }
+      if (.@e>119) {
+         bonus bBaseAtk,100;
+         bonus bMatk,100;
+         bonus bLongAtkRate,15;
+      }
+      if (.@f>119) {
+         bonus bCritical,20;
+         bonus bCritAtkRate,30;
+      }
+  - Id: 410561
+    AegisName: Snow_Fox_TH_LT
+    Name: Snow Fox-LT
+    Type: Armor
+    Weight: 0
+    Slots: 1
+    Locations:
+      Head_Mid: true
+    ArmorLevel: 1
+    EquipLevelMin: 200
+    Script: |
+      bonus bAllTraitStats,5;
+  - Id: 410644
+    AegisName: Floating_Ball_LT
+    Name: Floating Ball-LT
+    Type: Armor
+    Buy: 10
+    Weight: 200
+    Locations:
+      Head_Mid: true
+    ArmorLevel: 1
+    EquipLevelMin: 100
+    View: 1760
+    Script: |
+      bonus bMatk,80;
+      bonus2 bMagicAddClass,Class_Boss,5;
+      bonus bMatkRate,5;
+      if (readparam(bDex)>=90) {
+         bonus bMatk,120;
+         bonus2 bMagicAddClass,Class_Boss,10;
+         bonus bFixedCast,-200;
+      }
+      if (readparam(bDex)>=120) {
+         bonus bMatk,160;
+         bonus2 bMagicAddClass,Class_Boss,10;
+         bonus bFixedCast,-300;
+      }
+  - Id: 420438
+    AegisName: Nebula_Orb_US
+    Name: Constellation Orb
+    Type: Armor
+    Weight: 100
+    Locations:
+      Head_Low: true
+    ArmorLevel: 1
+    EquipLevelMin: 100
+    View: 1488
+    Script: |
+      bonus bAllStats,7;
+      bonus bAllTraitStats,7;
+      bonus2 bAddSize,Size_All,BaseLevel/10;
+      bonus2 bMagicAddSize,Size_All,BaseLevel/10;
+  - Id: 420569
+    AegisName: Star_Cosmic_US
+    Name: Cosmic Star Blessing
+    Type: Armor
+    Weight: 100
+    Defense: 10
+    Slots: 0
+    Locations:
+      Head_Low: true
+    ArmorLevel: 1
+    EquipLevelMin: 100
+    Refineable: true
+    View: 1729
+    Script: |
+      bonus bAllStats,10;
+      bonus bAllTraitStats,10;
+      bonus2 bAddSize,Size_All,BaseLevel/10;
+      bonus2 bMagicAddSize,Size_All,BaseLevel/10;
+  - Id: 420605
+    AegisName: True_Gangster_US
+    Name: True Gangster Scarf
+    Type: Armor
+    Weight: 200
+    Defense: 20
+    Slots: 0
+    Locations:
+      Head_Low: true
+    ArmorLevel: 1
+    EquipLevelMin: 1
+    View: 369
+    Script: |
+      bonus bMdef,20;
+      bonus bBaseAtk,200;
+      bonus bMatk,200;
+      bonus bAllStats,10;
+      skill "BS_GREED",1;
+      skill "MC_OVERCHARGE",10;
+      bonus2 bDropAddRace,RC_All,15;
+  - Id: 420841
+    AegisName: AAT_Supreme_LT
+    Name: "All Above Time(Supreme)-LT"
+    Type: Armor
+    Weight: 600
+    Defense: 0
+    Slots: 0
+    Locations:
+      Head_Low: true
+    ArmorLevel: 1
+    EquipLevelMin: 100
+    View: 1309
+    Script: |
+      bonus bDelayrate,-10;
+      bonus bShortAtkRate,10;
+      bonus bLongAtkRate,10;
+      bonus2 bMagicAddEle,Ele_All,10;
+  - Id: 450355
+    AegisName: Violent_D_S_Armor
+    Name: Violent Dragon Shadow Armor
+    Type: Armor
+    Weight: 1000
+    Defense: 50
+    Slots: 1
+    Locations:
+      Armor: true
+    ArmorLevel: 1
+    EquipLevelMin: 130
+    Refineable: true
+    Script: |
+      .@r = getrefine();
+      bonus bMdef,10;
+      bonus bAllStats,10;
+      bonus bMaxHPRate,15;
+      bonus bMaxSPRate,15;
+      bonus bMatk,10*(BaseLevel/10);
+      bonus bMatkRate,2*(.@r/2);
+      bonus bSpl,.@r/3;
+      bonus bCon,.@r/3;
+      if (.@r>=9) {
+         bonus2 bMagicAtkEle,Ele_All,20;
+         if (.@r>=11) {
+            bonus2 bMagicAddSize,Size_Medium,25;
+            bonus2 bMagicAddSize,Size_Large,25;
+            if (.@r>=13) {
+               bonus bDelayRate,-15;
+            }
+         }
+      }
+  - Id: 450357
+    AegisName: Violent_D_S_Armor_LT
+    Name: Violent Dragon Shadow Armor-LT
+    Type: Armor
+    Weight: 1000
+    Defense: 50
+    Slots: 1
+    Locations:
+      Armor: true
+    ArmorLevel: 2
+    EquipLevelMin: 200
+    Refineable: true
+    Gradable: true
+    Script: |
+      .@g = getenchantgrade();
+      .@r = getrefine();
+      bonus bMdef,10;
+      bonus bAllStats,12;
+      bonus bMaxHPRate,15;
+      bonus bMaxSPRate,15;
+      bonus bMatk,12*(BaseLevel/10);
+      bonus bMatkRate,4*(.@r/2);
+      bonus bSpl,2*(.@r/3);
+      bonus bCon,2*(.@r/3);
+      if (.@r>=9) {
+         bonus2 bMagicAtkEle,Ele_All,25;
+         if (.@r>=11) {
+            bonus2 bMagicAddSize,Size_Medium,30;
+            bonus2 bMagicAddSize,Size_Large,30;
+            if (.@r>=13) {
+               bonus bDelayRate,-15;
+            }
+         }
+      }
+      if (.@g>=ENCHANTGRADE_D) {
+         bonus bMatkRate,12;
+         if (.@g>=ENCHANTGRADE_C) {
+            bonus2 bMagicAtkEle,Ele_All,12;
+            if (.@g>=ENCHANTGRADE_B) {
+               bonus bFixedCast,-300;
+               if (.@g>=ENCHANTGRADE_A) {
+                  bonus2 bMagicAddRace,RC_All,15;
+                  bonus2 bMagicAddRace,RC_Player_Doram,-15;
+                  bonus2 bMagicAddRace,RC_Player_Human,-15;
+               }
+            }
+         }
+      }
+  - Id: 450481
+    AegisName: Cocytus_Armor_US
+    Name: Cocytus Armor
+    Type: Armor
+    Weight: 1500
+    Defense: 150
+    Slots: 1
+    Locations:
+      Armor: true
+    ArmorLevel: 2
+    EquipLevelMin: 1
+    Refineable: true
+    Gradable: true
+    Script: |
+      .@r = getrefine();
+      .@g = getenchantgrade();
+      skill "MG_COLDBOLT",10;
+      bonus bUnbreakableArmor;
+      bonus bASPD,10;
+      if (BaseLevel<100) {
+         bonus2 bSubRace,RC_All,-50;
+         bonus bBaseAtk,-200;
+         bonus bMatk,-200;
+      }
+      if (BaseLevel<251) {
+         bonus2 bSkillAtk,"MG_COLDBOLT",10*BaseLevel;
+         bonus2 bSkillAtk,"WZ_STORMGUST",10*BaseLevel;
+      }
+      bonus bSpl,.@r;
+      bonus2 bMagicAddClass,Class_All,5*.@r;
+      bonus bWis,3*(.@r/2);
+      bonus bSta,3*(.@r/2);
+      bonus bMaxHPRate,10*(.@r/2);
+      if (.@r>=10) {
+         bonus bAllStats,10;
+         if (.@r>=11) {
+            bonus bInt,20;
+            if (.@r>=12) {
+               bonus5 bAutoSpell,"MG_COLDBOLT",10,200,BF_SHORT,1;
+               bonus5 bAutoSpell,"WZ_STORMGUST",10,200,BF_SHORT,1;
+               if (.@r>=13) {
+                  bonus2 bMagicAddClass,Class_All,20;
+                  if (.@r>=14) {
+                     bonus2 bSkillAtk,"WL_JACKFROST",50;
+                     bonus2 bMagicAddClass,Class_All,50;
+                  }
+               }
+            }
+         }
+      }
+      if (.@g>=ENCHANTGRADE_D) {
+         bonus bSpl,5;
+         if (.@g>=ENCHANTGRADE_C) {
+             bonus2 bIgnoreMdefRaceRate,RC_All,30;
+             if (.@g>=ENCHANTGRADE_B) {
+                  bonus bSMatk,10;
+                  if (.@g>=ENCHANTGRADE_A) {
+                      bonus4 bAutoSpellOnSkill,"MG_COLDBOLT","WL_JACKFROST",5,1000;
+                  }
+             }
+         }
+      }
+  - Id: 450517
+    AegisName: Kafra_Suit_LT
+    Name: Kafra Uniform-LT
+    Type: Armor
+    Weight: 500
+    Defense: 40
+    Slots: 1
+    Locations:
+      Armor: true
+    ArmorLevel: 2
+    EquipLevelMin: 1
+    Refineable: true
+    Gradable: true
+    Script: |
+      .@r = getrefine();
+      .@g = getenchantgrade();
+      bonus bMaxHP,200*.@r;
+      bonus bMaxSP,40*.@r;
+      if (BaseLevel<99) {
+         bonus bBaseAtk,200;
+         bonus bMatk,200;
+         bonus bSpeedRate,25;
+         bonus2 bExpAddRace,RC_All,50;
+      }
+      if (BaseLevel>99 && BaseLevel<200) {
+         bonus bBaseAtk,100;
+         bonus bMatk,100;
+         bonus bSpeedRate,25;
+         bonus2 bExpAddRace,RC_All,30;
+      }
+      if (BaseLevel>=200) {
+         bonus bPAtk,10;
+         bonus bSMatk,10;
+         bonus2 bAddEle,Ele_All,15;
+         bonus2 bMagicAddEle,Ele_All,15;
+         bonus bSpeedRate,25;
+         bonus2 bExpAddRace,RC_All,30;
+         bonus2 bDropAddRace,RC_All,5;
+      }
+      if (.@g>=ENCHANTGRADE_D) {
+         bonus2 bExpAddRace,RC_All,5;
+         if (.@g>=ENCHANTGRADE_C) {
+             bonus bMaxHP,5000;
+             bonus bMaxSP,500;
+             if (.@g>=ENCHANTGRADE_B) {
+                  bonus2 bSPDrainRate,20,4;
+                  autobonus "{ bonus2 bSPRegenRate,200,1000; }",50,10000,BF_MAGIC;
+                  if (.@g>=ENCHANTGRADE_A) {
+                      bonus2 bDropAddRace,RC_All,5;
+                      bonus bMaxHPRate,50;
+                      bonus bMaxSPRate,50;
+                  }
+             }
+         }
+      }
+  - Id: 450526
+    AegisName: Tiara_Follower_US
+    Name: Tiara Follower Dress
+    Type: Armor
+    Weight: 1000
+    Defense: 100
+    Slots: 1
+    Locations:
+      Armor: true
+    ArmorLevel: 2
+    EquipLevelMin: 100
+    Refineable: true
+    Gradable: true
+    Script: |
+      .@r = getrefine();
+      .@g = getenchantgrade();
+      bonus bMdef,15;
+      bonus bMatk,150+20*(.@r/2);
+      bonus bSpl,10+(.@r/2);
+      bonus2 bMagicAddSize,Size_All,7*.@r;
+      if (BaseClass == Job_Swordman || BaseClass == Job_Mage || BaseClass == Job_Thief || BaseClass == Job_Acolyte) {
+         bonus bMaxHP,30000;
+         bonus bSpl,10;
+         bonus2 bExpAddClass,Class_All,20;
+      }
+      if (.@r>=11) {
+         bonus2 bMagicAddSize,Size_All,10;
+         bonus bDelayRate,-5;
+         if (.@r>=12) {
+             bonus2 bMagicAddSize,Size_All,20;
+             bonus bDelayRate,-15;
+             if (.@r>=13) {
+                  bonus2 bMagicAddSize,Size_All,30;
+                  bonus bAllStats,15;
+                  if (.@r>=14) {
+                      bonus bAllStats,20;
+                      bonus bLongAtkDef,30;
+                      bonus2 bSubSize,Size_All,30;
+                      bonus bMagicAtkDef,30;
+                  }
+             }
+         }
+      }
+      if (.@g>=ENCHANTGRADE_D) {
+         bonus bMatk,100;
+         if (.@g>=ENCHANTGRADE_C) {
+             bonus2 bMagicAtkEle,Ele_All,15;
+             if (.@g>=ENCHANTGRADE_B) {
+                  bonus bFixedCast,-500;
+                  if (.@g>=ENCHANTGRADE_A) {
+                      bonus3 bAddMonsterIdDropItem,1000367,20894,3000;
+                      bonus3 bAddMonsterIdDropItem,1000367,20895,3000;
+                      bonus3 bAddMonsterIdDropItem,1000367,20896,3000;
+                      bonus3 bAddMonsterIdDropItem,1000367,20897,3000;
+                      bonus3 bAddMonsterIdDropItem,1000367,20898,3000;
+                      bonus3 bAddMonsterIdDropItem,1000367,20899,3000;
+                      bonus3 bAddMonsterIdDropItem,1000367,20900,3000;
+                      bonus3 bAddMonsterIdDropItem,1000367,20892,3000;
+                      bonus3 bAddMonsterIdDropItem,1000367,20893,3000;
+                  }
+             }
+         }
+      }
+  - Id: 460092
+    AegisName: Ancient_Prontera_US
+    Name: Ancient Prontera Book
+    Type: Armor
+    Weight: 200
+    Defense: 70
+    Slots: 1
+    Locations:
+      Left_Hand: true
+    ArmorLevel: 2
+    EquipLevelMin: 100
+    Refineable: true
+    Gradable: true
+    View: 4
+    Script: |
+      .@r = getrefine();
+      .@g = getenchantgrade();
+      bonus bUnbreakableShield;
+      bonus bSMatk,2*(.@r/2);
+      bonus bMatk,30*(.@r/3);
+      if (.@r>=10)
+         bonus2 bMagicAddEle,Ele_All,20;
+      if (.@r>=12)
+         bonus bVariableCast,-30;
+      if (.@r>=14)
+         autobonus "{ bonus bInt,70; bonus bSpl,70; }",70,20000,BF_WEAPON|BF_MAGIC;
+      if (.@g>=ENCHANTGRADE_D) {
+         bonus bMaxHPrate,15;
+         bonus bMaxSPrate,15;
+         if (.@g>=ENCHANTGRADE_C) {
+             bonus2 bSubEle,Ele_Dark,25;
+             bonus2 bSubEle,Ele_Ghost,25;
+             bonus2 bSubEle,Ele_Poison,25;
+             if (.@g>=ENCHANTGRADE_B) {
+                  bonus2 bSkillAtk,"LG_RAYOFGENESIS",100;
+                  if (.@g>=ENCHANTGRADE_A) {
+                      bonus5 bAutoSpell,"LG_RAYOFGENESIS",7,70,BF_WEAPON|BF_LONG,1;
+                  }
+             }
+         }
+      }
+  - Id: 460093
+    AegisName: Ninja_Sheild
+    Name: "Hissatsu: Falling Bloom"
+    Type: Armor
+    Weight: 500
+    Defense: 100
+    Slots: 1
+    Jobs:
+      KagerouOboro: true
+    Classes:
+      All_Third: true
+      Fourth: true
+    Locations:
+      Left_Hand: true
+    ArmorLevel: 2
+    EquipLevelMin: 100
+    Refineable: true
+    Gradable: true
+    View: 4
+    Script: |
+      .@r = getrefine();
+      .@g = getenchantgrade();
+      bonus bMaxHPrate,5;
+      bonus bDelayrate,-8;
+      bonus2 bSkillAtk,"KO_BAKURETSU",20*(.@r/3);
+      bonus2 bSkillAtk,"KO_HAPPOKUNAI",20*(.@r/3);
+      if (.@r>=9) {
+         bonus bMaxHPrate,5;
+         bonus2 bSubSize,Size_All,5;
+         if (.@r>=11) {
+             bonus bBaseAtk,100;
+             bonus bLongAtkRate,15;
+             if (.@r>=13) {
+                  bonus2 bSkillCooldown,"KO_BAKURETSU",-3000;
+                  bonus4 bAutoSpellOnSkill,"KO_BAKURETSU","KO_HAPPOKUNAI",max(getskilllv("KO_HAPPOKUNAI"),1),1000;
+             }
+         }
+      }
+      if (.@g>=ENCHANTGRADE_D) {
+         bonus2 bSkillAtk,"SS_KUNAIWAIKYOKU",8*(.@r/4);
+         bonus2 bSkillAtk,"SS_KUNAIKAITEN",8*(.@r/4);
+         bonus2 bSkillAtk,"SS_KUNAIKUSSETSU",8*(.@r/4);
+         bonus2 bSkillAtk,"SS_HITOUAKUMU",8*(.@r/4);
+      }
+      if (.@g>=ENCHANTGRADE_C) {
+         if (.@r>=9) {
+             bonus2 bAddEle,Ele_All,15;
+         }
+      }
+      if (.@g>=ENCHANTGRADE_B) {
+         if (.@r>=11) {
+             bonus bDelayrate,-8;
+             skill "KG_KYOMU",5;
+             skill "OB_ZANGETSU",5;
+         }
+      }
+      if (.@g>=ENCHANTGRADE_A) {
+         if (.@r>=13) {
+             if (BaseLevel>=200) {
+                  bonus4 bAutoSpellOnSkill,"SS_KUNAIWAIKYOKU","SS_KUNAIKAITEN",max(getskilllv("KO_HAPPOKUNAI"),1),350;
+                  bonus4 bAutoSpellOnSkill,"SS_KUNAIWAIKYOKU","SS_KUNAIKUSSETSU",max(getskilllv("KO_HAPPOKUNAI"),1),350;
+             }
+         }
+      }
+  - Id: 460094
+    AegisName: Aegis_Illusive_TH
+    Name: Aegis of the Illusive
+    Type: Armor
+    Weight: 300
+    Defense: 40
+    Slots: 1
+    Jobs:
+      Priest: true
+    Classes:
+      All_Third: true
+      Fourth: true
+    Locations:
+      Left_Hand: true
+    ArmorLevel: 1
+    EquipLevelMin: 190
+    Refineable: true
+    View: 4
+    Script: |
+      .@r = getrefine();
+      bonus bCritical,5;
+      bonus2 bSubClass,Class_Normal,10;
+      if (.@r>=7) {
+         bonus bAspd,2;
+         if (.@r>=9) {
+             bonus2 bSkillCooldown,"CD_PETITIO",-200;
+             if (.@r>=11) {
+                  bonus bDelayrate,-5;
+                  bonus bCritAtkRate,10;
+             }
+         }
+      }
+  - Id: 460095
+    AegisName: Aegis_Illusive_TH_LT
+    Name: Aegis of the Illusive-LT
+    Type: Armor
+    Weight: 300
+    Defense: 80
+    Slots: 1
+    Jobs:
+      Priest: true
+    Classes:
+      Fourth: true
+    Locations:
+      Left_Hand: true
+    ArmorLevel: 2
+    EquipLevelMin: 210
+    Refineable: true
+    Gradable: true
+    View: 4
+    Script: |
+      .@r = getrefine();
+      .@g = getenchantgrade();
+      bonus bCritical,15;
+      bonus2 bSubClass,Class_Boss,15;
+      bonus2 bSubClass,Class_Normal,15;
+      if (.@r>=7) {
+         bonus bAspd,2;
+         bonus bMaxHPrate,5;
+         if (.@r>=9) {
+             bonus2 bSkillCooldown,"CD_PETITIO",-1000;
+             if (.@r>=11) {
+                  bonus bDelayrate,-10;
+                  bonus bCritAtkRate,20;
+                  if (.@r>=12) {
+                      bonus bShortAtkRate,10;
+                      bonus bLongAtkRate,10;
+                  }
+             }
+         }
+      }
+      if (.@g>=ENCHANTGRADE_D) {
+         bonus bMaxHPrate,10;
+         if (.@g>=ENCHANTGRADE_C) {
+             bonus bCritical,15;
+             bonus bPAtk,4;
+             if (.@g>=ENCHANTGRADE_B) {
+                  bonus bMaxHP,5000;
+                  bonus bPAtk,6;
+                  if (.@g>=ENCHANTGRADE_A) {
+                      bonus2 bAddSize,Size_All,20;
+                      bonus bNoWalkDelay;
+                  }
+             }
+         }
+      }
+  - Id: 460096
+    AegisName: Hightech_Shield_US
+    Name: High-tech Shield
+    Type: Armor
+    Weight: 500
+    Defense: 50
+    Slots: 1
+    Locations:
+      Left_Hand: true
+    ArmorLevel: 2
+    EquipLevelMin: 100
+    Refineable: true
+    Gradable: true
+    View: 4
+    Script: |
+      .@r = getrefine();
+      .@g = getenchantgrade();
+      bonus bShortWeaponDamageReturn,25;
+      bonus bLongAtkRate,15;
+      bonus bPow,3*(.@r/2);
+      bonus bCon,3*(.@r/2);
+      bonus bMaxHPrate,5*(.@r/3);
+      bonus bDelayrate,-2*(.@r/3);
+      if (.@r>=10) {
+         bonus2 bAddClass,Class_All,15;
+         if (.@r>=11) {
+             bonus2 bSkillAtk,"GN_CARTCANNON",50;
+             if (.@r>=12) {
+                  bonus2 bSkillAtk,"GN_SPORE_EXPLOSION",50;
+                  if (.@r>=13) {
+                      bonus bLongAtkRate,20;
+                      if (.@r>=14) {
+                          bonus2 bSkillAtk,"GN_CARTCANNON",80;
+                          bonus2 bSkillAtk,"GN_SPORE_EXPLOSION",80;
+                      }
+                  }
+             }
+         }
+      }
+      if (getpetinfo(PETINFO_EGGID) == 9013) {
+         if (getpetinfo(PETINFO_INTIMATE) >= PET_INTIMATE_LOYAL) {
+             bonus bSpeedRate,25;
+             bonus2 bSkillAtk,"GN_SPORE_EXPLOSION",40;
+         }
+      }
+      if (getpetinfo(PETINFO_EGGID) == 9123) {
+         if (getpetinfo(PETINFO_INTIMATE) >= PET_INTIMATE_LOYAL) {
+             bonus bSpeedRate,25;
+             bonus2 bSkillAtk,"GN_CARTCANNON",40;
+         }
+      }
+      if (.@g>=ENCHANTGRADE_C) {
+         bonus bPow,3;
+         bonus bCon,3;
+         if (.@g>=ENCHANTGRADE_B) {
+             bonus bLongAtkRate,20;
+             if (.@g>=ENCHANTGRADE_A) {
+                  bonus bAllTraitStats,10;
+             }
+         }
+      }
+  - Id: 460097
+    AegisName: Forbidden_Grimoire2_LT
+    Name: Forbidden Grimoire II-LT
+    Type: Armor
+    Weight: 500
+    Defense: 100
+    Slots: 1
+    Jobs:
+      Sage: true
+    Classes:
+      All_Third: true
+      Fourth: true
+    Locations:
+      Left_Hand: true
+    ArmorLevel: 2
+    EquipLevelMin: 210
+    Refineable: true
+    Gradable: true
+    View: 4
+    Script: |
+      .@r = getrefine();
+      .@g = getenchantgrade();
+      bonus bAspd,3;
+      bonus bMagicHPGainValue,500;
+      bonus bMaxHP,500*.@r;
+      bonus2 bMagicAtkEle,Ele_Fire,8*(.@r/3);
+      bonus2 bMagicAtkEle,Ele_Wind,8*(.@r/3);
+      if (.@r>=9) {
+         bonus2 bSkillCooldown,"EM_CONFLAGRATION",-300;
+         bonus2 bSkillCooldown,"EM_LIGHTNING_LAND",-300;
+      }
+      if (.@g>=ENCHANTGRADE_D) {
+         bonus bDelayrate,-10;
+         if (.@g>=ENCHANTGRADE_C) {
+             bonus2 bSkillCooldown,"EM_CONFLAGRATION",-300;
+             bonus2 bSkillCooldown,"EM_LIGHTNING_LAND",-300;
+             if (.@g>=ENCHANTGRADE_A) {
+                  bonus2 bMagicAddRace,RC_All,20;
+                  bonus2 bSkillCooldown,"SO_SUMMON_VENTUS",-40000;
+                  bonus2 bSkillCooldown,"SO_SUMMON_AGNI",-40000;
+                  bonus2 bSkillCooldown,"EM_SUMMON_ELEMENTAL_ARDOR",-300000;
+                  bonus2 bSkillCooldown,"EM_SUMMON_ELEMENTAL_PROCELLA",-300000;
+             }
+         }
+      }
+      if (.@g>=ENCHANTGRADE_B)
+         autobonus "{ bonus bSpl,100; bonus bSMatk,20; bonus2 bHPLossRate,500,1000; }",40,10000,BF_MAGIC;
+      else if (.@r>=11)
+         autobonus "{ bonus bSpl,50; bonus bSMatk,10; bonus2 bHPLossRate,500,1000; }",40,10000,BF_MAGIC;
+  - Id: 460106
+    AegisName: Kitten_Shield_US
+    Name: Kitten Shield
+    Type: Armor
+    Weight: 100
+    Defense: 20
+    Slots: 1
+    Locations:
+      Left_Hand: true
+    ArmorLevel: 2
+    EquipLevelMin: 1
+    Refineable: true
+    Gradable: true
+    View: 4
+    Script: |
+      .@r = getrefine();
+      .@g = getenchantgrade();
+      bonus bMaxHP,15000;
+      bonus bMaxSP,3000;
+      bonus bBaseAtk,100;
+      bonus bMatk,100;
+      if (BaseLevel<=250) {
+         bonus2 bDropAddRace,RC_All,BaseLevel/10;
+         bonus2 bExpAddRace,RC_All,BaseLevel/10;
+      }
+      if (.@r>=12) {
+         bonus bFixedCastrate,-50;
+      }
+      if (.@g>=ENCHANTGRADE_C) {
+         bonus bMaxHPRate,15;
+         bonus bMaxSPRate,15;
+         if (.@g>=ENCHANTGRADE_B) {
+             bonus bDelayRate,-15;
+             if (.@g>=ENCHANTGRADE_A) {
+                  bonus bPow,15;
+                  bonus bSpl,15;
+             }
+         }
+      }
+  - Id: 460108
+    AegisName: Doram_Shield_LT
+    Name: Doram Shield-LT
+    Type: Armor
+    Weight: 300
+    Defense: 40
+    Slots: 1
+    Jobs:
+      Summoner: true
+      Spirit_Handler: true
+    Locations:
+      Left_Hand: true
+    ArmorLevel: 2
+    EquipLevelMin: 200
+    Refineable: true
+    Gradable: true
+    View: 4
+    Script: |
+      .@r = getrefine();
+      .@g = getenchantgrade();
+      bonus bBaseAtk,50+(15*(.@r/2));
+      bonus bMatk,50+(15*(.@r/2));
+      if (.@r>=7) {
+         bonus bAspdRate,10;
+         bonus bMaxHPRate,5;
+         if (.@r>=9) {
+            bonus bDelayRate,-10;
+            bonus bMaxHPRate,5;
+            if (.@r>=11) {
+               bonus2 bSkillCooldown,"SH_HOWLING_OF_CHUL_HO",-500;
+               bonus2 bSkillCooldown,"SH_HYUN_ROKS_BREEZE",-1500;
+               if (.@r>=12) {
+                  bonus2 bSkillAtk,"SH_HOWLING_OF_CHUL_HO",10;
+                  bonus2 bSkillAtk,"SH_HYUN_ROKS_BREEZE",10;
+               }
+            }
+         }
+      }
+      if (.@g>=ENCHANTGRADE_D) {
+         bonus bLongAtkRate,10;
+         bonus2 bMagicAtkEle,Ele_All,10;
+         if (.@g>=ENCHANTGRADE_C) {
+            bonus2 bSkillAtk,"SH_HOWLING_OF_CHUL_HO",10;
+            bonus2 bSkillAtk,"SH_HYUN_ROKS_BREEZE",10;
+            if (.@g>=ENCHANTGRADE_B) {
+               bonus2 bSkillAtk,"SH_HOWLING_OF_CHUL_HO",15;
+               bonus2 bSkillAtk,"SH_HYUN_ROKS_BREEZE",15;
+               if (.@g>=ENCHANTGRADE_A) {
+                  bonus2 bAddSize,Size_All,20;
+                  bonus2 bMagicAddSize,Size_All,20;
+                  bonus bMaxHP,5000;
+               }
+            }
+         }
+      }
+  - Id: 460111
+    AegisName: Apostate_Shield_US
+    Name: Dark Apostate Shield
+    Type: Armor
+    Weight: 3000
+    Defense: 100
+    Slots: 1
+    Locations:
+      Left_Hand: true
+    ArmorLevel: 2
+    Refineable: true
+    Gradable: true
+    View: 4
+    Script: |
+      .@r = getrefine();
+      .@g = getenchantgrade();
+      bonus bBaseAtk,100;
+      bonus bMatk,100;
+      bonus bPow,3*(.@r/3);
+      bonus bSpl,3*(.@r/3);
+      bonus bMaxHPrate,15*(.@r/4);
+      bonus bMaxSPrate,15*(.@r/4);
+      if (BaseClass == Job_Acolyte) {
+        bonus bPow,15;
+        bonus bSpl,15;
+        bonus bAspd,15;
+      }
+      if (getpetinfo(PETINFO_EGGID) == 9128) {
+        bonus bBaseAtk,150;
+        bonus bMatk,150;
+        bonus2 bSubClass,Class_Normal,15;
+      }
+        if (.@r>=10) {
+          bonus bBaseAtk,150;
+          bonus bMatk,150;
+          if (.@r>=11) {
+            bonus2 bAddSize,Size_All,15;
+            bonus2 bMagicAddSize,Size_All,15;
+            if (.@r>=12) {
+              bonus2 bSkillAtk,"ASC_METEORASSAULT",2*BaseLevel;
+              bonus2 bSkillAtk,"WL_HELLINFERNO",2*BaseLevel;
+              if (.@r>=13) {
+                bonus2 bSkillAtk,"AB_ADORAMUS",BaseLevel/2;
+                bonus2 bSkillAtk,"CD_PETITIO",BaseLevel/5;
+              }
+            }
+          }
+        }
+        if (.@g>=ENCHANTGRADE_D) {
+          bonus bFixedCast,-300;
+          if (.@g>=ENCHANTGRADE_C) {
+            bonus bMaxHPrate,15;
+            bonus bMaxSPrate,15;
+            if (.@g>=ENCHANTGRADE_B) {
+              bonus bDelayrate,-15;
+              if (.@g>=ENCHANTGRADE_A) {
+                bonus bAllTraitStats,12;
+                bonus bNoGemStone;
+              }
+            }
+          }
+        }
+  - Id: 460151
+    AegisName: Rose_Quartz_Shield_LT
+    Name: Rose Quartz Shield-LT
+    Type: Armor
+    Weight: 660
+    Slots: 1
+    Locations:
+      Left_Hand: true
+    ArmorLevel: 2
+    EquipLevelMin: 1
+    Refineable: true
+    View: 4
+    Script: |
+      .@r = getrefine();
+      .@g = getenchantgrade();
+      bonus bDelayrate,-10;
+      bonus2 bSkillFixedCast,"MG_FIREBALL",-320;
+      bonus2 bSkillAtk,"MG_FIREBALL",15*.@r;
+      if (.@r>=7) {
+         bonus bVariableCastrate,-15;
+         if (.@r>=9) {
+            skill "MG_FIREBALL",5;
+            bonus2 bMagicAtkEle,Ele_Dark,15;
+            bonus2 bMagicAtkEle,Ele_Fire,15;
+            if (.@r>=11) {
+               bonus bUseSPrate,15;
+               bonus bMatk,50;
+               bonus2 bSkillCooldown,"WL_COMET",-20000;
+               if (.@r>=12) {
+                  bonus2 bSkillAtk,"WL_COMET",20;
+                  bonus2 bSkillAtk,"AG_MYSTERY_ILLUSION",20;
+               }
+            }
+         }
+      }
+      if (.@g>=ENCHANTGRADE_D) {
+         bonus bInt,10;
+         bonus bSpl,10;
+         bonus bMaxHPRate,5;
+         if (.@g>=ENCHANTGRADE_C) {
+            bonus bFixedCast,-500;
+            if (.@g>=ENCHANTGRADE_B) {
+               bonus bDelayrate,-10;
+               bonus bSMatk,10;
+               if (.@g>=ENCHANTGRADE_A) {
+                  bonus2 bMagicAddSize,Size_All,20;
+                  bonus bMaxHP,5000;
+               }
+            }
+         }
+      }
+  - Id: 470343
+    AegisName: Corruption_Boots_US
+    Name: Corruption Boots
+    Type: Armor
+    Weight: 1500
+    Defense: 50
+    Slots: 1
+    Locations:
+      Shoes: true
+    ArmorLevel: 2
+    EquipLevelMin: 100
+    Refineable: true
+    Script: |
+      .@r = getrefine();
+      .@g = getenchantgrade();
+      bonus2 bMagicAtkEle,Ele_All,20;
+      bonus bInt,3*(.@r/2);
+      bonus bMatk,30*(.@r/2);
+      bonus bSpl,3*(.@r/3);
+      bonus bCon,3*(.@r/3);
+      bonus bSMatk,3*(.@r/3);
+      if (.@r>=10) {
+         bonus bMaxHPRate,20;
+         bonus bMaxSPRate,20;
+         if (.@r>=11) {
+             bonus bAllStats,15;
+             bonus bFixedCast,-500;
+             if (.@r>=12) {
+                 bonus2 bMagicAtkEle,Ele_All,30;
+                 if (.@r>=13) {
+                    bonus bMatk,250;
+                    bonus bSpl,15;
+                 }
+             }
+         }
+      }
+      if (.@g>=ENCHANTGRADE_D) {
+         bonus bMatkRate,20;
+         if (.@g>=ENCHANTGRADE_C) {
+            bonus2 bMagicAddClass,Class_All,15;
+            if (.@g>=ENCHANTGRADE_B) {
+               bonus bSMatk,20;
+               if (.@g>=ENCHANTGRADE_A) {
+                  bonus bSpl,8*(.@r/2);
+               }
+            }
+         }
+      }
+  - Id: 470345
+    AegisName: Dragon_Shoes_US
+    Name: Legendary Dragon Shoes
+    Type: Armor
+    Weight: 100
+    Defense: 50
+    Slots: 1
+    Locations:
+      Shoes: true
+    ArmorLevel: 2
+    EquipLevelMin: 100
+    Refineable: true
+    Gradable: true
+    Script: |
+      .@r = getrefine();
+      .@g = getenchantgrade();
+      bonus2 bSubEle,Ele_All,15;
+      bonus bMaxHPRate,15;
+      bonus bMaxSPRate,15;
+      bonus bBaseAtk,30*(.@r/2);
+      bonus bMatk,30*(.@r/2);
+      bonus bPow,2*(.@r/2);
+      bonus bSpl,2*(.@r/2);
+      bonus2 bAddSize,Size_All,10*(.@r/3);
+      bonus2 bMagicAddSize,Size_All,10*(.@r/3);
+      if (.@r>=10) {
+         bonus2 bAddSize,Size_All,15;
+         bonus2 bMagicAddSize,Size_All,15;
+         bonus2 bSubRace,RC_Dragon,30;
+         if (.@r>=11) {
+             bonus bBaseAtk,120;
+             bonus bMatk,120;
+             if (.@r>=12) {
+                 bonus2 bAddEle,Ele_All,30;
+                 bonus2 bMagicAddEle,Ele_All,30;
+                 if (.@r>=13) {
+                    bonus bPow,15;
+                    bonus bSpl,15;
+                 }
+             }
+         }
+      }
+      if (.@g>=ENCHANTGRADE_D) {
+         bonus2 bAddSize,Size_All,20;
+         bonus2 bMagicAddSize,Size_All,20;
+         if (.@g>=ENCHANTGRADE_C) {
+            bonus bDelayRate,-15;
+            if (.@g>=ENCHANTGRADE_B) {
+               bonus bSMatk,20;
+               bonus bPAtk,20;
+               if (.@g>=ENCHANTGRADE_A) {
+                  if (.@r>=13) {
+                     bonus bFixedCast,-1000;
+                  }
+               }
+            }
+         }
+      }
+  - Id: 470424
+    AegisName: Aladdin_Shoes
+    Name: Aladdin Shoes
+    Type: Armor
+    Weight: 100
+    Defense: 0
+    Slots: 1
+    Locations:
+      Shoes: true
+    ArmorLevel: 2
+    EquipLevelMin: 1
+    Refineable: true
+    Gradable: true
+    Script: |
+      .@r = getrefine();
+      .@g = getenchantgrade();
+      bonus bBaseAtk,30;
+      bonus bMatk,30;
+      bonus bDelayRate,-5;
+      bonus2 bExpAddRace,RC_All,.@r/2;
+      if (.@r>=7) {
+         bonus bAtkRate,5;
+         bonus bMatkRate,5;
+         if (.@r>=9) {
+             bonus bAspdRate,10;
+             bonus bFixedCast,-500;
+             if (.@r>=11) {
+                 bonus2 bExpAddRace,RC_All,5;
+                 bonus2 bAddRace,RC_All,10;
+                 bonus2 bMagicAddRace,RC_All,10;
+             }
+         }
+      }
+      if (.@g>=ENCHANTGRADE_D) {
+         bonus bPow,10;
+         bonus bCon,10;
+         bonus bSpl,10;
+         if (.@g>=ENCHANTGRADE_C) {
+            bonus bFixedCast,-300;
+            bonus2 bAddSize,Size_All,10;
+            bonus2 bMagicAddSize,Size_All,10;
+            if (.@g>=ENCHANTGRADE_B) {
+               bonus2 bMagicAddRace,RC_All,5;
+               if (.@g>=ENCHANTGRADE_A) {
+                  bonus bFixedCast,-200;
+                  bonus bPAtk,15;
+                  bonus bSMatk,15;
+               }
+            }
+         }
+      }
+  - Id: 470442
+    AegisName: Ayothaya_Boots_TH
+    Name: "Ayothaya Adventurer's Boots"
+    Type: Armor
+    Weight: 200
+    Defense: 20
+    Slots: 1
+    Locations:
+      Shoes: true
+    ArmorLevel: 2
+    EquipLevelMin: 100
+    Refineable: true
+    Gradable: true
+    Script: |
+      .@r = getrefine();
+      .@g = getenchantgrade();
+      bonus bAspdRate,10;
+      bonus bMaxHPRate,10;
+      bonus bMaxSPRate,5;
+      bonus bBaseAtk,10*(.@r/2);
+      bonus bMatk,10*(.@r/2);
+      if (.@r>=7) {
+         bonus bPAtk,6;
+         bonus bSMatk,6;
+         if (.@r>=9) {
+             bonus bVariableCastRate,-10;
+             bonus bFixedCast,-500;
+             if (.@r>=12) {
+                 bonus2 bExpAddRace,RC_All,5;
+                 bonus2 bAddEle,Ele_All,10;
+                 bonus2 bMagicAtkEle,Ele_All,10;
+             }
+         }
+      }
+      if (.@g>=ENCHANTGRADE_D) {
+         bonus bFixedCast,-500;
+         if (.@g>=ENCHANTGRADE_C) {
+            bonus bFixedCast,-300;
+            bonus2 bAddSize,Size_All,10;
+            bonus2 bMagicAddSize,Size_All,10;
+            if (.@g>=ENCHANTGRADE_B) {
+               bonus2 bMagicAddRace,RC_All,5;
+               if (.@g>=ENCHANTGRADE_A) {
+                  bonus bFixedCast,-200;
+                  bonus bPAtk,15;
+                  bonus bSMatk,15;
+               }
+            }
+         }
+      }
+  - Id: 480536
+    AegisName: Will_Karasu_US
+    Name: Will of Karasu
+    Type: Armor
+    Weight: 100
+    Defense: 0
+    Slots: 1
+    Locations:
+      Garment: true
+    ArmorLevel: 2
+    EquipLevelMin: 100
+    Refineable: true
+    Gradable: true
+    Script: |
+      .@g = getenchantgrade();
+      .@r = getrefine();
+      bonus2 bSubClass,Class_All,10;
+      bonus2 bMagicAtkEle,Ele_All,30;
+      bonus bAllStats,2*.@r;
+      bonus bDelayrate,-1*.@r;
+      if (.@r>=12) {
+         bonus bMatk,100;
+         bonus bSpl,5;
+         if (.@r>=13) {
+            bonus bAllStats,15;
+            bonus bMatk,150;
+            bonus bSpl,7;
+            if (.@r>=14) {
+               bonus bMatk,150;
+               bonus bSpl,7;
+               bonus bFixedCast,-500;
+            }
+         }
+      }
+      if (.@g>=ENCHANTGRADE_D) {
+         bonus2 bMagicAtkEle,Ele_All,10;
+         if (.@g>=ENCHANTGRADE_C) {
+            bonus bSpl,7;
+            if (.@g>=ENCHANTGRADE_B) {
+               bonus bSMatk,20;
+               if (.@g>=ENCHANTGRADE_A) {
+                  bonus2 bMagicAtkEle,Ele_All,20;
+               }
+            }
+         }
+      }
+  - Id: 480539
+    AegisName: Royal_Nightwatch_US
+    Name: Royal Nightwatch Cape
+    Type: Armor
+    Weight: 100
+    Slots: 1
+    Locations:
+      Garment: true
+    ArmorLevel: 2
+    EquipLevelMin: 100
+    Refineable: true
+    Gradable: true
+    Script: |
+      .@r = getrefine();
+      .@g = getenchantgrade();
+      bonus bNoKnockback;
+      bonus bLongAtkRate,20+(7*(.@r/3));
+      bonus bBaseAtk,20*(.@r/2);
+      bonus bCon,4*(.@r/2);
+      bonus2 bAddSize,Size_All,7*(.@r/3);
+      if (.@r>=7) {
+         bonus bAspdRate,10;
+         bonus bLongAtkRate,15;
+         if (.@r>=9) {
+             bonus2 bAddEle,Ele_All,20;
+             if (.@r>=10) {
+                  bonus bBaseAtk,100;
+                  if (.@r>=11) {
+                      bonus bAllStats,15;
+                      if (.@r>=12) {
+                          bonus bCon,10;
+                          bonus bLongAtkRate,15;
+                          if (.@r>=13) {
+                              bonus2 bSkillAtk,"RL_R_TRIP",100;
+                              bonus2 bSkillAtk,"RL_FIREDANCE",100;
+                              bonus2 bSkillAtk,"RL_BANISHING_BUSTER",100;
+                              if (.@r>=14) {
+                                   skill "LG_SHIELDSPELL",3;
+                              }
+                          }
+                      }
+                  }
+             }
+         }
+      }
+      if (.@g>=ENCHANTGRADE_D) {
+         bonus bBaseAtk,50;
+         if (.@g>=ENCHANTGRADE_C) {
+             bonus bDelayrate,-15;
+             if (.@g>=ENCHANTGRADE_B) {
+                  bonus bPAtk,10;
+                  if (.@g>=ENCHANTGRADE_A) {
+                      if (.@r>=15) {
+                          bonus bLongAtkRate,40;
+                      }
+                  }
+             }
+         }
+      }
+  - Id: 480540
+    AegisName: Royal_Alberta_US
+    Name: Royal Alberta Cape
+    Type: Armor
+    Weight: 100
+    Slots: 1
+    Locations:
+      Garment: true
+    ArmorLevel: 2
+    EquipLevelMin: 100
+    Refineable: true
+    Gradable: true
+    Script: |
+      .@r = getrefine();
+      .@g = getenchantgrade();
+      bonus bNoKnockback;
+      bonus bLongAtkRate,20+(7*(.@r/3));
+      bonus bBaseAtk,20*(.@r/2);
+      bonus bCon,2*(.@r/2);
+      bonus bPow,2*(.@r/2);
+      bonus2 bAddSize,Size_All,7*(.@r/3);
+      if (.@r>=7) {
+         bonus bAspdRate,10;
+         bonus bLongAtkRate,15;
+         if (.@r>=9) {
+             bonus2 bAddEle,Ele_All,20;
+             if (.@r>=10) {
+                  bonus bBaseAtk,100;
+                  if (.@r>=11) {
+                      bonus bAllStats,15;
+                      if (.@r>=12) {
+                          bonus bCon,10;
+                          bonus bLongAtkRate,15;
+                          if (.@r>=13) {
+                              bonus2 bSkillAtk,"GN_CARTCANNON",50;
+                              bonus2 bSkillAtk,"NC_ARMSCANNON",50;
+                              if (.@r>=14) {
+                                   skill "LG_SHIELDSPELL",3;
+                              }
+                          }
+                      }
+                  }
+             }
+         }
+      }
+      if (.@g>=ENCHANTGRADE_D)
+         bonus bBaseAtk,100;
+      if (.@g>=ENCHANTGRADE_C)
+         bonus bDelayrate,-15;
+      if (.@g>=ENCHANTGRADE_B)
+         bonus bPAtk,20;
+      if (.@g>=ENCHANTGRADE_A) {
+         if (.@r>=14) {
+             bonus2 bSkillAtk,"GN_CARTCANNON",70;
+             bonus2 bSkillAtk,"NC_ARMSCANNON",70;
+         }
+      }
+  - Id: 480621
+    AegisName: Comet_Cavalry_US
+    Name: Comet Cavalry
+    Type: Armor
+    Weight: 3000
+    Defense: 400
+    Slots: 1
+    Locations:
+      Garment: true
+    ArmorLevel: 2
+    EquipLevelMin: 100
+    Refineable: true
+    Gradable: true
+    Script: |
+      .@g = getenchantgrade();
+      .@r = getrefine();
+      bonus bUnbreakableGarment;
+      bonus bFlee2,25;
+      bonus2 bSkillAtk,"WL_COMET",20;
+      bonus bBaseAtk,250+30*(.@r/2);
+      bonus bMatk,250+30*(.@r/2);
+      bonus bPow,.@r/2;
+      bonus bSpl,.@r/2;
+      if (.@r>=11) {
+         bonus bPow,15;
+         bonus bSpl,15;
+         if (.@r>=12) {
+            bonus2 bSkillAtk,"RK_HUNDREDSPEAR",BaseLevel/2;
+            bonus2 bSkillAtk,"LG_CANNONSPEAR",BaseLevel/2;
+            if (.@r>=13) {
+               bonus bAllStats,25;
+               bonus bBaseAtk,250;
+               bonus bMatk,250;
+               bonus4 bAutoSpellOnSkill,"RK_HUNDREDSPEAR","WL_COMET",5,1000;
+               bonus4 bAutoSpellOnSkill,"LG_CANNONSPEAR","WL_COMET",5,1000;
+               if (.@r>=14) {
+                  skill "LG_SHIELDSPELL",3;
+                  bonus2 bSkillAtk,"WL_COMET",50;
+               }
+            }
+         }
+      }
+      if (.@g>=ENCHANTGRADE_D) {
+         bonus bDelayrate,-15;
+         if (.@g>=ENCHANTGRADE_C) {
+            bonus bPow,10;
+            bonus bSpl,10;
+            if (.@g>=ENCHANTGRADE_B) {
+               bonus bPAtk,17;
+               bonus bSMatk,17;
+               if (.@g>=ENCHANTGRADE_A) {
+                  if (.@r>=14) {
+                     bonus bBaseAtk,250;
+                     bonus bMatk,250;
+                     bonus2 bSkillAtk,"WL_COMET",150;
+                  }
+               }
+            }
+         }
+      }
+  - Id: 480640
+    AegisName: WK_Mantle_All_TH_LT
+    Name: White Knight Mantle (All)-LT
+    Type: Armor
+    Weight: 1200
+    Defense: 60
+    Slots: 1
+    Locations:
+      Garment: true
+    ArmorLevel: 2
+    EquipLevelMin: 170
+    Refineable: true
+    Gradable: true
+    Script: |
+      .@g = getenchantgrade();
+      .@r = getrefine();
+      bonus bBaseAtk,20*(.@r/2);
+      bonus bMatk,20*(.@r/2);
+      bonus2 bAddSize,Size_All,3*(.@r/3);
+      bonus2 bMagicAddSize,Size_All,3*(.@r/3);
+      bonus bMaxHPRate,5*(.@r/4);
+      bonus bMaxSPRate,5*(.@r/4);
+      bonus bAspdRate,5*(.@r/4);
+      if (.@r>=9) {
+         bonus bDelayrate,-10;
+         if (.@r>=11) {
+            bonus bMatkRate,20;
+            bonus bShortAtkRate,20;
+            bonus bLongAtkRate,20;
+            if (.@r>=12) {
+               bonus bPerfectHitAddRate,90;
+               bonus bFixedCast,-300;
+               bonus2 bAddEle,Ele_All,12;
+               bonus2 bMagicAddEle,Ele_All,12;
+            }
+         }
+      }
+      if (.@g>=ENCHANTGRADE_D) {
+         bonus bDef,150;
+         bonus bMdef,30;
+         if (.@g>=ENCHANTGRADE_C) {
+            bonus bPow,5;
+            bonus bSpl,5;
+            if (.@g>=ENCHANTGRADE_B) {
+               bonus bPAtk,7;
+               bonus bSMatk,7;
+               if (.@g>=ENCHANTGRADE_A) {
+                  bonus2 bAddRace,RC_All,12;
+                  bonus2 bMagicAddRace,RC_All,12;
+               }
+            }
+         }
+      }
+  - Id: 480681
+    AegisName: Juncea_Follower_US
+    Name: Juncea Follower Wing
+    Type: Armor
+    Weight: 2000
+    Defense: 50
+    Slots: 1
+    Locations:
+      Garment: true
+    ArmorLevel: 2
+    EquipLevelMin: 100
+    Refineable: true
+    Gradable: true
+    Script: |
+      .@g = getenchantgrade();
+      .@r = getrefine();
+      bonus bUnbreakableGarment;
+      bonus bMdef,10;
+      bonus bAllStats,20;
+      bonus bMaxHPRate,20;
+      bonus bMaxSPRate,20;
+      bonus bBaseAtk,30*(BaseLevel/10);
+      bonus bMatk,30*(BaseLevel/10);
+      bonus2 bAddEle,Ele_All,8*(.@r/2);
+      bonus2 bMagicAddEle,Ele_All,8*(.@r/2);
+      bonus bPow,4*(.@r/3);
+      bonus bSpl,4*(.@r/3);
+      bonus bCon,4*(.@r/3);
+      if (.@r>=11) {
+         bonus2 bAddEle,Ele_All,15;
+         bonus2 bMagicAddEle,Ele_All,15;
+         if (.@r>=12) {
+            bonus bPow,8;
+            bonus bSpl,8;
+            bonus bCon,8;
+            if (.@r>=13) {
+               bonus2 bAddEle,Ele_All,20;
+               bonus2 bMagicAddEle,Ele_All,20;
+               if (.@r>=14) {
+                  bonus bDelayrate,-30;
+                  if (.@r>=15) {
+                     bonus2 bAddEle,Ele_All,40;
+                     bonus2 bMagicAddEle,Ele_All,40;
+                  }
+               }
+            }
+         }
+      }
+      if (.@g>=ENCHANTGRADE_D) {
+         bonus bBaseAtk,80;
+         bonus bMatk,80;
+         if (.@g>=ENCHANTGRADE_C) {
+            bonus2 bAddEle,Ele_All,15;
+            bonus2 bMagicAddEle,Ele_All,15;
+            if (.@g>=ENCHANTGRADE_B) {
+               bonus bFixedCast,-700;
+               if (.@g>=ENCHANTGRADE_A) {
+                  bonus2 bAddRace,RC_All,30;
+                  bonus2 bMagicAddRace,RC_All,30;
+               }
+            }
+         }
+      }
+  - Id: 480823
+    AegisName: Abysmal_Follower_US
+    Name: Abysmal Follower Cape
+    Type: Armor
+    Weight: 1000
+    Defense: 100
+    Slots: 1
+    Locations:
+      Garment: true
+    ArmorLevel: 2
+    EquipLevelMin: 100
+    Refineable: true
+    Gradable: true
+    Script: |
+      .@g = getenchantgrade();
+      .@r = getrefine();
+      bonus bUnbreakableArmor;
+      bonus bMdef,15;
+      bonus bAllStats,10;
+      bonus bAllTraitStats,10;
+      bonus bMaxHPrate,20;
+      bonus bMaxSPrate,20;
+      bonus bMatk,(BaseLevel/10)*50;
+      bonus2 bMagicAddEle,Ele_All,(.@r/2)*10;
+      bonus bSpl,(.@r/3)*4;
+      bonus bCon,(.@r/3)*4;
+      bonus bWis,(.@r/3)*4;
+      if (.@r>=11) {
+         bonus2 bSkillAtk,"AG_ALL_BLOOM",40;
+         if (.@r>=12) {
+            bonus2 bSkillCooldown,"AG_ALL_BLOOM",-5500;
+            bonus2 bSkillCooldown,"AG_MYSTERY_ILLUSION",-3500;
+            if (.@r>=13) {
+               bonus2 bMagicAddEle,Ele_All,20;
+               if (.@r>=14) {
+                  bonus bSpl,15; bonus bDelayrate,-30;
+                  if (.@r>=15) {
+                     bonus2 bMagicAddEle,Ele_All,40;
+                  }
+               }
+            }
+         }
+      }
+      if (.@g>=ENCHANTGRADE_D) {
+         bonus bFixedCast,-500;
+         if (.@g>=ENCHANTGRADE_C) {
+            bonus2 bMagicAddEle,Ele_Fire,30;
+            bonus2 bMagicAddEle,Ele_Dark,30;
+            if (.@g>=ENCHANTGRADE_B) {
+               bonus2 bMagicAddRace,RC_All,20;
+               if (.@g>=ENCHANTGRADE_A) {
+                  bonus2 bSkillAtk,"AG_ALL_BLOOM",100;
+                  bonus2 bSkillAtk,"AG_MYSTERY_ILLUSION",100;
+               }
+            }
+         }
+      }
+  - Id: 490310
+    AegisName: Secret_Illusion_Ring_TH
+    Name: Secret Illusion Ring
+    Type: Armor
+    Slots: 1
+    Weight: 0
+    Locations:
+      Left_Accessory: true
+    ArmorLevel: 1
+    EquipLevelMin: 100
+    Script: |
+      bonus bInt,6;
+      bonus bDex,6;
+      bonus bStr,1;
+      bonus bAgi,1;
+      bonus bVit,1;
+      bonus bLuk,1;
+      bonus bAtkRate,5;
+      bonus bMatkRate,5;
+      bonus bDelayRate,-5;
+      bonus2 bSPDrainRate,10,1;
+      bonus bMaxHPRate,10;
+      bonus bMaxSPRate,10;
+      bonus bMdef,15;
+      bonus bFixedCast,-300;
+  - Id: 490552
+    AegisName: Nebula_Nec
+    Name: Nebula Pendant
+    Type: Armor
+    Weight: 100
+    Slots: 1
+    Locations:
+      Left_Accessory: true
+    ArmorLevel: 1
+    EquipLevelMin: 200
+    Script: |
+      bonus bAtkRate,10;
+      bonus bMatkRate,10;
+      bonus bDelayRate,-8;
+  - Id: 490680
+    AegisName: Volcano_H_Ring_TH
+    Name: Volcano Hero Ring
+    Type: Armor
+    Weight: 100
+    Slots: 1
+    Jobs:
+      Wizard: true
+    Classes:
+      All_Third: true
+      Fourth: true
+    Locations:
+      Right_Accessory: true
+    ArmorLevel: 1
+    EquipLevelMin: 190
+    Script: |
+      bonus bMatk,100;
+      bonus bDelayRate,-10;
+      bonus bFixedCast,-500;
+      bonus2 bMagicAddClass,Class_All,15;
+  - Id: 490681
+    AegisName: Love_Ring_US
+    Name: Love Ring
+    Type: Armor
+    Weight: 0
+    Slots: 1
+    Locations:
+      Left_Accessory: true
+    ArmorLevel: 1
+    EquipLevelMin: 1
+    Script: |
+      bonus bMaxHPRate,20;
+      bonus bMaxSPRate,20;
+      bonus2 bAddSize,Size_All,20;
+      bonus2 bMagicAddSize,Size_All,20;
+      bonus2 bExpAddRace,RC_All,20;
+  - Id: 490691
+    AegisName: aegis_490691
+    Name: White Fox Charm
+    Type: Armor
+    Weight: 100
+    Slots: 1
+    Locations:
+      Both_Accessory: true
+    ArmorLevel: 1
+    EquipLevelMin: 200
+    Script: |
+      bonus bPow,3;
+      bonus bCritical,50;
+      bonus bAtkRate,10;
+      bonus2 bSubRace,RC_Player_Doram,3;
+      bonus2 bSubRace,RC_Player_Human,3;
+      bonus2 bSkillCooldown,"KO_IZAYOI",-25000;
+      bonus2 bSkillAtk,"SS_KAGEGARI",BaseLevel/10;
+      bonus2 bSkillAtk,"SS_KAGENOMAI",BaseLevel/10;
+      bonus2 bSkillAtk,"SS_KAGEGISSEN",BaseLevel/10;
+      bonus2 bSkillAtk,"SS_KAGEAKUMU",BaseLevel/10;
+  - Id: 490720
+    AegisName: Hate_Ring_US
+    Name: Ring of Hatred
+    Type: Armor
+    Weight: 0
+    Slots: 1
+    Locations:
+      Right_Accessory: true
+    ArmorLevel: 1
+    EquipLevelMin: 1
+    Script: |
+      bonus bMaxHPRate,20;
+      bonus bMaxSPRate,20;
+      bonus2 bAddSize,Size_All,20;
+      bonus2 bMagicAddSize,Size_All,20;
+      bonus2 bExpAddRace,RC_All,20;
+  - Id: 490809
+    AegisName: Nebula_Nec_LT_TH
+    Name: Nebula Pendant-LT
+    Type: Armor
+    Weight: 100
+    Slots: 1
+    Locations:
+      Left_Accessory: true
+    ArmorLevel: 1
+    EquipLevelMin: 200
+    Script: |
+      bonus bBaseAtk,100;
+      bonus bMatk,100;
+      bonus bDelayRate,-10;
+      bonus bAllStats,10;
+  - Id: 490817
+    AegisName: Alnilam_Necklace_US
+    Name: Necklace of Alnilam
+    Type: Armor
+    Weight: 200
+    Defense: 100
+    Slots: 1
+    Locations:
+      Left_Accessory: true
+    ArmorLevel: 1
+    EquipLevelMin: 100
+    Script: |
+      bonus bMdef,20;
+      bonus bAllTraitStats,20;
+      bonus2 bAddSize,Size_All,30;
+      bonus2 bMagicAddSize,Size_All,30;
+      bonus bDelayRate,-20;
+      if (vip_status(VIP_STATUS_ACTIVE)) {
+         bonus bAllStats,25;
+         bonus2 bExpAddRace,RC_All,25;
+         bonus2 bDropAddRace,RC_All,25;
+      }
+  - Id: 490856
+    AegisName: SH_Evil_Ring_TH
+    Name: "Ring of Evil (Spirit Handler)"
+    Type: Armor
+    Weight: 100
+    Defense: 0
+    Slots: 1
+    Jobs:
+      Summoner: true
+      Spirit_Handler: true
+    Locations:
+      Right_Accessory: true
+    ArmorLevel: 1
+    EquipLevelMin: 215
+    Script: |
+      bonus bMatk,100;
+      bonus bDelayRate,-10;
+      bonus bSpl,10;
+      bonus bFixedCast,-500;
+      bonus2 bMagicAddClass,Class_All,15;
+  - Id: 490874
+    AegisName: AM_Evil_Ring_TH
+    Name: "Ring of Evil (Arch Mage)"
+    Type: Armor
+    Weight: 100
+    Defense: 0
+    Slots: 1
+    Jobs:
+      Wizard: true
+    Classes:
+      All_Third: true
+      Fourth: true
+    Locations:
+      Right_Accessory: true
+    ArmorLevel: 1
+    EquipLevelMin: 215
+    Script: |
+      bonus bMatk,100;
+      bonus bDelayRate,-10;
+      bonus bSpl,10;
+      bonus bFixedCast,-500;
+      bonus2 bMagicAddClass,Class_All,15;
+  - Id: 490888
+    AegisName: AM_Good_Ring_TH
+    Name: "Ring of Good (Arch Mage)"
+    Type: Armor
+    Weight: 100
+    Defense: 0
+    Slots: 1
+    Jobs:
+      Wizard: true
+    Classes:
+      All_Third: true
+      Fourth: true
+    Locations:
+      Right_Accessory: true
+    ArmorLevel: 1
+    EquipLevelMin: 215
+    Script: |
+      bonus bMatk,100;
+      bonus bDelayRate,-10;
+      bonus bSpl,10;
+      bonus bFixedCast,-500;
+      bonus2 bMagicAddClass,Class_All,15;
+  - Id: 490941
+    AegisName: AG_Dim_Ring_TH
+    Name: "Dim Glacier Ring of Resonance (Arch Mage)"
+    Type: Armor
+    Weight: 100
+    Defense: 0
+    Slots: 1
+    Jobs:
+      Wizard: true
+    Classes:
+      All_Third: true
+      Fourth: true
+    Locations:
+      Right_Accessory: true
+    ArmorLevel: 1
+    EquipLevelMin: 230
+    Script: |
+      bonus bMatk,100;
+      bonus bDelayRate,-10;
+      bonus bSpl,10;
+      bonus bMatkRate,6;
+      bonus2 bMagicAddClass,Class_All,15;
+  - Id: 490966
+    AegisName: 6th_Anni_Ring_TH
+    Name: "6th Anniversary Ayothaya Ring"
+    Type: Armor
+    Weight: 200
+    Defense: 0
+    Slots: 1
+    Locations:
+      Left_Accessory: true
+    ArmorLevel: 2
+    EquipLevelMin: 200
+    Refineable: true
+    Gradable: true
+    Script: |
+      .@r = getrefine();
+      .@g = getenchantgrade();
+      bonus bAllStats,6;
+      bonus bAllTraitStats,6;
+      bonus bShortAtkRate,.@r;
+      bonus bLongAtkRate,.@r;
+      bonus bMatkRate,.@r;
+      if (.@r>=7) {
+         bonus bPAtk,3;
+         bonus bSMatk,3;
+         if (.@r>=9) {
+            bonus bDelayRate,-10;
+            if (.@r>=12) {
+               bonus2 bAddRace,RC_All,10;
+               bonus2 bAddRace,RC_Player_Human,-10;
+               bonus2 bAddRace,RC_Player_Doram,-10;
+               bonus2 bMagicAddRace,RC_All,10;
+               bonus2 bMagicAddRace,RC_Player_Human,-10;
+               bonus2 bMagicAddRace,RC_Player_Doram,-10;
+            }
+         }
+      }
+      if (.@g>=ENCHANTGRADE_D) {
+         bonus bFixedCast,-300;
+         if (.@g>=ENCHANTGRADE_C) {
+            bonus2 bSubClass,Class_Boss,10;
+            if (.@g>=ENCHANTGRADE_B) {
+               bonus bRes,60;
+               bonus bMRes,60;
+               bonus bFlee2,20;
+               if (.@g>=ENCHANTGRADE_A) {
+                  bonus2 bDropAddClass,Class_All,3;
+                  bonus2 bIgnoreDefRaceRate,RC_All,40;
+                  bonus2 bIgnoreDefRaceRate,RC_Player_Human,-40;
+                  bonus2 bIgnoreDefRaceRate,RC_Player_Doram,-40;
+                  bonus2 bIgnoreMdefRaceRate,RC_All,40;
+                  bonus2 bIgnoreMdefRaceRate,RC_Player_Human,-40;
+                  bonus2 bIgnoreMdefRaceRate,RC_Player_Doram,-40;
+               }
+            }
+         }
+      }
+  - Id: 491009
+    AegisName: SH_Dim_Ring_TH
+    Name: "Dim Glacier Ring of Resonance (Spirit Handler)"
+    Type: Armor
+    Weight: 100
+    Defense: 0
+    Slots: 1
+    Jobs:
+      Summoner: true
+      Spirit_Handler: true
+    Locations:
+      Right_Accessory: true
+    ArmorLevel: 1
+    EquipLevelMin: 230
+    Script: |
+      bonus bMatk,100;
+      bonus bDelayRate,-10;
+      bonus bSpl,10;
+      bonus bFixedCast,-500;
+      bonus2 bMagicAddClass,Class_All,15;
+  - Id: 491051
+    AegisName: AG_Orrivane_R_TH
+    Name: "Orrivane Ring (Arch Mage)"
+    Type: Armor
+    Weight: 200
+    Defense: 0
+    Slots: 1
+    Jobs:
+      Wizard: true
+    Classes:
+      All_Third: true
+      Fourth: true
+    Locations:
+      Right_Accessory: true
+    ArmorLevel: 1
+    EquipLevelMin: 230
+    Script: |
+      bonus bMatk,100;
+      bonus bDelayRate,-10;
+      bonus bSpl,10;
+      bonus bFixedCast,-500;
+      bonus2 bMagicAddClass,Class_All,15;
+  - Id: 540124
+    AegisName: Polluted_Follower_US
+    Name: Polluted Grimoire
+    Type: Weapon
+    SubType: Book
+    Weight: 1000
+    Attack: 250
+    Range: 1
+    Slots: 2
+    Jobs:
+      Sage: true
+      Priest: true
+      SoulLinker: true
+      StarGladiator: true
+    Classes:
+      Fourth: true
+    Locations:
+      Right_Hand: true
+    WeaponLevel: 5
+    EquipLevelMin: 100
+    Refineable: true
+    Gradable: true
+    Script: |
+      .@g = getenchantgrade();
+      .@r = getrefine();
+      bonus bMatk,250;
+      bonus bASPD,10;
+      bonus2 bSubClass,Class_All,30;
+      bonus2 bAddSize,Size_All,30+(10*.@r);
+      bonus2 bMagicAddSize,Size_All,30+(10*.@r);
+      bonus bSpl,3*(.@r/2);
+      bonus bMaxHPRate,(3*(.@r/2))+(4*(.@r/3));
+      bonus2 bSkillAtk,"SO_DIAMONDDUST",20*(.@r/2);
+      bonus2 bSkillAtk,"SO_PSYCHIC_WAVE",20*(.@r/2);
+      bonus bPow,4*(.@r/3);
+      bonus2 bSkillAtk,"SKE_MIDNIGHT_KICK",30*(.@r/3);
+      bonus2 bSkillAtk,"SKE_NOON_BLAST",30*(.@r/3);
+      if (.@r>=10) {
+         bonus bSpl,6;
+         bonus bPow,6;
+         bonus bDelayRate,-10;
+         if (.@r>=11) {
+            bonus2 bSkillCooldown,"SO_DIAMONDDUST",-4000;
+            bonus2 bSkillCooldown,"SO_PSYCHIC_WAVE",-4000;
+            bonus2 bSkillCooldown,"SKE_MIDNIGHT_KICK",-700;
+            bonus2 bSkillCooldown,"SKE_NOON_BLAST",-700;
+            if (.@r>=12) {
+               bonus2 bAddSize,Size_All,20;
+               bonus2 bMagicAddSize,Size_All,20;
+               if (.@r>=13) {
+                  bonus bAllStats,25;
+                  bonus bBaseAtk,250;
+                  bonus bMatk,250;
+                  if (.@r>=14) {
+                     bonus bAllStats,15;
+                     bonus2 bMagicAtkEle,Ele_All,20;
+                     bonus2 bAddClass,Class_All,20;
+                     if (.@r>=15) {
+                        bonus2 bMagicAtkEle,Ele_All,30;
+                        bonus2 bAddClass,Class_All,30;
+                        bonus bNoWalkDelay;
+                     }
+                  }
+               }
+            }
+         }
+      }
+      if (.@g>=ENCHANTGRADE_D) {
+         bonus bBaseAtk,100;
+         bonus bMatk,100;
+         if (.@g>=ENCHANTGRADE_C) {
+            bonus bPow,6;
+            bonus bSpl,6;
+            if (.@g>=ENCHANTGRADE_B) {
+               bonus bFixedCast,-500;
+               if (.@g>=ENCHANTGRADE_A) {
+                  bonus bVariableCastRate,-30;
+               }
+            }
+         }
+      }
+  - Id: 550169
+    AegisName: Fenrir_Staff_US
+    Name: Fenrir Staff
+    Type: Weapon
+    SubType: Staff
+    Weight: 100
+    Attack: 100
+    MagicAttack: 300
+    Range: 1
+    Slots: 2
+    Jobs:
+      Wizard: true
+      Priest: true
+      SoulLinker: true
+      Sage: true
+      Monk: true
+    Classes:
+      All_Third: true
+      Fourth: true
+    Locations:
+      Right_Hand: true
+    WeaponLevel: 5
+    EquipLevelMin: 100
+    Refineable: true
+    Gradable: true
+    Script: |
+      .@g = getenchantgrade();
+      .@r = getrefine();
+      bonus bMatk,300;
+      bonus2 bSubClass,Class_All,20;
+      bonus2 bMagicAddSize,Size_All,30+(12*.@r);
+      bonus bAspdRate,3*.@r;
+      if (.@r>=11) {
+         bonus bMaxHPRate,20;
+         bonus bSpeedRate,50;
+         if (.@r>=12) {
+            bonus bAllStats,20;
+            bonus bMatk,200;
+            if (.@r>=13) {
+               bonus2 bSkillAtk,"WL_COMET",70;
+               bonus2 bSkillAtk,"AG_SOUL_VC_STRIKE",70;
+            }
+         }
+      }
+      if (.@g>=ENCHANTGRADE_D) {
+         bonus2 bMagicAddRace,RC_All,15;
+         if (.@g>=ENCHANTGRADE_C) {
+            bonus bSpl,7;
+            bonus bCon,7;
+            if (.@g>=ENCHANTGRADE_B) {
+               bonus bSMatk,20;
+               if (.@g>=ENCHANTGRADE_A) {
+                  bonus2 bMagicAddSize,Size_All,20;
+               }
+            }
+         }
+      }
+  - Id: 640070
+    AegisName: LMN_AG_Staff
+    Name: Orrivane Arch Staff
+    Type: Weapon
+    SubType: 2hStaff
+    Weight: 2000
+    Attack: 120
+    Range: 1
+    Slots: 3
+    Jobs:
+      Wizard: true
+    Classes:
+      Fourth: true
+    Locations:
+      Both_Hand: true
+    WeaponLevel: 5
+    EquipLevelMin: 230
+    Refineable: true
+    Gradable: true
+    Script: |
+      .@g = getenchantgrade();
+      .@r = getrefine();
+      bonus bMatk,200+10*(.@r/2);
+      bonus bUnbreakableWeapon;
+      bonus bMatkRate,3+(.@r/2);
+      bonus2 bSkillAtk,"AG_MYSTERY_ILLUSION",2*(.@r/3);
+      if (.@r>=7) {
+         bonus2 bMagicAtkEle,Ele_All,15;
+         if (.@r>=9) {
+            bonus bVariableCastrate,-10;
+            bonus bSMatk,3;
+            if (.@r>=11) {
+               bonus2 bSkillAtk,"AG_MYSTERY_ILLUSION",10;
+            }
+         }
+      }
+      if (.@g>=ENCHANTGRADE_D) {
+         bonus bSMatk,2;
+         if (.@g>=ENCHANTGRADE_C) {
+            bonus2 bSkillAtk,"AG_MYSTERY_ILLUSION",10;
+            if (.@g>=ENCHANTGRADE_B) {
+               bonus2 bMagicAtkEle,Ele_All,10;
+               if (.@g>=ENCHANTGRADE_A) {
+                  bonus bSMatk,2*(.@r/2);
+               }
+            }
+         }
+      }
+  - Id: 1270049
+    AegisName: Clear_Shield_Shadow3_TW
+    Name: Sanctified Shadow Shield
+    Type: ShadowGear
+    Locations:
+      Shadow_Shield: true
+    EquipLevelMin: 1
+    Refineable: true
+    Script: |
+      .@r = getrefine();
+      bonus bMaxHPRate,2*(.@r/2);
+      bonus bMaxSPRate,2*(.@r/2);
+      bonus bFixedCast,-100*(.@r/3);
+      if (.@r>=7) {
+         bonus bAllStats,8;
+         if (.@r>=9) {
+             bonus bShortAtkRate,10;
+             bonus bLongAtkRate,10;
+             bonus2 bMagicAtkEle,Ele_All,10;
+             if (.@r>=10) {
+                  bonus2 bIgnoreDefRaceRate,RC_All,100;
+                  bonus2 bIgnoreDefRaceRate,RC_Player_Human,-100;
+                  bonus2 bIgnoreDefRaceRate,RC_Player_Doram,-100;
+                  bonus2 bIgnoreMdefRaceRate,RC_All,100;
+                  bonus2 bIgnoreMdefRaceRate,RC_Player_Human,-100;
+                  bonus2 bIgnoreMdefRaceRate,RC_Player_Doram,-100;
+             }
+         }
+      }
+  - Id: 1270146
+    AegisName: S_BP8_Magic_W
+    Name: Nebula Magic Shadow Weapon
+    Type: ShadowGear
+    Locations:
+      Shadow_Weapon: true
+    EquipLevelMin: 1
+    Refineable: true
+    Script: |
+      .@r = getrefine();
+      bonus bMatk,15*(.@r/2);
+      bonus2 bMagicAtkEle,Ele_All,2*(.@r/3);
+      if (.@r>=7) {
+         bonus2 bMagicAddRace,RC_All,10;
+         if (.@r>=9) {
+             bonus2 bMagicAddClass,Class_Boss,10;
+             if (.@r>=10) {
+                  bonus2 bIgnoreMdefRaceRate,RC_All,100;
+                  bonus2 bIgnoreMdefRaceRate,RC_Player_Human,-100;
+                  bonus2 bIgnoreMdefRaceRate,RC_Player_Doram,-100;
+             }
+         }
+      }
+  - Id: 1270147
+    AegisName: S_BP8_Magic_S
+    Name: Nebula Magic Shadow Shield
+    Type: ShadowGear
+    Locations:
+      Shadow_Shield: true
+    EquipLevelMin: 1
+    Refineable: true
+    Script: |
+      .@r = getrefine();
+      bonus bDelayRate,.@r/2;
+      bonus bFixedCast,-200*(.@r/3);
+      if (.@r>=7) {
+         bonus bAllStats,4;
+         bonus bAllTraitStats,4;
+         if (.@r>=9) {
+             bonus2 bMagicAtkEle,Ele_All,10;
+             if (.@r>=10) {
+                  bonus bMaxHPRate,10;
+                  bonus bMaxSPRate,10;
+             }
+         }
+      }
+  - Id: 1270192
+    AegisName: S_BP9_Magic_A
+    Name: Snow Flower Magic Shadow Armor
+    Type: ShadowGear
+    Locations:
+      Shadow_Armor: true
+    EquipLevelMin: 1
+    Refineable: true
+    Script: |
+      .@r = getrefine();
+      bonus bSMatk,.@r/2;
+      bonus2 bMagicAtkEle,Ele_All,2*(.@r/3);
+      if (.@r>=7) {
+         bonus bMaxHPRate,10;
+         bonus bRes,30;
+         if (.@r>=9) {
+             bonus bDelayRate,-10;
+             if (.@r>=10) {
+                  bonus2 bMagicAddEle,Ele_All,10;
+             }
+         }
+      }
+  - Id: 1270193
+    AegisName: S_BP9_Magic_S
+    Name: Snow Flower Magic Shadow Shoes
+    Type: ShadowGear
+    Locations:
+      Shadow_Shoes: true
+    EquipLevelMin: 1
+    Refineable: true
+    Script: |
+      .@r = getrefine();
+      bonus bSMatk,.@r/2;
+      bonus bAspdRate,5*(.@r/3);
+      if (.@r>=7) {
+         bonus bMaxSPRate,10;
+         bonus bMRes,30;
+         if (.@r>=9) {
+             bonus bFixedCast,-300;
+             if (.@r>=10) {
+                  bonus2 bMagicAddSize,Size_All,10;
+             }
+         }
+      }
+  - Id: 7000000
+    AegisName: TCD_Comet_Ring
+    Name: The Comet Ring
+    Type: Armor
+    Slot: 1
+    Locations:
+      Both_Accessory: true
+    ArmorLevel: 2
+    EquipLevelMin: 100
+    Refineable: true
+    Gradable: true
+    Script: |
+      .@r = getrefine();
+      .@g = getenchantgrade();
+      bonus bMatk,200;
+      bonus bMatkRate,20;
+      bonus bVariableCastRate,-30;
+      bonus2 bMagicAddRace,RC_All,20;
+      if (.@r>=7) {
+         bonus2 bSkillCooldown,"WL_COMET",-10000;
+         bonus2 bSkillAtk,"WL_COMET",20;
+         if (.@r>=9) {
+            bonus bFixedCast,-500;
+            bonus2 bSkillCooldown,"WL_COMET",-10000;
+            bonus2 bSkillAtk,"WL_COMET",60;
+            bonus2 bMagicAtkEle,Ele_All,20;
+            if (.@r>=12) {
+               bonus bFixedCast,-500;
+               bonus2 bSkillAtk,"WL_COMET",100;
+               bonus2 bMagicAddSize,Size_All,20;
+               if (.@r>=14) {
+                  bonus bDelayRate,-30;
+                  bonus2 bIgnoreMdefRaceRate,RC_All,50;
+                  bonus2 bIgnoreMdefRaceRate,RC_Player_Human,-50;
+                  bonus2 bIgnoreMdefRaceRate,RC_Player_Doram,-50;
+               }
+            }
+         }
+      }
+      if (.@g >= ENCHANTGRADE_D) {
+         bonus2 bMagicAddRace,RC_All,10;
+         bonus2 bMagicAtkEle,Ele_All,10;
+         bonus2 bMagicAddSize,Size_All,10;
+         if (.@g >= ENCHANTGRADE_C) {
+            bonus bSpl,.@r;
+            bonus bSMatk,.@r;
+            if (.@g >= ENCHANTGRADE_B) {
+               bonus2 bSkillAtk,"WL_COMET",200;
+               if (.@g >= ENCHANTGRADE_A) {
+                  bonus4 bAutoSpellOnSkill,"WL_COMET","AG_MYSTERY_ILLUSION",5,400;
+               }
+            }
+         }
+      }
+  - Id: 7000001
+    AegisName: Glittering_Cat_Choker_TH
+    Name: Glittering Meow Meow Choker [GGT]
+    Type: Armor
+    Buy: 20
+    Weight: 100
+    Slots: 1
+    Locations:
+      Both_Accessory: true
+    ArmorLevel: 1
+    EquipLevelMin: 100
+    Script: |
+      bonus2 bMagicAddSize,Size_All,10;
+      bonus2 bSkillAtk,"SU_CN_METEOR",BaseLevel/5;
+      bonus2 bSkillAtk,"SU_SV_STEMSPEAR",BaseLevel/5;
+      if (getskilllv("SU_SPIRITOFLAND") == 1) {
+         bonus2 bMagicAtkEle,Ele_Fire,10;
+         bonus2 bMagicAtkEle,Ele_Ghost,10;
+         bonus2 bMagicAtkEle,Ele_Neutral,10;
+      }
+      if (getskilllv("SU_CHATTERING") == 5) {
+         bonus bAspdRate,15;
+         bonus bVariableCastRate,-10;
+      }
+      if (getskilllv("SU_NYANGGRASS") == 5) {
+         bonus bDelayRate,-30;
+      }
+      if (getskilllv("SU_MEOWMEOW") == 5) {
+         bonus2 bSkillCooldown,"SU_CN_METEOR",-2000;
+      }

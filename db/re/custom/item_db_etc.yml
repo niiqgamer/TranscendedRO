@@ -1,0 +1,474 @@
+Header:
+  Type: ITEM_DB
+  Version: 3
+
+Body:
+  - Id: 312438
+    AegisName: Spirit_Of_Star_01_CN
+    Name: Spirit of Knight Lv.1
+    Type: Card
+    SubType: Enchant
+    Script: |
+      bonus bAtk,10;
+      bonus bMatk,10;
+  - Id: 312439
+    AegisName: Spirit_Of_Star_02_CN
+    Name: Spirit of Knight Lv.2
+    Type: Card
+    SubType: Enchant
+    Script: |
+      bonus bAtk,20;
+      bonus bMatk,20;
+  - Id: 312440
+    AegisName: Spirit_Of_Star_03_CN
+    Name: Spirit of Knight Lv.3
+    Type: Card
+    SubType: Enchant
+    Script: |
+      bonus bAtk,30;
+      bonus bMatk,30;
+  - Id: 312441
+    AegisName: Spirit_Of_Star_04_CN
+    Name: Spirit of Knight Lv.4
+    Type: Card
+    SubType: Enchant
+    Script: |
+      bonus bAtk,50;
+      bonus bMatk,50;
+      bonus2 bAddRace,RC_All,5;
+      bonus2 bMagicAddRace,RC_All,5;
+  - Id: 312442
+    AegisName: Spirit_Of_Star_05_CN
+    Name: Spirit of Knight Lv.5
+    Type: Card
+    SubType: Enchant
+    Script: |
+      bonus bAtk,60;
+      bonus bMatk,60;
+      bonus2 bAddRace,RC_All,7;
+      bonus2 bMagicAddRace,RC_All,7;
+  - Id: 312443
+    AegisName: Spirit_Of_Star_06_CN
+    Name: Spirit of Knight Lv.6
+    Type: Card
+    SubType: Enchant
+    Script: |
+      bonus bAtk,70;
+      bonus bMatk,70;
+      bonus2 bAddRace,RC_All,9;
+      bonus2 bMagicAddRace,RC_All,9;
+  - Id: 312444
+    AegisName: Spirit_Of_Star_07_CN
+    Name: Spirit of Knight Lv.7
+    Type: Card
+    SubType: Enchant
+    Script: |
+      bonus bAtk,100;
+      bonus bMatk,100;
+      bonus2 bAddRace,RC_All,15;
+      bonus2 bMagicAddRace,RC_All,15;
+  - Id: 313786
+    AegisName: HeroAcc_AG1
+    Name: Arch Mage Spirit
+    Type: Card
+    SubType: Enchant
+    Script: |
+      bonus2 bSkillAtk,"AG_ALL_BLOOM",15;
+      bonus2 bSkillAtk,"AG_VIOLENT_QUAKE",15;
+  - Id: 313787
+    AegisName: HeroAcc_WL1
+    Name: Warlock the hero
+    Type: Card
+    SubType: Enchant
+  - Id: 314033
+    AegisName: Hero_Valor_AG_1
+    Name: Heroic Valor (Arch Mage) Lv.1
+    Type: Card
+    SubType: Enchant
+  - Id: 314034
+    AegisName: Hero_Valor_AG_2
+    Name: Heroic Valor (Arch Mage) Lv.2
+    Type: Card
+    SubType: Enchant
+  - Id: 314035
+    AegisName: Hero_Valor_AG_3
+    Name: Heroic Valor (Arch Mage) Lv.3
+    Type: Card
+    SubType: Enchant
+  - Id: 314380
+    AegisName: Star_Melee
+    Name: Nebula of Melee
+    Type: Card
+    SubType: Enchant
+    Script: |
+      .@r = getrefine();
+      bonus bCritical,15;
+      bonus bMaxHPrate,5;
+      bonus bShortAtkRate,5;
+      bonus2 bAddEle,Ele_All,.@r/2;
+  - Id: 314382
+    AegisName: Star_Range
+    Name: Nebula of Range
+    Type: Card
+    SubType: Enchant
+    Script: |
+      .@r = getrefine();
+      bonus bCritical,15;
+      bonus bMaxHPrate,5;
+      bonus bLongAtkRate,5;
+      bonus2 bAddEle,Ele_All,.@r/2;
+  - Id: 314383
+    AegisName: Star_Magic
+    Name: Nebula of Magic
+    Type: Card
+    SubType: Enchant
+    Script: |
+      .@r = getrefine();
+      bonus bVariableCastRate,-10;
+      bonus bMaxHPrate,5;
+      bonus2 bMagicAtkEle,Ele_All,5;
+      bonus2 bMagicAddEle,Ele_All,.@r/2;
+  - Id: 314484
+    AegisName: aegis_314484
+    Name: "Latent Release (Spirit Handler XX)"
+    Type: Card
+    SubType: Enchant
+  - Id: 314679
+    AegisName: BP2_Enc_Melee1_US
+    Name: "[S2] Vellgunde Resonance (Melee) Lv1"
+    Type: Card
+    Locations:
+      Head_Low: true
+      Head_Mid: true
+      Head_Top: true
+    Script: |
+      bonus bPow,5;
+      bonus2 bAddRace,RC_All,10;
+  - Id: 314680
+    AegisName: BP2_Enc_Melee2_US
+    Name: "[S2] Vellgunde Resonance (Melee) Lv2"
+    Type: Card
+    Locations:
+      Head_Low: true
+      Head_Mid: true
+      Head_Top: true
+    Script: |
+      bonus bPow,10;
+      bonus2 bAddRace,RC_All,20;
+  - Id: 314681
+    AegisName: BP2_Enc_Magic1_US
+    Name: "[S2] Vellgunde Resonance (Magic) Lv1"
+    Type: Card
+    Locations:
+      Head_Low: true
+      Head_Mid: true
+      Head_Top: true
+    Script: |
+      bonus bSpl,5;
+      bonus2 bMagicAddRace,RC_All,10;
+  - Id: 314682
+    AegisName: BP2_Enc_Magic2_US
+    Name: "[S2] Vellgunde Resonance (Magic) Lv2"
+    Type: Card
+    Locations:
+      Head_Low: true
+      Head_Mid: true
+      Head_Top: true
+    Script: |
+      bonus bSpl,10;
+      bonus2 bMagicAddRace,RC_All,20;
+  - Id: 314683
+    AegisName: BP2_Enc_Range1_US
+    Name: "[S2] Vellgunde Resonance (Range) Lv1"
+    Type: Card
+    Locations:
+      Head_Low: true
+      Head_Mid: true
+      Head_Top: true
+    Script: |
+      bonus bPow,5;
+      bonus bLongAtkRate,10;
+  - Id: 314684
+    AegisName: BP2_Enc_Range2_US
+    Name: "[S2] Vellgunde Resonance (Range) Lv2"
+    Type: Card
+    Locations:
+      Head_Low: true
+      Head_Mid: true
+      Head_Top: true
+    Script: |
+      bonus bPow,10;
+      bonus bLongAtkRate,20;
+  - Id: 314685
+    AegisName: BP2_Enc_Support1_US
+    Name: "[S2] Vellgunde Resonance (Support) Lv1"
+    Type: Card
+    Locations:
+      Head_Low: true
+      Head_Mid: true
+      Head_Top: true
+    Script: |
+      bonus bSta,5;
+      bonus bWis,5;
+      bonus bMaxHPrate,10;
+      bonus bMaxSPrate,10;
+  - Id: 314686
+    AegisName: BP2_Enc_Support2_US
+    Name: "[S2] Vellgunde Resonance (Support) Lv2"
+    Type: Card
+    Locations:
+      Head_Low: true
+      Head_Mid: true
+      Head_Top: true
+    Script: |
+      bonus bSta,10;
+      bonus bWis,10;
+      bonus bMaxHPrate,20;
+      bonus bMaxSPrate,20;
+  - Id: 314811
+    AegisName: DimAcc_ABC
+    Name: Abyss Chaser Dim Crystal
+    Type: Card
+    SubType: Enchant
+  - Id: 314812
+    AegisName: DimAcc_IQ
+    Name: Inquisitor Dim Crystal
+    Type: Card
+    SubType: Enchant
+  - Id: 314821
+    AegisName: DimAcc_WH
+    Name: Windhawk Dim Crystal
+    Type: Card
+    SubType: Enchant
+  - Id: 314889
+    AegisName: BP9_Snow_Melee
+    Name: Snow Flower of Melee
+    Type: Card
+    SubType: Enchant
+    Script: |
+      .@r = getrefine();
+      bonus bAllStats,.@r/2;
+      if (.@r>9) {
+         bonus bShortAtkRate,5;
+         bonus2 bExpAddRace,RC_All,5;
+         bonus2 bDropAddRace,RC_All,5;
+      }
+  - Id: 314890
+    AegisName: BP9_Snow_Range
+    Name: Snow Flower of Range
+    Type: Card
+    SubType: Enchant
+    Script: |
+      .@r = getrefine();
+      bonus bAllStats,.@r/2;
+      if (.@r>9) {
+         bonus bLongAtkRate,5;
+         bonus2 bExpAddRace,RC_All,5;
+         bonus2 bDropAddRace,RC_All,5;
+      }
+  - Id: 314891
+    AegisName: BP9_Snow_Magic
+    Name: Snow Flower of Magic
+    Type: Card
+    SubType: Enchant
+    Script: |
+      .@r = getrefine();
+      bonus bAllStats,.@r/2;
+      if (.@r>9) {
+         bonus bMatkRate,5;
+         bonus2 bExpAddRace,RC_All,5;
+         bonus2 bDropAddRace,RC_All,5;
+      }
+  - Id: 314904
+    AegisName: DimAcc_CD
+    Name: Cardinal Dim Crystal
+    Type: Card
+    SubType: Enchant
+  - Id: 314905
+    AegisName: DimAcc_MT
+    Name: Meister Dim Crystal
+    Type: Card
+    SubType: Enchant
+  - Id: 314906
+    AegisName: DimAcc_TR
+    Name: "Troubadour & Trouvere Dim Crystal"
+    Type: Card
+    SubType: Enchant
+  - Id: 314985
+    AegisName: DimAcc_AG
+    Name: Arch Mage Dim Crystal
+    Type: Card
+    SubType: Enchant
+  - Id: 314986
+    AegisName: DimAcc_DK
+    Name: Dragon Knight Dim Crystal
+    Type: Card
+    SubType: Enchant
+  - Id: 315109
+    AegisName: DimAcc_IG
+    Name: Imperial Guard Dim Crystal
+    Type: Card
+    SubType: Enchant
+  - Id: 315110
+    AegisName: DimAcc_HN
+    Name: Hyper Novice Dim Crystal
+    Type: Card
+    SubType: Enchant
+  - Id: 315111
+    AegisName: DimAcc_SKE
+    Name: Sky Emperor Dim Crystal
+    Type: Card
+    SubType: Enchant
+  - Id: 315112
+    AegisName: DimAcc_EM
+    Name: Elemental Master Dim Crystal
+    Type: Card
+    SubType: Enchant
+  - Id: 315113
+    AegisName: DimAcc_WH_Gl
+    Name: Windhawk Dim Gale Crystal
+    Type: Card
+    SubType: Enchant
+  - Id: 315161
+    AegisName: DimAcc_SH
+    Name: Spirit Handler Dim Crystal
+    Type: Card
+    SubType: Enchant
+  - Id: 315162
+    AegisName: DimAcc_BO
+    Name: Biolo Dim Crystal
+    Type: Card
+    SubType: Enchant
+  - Id: 315163
+    AegisName: DimAcc_NW
+    Name: Night Watch Dim Crystal
+    Type: Card
+    SubType: Enchant
+  - Id: 315164
+    AegisName: DimAcc_SA
+    Name: Soul Ascetic Dim Crystal
+    Type: Card
+    SubType: Enchant
+  - Id: 315288
+    AegisName: Orrivane_Enc_AG
+    Name: "Orrivane Orb (Arch Mage)"
+    Type: Card
+    SubType: Enchant
+  - Id: 1002427
+    AegisName: BP2_Mat_Melee_US
+    Name: "[S2] Crystallized Shard (Melee)"
+    Type: Etc
+    Weight: 0
+    Flags:
+      BuyingStore: true
+  - Id: 1002428
+    AegisName: BP2_Mat_Magic_US
+    Name: "[S2] Crystallized Shard (Magic)"
+    Type: Etc
+    Weight: 0
+    Flags:
+      BuyingStore: true
+  - Id: 1002429
+    AegisName: BP2_Mat_Range_US
+    Name: "[S2] Crystallized Shard (Range)"
+    Type: Etc
+    Weight: 0
+    Flags:
+      BuyingStore: true
+  - Id: 1002430
+    AegisName: BP2_Mat_Supp_US
+    Name: "[S2] Crystallized Shard (Support)"
+    Type: Etc
+    Weight: 0
+    Flags:
+      BuyingStore: true
+  - Id: 1002431
+    AegisName: BP2_Mat_Univ_US
+    Name: "[S2] Condensed Pure Ice"
+    Type: Etc
+    Weight: 0
+    Flags:
+      BuyingStore: true
+  - Id: 9900000
+    AegisName: Ceremonial_Matcha
+    Name: Ceremonial Matcha
+    Type: Etc
+    Weight: 0
+    Trade:
+      NoDrop: true
+      NoSell: true
+      NoAuction: true
+  - Id: 9900001
+    AegisName: Hunting_Coin
+    Name: "Hunting's Coin"
+    Type: Etc
+    Weight: 0
+    Trade:
+      NoDrop: true
+      NoSell: true
+      NoAuction: true
+  - Id: 9900002
+    AegisName: Token_Of_Transcended
+    Name: Token Of Transcended
+    Type: Etc
+    Weight: 0
+    Trade:
+      NoDrop: true
+      NoSell: true
+      NoAuction: true
+  - Id: 9900009
+    AegisName: Instance_Emblem
+    Name: Instance Emblem
+    Type: Etc
+    Weight: 0
+    Trade:
+      NoDrop: true
+      NoSell: true
+      NoAuction: true
+  - Id: 9910000
+    AegisName: T_A1_Refining
+    Name: "Transcended Armor Refining (Lv.1)"
+    Type: Etc
+    Weight: 0
+    Trade:
+      NoDrop: true
+      NoSell: true
+      NoAuction: true
+  - Id: 9910001
+    AegisName: T_A2_Refining
+    Name: "Transcended Armor Refining (Lv.2)"
+    Type: Etc
+    Weight: 0
+    Trade:
+      NoDrop: true
+      NoSell: true
+      NoAuction: true
+  - Id: 9910002
+    AegisName: T_W1_Refining
+    Name: "Transcended Weapon Refining (Lv.1-4)"
+    Type: Etc
+    Weight: 0
+    Trade:
+      NoDrop: true
+      NoSell: true
+      NoAuction: true
+  - Id: 9910003
+    AegisName: T_W2_Refining
+    Name: "Transcended Weapon Refining (Lv.5)"
+    Type: Etc
+    Weight: 0
+    Trade:
+      NoDrop: true
+      NoSell: true
+      NoAuction: true
+  - Id: 9990000
+    AegisName: Weight_Token
+    Name: "Weight Token"
+    Type: Etc
+    Weight: 0
+    Trade:
+      NoDrop: true
+      NoSell: true
+      NoAuction: true
+    Script: |
+      bonus bAddMaxWeight,900000;
