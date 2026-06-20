@@ -62022,8 +62022,10 @@ Body:
       NoGuildStorage: true
       NoMail: true
       NoAuction: true
-#   Script: |
-#     /* TODO */
+    Script: |
+      vip_time(60*24);
+      bonus_script "{ bonus2 bExpAddRace,RC_All,100; bonus2 bDropAddRace,RC_All,100; }",86400,1,0,EFST_OVERSEAEXPUP;
+      dispbottom "You have activated VIP status for a day.";
   - Id: 23210
     AegisName: Premium_Box_4d
     Name: "[4Day] Premium Subscription Box"
@@ -62037,8 +62039,10 @@ Body:
       NoGuildStorage: true
       NoMail: true
       NoAuction: true
-#   Script: |
-#     /* TODO */
+    Script: |
+      vip_time(60*24*4);
+      bonus_script "{ bonus2 bExpAddRace,RC_All,100; bonus2 bDropAddRace,RC_All,100; }",345600,1,0,EFST_OVERSEAEXPUP;
+      dispbottom "You have activated VIP status for 4 days.";
   - Id: 23211
     AegisName: Premium_Box_5d
     Name: "[5Day] Premium Subscription Box"
@@ -62052,8 +62056,10 @@ Body:
       NoGuildStorage: true
       NoMail: true
       NoAuction: true
-#   Script: |
-#     /* TODO */
+    Script: |
+      vip_time(60*24*5);
+      bonus_script "{ bonus2 bExpAddRace,RC_All,100; bonus2 bDropAddRace,RC_All,100; }",432000,1,0,EFST_OVERSEAEXPUP;
+      dispbottom "You have activated VIP status for 5 days.";
   - Id: 23212
     AegisName: Premium_Box_6d
     Name: "[6Day] Premium Subscription Box"
@@ -62067,8 +62073,10 @@ Body:
       NoGuildStorage: true
       NoMail: true
       NoAuction: true
-#   Script: |
-#     /* TODO */
+    Script: |
+      vip_time(60*24*6);
+      bonus_script "{ bonus2 bExpAddRace,RC_All,100; bonus2 bDropAddRace,RC_All,100; }",518400,1,0,EFST_OVERSEAEXPUP;
+      dispbottom "You have activated VIP status for 6 days.";
   - Id: 23213
     AegisName: Premium_Box_5d7
     Name: "[7Day] Premium Subscription Box"
@@ -62083,7 +62091,9 @@ Body:
       NoMail: true
       NoAuction: true
     Script: |
-      /* TODO */
+      vip_time(60*24*7);
+      bonus_script "{ bonus2 bExpAddRace,RC_All,100; bonus2 bDropAddRace,RC_All,100; }",604800,1,0,EFST_OVERSEAEXPUP;
+      dispbottom "You have activated VIP status for 7 days.";
   - Id: 23214
     AegisName: Premium_Box_8d
     Name: "[8Day] Premium Subscription Box"
@@ -62097,8 +62107,10 @@ Body:
       NoGuildStorage: true
       NoMail: true
       NoAuction: true
-#   Script: |
-#     /* TODO */
+    Script: |
+      vip_time(60*24*8);
+      bonus_script "{ bonus2 bExpAddRace,RC_All,100; bonus2 bDropAddRace,RC_All,100; }",691200,1,0,EFST_OVERSEAEXPUP;
+      dispbottom "You have activated VIP status for 8 days.";
   - Id: 23215
     AegisName: Premium_Box_9d
     Name: "[9Day] Premium Subscription Box"
@@ -62112,8 +62124,10 @@ Body:
       NoGuildStorage: true
       NoMail: true
       NoAuction: true
-#   Script: |
-#     /* TODO */
+    Script: |
+      vip_time(60*24*9);
+      bonus_script "{ bonus2 bExpAddRace,RC_All,100; bonus2 bDropAddRace,RC_All,100; }",777600,1,0,EFST_OVERSEAEXPUP;
+      dispbottom "You have activated VIP status for 9 days.";
   - Id: 23216
     AegisName: Premium_Box_10d
     Name: "[10Day] Premium Subscription"
@@ -62127,8 +62141,10 @@ Body:
       NoGuildStorage: true
       NoMail: true
       NoAuction: true
-#   Script: |
-#     /* TODO */
+    Script: |
+      vip_time(60*24*10);
+      bonus_script "{ bonus2 bExpAddRace,RC_All,100; bonus2 bDropAddRace,RC_All,100; }",864000,1,0,EFST_OVERSEAEXPUP;
+      dispbottom "You have activated VIP status for 10 days.";
   - Id: 23217
     AegisName: 2016_Special_Scroll
     Name: 2016 Special Scroll
