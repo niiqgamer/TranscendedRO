@@ -200,6 +200,7 @@ Body:
       bonus bMaxSP,15*(.@r/3);
       bonus2 bSkillAtk,"AG_MYSTERY_ILLUSION",5*(.@r/4);
       bonus2 bSkillAtk,"AG_CRIMSON_ARROW",5*(.@r/4);
+      bonus2 bSkillAtk,"AG_CRIMSON_ARROW_ATK",5*(.@r/4);
       if (.@r>=7) {
          bonus2 bMagicAtkEle,Ele_All,10;
          if (.@r>=9) {
@@ -1379,15 +1380,15 @@ Body:
       if (.@g>=ENCHANTGRADE_D) {
          bonus bFixedCast,-500;
          if (.@g>=ENCHANTGRADE_C) {
-            bonus bFixedCast,-300;
-            bonus2 bAddSize,Size_All,10;
-            bonus2 bMagicAddSize,Size_All,10;
+            bonus bNonCritAtkRate,15;
+            bonus bCritAtkRate,15;
+            bonus2 bMagicAtkEle,Ele_All,15;
             if (.@g>=ENCHANTGRADE_B) {
-               bonus2 bMagicAddRace,RC_All,5;
+               bonus bPAtk,6;
+               bonus bSMatk,6;
                if (.@g>=ENCHANTGRADE_A) {
-                  bonus bFixedCast,-200;
-                  bonus bPAtk,15;
-                  bonus bSMatk,15;
+                  bonus bAllStats,.@r;
+                  bonus bAllTraitStats,.@r;
                }
             }
          }
