@@ -1,6 +1,6 @@
-// ==========================
+// ================================
 // HOTSPIN Main NPC
-// ==========================
+// ================================
 sec_in02,156,184,4	script	H O T S P I N !	OBJ_A2,{
 
 	.@aid = getcharid(3); // account_id ของผู้เล่น
@@ -8,13 +8,13 @@ sec_in02,156,184,4	script	H O T S P I N !	OBJ_A2,{
 	query_sql("SELECT spins FROM hotspin_rank WHERE account_id = " + .@aid, .@spins);
 
 	mes "^i[12828] <font size = 18><b>^0000AA[ H O T S P I N ! ]^000000</b></font> ^i[12828]";
-	mes "========================";
+	mes "==============================";
 	mes "<font size = 14>Spins: <font size = 18><b>^AA0000" + callfunc("F_InsertComma",.@spins) + "^000000</b></font> times.</font>";
 	mes "<font size = 10>^FF0000* Reset to 0 when announced on Discord^000000</font>";
-	mes "========================";
+	mes "==============================";
 	mes "<font size = 14>Guarantee Points: <font size = 18><b>^0066FF" + callfunc("F_InsertComma",#GUARANTEE_POINT) + "^000000</b></font> Points.</font>";
 	mes "<font size = 10>^FF0000* Not reset, this points are used for Guarantee Shop^000000</font>";
-	mes "========================";
+	mes "==============================";
 	mes "<font size = 14>Hotspin Overall: <font size = 18><b>^00AA00" + callfunc("F_InsertComma",#HOTSPIN_POINT) + "^000000</b></font> times.</font>";
 	mes "<font size = 10>^FF0000* Not reset forever!.^000000</font>";
 	setdialogalign(DIALOG_ALIGN_MIDDLE);
@@ -86,7 +86,7 @@ L_Roll:
 	mes "     ";
 	mes "<b>^FF00BBCAUTION! CANNOT STOP WHILE SPINNING!^000000</b>";
 	mes "<b>^FF00BBPrepare your weight below 50%^000000</b>";
-	mes "<b>^FF00BBand less than 70 items before spin.^000000</b>";
+	mes "<b>^FF00BBand less than 75 items before spin.^000000</b>";
 	next;
 	if (#CASHPOINTS < .@total_cost) {
 		mes "You don't have enough Cash.";
@@ -94,9 +94,9 @@ L_Roll:
 	}
 
 	getinventorylist;
-	if (@inventorylist_count >= 90) {
+	if (@inventorylist_count >= 75) {
 		mes "<font size = 16><b>You have more than</b></font>";
-		mes "<font size = 20><b>^FF000090 items^000000</b></font>";
+		mes "<font size = 20><b>^FF000075 items^000000</b></font>";
 		mes "<font size = 16><b>in your inventory!</b></font>";
 		mes "     ";
 		mes "<font size = 16><b>Please remove some items.</b></font>";
@@ -142,8 +142,8 @@ L_Roll:
 		set .@roll, rand(10000);
 		set .@got_item, 0;
 
-		// Pool 1 - Ultimate Rare (0.02% = 2/10000)
-		if (.@roll < 2 && getarraysize($hotspin_pool1) > 0) {
+		// Pool 1 - Ultimate Rare (0.01% = 1/10000)
+		if (.@roll < 1 && getarraysize($hotspin_pool1) > 0) {
 			set .@item, $hotspin_pool1[rand(getarraysize($hotspin_pool1))];
 			getitem .@item, 1;
 			set .@hotspin_hits, .@hotspin_hits + 1;
@@ -151,10 +151,10 @@ L_Roll:
 			set #GUARANTEE_POINT, #GUARANTEE_POINT + 35;
 			set .@guarantee_gained, .@guarantee_gained + 35;
 			specialeffect2 EF_MVP;
-			announce "[ H O T S P I N ! ] " + strcharinfo(0) + " received [ UR ] " + getitemname(.@item) + "!", bc_all;
+			announce "[ H O T S P I N ! ] " + strcharinfo(0) + " received [ UR ] " + getitemname(.@item) + "!!!", bc_all;
 		}
-		// Pool 2 - New Items (0.6% = 60/10000)
-		else if (.@roll < 62 && getarraysize($hotspin_pool2) > 0) {
+		// Pool 2 - New Items (0.60% = 60/10000)
+		else if (.@roll < 61 && getarraysize($hotspin_pool2) > 0) {
 			set .@item, $hotspin_pool2[rand(getarraysize($hotspin_pool2))];
 			getitem .@item, 1;
 			set .@hotspin_hits, .@hotspin_hits + 1;
@@ -162,10 +162,10 @@ L_Roll:
 			set #GUARANTEE_POINT, #GUARANTEE_POINT + 2;
 			set .@guarantee_gained, .@guarantee_gained + 2;
 			specialeffect2 EF_MVP;
-			announce "[ H O T S P I N ! ] " + strcharinfo(0) + " received [ NEW ] " + getitemname(.@item) + "!", bc_all;
+			announce "[ H O T S P I N ! ] " + strcharinfo(0) + " received [ NEW ] " + getitemname(.@item) + "!!", bc_all;
 		}
-		// Pool 3 - Rerun Items (0.37% = 37/10000)
-		else if (.@roll < 99 && getarraysize($hotspin_pool3) > 0) {
+		// Pool 3 - Rerun Items (2.00% = 200/10000)
+		else if (.@roll < 261 && getarraysize($hotspin_pool3) > 0) {
 			set .@item, $hotspin_pool3[rand(getarraysize($hotspin_pool3))];
 			getitem .@item, 1;
 			set .@hotspin_hits, .@hotspin_hits + 1;
@@ -178,15 +178,15 @@ L_Roll:
 
 		if (.@got_item == 0) {
 			.@troll = rand(100);
-			if (.@troll < 85 && getarraysize($hotspin_trash3) > 0) {
+			if (.@troll < 90 && getarraysize($hotspin_trash3) > 0) {
 				getitem $hotspin_trash3[rand(getarraysize($hotspin_trash3))], 1;
-			} else if (.@troll < 95 && getarraysize($hotspin_trash2) > 0) {
+			} else if (.@troll < 97 && getarraysize($hotspin_trash2) > 0) {
 				getitem $hotspin_trash2[rand(getarraysize($hotspin_trash2))], 1;
 			} else if (getarraysize($hotspin_trash1) > 0) {
 				getitem $hotspin_trash1[rand(getarraysize($hotspin_trash1))], 1;
 			}
 		}
-		sleep2 70;
+		sleep2 60;
 	}
 
 	set .@aid, getcharid(3);
@@ -223,7 +223,7 @@ L_Guarantee:
 
 // ==== Recycle System ====
 L_Recycle:
-	mes "<font size = 16><b>Recycle your Hotspin items</b></font>";
+	mes "^i[12828] <font size = 16><b>Recycle your Hotspin items</b></font> ^i[12828]";
 	mes "<font size = 16><b>for Guarantee Points!</b></font>";
 	mes "     ";
 	mes "<font size = 18><b>^00AA001 : 1 Guarantee Point.^000000</b></font>";
@@ -245,24 +245,25 @@ L_TrashExchange:
 
 // ==== Top 20 ====
 L_Top20:
-	mes "[HOTSPIN TOP 20]";
-	query_sql("SELECT name, spins FROM hotspin_rank WHERE spins > 0 ORDER BY spins DESC LIMIT 20", .@name$, .@score);
+	mes "^i[12828] <font size = 18><b>^00AA00[HOTSPIN TOP 10]</b></font> ^i[12828]";
+	mes "==============================";
+	query_sql("SELECT name, spins FROM hotspin_rank WHERE spins > 0 ORDER BY spins DESC LIMIT 10", .@name$, .@score);
 
 	if (getarraysize(.@name$) == 0) {
-		mes "Nothing to show.";
+		mes "No any record yet.";
 		close;
 	}
 
 	for (set .@i, 0; .@i < getarraysize(.@name$); set .@i, .@i + 1) {
 		if (.@i < 3) {
-			mes "^FF0000" + (.@i + 1) + ". " + .@name$[.@i] + " - " + .@score[.@i] + " spins.^000000";
+			mes "<font size = 14><b>^FF0000#" + (.@i + 1) + " - " + .@name$[.@i] + " - " + callfunc("F_InsertComma",.@score[.@i]) + " spins.^000000</b></font>";
 		}
 		else {
 			if (.@i == 3)
-				mes "========================";
-				mes (.@i + 1) + ". " + .@name$[.@i] + " - " + .@score[.@i] + " spins.";
+				mes "<font size = 12>#" + (.@i + 1) + " - " + .@name$[.@i] + " - " + callfunc("F_InsertComma",.@score[.@i]) + " spins.</font>";
 		}
 	}
+	mes "==============================";
 
 	close;
 
@@ -533,7 +534,11 @@ OnSellItem:
 OnInit:
 	setarray $hotspin_pool1, 
 	24882,					// 21Anni3_W_Shadow_TW
-	1270049;				// Clear_Shield_Shadow3_TW
+	1270049,				// Clear_Shield_Shadow3_TW
+	9910000,				// T_A1_Refining
+	9910001,				// T_A2_Refining
+	9910002,				// T_W1_Refining
+	9910003;				// T_W2_Refining
 
 	setarray $hotspin_pool2, 
 	27421,					// Shard_Jewelry_Str
@@ -657,15 +662,15 @@ OnInit:
 	6635,					// Blacksmith_Blessing
 	616,						// Old_Card_Album
 	12246,					// Magic_Card_Album
+	7925,					// M_Dimension_Essence
+	25375,					// Mightysoul_Essence
+	1000874,				// Enchant_Ticket
+	1000323,				// Etel_Stone
 	6230,					// Guarantee_Weapon_7Up
 	6234;					// Guarantee_Armor_7Up
 
 	setarray $hotspin_trash2, 
 	9955500,				// Transcended_Coin
-	984,						// Oridecon
-	985,						// Elunium
-	6223,					// Carnium
-	6224,					// Bradium
 	6241,					// HD_Elunium
 	6240,					// HD_Oridecon
 	7619,					// Enriched_Elunium
@@ -676,6 +681,12 @@ OnInit:
 	25464;					// World_Tour_Ticket
 
 	setarray $hotspin_trash3, 
+	984,						// Oridecon
+	985,						// Elunium
+	6223,					// Carnium
+	6224,					// Bradium
+	1000322,				// Etel_Dust
+	1000405,				// Ep18_Amethyst_Fragment
 	23221,					// EF_DEX_Biscuit_Stick
 	23222,					// EF_LUK_Biscuit_Stick
 	23223,					// EF_STR_Biscuit_Stick
@@ -718,9 +729,9 @@ OnInit:
 -	shop	HOTSPIN_VIEWSHOP	-1,715:-1
 -	shop	hotspin_recycle_shop	-1,909:-1
 
-// ==========================
+// ================================
 // HOTSPIN Functions
-// ==========================
+// ================================
 function	script	IsWeekend	{
 	set .@dow, gettime(4);
 	return (.@dow == 0 || .@dow == 6);
@@ -795,9 +806,9 @@ function	script	ReloadHotspinPool	{
 	return;
 }
 
-// ==========================
+// ================================
 // HOTSPIN System Controller
-// ==========================
+// ================================
 // -	script	HOTSPIN_EVENTS	-1,{
 // 
 // OnHour20:
@@ -816,19 +827,20 @@ izlude,102,134,4	duplicate(H O T S P I N !)	H O T S P I N !#iz	CLEAR_NPC
 
 izlude,106,130,6	script	HOTSPIN ! INFO	4_BULLETIN_BOARD2,{
 	mes "^i[12828] <font size = 18><b>^0000AA[ H O T S P I N ! ]^000000</b></font> ^i[12828]";
-	mes "========================";
+	mes "==============================";
 	mes "<font size = 16><b>Spin every day!</b></font>";
-	mes "<font size = 16><b>Reset spins every week!</b></font>";
-	mes "<font size = 16><b>Item refilled every month!</b></font>";
-	mes "========================";
+	//mes "<font size = 16><b>Reset spins every week!</b></font>";
+	//mes "<font size = 16><b>Item refilled every month!</b></font>";
+	mes "==============================";
 	mes "<font size = 16><b>^FF0000Only 99 Cash^i[9955500] per 1 Spin !!!^000000</b></font>";
-	mes "========================";
+	mes "==============================";
 	mes "<b>^0066AARerun Item^000000 +1 Guarantee Point</b>";
 	mes "<b>^00AA00New Item^000000 +2 Guarantee Points</b>";
 	mes "<b>^FF0000UR Item^000000 +35 Guarantee Points</b>";
-	mes "========================";
-	mes "<b>Use your Guarantee Point to buy items that you want.</b>";
-	mes "========================";
+	mes "==============================";
+	mes "<b>Use your Guarantee Points</b>";
+	mes "<b>to buy items that you want.</b>";
+	mes "==============================";
 	setdialogalign(DIALOG_ALIGN_MIDDLE);
 	setdialogalign(DIALOG_ALIGN_CENTER);
 	setdialogsize(375,405);
