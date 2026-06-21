@@ -548,7 +548,7 @@ OnInit:
 	490608,					// Document_Mage_TH
 	490609,					// Document_Archer_TH
 	490610,					// Document_Acolyte_TH
-	480640;					// WK_Mantle_All_TH_LT
+	480640;				// WK_Mantle_All_TH_LT
 
 	setarray $hotspin_pool3, 
 	28394,					// King_of_Spirit_Ring
@@ -556,17 +556,17 @@ OnInit:
 	20799,					// Elemental_Towel
 	18813,					// New_Wave_Sunglasses
 	19112,					// Tengu_Scroll
-	5933,						// Crow_Tengu_Mask
+	5933,					// Crow_Tengu_Mask
 	19125,					// Cylinder_Hairband
 	20783,					// Hero_Cape
 	22103,					// Excelion_Leg
 	19083,					// Mask_of_Hero
-	5973,						// Ancient_Elven_Ear_J
+	5973,					// Ancient_Elven_Ear_J
 	15145,					// EvilDragon_Armor
 	16051,					// Valkyrie_Hammer
 	28377,					// Magical_Ring
-	2576,						// Bravery_Bag
-	2589,						// Fallen_Angel_Wing
+	2576,					// Bravery_Bag
+	2589,					// Fallen_Angel_Wing
 	28717,					// Valkyrie_Knife
 	28372,					// Imperial_Ring
 	28430,					// Archpriest_Ring
@@ -586,7 +586,7 @@ OnInit:
 	28521,					// Giant_Protection
 	28372,					// Imperial_Ring
 	18823,					// Imperial_Feather
-	5978,						// Toy_Syringe
+	5978,					// Toy_Syringe
 	20859,					// Phreeoni_Wing
 	28531,					// Glove_Of_Smith
 	19285,					// Helmet_Of_Siegfried_J
@@ -606,17 +606,17 @@ OnInit:
 	20799,					// Elemental_Towel
 	18813,					// New_Wave_Sunglasses
 	19112,					// Tengu_Scroll
-	5933,						// Crow_Tengu_Mask
+	5933,					// Crow_Tengu_Mask
 	19125,					// Cylinder_Hairband
 	20783,					// Hero_Cape
 	22103,					// Excelion_Leg
 	19083,					// Mask_of_Hero
-	5973,						// Ancient_Elven_Ear_J
+	5973,					// Ancient_Elven_Ear_J
 	15145,					// EvilDragon_Armor
 	16051,					// Valkyrie_Hammer
 	28377,					// Magical_Ring
-	2576,						// Bravery_Bag
-	2589,						// Fallen_Angel_Wing
+	2576,					// Bravery_Bag
+	2589,					// Fallen_Angel_Wing
 	28717,					// Valkyrie_Knife
 	28372,					// Imperial_Ring
 	28430,					// Archpriest_Ring
@@ -636,7 +636,7 @@ OnInit:
 	28521,					// Giant_Protection
 	28372,					// Imperial_Ring
 	18823,					// Imperial_Feather
-	5978,						// Toy_Syringe
+	5978,					// Toy_Syringe
 	20859,					// Phreeoni_Wing
 	28531,					// Glove_Of_Smith
 	19285,					// Helmet_Of_Siegfried_J
@@ -654,21 +654,25 @@ OnInit:
 	28502;					// Mob_Scarf
 
 	setarray $hotspin_trash1, 
-	6635,						// Blacksmith_Blessing
+	6635,					// Blacksmith_Blessing
 	616,						// Old_Card_Album
 	12246,					// Magic_Card_Album
-	6230,						// Guarantee_Weapon_7Up
-	6234;						// Guarantee_Armor_7Up
+	6230,					// Guarantee_Weapon_7Up
+	6234;					// Guarantee_Armor_7Up
 
 	setarray $hotspin_trash2, 
 	9955500,				// Transcended_Coin
 	984,						// Oridecon
 	985,						// Elunium
-	6223,						// Carnium
-	6224,						// Bradium
+	6223,					// Carnium
+	6224,					// Bradium
+	6241,					// HD_Elunium
+	6240,					// HD_Oridecon
+	7619,					// Enriched_Elunium
+	7620,					// Enriched_Oridecon
 	1000322,				// Etel_Dust
 	1000405,				// Ep18_Amethyst_Fragment
-	6417,						// Silvervine
+	6417,					// Silvervine
 	25464;					// World_Tour_Ticket
 
 	setarray $hotspin_trash3, 
