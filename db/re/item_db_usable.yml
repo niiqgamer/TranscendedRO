@@ -1238,7 +1238,7 @@ Body:
     Name: Old Card Album
     Type: Usable
     Buy: 10000
-    Weight: 50
+    Weight: 0
     Flags:
       BuyingStore: true
       Container: true
@@ -7444,7 +7444,7 @@ Body:
     Name: Mystical Card Album
     Type: Usable
     Buy: 10000
-    Weight: 50
+    Weight: 0
     Flags:
       BuyingStore: true
       Container: true
