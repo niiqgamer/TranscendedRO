@@ -61017,6 +61017,88 @@ Body:
       bonus2 bSkillCooldown,"SU_CN_METEOR",500;
   - Combos:
       - Combo:
+          - LMN_Orrivane_C_AG    #  401273
+          - AG_Orrivane_R_TH    # 491051
+    Script: |
+      .@r = getequiprefinerycnt(EQI_HEAD_TOP);
+      bonus2 bMagicAddSize,Size_All,15;
+      bonus2 bSkillAtk,"AG_CRIMSON_ARROW",20;
+      bonus2 bSkillAtk,"AG_CRIMSON_ARROW_ATK",20;
+      bonus2 bSkillAtk,"AG_MYSTERY_ILLUSION",20;
+      if (.@r >= 10) {
+         bonus2 bMagicAtkEle,Ele_All,15;
+         bonus2 bSkillAtk,"AG_CRIMSON_ARROW",20;
+         bonus2 bSkillAtk,"AG_CRIMSON_ARROW_ATK",20;
+         bonus2 bSkillAtk,"AG_MYSTERY_ILLUSION",20;
+      }
+      if (getenchantgrade(EQI_HEAD_TOP) >= ENCHANTGRADE_C) {
+         bonus bSMatk,10;
+         bonus2 bSkillAtk,"AG_CRIMSON_ARROW",20;
+         bonus2 bSkillAtk,"AG_CRIMSON_ARROW_ATK",20;
+         bonus2 bSkillAtk,"AG_MYSTERY_ILLUSION",20;
+      }
+  - Combos:
+      - Combo:
+          - LMN_AG_Wand    # 550202
+          - LMN_Orrivane_C_AG    #  401273
+    Script: |
+      .@sum = getequiprefinerycnt(EQI_HEAD_TOP)+getequiprefinerycnt(EQI_HAND_R);
+      bonus2 bSkillAtk,"AG_CRIMSON_ARROW",10;
+      bonus2 bSkillAtk,"AG_CRIMSON_ARROW_ATK",10;
+      bonus2 bMagicAtkEle,Ele_Fire,10;
+      if (getenchantgrade(EQI_HEAD_TOP) >= ENCHANTGRADE_A) {
+         if (.@r >= 22) {
+            bonus2 bSkillCooldown,"AG_CRIMSON_ARROW",-100;
+            bonus2 bSkillAtk,"AG_CRIMSON_ARROW",10;
+            bonus2 bSkillAtk,"AG_CRIMSON_ARROW_ATK",10;
+         }
+      }
+  - Combos:
+      - Combo:
+          - LMN_AG_Wand    # 550202
+          - Orrivane_Enc_AG    #  315288
+    Script: |
+      .@r = getequiprefinerycnt(EQI_HAND_R);
+      bonus bMatkRate,10;
+      bonus2 bSkillAtk,"AG_CRIMSON_ARROW",4*(.@r/2);
+      bonus2 bSkillAtk,"AG_CRIMSON_ARROW_ATK",4*(.@r/2);
+      bonus2 bSkillAtk,"AG_FLORAL_FLARE_ROAD",4*(.@r/2);
+      bonus2 bSkillAtk,"AG_ALL_BLOOM",4*(.@r/2);
+      bonus2 bSkillAtk,"AG_ALL_BLOOM_ATK",4*(.@r/2);
+      bonus2 bSkillAtk,"AG_ALL_BLOOM_ATK2",4*(.@r/2);
+      if (getenchantgrade(EQI_HAND_R) >= ENCHANTGRADE_C) {
+         bonus bSMatk,10;
+         bonus2 bSkillCooldown,"AG_CRIMSON_ARROW",-200;
+         bonus2 bSkillCooldown,"AG_FLORAL_FLARE_ROAD",-2000;
+         bonus2 bSkillCooldown,"AG_ALL_BLOOM",-2500;
+         if (.@r >= 10) {
+            bonus2 bSkillCooldown,"AG_FLORAL_FLARE_ROAD",-2000;
+            bonus2 bSkillCooldown,"AG_ALL_BLOOM",-2500;
+            bonus4 bAutoSpellOnSkill,"AG_CRIMSON_ARROW","AG_ALL_BLOOM",max(getskilllv("AG_ALL_BLOOM"),1),300;
+            bonus2 bSkillAtk,"AG_CRIMSON_ARROW",20;
+            bonus2 bSkillAtk,"AG_CRIMSON_ARROW_ATK",20;
+            bonus2 bSkillAtk,"AG_FLORAL_FLARE_ROAD",20;
+            bonus2 bSkillAtk,"AG_ALL_BLOOM",20;
+            bonus2 bSkillAtk,"AG_ALL_BLOOM_ATK",20;
+            bonus2 bSkillAtk,"AG_ALL_BLOOM_ATK2",20;
+         }
+      }
+  - Combos:
+      - Combo:
+          - LMN_AG_Staff    # 640070
+          - LMN_Orrivane_C_AG    #  401273
+    Script: |
+      .@sum = getequiprefinerycnt(EQI_HEAD_TOP)+getequiprefinerycnt(EQI_HAND_R);
+      bonus2 bSkillAtk,"AG_MYSTERY_ILLUSION",10;
+      bonus2 bMagicAtkEle,Ele_Dark,10;
+      if (getenchantgrade(EQI_HEAD_TOP) >= ENCHANTGRADE_A) {
+         if (.@r >= 22) {
+            bonus2 bSkillCooldown,"AG_MYSTERY_ILLUSION",-1000;
+            bonus2 bSkillAtk,"AG_MYSTERY_ILLUSION",10;
+         }
+      }
+  - Combos:
+      - Combo:
           - LMN_AG_Staff    # 640070
           - Orrivane_Enc_AG    #  315288
     Script: |
@@ -61031,7 +61113,7 @@ Body:
          if (.@r >= 10) {
             bonus2 bSkillCooldown,"AG_MYSTERY_ILLUSION",-1300;
             bonus2 bSkillCooldown,"WL_TELEKINESIS_INTENSE",-200000;
-            bonus4 bAutoSpellOnSkill,"AG_SOUL_VC_STRIKE","AG_SOUL_VC_STRIKE",max(getskilllv("AG_SOUL_VC_STRIKE"),1),300;
+            bonus4 bAutoSpellOnSkill,"AG_SOUL_VC_STRIKE","AG_MYSTERY_ILLUSION",max(getskilllv("AG_MYSTERY_ILLUSION"),1),300;
             bonus2 bSkillAtk,"AG_MYSTERY_ILLUSION",20;
             bonus2 bSkillAtk,"AG_SOUL_VC_STRIKE",20;
          }
