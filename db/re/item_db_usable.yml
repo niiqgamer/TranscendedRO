@@ -62183,7 +62183,7 @@ Body:
     AegisName: EF_DEX_Biscuit_Stick
     Name: "[Not For Sale] DEX Biscuit Stick"
     Type: Usable
-    Weight: 10
+    Weight: 0
     Flags:
       BuyingStore: true
     Script: |
@@ -62193,7 +62193,7 @@ Body:
     AegisName: EF_LUK_Biscuit_Stick
     Name: "[Not For Sale] LUK Biscuit Stick"
     Type: Usable
-    Weight: 10
+    Weight: 0
     Flags:
       BuyingStore: true
     Script: |
@@ -62203,7 +62203,7 @@ Body:
     AegisName: EF_STR_Biscuit_Stick
     Name: "[Not For Sale] STR Biscuit Stick"
     Type: Usable
-    Weight: 10
+    Weight: 0
     Flags:
       BuyingStore: true
     Script: |
@@ -62213,7 +62213,7 @@ Body:
     AegisName: EF_VIT_Biscuit_Stick
     Name: "[Not For Sale] VIT Biscuit Stick"
     Type: Usable
-    Weight: 10
+    Weight: 0
     Flags:
       BuyingStore: true
     Script: |
@@ -62223,7 +62223,7 @@ Body:
     AegisName: EF_AGI_Biscuit_Stick
     Name: "[Not For Sale] AGI Biscuit Stick"
     Type: Usable
-    Weight: 10
+    Weight: 0
     Flags:
       BuyingStore: true
     Script: |
@@ -62233,7 +62233,7 @@ Body:
     AegisName: EF_INT_Biscuit_Stick
     Name: "[Not For Sale] INT Biscuit Stick"
     Type: Usable
-    Weight: 10
+    Weight: 0
     Flags:
       BuyingStore: true
     Script: |
