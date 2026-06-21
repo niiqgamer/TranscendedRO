@@ -176,6 +176,52 @@ Body:
             }
          }
       }
+  - Id: 401273
+    AegisName: LMN_Orrivane_C_AG
+    Name: "Orrivane Crown (Arch Mage)"
+    Type: Armor
+    Weight: 500
+    Defense: 35
+    Slots: 1
+    Jobs:
+      Wizard: true
+    Classes:
+      Fourth: true
+    Locations:
+      Head_Top: true
+    ArmorLevel: 2
+    EquipLevelMin: 230
+    Refineable: true
+    View: 2662
+    Script: |
+      .@g = getenchantgrade();
+      .@r = getrefine();
+      bonus bMaxHP,100*(.@r/3);
+      bonus bMaxSP,15*(.@r/3);
+      bonus2 bSkillAtk,"AG_MYSTERY_ILLUSION",5*(.@r/4);
+      bonus2 bSkillAtk,"AG_CRIMSON_ARROW",5*(.@r/4);
+      if (.@r>=7) {
+         bonus2 bMagicAtkEle,Ele_All,10;
+         if (.@r>=9) {
+            bonus bSMatk,5;
+            bonus bMatkRate,5;
+            if (.@r>=11) {
+               bonus2 bMagicAddSize,Size_All,10;
+            }
+         }
+      }
+      if (.@g>=ENCHANTGRADE_D) {
+         bonus bSMatk,5;
+         if (.@g>=ENCHANTGRADE_C) {
+            bonus bMaxHPRate,5;
+            bonus bMaxSPRate,5;
+            if (.@g>=ENCHANTGRADE_B) {
+               bonus2 bMagicAddRace,RC_All,10;
+               bonus2 bMagicAddRace,RC_Player_Doram,-10;
+               bonus2 bMagicAddRace,RC_Player_Human,-10;
+            }
+         }
+      }
   - Id: 410493
     AegisName: BP2_Middle_US
     Name: "[S2] Authority of Issgard"
@@ -2208,6 +2254,54 @@ Body:
                bonus bSMatk,20;
                if (.@g>=ENCHANTGRADE_A) {
                   bonus2 bMagicAddSize,Size_All,20;
+               }
+            }
+         }
+      }
+  - Id: 550202
+    AegisName: LMN_AG_Wand
+    Name: Orrivane Arch Wand
+    Type: Weapon
+    SubType: Staff
+    Weight: 2300
+    Attack: 120
+    Range: 1
+    Slots: 2
+    Jobs:
+      Wizard: true
+    Classes:
+      Fourth: true
+    Locations:
+      Right_Hand: true
+    WeaponLevel: 5
+    EquipLevelMin: 230
+    Refineable: true
+    Gradable: true
+    Script: |
+      .@g = getenchantgrade();
+      .@r = getrefine();
+      bonus bMatk,200+10*(.@r/2);
+      bonus bUnbreakableWeapon;
+      bonus bMatkRate,3+(.@r/2);
+      bonus2 bSkillAtk,"AG_CRIMSON_ARROW",5*(.@r/3);
+      if (.@r>=7) {
+         bonus2 bMagicAtkEle,Ele_All,15;
+         if (.@r>=9) {
+            bonus bVariableCastrate,-10;
+            bonus bSMatk,3;
+            if (.@r>=11) {
+               bonus2 bSkillAtk,"AG_CRIMSON_ARROW",10;
+            }
+         }
+      }
+      if (.@g>=ENCHANTGRADE_D) {
+         bonus bSMatk,2;
+         if (.@g>=ENCHANTGRADE_C) {
+            bonus2 bSkillAtk,"AG_CRIMSON_ARROW",10;
+            if (.@g>=ENCHANTGRADE_B) {
+               bonus2 bMagicAtkEle,Ele_All,10;
+               if (.@g>=ENCHANTGRADE_A) {
+                  bonus bSMatk,2*(.@r/2);
                }
             }
          }
