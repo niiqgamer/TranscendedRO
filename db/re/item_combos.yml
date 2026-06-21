@@ -60599,6 +60599,7 @@ Body:
       if (.@r>11) {
          bonus2 bMagicAddEle,Ele_All,20;
          bonus2 bSkillAtk,"AG_CRIMSON_ARROW",30;
+         bonus2 bSkillAtk,"AG_CRIMSON_ARROW_ATK",30;
       }
   - Combos:
       - Combo:
@@ -61150,3 +61151,31 @@ Body:
     Script: |
       bonus bMatk,250;
       bonus2 bMagicAtkEle,Ele_Dark,30;
+  - Combos:
+      - Combo:
+          - Ayothaya_Boots_TH    # 470442
+          - 6th_Anni_Ring_TH    #  490966
+    Script: |
+      bonus2 bHPDrainRate,30,1;
+      bonus2 bSPDrainRate,30,1;
+      autobonus "{ bonus2 bHPRegenRate,1000,1250; }",30,10000,BF_MAGIC,"{ specialeffect2 EF_POTION_BERSERK; }";
+      autobonus "{ bonus2 bSPRegenRate,100,1250; }",30,10000,BF_MAGIC,"{ specialeffect2 EF_POTION_BERSERK; }";
+      bonus2 bAddSize,Size_All,10;
+      bonus2 bMagicAddSize,Size_All,10;
+      if (getenchantgrade(EQI_SHOES) >= ENCHANTGRADE_A) {
+         bonus2 bExpAddRace,RC_All,5;
+         bonus2 bDropAddRace,RC_All,5;
+         bonus2 bAddRace,RC_All,10;
+         bonus2 bAddRace,RC_Player_Doram,-10;
+         bonus2 bAddRace,RC_Player_Human,-10;
+         bonus2 bMagicAddRace,RC_All,10;
+         bonus2 bMagicAddRace,RC_Player_Doram,-10;
+         bonus2 bMagicAddRace,RC_Player_Human,-10;
+      }
+  - Combos:
+      - Combo:
+          - Ayothaya_Boots_TH    # 470442
+          - 6th_Anni_Ring_TH    #  490966
+          - aegis_300754    #  300754
+    Script: |
+      bonus2 bIgnoreDefRaceRate,RC_All,40;
