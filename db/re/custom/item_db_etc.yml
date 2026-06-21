@@ -3,6 +3,26 @@ Header:
   Version: 3
 
 Body:
+  - Id: 300754
+    AegisName: aegis_300754
+    Name: Upgrade Memory of Thanatos Card
+    Type: Card
+    Weight: 10
+    Locations:
+      Right_Hand: true
+    Flags:
+      BuyingStore: true
+      DropEffect: CLIENT
+    Script: |
+      .@r = getrefine();
+      bonus bDefRatioAtkClass,Class_All;
+      bonus bSPDrainValue,-3;
+      bonus bDef,-100;
+      bonus bFlee,-100;
+      if (getiteminfo(getequipid(EQI_HAND_R), ITEMINFO_WEAPONLEVEL)==5) {
+         bonus2 bAtkEle,Ele_All,.@r;
+         bonus2 bIgnoreResRaceRate,RC_All,.@r;
+      }
   - Id: 312438
     AegisName: Spirit_Of_Star_01_CN
     Name: Spirit of Knight Lv.1
