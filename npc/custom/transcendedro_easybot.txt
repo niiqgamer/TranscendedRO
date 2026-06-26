@@ -1,0 +1,230 @@
+// ============================================================================
+// EasyBot System - Simple Auto-Bot
+// Item 9950003: Physical Type (Auto Skill + Wing Loop)
+// Item 9950004: Magical Type (Auto Skill + Wing Loop)
+// ============================================================================
+
+// ============================================================================
+// Item Use Event Handler
+// ============================================================================
+-	script	EasyBot_Handler	-1,{
+OnInit:
+	// Physical Type Default Skills
+	// Format: Skill ID, Level, Cooldown (ms)
+	setarray .PhysSkill_ID[0], 5, 56, 150, 388, 0;    // Bash, Magnum Break, Bowling Bash, Spiral Pierce
+	setarray .PhysSkill_Lv[0], 10, 10, 10, 10, 0;
+	setarray .PhysSkill_CD[0], 500, 1000, 1500, 2000, 0;
+
+	// Magical Type Default Skills
+	setarray .MagSkill_ID[0], 19, 21, 84, 86, 0;      // Fire Bolt, Cold Bolt, Storm Gust, Lord of Vermilion
+	setarray .MagSkill_Lv[0], 10, 10, 5, 5, 0;
+	setarray .MagSkill_CD[0], 1000, 1000, 3000, 5000, 0;
+
+	// Teleport Delay (seconds)
+	.TP_Delay = 5;
+	end;
+
+OnItemUse:
+	if (@item_id == 9950003) {
+		callfunc "EasyBot_Toggle", 1;  // Physical
+	} else if (@item_id == 9950004) {
+		callfunc "EasyBot_Toggle", 2;  // Magical
+	}
+	end;
+}
+
+// ============================================================================
+// Toggle Function (ON/OFF)
+// ============================================================================
+function	script	EasyBot_Toggle	{
+	.@type = getarg(0);  // 1 = Physical, 2 = Magical
+	
+	// Check map restrictions
+	if (getmapflag(strcharinfo(3), mf_pvp) || getmapflag(strcharinfo(3), mf_gvg)) {
+		dispbottom "[EasyBot] Cannot use in PvP/GvG maps!";
+		end;
+	}
+	
+	// ===== Check Current State =====
+	// If @bot_state == 1 -> Turn OFF
+	if (@bot_state == 1) {
+		atcommand "@bot off";
+		@bot_state = 0;
+		dispbottom "[EasyBot] System deactivated.";
+		end;
+	}
+	
+	// ===== If @bot_state == 0 -> Turn ON =====
+	// Cleanup first (safety)
+	atcommand "@bot off";
+	
+	// Set Teleport Delay
+	atcommand "@bot tp " + getd(".TP_Delay");
+	
+	// Configure Skills based on type
+	if (.@type == 1) {
+		// Physical Type
+		for (.@i = 0; .@i < 5; .@i++) {
+			if (getd(".PhysSkill_ID[" + .@i + "]") > 0) {
+				atcommand "@bot skill_active " + (.@i + 1) + " " + getd(".PhysSkill_ID[" + .@i + "]") + " " + getd(".PhysSkill_Lv[" + .@i + "]") + " " + getd(".PhysSkill_CD[" + .@i + "]");
+			}
+		}
+	} else {
+		// Magical Type
+		for (.@i = 0; .@i < 5; .@i++) {
+			if (getd(".MagSkill_ID[" + .@i + "]") > 0) {
+				atcommand "@bot skill_active " + (.@i + 1) + " " + getd(".MagSkill_ID[" + .@i + "]") + " " + getd(".MagSkill_Lv[" + .@i + "]") + " " + getd(".MagSkill_CD[" + .@i + "]");
+			}
+		}
+	}
+	
+	// ===== Feature Toggles =====
+	// DISABLE Normal Attack (Skill-Only Mode)
+	atcommand "@bot toggle attack";   // OFF - No normal attack
+	
+	// Enable Auto Loot
+	atcommand "@bot toggle loot";     // ON - Auto loot items
+	
+	// Enable Auto Teleport
+	atcommand "@bot toggle teleport"; // ON - Auto teleport when stuck
+	
+	// Disable Buff (we use skill_active instead)
+	atcommand "@bot toggle buff";     // OFF - No auto buff
+	
+	// ===== Activate Bot =====
+	if (.@type == 1) {
+		atcommand "@bot on " + getd(".TP_Delay") + " 1 " + getd(".PhysSkill_ID[0]") + " " + getd(".PhysSkill_Lv[0]") + " " + getd(".PhysSkill_ID[1]") + " " + getd(".PhysSkill_Lv[1]") + " " + getd(".PhysSkill_ID[2]") + " " + getd(".PhysSkill_Lv[2]") + " " + getd(".PhysSkill_ID[3]") + " " + getd(".PhysSkill_Lv[3]") + " " + getd(".PhysSkill_ID[4]") + " " + getd(".PhysSkill_Lv[4]");
+	} else {
+		atcommand "@bot on " + getd(".TP_Delay") + " 1 " + getd(".MagSkill_ID[0]") + " " + getd(".MagSkill_Lv[0]") + " " + getd(".MagSkill_ID[1]") + " " + getd(".MagSkill_Lv[1]") + " " + getd(".MagSkill_ID[2]") + " " + getd(".MagSkill_Lv[2]") + " " + getd(".MagSkill_ID[3]") + " " + getd(".MagSkill_Lv[3]") + " " + getd(".MagSkill_ID[4]") + " " + getd(".MagSkill_Lv[4]");
+	}
+	
+	// Save state as ON
+	@bot_state = 1;
+	
+	// Display messages
+	if (.@type == 1) {
+		dispbottom "[EasyBot] Physical Bot activated! (Skill-Only Mode)";
+	} else {
+		dispbottom "[EasyBot] Magical Bot activated! (Skill-Only Mode)";
+	}
+	dispbottom "[EasyBot] Use the item again to deactivate.";
+	dispbottom "[EasyBot] Features: Auto Skill | Auto Loot | Auto Teleport";
+	
+	end;
+}
+
+// ============================================================================
+// Reset Events (Death, Logout, Map Change)
+// ============================================================================
+-	script	EasyBot_Reset	-1,{
+OnPCDieEvent:
+	@bot_state = 0;
+	end;
+
+OnPCLogoutEvent:
+	@bot_state = 0;
+	end;
+
+OnPCMapChangeEvent:
+	// Auto-disable if entering PvP/GvG map
+	if (getmapflag(strcharinfo(3), mf_pvp) || getmapflag(strcharinfo(3), mf_gvg)) {
+		if (@bot_state == 1) {
+			atcommand "@bot off";
+			@bot_state = 0;
+			dispbottom "[EasyBot] Auto-deactivated (Entered PvP/GvG map)";
+		}
+	}
+	end;
+}
+
+// ============================================================================
+// GM Configuration NPC
+// ============================================================================
+prontera,150,150,5	script	EasyBot Config	4_F_KAFRA1,{
+	if (getgmlevel() < 99) {
+		mes "[EasyBot Config]";
+		mes "Access denied!";
+		close;
+	}
+	
+	mes "[EasyBot Configuration]";
+	mes "Select an option:";
+	next;
+	
+	switch(select("Configure Physical Skills:Configure Magical Skills:Configure Teleport:View Status:Close")) {
+		case 1:
+			callsub S_ConfigSkill, 1;
+			break;
+		case 2:
+			callsub S_ConfigSkill, 2;
+			break;
+		case 3:
+			callsub S_ConfigTeleport;
+			break;
+		case 4:
+			callsub S_ShowStatus;
+			break;
+		case 5:
+			close;
+	}
+	end;
+
+S_ConfigSkill:
+	.@type = getarg(0);
+	mes "[Skill Configuration]";
+	mes "Select Slot (1-5):";
+	input .@slot;
+	if (.@slot < 1 || .@slot > 5) {
+		mes "Invalid slot!";
+		close;
+	}
+	.@slot = .@slot - 1;
+	
+	mes "Enter Skill ID:";
+	input .@id;
+	mes "Enter Skill Level:";
+	input .@lv;
+	mes "Enter Cooldown (ms):";
+	input .@cd;
+	
+	if (.@type == 1) {
+		setd ".PhysSkill_ID[" + .@slot + "]", .@id;
+		setd ".PhysSkill_Lv[" + .@slot + "]", .@lv;
+		setd ".PhysSkill_CD[" + .@slot + "]", .@cd;
+	} else {
+		setd ".MagSkill_ID[" + .@slot + "]", .@id;
+		setd ".MagSkill_Lv[" + .@slot + "]", .@lv;
+		setd ".MagSkill_CD[" + .@slot + "]", .@cd;
+	}
+	
+	mes "Settings saved!";
+	close;
+
+S_ConfigTeleport:
+	mes "[Teleport Configuration]";
+	mes "Enter Teleport Delay (seconds):";
+	input .@delay;
+	if (.@delay < 2) .@delay = 2;
+	.TP_Delay = .@delay;
+	mes "Settings saved!";
+	close;
+
+S_ShowStatus:
+	mes "[EasyBot Status]";
+	mes "Current State: " + ((@bot_state == 1) ? "^00FF00ACTIVE^000000" : "^FF0000INACTIVE^000000");
+	mes " ";
+	mes "^FF0000Physical Skills:^000000";
+	for (.@i = 0; .@i < 5; .@i++) {
+		if (getd(".PhysSkill_ID[" + .@i + "]") > 0) {
+			mes "  Slot " + (.@i + 1) + ": ID=" + getd(".PhysSkill_ID[" + .@i + "]") + " LV=" + getd(".PhysSkill_Lv[" + .@i + "]") + " CD=" + getd(".PhysSkill_CD[" + .@i + "]") + "ms";
+		}
+	}
+	mes " ";
+	mes "^0000FFMagical Skills:^000000";
+	for (.@i = 0; .@i < 5; .@i++) {
+		if (getd(".MagSkill_ID[" + .@i + "]") > 0) {
+			mes "  Slot " + (.@i + 1) + ": ID=" + getd(".MagSkill_ID[" + .@i + "]") + " LV=" + getd(".MagSkill_Lv[" + .@i + "]") + " CD=" + getd(".MagSkill_CD[" + .@i + "]") + "ms";
+		}
+	}
+	close;
+}
