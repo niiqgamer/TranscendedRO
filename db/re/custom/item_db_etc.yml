@@ -369,9 +369,34 @@ Body:
     Name: Soul Ascetic Dim Crystal
     Type: Card
     SubType: Enchant
+  - Id: 315286
+    AegisName: Orrivane_Enc_WH
+    Name: "Orrivane Orb (Windhawk)"
+    Type: Card
+    SubType: Enchant
+  - Id: 315287
+    AegisName: Orrivane_Enc_ABC
+    Name: "Orrivane Orb (Abyss Chaser)"
+    Type: Card
+    SubType: Enchant
   - Id: 315288
     AegisName: Orrivane_Enc_AG
     Name: "Orrivane Orb (Arch Mage)"
+    Type: Card
+    SubType: Enchant
+  - Id: 315321
+    AegisName: Orrivane_Enc_DK
+    Name: "Orrivane Orb (Dragon Knight)"
+    Type: Card
+    SubType: Enchant
+  - Id: 315322
+    AegisName: Orrivane_Enc_MT
+    Name: "Orrivane Orb (Meister)"
+    Type: Card
+    SubType: Enchant
+  - Id: 315323
+    AegisName: Orrivane_Enc_IG
+    Name: "Orrivane Orb (Imperial Guard)"
     Type: Card
     SubType: Enchant
   - Id: 1002427
