@@ -54,6 +54,7 @@
 #include "storage.hpp"
 #include "trade.hpp"
 #include "vending.hpp"
+#include "autobot.hpp"
 
 using namespace rathena;
 
@@ -969,6 +970,7 @@ ACMD_FUNC(save)
  *------------------------------------------*/
 ACMD_FUNC(load){
 	nullpo_retr(-1, sd);
+    autobot_cleanup(sd);
 
 	uint16 mapindex = mapindex_name2id( sd->status.save_point.map );
 
@@ -11464,6 +11466,26 @@ ACMD_FUNC(macrochecker){
 	return 0;
 }
 
+ACMD_FUNC(bot) {
+	nullpo_retr(-1, sd);
+	if (!message || !*message) {
+		clif_displaymessage(fd, "[Autobot] Usage: @bot <command>");
+		clif_displaymessage(fd, "  on/off    - Activate/Deactivate bot");
+		clif_displaymessage(fd, "  tp <sec>  - Set teleport delay (min 2s)");
+		clif_displaymessage(fd, "  toggle    - Toggle features");
+		clif_displaymessage(fd, "  buff      - Set buff skill");
+		clif_displaymessage(fd, "  potion    - Set potion settings");
+		clif_displaymessage(fd, "  itembuff  - Set item buff");
+		return -1;
+	}
+	// ส่งต่อข้อความทั้งหมดไปให้ autobot.cpp จัดการ
+	if (autobot_handle_command(sd, message)) {
+		return 0;
+	}
+	clif_displaymessage(fd, "[Autobot] Invalid command. Use: @bot on/off/toggle/buff/potion/itembuff");
+	return -1;
+}
+
 #include <custom/atcommand.inc>
 
 /**
@@ -11794,6 +11816,7 @@ void atcommand_basecommands(void) {
 		ACMD_DEFR(roulette, ATCMD_NOCONSOLE|ATCMD_NOAUTOTRADE),
 		ACMD_DEF(setcard),
 		ACMD_DEF(macrochecker),
+		ACMD_DEF(bot),
 	};
 	AtCommandInfo* atcommand;
 	int32 i;
