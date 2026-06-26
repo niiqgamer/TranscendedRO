@@ -1,0 +1,514 @@
+// =====================================================
+// Autobot System - NPC Script (Complete Version with Class IDs)
+// =====================================================
+-	script	Autobot_System_NPC	-1,{
+
+OnShowMenu:
+	if (@bot_initialized == 0) {
+		@bot_attack = 1;
+		@bot_skill_active = 1;
+		@bot_skill_support = 1;
+		@bot_item_support = 1;
+		@bot_teleport = 1;
+		@bot_tp_item = 1;
+		@bot_tp_skill = 1;
+		@bot_tp_boss = 0;
+		@bot_tp_ignore = 0;
+		@bot_initialized = 1;
+	}
+	
+	getinventorylist;
+	.@remain = 0;
+	for (.@i = 0; .@i < @inventorylist_count; .@i++) {
+		if (@inventorylist_id[.@i] == 9950003) {
+			if (@inventorylist_expire[.@i] > gettimetick(2)) {
+				.@remain = @inventorylist_expire[.@i] - gettimetick(2);
+				break;
+			}
+		}
+	}
+	
+	if (.@remain > 0) {
+		.@hour = .@remain / 3600;
+		.@min = (.@remain % 3600) / 60;
+		.@sec = .@remain % 60;
+		.@time$ = sprintf("%02d:%02d:%02d", .@hour, .@min, .@sec);
+	} else {
+		.@time$ = "^FF0000Expired^000000";
+	}
+	
+	// แสดงเมนูหลัก
+	mes "[ Autobot Control Panel ]";
+	mes "======================";
+	mes (@bot_enabled ? "Autobot Status is ^00FF00[Active]^000000" : "Autobot Status is ^FF0000[Inactive]^000000");
+	mes "Remaining Time : ^0066FF" + .@time$ + "^000000";
+	mes "======================";
+	next;
+	
+	.@menu$[1] = (@bot_enabled ? "^00FF00[Active]^000000 Autobot" : "^FF0000[Inactive]^000000 Autobot");
+	.@menu$[2] = (@bot_attack ? "Normal Attack ^00FF00[ON]^000000" : "Normal Attack ^FF0000[OFF]^000000");
+    .@menu$[3] = (@bot_skill_active ? "Skill Active ^00FF00[ON]^000000" : "Skill Active ^FF0000[OFF]^000000");
+    .@menu$[4] = (@bot_skill_support ? "Skill Support ^00FF00[ON]^000000" : "Skill Support ^FF0000[OFF]^000000");
+    .@menu$[5] = (@bot_item_support ? "Item Support ^00FF00[ON]^000000" : "Item Support ^FF0000[OFF]^000000");
+    .@menu$[6] = (@bot_teleport ? "Teleport Option ^00FF00[ON]^000000" : "Teleport Option ^FF0000[OFF]^000000");
+    .@menu$[7] = "Close";
+
+    // ==========================================
+    // เรียกใช้ select แบบต่อสตริง (ปลอดภัยกว่า implode)
+    // ==========================================
+    .@select = select(.@menu$[1] + ":" + .@menu$[2] + ":" + .@menu$[3] + ":" + .@menu$[4] + ":" + .@menu$[5] + ":" + .@menu$[6] + ":" + .@menu$[7]);
+
+    if (.@select == 1) goto OnMenu_Enabled;
+	if (.@select == 2) goto OnMenu_Attack;
+    if (.@select == 3) goto OnMenu_SkillActive;
+    if (.@select == 4) goto OnMenu_SkillSupport;
+    if (.@select == 5) goto OnMenu_ItemSupport;
+    if (.@select == 6) goto OnMenu_Teleport;
+    if (.@select == 7) close;
+    end;
+	
+// =====================================================
+// Main Function - Enable/Unable Autobot
+// =====================================================
+OnMenu_Enabled:
+	if (@bot_enabled) {
+		atcommand "@bot off";
+		@bot_enabled = 0;
+		mes "Autobot Status is ^FF0000[Inactive]^000000";
+	} else {
+		@bot_enabled = 1;
+		mes "Autobot Status is ^00FF00[Active]^000000";
+		
+		// เรียกใช้คำสั่ง C++ (tele_sec=5, avoid_mvp=0, skills=0)
+		atcommand "@bot on 5 0 " + @bot_skill_active_id[1] + " " + @bot_skill_active_lv[1] + " " + @bot_skill_active_id[2] + " " + @bot_skill_active_lv[2] + " " + @bot_skill_active_id[3] + " " + @bot_skill_active_lv[3] + " " + @bot_skill_active_id[4] + " " + @bot_skill_active_lv[4] + " " + @bot_skill_active_id[5] + " " + @bot_skill_active_lv[5];
+	}
+	close;
+
+// =====================================================
+// เมนู Normal Attack
+// =====================================================
+OnMenu_Attack:
+	mes "[ Normal Attack ]";
+	mes "Status : " + (@bot_attack ? "^00FF00ON^000000" : "^FF0000OFF^000000");
+	mes "-------------------";
+	next;
+	
+	.@menu$[1] = "< Back to main menu.";
+	.@menu$[2] = (@bot_attack ? "Disable NORMAL ATTACK" : "Allow NORMAL ATTACK");
+	.@select = select(.@menu$[1] + ":" + .@menu$[2]);
+	
+	if (.@select == 2) {
+		@bot_attack = !@bot_attack;
+		atcommand "@bot toggle attack";
+	}
+	goto OnShowMenu;
+
+// ==========================================
+// เมนู Skill Active (หน้าหลัก)
+// ==========================================
+OnMenu_SkillActive:
+	mes "[ Skill Active ]";
+	mes "Status : " + (@bot_skill_active ? "^00FF00ON^000000" : "^FF0000OFF^000000");
+	mes "-------------------";
+	mes "Select a slot to configure:";
+	next;
+	
+	.@menu$[1] = (@bot_skill_active_id[1] > 0 ? "ID [" + @bot_skill_active_id[1] + "] LV [" + @bot_skill_active_lv[1] + "] CD [" + @bot_skill_active_cd[1] + "] ms." : "^777777Slot #1 is Empty.^000000");
+	.@menu$[2] = (@bot_skill_active_id[2] > 0 ? "ID [" + @bot_skill_active_id[2] + "] LV [" + @bot_skill_active_lv[2] + "] CD [" + @bot_skill_active_cd[2] + "] ms." : "^777777Slot #2 is Empty.^000000");
+	.@menu$[3] = (@bot_skill_active_id[3] > 0 ? "ID [" + @bot_skill_active_id[3] + "] LV [" + @bot_skill_active_lv[3] + "] CD [" + @bot_skill_active_cd[3] + "] ms." : "^777777Slot #3 is Empty.^000000");
+	.@menu$[4] = (@bot_skill_active_id[4] > 0 ? "ID [" + @bot_skill_active_id[4] + "] LV [" + @bot_skill_active_lv[4] + "] CD [" + @bot_skill_active_cd[4] + "] ms." : "^777777Slot #4 is Empty.^000000");
+	.@menu$[5] = (@bot_skill_active_id[5] > 0 ? "ID [" + @bot_skill_active_id[5] + "] LV [" + @bot_skill_active_lv[5] + "] CD [" + @bot_skill_active_cd[5] + "] ms." : "^777777Slot #5 is Empty.^000000");
+	.@menu$[6] = "^FF0000Reset all skill slots^000000";
+	.@menu$[7] = "< Back to main menu";
+	.@select = select(.@menu$[1] + ":" + .@menu$[2] + ":" + .@menu$[3] + ":" + .@menu$[4] + ":" + .@menu$[5] + ":" + .@menu$[6] + ":" + .@menu$[7]);
+	
+	if (.@select >= 1 && .@select <= 5) {
+		.@slot = .@select;
+		goto OnMenu_SkillActive_Job;
+	} else if (.@select == 6) {
+		atcommand "@bot reset_skill_active";
+		for (.@i = 1; .@i <= 5; .@i++) {
+			@bot_skill_active_id[.@i] = 0;
+			@bot_skill_active_lv[.@i] = 0;
+			@bot_skill_active_cd[.@i] = 0;
+		}
+		goto OnMenu_SkillActive;
+	}
+	goto OnShowMenu;
+
+// ==========================================
+// เลือกอาชีพ (ใช้ Class ID แบบตัวเลข)
+// ==========================================
+OnMenu_SkillActive_Job:
+	.@job = Class;
+	
+	if (.@job == 1 || .@job == 7 || .@job == 4002 || .@job == 4008 || .@job == 4054 || .@job == 4060 || .@job == 4252) {
+		goto OnMenu_SkillActive_DK;
+	} else if (.@job == 2 || .@job == 9 || .@job == 4003 || .@job == 4010 || .@job == 4055 || .@job == 4061 || .@job == 4255) {
+		goto OnMenu_SkillActive_AM;
+	} else if (.@job == 3 || .@job == 11 || .@job == 4004 || .@job == 4012 || .@job == 4056 || .@job == 4062 || .@job == 4257) {
+		goto OnMenu_SkillActive_WH;
+	} else if (.@job == 4 || .@job == 8 || .@job == 4005 || .@job == 4009 || .@job == 4057 || .@job == 4063 || .@job == 4256) {
+		goto OnMenu_SkillActive_CD;
+	} else if (.@job == 5 || .@job == 10 || .@job == 4006 || .@job == 4011 || .@job == 4058 || .@job == 4064 || .@job == 4253) {
+		goto OnMenu_SkillActive_MS;
+	} else if (.@job == 6 || .@job == 12 || .@job == 4007 || .@job == 4013 || .@job == 4059 || .@job == 4065 || .@job == 4254) {
+		goto OnMenu_SkillActive_SHC;
+	}
+	else {
+		mes "^FF0000Your job is not supported yet.^000000";
+		next;
+		goto OnMenu_SkillActive;
+	}
+
+// ==========================================
+// Knight Skills (Swordman Line)
+// ==========================================
+OnMenu_SkillActive_DK:
+	setarray .@skill_id[0], 5, 7, 1003, 1004, 1005;
+	setarray .@skill_name$[0], "Bash", "Magnum Break", "Bowling Bash", "Brandish Spear", "Spiral Pierce";
+	setarray .@skill_maxlv[0], 10, 10, 10, 10, 10;
+	.@skill_count = 5;
+	goto OnMenu_SkillActive_Show;
+
+// ==========================================
+// Wizard Skills (Mage Line)
+// ==========================================
+OnMenu_SkillActive_AM:
+	setarray .@skill_id[0], 19, 14, 20, 17, 18;
+	setarray .@skill_name$[0], "Fire Bolt", "Cold Bolt", "Lightning Bolt", "Fire Ball", "Fire Wall";
+	setarray .@skill_maxlv[0], 10, 10, 10, 10, 10;
+	.@skill_count = 5;
+	goto OnMenu_SkillActive_Show;
+
+// ==========================================
+// Hunter Skills (Archer Line)
+// ==========================================
+OnMenu_SkillActive_WH:
+	setarray .@skill_id[0], 3001, 3002, 3003, 3004, 3005;
+	setarray .@skill_name$[0], "Double Strafe", "Arrow Shower", "Blitz Beat", "Detect", "Falcon Assault";
+	setarray .@skill_maxlv[0], 10, 10, 10, 10, 10;
+	.@skill_count = 5;
+	goto OnMenu_SkillActive_Show;
+
+// ==========================================
+// Priest Skills (Acolyte Line)
+// ==========================================
+OnMenu_SkillActive_CD:
+	setarray .@skill_id[0], 4001, 4002, 4003, 4004, 4005;
+	setarray .@skill_name$[0], "Heal", "Blessing", "Increase Agility", "Kyrie Eleison", "Magnificat";
+	setarray .@skill_maxlv[0], 10, 10, 10, 10, 10;
+	.@skill_count = 5;
+	goto OnMenu_SkillActive_Show;
+
+// ==========================================
+// Blacksmith Skills (Merchant Line)
+// ==========================================
+OnMenu_SkillActive_MS:
+	setarray .@skill_id[0], 5001, 5002, 5003, 5004, 5005;
+	setarray .@skill_name$[0], "Hammer Fall", "Power Thrust", "Over Thrust", "Weapon Perfection", "Maximum Over Thrust";
+	setarray .@skill_maxlv[0], 10, 10, 10, 10, 10;
+	.@skill_count = 5;
+	goto OnMenu_SkillActive_Show;
+
+// ==========================================
+// Assassin Skills (Thief Line)
+// ==========================================
+OnMenu_SkillActive_SHC:
+	setarray .@skill_id[0], 6001, 6002, 6003, 6004, 6005;
+	setarray .@skill_name$[0], "Double Attack", "Left Hand Mastery", "Enchant Poison", "Poison React", "Soul Destroyer";
+	setarray .@skill_maxlv[0], 10, 10, 10, 10, 10;
+	.@skill_count = 5;
+	goto OnMenu_SkillActive_Show;
+
+// ==========================================
+// แสดงลิสต์สกิล (ใช้ร่วมกันทุกอาชีพ)
+// ==========================================
+OnMenu_SkillActive_Show:
+	mes "[ Select Skill - Slot #" + .@slot + " ]";
+	mes "Choose a skill to use:";
+	next;
+	
+	for (.@i = 0; .@i < .@skill_count; .@i++) {
+		.@menu$[.@i + 1] = "[" + .@skill_name$[.@i] + "] (SkillID [" + .@skill_id[.@i] + "] LV.1-" + .@skill_maxlv[.@i];
+	}
+	.@menu$[.@skill_count + 1] = "< Back";
+	.@select = select(implode(.@menu$, ":"));
+	
+	if (.@select <= .@skill_count) {
+		.@chosen_id = .@skill_id[.@select - 1];
+		.@chosen_maxlv = .@skill_maxlv[.@select - 1];
+		
+		mes "Enter Level (1-" + .@chosen_maxlv + "):";
+		input .@lv, 1, .@chosen_maxlv;
+		
+		mes "Enter Cooldown (ms):";
+		input .@cd, 0, 10000;
+		
+		@bot_skill_active_id[.@slot] = .@chosen_id;
+		@bot_skill_active_lv[.@slot] = .@lv;
+		@bot_skill_active_cd[.@slot] = .@cd;
+		
+		atcommand "@bot skill_active " + .@slot + " " + .@chosen_id + " " + .@lv + " " + .@cd;
+		mes "^00FF00Skill set successfully!^000000";
+		next;
+		goto OnMenu_SkillActive;
+	} else {
+		goto OnMenu_SkillActive;
+	}
+
+// =====================================================
+// เมนู Skill Support (โครงสร้างเดียวกันกับ Skill Active)
+// =====================================================
+OnMenu_SkillSupport:
+	mes "[ Skill Support ]";
+	mes "Status : " + (@bot_skill_support ? "^00FF00ON^000000" : "^FF0000OFF^000000");
+	mes "-------------------";
+	mes "Select a slot to configure:";
+	next;
+	
+	.@menu$[1] = (@bot_skill_support_id[1] > 0 ? "ID [" + @bot_skill_support_id[1] + "] LV [" + @bot_skill_support_id[1] + "] CD [" + @bot_skill_support_id[1] + "] ms." : "^777777Slot #1 is Empty.^000000");
+	.@menu$[2] = (@bot_skill_support_id[2] > 0 ? "ID [" + @bot_skill_support_id[2] + "] LV [" + @bot_skill_support_id[2] + "] CD [" + @bot_skill_support_id[2] + "] ms." : "^777777Slot #2 is Empty.^000000");
+	.@menu$[3] = (@bot_skill_support_id[3] > 0 ? "ID [" + @bot_skill_support_id[3] + "] LV [" + @bot_skill_support_id[3] + "] CD [" + @bot_skill_support_id[3] + "] ms." : "^777777Slot #3 is Empty.^000000");
+	.@menu$[4] = (@bot_skill_support_id[4] > 0 ? "ID [" + @bot_skill_support_id[4] + "] LV [" + @bot_skill_support_id[4] + "] CD [" + @bot_skill_support_id[4] + "] ms." : "^777777Slot #4 is Empty.^000000");
+	.@menu$[5] = (@bot_skill_support_id[5] > 0 ? "ID [" + @bot_skill_support_id[5] + "] LV [" + @bot_skill_support_id[5] + "] CD [" + @bot_skill_support_id[5] + "] ms." : "^777777Slot #5 is Empty.^000000");
+	.@menu$[6] = "^FF0000Reset all skill slots^000000";
+	.@menu$[7] = "< Back to main menu";
+	.@select = select(.@menu$[1] + ":" + .@menu$[2] + ":" + .@menu$[3] + ":" + .@menu$[4] + ":" + .@menu$[5] + ":" + .@menu$[6] + ":" + .@menu$[7]);
+	
+	if (.@select >= 1 && .@select <= 5) {
+		.@slot = .@select;
+		goto OnMenu_SkillSupport_Job;
+	} else if (.@select == 6) {
+		atcommand "@bot reset_skill_support";
+		for (.@i = 1; .@i <= 5; .@i++) {
+			@bot_skill_support_id[.@i] = 0;
+			@bot_skill_support_lv[.@i] = 0;
+			@bot_skill_support_cd[.@i] = 0;
+		}
+		goto OnMenu_SkillSupport;
+	}
+	goto OnShowMenu;
+
+// ==========================================
+// เลือกอาชีพสำหรับ Skill Support (ใช้ Class ID แบบตัวเลข)
+// ==========================================
+OnMenu_SkillSupport_Job:
+	.@job = Class;
+	
+	if (.@job == 1 || .@job == 5 || .@job == 4006 || .@job == 4060 || .@job == 4254) {
+		goto OnMenu_SkillSupport_DK;
+	}
+	else if (.@job == 7 || .@job == 11 || .@job == 4007 || .@job == 4062 || .@job == 4256) {
+		goto OnMenu_SkillSupport_AM;
+	}
+	else if (.@job == 9 || .@job == 13 || .@job == 4010 || .@job == 4061 || .@job == 4255) {
+		goto OnMenu_SkillSupport_WH;
+	}
+	else if (.@job == 14 || .@job == 18 || .@job == 4009 || .@job == 4063 || .@job == 4257) {
+		goto OnMenu_SkillSupport_CD;
+	}
+	else if (.@job == 15 || .@job == 19 || .@job == 4011 || .@job == 4064 || .@job == 4258) {
+		goto OnMenu_SkillSupport_MS;
+	}
+	else if (.@job == 6 || .@job == 12 || .@job == 4008 || .@job == 4065 || .@job == 4259) {
+		goto OnMenu_SkillSupport_SHC;
+	}
+	else {
+		mes "^FF0000Your job is not supported yet.^000000";
+		next;
+		goto OnMenu_SkillSupport;
+	}
+
+// ==========================================
+// Knight Support Skills
+// ==========================================
+OnMenu_SkillSupport_DK:
+	setarray .@skill_id[0], 6, 8, 60, 1004, 1005;
+	setarray .@skill_name$[0], "Provoke", "Endure", "Two Hand Quicken", "Brandish Spear", "Spiral Pierce";
+	setarray .@skill_maxlv[0], 10, 10, 10, 10, 10;
+	.@skill_count = 5;
+	goto OnMenu_SkillSupport_Show;
+
+// ==========================================
+// Wizard Support Skills
+// ==========================================
+OnMenu_SkillSupport_AM:
+	setarray .@skill_id[0], 2001, 2002, 2003, 2004, 2005;
+	setarray .@skill_name$[0], "Fire Bolt", "Cold Bolt", "Lightning Bolt", "Fire Ball", "Frost Nova";
+	setarray .@skill_maxlv[0], 10, 10, 10, 10, 10;
+	.@skill_count = 5;
+	goto OnMenu_SkillSupport_Show;
+
+// ==========================================
+// Hunter Support Skills
+// ==========================================
+OnMenu_SkillSupport_WH:
+	setarray .@skill_id[0], 3001, 3002, 3003, 3004, 3005;
+	setarray .@skill_name$[0], "Double Strafe", "Arrow Shower", "Blitz Beat", "Detect", "Falcon Assault";
+	setarray .@skill_maxlv[0], 10, 10, 10, 10, 10;
+	.@skill_count = 5;
+	goto OnMenu_SkillSupport_Show;
+
+// ==========================================
+// Priest Support Skills
+// ==========================================
+OnMenu_SkillSupport_CD:
+	setarray .@skill_id[0], 4001, 4002, 4003, 4004, 4005;
+	setarray .@skill_name$[0], "Heal", "Blessing", "Increase Agility", "Kyrie Eleison", "Magnificat";
+	setarray .@skill_maxlv[0], 10, 10, 10, 10, 10;
+	.@skill_count = 5;
+	goto OnMenu_SkillSupport_Show;
+
+// ==========================================
+// Blacksmith Support Skills
+// ==========================================
+OnMenu_SkillSupport_MS:
+	setarray .@skill_id[0], 5001, 5002, 5003, 5004, 5005;
+	setarray .@skill_name$[0], "Hammer Fall", "Power Thrust", "Over Thrust", "Weapon Perfection", "Maximum Over Thrust";
+	setarray .@skill_maxlv[0], 10, 10, 10, 10, 10;
+	.@skill_count = 5;
+	goto OnMenu_SkillSupport_Show;
+
+// ==========================================
+// Assassin Support Skills
+// ==========================================
+OnMenu_SkillSupport_SHC:
+	setarray .@skill_id[0], 6001, 6002, 6003, 6004, 6005;
+	setarray .@skill_name$[0], "Double Attack", "Left Hand Mastery", "Enchant Poison", "Poison React", "Soul Destroyer";
+	setarray .@skill_maxlv[0], 10, 10, 10, 10, 10;
+	.@skill_count = 5;
+	goto OnMenu_SkillSupport_Show;
+
+// ==========================================
+// แสดงลิสต์สกิล Support
+// ==========================================
+OnMenu_SkillSupport_Show:
+	mes "[ Select Skill - Slot #" + .@slot + " ]";
+	mes "Choose a skill to use:";
+	next;
+	
+	for (.@i = 0; .@i < .@skill_count; .@i++) {
+		.@menu$[.@i + 1] = "[" + .@skill_name$[.@i] + "] (ID:" + .@skill_id[.@i] + ") LV.1-" + .@skill_maxlv[.@i];
+	}
+	.@menu$[.@skill_count + 1] = "< Back";
+	.@select = select(implode(.@menu$, ":"));
+	
+	if (.@select <= .@skill_count) {
+		.@chosen_id = .@skill_id[.@select - 1];
+		.@chosen_maxlv = .@skill_maxlv[.@select - 1];
+		
+		mes "Enter Level (1-" + .@chosen_maxlv + "):";
+		input .@lv, 1, .@chosen_maxlv;
+		
+		mes "Enter Cooldown (ms):";
+		input .@cd, 0, 10000;
+		
+		@bot_skill_support_id[.@slot] = .@chosen_id;
+		@bot_skill_support_lv[.@slot] = .@lv;
+		@bot_skill_support_cd[.@slot] = .@cd;
+		
+		atcommand "@bot skill_support " + .@slot + " " + .@chosen_id + " " + .@lv + " " + .@cd;
+		mes "^00FF00Skill set successfully!^000000";
+		next;
+		goto OnMenu_SkillSupport;
+	} else {
+		goto OnMenu_SkillSupport;
+	}
+
+// =====================================================
+// เมนู Item Support
+// =====================================================
+OnMenu_ItemSupport:
+	mes "[ Item Support ]";
+	mes "Status : " + (@bot_item_support ? "^00FF00ON^000000" : "^FF0000OFF^000000");
+	mes "-------------------";
+	for (.@i = 1; .@i <= 5; .@i++) {
+		if (@bot_item_support_id[.@i] > 0) {
+			.@name$ = getitemname(@bot_item_support_id[.@i]);
+			.@menu$[.@i] = "Item #" + .@i + " - [" + .@name$ + "] (ID:" + @bot_item_support_id[.@i] + ") CD " + @bot_item_support_cd[.@i] + " sec.";
+		} else {
+			.@menu$[.@i] = "Item #" + .@i + " - ^777777Empty^000000";
+		}
+	}
+	.@menu$[6] = "< Back to main menu.";
+	.@menu$[7] = "^FF0000Reset all slots.^000000";
+	.@select = select(implode(.@menu$, ":"));
+	
+	if (.@select >= 1 && .@select <= 5) {
+		goto OnMenu_ItemSupport_Set;
+	} else if (.@select == 7) {
+		atcommand "@bot reset_item_support";
+		for (.@i = 1; .@i <= 5; .@i++) {
+			@bot_item_support_id[.@i] = 0;
+			@bot_item_support_cd[.@i] = 0;
+		}
+		goto OnMenu_ItemSupport;
+	}
+	goto OnShowMenu;
+
+OnMenu_ItemSupport_Set:
+	.@slot = .@select;
+	mes "[ Item Support - Slot #" + .@slot + " ]";
+	mes "Enter Item ID (0 to clear):";
+	input .@item_id, 0, 32767;
+	if (.@item_id > 0) {
+		mes "Enter Cooldown (sec):";
+		input .@item_cd, 0, 3600;
+		@bot_item_support_id[.@slot] = .@item_id;
+		@bot_item_support_cd[.@slot] = .@item_cd;
+		atcommand "@bot item_support " + .@slot + " " + .@item_id + " " + .@item_cd;
+	} else {
+		@bot_item_support_id[.@slot] = 0;
+		@bot_item_support_cd[.@slot] = 0;
+		atcommand "@bot item_support " + .@slot + " 0 0";
+	}
+	goto OnMenu_ItemSupport;
+
+// =====================================================
+// เมนู Teleport Option
+// =====================================================
+OnMenu_Teleport:
+	mes "[ Teleport Option ]";
+	mes "Status : " + (@bot_teleport ? "^00FF00ON^000000" : "^FF0000OFF^000000");
+	mes "-------------------";
+	next;
+	
+	.@menu$[1] = "< Back to main menu.";
+	.@menu$[2] = (@bot_tp_item ? "Teleport by ITEM ^00FF00[ON]^000000" : "Teleport by ITEM ^FF0000[OFF]^000000");
+	.@menu$[3] = (@bot_tp_skill ? "Teleport by SKILL ^00FF00[ON]^000000" : "Teleport by SKILL ^FF0000[OFF]^000000");
+	.@menu$[4] = (@bot_tp_boss ? "Escape BOSS ^00FF00[ON]^000000" : "Escape BOSS ^FF0000[OFF]^000000");
+	.@menu$[5] = (@bot_tp_ignore > 0 ? "Ignoring monster ^00FF00[ON]^000000 (" + @bot_tp_ignore + ")" : "Ignoring monster ^FF0000[OFF]^000000 (" + @bot_tp_ignore + ")");
+	.@select = select(.@menu$[1] + ":" + .@menu$[2] + ":" + .@menu$[3] + ":" + .@menu$[4] + ":" + .@menu$[5]);
+	
+	switch (.@select) {
+		case 1: goto OnShowMenu;
+		case 2:
+			@bot_tp_item = !@bot_tp_item;
+			atcommand "@bot tp_item " + @bot_tp_item;
+			goto OnMenu_Teleport;
+		case 3:
+			@bot_tp_skill = !@bot_tp_skill;
+			atcommand "@bot tp_skill " + @bot_tp_skill;
+			goto OnMenu_Teleport;
+		case 4:
+			@bot_tp_boss = !@bot_tp_boss;
+			atcommand "@bot tp_boss " + @bot_tp_boss;
+			goto OnMenu_Teleport;
+		case 5:
+			mes "[ Ignoring Monster ]";
+			mes "Enter Mob ID (0 to disable):";
+			input .@mob_id, 0, 10000;
+			@bot_tp_ignore = .@mob_id;
+			atcommand "@bot tp_ignore " + .@mob_id;
+			goto OnMenu_Teleport;
+	}
+
+OnUseItem:
+	goto OnShowMenu;
+}
+
+function	script	Autobot_System_Menu	{
+	doevent "Autobot_System_NPC::OnUseItem";
+	end;
+}
