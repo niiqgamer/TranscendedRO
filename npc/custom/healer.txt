@@ -34,6 +34,7 @@
 	
 	specialeffect2 EF_HEAL2;
 	percentheal 100,100;
+	AP = 500;
 	if (.@Buffs) {
 		if (getgroupid() > 4) {
 			sc_start2 SC_S_LIFEPOTION,3600000,-5,5;
@@ -50,7 +51,6 @@
 			sc_start4 SC_LIMIT_POWER_BOOSTER,3600000,30,1,5,0;
 			sc_start SC_SPEEDUP0,3600000,25;
 			sc_start SC_POEMBRAGI,3600000,10;
-			sc_start SC_SOULGOLEM,3600000,10;
 			sc_start SC_KYRIE,3600000,10;
 			sc_start SC_ADRENALINE2,3600000,1;
 			sc_start SC_WEAPONPERFECTION,3600000,5;
@@ -62,6 +62,8 @@
 			sc_start SC_MEDIALE,3600000,5;
 			sc_start SC_WINDWALK,3600000,10;
 			sc_start SC_AURABLADE,3600000,5;
+			sc_start SC_KAUPE,3600000,3;
+			sc_start SC_KAITE,3600000,7;
 			sc_start SC_SECRAMENT,3600000,5;
 			sc_start SC_EXPIATIO,3600000,5;
 			sc_start SC_RENOVATIO,3600000,5;
@@ -81,17 +83,19 @@
 			sc_start SC_SPEEDUP1,3600000,50;
 		}
 		specialeffect2 EF_INCAGILITY;
-		sc_start SC_INCREASEAGI,600000,5;
+		sc_start SC_INCREASEAGI,3600000,5;
 		specialeffect2 EF_BLESSING;
-		sc_start SC_BLESSING,500000,5;
+		sc_start SC_BLESSING,3600000,5;
 		specialeffect2 300;
-		sc_start SC_STRFOOD,600000,5;
-		sc_start SC_AGIFOOD,600000,5;
-		sc_start SC_VITFOOD,600000,5;
-		sc_start SC_INTFOOD,600000,5;
-		sc_start SC_DEXFOOD,600000,5;
-		sc_start SC_LUKFOOD,600000,5;
+		sc_start SC_STRFOOD,3600000,5;
+		sc_start SC_AGIFOOD,3600000,5;
+		sc_start SC_VITFOOD,3600000,5;
+		sc_start SC_INTFOOD,3600000,5;
+		sc_start SC_DEXFOOD,3600000,5;
+		sc_start SC_LUKFOOD,3600000,5;
 		specialeffect2 154;
+		specialeffect2 EF_TETRACASTING;
+		specialeffect2 EF_FLASHER;
 		repairall;
 // remove status
 		sc_end SC_STONE;
@@ -117,6 +121,10 @@
 		sc_end SC_NOEQUIPARMOR;
 		sc_end SC_NOEQUIPHELM;
 		sc_end SC__STRIPACCESSARY;
+		sc_end SC_STRIPWEAPON;
+		sc_end SC_STRIPSHIELD;
+		sc_end SC_STRIPARMOR;
+		sc_end SC_STRIPHELM;
 		sc_end SC_PROPERTYUNDEAD;
 		sc_end SC_ORCISH;
 		sc_end SC_BERSERK;
