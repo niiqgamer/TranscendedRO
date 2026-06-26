@@ -198,6 +198,7 @@
   <ItemGroup>
     <ClInclude Include="achievement.hpp" />
     <ClInclude Include="atcommand.hpp" />
+    <ClInclude Include="autobot.hpp" />
     <ClInclude Include="battle.hpp" />
     <ClInclude Include="battleground.hpp" />
     <ClInclude Include="buyingstore.hpp" />
@@ -1052,7 +1053,7 @@
     <ClInclude Include="skills/npc/leash.hpp" />
     <ClInclude Include="skills/npc/lexaeterna2.hpp" />
     <ClInclude Include="skills/npc/lick.hpp" />
-	<ClInclude Include="skills/npc/lockonlaser.hpp" />
+    <ClInclude Include="skills/npc/lockonlaser.hpp" />
     <ClInclude Include="skills/npc/metamorphosis.hpp" />
     <ClInclude Include="skills/npc/milleniumshield2.hpp" />
     <ClInclude Include="skills/npc/monstersummons.hpp" />
@@ -1494,6 +1495,7 @@
   <ItemGroup>
     <ClCompile Include="achievement.cpp" />
     <ClCompile Include="atcommand.cpp" />
+    <ClCompile Include="autobot.cpp" />
     <ClCompile Include="battle.cpp" />
     <ClCompile Include="battleground.cpp" />
     <ClCompile Include="buyingstore.cpp" />
