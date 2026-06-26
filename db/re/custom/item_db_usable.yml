@@ -4,15 +4,32 @@ Header:
 
 Body:
   - Id: 9950000
-    AegisName: Autohunt_Physical_Box
-    Name: "Autohunt in Box (Physical)"
+    AegisName: AutobotBox_1D
+    Name: "Autobot Box 1 Day"
     Type: Usable
     Weight: 0
     Script: |
-      rentitem 9950001,86400;
+      rentitem 9950003,86400;
+      dispbottom "'AUTOBOT' activated for 1 Day. Enjoy!!!";
   - Id: 9950001
-    AegisName: Autohunt_Physical
-    Name: "Autohunt Tablet (Physical)"
+    AegisName: AutobotBox_7D
+    Name: "Autobot Box 7 Days"
+    Type: Usable
+    Weight: 0
+    Script: |
+      rentitem 9950003,604800;
+      dispbottom "'AUTOBOT' activated for 7 Days. Enjoy!!!";
+  - Id: 9950002
+    AegisName: AutobotBox_30D
+    Name: "Autobot Box 30 Days"
+    Type: Usable
+    Weight: 0
+    Script: |
+      rentitem 9950003,2592000;
+      dispbottom "'AUTOBOT' activated for 30 Days. Enjoy!!!";
+  - Id: 9950003
+    AegisName: Autobot_System
+    Name: "Autobot System"
     Type: DelayConsume
     Weight: 0
     Flags:
@@ -21,16 +38,13 @@ Body:
       NoDrop: true
       NoTrade: true
       NoCart: true
-      NoStorage: true
       NoGuildStorage: true
       NoMail: true
       NoAuction: true
       NoSell: true
     Script: |
-       bonus2 bFixedCastRate,"AG_FROZEN_SLASH",-100;
-       bonus2 bVariableCastRate,"AG_FROZEN_SLASH",-100;
-       bonus2 bSkillCooldown,"AG_FROZEN_SLASH",-450;
-       useatcmd "@autohunt";
+      doevent "Autobot_System_NPC::OnShowMenu";
+#      callfunc "EasyBot_Toggle", 2;
   - Id: 9955500
     AegisName: Transcended_Coin
     Name: Transcended Coin
