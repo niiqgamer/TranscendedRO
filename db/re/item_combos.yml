@@ -61179,3 +61179,31 @@ Body:
           - aegis_300754    #  300754
     Script: |
       bonus2 bIgnoreDefRaceRate,RC_All,40;
+  - Combos:
+      - Combo:
+          - Ayothaya_Boots_LT_TH    # 470456
+          - 6th_Anni_Ring_LT_TH    #  491070
+    Script: |
+      bonus2 bHPDrainRate,60,1;
+      bonus2 bSPDrainRate,60,1;
+      autobonus "{ bonus2 bHPRegenRate,1000,1250; }",60,10000,BF_MAGIC,"{ specialeffect2 EF_POTION_BERSERK; }";
+      autobonus "{ bonus2 bSPRegenRate,100,1250; }",60,10000,BF_MAGIC,"{ specialeffect2 EF_POTION_BERSERK; }";
+      bonus2 bAddSize,Size_All,15;
+      bonus2 bMagicAddSize,Size_All,15;
+      if (getenchantgrade(EQI_SHOES) >= ENCHANTGRADE_A) {
+         bonus2 bExpAddRace,RC_All,10;
+         bonus2 bDropAddRace,RC_All,10;
+         bonus2 bAddRace,RC_All,15;
+         bonus2 bAddRace,RC_Player_Doram,-15;
+         bonus2 bAddRace,RC_Player_Human,-15;
+         bonus2 bMagicAddRace,RC_All,15;
+         bonus2 bMagicAddRace,RC_Player_Doram,-15;
+         bonus2 bMagicAddRace,RC_Player_Human,-15;
+      }
+  - Combos:
+      - Combo:
+          - Ayothaya_Boots_LT_TH    # 470456
+          - 6th_Anni_Ring_LT_TH    #  491070
+          - aegis_300754    #  300754
+    Script: |
+      bonus2 bIgnoreDefRaceRate,RC_All,40;
