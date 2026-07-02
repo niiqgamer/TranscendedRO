@@ -1,0 +1,548 @@
+prt_cas,373,77,3	script	Balheele#episkip	4_F_VALKYRIE,{
+	mes "[Balheele]";
+	mes "...I feel like our eyes are meeting strangely...";
+	mes "Hey, can you see me?";
+	mes "If you can see me, should I grant you a wish?";
+	next;
+	mes "[Balheele]";
+	mes "The location is a library too.";
+	mes "I can arbitrarily fill in the missing parts of your adventure log, want to try?";
+	mes "Of course, it's not free. I have to make a living too, don't I?";
+	next;
+
+	if (countitem(1000283) > 0)
+		.@event_skip = 1;
+
+	mes "^4d4dffYou can forcefully complete episodes you haven't progressed through by trading with Balheele.^000000";
+	mes "In this case, ^ff0000rewards, experience, and achievements that can be obtained by progressing through the episode will not be given, only the progress status will be completed.^000000";
+	next;
+	mes "^4d4dffYou can complete all quests available in a specific episode to proceed to the next episode.^000000";
+	mes "^4d4dffQuests that don't require separate prerequisites or single-completion quests are not eligible.";
+	next;
+
+	if (.@event_skip) {
+		mes "^4d4dffYour event ticket can only be used to skip Episode 16.^000000";
+		next;
+		switch(select("Skip Episode 16", "Cancel")) {
+			case 1:
+				callfunc("F_EpDesc", 16);
+				callfunc("F_EpClearSkip", 16);
+				break;
+			case 2:
+				mes "[Balheele]";
+				mes "Come again when you need it~";
+				close;
+		}
+		end;
+	}
+
+	mes "^4d4dffIf you have an event ticket or pass ticket, the event ticket or pass ticket will be consumed first.^000000";
+	next;
+
+	switch(select(
+		"Use Episode 13 Clear Ticket",
+		"Use Episode 14 Clear Ticket",
+		"Use Episode 15 Clear Ticket",
+		"Use Episode 16 Clear Ticket",
+		"Use Episode 17 Clear Ticket",
+		"Use Episode 18 Clear Ticket",
+		"Use Episode 19 Clear Ticket",
+		"Use Episode 20 Clear Ticket",
+		"Purchase Episode Clear Ticket",
+		"[Debug] Repair hidden episode NPCs",
+		"Cancel")) {
+		case 1: callfunc("F_EpDesc", 13); callfunc("F_EpClearSkip", 13); break;
+		case 2: callfunc("F_EpDesc", 14); callfunc("F_EpClearSkip", 14); break;
+		case 3: callfunc("F_EpDesc", 15); callfunc("F_EpClearSkip", 15); break;
+		case 4: callfunc("F_EpDesc", 16); callfunc("F_EpClearSkip", 16); break;
+		case 5:
+			switch(select("Ep17.1 Dawn, Illusion", "Ep17.2 Sage's Legacy", "I'll think about it again.")) {
+				case 1:
+					if (BaseLevel < 110) {
+						mes "[Balheele]";
+						mes "Oh, too bad, but the episode you selected requires Base Level 110 or higher to perform.";
+						mes "This is not what you need right now.";
+						close;
+						end;
+					}
+					mes "[Balheele]";
+					mes "^4d4dffEpisode 17.1^000000?";
+					mes "It's a story related to Illusion.";
+					mes "Let me take a look.";
+					next;
+					callfunc("F_Ep17", 1);
+					break;
+				case 2:
+					if (BaseLevel < 130) {
+						mes "[Balheele]";
+						mes "Oh, too bad, but the episode you selected requires Base Level 130 or higher to perform.";
+						mes "This is not what you need right now.";
+						close;
+					}
+					mes "[Balheele]";
+					mes "^4d4dffEpisode 17.2^000000?";
+					mes "It's a story related to the Great Sage Varmunt's mansion.";
+					mes "Let me take a look.";
+					next;
+					callfunc("F_Ep17", 2);
+					break;
+				case 3:
+					mes "[Balheele]";
+					mes "Come again when you need it~";
+					close;
+			}
+			break;
+		case 6: callfunc("F_EpDesc", 18); callfunc("F_EpClearSkip", 18); break;
+		case 7: callfunc("F_EpDesc", 19); callfunc("F_EpClearSkip", 19); break;
+		case 8: callfunc("F_EpDesc", 20); callfunc("F_EpClearSkip", 20); break;
+		case 9:
+			if (!getbattleflag("feature.barter")) {
+				mes "[Balheele]";
+				mes "The exchange service is currently unavailable.";
+				close;
+			}
+			if (checkquest(20008, PLAYTIME) == 2) {
+				mes "[Balheele]";
+				mes "You've completed the main quest of the latest Episode 20!";
+				mes "I'll show you episode pass tickets at a greatly discounted price for someone like you.";
+				mes "Come on, take a look!";
+				mes "^i[1000282] ^i[1000287] ^i[1000288] ^i[1000988]";
+				next;
+				mes "^FF0000[Warning]^000000";
+				mes "^FF0000This is a shop where items are exchanged for Silvervine Fruit.^000000";
+				mes "^FF0000Items exchanged above are not included in withdrawal targets, and re-exchange for Silvervine Fruit is also impossible.^000000";
+				close2;
+				callshop "balheele_20";
+				end;
+			} else {
+				mes "[Balheele]";
+				mes "As you wish.";
+				mes "By the way, I might open a special exchange shop for adventurers who have completed the main quest of the latest episode.";
+				mes "If you're curious, complete the latest episode and come back.";
+				next;
+				mes "^FF0000[Warning]^000000";
+				mes "^FF0000This is a shop where items are exchanged for Silvervine Fruit.^000000";
+				mes "^FF0000Items exchanged above are not included in withdrawal targets, and re-exchange for Silvervine Fruit is also impossible.^000000";
+				close2;
+				callshop "balheele";
+				end;
+			}
+			close;
+		case 10:
+			mes "[Balheele]";
+			mes "Let me scan your adventure log for episode NPCs that should be visible but are still hidden...";
+			next;
+			.@fixed = callfunc("F_EpRepairHiddenNpcs");
+			if (.@fixed == 0) {
+				mes "[Balheele]";
+				mes "Everything looks in order.";
+				mes "No missing NPCs were found for your current episode progress.";
+			} else {
+				mes "[Balheele]";
+				mes "I found and restored ^0000ff" + .@fixed + "^000000 hidden NPC(s):";
+				for (.@i = 0; .@i < getarraysize(@ep_repair_names$); .@i++)
+					mes " - ^777777" + @ep_repair_names$[.@i] + "^000000";
+				mes "Visit the related maps if those NPCs are elsewhere.";
+			}
+			close;
+		case 11:
+			mes "[Balheele]";
+			mes "Come again when you need it~";
+			close;
+	}
+	end;
+}
+
+function	script	F_EpDesc	{
+	.@ep = getarg(0);
+	mes "[Balheele]";
+	mes "^4d4dffEpisode " + .@ep + "^000000?";
+	switch (.@ep) {
+		case 13: mes "It's a story related to the other world and Dicastes."; break;
+		case 14: mes "It's a story about Bifrost and Eclage."; break;
+		case 15: mes "It's a story about Phantasmagorica and the excavation team."; break;
+		case 16: mes "It's a story surrounding Terra Gloria."; break;
+		case 17: mes "It's a story about Illusion and Varmunt."; break;
+		case 18: mes "It's a story related to the Gray Wolf Village."; break;
+		case 19: mes "It's a story related to Isgard's Ice Castle."; break;
+		case 20: mes "It's a story related to the Undying One."; break;
+	}
+	mes "Let me take a look.";
+	next;
+	return;
+}
+
+function	script	F_CheckQuestState	{
+	.@id = getarg(0);
+	.@state = checkquest(.@id, PLAYTIME);
+	if (.@state == 2) return "^4d4dffCompleted^000000";
+	return "Incomplete";
+}
+
+// Returns true when the player finished this episode through official story scripts
+// (variables / story quest IDs), without Balheele chapter marker quests.
+function	script	F_EpOrganicComplete	{
+	.@ep = getarg(0);
+	.@part = getarg(1, 0);
+
+	switch (.@ep) {
+	case 13:
+		return (ep13_ryu > 99 || ep13_start > 99 || ep13_mdrama > 26);
+	case 14:
+		return (ep14_3_newerabs >= 24);
+	case 15:
+		return (ep15_2_bslast >= 9 || ep15_1_atnad >= 33);
+	case 16:
+		return (terra_gloria_main >= 25);
+	case 17:
+		if (.@part == 2)
+			return (isbegin_quest(12497) == 2 || ep17_2_main >= 36);
+		return (isbegin_quest(16360) == 2 || ep17_2_main >= 1);
+	case 18:
+		return (ep18_main >= 57);
+	case 19:
+		return (ep19_main >= 100);
+	case 20:
+		return (ep20_main >= 100 || checkquest(20008, PLAYTIME) == 2);
+	}
+	return 0;
+}
+
+// Prior-episode prerequisite: chapter marker quest OR organic story completion.
+function	script	F_EpPrereqMet	{
+	.@marker_id = getarg(0);
+
+	if (!.@marker_id)
+		return 1;
+	if (checkquest(.@marker_id, PLAYTIME) == 2)
+		return 1;
+
+	switch (.@marker_id) {
+	case 13223: return callfunc("F_EpOrganicComplete", 13, 0);
+	case 14002: return callfunc("F_EpOrganicComplete", 14, 0);
+	case 15013: return callfunc("F_EpOrganicComplete", 15, 0);
+	case 18219: return callfunc("F_EpOrganicComplete", 16, 0);
+	case 17046: return callfunc("F_EpOrganicComplete", 17, 1);
+	case 17108: return callfunc("F_EpOrganicComplete", 17, 2);
+	case 18164: return callfunc("F_EpOrganicComplete", 18, 0);
+	case 19210: return callfunc("F_EpOrganicComplete", 19, 0);
+	}
+	return 0;
+}
+
+function	script	F_EpEpisodeComplete	{
+	.@ep = getarg(0);
+	.@part = getarg(1, 0);
+	.@marker_id = getarg(2, 0);
+
+	if (.@marker_id && checkquest(.@marker_id, PLAYTIME) == 2)
+		return 1;
+	return callfunc("F_EpOrganicComplete", .@ep, .@part);
+}
+
+function	script	F_EpForceComplete	{
+	.@id = getarg(0);
+
+	if (checkquest(.@id) != -1)
+		erasequest .@id;
+
+	setquest .@id;
+
+	.@state = checkquest(.@id);
+	if (.@state >= 0 && .@state < 2)
+		completequest .@id;
+	return;
+}
+
+function	script	F_EpClearConfirm	{
+	.@ep = getarg(0);
+	.@part = getarg(1, 0);
+	.@ticket = getarg(2, 0);
+
+	deletearray .@names$;
+	if (.@ep == 13) {
+		setarray .@names$[0], "Other World Entry Related Quest", "Adapting to New Environment", "Conflict of Three Nations Alliance Investigation Team", "Report to the Continent", "Dandelion's Request", "Attitude Towards New Things", "Gaining Trust from Cat Hand", "Translator", "Messenger", "Continuing Research", "Homesickness", "To El Dicastes!", "Doha's Secret Order", "Fred's Request";
+	} else if (.@ep == 14) {
+		setarray .@names$[0], "Ep14.1 Bifrost", "Ep14.2 Eclage", "Ep14.3 Final Battle";
+	} else if (.@ep == 15) {
+		setarray .@names$[0], "Arunafeltz Excavation Team", "Regenerating Memory", "To Phantasmagorica!", "Traces", "Monthly Brigan";
+	} else if (.@ep == 16) {
+		setarray .@names$[0], "Banquet for Heroes", "Geoborg's Story", "Wigneur's Story", "Walter's Story", "Roegenburg's Story", "Why Do I Have to Prepare the Banquet?", "Terra Gloria", "Between Negotiation and Fraud", "Grudge";
+	} else if (.@ep == 17) {
+		if (.@part == 2)
+			setarray .@names$[0], "Ep17.2 Mansion's Doghole", "Straggler in the Sewer", "Cannot Find Network", "I Want to Know That", "Pest Extermination Operation", "Attending the Coronation", "Water Garden", "Be Quiet in the Library", "Bathhouse, Strange Creature and Me";
+		else
+			setarray .@names$[0], "Ep17.1 New Operation Base", "Pax's Employment Journey", "Regenscrhirm Recapture Operation", "Old Memories", "Sky Seen from the Well", "Pure Mischievous Child", "Pax's Employment Journey 2";
+	} else if (.@ep == 18) {
+		setarray .@names$[0], "To the Church State", "Niren's Request", "Children of Gray", "Oz's Maze and the Merchant", "Daily Bread to Be Thankful For", "Sacred Relic for Essence", "Belated Migration", "I Can't Sleep", "This Is Not That Place", "Where Is My Home", "There Are No Bad Beasts in the World", "Gray Village Governor Candidate", "Great Meeting in Gray Wolf Forest", "Wolf in Sheep's Clothing", "Sacred Deception";
+	} else if (.@ep == 19) {
+		setarray .@names$[0], "Guest Who Came on the North Wind", "Patrol with Awin", "Encounter with Experiment Subject 210426", "Infiltration of Rgan's Dwelling", "Finding Clues", "Accumulating Suspicions", "Confused Snake's Nest", "Finding Underground Hideout from the Surface", "Airship Destruction Operation", "Saint of Purification", "Frozen Sea";
+	} else if (.@ep == 20) {
+		setarray .@names$[0], "Natives of the Ancient Ice Gorge", "Era of Cold War and Espionage", "More Expert Than Any Awin", "Kopo's Secret Base", "Infiltration of Rgans' Hideout", "Where the End of the Maze Leads", "Deep Ancient Sea", "The Undying One";
+	}
+
+	mes "[Balheele]";
+	mes "Story organization is complete.";
+	mes "Let me confirm everything that was applied to your adventure log.";
+	next;
+
+	if (.@ticket > 0) {
+		mes "[Balheele]";
+		mes "^777777Clear ticket consumed:^000000";
+		mes "^i[" + .@ticket + "]";
+		next;
+	}
+
+	mes "[Balheele]";
+	if (.@ep == 17)
+		mes "^4d4dffEpisode " + (.@part == 2 ? "17.2" : "17.1") + "^000000 quests marked ^0000ffCompleted^000000:";
+	else
+		mes "^4d4dffEpisode " + .@ep + "^000000 quests marked ^0000ffCompleted^000000:";
+	for (.@i = 0; .@i < getarraysize(.@names$); .@i++)
+		mes " - " + .@names$[.@i];
+	next;
+
+	mes "[Balheele]";
+	mes "^777777Progress adjustments:^000000";
+	switch (.@ep) {
+	case 16:
+		mes " - ^4d4dffterra_gloria_main^000000 set to ^0000ff25^000000";
+		mes " - ^4d4dffep16_royal^000000 set to ^0000ff24^000000";
+		mes " - Hidden Episode 16 NPCs restored to visible";
+		break;
+	case 17:
+		if (.@part == 2) {
+			mes " - ^4d4dffep17_2_main^000000 set to at least ^0000ff36^000000";
+			mes " - ^4d4dffep172_watergarden^000000 set to at least ^0000ff3^000000";
+			mes " - Hidden Garden instance NPCs restored to visible";
+		} else {
+			mes " - ^4d4dffOS Occupation^000000 instance entrance NPC restored to visible";
+		}
+		break;
+	case 18:
+		mes " - ^4d4dffep18_main^000000 set to at least ^0000ff57^000000";
+		mes " - Episode 18 instance entrance NPCs restored to visible";
+		break;
+	case 19:
+		mes " - ^4d4dffep19_main^000000 set to at least ^0000ff100^000000";
+		mes " - Episode 19 instance entrance NPCs restored to visible";
+		break;
+	case 20:
+		mes " - ^4d4dffep20_main^000000 set to at least ^0000ff100^000000";
+		break;
+	default:
+		mes " - Episode " + .@ep + " story flags updated";
+		break;
+	}
+	next;
+
+	mes "[Balheele]";
+	mes "^ff0000[Reminder]^000000";
+	mes "^ff0000Quest rewards, experience, and achievements from natural episode progress were not granted.^000000";
+	mes "You may now continue to the next episode content.";
+	close;
+	return;
+}
+
+function	script	F_EpPrereqFail	{
+	.@ep = getarg(0);
+	.@part = getarg(1, 0);
+	.@require_id = getarg(2, 0);
+	.@area$ = getarg(3, "");
+
+	if (callfunc("F_EpPrereqMet", .@require_id))
+		return 0;
+
+	mes "[Balheele]";
+	mes "There's an order to organizing every story.";
+	if (.@area$ != "")
+		mes "You haven't collected the story related to ^4d4dff" + .@area$ + "^000000 yet.";
+	else
+		mes "You haven't completed the required earlier episode yet.";
+	next;
+	mes "[Balheele]";
+	if (.@ep == 17 && .@part == 2)
+		mes "Could you come back after ^4d4dffcompleting Episode 17.1^000000?";
+	else if (.@ep > 13)
+		mes "Could you come back after ^4d4dffcompleting Episode " + (.@ep - 1) + "^000000?";
+	else
+		mes "Could you come back after ^4d4dffcompleting the required earlier episode^000000?";
+	close;
+	return 1;
+}
+
+function	script	F_EpClearSkip	{
+	.@ep = getarg(0);
+	setarray .@require_ep[14], 13223;
+	setarray .@require_ep[15], 14002;
+	setarray .@require_ep[16], 15013;
+	setarray .@require_ep[17], 18219;
+	setarray .@require_ep[18], 17108;
+	setarray .@require_ep[19], 18164;
+	setarray .@require_ep[20], 19210;
+	setarray .@area_name$[14], "El-Dicastes";
+	setarray .@area_name$[15], "Bifrost and Eclage";
+	setarray .@area_name$[16], "Phantasmagorica and the excavation team";
+	setarray .@area_name$[17], "Terra Gloria";
+	setarray .@area_name$[18], "Sage's Legacy";
+	setarray .@area_name$[19], "Gray Wolf Village";
+	setarray .@area_name$[20], "Isgard's Ice Castle";
+	setarray .@min_level[13], 95,100,120,130,110,170,200,215;
+	if (.@min_level[.@ep] && BaseLevel < .@min_level[.@ep]) {
+		mes "[Balheele]";
+		mes "Oh, too bad, but the episode you selected requires Base Level " + .@min_level[.@ep] + " or higher to perform.";
+		mes "This is not what you need right now.";
+		close;
+	}
+
+	deletearray .@names$;
+	deletearray .@ids;
+	deletearray .@tickets;
+	if (.@ep == 13) {
+		setarray .@names$[0], "Other World Entry Related Quest", "Adapting to New Environment", "Conflict of Three Nations Alliance Investigation Team", "Report to the Continent", "Dandelion's Request", "Attitude Towards New Things", "Gaining Trust from Cat Hand", "Translator", "Messenger", "Continuing Research", "Homesickness", "To El Dicastes!", "Doha's Secret Order", "Fred's Request";
+		setarray .@ids[0], 13210,13211,13212,13213,13214,13215,13216,13217,13218,13219,13220,13221,13222,13223;
+		setarray .@tickets[0], 1001753, 1000284;
+	} else if (.@ep == 14) {
+		setarray .@names$[0], "Ep14.1 Bifrost", "Ep14.2 Eclage", "Ep14.3 Final Battle";
+		setarray .@ids[0], 14000,14001,14002;
+		setarray .@tickets[0], 1001755, 1000285;
+	} else if (.@ep == 15) {
+		setarray .@names$[0], "Arunafeltz Excavation Team", "Regenerating Memory", "To Phantasmagorica!", "Traces", "Monthly Brigan";
+		setarray .@ids[0], 15009,15010,15011,15012,15013;
+		setarray .@tickets[0], 1001756, 1000286;
+	} else if (.@ep == 16) {
+		setarray .@names$[0], "Banquet for Heroes", "Geoborg's Story", "Wigneur's Story", "Walter's Story", "Roegenburg's Story", "Why Do I Have to Prepare the Banquet?", "Terra Gloria", "Between Negotiation and Fraud", "Grudge";
+		setarray .@ids[0], 7682, 7698, 7703, 7736, 14599, 14602, 14615, 12374, 18219;
+		setarray .@tickets[0], 1000283, 1001260, 1000282;
+	} else if (.@ep == 18) {
+		setarray .@names$[0], "To the Church State", "Niren's Request", "Children of Gray", "Oz's Maze and the Merchant", "Daily Bread to Be Thankful For", "Sacred Relic for Essence", "Belated Migration", "I Can't Sleep", "This Is Not That Place", "Where Is My Home", "There Are No Bad Beasts in the World", "Gray Village Governor Candidate", "Great Meeting in Gray Wolf Forest", "Wolf in Sheep's Clothing", "Sacred Deception";
+		setarray .@ids[0], 18150,18151,18152,18153,18154,18155,18156,18157,18158,18159,18160,18161,18162,18163,18164;
+		setarray .@tickets[0], 1001262, 1000288;
+	} else if (.@ep == 19) {
+		setarray .@names$[0], "Guest Who Came on the North Wind", "Patrol with Awin", "Encounter with Experiment Subject 210426", "Infiltration of Rgan's Dwelling", "Finding Clues", "Accumulating Suspicions", "Confused Snake's Nest", "Finding Underground Hideout from the Surface", "Airship Destruction Operation", "Saint of Purification", "Frozen Sea";
+		setarray .@ids[0], 19200,19201,19202,19203,19204,19205,19206,19207,19208,19209,19210;
+		setarray .@tickets[0], 1001263, 1000988;
+	} else if (.@ep == 20) {
+		setarray .@names$[0], "Natives of the Ancient Ice Gorge", "Era of Cold War and Espionage", "More Expert Than Any Awin", "Kopo's Secret Base", "Infiltration of Rgans' Hideout", "Where the End of the Maze Leads", "Deep Ancient Sea", "The Undying One";
+		setarray .@ids[0], 20000,20001,20003,20004,20005,20006,20007,20008;
+		setarray .@tickets[0], 1001670, 1001214;
+	}
+
+	mes "[Balheele]";
+	for (.@i = 0; .@i < getarraysize(.@ids); .@i++) {
+		mes .@names$[.@i] + " " + callfunc("F_CheckQuestState", .@ids[.@i]);
+	}
+	next;
+	switch(select("Don't proceed.", "Proceed with episode clear.")) {
+
+		case 1:
+			mes "[Balheele]";
+			mes "Come again when you need it~";
+			close;
+		case 2:
+			if (callfunc("F_EpEpisodeComplete", .@ep, 0, .@ids[getarraysize(.@ids)-1])) {
+				callfunc("F_EpClearApply", .@ep, 0);
+				mes "[Balheele]";
+				mes "Seems like you already know all the necessary stories?";
+				mes "There's no need for more effort.";
+				close;
+			}
+
+			if (.@require_ep[.@ep] && callfunc("F_EpPrereqFail", .@ep, 0, .@require_ep[.@ep], .@area_name$[.@ep]))
+				end;
+
+			.@ticket_used = 0;
+			for (.@t = 0; .@t < getarraysize(.@tickets); .@t++) {
+				if (countitem(.@tickets[.@t]) > 0) {
+					.@ticket_used = .@tickets[.@t];
+					break;
+				}
+			}
+			if (!.@ticket_used) {
+				mes "Hmm...";
+				mes "Don't you have any of these tickets?";
+				.@icon$ = "";
+				for (.@t = 0; .@t < getarraysize(.@tickets); .@t++)
+					.@icon$ += " ^i[" + .@tickets[.@t] + "]";
+				mes .@icon$;
+				mes "I consume one ticket, but I can exchange it for you.";
+				close;
+			}
+
+			for (.@i = 0; .@i < getarraysize(.@ids); .@i++)
+				callfunc("F_EpForceComplete", .@ids[.@i]);
+			callfunc("F_EpClearApply", .@ep, 0);
+			delitem .@ticket_used, 1;
+			callfunc("F_EpClearConfirm", .@ep, 0, .@ticket_used);
+			end;
+	}
+}
+
+function	script	F_Ep17	{
+	.@part = getarg(0);
+	setarray .@names$[0],
+		"Ep17.1 New Operation Base", "Pax's Employment Journey", "Regenscrhirm Recapture Operation", "Old Memories", "Sky Seen from the Well", "Pure Mischievous Child", "Pax's Employment Journey 2",
+		"Ep17.2 Mansion's Doghole", "Straggler in the Sewer", "Cannot Find Network", "I Want to Know That", "Pest Extermination Operation", "Attending the Coronation", "Water Garden", "Be Quiet in the Library", "Bathhouse, Strange Creature and Me";
+	setarray .@ids[0],
+		17040,17041,17042,17043,17044,17045,17046,
+		17100,17101,17102,17103,17104,17105,17106,17107,17108;
+	setarray .@tickets[0],1001261,1000287;
+
+	.@start = (.@part == 1) ? 0 : 7;
+	.@end = (.@part == 1) ? 6 : 15;
+
+	mes "[Balheele]";
+	for (.@i = .@start; .@i <= .@end; .@i++) {
+		mes .@names$[.@i] + " " + callfunc("F_CheckQuestState", .@ids[.@i]);
+	}
+	next;
+
+	switch(select("Don't proceed.", "Proceed with episode clear.")) {
+
+		case 1:
+			mes "[Balheele]";
+			mes "Come again when you need it~";
+			close;
+		case 2:
+			if (callfunc("F_EpEpisodeComplete", 17, .@part, .@ids[.@end])) {
+				callfunc("F_EpClearApply", 17, .@part);
+				mes "[Balheele]";
+				mes "Seems like you already know all the necessary stories?";
+				mes "There's no need for more effort.";
+				close;
+			}
+
+			if (.@part == 1) {
+				if (callfunc("F_EpPrereqFail", 17, 1, 18219, "Terra Gloria"))
+					end;
+			} else if (callfunc("F_EpPrereqFail", 17, 2, 17046, "Episode 17.1")) {
+				end;
+			}
+
+			.@ticket_used = 0;
+			for (.@t = 0; .@t < getarraysize(.@tickets); .@t++) {
+				if (countitem(.@tickets[.@t]) > 0) {
+					.@ticket_used = .@tickets[.@t];
+					break;
+				}
+			}
+			if (!.@ticket_used) {
+				mes "Hmm...";
+				mes "Don't you have any of these tickets?";
+				.@icon$ = "";
+				for (.@t = 0; .@t < getarraysize(.@tickets); .@t++)
+					.@icon$ += " ^i[" + .@tickets[.@t] + "]";
+				mes .@icon$;
+				mes "I consume one ticket, but I can exchange it for you.";
+				close;
+			}
+
+			for (.@i = .@start; .@i <= .@end; .@i++)
+				callfunc("F_EpForceComplete", .@ids[.@i]);
+			callfunc("F_EpClearApply", 17, .@part);
+			delitem .@ticket_used, 1;
+			callfunc("F_EpClearConfirm", 17, .@part, .@ticket_used);
+			end;
+	}
+	end;
+}
