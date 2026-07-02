@@ -2046,14 +2046,14 @@ int64 battle_calc_damage(block_list *src,block_list *bl,struct Damage *d,int64 d
 	if (bl->type == BL_MOB) { // Reduces damage received for Green Aura MVP
 		mob_data *md = BL_CAST(BL_MOB, bl);
 
-		if (md && md->damagetaken != 100)
-			damage = i64max(damage * md->damagetaken / 100, 1);
+		if (md && md->damagetaken != 10000)
+			damage = i64max(damage * md->damagetaken / 10000, 1);
 	}
 	else if (bl->type == BL_ELEM) {
 		s_elemental_data* ed = BL_CAST(BL_ELEM, bl);
 
-		if (ed != nullptr && ed->db->damagetaken != 100)
-			damage = i64max(damage * ed->db->damagetaken / 100, 1);
+		if (ed != nullptr && ed->db->damagetaken != 10000)
+			damage = i64max(damage * ed->db->damagetaken / 10000, 1);
 	}
 
 	if (tsc != nullptr && !tsc->empty()) {

@@ -69,7 +69,7 @@ struct s_elemental_db {
 	uint16 range2, range3;
 	status_data status;
 	view_data vd;
-	uint16 damagetaken;
+	uint32 damagetaken;
 	std::unordered_map<e_elemental_skillmode, std::shared_ptr<s_elemental_skill>> skill;	/// mode, skill
 };
 

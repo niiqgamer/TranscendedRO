@@ -276,7 +276,7 @@ struct s_mob_db {
 	view_data vd;
 	uint32 option;
 	std::vector<std::shared_ptr<s_mob_skill>> skill;
-	uint16 damagetaken;
+	uint32 damagetaken;
 	int32 group_id;
 	std::string title;
 

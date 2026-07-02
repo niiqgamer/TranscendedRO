@@ -4964,7 +4964,7 @@ s_mob_db::s_mob_db()
 	this->vd = {};
 	this->option = {};
 	this->skill = {};
-	this->damagetaken = 100;
+	this->damagetaken = 10000;
 	this->group_id = {};
 	this->title = {};
 }
@@ -5415,7 +5415,7 @@ uint64 MobDatabase::parseBodyNode(const ryml::NodeRef& node) {
 	if (this->nodeExists(node, "DamageTaken")) {
 		uint16 damage;
 
-		if (!this->asUInt16Rate(node, "DamageTaken", damage, 100))
+		if (!this->asUInt16Rate(node, "DamageTaken", damage, 10000))
 			return 0;
 
 		mob->damagetaken = damage;
