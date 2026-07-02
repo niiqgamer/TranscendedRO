@@ -1393,6 +1393,58 @@ Body:
             }
          }
       }
+  - Id: 470456
+    AegisName: Ayothaya_Boots_LT_TH
+    Name: "Ayothaya Adventurer's Boots-LT"
+    Type: Armor
+    Weight: 200
+    Defense: 20
+    Slots: 1
+    Locations:
+      Shoes: true
+    ArmorLevel: 2
+    EquipLevelMin: 100
+    Refineable: true
+    Gradable: true
+    Script: |
+      .@r = getrefine();
+      .@g = getenchantgrade();
+      bonus bShortAtkRate,12;
+      bonus bLongAtkRate,12;
+      bonus bMatkRate,12;
+      bonus bAspdRate,15;
+      bonus bMaxHPRate,15;
+      bonus bMaxSPRate,10;
+      bonus bBaseAtk,15*(.@r/2);
+      bonus bMatk,15*(.@r/2);
+      if (.@r>=7) {
+         bonus bPAtk,10;
+         bonus bSMatk,10;
+         if (.@r>=9) {
+             bonus bVariableCastRate,-20;
+             bonus bFixedCast,-500;
+             if (.@r>=12) {
+                 bonus2 bAddEle,Ele_All,15;
+                 bonus2 bMagicAtkEle,Ele_All,15;
+             }
+         }
+      }
+      if (.@g>=ENCHANTGRADE_D) {
+         bonus bFixedCast,-500;
+         if (.@g>=ENCHANTGRADE_C) {
+            bonus bNonCritAtkRate,20;
+            bonus bCritAtkRate,20;
+            bonus2 bMagicAtkEle,Ele_All,25;
+            if (.@g>=ENCHANTGRADE_B) {
+               bonus bPAtk,10;
+               bonus bSMatk,10;
+               if (.@g>=ENCHANTGRADE_A) {
+                  bonus bAllStats,.@r*2;
+                  bonus bAllTraitStats,.@r*2;
+               }
+            }
+         }
+      }
   - Id: 480536
     AegisName: Will_Karasu_US
     Name: Will of Karasu
@@ -2121,6 +2173,65 @@ Body:
       bonus bSpl,10;
       bonus bFixedCast,-500;
       bonus2 bMagicAddClass,Class_All,15;
+  - Id: 491070
+    AegisName: 6th_Anni_Ring_LT_TH
+    Name: "6th Anniversary Ayothaya Ring-LT"
+    Type: Armor
+    Weight: 200
+    Defense: 0
+    Slots: 1
+    Locations:
+      Left_Accessory: true
+    ArmorLevel: 2
+    EquipLevelMin: 200
+    Refineable: true
+    Gradable: true
+    Script: |
+      .@r = getrefine();
+      .@g = getenchantgrade();
+      bonus bAllStats,10;
+      bonus bAllTraitStats,10;
+      bonus bShortAtkRate,.@r*2;
+      bonus bLongAtkRate,.@r*2;
+      bonus bMatkRate,.@r*2;
+      bonus bBaseAtk,10;
+      bonus bMatk,10;
+      if (.@r>=7) {
+         bonus bPAtk,6;
+         bonus bSMatk,6;
+         if (.@r>=9) {
+            bonus bDelayRate,-15;
+            if (.@r>=12) {
+               bonus2 bAddRace,RC_All,15;
+               bonus2 bAddRace,RC_Player_Human,-15;
+               bonus2 bAddRace,RC_Player_Doram,-15;
+               bonus2 bMagicAddRace,RC_All,15;
+               bonus2 bMagicAddRace,RC_Player_Human,-15;
+               bonus2 bMagicAddRace,RC_Player_Doram,-15;
+               bonus2 bIgnoreDefRaceRate,RC_All,40;
+               bonus2 bIgnoreDefRaceRate,RC_Player_Human,-40;
+               bonus2 bIgnoreDefRaceRate,RC_Player_Doram,-40;
+               bonus2 bIgnoreMdefRaceRate,RC_All,40;
+               bonus2 bIgnoreMdefRaceRate,RC_Player_Human,-40;
+               bonus2 bIgnoreMdefRaceRate,RC_Player_Doram,-40;
+            }
+         }
+      }
+      if (.@g>=ENCHANTGRADE_D) {
+         bonus bFixedCast,-500;
+         if (.@g>=ENCHANTGRADE_C) {
+            bonus2 bSubClass,Class_Boss,15;
+            if (.@g>=ENCHANTGRADE_B) {
+               bonus bRes,120;
+               bonus bMRes,120;
+               bonus bFlee2,30;
+               if (.@g>=ENCHANTGRADE_A) {
+                  bonus2 bDropAddClass,Class_All,10;
+                  bonus2 bExpAddClass,Class_All,10;
+               }
+            }
+         }
+      }
   - Id: 540124
     AegisName: Polluted_Follower_US
     Name: Polluted Grimoire
