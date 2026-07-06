@@ -220,7 +220,7 @@ menu	"Amatsu Fields",F1, "Ayothaya Fields",F2, "Bifrost Fields", F3,
 		"Manuk Fields",F22, "Mjolnir Fields",F23, "Moscovia Fields",F24,
 		"Niflheim Fields",F25, "Payon Forests",F26, "Prontera Fields",F27,
 		"Rachel Fields",F28, "Sograt Deserts",F29, "Splendide Fields",F30,
-		"Umbala Fields",F31, "Veins Fields",F32;
+		"Umbala Fields",F31, "Veins Fields",F32, "Zone Lv.250 Fields",F33;
 
 F1: setarray @c[2],190,197;
 	Disp("Amatsu Field",1,1); Pick("ama_fild");
@@ -310,6 +310,9 @@ F31: setarray @c[2],217,206,223,221,237,215,202,197;
 F32: Restrict("Pre-RE",5);
 	 setarray @c[2],186,175,196,370,222,45,51,250,202,324,150,223,149,307;
 	 Disp("Veins Field",1,7); Pick("ve_fild");
+F33: Restrict("RE");
+	setarray @c[2],50,50,200,200;
+	Disp("Mjolnir Underground Caverns:Power Twisted Plains"); Pick("","mjo_wst01","ra_pol01");
 
 // --------------------------------------------------
 	Dungeons:
@@ -487,8 +490,8 @@ D51: Restrict("Pre-RE",1,2);
 	 Disp("Carpenter's Shop in the Tree:Passage to a Foreign World:Hvergermil's Fountain");
 	 Pick("","um_dun01","um_dun02","yggdrasil01");
 D52: Restrict("RE");
-	 setarray @c[2],275,21,15,115,15,115,159,27,162,36,159,11,156,33,337,333,314,64,163,18,156,20,39,81;
-	 Disp("Sewage Treatment Plant:1st Power Plant:2nd Power Plant:Large Bath Meditathio:Lost Farm Valley:Library Memory Corridor:Upper Floor of Tartaros Storage:Lower Floor of Tartaros Storage:Death Rune:Fire Rune:Grass Rune:Ice Rune"); Pick("","ba_pw02","ba_pw01","ba_pw03","ba_bath","ba_lost","ba_lib","ba_2whs01","ba_2whs02","bl_death","bl_lava","bl_grass","bl_ice");
+	 setarray @c[2],275,21,15,115,15,115,159,27,162,36,159,11,156,33,337,333,314,64,163,18,156,20,39,81,52,85,146,22,155,15;
+	 Disp("Sewage Treatment Plant:1st Power Plant:2nd Power Plant:Large Bath Meditathio:Lost Farm Valley:Library Memory Corridor:Upper Floor of Tartaros Storage:Lower Floor of Tartaros Storage:Biosphere - ^333333Death^000000:Biosphere - ^AA0000Inferno^000000:Biosphere - ^00AA00Grassland^000000:Biosphere - ^0072C4Frost^000000:Biosphere - ^FFD124Temple^000000:Biosphere - ^5600C4Venom^000000:Biosphere - ^999999Soul^000000"); Pick("","ba_pw02","ba_pw01","ba_pw03","ba_bath","ba_lost","ba_lib","ba_2whs01","ba_2whs02","bl_death","bl_lava","bl_grass","bl_ice","bl_temple","bl_venom","bl_soul");
 D53: Restrict("RE");
 	 setarray @c[2],244,61,72,20,122,22;
 	 Disp("Lab-OPTATIO:R&D-WISH:Verus Center Square"); Pick("verus");

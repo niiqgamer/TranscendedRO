@@ -25,16 +25,17 @@ sec_in02,156,184,4	script	H O T S P I N !	OBJ_A2,{
 	if (getgmlevel() >= 99) {
 		// GM Menu
 		// set .@main, select(" ~ ^FF0000START SPIN!!!^000000: ~~ Guarantee Shop: ~~ ^00AA00Recycle Shop^000000: ~~ Trash Exchange Shop: ~ Hotspin Top 20: ~ All Hotspin List: ^0066AA ~~~~~~~~~~~~~~ GM Add Item^000000:^0066AA ~~~~~~~~~~~~~~ GM Delete Pool^000000:^0066AA ~~~~~~~~~~~~~~ GM Delete Trash^000000:^0066AA ~~~~~~~~~~~~~~ GM Bypass GiveRankReward^000000");
-		set .@main, select(" ~ ^FF0000START SPIN!!!^000000: ~~ Guarantee Shop: ~~ ^00AA00Recycle Shop^000000: ~~ Trash Exchange Shop: ~ Hotspin Top 20: ~ All Hotspin List: ^0066AA ~~~~~~~~~~~~~~ GM Add Item^000000:^0066AA ~~~~~~~~~~~~~~ GM Delete Pool^000000:^0066AA ~~~~~~~~~~~~~~ GM Delete Trash^000000");
+		set .@main, select(" ~ ^FF0000START SPIN!!!^000000: ~~ Guarantee Shop: ~~ ^00AA00Recycle Shop^000000: ~~ Trash Exchange Shop: ~ Hotspin Top 10: ~ All Hotspin List");
+		//: ^0066AA ~~~~~~~~~~~~~~ GM Add Item^000000:^0066AA ~~~~~~~~~~~~~~ GM Delete Pool^000000:^0066AA ~~~~~~~~~~~~~~ GM Delete Trash^000000");
 		if (.@main == 1) goto L_Roll;
 		if (.@main == 2) goto L_Guarantee;
 		if (.@main == 3) goto L_Recycle;
 		if (.@main == 4) goto L_TrashExchange;
 		if (.@main == 5) goto L_Top20;
 		if (.@main == 6) goto L_ViewPool;
-		if (.@main == 7) goto L_GMAdd;
-		if (.@main == 8) goto L_GMRemovePool;
-		if (.@main == 9) goto L_GMRemoveTrash;
+		//if (.@main == 7) goto L_GMAdd;
+		//if (.@main == 8) goto L_GMRemovePool;
+		//if (.@main == 9) goto L_GMRemoveTrash;
 		// if (.@main == 10) goto L_BPGiveRankReward;
 	} else {
 		// Player Menu
@@ -259,7 +260,7 @@ L_Top20:
 			mes "<font size = 14><b>^FF0000#" + (.@i + 1) + " - " + .@name$[.@i] + " - " + callfunc("F_InsertComma",.@score[.@i]) + " spins.^000000</b></font>";
 		}
 		else {
-			if (.@i == 3)
+			if (.@i > 2)
 				mes "<font size = 12>#" + (.@i + 1) + " - " + .@name$[.@i] + " - " + callfunc("F_InsertComma",.@score[.@i]) + " spins.</font>";
 		}
 	}
@@ -535,6 +536,8 @@ OnInit:
 	setarray $hotspin_pool1, 
 	24882,					// 21Anni3_W_Shadow_TW
 	1270049,				// Clear_Shield_Shadow3_TW
+	1270146,				// S_BP8_Magic_W
+	1270147,				// S_BP8_Magic_S
 	9910000,				// T_A1_Refining
 	9910001,				// T_A2_Refining
 	9910002,				// T_W1_Refining

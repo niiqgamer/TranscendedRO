@@ -560,7 +560,7 @@ Body:
     Name: Rough Oridecon
     Type: Etc
     Buy: 550
-    Weight: 200
+    Weight: 0
     Flags:
       BuyingStore: true
       DropEffect: CLIENT
@@ -569,7 +569,7 @@ Body:
     Name: Rough Elunium
     Type: Etc
     Buy: 650
-    Weight: 200
+    Weight: 0
     Flags:
       BuyingStore: true
       DropEffect: CLIENT
@@ -1256,7 +1256,7 @@ Body:
     Name: Oridecon
     Type: Etc
     Buy: 1100
-    Weight: 200
+    Weight: 0
     Flags:
       BuyingStore: true
       DropEffect: CLIENT
@@ -1265,7 +1265,7 @@ Body:
     Name: Elunium
     Type: Etc
     Buy: 1100
-    Weight: 200
+    Weight: 0
     Flags:
       BuyingStore: true
       DropEffect: CLIENT
@@ -17842,7 +17842,7 @@ Body:
     Name: HD Oridecon
     Type: Etc
     Buy: 20
-    Weight: 10
+    Weight: 0
     Trade:
       NoDrop: true
       NoTrade: true
@@ -17856,7 +17856,7 @@ Body:
     Name: HD Elunium
     Type: Etc
     Buy: 20
-    Weight: 10
+    Weight: 0
     Trade:
       NoDrop: true
       NoTrade: true
@@ -18306,13 +18306,13 @@ Body:
     Name: F Enriched Elunium
     Type: Etc
     Buy: 2
-    Weight: 10
+    Weight: 0
   - Id: 6292
     AegisName: F_Enriched_Oridecon
     Name: F Enriched Oridecon
     Type: Etc
     Buy: 2
-    Weight: 10
+    Weight: 0
   - Id: 6293
     AegisName: F_Token_Of_Siegfried
     Name: F Token Of Siegfried
@@ -18489,13 +18489,13 @@ Body:
     Name: E Enriched Elunium
     Type: Etc
     Buy: 2
-    Weight: 10
+    Weight: 0
   - Id: 6315
     AegisName: E_Enriched_Oridecon
     Name: E Enriched Oridecon
     Type: Etc
     Buy: 2
-    Weight: 10
+    Weight: 0
   - Id: 6316
     AegisName: E_Token_Of_Siegfried
     Name: E Token Of Siegfried
@@ -23228,7 +23228,7 @@ Body:
     Name: (Limited) Purified Oridecon
     Type: Etc
     Buy: 10
-    Weight: 10
+    Weight: 0
     Trade:
       NoDrop: true
       NoTrade: true
@@ -23242,7 +23242,7 @@ Body:
     Name: (Limited) Purified Eluminium
     Type: Etc
     Buy: 10
-    Weight: 10
+    Weight: 0
     Trade:
       NoDrop: true
       NoTrade: true
@@ -28942,7 +28942,7 @@ Body:
     Name: Enriched Elunium
     Type: Etc
     Buy: 2
-    Weight: 10
+    Weight: 0
     Trade:
       NoDrop: true
       NoTrade: true
@@ -28956,7 +28956,7 @@ Body:
     Name: Enriched Oridecon
     Type: Etc
     Buy: 2
-    Weight: 10
+    Weight: 0
     Trade:
       NoDrop: true
       NoTrade: true
@@ -37196,7 +37196,7 @@ Body:
     AegisName: Shadowdecon_Ore
     Name: Shadowdecon Ore
     Type: Etc
-    Weight: 10
+    Weight: 0
     Flags:
       BuyingStore: true
       DropEffect: CLIENT
@@ -37204,7 +37204,7 @@ Body:
     AegisName: Shadowdecon
     Name: Shadowdecon
     Type: Etc
-    Weight: 20
+    Weight: 0
     Flags:
       BuyingStore: true
       DropEffect: CLIENT
@@ -37212,7 +37212,7 @@ Body:
     AegisName: Zelunium_Ore
     Name: Zelunium Ore
     Type: Etc
-    Weight: 10
+    Weight: 0
     Flags:
       BuyingStore: true
       DropEffect: CLIENT
@@ -37220,7 +37220,7 @@ Body:
     AegisName: Zelunium
     Name: Zelunium
     Type: Etc
-    Weight: 20
+    Weight: 0
     Flags:
       BuyingStore: true
       DropEffect: CLIENT
@@ -91989,7 +91989,7 @@ Body:
     AegisName: Etel_Dust
     Name: Etel Dust
     Type: Etc
-    Weight: 1
+    Weight: 0
     Flags:
       BuyingStore: true
       DropEffect: CLIENT
@@ -93840,26 +93840,26 @@ Body:
     AegisName: Snow_F_Ore
     Name: Snow Flower Ore
     Type: Etc
-    Weight: 1
+    Weight: 0
     Flags:
       BuyingStore: true
   - Id: 1000812
     AegisName: Snow_F_Stone1
     Name: Snowflower Gem
-    Weight: 1
+    Weight: 0
     Flags:
       BuyingStore: true
   - Id: 1000813
     AegisName: Snow_F_Stone2
     Name: Shining Snowflower Gem
-    Weight: 1
+    Weight: 0
     Flags:
       BuyingStore: true
   - Id: 1000814
     AegisName: Snow_F_Stone3
     Name: Brilliant Snow Flower Manastone
     Type: Etc
-    Weight: 1
+    Weight: 0
     Flags:
       BuyingStore: true
   - Id: 1000822
@@ -94771,7 +94771,7 @@ Body:
     AegisName: EP19_D_P_Ore
     Name: Encroached Magical Ore
     Type: Etc
-    Weight: 30
+    Weight: 0
     Flags:
       BuyingStore: true
       DropEffect: CLIENT
@@ -94779,7 +94779,7 @@ Body:
     AegisName: EP19_N_P_Ore
     Name: Neutralized Magical Ore
     Type: Etc
-    Weight: 30
+    Weight: 0
     Flags:
       BuyingStore: true
       DropEffect: CLIENT
@@ -94787,7 +94787,7 @@ Body:
     AegisName: EP19_D_P_Crystal
     Name: Encroached Magical Crystal
     Type: Etc
-    Weight: 50
+    Weight: 0
     Flags:
       BuyingStore: true
       DropEffect: CLIENT
@@ -94795,7 +94795,7 @@ Body:
     AegisName: EP19_N_P_Crystal
     Name: Neutralized Magical Crystal
     Type: Etc
-    Weight: 50
+    Weight: 0
     Flags:
       BuyingStore: true
       DropEffect: CLIENT
@@ -94803,7 +94803,7 @@ Body:
     AegisName: EP19_D_P_Stone
     Name: Miasmal Spell
     Type: Etc
-    Weight: 50
+    Weight: 0
     Flags:
       BuyingStore: true
       DropEffect: CLIENT
@@ -94811,7 +94811,7 @@ Body:
     AegisName: EP19_S_F_1_Extract
     Name: Snow Flower Magic Stone Extract
     Type: Etc
-    Weight: 30
+    Weight: 0
     Flags:
       BuyingStore: true
       DropEffect: CLIENT
@@ -94819,7 +94819,7 @@ Body:
     AegisName: EP19_S_F_2_Extract
     Name: Shining Snow Flower Magic Stone Extract
     Type: Etc
-    Weight: 30
+    Weight: 0
     Flags:
       BuyingStore: true
       DropEffect: CLIENT
@@ -94827,7 +94827,7 @@ Body:
     AegisName: EP19_S_F_3_Extract
     Name: Brilliant Snow Flower Magic Stone Extract
     Type: Etc
-    Weight: 30
+    Weight: 0
     Flags:
       BuyingStore: true
       DropEffect: CLIENT
@@ -94835,7 +94835,7 @@ Body:
     AegisName: EP19_Gla_Extract
     Name: Glacier Extract
     Type: Etc
-    Weight: 30
+    Weight: 0
     Flags:
       BuyingStore: true
       DropEffect: CLIENT
@@ -97390,7 +97390,7 @@ Body:
     Name: Pure Diamond
     Type: Etc
     Buy: 200000
-    Weight: 300
+    Weight: 0
     Flags:
       DropEffect: CLIENT
   - Id: 1001479
@@ -97398,7 +97398,7 @@ Body:
     Name: Black Diamond
     Type: Etc
     Buy: 400000
-    Weight: 300
+    Weight: 0
     Flags:
       DropEffect: CLIENT
   - Id: 1001480
@@ -97406,7 +97406,7 @@ Body:
     Name: Golden Diamond
     Type: Etc
     Buy: 600000
-    Weight: 300
+    Weight: 0
     Flags:
       DropEffect: CLIENT
   - Id: 1001487

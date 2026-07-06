@@ -75,7 +75,7 @@ grademk,40,169,4	script	Booster Operator	4_M_VACATION_MARAM,{
 		mes " ";
 		mes "Go enchant your Racing Cap!";
 		close2;
-		item_enchant(165);
+		item_enchant(1000);
 		end;
 	case 8:
 		mes "[" + strnpcinfo(1) + "]";

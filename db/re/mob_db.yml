@@ -23109,7 +23109,7 @@ Body:
     Hp: 720500
     BaseExp: 400896
     JobExp: 271440
-#   MvpExp:
+    MvpExp: 400896
     Attack: 1414
     Attack2: 2036
     Defense: 210
@@ -40360,7 +40360,7 @@ Body:
     Hp: 5000000
     BaseExp: 2160000
     JobExp: 900000
-#   MvpExp:
+    MvpExp: 2160000
     Attack: 7020
     Attack2: 3200
     Defense: 410
@@ -40412,7 +40412,7 @@ Body:
     Hp: 2400500
     BaseExp: 786500
     JobExp: 607500
-#   MvpExp:
+    MvpExp: 786500
     Attack: 4840
     Attack2: 3600
     Defense: 171
@@ -45118,7 +45118,7 @@ Body:
     AttackMotion: 432
     ClientAttackMotion: 420
     DamageMotion: 540
-#   Ai: 
+    Ai: 01
     Class: Boss
     Modes:
       IgnoreMagic: true
@@ -46408,7 +46408,7 @@ Body:
     Hp: 1190900
     BaseExp: 1206
     JobExp: 1005
-#   MvpExp:
+    MvpExp: 1206
     Attack: 3935
     Attack2: 2085
     Defense: 330
@@ -49748,7 +49748,7 @@ Body:
     Hp: 2200000
     BaseExp: 500000
     JobExp: 550000
-#   MvpExp:
+    MvpExp: 500000
     Attack: 1890
     Attack2: 1890
     Defense: 280
@@ -49816,7 +49816,7 @@ Body:
     Hp: 2200000
     BaseExp: 500000
     JobExp: 550000
-#   MvpExp:
+    MvpExp: 500000
     Attack: 1890
     Attack2: 1890
     Defense: 280
@@ -49882,7 +49882,7 @@ Body:
     Hp: 5200000
     BaseExp: 1500000
     JobExp: 1650000
-#   MvpExp:
+    MvpExp: 1500000
     Attack: 5500
     Attack2: 5500
     Defense: 280
@@ -49949,7 +49949,7 @@ Body:
     Hp: 5200000
     BaseExp: 1500000
     JobExp: 1650000
-#   MvpExp:
+    MvpExp: 1500000
     Attack: 5500
     Attack2: 5500
     Defense: 280
@@ -88912,6 +88912,7 @@ Body:
     Name: T_W_O
     Level: 165
     Hp: 48000000
+    MvpExp: 50000
     Attack: 3955
     Attack2: 196
     Defense: 158
@@ -93833,7 +93834,7 @@ Body:
     Hp: 142480
     BaseExp: 5486
     JobExp: 6908
-#   MvpExp:
+    MvpExp: 5486
     Attack: 82
     Attack2: 82
     Defense: 63
@@ -97465,7 +97466,7 @@ Body:
     Hp: 9799123
     BaseExp: 3150895
     JobExp: 2112795
-#   MvpExp:
+    MvpExp: 3150895
     Attack: 7657
     Attack2: 2066
     Defense: 394
@@ -99034,7 +99035,7 @@ Body:
     Hp: 13521442
     BaseExp: 2777284
     JobExp: 1937023
-#   MvpExp:
+    MvpExp: 2777284
     Attack: 5754
     Attack2: 2680
     Defense: 129
@@ -99414,7 +99415,7 @@ Body:
     Sp: 0
     BaseExp: 3431854
     JobExp: 2146800
-#   MvpExp:
+    MvpExp: 3431854
     Attack: 6394
     Attack2: 2808
     Defense: 796
@@ -100422,8 +100423,60 @@ Body:
 #    AegisName: MD_TRE_WHISPER
 #  - Id: 20117
 #    AegisName: MD_TRE_HYDRA
-#  - Id: 20118
-#    AegisName: GOBLIN_KING
+  - Id: 20118
+    AegisName: GOBLIN_KING
+    Name: Goblin King
+    Level: 255
+    Hp: 343542229
+    BaseExp: 12269365
+    JobExp: 8179577
+    MvpExp: 12269365
+    Attack: 9068
+    Attack2: 1669
+    Defense: 670
+    MagicDefense: 104
+    Resistance: 500
+    MagicResistance: 500
+    Str: 170
+    Agi: 201
+    Vit: 84
+    Int: 160
+    Dex: 170
+    Luk: 70
+    AttackRange: 1
+    SkillRange: 10
+    ChaseRange: 12
+    Size: Medium
+    Race: Demihuman
+    RaceGroups:
+      Clocktower: true
+    Element: Wind
+    ElementLevel: 3
+    WalkSpeed: 110
+    AttackDelay: 624
+    AttackMotion: 624
+    ClientAttackMotion: 432
+    DamageMotion: 360
+    DamageTaken: 1000
+    Ai: 21
+    Class: Boss
+    Modes:
+      Mvp: true
+    MvpDrops:
+      - Item: Etel_Stone
+        Rate: 2000
+      - Item: Old_Card_Album
+        Rate: 1500
+    Drops:
+      - Item: Shadowdecon
+        Rate: 1000
+      - Item: Zelunium
+        Rate: 1000
+      - Item: Goblin_Mask_04
+        Rate: 500
+      - Item: Goblin_King_Card
+        Rate: 1
+        StealProtected: true
 #  - Id: 20119
 #    AegisName: BAD_CATCUMBER
 #  - Id: 20120
@@ -100536,16 +100589,271 @@ Body:
 #    AegisName: RAYDRIC_ARCHER_MJ
 #  - Id: 20174
 #    AegisName: RAGGED_ZOMBIE_MJ
-#  - Id: 20175
-#    AegisName: EXTRA_JOKER
-#  - Id: 20176
-#    AegisName: ERZSEBET
-#  - Id: 20177
-#    AegisName: JENIFFER
-#  - Id: 20178
-#    AegisName: GENERAL_ORC
-#  - Id: 20179
-#    AegisName: SIEGLOUSE
+  - Id: 20175
+    AegisName: EXTRA_JOKER
+    Name: Extra Joker
+    Level: 255
+    Hp: 39326510
+    BaseExp: 755552
+    JobExp: 527566
+    Attack: 12380
+    Attack2: 3088
+    Defense: 288
+    MagicDefense: 158
+    Resistance: 241
+    MagicResistance: 200
+    Str: 217
+    Agi: 255
+    Vit: 142
+    Int: 182
+    Dex: 233
+    Luk: 223
+    AttackRange: 2
+    SkillRange: 10
+    ChaseRange: 12
+    Size: Large
+    Race: Demon
+    RaceGroups:
+      Clocktower: true
+    Element: Wind
+    ElementLevel: 4
+    WalkSpeed: 100
+    AttackDelay: 432
+    AttackMotion: 864
+    ClientAttackMotion: 312
+    DamageMotion: 432
+    DamageTaken: 1000
+    Ai: 21
+    Drops:
+      - Item: Zargon
+        Rate: 5000
+      - Item: Old_Card_Album
+        Rate: 5
+      - Item: Shadowdecon_Ore
+        Rate: 400
+      - Item: Shadowdecon
+        Rate: 35
+      - Item: WitchsBroomStick
+        Rate: 3
+      - Item: Oridecon
+        Rate: 250
+      - Item: Jokers_Wild
+        Rate: 2500
+      - Item: Extra_Joker_Card
+        Rate: 1
+        StealProtected: true
+  - Id: 20176
+    AegisName: ERZSEBET
+    Name: Erzsebet
+    Level: 254
+    Hp: 37709580
+    BaseExp: 748788
+    JobExp: 523891
+    Attack: 9244
+    Attack2: 4007
+    Defense: 277
+    MagicDefense: 291
+    Resistance: 240
+    MagicResistance: 375
+    Str: 131
+    Agi: 141
+    Vit: 147
+    Int: 199
+    Dex: 177
+    Luk: 199
+    AttackRange: 1
+    SkillRange: 10
+    ChaseRange: 12
+    Size: Medium
+    Race: Demon
+    RaceGroups:
+      Clocktower: true
+    Element: Dark
+    ElementLevel: 1
+    WalkSpeed: 100
+    AttackDelay: 840
+    AttackMotion: 840
+    ClientAttackMotion: 480
+    DamageMotion: 432
+    DamageTaken: 1000
+    Ai: 04
+    Drops:
+      - Item: Zelunium_Ore
+        Rate: 150
+      - Item: Starsand_Of_Witch
+        Rate: 3500
+      - Item: Witchs_White_Shirt
+        Rate: 3
+      - Item: Shadowdecon
+        Rate: 25
+      - Item: Shadowdecon_Ore
+        Rate: 150
+      - Item: Zelunium
+        Rate: 25
+      - Item: Cute_Broom
+        Rate: 2200
+      - Item: Erzsebet_Card
+        Rate: 1
+        StealProtected: true
+  - Id: 20177
+    AegisName: JENIFFER
+    Name: Jennifer
+    Level: 255
+    Hp: 40978470
+    BaseExp: 755552
+    JobExp: 527566
+    Attack: 11150
+    Attack2: 2553
+    Defense: 264
+    MagicDefense: 140
+    Resistance: 191
+    MagicResistance: 153
+    Str: 150
+    Agi: 176
+    Vit: 98
+    Int: 126
+    Dex: 207
+    Luk: 154
+    AttackRange: 7
+    SkillRange: 10
+    ChaseRange: 12
+    Size: Medium
+    Race: Fish
+    RaceGroups:
+      Clocktower: true
+    Element: Dark
+    ElementLevel: 1
+    WalkSpeed: 300
+    AttackDelay: 432
+    AttackMotion: 864
+    ClientAttackMotion: 480
+    DamageMotion: 432
+    DamageTaken: 1000
+    Ai: 04
+    Drops:
+      - Item: Coral_Reef
+        Rate: 7500
+      - Item: Tentacle
+        Rate: 7500
+      - Item: Shadowdecon_Ore
+        Rate: 150
+      - Item: Zelunium_Ore
+        Rate: 150
+      - Item: Shadowdecon
+        Rate: 25
+      - Item: Zelunium
+        Rate: 25
+      - Item: Showy_Coral_Reef
+        Rate: 2100
+      - Item: Jeniffer_Card
+        Rate: 1
+        StealProtected: true
+  - Id: 20178
+    AegisName: GENERAL_ORC
+    Name: General Orc
+    Level: 255
+    Hp: 48805390
+    BaseExp: 767150
+    JobExp: 533799
+    Attack: 9908
+    Attack2: 2748
+    Defense: 528
+    MagicDefense: 231
+    Resistance: 468
+    MagicResistance: 277
+    Str: 140
+    Agi: 136
+    Vit: 191
+    Int: 165
+    Dex: 170
+    Luk: 157
+    AttackRange: 1
+    SkillRange: 10
+    ChaseRange: 12
+    Size: Large
+    Race: Demihuman
+    RaceGroups:
+      Clocktower: true
+    Element: Dark
+    ElementLevel: 2
+    WalkSpeed: 150
+    AttackDelay: 864
+    AttackMotion: 864
+    ClientAttackMotion: 480
+    DamageMotion: 432
+    DamageTaken: 1000
+    Ai: 04
+    Drops:
+      - Item: Steel
+        Rate: 225
+      - Item: Green_Crystal_Fragment
+        Rate: 2300
+      - Item: Elunium
+        Rate: 133
+      - Item: Shadowdecon_Ore
+        Rate: 150
+      - Item: Zelunium_Ore
+        Rate: 150
+      - Item: Zelunium
+        Rate: 25
+      - Item: Shadowdecon
+        Rate: 25
+      - Item: General_Orc_Card
+        Rate: 1
+        StealProtected: true
+  - Id: 20179
+    AegisName: SIEGLOUSE
+    Name: Sieglouse
+    Level: 253
+    Hp: 39324220
+    BaseExp: 742800
+    JobExp: 518662
+    Attack: 11186
+    Attack2: 2828
+    Defense: 289
+    MagicDefense: 159
+    Resistance: 242
+    MagicResistance: 201
+    Str: 219
+    Agi: 257
+    Vit: 143
+    Int: 184
+    Dex: 235
+    Luk: 225
+    AttackRange: 2
+    SkillRange: 10
+    ChaseRange: 12
+    Size: Small
+    Race: Insect
+    RaceGroups:
+      Clocktower: true
+    Element: Earth
+    ElementLevel: 2
+    WalkSpeed: 100
+    AttackDelay: 960
+    AttackMotion: 960
+    ClientAttackMotion: 480
+    DamageMotion: 432
+    DamageTaken: 1000
+    Ai: 04
+    Drops:
+      - Item: Round_Shell
+        Rate: 8750
+      - Item: Solid_Shell
+        Rate: 2000
+      - Item: C_Garden_Knife
+        Rate: 3
+      - Item: Red_Gemstone
+        Rate: 750
+      - Item: Shining_Round_Shell
+        Rate: 2000
+      - Item: Shadowdecon_Ore
+        Rate: 250
+      - Item: Shadowdecon
+        Rate: 30
+      - Item: Sieglouse_Card
+        Rate: 1
+        StealProtected: true
 #  - Id: 20180
 #    AegisName: TACNU_BRZ
 #  - Id: 20181
@@ -113599,6 +113907,7 @@ Body:
     AttackMotion: 768
     ClientAttackMotion: 480
     DamageMotion: 384
+    DamageTaken: 1000
     Ai: 04
     Modes:
       Detector: true
@@ -113801,6 +114110,7 @@ Body:
     AttackMotion: 1020
     ClientAttackMotion: 720
     DamageMotion: 576
+    DamageTaken: 1000
     Ai: 04
     Modes:
       Detector: true
@@ -113853,6 +114163,7 @@ Body:
     AttackMotion: 1584
     ClientAttackMotion: 1152
     DamageMotion: 576
+    DamageTaken: 1000
     Ai: 04
     Modes:
       Detector: true
@@ -113905,6 +114216,7 @@ Body:
     AttackMotion: 1536
     ClientAttackMotion: 768
     DamageMotion: 480
+    DamageTaken: 1000
     Ai: 04
     Modes:
       Detector: true
@@ -113933,7 +114245,7 @@ Body:
     Hp: 398856250
     BaseExp: 9051055
     JobExp: 6335739
-#   MvpExp:
+    MvpExp: 9051055
     Attack: 14658
     Attack2: 2687
     Defense: 687
@@ -115926,6 +116238,7 @@ Body:
     ClientAttackMotion: 0
     Ai: 06
     Class: Boss
+    DamageTaken: 1000
     Modes:
       TeleportBlock: true
   - Id: 21065
@@ -115949,6 +116262,7 @@ Body:
     ClientAttackMotion: 0
     Ai: 06
     Class: Boss
+    DamageTaken: 100 
     Modes:
       TeleportBlock: true
   - Id: 21066
@@ -115995,7 +116309,7 @@ Body:
     ClientAttackMotion: 0
     Ai: 06
     Class: Boss
-    DamageTaken: 1000
+    DamageTaken: 10
     Modes:
       TeleportBlock: true
   - Id: 21068
@@ -116227,7 +116541,7 @@ Body:
     ClientAttackMotion: 0
     Ai: 06
     Class: Boss
-    DamageTaken: 100
+    DamageTaken: 1
     Modes:
       TeleportBlock: true
   - Id: 21078
@@ -117246,7 +117560,7 @@ Body:
     Sp: 0
     BaseExp: 6581326
     JobExp: 4606928
-#   MvpExp:
+    MvpExp: 6581326
     Attack: 9143
     Attack2: 4904
     Defense: 791
@@ -120092,7 +120406,7 @@ Body:
     Hp: 24512365
     BaseExp: 4401752
     JobExp: 3601314
-#   MvpExp:
+    MvpExp: 4401752
     Attack: 7844
     Attack2: 3827
     Defense: 998
@@ -120977,17 +121291,17 @@ Body:
     Name: Aquila
     Level: 210
     Hp: 500000000
-    #MvpExp:
+    MvpExp: 5781204
     Attack: 6000
     Attack2: 1000
     Defense: 456
     MagicDefense: 112
-    Str: 0
-    Agi: 0
-    Vit: 0
-    Int: 0
-    Dex: 0
-    Luk: 0
+    Str: 80
+    Agi: 80
+    Vit: 80
+    Int: 80
+    Dex: 80
+    Luk: 80
     AttackRange: 1
     SkillRange: 10
     ChaseRange: 12
@@ -121048,7 +121362,7 @@ Body:
     Hp: 225503800
     BaseExp: 7798710
     JobExp: 5430080
-    #MvpExp:
+    MvpExp: 7798710
     Attack: 15250
     Attack2: 2280
     Defense: 575
@@ -121201,7 +121515,7 @@ Body:
     Hp: 374848589
     BaseExp: 8685807
     JobExp: 6417846
-    #MvpExp:
+    MvpExp: 8685807
     Attack: 13029
     Attack2: 2614
     Defense: 529
@@ -121907,12 +122221,12 @@ Body:
         Rate: 180
   - Id: 21555
     AegisName: ECO_MISTRESS
-    Name: Verdant Mistress
+    Name: Grassland Mistress
     Level: 260
     Hp: 425100000
     BaseExp: 6072857
     JobExp: 4048571
-    #MvpExp:
+    MvpExp: 6072857
     Attack: 14000
     Attack2: 9716
     Defense: 397
@@ -122267,7 +122581,7 @@ Body:
     Hp: 614250000
     BaseExp: 8775000
     JobExp: 5850000
-    #MvpExp:
+    MvpExp: 8775000
     Attack: 14200
     Attack2: 10400
     Defense: 503
@@ -122624,7 +122938,7 @@ Body:
     Hp: 585000000
     BaseExp: 8357143
     JobExp: 5571429
-    #MvpExp:
+    MvpExp: 8357143
     Attack: 14207
     Attack2: 10876
     Defense: 328
@@ -122983,7 +123297,7 @@ Body:
     Hp: 523575000
     BaseExp: 7479643
     JobExp: 4986429
-    #MvpExp:
+    MvpExp: 7479643
     Attack: 14089
     Attack2: 9899
     Defense: 503
@@ -123813,14 +124127,44 @@ Body:
 #    AegisName: MD_SEWER_BEETLE
 #  - Id: 21916
 #    AegisName: MD_SEWER_ARCLOUSE
-#  - Id: 21917
-#    AegisName: MD_SEWER_ARGIOPE
+  - Id: 21917
+    AegisName: MD_SEWER_ARGIOPE
+    Name: Sewer Argiope
+    Level: 103
+    Hp: 54065
+    BaseExp: 1361942
+    JobExp: 948593
+    Attack: 635
+    Attack2: 179
+    Defense: 228
+    MagicDefense: 106
+    Str: 22
+    Agi: 47
+    Vit: 98
+    Int: 1
+    Dex: 50
+    Luk: 11
+    AttackRange: 1
+    SkillRange: 10
+    ChaseRange: 12
+    Size: Medium
+    Race: Insect
+    Element: Earth
+    ElementLevel: 1
+    WalkSpeed: 100
+    AttackDelay: 159
+    AttackMotion: 793
+    ClientAttackMotion: 300
+    DamageMotion: 288
+    Ai: 02
+    Drops:
+      - Item: Transcended_Coin
+        Rate: 2000
+        StealProtected: true
 #  - Id: 21918
 #    AegisName: MD_SEWER_CAVE_FLOWER
 #  - Id: 21919
 #    AegisName: LARVA_VIOLET
-#  - Id: 21920
-#    AegisName: ECO_RUDO
   - Id: 21920
     AegisName: ECO_RUDO
     Name: Temple Rudo
@@ -123828,10 +124172,12 @@ Body:
     Hp: 32534117
     BaseExp: 1361942
     JobExp: 948593
-    Attack: 16013
-    Attack2: 23814
+    Attack: 19913
+    Attack2: 13231
     Defense: 480
     MagicDefense: 512
+    Resistance: 439
+    MagicResistance: 679
     Str: 157
     Agi: 169
     Vit: 176
@@ -123850,9 +124196,10 @@ Body:
     AttackMotion: 384
     ClientAttackMotion: 384
     DamageMotion: 288
-    Ai: 1
+    DamageTaken: 1000
+    Ai: 04
     Drops:
-      - Item: Blue_Crystal_Shard
+      - Item: Green_Crystal_Fragment
         Rate: 1800
       - Item: Feather
         Rate: 3000
@@ -123862,76 +124209,1579 @@ Body:
         Rate: 300
       - Item: Zelunium
         Rate: 100
-#  - Id: 21921
-#    AegisName: ECO_ARCHANGELING
-#  - Id: 21922
-#    AegisName: ECO_FAKE_ANGEL
-#  - Id: 21923
-#    AegisName: ECO_PLASMA_P
-#  - Id: 21924
-#    AegisName: ECO_SOLACE
-#  - Id: 21925
-#    AegisName: ECO_ANOPHELES
-#  - Id: 21926
-#    AegisName: ECO_GRYPHON
-#  - Id: 21927
-#    AegisName: ECO_RANDGRIS
-#  - Id: 21928
-#    AegisName: ECO_COMODO
-#  - Id: 21929
-#    AegisName: ECO_POISON_TOAD
-#  - Id: 21930
-#    AegisName: ECO_SIDE_WINDER
-#  - Id: 21931
-#    AegisName: ECO_CRAMP
-#  - Id: 21932
-#    AegisName: ECO_KUKRE
-#  - Id: 21933
-#    AegisName: ECO_NEPENTHES
-#  - Id: 21934
-#    AegisName: ECO_ANGRA_MANTIS
-#  - Id: 21935
-#    AegisName: ECO_VENOM_KIMERA
-#  - Id: 21936
-#    AegisName: ECO_NIGHTMARE
-#  - Id: 21937
-#    AegisName: ECO_WHISPER
-#  - Id: 21938
-#    AegisName: ECO_MARIONETTE
-#  - Id: 21939
-#    AegisName: ECO_NOXIOUS
-#  - Id: 21940
-#    AegisName: ECO_THE_PAPER
-#  - Id: 21941
-#    AegisName: ECO_GAJOMART
-#  - Id: 21942
-#    AegisName: ECO_ODIUM
-#  - Id: 21943
-#    AegisName: ECO_GLOOMUNDERNIGHT
+  - Id: 21921
+    AegisName: ECO_ARC_ANGELING
+    Name: Temple Arc Angeling
+    Level: 253
+    Hp: 36048967
+    BaseExp: 1359262
+    JobExp: 945803
+    Attack: 22814
+    Attack2: 10913
+    Defense: 703
+    MagicDefense: 398
+    Resistance: 667
+    MagicResistance: 521
+    Str: 216
+    Agi: 178
+    Vit: 206
+    Int: 216
+    Dex: 216
+    Luk: 206
+    AttackRange: 1
+    SkillRange: 10
+    ChaseRange: 12
+    Size: Medium
+    Race: Angel
+    Element: Holy
+    ElementLevel: 3
+    WalkSpeed: 150
+    AttackDelay: 671
+    AttackMotion: 384
+    ClientAttackMotion: 384
+    DamageMotion: 288
+    DamageTaken: 1000
+    Ai: 04
+    Drops:
+      - Item: Hard_Ice
+        Rate: 1800
+      - Item: Agate
+        Rate: 2700
+      - Item: Seed_Of_Yggdrasil
+        Rate: 50
+      - Item: Zelunium
+        Rate: 300
+      - Item: Shadowdecon
+        Rate: 100
+  - Id: 21922
+    AegisName: ECO_FALSE_ANGEL
+    Name: Temple False Angel
+    Level: 253
+    Hp: 33216055
+    BaseExp: 1359262
+    JobExp: 945803
+    Attack: 25404
+    Attack2: 9840
+    Defense: 473
+    MagicDefense: 260
+    Resistance: 400
+    MagicResistance: 324
+    Str: 221
+    Agi: 260
+    Vit: 144
+    Int: 185
+    Dex: 244
+    Luk: 227
+    AttackRange: 2
+    SkillRange: 10
+    ChaseRange: 12
+    Size: Small
+    Race: Angel
+    Element: Holy
+    ElementLevel: 3
+    WalkSpeed: 70
+    AttackDelay: 288
+    AttackMotion: 384
+    ClientAttackMotion: 384
+    DamageMotion: 288
+    DamageTaken: 1000
+    Ai: 04
+    Drops:
+      - Item: Evil_Black_Bid
+        Rate: 1800
+      - Item: Yellow_Gemstone
+        Rate: 500
+      - Item: Red_Gemstone
+        Rate: 500
+      - Item: Shadowdecon
+        Rate: 300
+      - Item: Zelunium
+        Rate: 100
+  - Id: 21923
+    AegisName: ECO_PLASMA_P
+    Name: Temple Plasma
+    Level: 254
+    Hp: 35377971
+    BaseExp: 1359180
+    JobExp: 951426
+    Attack: 30010
+    Attack2: 6879
+    Defense: 808
+    MagicDefense: 312
+    Resistance: 794
+    MagicResistance: 375
+    Str: 293
+    Agi: 246
+    Vit: 233
+    Int: 188
+    Dex: 261
+    Luk: 244
+    AttackRange: 1
+    SkillRange: 10
+    ChaseRange: 12
+    Size: Small
+    Race: Formless
+    Element: Dark
+    ElementLevel: 4
+    WalkSpeed: 130
+    AttackDelay: 961
+    AttackMotion: 384
+    ClientAttackMotion: 384
+    DamageMotion: 288
+    DamageTaken: 1000
+    Ai: 04
+    Drops:
+      - Item: Black_Jewelry
+        Rate: 1800
+      - Item: Cardinal_Jewel_
+        Rate: 500
+      - Item: Red_Gemstone
+        Rate: 500
+      - Item: Zelunium
+        Rate: 300
+      - Item: Shadowdecon
+        Rate: 100
+  - Id: 21924
+    AegisName: ECO_SOLACE
+    Name: Temple Solace
+    Level: 254
+    Hp: 35374557
+    BaseExp: 1348511
+    JobExp: 943958
+    Attack: 29354
+    Attack2: 9397
+    Defense: 776
+    MagicDefense: 299
+    Resistance: 738
+    MagicResistance: 349
+    Str: 264
+    Agi: 222
+    Vit: 209
+    Int: 169
+    Dex: 235
+    Luk: 220
+    AttackRange: 2
+    SkillRange: 10
+    ChaseRange: 12
+    Size: Medium
+    Race: Angel
+    Element: Holy
+    ElementLevel: 3
+    WalkSpeed: 170
+    AttackDelay: 264
+    AttackMotion: 384
+    ClientAttackMotion: 384
+    DamageMotion: 288
+    DamageTaken: 1000
+    Ai: 04
+    Drops:
+      - Item: Shining_Crystal
+        Rate: 1800
+      - Item: Dragon_Canine
+        Rate: 4500
+      - Item: Dragonball_Yellow
+        Rate: 2000
+      - Item: Shadowdecon
+        Rate: 300
+      - Item: Zelunium
+        Rate: 100
+  - Id: 21925
+    AegisName: ECO_ANOPHELES
+    Name: Temple Anopheles
+    Level: 254
+    Hp: 36842663
+    BaseExp: 1348511
+    JobExp: 943958
+    Attack: 21839
+    Attack2: 11414
+    Defense: 802
+    MagicDefense: 463
+    Resistance: 838
+    MagicResistance: 661
+    Str: 297
+    Agi: 245
+    Vit: 283
+    Int: 297
+    Dex: 297
+    Luk: 283
+    AttackRange: 1
+    SkillRange: 10
+    ChaseRange: 12
+    Size: Small
+    Race: Insect
+    Element: Wind
+    ElementLevel: 3
+    WalkSpeed: 150
+    AttackDelay: 288
+    AttackMotion: 384
+    ClientAttackMotion: 384
+    DamageMotion: 288
+    DamageTaken: 1000
+    Ai: 04
+    Drops:
+      - Item: Fresh_Pear
+        Rate: 1800
+      - Item: Withered_Flower
+        Rate: 2200
+      - Item: Spawns
+        Rate: 1500
+      - Item: Zelunium
+        Rate: 300
+      - Item: Shadowdecon
+        Rate: 100
+  - Id: 21926
+    AegisName: ECO_GRYPHON
+    Name: Temple Gryphon
+    Level: 255
+    Hp: 44443635
+    BaseExp: 1405103
+    JobExp: 977700
+    Attack: 19111
+    Attack2: 8861
+    Defense: 989
+    MagicDefense: 433
+    Resistance: 956
+    MagicResistance: 568
+    Str: 198
+    Agi: 191
+    Vit: 269
+    Int: 232
+    Dex: 246
+    Luk: 221
+    AttackRange: 1
+    SkillRange: 10
+    ChaseRange: 12
+    Size: Large
+    Race: Brute
+    Element: Wind
+    ElementLevel: 4
+    WalkSpeed: 200
+    AttackDelay: 335
+    AttackMotion: 384
+    ClientAttackMotion: 384
+    DamageMotion: 288
+    DamageTaken: 1000
+    Ai: 04
+    Drops:
+      - Item: Turn_Yellow_Leaf
+        Rate: 1800
+      - Item: Soft_Feather
+        Rate: 2800
+      - Item: Rough_Wind
+        Rate: 500
+      - Item: Shadowdecon
+        Rate: 300
+      - Item: Zelunium
+        Rate: 100
+  - Id: 21927
+    AegisName: ECO_RANDGRIS
+    Name: Temple Valkyrie Randgris
+    Level: 260
+    Hp: 291553526
+    BaseExp: 1853337
+    JobExp: 1297336
+    MvpExp: 1853337
+    Attack: 46914
+    Attack2: 22713
+    Defense: 742
+    MagicDefense: 423
+    Resistance: 724
+    MagicResistance: 568
+    Str: 241
+    Agi: 199
+    Vit: 230
+    Int: 241
+    Dex: 241
+    Luk: 230
+    AttackRange: 2
+    SkillRange: 10
+    ChaseRange: 12
+    Size: Large
+    Race: Angel
+    Element: Holy
+    ElementLevel: 4
+    WalkSpeed: 180
+    AttackDelay: 574
+    AttackMotion: 384
+    ClientAttackMotion: 384
+    DamageMotion: 288
+    DamageTaken: 100
+    Ai: 21
+    Class: Boss
+    Modes:
+      Mvp: true
+    MvpDrops:
+      - Item: Temple_Rune_Box5
+        Rate: 4000
+      - Item: Barmund_Water2
+        Rate: 3500
+      - Item: Blacksmith_Blessing
+        Rate: 500
+    Drops:
+      - Item: Green_Crystal_Fragment
+        Rate: 5000
+      - Item: Valhalla_Flower
+        Rate: 3000
+      - Item: Bloody_Edge
+        Rate: 1500
+      - Item: Zelunium
+        Rate: 2000
+      - Item: Shadowdecon
+        Rate: 2000
+      - Item: Bs_Making_S
+        Rate: 500
+  - Id: 21928
+    AegisName: ECO_COMODO
+    Name: Venom Comodo
+    Level: 253
+    Hp: 37802826
+    BaseExp: 1361942
+    JobExp: 948593
+    Attack: 27152
+    Attack2: 8281
+    Defense: 739
+    MagicDefense: 285
+    Resistance: 677
+    MagicResistance: 320
+    Str: 232
+    Agi: 195
+    Vit: 184
+    Int: 149
+    Dex: 207
+    Luk: 194
+    AttackRange: 2
+    SkillRange: 10
+    ChaseRange: 12
+    Size: Medium
+    Race: Brute
+    Element: Poison
+    ElementLevel: 3
+    WalkSpeed: 150
+    AttackDelay: 168
+    AttackMotion: 384
+    ClientAttackMotion: 384
+    DamageMotion: 288
+    DamageTaken: 1000
+    Ai: 04
+    Drops:
+      - Item: Congealed_Poison
+        Rate: 1800
+      - Item: Comodo_L
+        Rate: 3200
+      - Item: Meat
+        Rate: 4500
+      - Item: Shadowdecon
+        Rate: 300
+      - Item: Zelunium
+        Rate: 100
+  - Id: 21929
+    AegisName: ECO_POISON_TOAD
+    Name: Venom Poison Toad
+    Level: 253
+    Hp: 42572740
+    BaseExp: 1369807
+    JobExp: 953140
+    Attack: 19165
+    Attack2: 8264
+    Defense: 897
+    MagicDefense: 392
+    Resistance: 810
+    MagicResistance: 482
+    Str: 157
+    Agi: 151
+    Vit: 213
+    Int: 184
+    Dex: 195
+    Luk: 175
+    AttackRange: 3
+    SkillRange: 10
+    ChaseRange: 12
+    Size: Medium
+    Race: Brute
+    Element: Poison
+    ElementLevel: 2
+    WalkSpeed: 200
+    AttackDelay: 432
+    AttackMotion: 384
+    ClientAttackMotion: 384
+    DamageMotion: 288
+    DamageTaken: 1000
+    Ai: 04
+    Drops:
+      - Item: Congealed_Poison
+        Rate: 1800
+      - Item: Poison_Powder
+        Rate: 4500
+      - Item: Spawn
+        Rate: 4000
+      - Item: Zelunium
+        Rate: 300
+      - Item: Shadowdecon
+        Rate: 100
+  - Id: 21930
+    AegisName: ECO_SIDE_WINDER
+    Name: Venom Side Winder
+    Level: 253
+    Hp: 35522723
+    BaseExp: 1361942
+    JobExp: 948593
+    Attack: 18608
+    Attack2: 11912
+    Defense: 463
+    MagicDefense: 488
+    Resistance: 409
+    MagicResistance: 627
+    Str: 140
+    Agi: 151
+    Vit: 158
+    Int: 213
+    Dex: 195
+    Luk: 213
+    AttackRange: 1
+    SkillRange: 10
+    ChaseRange: 12
+    Size: Medium
+    Race: Brute
+    Element: Poison
+    ElementLevel: 1
+    WalkSpeed: 150
+    AttackDelay: 216
+    AttackMotion: 384
+    ClientAttackMotion: 384
+    DamageMotion: 288
+    DamageTaken: 1000
+    Ai: 04
+    Drops:
+      - Item: Slicky_Fluid
+        Rate: 1800
+      - Item: Zargon
+        Rate: 4500
+      - Item: Violet_Jewel
+        Rate: 1000
+      - Item: Shadowdecon
+        Rate: 300
+      - Item: Zelunium
+        Rate: 100
+  - Id: 21931
+    AegisName: ECO_CRAMP
+    Name: Venom Cramp
+    Level: 254
+    Hp: 38623840
+    BaseExp: 1359180
+    JobExp: 951426
+    Attack: 27347
+    Attack2: 8365
+    Defense: 745
+    MagicDefense: 287
+    Resistance: 685
+    MagicResistance: 324
+    Str: 236
+    Agi: 198
+    Vit: 187
+    Int: 151
+    Dex: 210
+    Luk: 197
+    AttackRange: 1
+    SkillRange: 10
+    ChaseRange: 12
+    Size: Small
+    Race: Brute
+    Element: Poison
+    ElementLevel: 2
+    WalkSpeed: 130
+    AttackDelay: 168
+    AttackMotion: 384
+    ClientAttackMotion: 384
+    DamageMotion: 288
+    DamageTaken: 1000
+    Ai: 04
+    Drops:
+      - Item: Congealed_Poison
+        Rate: 1800
+      - Item: Claw_Of_Rat
+        Rate: 4500
+      - Item: Monster's_Feed
+        Rate: 2000
+      - Item: Zelunium
+        Rate: 300
+      - Item: Shadowdecon
+        Rate: 100
+  - Id: 21932
+    AegisName: ECO_KUKRE
+    Name: Venom Kukre
+    Level: 254
+    Hp: 42614131
+    BaseExp: 1348511
+    JobExp: 943958
+    Attack: 19944
+    Attack2: 7808
+    Defense: 476
+    MagicDefense: 262
+    Resistance: 404
+    MagicResistance: 328
+    Str: 224
+    Agi: 264
+    Vit: 147
+    Int: 188
+    Dex: 248
+    Luk: 231
+    AttackRange: 1
+    SkillRange: 10
+    ChaseRange: 12
+    Size: Small
+    Race: Fish
+    Element: Water
+    ElementLevel: 1
+    WalkSpeed: 70
+    AttackDelay: 288
+    AttackMotion: 384
+    ClientAttackMotion: 384
+    DamageMotion: 288
+    DamageTaken: 1000
+    Ai: 04
+    Drops:
+      - Item: Weird_Tentacle
+        Rate: 1800
+      - Item: Worm_Peelings
+        Rate: 4200
+      - Item: Garlet
+        Rate: 1000
+      - Item: Shadowdecon
+        Rate: 300
+      - Item: Zelunium
+        Rate: 100
+  - Id: 21933
+    AegisName: ECO_NEPENTES
+    Name: Venom Nephentes
+    Level: 254
+    Hp: 36829620
+    BaseExp: 1359286
+    JobExp: 951501
+    Attack: 20139
+    Attack2: 9618
+    Defense: 689
+    MagicDefense: 389
+    Resistance: 641
+    MagicResistance: 499
+    Str: 204
+    Agi: 168
+    Vit: 194
+    Int: 204
+    Dex: 262
+    Luk: 194
+    AttackRange: 7
+    SkillRange: 10
+    ChaseRange: 12
+    Size: Medium
+    Race: Plant
+    Element: Poison
+    ElementLevel: 2
+    WalkSpeed: 1000
+    AttackDelay: 574
+    AttackMotion: 384
+    ClientAttackMotion: 384
+    DamageMotion: 288
+    DamageTaken: 1000
+    Ai: 04
+    Drops:
+      - Item: Aromatic_Flower
+        Rate: 1800
+      - Item: Strong_Bine
+        Rate: 3500
+      - Item: Stem
+        Rate: 4500
+      - Item: Zelunium
+        Rate: 300
+      - Item: Shadowdecon
+        Rate: 100
+  - Id: 21934
+    AegisName: ECO_ANGRA_MANTIS
+    Name: Venom Angra Mantis
+    Level: 255
+    Hp: 39754493
+    BaseExp: 1375335
+    JobExp: 957921
+    Attack: 25578
+    Attack2: 8391
+    Defense: 831
+    MagicDefense: 321
+    Resistance: 832
+    MagicResistance: 393
+    Str: 313
+    Agi: 263
+    Vit: 248
+    Int: 200
+    Dex: 278
+    Luk: 261
+    AttackRange: 1
+    SkillRange: 10
+    ChaseRange: 12
+    Size: Medium
+    Race: Insect
+    Element: Earth
+    ElementLevel: 2
+    WalkSpeed: 150
+    AttackDelay: 240
+    AttackMotion: 384
+    ClientAttackMotion: 384
+    DamageMotion: 288
+    DamageTaken: 1000
+    Ai: 04
+    Drops:
+      - Item: Green_Crystal_Fragment
+        Rate: 1800
+      - Item: Withered_Flower
+        Rate: 3100
+      - Item: Soft_Leaf
+        Rate: 2500
+      - Item: Shadowdecon
+        Rate: 300
+      - Item: Zelunium
+        Rate: 100
+  - Id: 21935
+    AegisName: ECO_VENOM_KIMERA
+    Name: Venomous Chimera
+    Level: 260
+    Hp: 318378443
+    BaseExp: 1853337
+    JobExp: 1297336
+    MvpExp: 1853337
+    Attack: 43957
+    Attack2: 20626
+    Defense: 711
+    MagicDefense: 403
+    Resistance: 670
+    MagicResistance: 524
+    Str: 216
+    Agi: 178
+    Vit: 206
+    Int: 216
+    Dex: 216
+    Luk: 206
+    AttackRange: 1
+    SkillRange: 10
+    ChaseRange: 12
+    Size: Large
+    Race: Brute
+    Element: Poison
+    ElementLevel: 4
+    WalkSpeed: 170
+    AttackDelay: 671
+    AttackMotion: 384
+    ClientAttackMotion: 384
+    DamageMotion: 288
+    DamageTaken: 100
+    Ai: 21
+    Class: Boss
+    Modes:
+      Mvp: true
+    MvpDrops:
+      - Item: Venom_Rune_Box5
+        Rate: 4000
+      - Item: Barmund_Water3
+        Rate: 3500
+      - Item: Blacksmith_Blessing
+        Rate: 500
+    Drops:
+      - Item: Congealed_Poison
+        Rate: 5000
+      - Item: Piece_of_Chimera
+        Rate: 1000
+      - Item: Old_Violet_Box
+        Rate: 800
+      - Item: Zelunium
+        Rate: 2000
+      - Item: Shadowdecon
+        Rate: 2000
+      - Item: Bs_Making_S
+        Rate: 500
+  - Id: 21936
+    AegisName: ECO_NIGHTMARE
+    Name: Soul Nightmare
+    Level: 253
+    Hp: 42580971
+    BaseExp: 1359262
+    JobExp: 945803
+    Attack: 15329
+    Attack2: 22767
+    Defense: 991
+    MagicDefense: 433
+    Resistance: 963
+    MagicResistance: 572
+    Str: 200
+    Agi: 193
+    Vit: 272
+    Int: 235
+    Dex: 249
+    Luk: 224
+    AttackRange: 1
+    SkillRange: 10
+    ChaseRange: 12
+    Size: Large
+    Race: Brute
+    Element: Ghost
+    ElementLevel: 3
+    WalkSpeed: 150
+    AttackDelay: 408
+    AttackMotion: 384
+    ClientAttackMotion: 384
+    DamageMotion: 288
+    DamageTaken: 1000
+    Ai: 04
+    Drops:
+      - Item: Black_Jewelry
+        Rate: 1800
+      - Item: Horseshoe
+        Rate: 3500
+      - Item: Old_Blue_Box
+        Rate: 10
+      - Item: Shadowdecon
+        Rate: 300
+      - Item: Zelunium
+        Rate: 100
+  - Id: 21937
+    AegisName: ECO_WHISPER
+    Name: Soul Whisper
+    Level: 253
+    Hp: 33220493
+    BaseExp: 1350324
+    JobExp: 942868
+    Attack: 19843
+    Attack2: 29504
+    Defense: 501
+    MagicDefense: 281
+    Resistance: 450
+    MagicResistance: 370
+    Str: 267
+    Agi: 315
+    Vit: 175
+    Int: 225
+    Dex: 296
+    Luk: 275
+    AttackRange: 1
+    SkillRange: 10
+    ChaseRange: 12
+    Size: Small
+    Race: Demon
+    Element: Ghost
+    ElementLevel: 3
+    WalkSpeed: 70
+    AttackDelay: 384
+    AttackMotion: 384
+    ClientAttackMotion: 384
+    DamageMotion: 288
+    DamageTaken: 1000
+    Ai: 04
+    Drops:
+      - Item: Slicky_Fluid
+        Rate: 1800
+      - Item: Transparent_Cloth
+        Rate: 4100
+      - Item: Fit_Pipe
+        Rate: 100
+      - Item: Zelunium
+        Rate: 300
+      - Item: Shadowdecon
+        Rate: 100
+  - Id: 21938
+    AegisName: ECO_MARIONETTE
+    Name: Soul Marionette
+    Level: 253
+    Hp: 32539822
+    BaseExp: 1349481
+    JobExp: 944167
+    Attack: 15446
+    Attack2: 22947
+    Defense: 515
+    MagicDefense: 559
+    Resistance: 500
+    MagicResistance: 783
+    Str: 190
+    Agi: 205
+    Vit: 213
+    Int: 288
+    Dex: 264
+    Luk: 288
+    AttackRange: 1
+    SkillRange: 10
+    ChaseRange: 12
+    Size: Small
+    Race: Demon
+    Element: Ghost
+    ElementLevel: 3
+    WalkSpeed: 130
+    AttackDelay: 240
+    AttackMotion: 384
+    ClientAttackMotion: 384
+    DamageMotion: 288
+    DamageTaken: 1000
+    Ai: 04
+    Drops:
+      - Item: Whittling
+        Rate: 1800
+      - Item: Golden_Hair
+        Rate: 4500
+      - Item: Transparent_Cloth
+        Rate: 2800
+      - Item: Shadowdecon
+        Rate: 300
+      - Item: Zelunium
+        Rate: 100
+  - Id: 21939
+    AegisName: ECO_NOXIOUS
+    Name: Soul Noxious
+    Level: 254
+    Hp: 36842483
+    BaseExp: 1359180
+    JobExp: 951426
+    Attack: 18427
+    Attack2: 27366
+    Defense: 801
+    MagicDefense: 462
+    Resistance: 835
+    MagicResistance: 659
+    Str: 296
+    Agi: 243
+    Vit: 282
+    Int: 296
+    Dex: 295
+    Luk: 282
+    AttackRange: 1
+    SkillRange: 10
+    ChaseRange: 12
+    Size: Medium
+    Race: Formless
+    Element: Ghost
+    ElementLevel: 3
+    WalkSpeed: 150
+    AttackDelay: 360
+    AttackMotion: 384
+    ClientAttackMotion: 384
+    DamageMotion: 288
+    DamageTaken: 1000
+    Ai: 04
+    Drops:
+      - Item: Reptile_Stone
+        Rate: 1800
+      - Item: Air_Pollutant
+        Rate: 3900
+      - Item: Mould_Powder
+        Rate: 2500
+      - Item: Zelunium
+        Rate: 300
+      - Item: Shadowdecon
+        Rate: 100
+  - Id: 21940
+    AegisName: ECO_THE_PAPER
+    Name: Soul The Paper
+    Level: 254
+    Hp: 35379767
+    BaseExp: 1363447
+    JobExp: 949641
+    Attack: 22595
+    Attack2: 33612
+    Defense: 825
+    MagicDefense: 318
+    Resistance: 824
+    MagicResistance: 389
+    Str: 309
+    Agi: 259
+    Vit: 245
+    Int: 198
+    Dex: 275
+    Luk: 257
+    AttackRange: 1
+    SkillRange: 10
+    ChaseRange: 12
+    Size: Medium
+    Race: Formless
+    Element: Neutral
+    ElementLevel: 3
+    WalkSpeed: 150
+    AttackDelay: 384
+    AttackMotion: 384
+    ClientAttackMotion: 384
+    DamageMotion: 288
+    DamageTaken: 1000
+    Ai: 04
+    Drops:
+      - Item: Evil_Minded_Ruby
+        Rate: 1800
+      - Item: Smooth_Paper
+        Rate: 4400
+      - Item: Fright_Paper_Blade
+        Rate: 2200
+      - Item: Shadowdecon
+        Rate: 300
+      - Item: Zelunium
+        Rate: 100
+  - Id: 21941
+    AegisName: ECO_GAJOMART
+    Name: Soul Gajomart
+    Level: 254
+    Hp: 33245387
+    BaseExp: 1363447
+    JobExp: 949641
+    Attack: 16184
+    Attack2: 24057
+    Defense: 512
+    MagicDefense: 555
+    Resistance: 494
+    MagicResistance: 773
+    Str: 186
+    Agi: 201
+    Vit: 209
+    Int: 283
+    Dex: 259
+    Luk: 283
+    AttackRange: 1
+    SkillRange: 10
+    ChaseRange: 12
+    Size: Small
+    Race: Formless
+    Element: Fire
+    ElementLevel: 4
+    WalkSpeed: 130
+    AttackDelay: 884
+    AttackMotion: 384
+    ClientAttackMotion: 384
+    DamageMotion: 288
+    DamageTaken: 1000
+    Ai: 04
+    Drops:
+      - Item: Blaze_Stone
+        Rate: 1800
+      - Item: Stone_Heart
+        Rate: 4200
+      - Item: Zargon
+        Rate: 3100
+      - Item: Zelunium
+        Rate: 300
+      - Item: Shadowdecon
+        Rate: 100
+  - Id: 21942
+    AegisName: ECO_ODIUM
+    Name: Soul Odium of Thanatos
+    Level: 255
+    Hp: 39467913
+    BaseExp: 1375335
+    JobExp: 957921
+    Attack: 22367
+    Attack2: 33261
+    Defense: 844
+    MagicDefense: 326
+    Resistance: 855
+    MagicResistance: 403
+    Str: 324
+    Agi: 273
+    Vit: 257
+    Int: 208
+    Dex: 289
+    Luk: 270
+    AttackRange: 1
+    SkillRange: 10
+    ChaseRange: 12
+    Size: Large
+    Race: Undead
+    Element: Ghost
+    ElementLevel: 4
+    WalkSpeed: 150
+    AttackDelay: 216
+    AttackMotion: 384
+    ClientAttackMotion: 384
+    DamageMotion: 288
+    DamageTaken: 1000
+    Ai: 04
+    Drops:
+      - Item: Slicky_Fluid
+        Rate: 1800
+      - Item: Transparent_Cloth
+        Rate: 4100
+      - Item: Branch_Of_Dead_Tree
+        Rate: 25
+      - Item: Shadowdecon
+        Rate: 300
+      - Item: Zelunium
+        Rate: 100
+  - Id: 21943
+    AegisName: ECO_GLOOMUNDERNIGHT
+    Name: Soul Gloom Under Night
+    Level: 260
+    Hp: 291562787
+    BaseExp: 1853337
+    JobExp: 1297336
+    MvpExp: 1853337
+    Attack: 37269
+    Attack2: 55611
+    Defense: 844
+    MagicDefense: 489
+    Resistance: 900
+    MagicResistance: 712
+    Str: 325
+    Agi: 268
+    Vit: 309
+    Int: 325
+    Dex: 324
+    Luk: 309
+    AttackRange: 3
+    SkillRange: 10
+    ChaseRange: 12
+    Size: Large
+    Race: Formless
+    Element: Ghost
+    ElementLevel: 3
+    WalkSpeed: 180
+    AttackDelay: 719
+    AttackMotion: 384
+    ClientAttackMotion: 384
+    DamageMotion: 288
+    DamageTaken: 100
+    Ai: 21
+    Class: Boss
+    Modes:
+      Mvp: true
+    MvpDrops:
+      - Item: Soul_Rune_Box5
+        Rate: 4000
+      - Item: Barmund_Water
+        Rate: 3500
+      - Item: Blacksmith_Blessing
+        Rate: 500
+    Drops:
+      - Item: Aromatic_Flower
+        Rate: 5000
+      - Item: Will_Of_Darkness_
+        Rate: 3500
+      - Item: Blade_Lost_In_Darkness
+        Rate: 2000
+      - Item: Zelunium
+        Rate: 2000
+      - Item: Shadowdecon
+        Rate: 2000
+      - Item: Bs_Making_S
+        Rate: 500
 #  - Id: 21944
 #    AegisName: E_PORING_2023
 #  - Id: 21945
 #    AegisName: E_LUNATIC_2023
-#  - Id: 21946
-#    AegisName: BURNING_KNIGHT
-#  - Id: 21947
-#    AegisName: DEDSERA
-#  - Id: 21948
-#    AegisName: HARDROCK_TITAN
-#  - Id: 21949
-#    AegisName: DEADWEEN
-#  - Id: 21950
-#    AegisName: GAIA_POL
-#  - Id: 21951
-#    AegisName: PUNCH_BUG
-#  - Id: 21952
-#    AegisName: AFERDE
-#  - Id: 21953
-#    AegisName: DISPOL
-#  - Id: 21954
-#    AegisName: TIMBERS
-#  - Id: 21955
-#    AegisName: RENIRE
+  - Id: 21946
+    AegisName: BURNING_KNIGHT
+    Name: Burning Night
+    Level: 265
+    Hp: 45319714
+    BaseExp: 1065428
+    JobExp: 890485
+    Attack: 15858
+    Attack2: 23507
+    Defense: 504
+    MagicDefense: 195
+    Resistance: 489
+    MagicResistance: 229
+    Str: 296
+    Agi: 249
+    Vit: 235
+    Int: 189
+    Dex: 256
+    Luk: 246
+    AttackRange: 1
+    SkillRange: 10
+    ChaseRange: 12
+    Size: Large
+    Race: Demon
+    Element: Ghost
+    ElementLevel: 2
+    WalkSpeed: 180
+    AttackDelay: 613
+    AttackMotion: 384
+    ClientAttackMotion: 384
+    DamageMotion: 288
+    Ai: 04
+    Drops:
+      - Item: Blaze_Stone
+        Rate: 2350
+      - Item: Burning_Heart
+        Rate: 1750
+      - Item: Burning_Horse_Shoe
+        Rate: 2000
+      - Item: Shadowdecon_Ore
+        Rate: 150
+      - Item: Zelunium_Ore
+        Rate: 150
+      - Item: Shadowdecon
+        Rate: 25
+      - Item: Zelunium
+        Rate: 25
+      - Item: Burning_Knight_Card
+        Rate: 1
+        StealProtected: true
+  - Id: 21947
+    AegisName: DEDSERA
+    Name: Deadsera
+    Level: 262
+    Hp: 48836035
+    BaseExp: 995893
+    JobExp: 836550
+    Attack: 9914
+    Attack2: 14651
+    Defense: 409
+    MagicDefense: 230
+    Resistance: 348
+    MagicResistance: 268
+    Str: 180
+    Agi: 148
+    Vit: 172
+    Int: 180
+    Dex: 225
+    Luk: 172
+    AttackRange: 7
+    SkillRange: 10
+    ChaseRange: 12
+    Size: Small
+    Race: Plant
+    Element: Undead
+    ElementLevel: 2
+    WalkSpeed: 1000
+    AttackDelay: 574
+    AttackMotion: 384
+    ClientAttackMotion: 384
+    DamageMotion: 288
+    Ai: 04
+    Drops:
+      - Item: Aromatic_Flower
+        Rate: 2350
+      - Item: Sticky_Poison
+        Rate: 1750
+      - Item: Root_Of_Maneater
+        Rate: 1000
+      - Item: Shadowdecon_Ore
+        Rate: 150
+      - Item: Zelunium_Ore
+        Rate: 150
+      - Item: Shadowdecon
+        Rate: 25
+      - Item: Zelunium
+        Rate: 25
+      - Item: Dedsera_Card
+        Rate: 1
+        StealProtected: true
+  - Id: 21948
+    AegisName: HARDROCK_TITAN
+    Name: Hardrock Titan
+    Level: 263
+    Hp: 47874030
+    BaseExp: 1023843
+    JobExp: 855728
+    Attack: 13826
+    Attack2: 20476
+    Defense: 481
+    MagicDefense: 186
+    Resistance: 445
+    MagicResistance: 209
+    Str: 263
+    Agi: 222
+    Vit: 209
+    Int: 169
+    Dex: 228
+    Luk: 219
+    AttackRange: 3
+    SkillRange: 10
+    ChaseRange: 12
+    Size: Large
+    Race: Formless
+    Element: Earth
+    ElementLevel: 1
+    WalkSpeed: 200
+    AttackDelay: 793
+    AttackMotion: 384
+    ClientAttackMotion: 384
+    DamageMotion: 288
+    Ai: 04
+    Drops:
+      - Item: Evil_Minded_Ruby
+        Rate: 2350
+      - Item: Great_Nature
+        Rate: 250
+      - Item: Stone_Heart
+        Rate: 2500
+      - Item: Shadowdecon_Ore
+        Rate: 150
+      - Item: Zelunium_Ore
+        Rate: 150
+      - Item: Zelunium
+        Rate: 25
+      - Item: Shadowdecon
+        Rate: 25
+      - Item: Hardrock_Titan_Card
+        Rate: 1
+        StealProtected: true
+  - Id: 21949
+    AegisName: DEADWEEN
+    Name: Deadween
+    Level: 264
+    Hp: 50482947
+    BaseExp: 1054194
+    JobExp: 885523
+    Attack: 11955
+    Attack2: 17712
+    Defense: 410
+    MagicDefense: 231
+    Resistance: 347
+    MagicResistance: 278
+    Str: 179
+    Agi: 148
+    Vit: 171
+    Int: 179
+    Dex: 174
+    Luk: 171
+    AttackRange: 2
+    SkillRange: 10
+    ChaseRange: 12
+    Size: Medium
+    Race: Brute
+    Element: Poison
+    ElementLevel: 3
+    WalkSpeed: 150
+    AttackDelay: 505
+    AttackMotion: 384
+    ClientAttackMotion: 384
+    DamageMotion: 288
+    Ai: 04
+    Drops:
+      - Item: Congealed_Poison
+        Rate: 2350
+      - Item: Rotten_Meat
+        Rate: 1750
+      - Item: Animal's_Skin
+        Rate: 1500
+      - Item: Shadowdecon_Ore
+        Rate: 150
+      - Item: Zelunium_Ore
+        Rate: 150
+      - Item: Shadowdecon
+        Rate: 25
+      - Item: Zelunium
+        Rate: 25
+      - Item: Deadween_Card
+        Rate: 1
+        StealProtected: true
+  - Id: 21950
+    AegisName: GAIA_POL
+    Name: Gaia Pol
+    Level: 270
+    Hp: 401194387
+    BaseExp: 2006252
+    JobExp: 1760275
+    Attack: 18052
+    Attack2: 26839
+    Defense: 435
+    MagicDefense: 247
+    Resistance: 410
+    MagicResistance: 322
+    Str: 207
+    Agi: 171
+    Vit: 197
+    Int: 207
+    Dex: 201
+    Luk: 197
+    AttackRange: 1
+    SkillRange: 10
+    ChaseRange: 12
+    Size: Large
+    Race: Brute
+    Element: Earth
+    ElementLevel: 4
+    WalkSpeed: 200
+    AttackDelay: 625
+    AttackMotion: 384
+    ClientAttackMotion: 384
+    DamageMotion: 288
+    DamageTaken: 1000
+    Ai: 21
+    Class: Boss
+    Modes:
+      Mvp: true
+    MvpDrops:
+      - Item: Crystal_Of_Pollution
+        Rate: 3000
+      - Item: Bs_Making_S
+        Rate: 3000
+      - Item: Old_Card_Album
+        Rate: 2000
+    Drops:
+      - Item: Evil_Black_Bid
+        Rate: 1800
+      - Item: Evil_Minded_Ruby
+        Rate: 1800
+      - Item: Animal's_Skin
+        Rate: 1500
+      - Item: Shadowdecon_ore
+        Rate: 500
+      - Item: Zelunium_Ore
+        Rate: 500
+      - Item: Shadowdecon
+        Rate: 150
+      - Item: Zelunium
+        Rate: 150
+      - Item: Gaia_Pol_Card
+        Rate: 1
+        StealProtected: true
+  - Id: 21951
+    AegisName: PUNCH_BUG
+    Name: Punch Bug
+    Level: 262
+    Hp: 46915251
+    BaseExp: 999230
+    JobExp: 835156
+    Attack: 13521
+    Attack2: 3800
+    Defense: 486
+    MagicDefense: 188
+    Resistance: 457
+    MagicResistance: 214
+    Str: 272
+    Agi: 229
+    Vit: 216
+    Int: 174
+    Dex: 235
+    Luk: 227
+    AttackRange: 1
+    SkillRange: 10
+    ChaseRange: 12
+    Size: Medium
+    Race: Insect
+    Element: Earth
+    ElementLevel: 3
+    WalkSpeed: 150
+    AttackDelay: 658
+    AttackMotion: 576
+    DamageMotion: 480
+    Ai: 04
+    Drops:
+      - Item: Fresh_Pear
+        Rate: 2250
+      - Item: Worm_Peelings
+        Rate: 250
+      - Item: Solid_Peeling
+        Rate: 3250
+      - Item: Shadowdecon_Ore
+        Rate: 150
+      - Item: Zelunium_Ore
+        Rate: 150
+      - Item: Shadowdecon
+        Rate: 25
+      - Item: Zelunium
+        Rate: 25
+      - Item: Punch_Bug_Card
+        Rate: 1
+        StealProtected: true
+  - Id: 21952
+    AegisName: AFERDE
+    Name: Aferde
+    Level: 264
+    Hp: 46254911
+    BaseExp: 1027707
+    JobExp: 863274
+    Attack: 11986
+    Attack2: 5321
+    Defense: 478
+    MagicDefense: 275
+    Resistance: 482
+    MagicResistance: 387
+    Str: 271
+    Agi: 223
+    Vit: 258
+    Int: 271
+    Dex: 263
+    Luk: 258
+    AttackRange: 2
+    SkillRange: 10
+    ChaseRange: 12
+    Size: Large
+    Race: Insect
+    Element: Wind
+    ElementLevel: 2
+    WalkSpeed: 170
+    AttackDelay: 794
+    AttackMotion: 768
+    DamageMotion: 480
+    Ai: 04
+    Drops:
+      - Item: Slicky_Fluid
+        Rate: 2250
+      - Item: Short_Leg
+        Rate: 2668
+      - Item: Zargon
+        Rate: 600
+      - Item: Shadowdecon_Ore
+        Rate: 150
+      - Item: Zelunium_Ore
+        Rate: 150
+      - Item: Shadowdecon
+        Rate: 25
+      - Item: Zelunium
+        Rate: 25
+      - Item: Aferde_Card
+        Rate: 1
+        StealProtected: true
+  - Id: 21953
+    AegisName: DISPOL
+    Name: Dispol
+    Level: 263
+    Hp: 44652659
+    BaseExp: 1039283
+    JobExp: 872563
+    Attack: 10756
+    Attack2: 5849
+    Defense: 284
+    MagicDefense: 300
+    Resistance: 227
+    MagicResistance: 376
+    Str: 135
+    Agi: 146
+    Vit: 152
+    Int: 205
+    Dex: 183
+    Luk: 205
+    AttackRange: 3
+    SkillRange: 10
+    ChaseRange: 12
+    Size: Small
+    Race: Brute
+    Element: Holy
+    ElementLevel: 1
+    WalkSpeed: 130
+    AttackDelay: 480
+    AttackMotion: 480
+    DamageMotion: 480
+    Ai: 04
+    Drops:
+      - Item: Cool_Liquid
+        Rate: 2250
+      - Item: Moustache_Of_Mole
+        Rate: 4500
+      - Item: Nail_Of_Mole
+        Rate: 2500
+      - Item: Shadowdecon_Ore
+        Rate: 150
+      - Item: Zelunium_Ore
+        Rate: 150
+      - Item: Shadowdecon
+        Rate: 25
+      - Item: Zelunium
+        Rate: 25
+      - Item: Dispol_Card
+        Rate: 1
+        StealProtected: true
+  - Id: 21954
+    AegisName: TIMBERS
+    Name: Timbers
+    Level: 265
+    Hp: 47189684
+    BaseExp: 1043994
+    JobExp: 876955
+    Attack: 12304
+    Attack2: 5400
+    Defense: 472
+    MagicDefense: 271
+    Resistance: 469
+    MagicResistance: 377
+    Str: 262
+    Agi: 216
+    Vit: 249
+    Int: 262
+    Dex: 254
+    Luk: 249
+    AttackRange: 2
+    SkillRange: 10
+    ChaseRange: 12
+    Size: Medium
+    Race: Plant
+    Element: Neutral
+    ElementLevel: 4
+    WalkSpeed: 160
+    AttackDelay: 719
+    AttackMotion: 576
+    DamageMotion: 480
+    Ai: 04
+    Drops:
+      - Item: Whittling
+        Rate: 2250
+      - Item: Resin
+        Rate: 2000
+      - Item: Wooden_Block
+        Rate: 1500
+      - Item: Shadowdecon_Ore
+        Rate: 150
+      - Item: Zelunium_Ore
+        Rate: 150
+      - Item: Shadowdecon
+        Rate: 25
+      - Item: Zelunium
+        Rate: 25
+      - Item: Timbers_Card
+        Rate: 1
+        StealProtected: true
+  - Id: 21955
+    AegisName: RENIRE
+    Name: Renire
+    Level: 270
+    Hp: 384095393
+    BaseExp: 2006252
+    JobExp: 1760275
+    MvpExp: 802501
+    Attack: 17467
+    Attack2: 7456
+    Defense: 472
+    MagicDefense: 270
+    Resistance: 481
+    MagicResistance: 381
+    Str: 256
+    Agi: 211
+    Vit: 244
+    Int: 256
+    Dex: 248
+    Luk: 244
+    AttackRange: 1
+    SkillRange: 10
+    ChaseRange: 12
+    Size: Medium
+    Race: Insect
+    Element: Water
+    ElementLevel: 3
+    WalkSpeed: 150
+    AttackDelay: 598
+    AttackMotion: 576
+    DamageMotion: 480
+    DamageTaken: 1000
+    Ai: 21
+    Class: Boss
+    Modes:
+      Mvp: true
+    MvpDrops:
+      - Item: Mjo_Treasure
+        Rate: 3000
+      - Item: Bs_Making_S
+        Rate: 3000
+      - Item: Old_Card_Album
+        Rate: 2000
+    Drops:
+      - Item: Green_Crystal_Fragment
+        Rate: 1800
+      - Item: Cool_Liquid
+        Rate: 1800
+      - Item: Long_Limb
+        Rate: 2200
+      - Item: Shadowdecon_Ore
+        Rate: 500
+      - Item: Zelunium_Ore
+        Rate: 500
+      - Item: Shadowdecon
+        Rate: 150
+      - Item: Zelunium
+        Rate: 150
+      - Item: Renire_Card
+        Rate: 1
+        StealProtected: true
 #  - Id: 21956
 #    AegisName: G_BURNING_KNIGHT
 #  - Id: 21957
@@ -130695,6 +132545,7 @@ Body:
     Element: Neutral
     ElementLevel: 1
     WalkSpeed: 1000
+    DamageTaken: 100
     Ai: 06
     Class: Boss
     Modes:

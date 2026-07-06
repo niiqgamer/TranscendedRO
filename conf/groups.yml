@@ -147,6 +147,7 @@ Body:
       cleanarea: true
       cleanmap: true
       item: true
+      item2: true
       zeny: true
       disguise: true
       undisguise: true
@@ -166,6 +167,7 @@ Body:
       marry: true
       divorce: true
       refreshall: true
+      hide: true
     CharCommands:
       item: true
       zeny: true

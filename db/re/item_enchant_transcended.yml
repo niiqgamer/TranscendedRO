@@ -1,0 +1,823 @@
+#####################
+# Custom for TranscendedRO
+#####################
+
+Header:
+  Type: ITEM_ENCHANT_DB
+  Version: 1
+
+Body:
+  - Id: 1000
+    TargetItems:
+      Racing_C_Bishop: true
+      Racing_C_Gene: true
+      Racing_C_Cross: true
+      Racing_C_Mecha: true
+      Racing_C_Mins: true
+      Racing_C_Ranger: true
+      Racing_C_Royal: true
+      Racing_C_Rune: true
+      Racing_C_Chaser: true
+      Racing_C_Sorcer: true
+      Racing_C_Sura: true
+      Racing_C_Warlock: true
+      Racing_C_Wander: true
+      Racing_C_Gunner: true
+      Racing_C_Ninja: true
+      Racing_C_Super: true
+      Racing_C_Doram: true
+      Racing_C_Star: true
+      Racing_C_Soul: true
+    Reset:
+      Chance: 100000
+      Price: 10000
+      Materials:
+          - Material: Racing_Thx_Ticket
+            Amount: 5
+    Order:
+      - Slot: 3
+      - Slot: 2
+      - Slot: 1
+    Slots:
+      - Slot: 3
+        Price: 0
+        Materials:
+          - Material: Racing_Thx_Ticket
+            Amount: 10
+        Enchants:
+          - Enchantgrade: 0
+            Items:
+              - Item: Fighting_Spirit3
+                Chance: 16667
+              - Item: Sharp3
+                Chance: 16666
+              - Item: Fatal3
+                Chance: 16667
+              - Item: Expert_Archer3
+                Chance: 16667
+              - Item: Spell3
+                Chance: 16667
+              - Item: Attack_Delay_3
+                Chance: 16666
+      - Slot: 2
+        Price: 0
+        Materials:
+          - Material: Racing_Thx_Ticket
+            Amount: 10
+        Enchants:
+          - Enchantgrade: 0
+            Items:
+              - Item: Fighting_Spirit3
+                Chance: 16667
+              - Item: Sharp3
+                Chance: 16666
+              - Item: Fatal3
+                Chance: 16667
+              - Item: Expert_Archer3
+                Chance: 16667
+              - Item: Spell3
+                Chance: 16667
+              - Item: Attack_Delay_3
+                Chance: 16666
+      - Slot: 1
+        PerfectEnchants:
+          - Item: Racing_E_Bishop1
+            Price: 10000
+            Materials:
+              - Material: Racing_Thx_Ticket
+                Amount: 10
+          - Item: Racing_E_Gene1
+            Price: 10000
+            Materials:
+              - Material: Racing_Thx_Ticket
+                Amount: 10
+          - Item: Racing_E_Cross1
+            Price: 10000
+            Materials:
+              - Material: Racing_Thx_Ticket
+                Amount: 10
+          - Item: Racing_E_Gunner1
+            Price: 10000
+            Materials:
+              - Material: Racing_Thx_Ticket
+                Amount: 10
+          - Item: Racing_E_Mecha1
+            Price: 10000
+            Materials:
+              - Material: Racing_Thx_Ticket
+                Amount: 10
+          - Item: Racing_E_Ninja1
+            Price: 10000
+            Materials:
+              - Material: Racing_Thx_Ticket
+                Amount: 10
+          - Item: Racing_E_Ranger1
+            Price: 10000
+            Materials:
+              - Material: Racing_Thx_Ticket
+                Amount: 10
+          - Item: Racing_E_Royal1
+            Price: 10000
+            Materials:
+              - Material: Racing_Thx_Ticket
+                Amount: 10
+          - Item: Racing_E_Rune1
+            Price: 10000
+            Materials:
+              - Material: Racing_Thx_Ticket
+                Amount: 10
+          - Item: Racing_E_Chaser1
+            Price: 10000
+            Materials:
+              - Material: Racing_Thx_Ticket
+                Amount: 10
+          - Item: Racing_E_Sorcer1
+            Price: 10000
+            Materials:
+              - Material: Racing_Thx_Ticket
+                Amount: 10
+          - Item: Racing_E_Soul1
+            Price: 10000
+            Materials:
+              - Material: Racing_Thx_Ticket
+                Amount: 10
+          - Item: Racing_E_Star1
+            Price: 10000
+            Materials:
+              - Material: Racing_Thx_Ticket
+                Amount: 10
+          - Item: Racing_E_Doram1
+            Price: 10000
+            Materials:
+              - Material: Racing_Thx_Ticket
+                Amount: 10
+          - Item: Racing_E_Super1
+            Price: 10000
+            Materials:
+              - Material: Racing_Thx_Ticket
+                Amount: 10
+          - Item: Racing_E_Sura1
+            Price: 10000
+            Materials:
+              - Material: Racing_Thx_Ticket
+                Amount: 10
+          - Item: Racing_E_Wand_Min1
+            Price: 10000
+            Materials:
+              - Material: Racing_Thx_Ticket
+                Amount: 10
+          - Item: Racing_E_Warlock1
+            Price: 10000
+            Materials:
+              - Material: Racing_Thx_Ticket
+                Amount: 10
+        Upgrades:
+          - Enchant: Racing_E_Bishop1
+            Upgrade: Racing_E_Bishop2
+            Price: 0
+            Materials:
+              - Material: Racing_Thx_Ticket
+                Amount: 10
+          - Enchant: Racing_E_Bishop2
+            Upgrade: Racing_E_Bishop3
+            Price: 0
+            Materials:
+              - Material: Racing_Thx_Ticket
+                Amount: 10
+          - Enchant: Racing_E_Gene1
+            Upgrade: Racing_E_Gene2
+            Price: 0
+            Materials:
+              - Material: Racing_Thx_Ticket
+                Amount: 10
+          - Enchant: Racing_E_Gene2
+            Upgrade: Racing_E_Gene3
+            Price: 0
+            Materials:
+              - Material: Racing_Thx_Ticket
+                Amount: 10
+          - Enchant: Racing_E_Cross1
+            Upgrade: Racing_E_Cross2
+            Price: 0
+            Materials:
+              - Material: Racing_Thx_Ticket
+                Amount: 10
+          - Enchant: Racing_E_Cross2
+            Upgrade: Racing_E_Cross3
+            Price: 0
+            Materials:
+              - Material: Racing_Thx_Ticket
+                Amount: 10
+          - Enchant: Racing_E_Gunner1
+            Upgrade: Racing_E_Gunner2
+            Price: 0
+            Materials:
+              - Material: Racing_Thx_Ticket
+                Amount: 10
+          - Enchant: Racing_E_Gunner2
+            Upgrade: Racing_E_Gunner3
+            Price: 0
+            Materials:
+              - Material: Racing_Thx_Ticket
+                Amount: 10
+          - Enchant: Racing_E_Mecha1
+            Upgrade: Racing_E_Mecha2
+            Price: 0
+            Materials:
+              - Material: Racing_Thx_Ticket
+                Amount: 10
+          - Enchant: Racing_E_Mecha2
+            Upgrade: Racing_E_Mecha3
+            Price: 0
+            Materials:
+              - Material: Racing_Thx_Ticket
+                Amount: 10
+          - Enchant: Racing_E_Ninja1
+            Upgrade: Racing_E_Ninja2
+            Price: 0
+            Materials:
+              - Material: Racing_Thx_Ticket
+                Amount: 10
+          - Enchant: Racing_E_Ninja2
+            Upgrade: Racing_E_Ninja3
+            Price: 0
+            Materials:
+              - Material: Racing_Thx_Ticket
+                Amount: 10
+          - Enchant: Racing_E_Ranger1
+            Upgrade: Racing_E_Ranger2
+            Price: 0
+            Materials:
+              - Material: Racing_Thx_Ticket
+                Amount: 10
+          - Enchant: Racing_E_Ranger2
+            Upgrade: Racing_E_Ranger3
+            Price: 0
+            Materials:
+              - Material: Racing_Thx_Ticket
+                Amount: 10
+          - Enchant: Racing_E_Royal1
+            Upgrade: Racing_E_Royal2
+            Price: 0
+            Materials:
+              - Material: Racing_Thx_Ticket
+                Amount: 10
+          - Enchant: Racing_E_Royal2
+            Upgrade: Racing_E_Royal3
+            Price: 0
+            Materials:
+              - Material: Racing_Thx_Ticket
+                Amount: 10
+          - Enchant: Racing_E_Rune1
+            Upgrade: Racing_E_Rune2
+            Price: 0
+            Materials:
+              - Material: Racing_Thx_Ticket
+                Amount: 10
+          - Enchant: Racing_E_Rune2
+            Upgrade: Racing_E_Rune3
+            Price: 0
+            Materials:
+              - Material: Racing_Thx_Ticket
+                Amount: 10
+          - Enchant: Racing_E_Chaser1
+            Upgrade: Racing_E_Chaser2
+            Price: 0
+            Materials:
+              - Material: Racing_Thx_Ticket
+                Amount: 10
+          - Enchant: Racing_E_Chaser2
+            Upgrade: Racing_E_Chaser3
+            Price: 0
+            Materials:
+              - Material: Racing_Thx_Ticket
+                Amount: 10
+          - Enchant: Racing_E_Sorcer1
+            Upgrade: Racing_E_Sorcer2
+            Price: 0
+            Materials:
+              - Material: Racing_Thx_Ticket
+                Amount: 10
+          - Enchant: Racing_E_Sorcer2
+            Upgrade: Racing_E_Sorcer3
+            Price: 0
+            Materials:
+              - Material: Racing_Thx_Ticket
+                Amount: 10
+          - Enchant: Racing_E_Soul1
+            Upgrade: Racing_E_Soul2
+            Price: 0
+            Materials:
+              - Material: Racing_Thx_Ticket
+                Amount: 10
+          - Enchant: Racing_E_Soul2
+            Upgrade: Racing_E_Soul3
+            Price: 0
+            Materials:
+              - Material: Racing_Thx_Ticket
+                Amount: 10
+          - Enchant: Racing_E_Star1
+            Upgrade: Racing_E_Star2
+            Price: 0
+            Materials:
+              - Material: Racing_Thx_Ticket
+                Amount: 10
+          - Enchant: Racing_E_Star2
+            Upgrade: Racing_E_Star3
+            Price: 0
+            Materials:
+              - Material: Racing_Thx_Ticket
+                Amount: 10
+          - Enchant: Racing_E_Doram1
+            Upgrade: Racing_E_Doram2
+            Price: 0
+            Materials:
+              - Material: Racing_Thx_Ticket
+                Amount: 10
+          - Enchant: Racing_E_Doram2
+            Upgrade: Racing_E_Doram3
+            Price: 0
+            Materials:
+              - Material: Racing_Thx_Ticket
+                Amount: 10
+          - Enchant: Racing_E_Super1
+            Upgrade: Racing_E_Super2
+            Price: 0
+            Materials:
+              - Material: Racing_Thx_Ticket
+                Amount: 10
+          - Enchant: Racing_E_Super2
+            Upgrade: Racing_E_Super3
+            Price: 0
+            Materials:
+              - Material: Racing_Thx_Ticket
+                Amount: 10
+          - Enchant: Racing_E_Sura1
+            Upgrade: Racing_E_Sura2
+            Price: 0
+            Materials:
+              - Material: Racing_Thx_Ticket
+                Amount: 10
+          - Enchant: Racing_E_Sura2
+            Upgrade: Racing_E_Sura3
+            Price: 0
+            Materials:
+              - Material: Racing_Thx_Ticket
+                Amount: 10
+          - Enchant: Racing_E_Wand_Min1
+            Upgrade: Racing_E_Wand_Min2
+            Price: 0
+            Materials:
+              - Material: Racing_Thx_Ticket
+                Amount: 10
+          - Enchant: Racing_E_Wand_Min2
+            Upgrade: Racing_E_Wand_Min3
+            Price: 0
+            Materials:
+              - Material: Racing_Thx_Ticket
+                Amount: 10
+          - Enchant: Racing_E_Warlock1
+            Upgrade: Racing_E_Warlock2
+            Price: 0
+            Materials:
+              - Material: Racing_Thx_Ticket
+                Amount: 10
+          - Enchant: Racing_E_Warlock2
+            Upgrade: Racing_E_Warlock3
+            Price: 0
+            Materials:
+              - Material: Racing_Thx_Ticket
+                Amount: 10
+  - Id: 1001
+    TargetItems:
+      Old_Rune_Circlet: true
+      Old_Protect_Of_Crown: true
+      Old_Mitra: true
+      Old_Blazing_Soul: true
+      Old_Driver_Band_R: true
+      Old_Driver_Band_Y: true
+      Old_Midas_Whisper: true
+      Old_Dying_Swan: true
+      Old_Minstrel_Song_Hat: true
+      Old_Magic_Stone_Hat: true
+      Old_Wind_Whisper: true
+      Old_Circlet_Of_Bone: true
+      Old_Shadow_Handicraft: true
+      Old_Camo_RabbitHood: true
+    MinimumRefine: 0
+    Reset:
+      Chance: 100000
+      Price: 0
+      Materials:
+        - Material: Pieces_Of_Sentiment
+          Amount: 10
+    Order:
+      - Slot: 3
+      - Slot: 2
+      - Slot: 1
+    Slots:
+      - Slot: 3
+        PerfectEnchants:
+          - Item: Strength5
+            Materials:
+              - Material: Pieces_Of_Grudge
+                Amount: 25
+          - Item: Dexterity5
+            Materials:
+              - Material: Pieces_Of_Grudge
+                Amount: 25
+          - Item: Inteligence5
+            Materials:
+              - Material: Pieces_Of_Grudge
+                Amount: 25
+          - Item: Vitality5
+            Materials:
+              - Material: Pieces_Of_Grudge
+                Amount: 25
+          - Item: Agility5
+            Materials:
+              - Material: Pieces_Of_Grudge
+                Amount: 25
+          - Item: Luck5
+            Materials:
+              - Material: Pieces_Of_Grudge
+                Amount: 25
+    Slots:
+      - Slot: 2
+        PerfectEnchants:
+          - Item: Strength5
+            Materials:
+              - Material: Pieces_Of_Grudge
+                Amount: 25
+          - Item: Dexterity5
+            Materials:
+              - Material: Pieces_Of_Grudge
+                Amount: 25
+          - Item: Inteligence5
+            Materials:
+              - Material: Pieces_Of_Grudge
+                Amount: 25
+          - Item: Vitality5
+            Materials:
+              - Material: Pieces_Of_Grudge
+                Amount: 25
+          - Item: Agility5
+            Materials:
+              - Material: Pieces_Of_Grudge
+                Amount: 25
+          - Item: Luck5
+            Materials:
+              - Material: Pieces_Of_Grudge
+                Amount: 25
+    Slots:
+      - Slot: 1
+        PerfectEnchants:
+          - Item: Mettle1
+            Materials:
+              - Material: Pieces_Of_Grudge
+                Amount: 25
+          - Item: MagicEessence1
+            Materials:
+              - Material: Pieces_Of_Grudge
+                Amount: 25
+          - Item: MasterArcher1
+            Materials:
+              - Material: Pieces_Of_Grudge
+                Amount: 25
+          - Item: Acute1
+            Materials:
+              - Material: Pieces_Of_Grudge
+                Amount: 25
+          - Item: Adamatine1
+            Materials:
+              - Material: Pieces_Of_Grudge
+                Amount: 25
+          - Item: Affection1
+            Materials:
+              - Material: Pieces_Of_Grudge
+                Amount: 25
+        Upgrades:
+          - Enchant: Mettle1
+            Upgrade: Mettle2
+            Price: 10000
+            Materials:
+              - Material: Pieces_Of_Grudge
+                Amount: 25
+          - Enchant: Mettle2
+            Upgrade: Mettle3
+            Price: 10000
+            Materials:
+              - Material: Pieces_Of_Grudge
+                Amount: 25
+          - Enchant: Mettle3
+            Upgrade: Mettle4
+            Price: 10000
+            Materials:
+              - Material: Pieces_Of_Grudge
+                Amount: 40
+          - Enchant: Mettle4
+            Upgrade: Mettle5
+            Price: 10000
+            Materials:
+              - Material: Pieces_Of_Grudge
+                Amount: 50
+          - Enchant: Mettle5
+            Upgrade: Mettle6
+            Price: 100000
+            Materials:
+              - Material: Pieces_Of_Grudge
+                Amount: 280
+          - Enchant: Mettle6
+            Upgrade: Mettle7
+            Price: 1000000
+            Materials:
+              - Material: Pieces_Of_Grudge
+                Amount: 400
+          - Enchant: Mettle7
+            Upgrade: Mettle8
+            Price: 10000000
+            Materials:
+              - Material: Pieces_Of_Grudge
+                Amount: 600
+          - Enchant: Mettle8
+            Upgrade: Mettle9
+            Price: 100000000
+            Materials:
+              - Material: Pieces_Of_Grudge
+                Amount: 5000
+          - Enchant: Mettle9
+            Upgrade: Mettle10
+            Price: 1000000000
+            Materials:
+              - Material: Pieces_Of_Grudge
+                Amount: 10000
+          - Enchant: MagicEessence1
+            Upgrade: MagicEessence2
+            Price: 10000
+            Materials:
+              - Material: Pieces_Of_Grudge
+                Amount: 25
+          - Enchant: MagicEessence2
+            Upgrade: MagicEessence3
+            Price: 10000
+            Materials:
+              - Material: Pieces_Of_Grudge
+                Amount: 25
+          - Enchant: MagicEessence3
+            Upgrade: MagicEessence4
+            Price: 10000
+            Materials:
+              - Material: Pieces_Of_Grudge
+                Amount: 40
+          - Enchant: MagicEessence4
+            Upgrade: MagicEessence5
+            Price: 10000
+            Materials:
+              - Material: Pieces_Of_Grudge
+                Amount: 50
+          - Enchant: MagicEessence5
+            Upgrade: MagicEessence6
+            Price: 100000
+            Materials:
+              - Material: Pieces_Of_Grudge
+                Amount: 280
+          - Enchant: MagicEessence6
+            Upgrade: MagicEessence7
+            Price: 1000000
+            Materials:
+              - Material: Pieces_Of_Grudge
+                Amount: 400
+          - Enchant: MagicEessence7
+            Upgrade: MagicEessence8
+            Price: 10000000
+            Materials:
+              - Material: Pieces_Of_Grudge
+                Amount: 600
+          - Enchant: MagicEessence8
+            Upgrade: MagicEessence9
+            Price: 100000000
+            Materials:
+              - Material: Pieces_Of_Grudge
+                Amount: 5000
+          - Enchant: MagicEessence9
+            Upgrade: MagicEessence10
+            Price: 1000000000
+            Materials:
+              - Material: Pieces_Of_Grudge
+                Amount: 10000
+          - Enchant: MasterArcher1
+            Upgrade: MasterArcher2
+            Price: 10000
+            Materials:
+              - Material: Pieces_Of_Grudge
+                Amount: 25
+          - Enchant: MasterArcher2
+            Upgrade: MasterArcher3
+            Price: 10000
+            Materials:
+              - Material: Pieces_Of_Grudge
+                Amount: 25
+          - Enchant: MasterArcher3
+            Upgrade: MasterArcher4
+            Price: 10000
+            Materials:
+              - Material: Pieces_Of_Grudge
+                Amount: 40
+          - Enchant: MasterArcher4
+            Upgrade: MasterArcher5
+            Price: 10000
+            Materials:
+              - Material: Pieces_Of_Grudge
+                Amount: 50
+          - Enchant: MasterArcher5
+            Upgrade: MasterArcher6
+            Price: 100000
+            Materials:
+              - Material: Pieces_Of_Grudge
+                Amount: 280
+          - Enchant: MasterArcher6
+            Upgrade: MasterArcher7
+            Price: 1000000
+            Materials:
+              - Material: Pieces_Of_Grudge
+                Amount: 400
+          - Enchant: MasterArcher7
+            Upgrade: MasterArcher8
+            Price: 10000000
+            Materials:
+              - Material: Pieces_Of_Grudge
+                Amount: 600
+          - Enchant: MasterArcher8
+            Upgrade: MasterArcher9
+            Price: 100000000
+            Materials:
+              - Material: Pieces_Of_Grudge
+                Amount: 5000
+          - Enchant: MasterArcher9
+            Upgrade: MasterArcher10
+            Price: 1000000000
+            Materials:
+              - Material: Pieces_Of_Grudge
+                Amount: 10000
+          - Enchant: Acute1
+            Upgrade: Acute2
+            Price: 10000
+            Materials:
+              - Material: Pieces_Of_Grudge
+                Amount: 25
+          - Enchant: Acute2
+            Upgrade: Acute3
+            Price: 10000
+            Materials:
+              - Material: Pieces_Of_Grudge
+                Amount: 25
+          - Enchant: Acute3
+            Upgrade: Acute4
+            Price: 10000
+            Materials:
+              - Material: Pieces_Of_Grudge
+                Amount: 40
+          - Enchant: Acute4
+            Upgrade: Acute5
+            Price: 10000
+            Materials:
+              - Material: Pieces_Of_Grudge
+                Amount: 50
+          - Enchant: Acute5
+            Upgrade: Acute6
+            Price: 100000
+            Materials:
+              - Material: Pieces_Of_Grudge
+                Amount: 280
+          - Enchant: Acute6
+            Upgrade: Acute7
+            Price: 1000000
+            Materials:
+              - Material: Pieces_Of_Grudge
+                Amount: 400
+          - Enchant: Acute7
+            Upgrade: Acute8
+            Price: 10000000
+            Materials:
+              - Material: Pieces_Of_Grudge
+                Amount: 600
+          - Enchant: Acute8
+            Upgrade: Acute9
+            Price: 100000000
+            Materials:
+              - Material: Pieces_Of_Grudge
+                Amount: 5000
+          - Enchant: Acute9
+            Upgrade: Acute10
+            Price: 1000000000
+            Materials:
+              - Material: Pieces_Of_Grudge
+                Amount: 10000
+          - Enchant: Adamatine1
+            Upgrade: Adamatine2
+            Price: 10000
+            Materials:
+              - Material: Pieces_Of_Grudge
+                Amount: 25
+          - Enchant: Adamatine2
+            Upgrade: Adamatine3
+            Price: 10000
+            Materials:
+              - Material: Pieces_Of_Grudge
+                Amount: 25
+          - Enchant: Adamatine3
+            Upgrade: Adamatine4
+            Price: 10000
+            Materials:
+              - Material: Pieces_Of_Grudge
+                Amount: 40
+          - Enchant: Adamatine4
+            Upgrade: Adamatine5
+            Price: 10000
+            Materials:
+              - Material: Pieces_Of_Grudge
+                Amount: 50
+          - Enchant: Adamatine5
+            Upgrade: Adamatine6
+            Price: 100000
+            Materials:
+              - Material: Pieces_Of_Grudge
+                Amount: 280
+          - Enchant: Adamatine6
+            Upgrade: Adamatine7
+            Price: 1000000
+            Materials:
+              - Material: Pieces_Of_Grudge
+                Amount: 400
+          - Enchant: Adamatine7
+            Upgrade: Adamatine8
+            Price: 10000000
+            Materials:
+              - Material: Pieces_Of_Grudge
+                Amount: 600
+          - Enchant: Adamatine8
+            Upgrade: Adamatine9
+            Price: 100000000
+            Materials:
+              - Material: Pieces_Of_Grudge
+                Amount: 5000
+          - Enchant: Adamatine9
+            Upgrade: Adamatine10
+            Price: 1000000000
+            Materials:
+              - Material: Pieces_Of_Grudge
+                Amount: 10000
+          - Enchant: Affection1
+            Upgrade: Affection2
+            Price: 10000
+            Materials:
+              - Material: Pieces_Of_Grudge
+                Amount: 25
+          - Enchant: Affection2
+            Upgrade: Affection3
+            Price: 10000
+            Materials:
+              - Material: Pieces_Of_Grudge
+                Amount: 25
+          - Enchant: Affection3
+            Upgrade: Affection4
+            Price: 10000
+            Materials:
+              - Material: Pieces_Of_Grudge
+                Amount: 40
+          - Enchant: Affection4
+            Upgrade: Affection5
+            Price: 10000
+            Materials:
+              - Material: Pieces_Of_Grudge
+                Amount: 50
+          - Enchant: Affection5
+            Upgrade: Affection6
+            Price: 100000
+            Materials:
+              - Material: Pieces_Of_Grudge
+                Amount: 280
+          - Enchant: Affection6
+            Upgrade: Affection7
+            Price: 1000000
+            Materials:
+              - Material: Pieces_Of_Grudge
+                Amount: 400
+          - Enchant: Affection7
+            Upgrade: Affection8
+            Price: 10000000
+            Materials:
+              - Material: Pieces_Of_Grudge
+                Amount: 600
+          - Enchant: Affection8
+            Upgrade: Affection9
+            Price: 100000000
+            Materials:
+              - Material: Pieces_Of_Grudge
+                Amount: 5000
+          - Enchant: Affection9
+            Upgrade: Affection10
+            Price: 1000000000
+            Materials:
+              - Material: Pieces_Of_Grudge
+                Amount: 10000

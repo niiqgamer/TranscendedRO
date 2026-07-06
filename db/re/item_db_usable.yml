@@ -61612,7 +61612,7 @@ Body:
   - Id: 23165
     AegisName: Service30_AID_Buff
     Name: Premium Service Personnel
-    Type: Usable
+    Type: DelayConsume
     Trade:
       NoDrop: true
       NoTrade: true
@@ -61621,8 +61621,8 @@ Body:
       NoGuildStorage: true
       NoMail: true
       NoAuction: true
-#   Script: |
-#     /* TODO */
+    Script: |
+      duplicate_dynamic("Premium Service#hid");
   - Id: 23167
     AegisName: Green_Scroll_K
     Name: July Green Scroll
@@ -77647,7 +77647,7 @@ Body:
     AegisName: Schmidt_Antiquity
     Name: Antiquity Glast Heim (Curse-swallowed King)
     Type: Usable
-    Weight: 200
+    Weight: 0
     Flags:
       Container: true
       DropEffect: CLIENT
@@ -77658,7 +77658,7 @@ Body:
 #   Name: Antiquity Glast Heim (Curse-swallowed King (Hard))
     Name: Antiquity Glast Heim (Curse-swallowed King (Hard)
     Type: Usable
-    Weight: 200
+    Weight: 0
     Flags:
       Container: true
       DropEffect: CLIENT
@@ -77668,7 +77668,7 @@ Body:
     AegisName: C_Amdarais_Antiquity
     Name: Antiquity Glast Heim (Phantom of Amdarais)
     Type: Usable
-    Weight: 200
+    Weight: 0
     Flags:
       Container: true
       DropEffect: CLIENT
@@ -77678,7 +77678,7 @@ Body:
     AegisName: C_Himel_Antiquity
     Name: Antiquity Glast Heim (Phantom of Himmelmez)
     Type: Usable
-    Weight: 200
+    Weight: 0
     Flags:
       Container: true
       DropEffect: CLIENT
@@ -77688,7 +77688,7 @@ Body:
     AegisName: Amdarais_Antiquity
     Name: Antiquity Glast Heim (Amdarais)
     Type: Usable
-    Weight: 200
+    Weight: 0
     Flags:
       Container: true
       DropEffect: CLIENT
@@ -77698,7 +77698,7 @@ Body:
     AegisName: Amdarais_Antiquity2
     Name: Antiquity Glast Heim (Realized Amdarais)
     Type: Usable
-    Weight: 200
+    Weight: 0
     Flags:
       Container: true
       DropEffect: CLIENT
@@ -77708,7 +77708,7 @@ Body:
     AegisName: Miguel_Antiquity
     Name: Antiquity Cor (Miguel)
     Type: Usable
-    Weight: 200
+    Weight: 0
     Flags:
       Container: true
       DropEffect: CLIENT
@@ -77718,6 +77718,7 @@ Body:
     AegisName: EL_A17T_Antiquity
     Name: Antiquity Cor (EL-A17T)
     Type: Usable
+    Weight: 0
     Flags:
       Container: true
       DropEffect: CLIENT
@@ -77727,7 +77728,7 @@ Body:
     AegisName: Pitaya_Boss_Antiquity
     Name: Antiquity Mansion (Meow)
     Type: Usable
-    Weight: 200
+    Weight: 0
     Flags:
       Container: true
       DropEffect: CLIENT
@@ -77737,7 +77738,7 @@ Body:
     AegisName: Sweety_Antiquity
     Name: Antiquity Mansion (Sweety)
     Type: Usable
-    Weight: 200
+    Weight: 0
     Flags:
       Container: true
       DropEffect: CLIENT
@@ -77747,7 +77748,7 @@ Body:
     AegisName: Redpepper_Antiquity
     Name: Antiquity Mansion (Red Pepper (Kappa))
     Type: Usable
-    Weight: 200
+    Weight: 0
     Flags:
       Container: true
       DropEffect: CLIENT
@@ -77757,7 +77758,7 @@ Body:
     AegisName: Redpepper_Antiquity2
     Name: Antiquity Mansion (Red Pepper (Lambda))
     Type: Usable
-    Weight: 200
+    Weight: 0
     Flags:
       Container: true
       DropEffect: CLIENT
@@ -77767,7 +77768,7 @@ Body:
     AegisName: Demi_Freyja_Antiquity
     Name: Antiquity Villa (Twisted God)
     Type: Usable
-    Weight: 200
+    Weight: 0
     Flags:
       Container: true
       DropEffect: CLIENT
@@ -77777,7 +77778,7 @@ Body:
     AegisName: Juncea_Antiquity
     Name: Antiquity Issgard (Juncea)
     Type: Usable
-    Weight: 200
+    Weight: 0
     Flags:
       Container: true
       DropEffect: CLIENT
@@ -77787,7 +77788,7 @@ Body:
     AegisName: Aquila_Antiquity
     Name: Antiquity Issgard (Aquila)
     Type: Usable
-    Weight: 200
+    Weight: 0
     Flags:
       Container: true
       DropEffect: CLIENT
@@ -77797,7 +77798,7 @@ Body:
     AegisName: Aquila_Antiquity2
     Name: Antiquity Issgard (Aquila (First Class))
     Type: Usable
-    Weight: 200
+    Weight: 0
     Flags:
       Container: true
       DropEffect: CLIENT
@@ -77807,7 +77808,7 @@ Body:
     AegisName: F_Iceslug_Antiquiy
     Name: Antiquity Issgard (Fallen Angel Slug)
     Type: Usable
-    Weight: 200
+    Weight: 0
     Flags:
       Container: true
       DropEffect: CLIENT
@@ -77817,7 +77818,7 @@ Body:
     AegisName: Lasgand_Antiquity
     Name: Antiquity Issgard (Ultimate Lasgand)
     Type: Usable
-    Weight: 200
+    Weight: 0
     Flags:
       Container: true
       DropEffect: CLIENT
@@ -77827,7 +77828,7 @@ Body:
     AegisName: Lasgand_Antiquity2
     Name: Antiquity Issgard (Ultimate Lasgand (Hard))
     Type: Usable
-    Weight: 200
+    Weight: 0
     Flags:
       Container: true
       DropEffect: CLIENT
@@ -77837,7 +77838,7 @@ Body:
     AegisName: Celine_Kimi_Antiquity
     Name: Antiquity Toy Factory (Celine Kimi)
     Type: Usable
-    Weight: 200
+    Weight: 0
     Flags:
       Container: true
       DropEffect: CLIENT
@@ -77847,7 +77848,7 @@ Body:
     AegisName: Sakray_Antiquity
     Name: Antiquity Remorse (Sakray)
     Type: Usable
-    Weight: 200
+    Weight: 0
     Flags:
       Container: true
       DropEffect: CLIENT
@@ -77857,7 +77858,7 @@ Body:
     AegisName: Unknown_Antiquity
     Name: Antiquity Somatology Dungeon (Unknown Swordsman)
     Type: Usable
-    Weight: 200
+    Weight: 0
     Flags:
       Container: true
       DropEffect: CLIENT
@@ -77867,7 +77868,7 @@ Body:
     AegisName: Thanatos_Antiquity
     Name: Antiquity Thanatos Tower (Memory of Thanatos)
     Type: Usable
-    Weight: 200
+    Weight: 0
     Flags:
       Container: true
       DropEffect: CLIENT
@@ -77877,7 +77878,7 @@ Body:
     AegisName: Airboat_Antiquity
     Name: Antiquity Crash Site (Unidentified Creature)
     Type: Usable
-    Weight: 200
+    Weight: 0
     Flags:
       Container: true
       DropEffect: CLIENT

@@ -144,3 +144,27 @@ Body:
     Script: |
       specialeffect2 18;
       getitem 9900000,1000;
+  - Id: 9955507
+    AegisName: OldHeadgearEnchant
+    Name: "Old Headgear Enchant"
+    Type: DelayConsume
+    Weight: 0
+    Flags:
+      BuyingStore: true
+      DropEffect: CLIENT
+    Trade:
+      NoSell: true
+    Script: |
+      item_enchant(1001);
+  - Id: 9955517
+    AegisName: GEHeadEnchant
+    Name: "Good and Evil Headgear Enchant"
+    Type: DelayConsume
+    Weight: 0
+    Flags:
+      BuyingStore: true
+      DropEffect: CLIENT
+    Trade:
+      NoSell: true
+    Script: |
+      item_enchant(67);

@@ -287,7 +287,6 @@ Body:
                 DowngradeAmount: 1
           - Level: 15
             Bonus: 3600
-            BlacksmithBlessingAmount: 29
             BroadcastSuccess: true
             BroadcastFailure: true
             Chances:
@@ -308,7 +307,6 @@ Body:
                 Material: T_A1_Refining
           - Level: 16
             Bonus: 4000
-            BlacksmithBlessingAmount: 37
             BroadcastSuccess: true
             BroadcastFailure: true
             Chances:
@@ -329,7 +327,6 @@ Body:
                 Material: T_A1_Refining
           - Level: 17
             Bonus: 4500
-            BlacksmithBlessingAmount: 46
             BroadcastSuccess: true
             BroadcastFailure: true
             Chances:
@@ -350,7 +347,6 @@ Body:
                 Material: T_A1_Refining
           - Level: 18
             Bonus: 5000
-            BlacksmithBlessingAmount: 56
             BroadcastSuccess: true
             BroadcastFailure: true
             Chances:
@@ -371,7 +367,6 @@ Body:
                 Material: T_A1_Refining
           - Level: 19
             Bonus: 5500
-            BlacksmithBlessingAmount: 67
             BroadcastSuccess: true
             BroadcastFailure: true
             Chances:
@@ -392,7 +387,6 @@ Body:
                 Material: T_A1_Refining
           - Level: 20
             Bonus: 6000
-            BlacksmithBlessingAmount: 79
             BroadcastSuccess: true
             BroadcastFailure: true
             Chances:
@@ -602,7 +596,6 @@ Body:
                 BreakingRate: 10000
           - Level: 15
             Bonus: 4320
-            BlacksmithBlessingAmount: 29
             BroadcastSuccess: true
             BroadcastFailure: true
             Chances:
@@ -622,7 +615,6 @@ Body:
                 Material: T_A2_Refining
           - Level: 16
             Bonus: 4800
-            BlacksmithBlessingAmount: 37
             BroadcastSuccess: true
             BroadcastFailure: true
             Chances:
@@ -642,7 +634,6 @@ Body:
                 Material: T_A2_Refining
           - Level: 17
             Bonus: 5400
-            BlacksmithBlessingAmount: 46
             BroadcastSuccess: true
             BroadcastFailure: true
             Chances:
@@ -662,7 +653,6 @@ Body:
                 Material: T_A2_Refining
           - Level: 18
             Bonus: 6000
-            BlacksmithBlessingAmount: 56
             BroadcastSuccess: true
             BroadcastFailure: true
             Chances:
@@ -682,7 +672,6 @@ Body:
                 Material: T_A2_Refining
           - Level: 19
             Bonus: 6600
-            BlacksmithBlessingAmount: 67
             BroadcastSuccess: true
             BroadcastFailure: true
             Chances:
@@ -702,7 +691,6 @@ Body:
                 Material: T_A2_Refining
           - Level: 20
             Bonus: 7200
-            BlacksmithBlessingAmount: 79
             BroadcastSuccess: true
             BroadcastFailure: true
             Chances:
@@ -960,7 +948,6 @@ Body:
           - Level: 15
             Bonus: 3000
             RandomBonus: 2400
-            BlacksmithBlessingAmount: 29
             BroadcastSuccess: true
             BroadcastFailure: true
             Chances:
@@ -982,7 +969,6 @@ Body:
           - Level: 16
             Bonus: 4800
             RandomBonus: 2700
-            BlacksmithBlessingAmount: 37
             BroadcastSuccess: true
             BroadcastFailure: true
             Chances:
@@ -1004,7 +990,6 @@ Body:
           - Level: 17
             Bonus: 5100
             RandomBonus: 3000
-            BlacksmithBlessingAmount: 46
             BroadcastSuccess: true
             BroadcastFailure: true
             Chances:
@@ -1026,7 +1011,6 @@ Body:
           - Level: 18
             Bonus: 5400
             RandomBonus: 3300
-            BlacksmithBlessingAmount: 56
             BroadcastSuccess: true
             BroadcastFailure: true
             Chances:
@@ -1048,7 +1032,6 @@ Body:
           - Level: 19
             Bonus: 5700
             RandomBonus: 3600
-            BlacksmithBlessingAmount: 67
             BroadcastSuccess: true
             BroadcastFailure: true
             Chances:
@@ -1070,7 +1053,6 @@ Body:
           - Level: 20
             Bonus: 6000
             RandomBonus: 3900
-            BlacksmithBlessingAmount: 79
             BroadcastSuccess: true
             BroadcastFailure: true
             Chances:
@@ -1331,7 +1313,6 @@ Body:
           - Level: 15
             Bonus: 4500
             RandomBonus: 4500
-            BlacksmithBlessingAmount: 29
             BroadcastSuccess: true
             BroadcastFailure: true
             Chances:
@@ -1353,7 +1334,6 @@ Body:
           - Level: 16
             Bonus: 8000
             RandomBonus: 5000
-            BlacksmithBlessingAmount: 37
             BroadcastSuccess: true
             BroadcastFailure: true
             Chances:
@@ -1375,7 +1355,6 @@ Body:
           - Level: 17
             Bonus: 8500
             RandomBonus: 5500
-            BlacksmithBlessingAmount: 46
             BroadcastSuccess: true
             BroadcastFailure: true
             Chances:
@@ -1397,7 +1376,6 @@ Body:
           - Level: 18
             Bonus: 9000
             RandomBonus: 6000
-            BlacksmithBlessingAmount: 56
             BroadcastSuccess: true
             BroadcastFailure: true
             Chances:
@@ -1419,7 +1397,6 @@ Body:
           - Level: 19
             Bonus: 9500
             RandomBonus: 6500
-            BlacksmithBlessingAmount: 67
             BroadcastSuccess: true
             BroadcastFailure: true
             Chances:
@@ -1441,7 +1418,6 @@ Body:
           - Level: 20
             Bonus: 10000
             RandomBonus: 7000
-            BlacksmithBlessingAmount: 79
             BroadcastSuccess: true
             BroadcastFailure: true
             Chances:
@@ -1706,7 +1682,6 @@ Body:
           - Level: 15
             Bonus: 7500
             RandomBonus: 8000
-            BlacksmithBlessingAmount: 29
             BroadcastSuccess: true
             BroadcastFailure: true
             Chances:
@@ -1728,7 +1703,6 @@ Body:
           - Level: 16
             Bonus: 11200
             RandomBonus: 8800
-            BlacksmithBlessingAmount: 37
             BroadcastSuccess: true
             BroadcastFailure: true
             Chances:
@@ -1750,7 +1724,6 @@ Body:
           - Level: 17
             Bonus: 11900
             RandomBonus: 9600
-            BlacksmithBlessingAmount: 46
             BroadcastSuccess: true
             BroadcastFailure: true
             Chances:
@@ -1772,7 +1745,6 @@ Body:
           - Level: 18
             Bonus: 12600
             RandomBonus: 10400
-            BlacksmithBlessingAmount: 56
             BroadcastSuccess: true
             BroadcastFailure: true
             Chances:
@@ -1794,7 +1766,6 @@ Body:
           - Level: 19
             Bonus: 13300
             RandomBonus: 11200
-            BlacksmithBlessingAmount: 67
             BroadcastSuccess: true
             BroadcastFailure: true
             Chances:
@@ -1816,7 +1787,6 @@ Body:
           - Level: 20
             Bonus: 14000
             RandomBonus: 12000
-            BlacksmithBlessingAmount: 79
             BroadcastSuccess: true
             BroadcastFailure: true
             Chances:
@@ -2085,7 +2055,6 @@ Body:
           - Level: 15
             Bonus: 10500
             RandomBonus: 15400
-            BlacksmithBlessingAmount: 29
             BroadcastSuccess: true
             BroadcastFailure: true
             Chances:
@@ -2107,7 +2076,6 @@ Body:
           - Level: 16
             Bonus: 16000
             RandomBonus: 16800
-            BlacksmithBlessingAmount: 37
             BroadcastSuccess: true
             BroadcastFailure: true
             Chances:
@@ -2129,7 +2097,6 @@ Body:
           - Level: 17
             Bonus: 17000
             RandomBonus: 18200
-            BlacksmithBlessingAmount: 46
             BroadcastSuccess: true
             BroadcastFailure: true
             Chances:
@@ -2151,7 +2118,6 @@ Body:
           - Level: 18
             Bonus: 18000
             RandomBonus: 19600
-            BlacksmithBlessingAmount: 56
             BroadcastSuccess: true
             BroadcastFailure: true
             Chances:
@@ -2173,7 +2139,6 @@ Body:
           - Level: 19
             Bonus: 19000
             RandomBonus: 21000
-            BlacksmithBlessingAmount: 67
             BroadcastSuccess: true
             BroadcastFailure: true
             Chances:
@@ -2195,7 +2160,6 @@ Body:
           - Level: 20
             Bonus: 20000
             RandomBonus: 22400
-            BlacksmithBlessingAmount: 79
             BroadcastSuccess: true
             BroadcastFailure: true
             Chances:
@@ -2405,7 +2369,6 @@ Body:
                 BreakingRate: 10000
           - Level: 15
             Bonus: 12000
-            BlacksmithBlessingAmount: 29
             BroadcastSuccess: true
             BroadcastFailure: true
             Chances:
@@ -2425,7 +2388,6 @@ Body:
                 Material: T_W2_Refining
           - Level: 16
             Bonus: 12800
-            BlacksmithBlessingAmount: 37
             BroadcastSuccess: true
             BroadcastFailure: true
             Chances:
@@ -2445,7 +2407,6 @@ Body:
                 Material: T_W2_Refining
           - Level: 17
             Bonus: 13600
-            BlacksmithBlessingAmount: 46
             BroadcastSuccess: true
             BroadcastFailure: true
             Chances:
@@ -2465,7 +2426,6 @@ Body:
                 Material: T_W2_Refining
           - Level: 18
             Bonus: 14400
-            BlacksmithBlessingAmount: 56
             BroadcastSuccess: true
             BroadcastFailure: true
             Chances:
@@ -2485,7 +2445,6 @@ Body:
                 Material: T_W2_Refining
           - Level: 19
             Bonus: 15200
-            BlacksmithBlessingAmount: 67
             BroadcastSuccess: true
             BroadcastFailure: true
             Chances:
@@ -2505,7 +2464,6 @@ Body:
                 Material: T_W2_Refining
           - Level: 20
             Bonus: 16000
-            BlacksmithBlessingAmount: 79
             BroadcastSuccess: true
             BroadcastFailure: true
             Chances:
@@ -2759,7 +2717,6 @@ Body:
                 Material: HD_Carnium
                 DowngradeAmount: 1
           - Level: 15
-            BlacksmithBlessingAmount: 29
             BroadcastSuccess: true
             BroadcastFailure: true
             Chances:
@@ -2779,7 +2736,6 @@ Body:
                 Price: 10000000
                 Material: T_A1_Refining
           - Level: 16
-            BlacksmithBlessingAmount: 37
             BroadcastSuccess: true
             BroadcastFailure: true
             Chances:
@@ -2799,7 +2755,6 @@ Body:
                 Price: 10000000
                 Material: T_A1_Refining
           - Level: 17
-            BlacksmithBlessingAmount: 46
             BroadcastSuccess: true
             BroadcastFailure: true
             Chances:
@@ -2819,7 +2774,6 @@ Body:
                 Price: 10000000
                 Material: T_A1_Refining
           - Level: 18
-            BlacksmithBlessingAmount: 56
             BroadcastSuccess: true
             BroadcastFailure: true
             Chances:
@@ -2839,7 +2793,6 @@ Body:
                 Price: 10000000
                 Material: T_A1_Refining
           - Level: 19
-            BlacksmithBlessingAmount: 67
             BroadcastSuccess: true
             BroadcastFailure: true
             Chances:
@@ -2859,7 +2812,6 @@ Body:
                 Price: 10000000
                 Material: T_A1_Refining
           - Level: 20
-            BlacksmithBlessingAmount: 79
             BroadcastSuccess: true
             BroadcastFailure: true
             Chances:
@@ -3114,7 +3066,6 @@ Body:
                 Material: HD_Bradium
                 DowngradeAmount: 1
           - Level: 15
-            BlacksmithBlessingAmount: 29
             BroadcastSuccess: true
             BroadcastFailure: true
             Chances:
@@ -3134,7 +3085,6 @@ Body:
                 Price: 10000000
                 Material: T_W1_Refining
           - Level: 16
-            BlacksmithBlessingAmount: 37
             BroadcastSuccess: true
             BroadcastFailure: true
             Chances:
@@ -3154,7 +3104,6 @@ Body:
                 Price: 10000000
                 Material: T_W1_Refining
           - Level: 17
-            BlacksmithBlessingAmount: 46
             BroadcastSuccess: true
             BroadcastFailure: true
             Chances:
@@ -3174,7 +3123,6 @@ Body:
                 Price: 10000000
                 Material: T_W1_Refining
           - Level: 18
-            BlacksmithBlessingAmount: 56
             BroadcastSuccess: true
             BroadcastFailure: true
             Chances:
@@ -3194,7 +3142,6 @@ Body:
                 Price: 10000000
                 Material: T_W1_Refining
           - Level: 19
-            BlacksmithBlessingAmount: 67
             BroadcastSuccess: true
             BroadcastFailure: true
             Chances:
@@ -3214,7 +3161,6 @@ Body:
                 Price: 10000000
                 Material: T_W1_Refining
           - Level: 20
-            BlacksmithBlessingAmount: 79
             BroadcastSuccess: true
             BroadcastFailure: true
             Chances:

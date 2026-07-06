@@ -1,0 +1,104 @@
+izlude,111,153,4	script	Enchancer	4_F_VACATION_MIRIAM,{
+
+	chatmes "Welcome!";
+	mes "Enchant Enchant";
+	mes "and Enchant!";
+	next;
+	switch(select(
+	
+	"~ Enchant Biolab Old Headgear",
+	"~ Enchant Good and Evil Headgear",
+	"~ Enchant Snow Flower Armor/Robe",
+	"~ Enchant Snow Flower Manteau/Muffler",
+	"~ Enchant Snow Flower Boots/Shoes",
+	"~ Enchant Snow Flower Pendant/Necklace",
+	"~ Enchant Snow Flower Ring/Earring",
+	"~ Enchant Glacier Weapon",
+	"~ Enchant Dim Glacier Weapon",
+	"~~ Snow Flower Materials Shop",
+	"~~ Glacier / Dim Glacier Materials Shop",
+	"~~ Antiquity Shop",
+	"Cancle"
+	
+	)) {
+		case 1:
+			mes "Yep!";
+			close2;
+			item_enchant(1001);
+			end;
+		case 2:
+			mes "Yep!";
+			close2;
+			item_enchant(67);
+			end;
+		case 3:
+			mes "Yep!";
+			close2;
+			item_enchant(26);
+			end;
+		case 4:
+			mes "Yep!";
+			close2;
+			item_enchant(27);
+			end;
+		case 5:
+			mes "Yep!";
+			close2;
+			item_enchant(28);
+			end;
+		case 6:
+			mes "Yep!";
+			close2;
+			item_enchant(29);
+			end;
+		case 7:
+			mes "Yep!";
+			close2;
+			item_enchant(30);
+			end;
+		case 8:
+			mes "Yep!";
+			close2;
+			item_enchant(31);
+			end;
+		case 9:
+			mes "Yep!";
+			close2;
+			item_enchant(47);
+			end;
+		case 10:
+			mes "Yep!";
+			close2;
+			callshop "EnchantShopSnowF",1;
+			end;
+		case 11:
+			mes "Yep!";
+			close2;
+			callshop "EnchantShopDimW",1;
+			end;
+		case 12:
+			mes "Yep!";
+			close2;
+			callshop "EnchantShopAntiq",1;
+			end;
+		case 13:
+			mes "Bye, guys!";
+			close2;
+			end;
+	}
+	close;
+
+OnInit: 
+initnpctimer;
+
+OnTimer1000:
+    showscript("I'm Enchancer!!!");
+    setnpctimer 0;
+    end;
+}
+
+-	shop	EnchantShopSnowF	-1,311098:10000,311099:10000,311100:10000,311101:10000,311102:10000,311103:10000,311104:10000,311105:10000,311106:10000,311107:10000,311108:10000,311109:10000,311110:10000,311111:10000,311112:10000,311113:10000,311114:10000,311115:10000,311116:10000,311117:10000,311118:10000,311119:10000,311120:10000,311121:10000,311122:10000,311123:10000,311124:10000,311125:10000,311126:10000,311127:10000,311128:10000,311129:10000,311130:10000,311131:10000,311132:10000,311133:10000,311134:10000,311135:10000,311136:10000,311137:10000,311138:10000,311139:10000,311140:10000,311141:10000,311142:10000,311143:10000,311144:10000,311145:10000,311146:10000,311147:10000,311148:10000,311149:10000,311150:10000,311151:10000,311152:10000,311153:10000,311154:10000,311155:10000,311156:10000,311157:10000,311158:10000,311159:10000,311160:10000,311161:10000,311162:10000,311163:10000,311164:10000,311165:10000,311166:10000,311167:10000,311168:10000,311169:10000,311170:10000,311171:10000,311172:10000,311173:10000,311174:10000,311175:10000,311176:10000,311177:10000,311178:10000,311179:10000,311180:10000,311181:10000,311182:10000,311183:10000,311184:10000,311185:10000,311186:10000,311187:10000,311188:10000,311189:10000,311190:10000,311191:10000
+
+-	shop	EnchantShopDimW	-1,101188:100000,1000811:100,1000812:100,1000813:100,1000814:100
+
+-	shop	EnchantShopAntiq	-1,102551:100,102552:100,102553:100,102554:100,102555:100,102556:100,102557:100,102558:100,102559:100,102560:100,102561:100,102562:100,102563:100,102564:100,102565:100,102566:100,102567:100,102568:100,102569:100,102570:100,102571:100,102572:100,102573:100

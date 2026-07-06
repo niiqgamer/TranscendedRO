@@ -1952,6 +1952,28 @@ Body:
       bonus2 bAddSize,Size_All,20;
       bonus2 bMagicAddSize,Size_All,20;
       bonus2 bExpAddRace,RC_All,20;
+  - Id: 490807
+    AegisName: CA_Evil_Ring_TH
+    Name: "Ring of Evil (Cardinal)"
+    Type: Armor
+    Weight: 100
+    Defense: 0
+    Slots: 1
+    Jobs:
+      Priest: true
+    Classes:
+      All_Third: true
+      Fourth: true
+    Locations:
+      Right_Accessory: true
+    ArmorLevel: 1
+    EquipLevelMin: 215
+    Script: |
+      bonus bBaseAtk,100;
+      bonus bDelayRate,-10;
+      bonus bPow,10;
+      bonus bCritical,15;
+      bonus2 bAddClass,Class_All,15;
   - Id: 490809
     AegisName: Nebula_Nec_LT_TH
     Name: Nebula Pendant-LT
@@ -1967,6 +1989,72 @@ Body:
       bonus bMatk,100;
       bonus bDelayRate,-10;
       bonus bAllStats,10;
+  - Id: 490812
+    AegisName: DK_Evil_Ring_TH
+    Name: "Ring of Evil (Dragon Knight)"
+    Type: Armor
+    Weight: 100
+    Defense: 0
+    Slots: 1
+    Jobs:
+      Knight: true
+    Classes:
+      All_Third: true
+      Fourth: true
+    Locations:
+      Right_Accessory: true
+    ArmorLevel: 1
+    EquipLevelMin: 215
+    Script: |
+      bonus bBaseAtk,100;
+      bonus bDelayRate,-10;
+      bonus bPow,10;
+      bonus bCritical,15;
+      bonus2 bAddClass,Class_All,15;
+  - Id: 490814
+    AegisName: TR_Evil_Ring_TH
+    Name: "Ring of Evil (Troubadour & Trouvere)"
+    Type: Armor
+    Weight: 100
+    Defense: 0
+    Slots: 1
+    Jobs:
+      BardDancer: true
+    Classes:
+      All_Third: true
+      Fourth: true
+    Locations:
+      Right_Accessory: true
+    ArmorLevel: 1
+    EquipLevelMin: 215
+    Script: |
+      bonus bMatk,100;
+      bonus bDelayRate,-10;
+      bonus bSpl,10;
+      bonus bVariableCastRate,-15;
+      bonus2 bMagicAddClass,Class_All,15;
+  - Id: 490815
+    AegisName: WH_Evil_Ring_TH
+    Name: "Ring of Evil (Windhawk)"
+    Type: Armor
+    Weight: 100
+    Defense: 0
+    Slots: 1
+    Jobs:
+      Hunter: true
+    Classes:
+      All_Third: true
+      Fourth: true
+    Locations:
+      Right_Accessory: true
+    ArmorLevel: 1
+    EquipLevelMin: 215
+    Script: |
+      bonus bBaseAtk,100;
+      bonus bDelayRate,-10;
+      bonus bCon,10;
+      bonus bFixedCast,-500;
+      bonus2 bAddClass,Class_All,15;
   - Id: 490817
     AegisName: Alnilam_Necklace_US
     Name: Necklace of Alnilam
@@ -1989,6 +2077,138 @@ Body:
          bonus2 bExpAddRace,RC_All,25;
          bonus2 bDropAddRace,RC_All,25;
       }
+  - Id: 490837
+    AegisName: ABC_Evil_Ring_TH
+    Name: "Ring of Evil (Abyss Chaser)"
+    Type: Armor
+    Weight: 100
+    Defense: 0
+    Slots: 1
+    Jobs:
+      Rogue: true
+    Classes:
+      All_Third: true
+      Fourth: true
+    Locations:
+      Right_Accessory: true
+    ArmorLevel: 1
+    EquipLevelMin: 215
+    Script: |
+      bonus bBaseAtk,100;
+      bonus bDelayRate,-10;
+      bonus bCon,10;
+      bonus bCritical,15;
+      bonus2 bAddClass,Class_All,15;
+  - Id: 490840
+    AegisName: IG_Evil_Ring_TH
+    Name: "Ring of Evil (Imperial Guard)"
+    Type: Armor
+    Weight: 100
+    Defense: 0
+    Slots: 1
+    Jobs:
+      Crusader: true
+    Classes:
+      All_Third: true
+      Fourth: true
+    Locations:
+      Right_Accessory: true
+    ArmorLevel: 1
+    EquipLevelMin: 215
+    Script: |
+      bonus bMatk,100;
+      bonus bDelayRate,-10;
+      bonus bSpl,10;
+      bonus bFixedCast,-500;
+      bonus2 bMagicAddClass,Class_All,15;
+  - Id: 490844
+    AegisName: EM_Evil_Ring_TH
+    Name: "Ring of Evil (Elemental Master)"
+    Type: Armor
+    Weight: 100
+    Defense: 0
+    Slots: 1
+    Jobs:
+      Sage: true
+    Classes:
+      All_Third: true
+      Fourth: true
+    Locations:
+      Right_Accessory: true
+    ArmorLevel: 1
+    EquipLevelMin: 215
+    Script: |
+      bonus bMatk,100;
+      bonus bDelayRate,-10;
+      bonus bSpl,10;
+      bonus bFixedCast,-500;
+      bonus2 bMagicAddClass,Class_All,15;
+  - Id: 490849
+    AegisName: IQ_Evil_Ring_TH
+    Name: "Ring of Evil (Inquisitor)"
+    Type: Armor
+    Weight: 100
+    Defense: 0
+    Slots: 1
+    Jobs:
+      Monk: true
+    Classes:
+      All_Third: true
+      Fourth: true
+    Locations:
+      Right_Accessory: true
+    ArmorLevel: 1
+    EquipLevelMin: 215
+    Script: |
+      bonus bBaseAtk,100;
+      bonus bDelayRate,-10;
+      bonus bPow,10;
+      bonus bCritical,15;
+      bonus2 bAddClass,Class_All,15;
+  - Id: 490852
+    AegisName: SHC_Evil_Ring_TH
+    Name: "Ring of Evil (Shadow Cross)"
+    Type: Armor
+    Weight: 100
+    Defense: 0
+    Slots: 1
+    Jobs:
+      Assassin: true
+    Classes:
+      All_Third: true
+      Fourth: true
+    Locations:
+      Right_Accessory: true
+    ArmorLevel: 1
+    EquipLevelMin: 215
+    Script: |
+      bonus bBaseAtk,100;
+      bonus bDelayRate,-10;
+      bonus bPow,10;
+      bonus bCritical,15;
+      bonus2 bAddClass,Class_All,15;
+  - Id: 490853
+    AegisName: MT_Evil_Ring_TH
+    Name: "Ring of Evil (Meister)"
+    Type: Armor
+    Weight: 100
+    Defense: 0
+    Slots: 1
+    Jobs:
+      Blacksmith: true
+    Classes:
+      All_Third: true
+      Fourth: true
+    Locations:
+      Right_Accessory: true
+    ArmorLevel: 1
+    EquipLevelMin: 215
+    Script: |
+      bonus bBaseAtk,100;
+      bonus bDelayRate,-10;
+      bonus bPow,10;
+      bonus bCritical,15;
+      bonus2 bAddClass,Class_All,15;
   - Id: 490856
     AegisName: SH_Evil_Ring_TH
     Name: "Ring of Evil (Spirit Handler)"
@@ -2009,6 +2229,113 @@ Body:
       bonus bSpl,10;
       bonus bFixedCast,-500;
       bonus2 bMagicAddClass,Class_All,15;
+  - Id: 490857
+    AegisName: BO_Evil_Ring_TH
+    Name: "Ring of Evil (Biolo)"
+    Type: Armor
+    Weight: 100
+    Defense: 0
+    Slots: 1
+    Jobs:
+      Alchemist: true
+    Classes:
+      All_Third: true
+      Fourth: true
+    Locations:
+      Right_Accessory: true
+    ArmorLevel: 1
+    EquipLevelMin: 215
+    Script: |
+      bonus bBaseAtk,100;
+      bonus bDelayRate,-10;
+      bonus bPow,10;
+      bonus bCritical,15;
+      bonus2 bAddClass,Class_All,15;
+  - Id: 490860
+    AegisName: SS_Evil_Ring_TH
+    Name: "Ring of Evil (Shinkiro&Shiranui)"
+    Type: Armor
+    Weight: 100
+    Defense: 0
+    Slots: 1
+    Jobs:
+      KagerouOboro: true
+    Classes:
+      All_Third: true
+      Fourth: true
+    Locations:
+      Right_Accessory: true
+    ArmorLevel: 1
+    EquipLevelMin: 215
+    Script: |
+      bonus bMatk,100;
+      bonus bDelayRate,-10;
+      bonus bSpl,10;
+      bonus2 bMagicAddClass,Class_All,15;
+  - Id: 490869
+    AegisName: SKE_Evil_Ring_TH
+    Name: "Ring of Evil (Sky Emperor)"
+    Type: Armor
+    Weight: 100
+    Defense: 0
+    Slots: 1
+    Jobs:
+      StarGladiator: true
+    Classes:
+      All_Third: true
+      Fourth: true
+    Locations:
+      Right_Accessory: true
+    ArmorLevel: 1
+    EquipLevelMin: 215
+    Script: |
+      bonus bBaseAtk,100;
+      bonus bDelayRate,-10;
+      bonus bPow,10;
+      bonus bAtkRate,6;
+      bonus2 bAddClass,Class_All,15;
+  - Id: 490872
+    AegisName: NW_Evil_Ring_TH
+    Name: "Ring of Evil (Night Watch)"
+    Type: Armor
+    Weight: 100
+    Defense: 0
+    Slots: 1
+    Jobs:
+      Rebellion: true
+    Classes:
+      Third: true
+    Locations:
+      Right_Accessory: true
+    ArmorLevel: 1
+    EquipLevelMin: 215
+    Script: |
+      bonus bBaseAtk,100;
+      bonus bDelayRate,-10;
+      bonus bCon,10;
+      bonus bAtkRate,6;
+      bonus2 bAddClass,Class_All,15;
+  - Id: 490873
+    AegisName: NW_Evil_Ring_TH2
+    Name: "Ring of Evil (Night Watch II)"
+    Type: Armor
+    Weight: 100
+    Defense: 0
+    Slots: 1
+    Jobs:
+      Rebellion: true
+    Classes:
+      Third: true
+    Locations:
+      Right_Accessory: true
+    ArmorLevel: 1
+    EquipLevelMin: 215
+    Script: |
+      bonus bBaseAtk,100;
+      bonus bDelayRate,-10;
+      bonus bCon,10;
+      bonus bCritical,15;
+      bonus2 bAddClass,Class_All,15;
   - Id: 490874
     AegisName: AM_Evil_Ring_TH
     Name: "Ring of Evil (Arch Mage)"
@@ -2020,6 +2347,49 @@ Body:
       Wizard: true
     Classes:
       All_Third: true
+      Fourth: true
+    Locations:
+      Right_Accessory: true
+    ArmorLevel: 1
+    EquipLevelMin: 215
+    Script: |
+      bonus bMatk,100;
+      bonus bDelayRate,-10;
+      bonus bSpl,10;
+      bonus bFixedCast,-500;
+      bonus2 bMagicAddClass,Class_All,15;
+  - Id: 490882
+    AegisName: SOA_Evil_Ring_TH
+    Name: "Ring of Evil (Soul Ascetic)"
+    Type: Armor
+    Weight: 100
+    Defense: 0
+    Slots: 1
+    Jobs:
+      SoulLinker: true
+    Classes:
+      All_Third: true
+      Fourth: true
+    Locations:
+      Right_Accessory: true
+    ArmorLevel: 1
+    EquipLevelMin: 215
+    Script: |
+      bonus bMatk,100;
+      bonus bDelayRate,-10;
+      bonus bSpl,10;
+      bonus bFixedCast,-500;
+      bonus2 bMagicAddClass,Class_All,15;
+  - Id: 490886
+    AegisName: HN_Evil_Ring_TH
+    Name: "Ring of Evil (Hyper Novice)"
+    Type: Armor
+    Weight: 100
+    Defense: 0
+    Slots: 1
+    Jobs:
+      SuperNovice: true
+    Classes:
       Fourth: true
     Locations:
       Right_Accessory: true

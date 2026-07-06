@@ -2,19 +2,9 @@
 
 OnNPCKillEvent:
 	if (vip_status(1)) {
-		if ( rand( 100 ) <= 3 ) {
-			getitem(9900002,1);// Token_Of_Transcended
-		}
-		if ( rand( 100 ) <= 7 ) {
-			getitem(9955500,1);// Transcended_Coin
-		}
+		if ( rand( 101 ) <= 3 ) { getitem(9955500,1); }
 	} else {
-		if ( rand( 251 ) <= 3 ) {
-			getitem(9900002,1);// Token_Of_Transcended
-		}
-		if ( rand( 251 ) <= 7 ) {
-			getitem(9955500,1);// Transcended_Coin
-		}
+		if ( rand( 251 ) <= 3 ) { getitem(9955500,1); }
 	}
 	end;
 }
