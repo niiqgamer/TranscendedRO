@@ -15,7 +15,7 @@
 //= 5.1 Cleaned and standardized, mostly. [Euphy]
 //============================================================
 
-prontera,160,155,4	script	Disguise Event	795,{
+izlude,128,124,4	script	Disguise Event	795,{
 
 	// Currently set to run every two hours.
 	// To change times, edit the OnClock labels below.

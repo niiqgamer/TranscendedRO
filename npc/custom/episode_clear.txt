@@ -1,4 +1,5 @@
-prt_cas,373,77,3	script	Balheele#episkip	4_F_VALKYRIE,{
+//prt_cas,373,77,3	script	Balheele#episkip	4_F_VALKYRIE,{
+sec_in02,144,168,3	script	Balheele#episkip	4_F_VALKYRIE,{
 	mes "[Balheele]";
 	mes "...I feel like our eyes are meeting strangely...";
 	mes "Hey, can you see me?";
@@ -151,6 +152,14 @@ prt_cas,373,77,3	script	Balheele#episkip	4_F_VALKYRIE,{
 			close;
 	}
 	end;
+
+OnInit: 
+initnpctimer;
+
+OnTimer1000:
+    showscript("Episode Clear!!!");
+    setnpctimer 0;
+    end;
 }
 
 function	script	F_EpDesc	{

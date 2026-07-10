@@ -114426,7 +114426,7 @@ Body:
     AttackDelay: 300
     AttackMotion: 280
     DamageMotion: 380
-    DamageTaken: 100
+    DamageTaken: 10
     Ai: 05
     Class: Boss
     Modes:
@@ -123795,6 +123795,48 @@ Body:
 #    AegisName: VH_AIRBOAT_BOSS
 #  - Id: 21829
 #    AegisName: VH_BETELGEUSE
+  - Id: 21829
+    AegisName: VH_BETELGEUSE
+    Name: Betelgeuse
+    Level: 258
+    Hp: 200000000
+    Attack: 5000
+    Attack2: 8000
+    Defense: 346
+    MagicDefense: 102
+    Resistance: 5555
+    MagicResistance: 5555
+    Str: 211
+    Agi: 211
+    Vit: 132
+    Int: 152
+    Dex: 279
+    Luk: 108
+    AttackRange: 3
+    SkillRange: 12
+    ChaseRange: 12
+    Size: Large
+    Race: Dragon
+    Element: Neutral
+    ElementLevel: 2
+    WalkSpeed: 200
+    AttackDelay: 300
+    AttackMotion: 280
+    DamageMotion: 380
+    DamageTaken: 1
+    Ai: 05
+    Class: Boss
+    Modes:
+      CastSensorChase: true
+      Angry: true
+      Detector: true
+      KnockBackImmune: true
+      StatusImmune: true
+      Mvp: true
+    Drops:
+      - Item: Helm_Of_Faith_Hammer
+        Rate: 10
+        StealProtected: true
 #  - Id: 21830
 #    AegisName: VH_BURNING_FANG
 #  - Id: 21831

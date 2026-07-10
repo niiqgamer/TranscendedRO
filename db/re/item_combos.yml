@@ -60400,7 +60400,7 @@ Body:
           - Injustice_Power    # 312021
     Script: |
       skill "RA_UNLIMIT",1;
-      bonus4 bAutoSpellOnSkill,"ABC_FRENZY_SHOT","ABC_CHAIN_REACTION_SHOT",max(getskilllv("ABC_CHAIN_REACTION_SHOT"),1),400;
+      bonus4 bAutoSpellOnSkill,"ABC_FRENZY_SHOT","ABC_CHAIN_REACTION_SHOT",5,400;
   - Combos:
       - Combo:
           - IG_Evil_Ring_TH    # 490840
@@ -60582,7 +60582,7 @@ Body:
           - BO_Evil_Ring_TH    # 490857
           - Injustice_Power    # 312021
     Script: |
-      bonus4 bAutoSpellOnSkill,"BO_MAYHEMIC_THORNS","BO_MAYHEMIC_THORNS",max(getskilllv("BO_MAYHEMIC_THORNS"),1),400;
+      bonus2 bSkillCooldown,"BO_MAYHEMIC_THORNS",-300;
   - Combos:
       - Combo:
           - SS_Evil_Ring_TH    # 490860
@@ -60721,7 +60721,7 @@ Body:
           - Injustice_Power    # 312021
     Script: |
       autobonus "{ bonus bCon,50; bonus bPAtk,10; bonus2 bHPLossRate,500,1000; }",30,10000,BF_NORMAL|BF_WEAPON,"{ specialeffect2 EF_POTION_BERSERK; }";
-      bonus4 bAutoSpellOnSkill,"NW_ONLY_ONE_BULLET","NW_ONLY_ONE_BULLET",max(getskilllv("NW_ONLY_ONE_BULLET"),1),400;
+      bonus4 bAutoSpellOnSkill,"NW_ONLY_ONE_BULLET","NW_SPIRAL_SHOOTING",5,400;
   - Combos:
       - Combo:
           - AM_Evil_Ring_TH    # 490874
@@ -60777,7 +60777,7 @@ Body:
           - Injustice_Power    # 312021
     Script: |
       bonus4 bAutoSpellOnSkill,"SOA_EXORCISM_OF_MALICIOUS_SOUL","SOA_SOUL_GATHERING",5,1000;
-      bonus4 bAutoSpellOnSkill,"SOA_TALISMAN_OF_SOUL_STEALING","SOA_EXORCISM_OF_MALICIOUS_SOUL",max(getskilllv("SOA_EXORCISM_OF_MALICIOUS_SOUL"),1),400;
+      bonus4 bAutoSpellOnSkill,"SOA_TALISMAN_OF_SOUL_STEALING","SOA_EXORCISM_OF_MALICIOUS_SOUL",5,400;
   - Combos:
       - Combo:
           - HN_Evil_Ring_TH    # 490886
@@ -60804,7 +60804,7 @@ Body:
           - Injustice_Power    # 312021
     Script: |
       skill "WL_RECOGNIZEDSPELL",5;
-      bonus4 bAutoSpellOnSkill,"HN_NAPALM_VULCAN_STRIKE","HN_GROUND_GRAVITATION",max(getskilllv("HN_GROUND_GRAVITATION"),1),400;
+      bonus4 bAutoSpellOnSkill,"HN_NAPALM_VULCAN_STRIKE","HN_GROUND_GRAVITATION",10,400;
   - Combos:
       - Combo:
           - AM_Good_Ring_TH    # 490888
@@ -61701,3 +61701,88 @@ Body:
           - aegis_300754    #  300754
     Script: |
       bonus2 bIgnoreDefRaceRate,RC_All,40;
+  - Combos:
+      - Combo:
+          - Coatneis_Knuckle_US    # 560077
+          - Butoijo_Card    #  4519
+    Script: |
+      bonus bBaseAtk,200;
+      bonus2 bSkillAtk,"IQ_EXPOSION_BLASTER",20;
+  - Combos:
+      - Combo:
+          - Coatneis_Knuckle_US    # 560077
+          - Sura_Card    #  4672
+    Script: |
+      bonus bBaseAtk,200;
+      bonus2 bSkillAtk,"MO_EXTREMITYFIST",200;
+      bonus2 bAddClass,Class_All,30;
+      bonus bAllTraitStats,20;
+  - Combos:
+      - Combo:
+          - Thorn_Armor_US    # 450516
+          - MD_Airboat_Card    #  300170
+    Script: |
+      bonus bPow,7;
+      bonus bCon,7;
+      bonus2 bAddEle,Ele_All,7;
+  - Combos:
+      - Combo:
+          - Thorn_Armor_US    # 450516
+          - Silva_Papilia_Card    #  300099
+    Script: |
+      bonus bPow,25;
+      bonus bCon,25;
+      bonus2 bAddEle,Ele_All,25;
+      bonus bMagicDamageReturn,25;
+  - Combos:
+      - Combo:
+          - Trap_Follower_US    # 460138
+          - Basilisk1_Card    #  4660
+    Script: |
+      bonus bBaseAtk,200;
+      bonus2 bSkillAtk,"WH_SOLIDTRAP",20;
+      bonus2 bSkillAtk,"WH_FLAMETRAP",20;
+      bonus2 bSkillAtk,"WH_DEEPBLINDTRAP",20;
+      bonus2 bSkillAtk,"WH_SWIFTTRAP",20;
+  - Combos:
+      - Combo:
+          - Raven_Of_Tomb_LT    # 410386
+          - Reaper_Of_Tomb_LT    #  420759
+    Script: |
+      .@a = readparam(bStr);
+      .@b = readparam(bAgi);
+      .@c = readparam(bVit);
+      .@d = readparam(bInt);
+      .@e = readparam(bDex);
+      .@f = readparam(bLuk);
+      bonus2 bSkillAtk,"DK_DRAGONIC_BREATH",25;
+      bonus2 bSkillAtk,"IG_OVERSLASH",25;
+      bonus2 bSkillAtk,"AG_MYSTERY_ILLUSION",25;
+      bonus2 bSkillAtk,"EM_VENOM_SWAMP",25;
+      bonus2 bSkillAtk,"MT_SPARK_BLASTER",25;
+      bonus2 bSkillAtk,"BO_EXPLOSIVE_POWDER",25;
+      bonus2 bSkillAtk,"SHC_ETERNAL_SLASH",25;
+      bonus2 bSkillAtk,"ABC_ABYSS_SQUARE",25;
+      bonus2 bSkillAtk,"CD_ARBITRIUM",25;
+      bonus2 bSkillAtk,"IQ_EXPOSION_BLASTER",25;
+      bonus2 bSkillAtk,"WH_GALESTORM",25;
+      bonus2 bSkillAtk,"TR_RHYTHMSHOOTING",25;
+      bonus2 bSkillAtk,"SKE_STAR_CANNON",25;
+      bonus2 bSkillAtk,"SOA_EXORCISM_OF_MALICIOUS_SOUL",25;
+      bonus2 bSkillAtk,"SS_KAGEGISSEN",25;
+      bonus2 bSkillAtk,"SS_SEKIENHOU",25;
+      bonus2 bSkillAtk,"NW_MAGAZINE_FOR_ONE",25;
+      bonus2 bSkillAtk,"SH_CHUL_HO_SONIC_CLAW",25;
+      bonus2 bSkillAtk,"HN_JUPITEL_THUNDER_STORM",25;
+      bonus bShortAtkRate,.@a/10;
+      bonus bDelayRate,-1*(.@b/10);
+      bonus bMaxHPrate,.@c/10;
+      bonus bAspdRate,.@c/10;
+      bonus2 bMagicAddSize,Size_All,.@d/10;
+      bonus bLongAtkRate,.@e/10;
+      bonus bBaseAtk,6*(.@f/10);
+      bonus bMatk,6*(.@f/10);
+      if ((.@a+.@b+.@c+.@d+.@e+.@f)>=600) {
+         bonus2 bAddClass,Class_All,15;
+         bonus2 bMagicAddClass,Class_All,15;
+      }

@@ -1,0 +1,163 @@
+grademk,130,83,4	script	Biolab Old Headgear#itroom	4_CENERE,{
+
+	mes "Enchant Enchant";
+	mes "and Enchant!";
+	mes "for ^AA0000Biolab Old Headgear^000000";
+	next;
+	switch(select(
+	
+	"~ Enchant Biolab Old Headgear",
+	"~ Biolab Old Headgear Craft Shop",
+	"~ Biolab Old Headgear Exchange Shop",
+//	"~ Decomposing",
+	"Cancel"
+	
+	)) {
+		case 1:
+			mes "Yep!";
+			close2;
+			item_enchant(1001);
+			end;
+		case 2:
+			mes "Yep!";
+			close2;
+			callshop "BiolabHGShop";
+			end;
+		case 3:
+			mes "Yep!";
+			close2;
+			callshop "BiolabHGEx";
+			end;
+//		case 4:
+//			goto Decomposing;
+		case 4:
+			mes "Bye, guys!";
+			close2;
+			end;
+	}
+	close;
+
+Decomposing:
+	mes "If you have biolab old weapons like this;";
+	mes "^i[1284] ^i[1290] ^i[1285] ^i[1291]";
+	mes "you can decomposing it to ^i[6820]";
+	deletearray @sold_nameid[0], getarraysize(@sold_nameid);
+	close2;
+	callshop "Decomposing", 2;
+	npcshopattach "Decomposing";
+	end;
+
+OnSellItem:
+	mes "Items to decomposed:";
+	mes "==================";
+
+	deletearray .@valid_items[0], 30000;
+	deletearray .@valid_amounts[0], 30000;
+	set .@total_points, 0;
+	set .@valid_count, 0;
+	
+	for (set .@i, 0; .@i < getarraysize(@sold_nameid); set .@i, .@i + 1) {
+		set .@item_id, @sold_nameid[.@i];
+		set .@is_recyclable, 0;
+		
+		for (set .@j, 0; .@j < getarraysize($decomposable) && !.@is_recyclable; set .@j, .@j + 1) {
+			if ($decomposable[.@j] == .@item_id) set .@is_recyclable, 1;
+		}
+		
+		if (.@is_recyclable == 0) {
+			mes "  ^FF0000" + @sold_quantity[.@i] + "x " + getitemname(.@item_id) + " (Cannot decomposed.)^000000";
+			close;
+		} else {
+			set .@valid_items[.@valid_count], .@item_id;
+			set .@valid_amounts[.@valid_count], @sold_quantity[.@i];
+			set .@valid_count, .@valid_count + 1;
+			set .@total_points, .@total_points + @sold_quantity[.@i];
+			mes "  ^00AA00" + @sold_quantity[.@i] + "x " + getitemname(.@item_id) + "^000000";
+		}
+	}
+	
+	deletearray @sold_nameid[0], getarraysize(@sold_nameid);
+	deletearray @sold_quantity[0], getarraysize(@sold_quantity);
+	
+	if (.@valid_count == 0) {
+		mes "==================";
+		mes "^FF0000No valid items to decomposing!^000000";
+		mes "Only Biolab Old Weapons can be decomposed.";
+		close;
+	}
+	
+	mes "==================";
+	mes "Total: ^0066FF" + .@total_points + " Energy Debris.^000000 ^i[6820]";
+	mes "Proceed with decomposing?";
+	next;
+	
+	if (select(" ~ ^AA0000Decomposed it Now!^000000: ~ ^777777Cancel^000000") == 2) {
+		mes "What the ......";
+		close;
+	}
+
+	for (set .@i, 0; .@i < .@valid_count; set .@i, .@i + 1) {
+		delitem .@valid_items[.@i], .@valid_amounts[.@i];
+	}
+	
+	getitem 6820, .@total_points;		// Energy Fragment
+	
+	mes "^00AA00Decomposing successful!^000000";
+	mes "     ";
+	mes "You gained ^0066FF" + .@total_points + " Energy Debris.^000000 ^i[6820]";
+	close;
+
+OnInit: 
+	initnpctimer;
+	setarray $decomposable, 
+	1284,	// Krishna
+	1290,	// Agent_Katar
+	1285,	// Chakram
+	1291,	// Guillotine_Katar
+	18109,	// Catapult
+	18110,	// Big_CrossBow
+	1745,	// Falken_Blitz
+	18103,	// Mystic_Bow
+	18111,	// Creeper_Bow
+	1311,	// Vecer_Axe
+	1392,	// Ygnus_Stale
+	1393,	// End_Sektura
+	16017,	// Bloody_Cross
+	16010,	// Red_Ether_Bag
+	2161,	// Geffenia_Book_Water
+	1584,	// Chilly_Spell_Book
+	16000,	// Erde
+	16001,	// Red_Square_Bag
+	2005,	// Dea_Staff
+	2004,	// Kronos
+	1647,	// Croce_Staff
+	1659,	// Recovery_Light
+	1646,	// La'cryma_Stick
+	1654,	// Mental_Stick
+	13431,	// Chrome_Sword
+	13421,	// Ruber
+	13061,	// Black_Wing
+	13062,	// Ancient_Dagger
+	13070,	// Scarletto_Nail
+	13069,	// Aztoe_Nail
+	13046,	// Krieg
+	13047,	// Weihna
+	1433,	// Imperial_Spear
+	1435,	// Cannon_Spear
+	1490,	// Giant_Lance
+	1196,	// Chrome_Twohand_Sword
+	1189,	// Krasnaya
+	1930,	// Green_Whistle
+	1984,	// Stem_Whip
+	1985,	// Rosebine
+	1830;	// Sura_Rampage
+	npcshopdelitem "Decomposing", 909;
+	end;
+
+OnTimer1000:
+    showscript("Biolab Old Headgear!!!");
+    setnpctimer 0;
+    end;
+}
+	
+-	shop	Decomposing	-1,909:-1

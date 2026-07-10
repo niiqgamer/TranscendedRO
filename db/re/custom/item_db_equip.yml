@@ -223,6 +223,72 @@ Body:
             }
          }
       }
+  - Id: 410386
+    AegisName: Raven_Of_Tomb_LT
+    Name: Raven Of Tomb-LT
+    Type: Armor
+    Weight: 10
+    Defense: 10
+    Locations:
+      Head_Mid: true
+    ArmorLevel: 1
+    EquipLevelMin: 210
+    View: 1035
+    Script: |
+      bonus bBaseAtk,60;
+      bonus bMatkRate,60;
+      if (readparam(bStr) >= 84) {
+         bonus2 bAddClass,Class_All,4;
+         bonus bHit,10;
+         if (readparam(bStr) >= 108) {
+            bonus2 bAddClass,Class_All,6;
+            bonus bHit,10;
+         }
+      }
+      if (readparam(bInt) >= 84) {
+         bonus bMatkRate,4;
+         bonus2 bMagicAtkEle,Ele_All,4;
+         if (readparam(bInt) >= 108) {
+            bonus bMatkRate,6;
+            bonus2 bMagicAtkEle,Ele_All,6;
+         }
+      }
+      if (readparam(bDex) >= 84) {
+         bonus bDelayrate,-4;
+         bonus bCritical,6;
+         if (readparam(bDex) >= 108) {
+            bonus bDelayrate,-6;
+            bonus bCritical,9;
+         }
+      }
+      if (readparam(bVit) >= 84) {
+         bonus bMaxHPrate,4;
+         bonus bAspdRate,4;
+         if (readparam(bVit) >= 108) {
+            bonus bMaxHPrate,4;
+            bonus bAspdRate,4;
+         }
+      }
+      if (readparam(bLuk) >= 84) {
+         bonus bBaseAtk,40;
+         bonus bMatk,40;
+         if (readparam(bLuk) >= 108) {
+            bonus bBaseAtk,60;
+            bonus bMatk,60;
+         }
+      }
+      if (readparam(bAgi) >= 84) {
+         bonus bFlee,10;
+         bonus bCritAtkRate,7;
+         if (readparam(bAgi) >= 108) {
+            bonus bFlee,10;
+            bonus bCritAtkRate,7;
+         }
+      }
+      if ((readparam(bStr)+readparam(bAgi)+readparam(bVit)+readparam(bInt)+readparam(bDex)+readparam(bLuk)) >= 500) {
+         bonus bPAtk,10;
+         bonus bSMatk,10;
+      }
   - Id: 410493
     AegisName: BP2_Middle_US
     Name: "[S2] Authority of Issgard"
@@ -401,6 +467,31 @@ Body:
       skill "BS_GREED",1;
       skill "MC_OVERCHARGE",10;
       bonus2 bDropAddRace,RC_All,15;
+  - Id: 420759
+    AegisName: Reaper_Of_Tomb_LT
+    Name: Reaper Of Tomb-LT
+    Type: Armor
+    Weight: 600
+    Defense: 0
+    Locations:
+      Head_Low: true
+    ArmorLevel: 1
+    EquipLevelMin: 100
+    View: 1450
+    Script: |
+      bonus2 bSkillAtk,"RK_IGNITIONBREAK",BaseLevel/3;
+      bonus2 bSkillAtk,"LG_EARTHDRIVE",BaseLevel/3;
+      bonus2 bSkillAtk,"GC_CROSSIMPACT",BaseLevel/3;
+      bonus2 bSkillAtk,"SC_TRIANGLESHOT",BaseLevel/3;
+      bonus2 bSkillAtk,"NC_AXETORNADO",BaseLevel/3;
+      bonus2 bSkillAtk,"NC_ARMSCANNON",BaseLevel/3;
+      bonus2 bSkillAtk,"GN_CARTCANNON",BaseLevel/3;
+      bonus2 bSkillAtk,"SO_VARETYR_SPEAR",BaseLevel/3;
+      bonus2 bSkillAtk,"WL_COMET",BaseLevel/3;
+      bonus2 bSkillAtk,"SN_SHARPSHOOTING",BaseLevel/3;
+      bonus2 bSkillAtk,"WM_SEVERE_RAINSTORM",BaseLevel/3;
+      bonus2 bSkillAtk,"AB_JUDEX",BaseLevel/3;
+      bonus2 bSkillAtk,"SR_RAMPAGEBLASTER",BaseLevel/3;
   - Id: 420841
     AegisName: AAT_Supreme_LT
     Name: "All Above Time(Supreme)-LT"
@@ -558,6 +649,65 @@ Body:
                       bonus4 bAutoSpellOnSkill,"MG_COLDBOLT","WL_JACKFROST",5,1000;
                   }
              }
+         }
+      }
+  - Id: 450516
+    AegisName: Thorn_Armor_US
+    Name: Thorn Armor
+    Type: Armor
+    Weight: 1500
+    Defense: 200
+    Slots: 1
+    Locations:
+      Armor: true
+    ArmorLevel: 2
+    EquipLevelMin: 1
+    Refineable: true
+    Gradable: true
+    Script: |
+      .@r = getrefine();
+      .@g = getenchantgrade();
+      bonus bDefEle,Ele_Earth;
+      bonus bShortWeaponDamageReturn,30;
+      bonus bLongWeaponDamageReturn,30;
+      bonus bPAtk,7*.@r;
+      bonus bPow,.@r/2;
+      bonus bCon,.@r/2;
+      bonus2 bAddEle,Ele_All,7*(.@r/2);
+      bonus bBaseAtk,70*(.@r/3);
+      if (.@r>=10) {
+         bonus bPow,5;
+         bonus bCon,5;
+         bonus bFlee2,20;
+         if (.@r>=11) {
+            bonus2 bSkillAtk,"BO_MAYHEMIC_THORNS",20;
+            bonus2 bSkillAtk,"TR_ROSEBLOSSOM",30;
+            if (.@r>=12) {
+               bonus2 bAddEle,Ele_All,15;
+               if (.@r>=13) {
+                  skill "SO_STRIKING",5;
+                  autobonus3 "{ bonus2 bAddEle,Ele_All,30; }",1000,20000,"SO_STRIKING";
+                  if (.@r>=14) {
+                     bonus bLongAtkRate,25;
+                     bonus2 bSkillCooldown,"TR_ROSEBLOSSOM",-400;
+                     bonus2 bSkillCooldown,"BO_MAYHEMIC_THORNS",-400;
+                  }
+               }
+            }
+         }
+      }
+      if (.@g>=ENCHANTGRADE_D) {
+         bonus bMaxHPRate,15;
+         bonus bMaxSPRate,15;
+         if (.@g>=ENCHANTGRADE_C) {
+            bonus bVariableCastRate,-15;
+            if (.@g>=ENCHANTGRADE_B) {
+               bonus bDelayRate,-20;
+               if (.@g>=ENCHANTGRADE_A) {
+                  bonus2 bSkillAtk,"BO_MAYHEMIC_THORNS",50;
+                  bonus2 bSkillAtk,"TR_ROSEBLOSSOM",50;
+               }
+            }
          }
       }
   - Id: 450517
@@ -1135,6 +1285,78 @@ Body:
             }
           }
         }
+  - Id: 460138
+    AegisName: Trap_Follower_US
+    Name: Trap Follower Shield
+    Type: Armor
+    Weight: 1000
+    Defense: 100
+    Slots: 1
+    Locations:
+      Left_Hand: true
+    ArmorLevel: 2
+    EquipLevelMin: 1
+    Refineable: true
+    Gradable: true
+    View: 4
+    Script: |
+      .@r = getrefine();
+      .@g = getenchantgrade();
+      bonus bUnbreakableShield;
+      bonus bBaseAtk,50+(.@r*15);
+      bonus bPow,5+.@r;
+      bonus bCon,5+.@r;
+      bonus bStr,7*(.@r/2);
+      bonus bDex,7*(.@r/2);
+      bonus bMaxHPRate,7*(.@r/2);
+      bonus bMaxSPRate,7*(.@r/2);
+      if (BaseClass == Job_Archer) {
+         bonus bMaxHPRate,30;
+         skill "SC_ESCAPE",5;
+         bonus2 bHPDrainRate,1000,2;
+      }
+      if (.@r>=11) {
+         bonus bAtkRate,15;
+         bonus2 bSubClass,Class_All,20;
+         bonus2 bSkillAtk,"WH_SOLIDTRAP",50;
+         bonus2 bSkillAtk,"WH_FLAMETRAP",50;
+         bonus2 bSkillAtk,"WH_DEEPBLINDTRAP",50;
+         bonus2 bSkillAtk,"WH_SWIFTTRAP",50;
+         if (.@r>=12) {
+            bonus bASPD,2;
+            bonus bMdef,20;
+            bonus bAtkRate,25;
+            if (.@r>=13) {
+               bonus bAtkRate,35;
+               bonus bAllStats,10;
+               bonus bDelayRate,-10;
+               if (.@r>=14) {
+                  bonus bAtkRate,40;
+                  bonus bAllTraitStats,10;
+                  bonus2 bSubSize,Size_All,30;
+               }
+            }
+         }
+      }
+      if (.@g>=ENCHANTGRADE_D) {
+         bonus bMaxHPRate,15;
+         if (.@g>=ENCHANTGRADE_C) {
+            bonus2 bSkillCooldown,"WH_SOLIDTRAP",-1500;
+            bonus2 bSkillCooldown,"WH_FLAMETRAP",-1500;
+            bonus2 bSkillCooldown,"WH_DEEPBLINDTRAP",-1500;
+            bonus2 bSkillCooldown,"WH_SWIFTTRAP",-1500;
+            if (.@g>=ENCHANTGRADE_B) {
+               bonus2 bSkillAtk,"WH_SOLIDTRAP",70;
+               bonus2 bSkillAtk,"WH_FLAMETRAP",70;
+               bonus2 bSkillAtk,"WH_DEEPBLINDTRAP",70;
+               bonus2 bSkillAtk,"WH_SWIFTTRAP",70;
+               if (.@g>=ENCHANTGRADE_A) {
+                  bonus bAllTraitStats,5;
+                  bonus bNoWalkDelay;
+               }
+            }
+         }
+      }
   - Id: 460151
     AegisName: Rose_Quartz_Shield_LT
     Name: Rose Quartz Shield-LT
@@ -1146,6 +1368,7 @@ Body:
     ArmorLevel: 2
     EquipLevelMin: 1
     Refineable: true
+    Gradable: true
     View: 4
     Script: |
       .@r = getrefine();
@@ -1198,6 +1421,7 @@ Body:
     ArmorLevel: 2
     EquipLevelMin: 100
     Refineable: true
+    Gradable: true
     Script: |
       .@r = getrefine();
       .@g = getenchantgrade();
@@ -1445,6 +1669,14 @@ Body:
             }
          }
       }
+  - Id: 480057
+    AegisName: C_Wing_Of_Angel_Move_RB
+    Name: Costume Wavy Orange Angel Wings
+    Type: Armor
+    Locations:
+      Costume_Garment: true
+    ArmorLevel: 1
+    View: 74
   - Id: 480536
     AegisName: Will_Karasu_US
     Name: Will of Karasu
@@ -1607,6 +1839,14 @@ Body:
              bonus2 bSkillAtk,"NC_ARMSCANNON",70;
          }
       }
+  - Id: 480608
+    AegisName: C_S_Beelzebub_Wing
+    Name: "Costume Beelzebub's Wings of Gluttony"
+    Type: Armor
+    Locations:
+      Costume_Garment: true
+    ArmorLevel: 1
+    View: 271
   - Id: 480621
     AegisName: Comet_Cavalry_US
     Name: Comet Cavalry
@@ -2784,6 +3024,78 @@ Body:
                bonus2 bMagicAtkEle,Ele_All,10;
                if (.@g>=ENCHANTGRADE_A) {
                   bonus bSMatk,2*(.@r/2);
+               }
+            }
+         }
+      }
+  - Id: 560077
+    AegisName: Coatneis_Knuckle_US
+    Name: Coatneis Knuckle
+    Type: Weapon
+    SubType: Knuckle
+    Weight: 1000
+    Attack: 300
+    Range: 1
+    Slots: 2
+    Jobs:
+      Monk: true
+    Classes:
+      Fourth: true
+    Locations:
+      Right_Hand: true
+    WeaponLevel: 5
+    EquipLevelMin: 100
+    Refineable: true
+    Gradable: true
+    Script: |
+      .@g = getenchantgrade();
+      .@r = getrefine();
+      bonus bUnbreakableWeapon;
+      bonus bAspd,10;
+      bonus bDelayRate,-10;
+      bonus2 bSubClass,Class_All,30;
+      bonus2 bAddSize,Size_All,30+(.@r*12);
+      bonus bPow,3*(.@r/2);
+      bonus bMaxHPRate,3*(.@r/2);
+      bonus2 bSkillAtk,"SR_EARTHSHAKER",20*(.@r/2);
+      bonus2 bSkillAtk,"SR_RAMPAGEBLASTER",20*(.@r/2);
+      bonus2 bSkillAtk,"SR_GATEOFHELL",20*(.@r/2);
+      if (.@r>=10) {
+         bonus bPow,15;
+         bonus bDelayRate,-20;
+         if (.@r>=11) {
+            bonus2 bSkillCooldown,"SR_RAMPAGEBLASTER",-10000;
+            bonus2 bSkillCooldown,"SR_EARTHSHAKER",-3000;
+            if (.@r>=12) {
+               bonus2 bSkillAtk,"SR_RAMPAGEBLASTER",30;
+               bonus2 bSkillCooldown,"IQ_EXPOSION_BLASTER",-1000;
+               if (.@r>=13) {
+                  bonus bAllStats,25;
+                  bonus bBaseAtk,250;
+                  bonus bMaxHPRate,25;
+                  if (.@r>=14) {
+                     bonus bLongAtkRate,30;
+                     bonus bAllTraitStats,13;
+                     if (.@r>=15) {
+                        bonus bLongAtkDef,40;
+                        bonus2 bSubEle,Ele_All,40;
+                     }
+                  }
+               }
+            }
+         }
+      }
+      if (.@g >= ENCHANTGRADE_D) {
+         bonus bFixedCast,-300;
+         if (.@g >= ENCHANTGRADE_C) {
+            bonus bLongAtkRate,15;
+            if (.@g >= ENCHANTGRADE_B) {
+               bonus2 bSkillAtk,"SR_RAMPAGEBLASTER",50;
+               bonus2 bSkillAtk,"SR_GATEOFHELL",50;
+               bonus2 bSkillAtk,"SR_EARTHSHAKER",50;
+               if (.@g >= ENCHANTGRADE_A) {
+                  bonus bAllStats,7;
+                  bonus bAllTraitStats,7;
                }
             }
          }

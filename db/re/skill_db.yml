@@ -40486,7 +40486,7 @@ Body:
       Interval: 300
       Target: Enemy
       Flag:
-        NoOverlap: true
+        NoOverlap: false
         PathCheck: true
     Status: Handicapstate_Lightningstrike
   - Id: 5371
@@ -40524,7 +40524,7 @@ Body:
       Interval: 300
       Target: Enemy
       Flag:
-        NoOverlap: true
+        NoOverlap: false
         PathCheck: true
     Status: HandicapState_DeadlyPoison
   - Id: 5372
@@ -40562,7 +40562,7 @@ Body:
       Interval: 300
       Target: Enemy
       Flag:
-        NoOverlap: true
+        NoOverlap: false
         PathCheck: true
     Status: Handicapstate_Conflagration
   - Id: 5373

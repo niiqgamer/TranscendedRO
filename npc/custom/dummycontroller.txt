@@ -1,0 +1,24 @@
+-	script	DummyController	-1,{
+	end;
+
+OnInit:
+	monster "izlude",130,232,"Dummy 0.01%",22561,1,"";
+	monster "izlude",126,232,"Dummy 0.01%",22561,1,"";
+	monster "izlude",122,232,"Dummy 0.01%",22561,1,"";
+	
+	monster "izlude",130,224,"Dummy 0.01%",22561,1,"";
+	monster "izlude",126,224,"Dummy 0.01%",22561,1,"";
+	monster "izlude",122,224,"Dummy 0.01%",22561,1,"";
+	
+	monster "izlude",130,216,"Dummy 0.01%",22561,1,"";
+	monster "izlude",126,216,"Dummy 0.01%",22561,1,"";
+	monster "izlude",122,216,"Dummy 0.01%",22561,1,"";
+	
+	.@count = getunits(BL_MOB, .@gid);
+	
+	for ( .@i = 0; .@i < .@count; .@i++ ) {
+		setunitdata .@gid[.@i], UMOB_LOOKDIR, 4;
+		break;
+	}
+	end;
+}

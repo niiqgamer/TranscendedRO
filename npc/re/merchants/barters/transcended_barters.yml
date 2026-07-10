@@ -2375,3 +2375,347 @@ Body:
       - Index: 53
         Item: D_Glacier_T_Sword    # 600030
         Zeny: 1000
+  - Name: BiolabHGShop
+    Items:
+      - Index: 0
+        Item: Old_Rune_Circlet
+        RequiredItems:
+          - Index: 0
+            Item: C_Rune_Circlet
+            Amount: 1
+          - Index: 1
+            Item: Soul_Of_Swordman
+            Amount: 5
+          - Index: 2
+            Item: Particles_Of_Energy
+            Amount: 100
+      - Index: 1
+        Item: Old_Mitra
+        RequiredItems:
+          - Index: 0
+            Item: C_Mitra
+            Amount: 1
+          - Index: 1
+            Item: Soul_Of_Acolyte
+            Amount: 5
+          - Index: 2
+            Item: Particles_Of_Energy
+            Amount: 100
+      - Index: 2
+        Item: Old_Driver_Band_R
+        RequiredItems:
+          - Index: 0
+            Item: C_Driver_Band_R
+            Amount: 1
+          - Index: 1
+            Item: Soul_Of_Merchant
+            Amount: 5
+          - Index: 2
+            Item: Particles_Of_Energy
+            Amount: 100
+      - Index: 3
+        Item: Old_Driver_Band_Y
+        RequiredItems:
+          - Index: 0
+            Item: C_Driver_Band_Y
+            Amount: 1
+          - Index: 1
+            Item: Soul_Of_Merchant
+            Amount: 5
+          - Index: 2
+            Item: Particles_Of_Energy
+            Amount: 100
+      - Index: 4
+        Item: Old_Shadow_Handicraft
+        RequiredItems:
+          - Index: 0
+            Item: C_Shadow_Handicraft
+            Amount: 1
+          - Index: 1
+            Item: Soul_Of_Thief
+            Amount: 5
+          - Index: 2
+            Item: Particles_Of_Energy
+            Amount: 100
+      - Index: 5
+        Item: Old_Minstrel_Song_Hat
+        RequiredItems:
+          - Index: 0
+            Item: C_Minstrel_Song_Hat
+            Amount: 1
+          - Index: 1
+            Item: Soul_Of_Archer
+            Amount: 5
+          - Index: 2
+            Item: Particles_Of_Energy
+            Amount: 100
+      - Index: 6
+        Item: Old_Midas_Whisper
+        RequiredItems:
+          - Index: 0
+            Item: C_Midas_Whisper
+            Amount: 1
+          - Index: 1
+            Item: Soul_Of_Merchant
+            Amount: 5
+          - Index: 2
+            Item: Particles_Of_Energy
+            Amount: 100
+      - Index: 7
+        Item: Old_Magic_Stone_Hat
+        RequiredItems:
+          - Index: 0
+            Item: C_Magic_Stone_Hat
+            Amount: 1
+          - Index: 1
+            Item: Soul_Of_Magicion
+            Amount: 5
+          - Index: 2
+            Item: Particles_Of_Energy
+            Amount: 100
+      - Index: 8
+        Item: Old_Blazing_Soul
+        RequiredItems:
+          - Index: 0
+            Item: C_Blazing_Soul
+            Amount: 1
+          - Index: 1
+            Item: Soul_Of_Acolyte
+            Amount: 5
+          - Index: 2
+            Item: Particles_Of_Energy
+            Amount: 100
+      - Index: 9
+        Item: Old_Wind_Whisper
+        RequiredItems:
+          - Index: 0
+            Item: C_Wind_Whisper
+            Amount: 1
+          - Index: 1
+            Item: Soul_Of_Magicion
+            Amount: 5
+          - Index: 2
+            Item: Particles_Of_Energy
+            Amount: 100
+      - Index: 10
+        Item: Old_Dying_Swan
+        RequiredItems:
+          - Index: 0
+            Item: C_Dying_Swan
+            Amount: 1
+          - Index: 1
+            Item: Soul_Of_Archer
+            Amount: 5
+          - Index: 2
+            Item: Particles_Of_Energy
+            Amount: 100
+      - Index: 11
+        Item: Old_Circlet_Of_Bone
+        RequiredItems:
+          - Index: 0
+            Item: C_Circlet_Of_Bone
+            Amount: 1
+          - Index: 1
+            Item: Soul_Of_Thief
+            Amount: 5
+          - Index: 2
+            Item: Particles_Of_Energy
+            Amount: 100
+      - Index: 12
+        Item: Old_Protect_Of_Crown
+        RequiredItems:
+          - Index: 0
+            Item: C_Protect_Of_Crown
+            Amount: 1
+          - Index: 1
+            Item: Soul_Of_Swordman
+            Amount: 5
+          - Index: 2
+            Item: Particles_Of_Energy
+            Amount: 100
+      - Index: 13
+        Item: Old_Camo_RabbitHood
+        RequiredItems:
+          - Index: 0
+            Item: C_Mitra
+            Amount: 1
+          - Index: 1
+            Item: Soul_Of_Archer
+            Amount: 5
+          - Index: 2
+            Item: Particles_Of_Energy
+            Amount: 100
+  - Name: BiolabHGEx
+    Items:
+      - Index: 0
+        Item: Particles_Of_Energy
+        RequiredItems:
+          - Index: 0
+            Item: Particles_Of_Energy1
+            Amount: 2000
+      - Index: 1
+        Item: Particles_Of_Energy
+        RequiredItems:
+          - Index: 0
+            Item: Particles_Of_Energy2
+            Amount: 1000
+      - Index: 2
+        Item: Particles_Of_Energy
+        RequiredItems:
+          - Index: 0
+            Item: Particles_Of_Energy3
+            Amount: 500
+      - Index: 3
+        Item: Particles_Of_Energy
+        RequiredItems:
+          - Index: 0
+            Item: Particles_Of_Energy4
+            Amount: 500
+      - Index: 4
+        Item: Particles_Of_Energy
+        RequiredItems:
+          - Index: 0
+            Item: Particles_Of_Energy5
+            Amount: 50
+      - Index: 5
+        Item: Pieces_Of_Sentiment
+        RequiredItems:
+          - Index: 0
+            Item: Particles_Of_Energy
+            Amount: 50
+      - Index: 6
+        Item: Pieces_Of_Grudge
+        RequiredItems:
+          - Index: 0
+            Item: Particles_Of_Energy
+            Amount: 666
+      - Index: 7
+        Item: Will_Of_Warrior
+        RequiredItems:
+          - Index: 0
+            Item: Particles_Of_Energy
+            Amount: 200
+      - Index: 8
+        Item: Blood_Thirst
+        RequiredItems:
+          - Index: 0
+            Item: Particles_Of_Energy
+            Amount: 200
+      - Index: 9
+        Item: Goast_Chill
+        RequiredItems:
+          - Index: 0
+            Item: Particles_Of_Energy
+            Amount: 200
+      - Index: 10
+        Item: Chest_Of_Death
+        RequiredItems:
+          - Index: 0
+            Item: Soul_Of_Swordman
+            Amount: 3
+      - Index: 11
+        Item: Chest_Of_Death
+        RequiredItems:
+          - Index: 0
+            Item: Soul_Of_Merchant
+            Amount: 3
+      - Index: 12
+        Item: Chest_Of_Death
+        RequiredItems:
+          - Index: 0
+            Item: Soul_Of_Thief
+            Amount: 3
+      - Index: 13
+        Item: Chest_Of_Death
+        RequiredItems:
+          - Index: 0
+            Item: Soul_Of_Magicion
+            Amount: 3
+      - Index: 14
+        Item: Chest_Of_Death
+        RequiredItems:
+          - Index: 0
+            Item: Soul_Of_Archer
+            Amount: 3
+      - Index: 15
+        Item: Chest_Of_Death
+        RequiredItems:
+          - Index: 0
+            Item: Soul_Of_Acolyte
+            Amount: 3
+  - Name: balheele
+    Items:
+      - Index: 0
+        Item: EpisodClear13
+        RequiredItems:
+          - Index: 0
+            Item: Silvervine
+            Amount: 20
+      - Index: 1
+        Item: EpisodClear14
+        RequiredItems:
+          - Index: 0
+            Item: Silvervine
+            Amount: 20
+      - Index: 2
+        Item: EpisodClear15
+        RequiredItems:
+          - Index: 0
+            Item: Silvervine
+            Amount: 20
+      - Index: 3
+        Item: EpisodClear16
+        RequiredItems:
+          - Index: 0
+            Item: Silvervine
+            Amount: 42
+      - Index: 4
+        Item: EpisodClear17
+        RequiredItems:
+          - Index: 0
+            Item: Silvervine
+            Amount: 28
+      - Index: 5
+        Item: EpisodClear18
+        RequiredItems:
+          - Index: 0
+            Item: Silvervine
+            Amount: 80
+      - Index: 6
+        Item: EpisodClear19
+        RequiredItems:
+          - Index: 0
+            Item: Silvervine
+            Amount: 100
+      - Index: 7
+        Item: EpisodClear20
+        RequiredItems:
+          - Index: 0
+            Item: Silvervine
+            Amount: 120
+  - Name: balheele_20
+    Items:
+      - Index: 0
+        Item: EpisodClear16
+        RequiredItems:
+          - Index: 0
+            Item: Silvervine
+            Amount: 21
+      - Index: 1
+        Item: EpisodClear17
+        RequiredItems:
+          - Index: 0
+            Item: Silvervine
+            Amount: 14
+      - Index: 2
+        Item: EpisodClear18
+        RequiredItems:
+          - Index: 0
+            Item: Silvervine
+            Amount: 40
+      - Index: 3
+        Item: EpisodClear19
+        RequiredItems:
+          - Index: 0
+            Item: Silvervine
+            Amount: 50

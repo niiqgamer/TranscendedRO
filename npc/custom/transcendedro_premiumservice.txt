@@ -1,4 +1,4 @@
-sec_in02,126,178,4	script	Premium Service#hid	4_F_PREMI,{
+sec_in02,142,180,4	script	Premium Service#hid	4_F_PREMI,{
 	cutin "F_PREMI",2;
 	if(vip_status(1)) {
 		mes "[Premium Service]";
@@ -116,9 +116,9 @@ sec_in02,126,178,4	script	Premium Service#hid	4_F_PREMI,{
 	close;
 }
 
-sec_in02,127,178,4	duplicate(dummy_cloaked_npc)	Premium Service#hid1	4_F_PREMI
+sec_in02,145,180,4	duplicate(dummy_cloaked_npc)	Premium Service#hid1	4_F_PREMI
 
-sec_in02,128,178,4	script	Wanderer Merchant#hid	4_M_HUMERCHANT,{
+sec_in02,148,180,4	script	Wanderer Merchant#hid	4_M_HUMERCHANT,{
 	if(vip_status(1)) {
 		mes "[Wanderer Merchant]";
 		mes "";

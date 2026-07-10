@@ -224,7 +224,7 @@ moc_para01,27,35,5	script	Secretary Lime Evenor	4_F_EDEN_OFFICER,{
 	mes "Would you like to be a problem solver?";
 	mes "Eden group is here to solve your problem.";
 	next;
-	switch (select("Move to ^00AA00Office @ Eden^000000.:Move to ^AA0000Refine & Grade^000000 HQ:Don't want to talk anymore.")) {
+	switch (select("Move to ^00AA00Office @ Eden^000000.:Move to ^AA0000Refine & Grade^000000 HQ:Move to ^0000AAItem Crafting^000000 Room:Don't want to talk anymore.")) {
 	case 1:
 		mes "[Eden Teleport Officer]";
 		mes "Let's go to our secret base!";
@@ -240,6 +240,13 @@ moc_para01,27,35,5	script	Secretary Lime Evenor	4_F_EDEN_OFFICER,{
 		warp "grademk",44,180;
 		end;
 	case 3:
+		mes "[Eden Teleport Officer]";
+		mes "Let's go to Item Crafting Room!";
+		set nak_warp,strnpcinfo(2);
+		close2;
+		warp "grademk",121,73;
+		end;
+	case 4:
 		mes "[Eden Teleport Officer]";
 		mes "If you don't know what to do for your future, don't hesitate to tell me. Just drop by and talk to me! Ok?";
 		close;

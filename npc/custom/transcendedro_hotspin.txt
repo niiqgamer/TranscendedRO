@@ -490,6 +490,7 @@ OnSellItem:
 			mes "  ^00AA00" + @sold_quantity[.@i] + "x " + getitemname(.@item_id) + "^000000";
 		} else {
 			mes "  ^FF0000" + @sold_quantity[.@i] + "x " + getitemname(.@item_id) + " (Unrecyclable)^000000";
+			end;
 		}
 	}
 	

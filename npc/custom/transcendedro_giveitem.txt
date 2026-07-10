@@ -5,11 +5,12 @@ OnInit:
 
 OnGiveItem:
 	.@gm_id = getcharid(3);
-	mes "Input ItemID.";
 	mes "9955500 - Transcended Coin";
+	mes "9955501 - Transcended Coin x100";
 	mes "6635 - Blacksmith Blessing";
 	mes "1000322 - Etel Dust";
 	mes "1000323 - Etel Stone";
+	mes "1001036 - Brilliant Snow Flower Magic Stone Extract";
 	input $@item;
 	next;
 	mes "Input Amount.";

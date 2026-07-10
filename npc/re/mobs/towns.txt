@@ -48,6 +48,8 @@ izlude,130,232	monster	2B-1%#0	21077,1,5000
 izlude,126,232	monster	2B-1%#1	21077,1,5000
 izlude,122,232	monster	2B-1%#2	21077,1,5000
 
+izlude,144,136	monster	--ja--	21065,4,5000
+
 izlude,134,216,6	script	Punching Bag 100%	4_BULLETIN_BOARD2,{
 OnInit:
 	delwaitingroom;

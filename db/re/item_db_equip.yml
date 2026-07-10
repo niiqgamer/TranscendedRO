@@ -111045,6 +111045,10 @@ Body:
       Costume_Garment: true
     ArmorLevel: 1
     View: 102
+    Script: |
+      hateffect HAT_EF_C_KYEL_HYRE_ULTI_TW,true;
+    UnEquipScript: |
+      hateffect HAT_EF_C_KYEL_HYRE_ULTI_TW,false;
   - Id: 20615
     AegisName: C_School_Bag_BU
     Name: Costume Beginner Blue Backpack
@@ -185459,9 +185463,9 @@ Body:
     ArmorLevel: 1
     View: 2809
     Script: |
-      hateffect HAT_EF_C_EYE_OF_NECROMANCER,true;
+      hateffect(HAT_EF_C_EYE_OF_NECROMANCER, true);
     UnEquipScript: |
-      hateffect HAT_EF_C_EYE_OF_NECROMANCER,false;
+      hateffect(HAT_EF_C_EYE_OF_NECROMANCER, false);
   - Id: 410582
     AegisName: C_Nursing_Poring
     Name: Costume Nursing Poring    # !todo check english name
@@ -188915,7 +188919,7 @@ Body:
     Name: Costume Commentary Booth
     Type: Armor
     Locations:
-      Costume_Garment: true
+      Costume_Head_Low: true
     ArmorLevel: 1
     View: 2597
   - Id: 420385
@@ -189531,7 +189535,7 @@ Body:
     View: 2699
   - Id: 420532
     AegisName: C_Immortal_H_Power
-    Name: Costume Immortal Monarch's Might    # !todo check english name
+    Name: "Costume Immortal Overlord's Power"
     Type: Armor
     Locations:
       Costume_Head_Low: true
@@ -197275,7 +197279,7 @@ Body:
     AegisName: Glacier_Armor
     Name: Glacier Armor
     Type: Armor
-    Weight: 2400
+    Weight: 240
     Defense: 168
     Slots: 1
     Locations:
@@ -197315,7 +197319,7 @@ Body:
     AegisName: Glacier_Robe
     Name: Glacier Robe
     Type: Armor
-    Weight: 1200
+    Weight: 120
     Defense: 120
     Slots: 1
     Locations:
@@ -197354,7 +197358,7 @@ Body:
     AegisName: Glacier_Manteau
     Name: Glacier Manteau
     Type: Armor
-    Weight: 1600
+    Weight: 160
     Defense: 112
     Slots: 1
     Locations:
@@ -197388,7 +197392,7 @@ Body:
     AegisName: Glacier_Muffler
     Name: Glacier Muffler
     Type: Armor
-    Weight: 800
+    Weight: 80
     Defense: 80
     Slots: 1
     Locations:
@@ -197422,7 +197426,7 @@ Body:
     AegisName: Glacier_Shoes
     Name: Glacier Shoes
     Type: Armor
-    Weight: 1000
+    Weight: 100
     Defense: 70
     Slots: 1
     Locations:
@@ -197481,7 +197485,7 @@ Body:
     AegisName: D_Glacier_Armor
     Name: Dim Glacier Armor
     Type: Armor
-    Weight: 2400
+    Weight: 240
     Defense: 203
     Slots: 1
     Locations:
@@ -197529,7 +197533,7 @@ Body:
     AegisName: D_Glacier_Robe
     Name: Dim Glacier Robe
     Type: Armor
-    Weight: 1200
+    Weight: 120
     Defense: 145
     Slots: 1
     Locations:
@@ -201274,7 +201278,7 @@ Body:
     AegisName: Glacier_Guard
     Name: Glacier Guard
     Type: Armor
-    Weight: 3500
+    Weight: 350
     Defense: 220
     Slots: 1
     Locations:
@@ -206394,7 +206398,7 @@ Body:
     AegisName: Glacier_Boots
     Name: Glacier Boots
     Type: Armor
-    Weight: 2000
+    Weight: 200
     Defense: 98
     Slots: 1
     Locations:
@@ -206433,7 +206437,7 @@ Body:
     AegisName: D_Glacier_Boots
     Name: Dim Glacier Boots
     Type: Armor
-    Weight: 2000
+    Weight: 200
     Defense: 126
     Slots: 1
     Locations:
@@ -206477,7 +206481,7 @@ Body:
     AegisName: D_Glacier_Shoes
     Name: Dim Glacier Shoes
     Type: Armor
-    Weight: 1000
+    Weight: 100
     Defense: 90
     Slots: 1
     Locations:
@@ -214924,7 +214928,7 @@ Body:
     AegisName: D_Glacier_Manteau
     Name: Dim Glacier Manteau
     Type: Armor
-    Weight: 1600
+    Weight: 160
     Defense: 147
     Slots: 1
     Locations:
@@ -214970,7 +214974,7 @@ Body:
     AegisName: D_Glacier_Muffler
     Name: Dim Glacier Muffler
     Type: Armor
-    Weight: 800
+    Weight: 80
     Defense: 105
     Slots: 1
     Locations:
@@ -224649,7 +224653,7 @@ Body:
     AegisName: Glacier_Ring
     Name: Glacier Ring
     Type: Armor
-    Weight: 100
+    Weight: 10
     Slots: 1
     Locations:
       Left_Accessory: true
@@ -224662,7 +224666,7 @@ Body:
     AegisName: Glacier_Pendant
     Name: Glacier Pendant
     Type: Armor
-    Weight: 100
+    Weight: 10
     Slots: 1
     Locations:
       Right_Accessory: true
@@ -224675,7 +224679,7 @@ Body:
     AegisName: Glacier_Earring
     Name: Glacier Earring
     Type: Armor
-    Weight: 100
+    Weight: 10
     Slots: 1
     Locations:
       Left_Accessory: true
@@ -224688,7 +224692,7 @@ Body:
     AegisName: Glacier_Necklace
     Name: Glacier Necklace
     Type: Armor
-    Weight: 100
+    Weight: 10
     Slots: 1
     Locations:
       Right_Accessory: true
@@ -231401,7 +231405,7 @@ Body:
     Name: Glacier Sword
     Type: Weapon
     SubType: 1hSword
-    Weight: 1600
+    Weight: 160
     Attack: 220
     MagicAttack: 210
     Range: 1
@@ -231422,7 +231426,7 @@ Body:
     Name: Glacier Basic Sword
     Type: Weapon
     SubType: 1hSword
-    Weight: 1400
+    Weight: 140
     Attack: 220
     MagicAttack: 210
     Range: 1
@@ -231505,7 +231509,7 @@ Body:
     Name: Dim Glacier Sword
     Type: Weapon
     SubType: 1hSword
-    Weight: 1600
+    Weight: 160
     Attack: 220
     MagicAttack: 210
     Range: 1
@@ -231530,7 +231534,7 @@ Body:
     Name: Dim Glacier Basic Sword
     Type: Weapon
     SubType: 1hSword
-    Weight: 1400
+    Weight: 140
     Attack: 220
     MagicAttack: 210
     Range: 1
@@ -234425,7 +234429,7 @@ Body:
     Name: Glacier Rogue Knife
     Type: Weapon
     SubType: Dagger
-    Weight: 1400
+    Weight: 140
     Attack: 210
     MagicAttack: 210
     Range: 1
@@ -234444,7 +234448,7 @@ Body:
     Name: Glacier Basic Knife
     Type: Weapon
     SubType: Dagger
-    Weight: 1200
+    Weight: 120
     Attack: 210
     MagicAttack: 210
     Range: 1
@@ -234706,7 +234710,7 @@ Body:
     Name: Dim Glacier Rogue Knife
     Type: Weapon
     SubType: Dagger
-    Weight: 1400
+    Weight: 140
     Attack: 210
     MagicAttack: 210
     Range: 1
@@ -234729,7 +234733,7 @@ Body:
     Name: Dim Glacier Basic Knife
     Type: Weapon
     SubType: Dagger
-    Weight: 1200
+    Weight: 120
     Attack: 210
     MagicAttack: 210
     Range: 1
@@ -236620,7 +236624,7 @@ Body:
     Name: Glacier Axe
     Type: Weapon
     SubType: 1hAxe
-    Weight: 5000
+    Weight: 500
     Attack: 240
     MagicAttack: 210
     Range: 1
@@ -236643,7 +236647,7 @@ Body:
     Name: Dim Glacier Axe
     Type: Weapon
     SubType: 1hAxe
-    Weight: 5000
+    Weight: 500
     Attack: 240
     MagicAttack: 210
     Range: 1
@@ -237588,7 +237592,7 @@ Body:
     Name: Glacier Spear
     Type: Weapon
     SubType: 1hSpear
-    Weight: 2100
+    Weight: 210
     Attack: 220
     MagicAttack: 210
     Range: 3
@@ -237662,7 +237666,7 @@ Body:
     Name: Dim Glacier Spear
     Type: Weapon
     SubType: 1hSpear
-    Weight: 2100
+    Weight: 210
     Attack: 220
     MagicAttack: 210
     Range: 3
@@ -240008,7 +240012,7 @@ Body:
     Name: Glacier Book
     Type: Weapon
     SubType: Book
-    Weight: 1200
+    Weight: 120
     Attack: 210
     MagicAttack: 210
     Range: 1
@@ -240224,7 +240228,7 @@ Body:
     Name: Dim Glacier Book
     Type: Weapon
     SubType: Book
-    Weight: 1200
+    Weight: 120
     Attack: 210
     MagicAttack: 210
     Range: 1
@@ -244577,7 +244581,7 @@ Body:
     Name: Glacier Wand
     Type: Weapon
     SubType: Staff
-    Weight: 1300
+    Weight: 130
     Attack: 150
     MagicAttack: 230
     Range: 1
@@ -244603,7 +244607,7 @@ Body:
     Name: Glacier Foxtail Staff
     Type: Weapon
     SubType: Staff
-    Weight: 2000
+    Weight: 200
     Attack: 400
     MagicAttack: 400
     Range: 1
@@ -244962,7 +244966,7 @@ Body:
     Name: Dim Glacier Wand
     Type: Weapon
     SubType: Staff
-    Weight: 1300
+    Weight: 130
     Attack: 150
     MagicAttack: 230
     Range: 1
@@ -244992,7 +244996,7 @@ Body:
     Name: Dim Glacier Foxtail
     Type: Weapon
     SubType: Staff
-    Weight: 2000
+    Weight: 200
     Attack: 400
     MagicAttack: 400
     Range: 1
@@ -248342,7 +248346,7 @@ Body:
     Name: Glacier Knuckle
     Type: Weapon
     SubType: Knuckle
-    Weight: 1500
+    Weight: 150
     Attack: 240
     MagicAttack: 220
     Range: 1
@@ -248447,7 +248451,7 @@ Body:
     Name: Dim Glacier Knuckle
     Type: Weapon
     SubType: Knuckle
-    Weight: 1500
+    Weight: 150
     Attack: 240
     MagicAttack: 220
     Range: 1
@@ -250096,7 +250100,7 @@ Body:
     Name: Glacier Violin
     Type: Weapon
     SubType: Musical
-    Weight: 1500
+    Weight: 150
     Attack: 210
     MagicAttack: 210
     Range: 1
@@ -250116,7 +250120,7 @@ Body:
     Name: Dim Glacier Violin
     Type: Weapon
     SubType: Musical
-    Weight: 1500
+    Weight: 150
     Attack: 210
     MagicAttack: 210
     Range: 1
@@ -251907,7 +251911,7 @@ Body:
     Name: Glacier Whip
     Type: Weapon
     SubType: Whip
-    Weight: 1500
+    Weight: 150
     Attack: 210
     MagicAttack: 210
     Range: 2
@@ -251927,7 +251931,7 @@ Body:
     Name: Dim Glacier Whip
     Type: Weapon
     SubType: Whip
-    Weight: 1500
+    Weight: 150
     Attack: 210
     MagicAttack: 210
     Range: 2
@@ -254004,7 +254008,7 @@ Body:
     Name: Glacier Mace
     Type: Weapon
     SubType: Mace
-    Weight: 1800
+    Weight: 180
     Attack: 210
     MagicAttack: 210
     Range: 1
@@ -254030,7 +254034,7 @@ Body:
     Name: Glacier Mechanic Mace
     Type: Weapon
     SubType: Mace
-    Weight: 4000
+    Weight: 400
     Attack: 400
     MagicAttack: 160
     Range: 1
@@ -254200,7 +254204,7 @@ Body:
     Name: Dim Glacier Mace
     Type: Weapon
     SubType: Mace
-    Weight: 1800
+    Weight: 180
     Attack: 210
     MagicAttack: 210
     Range: 1
@@ -254230,7 +254234,7 @@ Body:
     Name: Dim Glacier Mechanic Mace
     Type: Weapon
     SubType: Mace
-    Weight: 4000
+    Weight: 400
     Attack: 400
     MagicAttack: 160
     Range: 1
@@ -255845,7 +255849,7 @@ Body:
     Name: Glacier Two-Handed Sword
     Type: Weapon
     SubType: 2hSword
-    Weight: 4000
+    Weight: 400
     Attack: 300
     MagicAttack: 270
     Range: 1
@@ -255896,7 +255900,7 @@ Body:
     Name: Dim Glacier Two-handed Sword
     Type: Weapon
     SubType: 2hSword
-    Weight: 4000
+    Weight: 400
     Attack: 300
     MagicAttack: 270
     Range: 1
@@ -257338,7 +257342,7 @@ Body:
     Name: Glacier Katar
     Type: Weapon
     SubType: Katar
-    Weight: 1200
+    Weight: 120
     Attack: 240
     MagicAttack: 220
     Range: 1
@@ -257388,7 +257392,7 @@ Body:
     Name: Dim Glacier Katar
     Type: Weapon
     SubType: Katar
-    Weight: 1200
+    Weight: 120
     Attack: 240
     MagicAttack: 220
     Range: 1
@@ -258659,7 +258663,7 @@ Body:
     Name: Glacier Two-Handed Axe
     Type: Weapon
     SubType: 2hAxe
-    Weight: 7000
+    Weight: 700
     Attack: 350
     MagicAttack: 180
     Range: 1
@@ -258716,7 +258720,7 @@ Body:
     Name: Dim Glacier Mechanic Axe
     Type: Weapon
     SubType: 2hAxe
-    Weight: 7000
+    Weight: 700
     Attack: 350
     MagicAttack: 180
     Range: 1
@@ -259612,7 +259616,7 @@ Body:
     Name: Glacier Lance
     Type: Weapon
     SubType: 2hSpear
-    Weight: 4500
+    Weight: 450
     Attack: 300
     MagicAttack: 270
     Range: 3
@@ -259628,7 +259632,7 @@ Body:
     Name: Dim Glacier Lance
     Type: Weapon
     SubType: 2hSpear
-    Weight: 4500
+    Weight: 450
     Attack: 300
     MagicAttack: 270
     Range: 3
@@ -261293,7 +261297,7 @@ Body:
     Name: Glacier Staff
     Type: Weapon
     SubType: 2hStaff
-    Weight: 2400
+    Weight: 240
     Attack: 150
     MagicAttack: 290
     Range: 1
@@ -261317,7 +261321,7 @@ Body:
     Name: Dim Glacier Staff
     Type: Weapon
     SubType: 2hStaff
-    Weight: 2400
+    Weight: 240
     Attack: 150
     MagicAttack: 290
     Range: 1
@@ -262969,7 +262973,7 @@ Body:
     Name: Glacier Huuma
     Type: Weapon
     SubType: Huuma
-    Weight: 3000
+    Weight: 300
     Attack: 400
     MagicAttack: 370
     Range: 1
@@ -262989,7 +262993,7 @@ Body:
     Name: Dim Glacier Huuma Shuriken
     Type: Weapon
     SubType: Huuma
-    Weight: 3000
+    Weight: 300
     Attack: 400
     MagicAttack: 370
     Range: 1
@@ -265215,7 +265219,7 @@ Body:
     Name: Glacier Bow
     Type: Weapon
     SubType: Bow
-    Weight: 1500
+    Weight: 150
     Attack: 240
     Range: 5
     Jobs:
@@ -265367,7 +265371,7 @@ Body:
     Name: Dim Glacier Bow
     Type: Weapon
     SubType: Bow
-    Weight: 1500
+    Weight: 150
     Attack: 240
     Range: 5
     Slots: 1
@@ -266893,7 +266897,7 @@ Body:
     Name: Glacier Revolver
     Type: Weapon
     SubType: Revolver
-    Weight: 2200
+    Weight: 220
     Attack: 230
     Range: 7
     Jobs:
@@ -266912,7 +266916,7 @@ Body:
     Name: Dim Glacier Pistol
     Type: Weapon
     SubType: Revolver
-    Weight: 2200
+    Weight: 220
     Attack: 230
     Range: 7
     Slots: 1
@@ -267720,7 +267724,7 @@ Body:
     Name: Glacier Rifle
     Type: Weapon
     SubType: Rifle
-    Weight: 2600
+    Weight: 260
     Attack: 280
     Range: 9
     Jobs:
@@ -267768,7 +267772,7 @@ Body:
     Name: Dim Glacier Rifle
     Type: Weapon
     SubType: Rifle
-    Weight: 2600
+    Weight: 260
     Attack: 280
     Range: 9
     Slots: 1
@@ -268591,7 +268595,7 @@ Body:
     Name: Glacier Shotgun
     Type: Weapon
     SubType: Shotgun
-    Weight: 2600
+    Weight: 260
     Attack: 300
     Range: 9
     Jobs:
@@ -268609,7 +268613,7 @@ Body:
     Name: Dim Glacier Shotgun
     Type: Weapon
     SubType: Shotgun
-    Weight: 2600
+    Weight: 260
     Attack: 300
     Range: 9
     Slots: 1
@@ -269436,7 +269440,7 @@ Body:
     Name: Glacier Gatling
     Type: Weapon
     SubType: Gatling
-    Weight: 3500
+    Weight: 350
     Attack: 350
     Range: 9
     Jobs:
@@ -269491,7 +269495,7 @@ Body:
     Name: Dim Glacier Gatling Gun
     Type: Weapon
     SubType: Gatling
-    Weight: 3500
+    Weight: 350
     Attack: 350
     Range: 9
     Slots: 1
@@ -270224,7 +270228,7 @@ Body:
     Name: Glacier Launcher
     Type: Weapon
     SubType: Grenade
-    Weight: 3000
+    Weight: 300
     Attack: 300
     Range: 9
     Jobs:
@@ -270241,7 +270245,7 @@ Body:
     Name: Dim Glacier Grenade Launcher
     Type: Weapon
     SubType: Grenade
-    Weight: 3000
+    Weight: 300
     Attack: 300
     Range: 9
     Slots: 1

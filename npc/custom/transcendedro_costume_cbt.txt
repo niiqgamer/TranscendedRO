@@ -1,0 +1,33 @@
+izlude,121,138,4	script	Costume Shop	4_F_BELIEVER01,{
+
+	mes "Costume Costume";
+	mes "and Costume!";
+	next;
+	switch(select(
+	
+	"~ Costume Garment",
+	"Cancle"
+	
+	)) {
+		case 1:
+			mes "Yep!";
+			close2;
+			callshop "CostumeGarment",1;
+			end;
+		case 2:
+			mes "Bye, guys!";
+			close2;
+			end;
+	}
+	close;
+
+OnInit: 
+initnpctimer;
+
+OnTimer1000:
+    showscript("Costume Shop!!!");
+    setnpctimer 0;
+    end;
+}
+
+-	shop	CostumeGarment	-1,480608:10000,480057:10000,20621:10000,480318:10000,480361:10000,480107:10000,480202:10000,410287:10000,480298:10000,480198:10000,480252:10000,480470:10000,480725:10000,480664:10000,480485:10000,480559:10000,20614:10000
