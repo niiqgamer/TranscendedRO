@@ -21,8 +21,8 @@ izlude,121,138,4	script	Costume Shop	4_F_BELIEVER01,{
 	}
 	close;
 
-OnInit: 
-initnpctimer;
+OnInit:
+	initnpctimer;
 
 OnTimer1000:
     showscript("Costume Shop!!!");

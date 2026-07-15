@@ -4568,6 +4568,7 @@ prt_cas,325,263,3	script	Nyhill M. Heine#ep172	4_EP17_NIHIL_K,{
 		ep17_2_main = 36;
 		setquest 18020;
 		completequest 18020;
+		announce "Congratulations! ["+strcharinfo(0)+"] has completed Episode 17.2 - Legacy of the Wise One Main Quest!",0,0x27C5F5;
 		close3;
 	}
 	cutin "ep171_nihil01",2;

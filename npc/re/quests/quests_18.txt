@@ -5741,6 +5741,7 @@ ra_temin,258,117,3	script(CLOAKED)	Elly's Figure#c12_02	4_EP17_TABLET,{
 		getitem 400128,1;	// Costume Dropping Elly
 		getitem 1000405,180;	// Ep18_Amethyst_Fragment
 		getexp 18252408,2000000;
+		announce "Congratulations! ["+strcharinfo(0)+"] has completed Episode 18 - Direction of Prayer Main Quest!",0,0x27C5F5;
 		next;
 		cloakonnpcself( "Elly's Figure#c12_02" );
 		cutin "ep18_miriam_01.png",0;

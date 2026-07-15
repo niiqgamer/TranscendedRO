@@ -1,0 +1,744 @@
+//===================================
+// @DICE [v.1.0]
+//===================================
+// + GM can use @dice to create an event.
+// + Players and enter an event via @dice.
+// + easy and auto-gameplay.
+//===================================
+// Modified by [NIIQ (TranscendedRO)]
+//===================================
+
+-	script	Dice_System	-1,{
+
+OnInit:
+	// คำสั่งที่ผู้เล่นใช้ได้ = @dice = วาร์ปเข้ามาห้องทอยเต๋า
+	bindatcmd "dice", strnpcinfo(0)+"::OnToDiceEvent", 0;
+	
+	// @dicedooropen = เปิดประตูเลือกหน้าเต๋า *GM ใช้ได้เท่านั้น
+	bindatcmd "dicedooropen", strnpcinfo(0)+"::OnFenceOff", 99;
+	
+	// @dicedoorclose = ปิดประตูเลือกหน้าเต๋า *GM ใช้ได้เท่านั้น
+	bindatcmd "dicedoorclose", strnpcinfo(0)+"::OnFenceOn", 99;
+	
+	// ห้ามเดินทั้งแมพ
+	setcell "quiz_02", 286, 269, 323, 232, cell_walkable, 0;
+	
+	// เดินได้แค่ทางเดินกลาง
+	setcell "quiz_02", 302, 264, 305, 237, cell_walkable, 1;
+	
+	disablenpc "Dice_Event";
+	hideonnpc "Reward for Dice";
+	hideonnpc "Dice Manager";
+	for (.@i = 1; .@i <= 6; .@i++) {
+		enablenpc("WT#" + .@i);
+		hideonnpc("WT#" + .@i);
+	}
+	for (.@i = 1; .@i <= 6; .@i++) {
+		enablenpc("Effect_NPC#" + .@i);
+		hideonnpc("Effect_NPC#" + .@i);
+	}
+	end;
+
+OnToDiceEvent:
+	if (.DiceEvent == 0) {
+		mes "[Dice Event]";
+		mes " ";
+		mes "^AA0000Event has not yet begin,^000000";
+		mes "^AA0000or event is over now, sorry.^000000";
+		mes " ";
+		mes "Follow up the event at Discord.";
+		close;
+		end;
+	} else if (.DiceEvent == 2) {
+		mes "[Dice Event]";
+		mes " ";
+		mes "^AA0000Sorry for that,^000000";
+		mes "^AA0000Dice's entrance is closed.^000000";
+		mes " ";
+		mes "Follow up the event at Discord.";
+		close;
+		end;
+	} else if (.DiceEvent == 1) {
+		warp "quiz_02",303,251;
+		end;
+	}
+	end;
+
+OnFenceOff:
+	setcell "quiz_02", 289, 263, 300, 256, cell_walkable, 1;						// พื้นที่ 1
+	setcell "quiz_02", 301, 260, 301, 259, cell_walkable, 1;						// ประตู 1
+	hideonnpc "Wall#018";																			// ประตู 1
+	hideonnpc "Wall#019";																			// ประตู 1
+	setcell "quiz_02", 289, 254, 300, 247, cell_walkable, 1;						// พื้นที่ 2
+	setcell "quiz_02", 301, 251, 301, 250, cell_walkable, 1;						// ประตู 2
+	hideonnpc "Wall#027";																			// ประตู 2
+	hideonnpc "Wall#028";																			// ประตู 2
+	setcell "quiz_02", 289, 245, 300, 236, cell_walkable, 1;						// พื้นที่ 3
+	setcell "quiz_02", 301, 242, 301, 241, cell_walkable, 1;						// ประตู 3
+	hideonnpc "Wall#036";																			// ประตู 3
+	hideonnpc "Wall#037";																			// ประตู 3
+	setcell "quiz_02", 307, 263, 318, 256, cell_walkable, 1;						// พื้นที่ 4
+	setcell "quiz_02", 306, 260, 306, 259, cell_walkable, 1;						// ประตู 4
+	hideonnpc "Wall#099";																			// ประตู 4
+	hideonnpc "Wall#100";																			// ประตู 4
+	setcell "quiz_02", 307, 254, 318, 247, cell_walkable, 1;						// พื้นที่ 5
+	setcell "quiz_02", 306, 251, 306, 250, cell_walkable, 1;						// ประตู 5
+	hideonnpc "Wall#108";																			// ประตู 5
+	hideonnpc "Wall#109";																			// ประตู 5
+	setcell "quiz_02", 307, 245, 318, 238, cell_walkable, 1;						// พื้นที่ 6
+	setcell "quiz_02", 306, 242, 306, 241, cell_walkable, 1;						// ประตู 6
+	hideonnpc "Wall#117";																			// ประตู 6
+	hideonnpc "Wall#118";																			// ประตู 6
+	end;
+
+OnFenceOn:
+	setcell "quiz_02", 289, 263, 300, 256, cell_walkable, 1;						// พื้นที่ 1
+	setcell "quiz_02", 301, 260, 301, 259, cell_walkable, 0;						// ประตู 1
+	hideoffnpc "Wall#018";																			// ประตู 1
+	hideoffnpc "Wall#019";																			// ประตู 1
+	setcell "quiz_02", 289, 254, 300, 247, cell_walkable, 1;						// พื้นที่ 2
+	setcell "quiz_02", 301, 251, 301, 250, cell_walkable, 0;						// ประตู 2
+	hideoffnpc "Wall#027";																			// ประตู 2
+	hideoffnpc "Wall#028";																			// ประตู 2
+	setcell "quiz_02", 289, 245, 300, 236, cell_walkable, 1;						// พื้นที่ 3
+	setcell "quiz_02", 301, 242, 301, 241, cell_walkable, 0;						// ประตู 3
+	hideoffnpc "Wall#036";																			// ประตู 3
+	hideoffnpc "Wall#037";																			// ประตู 3
+	setcell "quiz_02", 307, 263, 318, 256, cell_walkable, 1;						// พื้นที่ 4
+	setcell "quiz_02", 306, 260, 306, 259, cell_walkable, 0;						// ประตู 4
+	hideoffnpc "Wall#099";																			// ประตู 4
+	hideoffnpc "Wall#100";																			// ประตู 4
+	setcell "quiz_02", 307, 254, 318, 247, cell_walkable, 1;						// พื้นที่ 5
+	setcell "quiz_02", 306, 251, 306, 250, cell_walkable, 0;						// ประตู 5
+	hideoffnpc "Wall#108";																			// ประตู 5
+	hideoffnpc "Wall#109";																			// ประตู 5
+	setcell "quiz_02", 307, 245, 318, 238, cell_walkable, 1;						// พื้นที่ 6
+	setcell "quiz_02", 306, 242, 306, 241, cell_walkable, 0;						// ประตู 6
+	hideoffnpc "Wall#117";																			// ประตู 6
+	hideoffnpc "Wall#118";																			// ประตู 6
+	end;
+
+OnStart:
+	.DiceEvent = 1;
+	enablenpc "Dice_Event";
+	donpcevent "Dice_System::OnFenceOff";
+	announce "@dice : DICE EVENT IS ON!!! Typing ' @dice ' to join the event!!!",bc_all,0xEA0000,FW_BOLD,20,0,0,0;
+	sleep 10000;
+	announce "@dice : You have only 2 minutes for joining us ... HURRY!",bc_all,0xEA0000,FW_BOLD,15,0,0,0;
+	sleep 40000;
+	announce "@dice : DICE EVENT IS ON!!! Typing ' @dice ' to join the event!!!",bc_all,0xEA0000,FW_BOLD,20,0,0,0;
+	sleep 40000;
+	announce "@dice : You have only 40 seconds for joining us ... HURRY!",bc_all,0xEA0000,FW_BOLD,15,0,0,0;
+	sleep 35000;
+	announce "@dice : You have ONLY 10 seconds!!!",bc_all,0xEA0000,FW_BOLD,15,0,0,0;
+	sleep 5000;
+	announce "@dice :  5...",bc_all,0xEA0000,FW_BOLD,15,0,0,0;
+	sleep 1000;
+	announce "@dice :  4...",bc_all,0xEA0000,FW_BOLD,15,0,0,0;
+	sleep 1000;
+	announce "@dice :  3...",bc_all,0xEA0000,FW_BOLD,15,0,0,0;
+	sleep 1000;
+	announce "@dice :  2...",bc_all,0xEA0000,FW_BOLD,15,0,0,0;
+	sleep 1000;
+	announce "@dice :  1...",bc_all,0xEA0000,FW_BOLD,15,0,0,0;
+	sleep 1000;
+	announce "Time is up!!! Dice's entrance is closed!",bc_all,0xEA0000,FW_BOLD,20,0,0,0;
+	.DiceEvent = 2;
+	disablenpc "Dice_Event";
+	donpcevent "Dice_System::OnStartDice";
+	end;
+	
+OnStartDice:
+	hideoffnpc "Reward for Dice";
+
+	// กำหนดค่าต่าง ๆ
+	setarray .areas[0], 289,263, 300,256;
+	setarray .areas[1], 289,254, 300,247;
+	setarray .areas[2], 289,245, 300,236;
+	setarray .areas[3], 307,263, 318,256;
+	setarray .areas[4], 307,254, 318,247;
+	setarray .areas[5], 307,245, 318,238;
+
+	setarray .remaining_areas, 1, 2, 3, 4, 5, 6; // พื้นที่ที่เหลือทั้งหมด
+
+	sleep 5000;
+	mapannounce "quiz_02", "@dice : You have only 1 minute to choose your room. Let's go!", bc_map, 0xEA0000, FW_BOLD, 15, 0, 0;
+	sleep 30000;
+	mapannounce "quiz_02", "@dice : Every room will closed in 30 seconds!!!", bc_map, 0xEA0000, FW_BOLD, 15, 0, 0;
+	sleep 30000;
+	mapannounce "quiz_02", "@dice : Time is up!!!", bc_map, 0xEA0000, FW_BOLD, 20, 0, 0;
+	donpcevent "Dice_System::OnFenceOn";
+
+	if (getmapusers("quiz_02") <= 1) {
+		mapannounce "quiz_02", "@dice : So sorry, event canceled due to insufficient number of players.", bc_map, 0xEA0000, FW_BOLD, 15, 0, 0;
+		sleep 5000;
+		mapwarp "quiz_02", "izlude", 128, 130;
+		.DiceEvent = 0;
+		end;
+	}
+	if (getmapusers("quiz_02") <= 3) {
+		mapannounce "quiz_02", "@dice : Event canceled due to having fewer than 4 players. Please go claim your reward.", bc_map, 0xEA0000, FW_BOLD, 15, 0, 0;
+		sleep 5000;
+		mapwarp "quiz_02", "sec_in01", 168, 173;
+		.DiceEvent = 0;
+		end;
+	}
+
+	.@rounds = 0;
+	while (.@rounds < 5) {
+		sleep 10000;
+		mapannounce "quiz_02", "DICE! Round #" + (.@rounds + 1) + "!!!", bc_map, 0xEA0000, FW_BOLD, 50, 0, 0;
+		sleep 2000;
+		
+		// เริ่ม Effect
+		.@effectSpeed = 1;
+		.@loopCount = rand(110, 130);
+		.@currentIndex = 0;
+
+		while (.@loopCount > 0) {
+			// เลือกพื้นที่ถัดไป (หมุนเวียนเฉพาะพื้นที่ที่เหลือ)
+			.@currentIndex = (.@currentIndex + 1) % getarraysize(.remaining_areas);
+
+			// เปิด Effect ที่พื้นที่ใหม่
+			specialeffect 636, AREA, "Effect_NPC#" + .remaining_areas[.@currentIndex];
+
+			sleep .@effectSpeed;
+			.@effectSpeed += 4;
+			.@loopCount--;
+		}
+
+		// สุ่มหาพื้นที่ที่จะถูกคัดออก
+		.@idx = rand(0, getarraysize(.remaining_areas) - 1);
+		.@area_idx = .remaining_areas[.@idx];
+
+		// หมุน Effect ไปยังพื้นที่ที่ถูกคัดออก ??
+		while (.remaining_areas[.@currentIndex] != .@area_idx) {
+			// ขยับไปพื้นที่ถัดไป
+			.@currentIndex = (.@currentIndex + 1) % getarraysize(.remaining_areas);
+
+			// เปิด Effect ที่พื้นที่ใหม่
+			specialeffect 636, AREA, "Effect_NPC#" + .remaining_areas[.@currentIndex];
+
+			// เพิ่มความเร็วในการหมุนช้า ๆ ก่อนหยุด
+			sleep 150;
+		}
+
+		// ลบพื้นที่ที่ถูกสุ่มออกไปจาก .remaining_areas
+		deletearray .remaining_areas[.@idx], 1;
+		disablenpc "Effect_NPC#" + .@area_idx;
+
+		// ประกาศผลทอยเต๋า
+		switch(rand(1,5)) {
+		case 1:
+			mapannounce "quiz_02", "@dice : The room's number #" + .@area_idx + " is kicked!", bc_map, 0xEA0000, FW_BOLD, 15, 0, 0;
+			break;
+		case 2:
+			mapannounce "quiz_02", "@dice : Bye bye, #" + .@area_idx + ". See ya!", bc_map, 0xEA0000, FW_BOLD, 15, 0, 0;
+			break;
+		case 3:
+			mapannounce "quiz_02", "@dice : Ohh! #" + .@area_idx + ". Aiming low as usual, I see.", bc_map, 0xEA0000, FW_BOLD, 15, 0, 0;
+			break;
+		case 4:
+			mapannounce "quiz_02", "@dice : Poor guys #" + .@area_idx + ". Sent back to their country!", bc_map, 0xEA0000, FW_BOLD, 15, 0, 0;
+			break;
+		case 5:
+			mapannounce "quiz_02", "@dice : You can only go this far. #" + .@area_idx + " Goodbye!", bc_map, 0xEA0000, FW_BOLD, 15, 0, 0;
+			break;
+		}
+		sleep 1000;
+
+		// ค้นหาผู้เล่นในพื้นที่นั้นและวาร์ปออกไป
+		if ((.@area_idx) == 1) {
+			areawarp "quiz_02", 289, 263, 300, 256, "sec_in01", 168, 173;
+		}
+		if ((.@area_idx) == 2) {
+			areawarp "quiz_02", 289, 254, 300, 247, "sec_in01", 168, 173;
+		}
+		if ((.@area_idx) == 3) {
+			areawarp "quiz_02", 289, 245, 300, 236, "sec_in01", 168, 173;
+		}
+		if ((.@area_idx) == 4) {
+			areawarp "quiz_02", 307, 263, 318, 256, "sec_in01", 168, 173;
+		}
+		if ((.@area_idx) == 5) {
+			areawarp "quiz_02", 307, 254, 318, 247, "sec_in01", 168, 173;
+		}
+		if ((.@area_idx) == 6) {
+			areawarp "quiz_02", 307, 245, 318, 238, "sec_in01", 168, 173;
+		}
+
+		.@rounds++;
+		if (.@rounds <= 4) {
+			sleep 30000;
+			mapannounce "quiz_02", "@dice : Prepare for next dice in 10 seconds.", bc_map, 0xEA0000, FW_BOLD, 15, 0, 0;
+		}
+	}
+
+	mapannounce "quiz_02", "@dice : How strong... Survivors, claim your rewards now!", bc_map, 0xEA0000, FW_BOLD, 15, 0, 0;
+	donpcevent "Dice_System::OnFenceOff";
+	hideoffnpc "Dice Manager";
+	sleep 5000;
+	mapannounce "quiz_02", "@dice : Event closed in 1 minutes, Claim your reward, quickly!", bc_map, 0xEA0000, FW_BOLD, 15, 0, 0;
+	mapannounce "sec_in01", "@dice : Event closed in 1 minutes, Claim your reward, quickly!", bc_map, 0xEA0000, FW_BOLD, 15, 0, 0;
+	sleep 30000;
+	mapannounce "quiz_02", "@dice : Event closed in 30 seconds, Claim your reward, quickly!", bc_map, 0xEA0000, FW_BOLD, 15, 0, 0;
+	mapannounce "sec_in01", "@dice : Event closed in 30 seconds, Claim your reward, quickly!", bc_map, 0xEA0000, FW_BOLD, 15, 0, 0;
+	sleep 30000;
+	
+	// ทำการรีเซ็ตคืนค่า Event
+	mapwarp "quiz_02", "izlude", 128, 130;
+	mapwarp "sec_in01", "izlude", 128, 130;
+	hideonnpc "Reward for Dice";
+	hideonnpc "Dice Manager";
+	deletearray .remaining_areas[0], getarraysize(.remaining_areas);
+
+	.DiceEvent = 0;
+	end;
+}
+
+sec_in01,169,180,4	script	Reward for Dice	660,{
+	mes "[Dice Reward Manager]";
+	mes " ";
+	mes "Thanks for join us event.";
+	mes "See you next DICE!";
+	close2;
+	getitem 9955500, 20;
+	warp "izlude", 128, 130;
+	end;
+
+OnInit:
+	initnpctimer;
+
+OnTimer1000:
+    showscript(" Dice Reward Manager !!! ");
+    setnpctimer 0;
+    end;
+}
+
+izlude,152,136,4	script	Dice Event	874,{
+	cutin "zonda_01",2;
+	if (getgmlevel() < 98) {
+		goto L_Player_View;
+	}
+
+	mes "[Dice Event]";
+	mes " ";
+	mes "สวัสดี GM ต้องการให้ข้าทำอะไร?";
+	switch(select("Start Event:Set prize^E50000 ["+getitemname($diceprize)+"]^000000 ^E50000 ["+ $diceprizecount + "]^000000:Test Player View:Nothing")) {
+
+	case 1:
+		mes "[Dice Event]";
+		mes " ";
+		mes "พิมพ์ '^FF0000START^000000' หากต้องการเริ่ม Event";
+		input .@confirm$;          
+		if (.@confirm$ == "START") {
+			donpcevent "Dice_System::OnStart"; 
+			close2;
+			cutin "",255;
+			end;
+		}
+		mes "[Dice Event]";
+		mes " ";
+		mes "โอเค ยังก่อนนะ";
+		close2;
+		cutin "",255;
+		end;
+		break;
+	case 2:
+		mes "[Dice Event]";
+		mes " ";
+		mes "Set ของรางวัลเพื่อแจกคนชนะ";
+		mes "กรุณาใส่ ItemID ที่ต้องการ"; 
+		input .@guessprizeid; 
+		if (getitemname(.@guessprizeid) == "null" || getitemname(.@guessprizeid) == "") {
+			mes "[Dice Event]";
+			mes " ";
+			mes "Error";
+			mes "กรุณาใส่ ItemID ที่ต้องการอีกรอบ";
+			close;
+		}
+		set $diceprize, .@guessprizeid;
+		mes "[Dice Event]";
+		mes " ";
+		mes "กรุณาใส่จำนวนที่ต้องการแจก";
+		input .@guessprizeamount;
+		if (!.@guessprizeamount || .@guessprizeamount == 0 || .@guessprizeamount < 1) {
+			set $diceprizecount,1;
+		}
+		set $diceprizecount,.@guessprizeamount;
+		mes "[Dice Event]";
+		mes " ";
+		mes "The final reward is ...";
+		mes "^E50000"+ $diceprizecount + "x " + getitemname($diceprize) +"^000000";
+		close2;
+		cutin "",255;
+		end;
+	case 3:
+		goto L_Player_View;
+	case 4:
+		mes "[Dice Event]";
+		mes " ";
+		mes "Bye!"; 
+		close2;
+		cutin "",255;
+		end;
+	}
+
+L_Player_View:
+	mes "[Dice Event]";
+	mes " ";
+	mes "^AA0000No event yet.^000000";
+	mes " ";
+	mes "Follow up the event at Discord.";
+	close2;
+	cutin "",255;
+	end;
+
+OnInit:
+	initnpctimer;
+
+OnTimer1000:
+    showscript(" !!! DICE EVENT !!! ");
+    setnpctimer 0;
+    end;
+}
+	
+//--------------------------------------------------
+	
+izlude,152,136,0	warp	Dice_Event	2,2,quiz_02,303,251
+	
+//--------------------------------------------------
+
+quiz_02,304,256,4	script	Dice Manager	874,{
+	cutin "zonda_01",2;
+	mes "[Dice Manager]";
+	mes " ";
+	mes "Congrat! I have some rewards for you.";
+	close2;
+	getitem $diceprize,$diceprizecount;
+	warp "izlude", 128, 130;
+	end;
+}
+
+// Map Flags
+//========================================
+quiz_02	mapflag	nowarpto
+quiz_02	mapflag	nowarp
+quiz_02	mapflag	noskill
+quiz_02	mapflag	nosave
+quiz_02	mapflag	nomemo
+quiz_02	mapflag	noteleport
+quiz_02	mapflag	noloot
+quiz_02	mapflag	novending
+quiz_02	mapflag	nobranch
+sec_in01	mapflag	nowarpto
+sec_in01	mapflag	nowarp
+sec_in01	mapflag	noskill
+sec_in01	mapflag	nosave
+sec_in01	mapflag	nomemo
+sec_in01	mapflag	noteleport
+sec_in01	mapflag	noloot
+sec_in01	mapflag	novending
+sec_in01	mapflag	nobranch
+
+// Wallsssss...
+//========================================
+quiz_02,288,264,4	script	Wall#000	4_BULLETIN_BOARD2,{end;}
+
+quiz_02,289,264,4	duplicate(Wall#000)	Wall#001	4_BULLETIN_BOARD2
+quiz_02,290,264,4	duplicate(Wall#000)	Wall#002	4_BULLETIN_BOARD2
+quiz_02,291,264,4	duplicate(Wall#000)	Wall#003	4_BULLETIN_BOARD2
+quiz_02,292,264,4	duplicate(Wall#000)	Wall#004	4_BULLETIN_BOARD2
+quiz_02,293,264,4	duplicate(Wall#000)	Wall#005	4_BULLETIN_BOARD2
+quiz_02,294,264,4	duplicate(Wall#000)	Wall#006	4_BULLETIN_BOARD2
+quiz_02,295,264,4	duplicate(Wall#000)	Wall#007	4_BULLETIN_BOARD2
+quiz_02,296,264,4	duplicate(Wall#000)	Wall#008	4_BULLETIN_BOARD2
+quiz_02,297,264,4	duplicate(Wall#000)	Wall#009	4_BULLETIN_BOARD2
+quiz_02,298,264,4	duplicate(Wall#000)	Wall#010	4_BULLETIN_BOARD2
+quiz_02,299,264,4	duplicate(Wall#000)	Wall#011	4_BULLETIN_BOARD2
+quiz_02,300,264,4	duplicate(Wall#000)	Wall#012	4_BULLETIN_BOARD2
+quiz_02,301,264,4	duplicate(Wall#000)	Wall#013	4_BULLETIN_BOARD2
+			
+quiz_02,301,263,4	duplicate(Wall#000)	Wall#015	4_BULLETIN_BOARD2
+quiz_02,301,262,4	duplicate(Wall#000)	Wall#016	4_BULLETIN_BOARD2
+quiz_02,301,261,4	duplicate(Wall#000)	Wall#017	4_BULLETIN_BOARD2
+quiz_02,301,260,4	duplicate(Wall#000)	Wall#018	4_BULLETIN_BOARD2
+quiz_02,301,259,4	duplicate(Wall#000)	Wall#019	4_BULLETIN_BOARD2
+quiz_02,301,258,4	duplicate(Wall#000)	Wall#020	4_BULLETIN_BOARD2
+quiz_02,301,257,4	duplicate(Wall#000)	Wall#021	4_BULLETIN_BOARD2
+quiz_02,301,256,4	duplicate(Wall#000)	Wall#022	4_BULLETIN_BOARD2
+quiz_02,301,255,4	duplicate(Wall#000)	Wall#023	4_BULLETIN_BOARD2
+quiz_02,301,254,4	duplicate(Wall#000)	Wall#024	4_BULLETIN_BOARD2
+quiz_02,301,253,4	duplicate(Wall#000)	Wall#025	4_BULLETIN_BOARD2
+quiz_02,301,252,4	duplicate(Wall#000)	Wall#026	4_BULLETIN_BOARD2
+quiz_02,301,251,4	duplicate(Wall#000)	Wall#027	4_BULLETIN_BOARD2
+quiz_02,301,250,4	duplicate(Wall#000)	Wall#028	4_BULLETIN_BOARD2
+quiz_02,301,249,4	duplicate(Wall#000)	Wall#029	4_BULLETIN_BOARD2
+quiz_02,301,248,4	duplicate(Wall#000)	Wall#030	4_BULLETIN_BOARD2
+quiz_02,301,247,4	duplicate(Wall#000)	Wall#031	4_BULLETIN_BOARD2
+quiz_02,301,246,4	duplicate(Wall#000)	Wall#032	4_BULLETIN_BOARD2
+quiz_02,301,245,4	duplicate(Wall#000)	Wall#033	4_BULLETIN_BOARD2
+quiz_02,301,244,4	duplicate(Wall#000)	Wall#034	4_BULLETIN_BOARD2
+quiz_02,301,243,4	duplicate(Wall#000)	Wall#035	4_BULLETIN_BOARD2
+quiz_02,301,242,4	duplicate(Wall#000)	Wall#036	4_BULLETIN_BOARD2
+quiz_02,301,241,4	duplicate(Wall#000)	Wall#037	4_BULLETIN_BOARD2
+quiz_02,301,240,4	duplicate(Wall#000)	Wall#038	4_BULLETIN_BOARD2
+quiz_02,301,239,4	duplicate(Wall#000)	Wall#039	4_BULLETIN_BOARD2
+quiz_02,301,238,4	duplicate(Wall#000)	Wall#040	4_BULLETIN_BOARD2
+quiz_02,301,237,4	duplicate(Wall#000)	Wall#041	4_BULLETIN_BOARD2
+			
+quiz_02,301,237,4	duplicate(Wall#000)	Wall#042	4_BULLETIN_BOARD2
+quiz_02,300,237,4	duplicate(Wall#000)	Wall#043	4_BULLETIN_BOARD2
+quiz_02,299,237,4	duplicate(Wall#000)	Wall#044	4_BULLETIN_BOARD2
+quiz_02,298,237,4	duplicate(Wall#000)	Wall#045	4_BULLETIN_BOARD2
+quiz_02,297,237,4	duplicate(Wall#000)	Wall#046	4_BULLETIN_BOARD2
+quiz_02,296,237,4	duplicate(Wall#000)	Wall#047	4_BULLETIN_BOARD2
+quiz_02,295,237,4	duplicate(Wall#000)	Wall#048	4_BULLETIN_BOARD2
+quiz_02,294,237,4	duplicate(Wall#000)	Wall#049	4_BULLETIN_BOARD2
+quiz_02,293,237,4	duplicate(Wall#000)	Wall#050	4_BULLETIN_BOARD2
+quiz_02,292,237,4	duplicate(Wall#000)	Wall#051	4_BULLETIN_BOARD2
+quiz_02,291,237,4	duplicate(Wall#000)	Wall#052	4_BULLETIN_BOARD2
+quiz_02,290,237,4	duplicate(Wall#000)	Wall#053	4_BULLETIN_BOARD2
+quiz_02,289,237,4	duplicate(Wall#000)	Wall#054	4_BULLETIN_BOARD2
+quiz_02,288,237,4	duplicate(Wall#000)	Wall#055	4_BULLETIN_BOARD2
+			
+quiz_02,288,238,4	duplicate(Wall#000)	Wall#056	4_BULLETIN_BOARD2
+quiz_02,288,239,4	duplicate(Wall#000)	Wall#057	4_BULLETIN_BOARD2
+quiz_02,288,240,4	duplicate(Wall#000)	Wall#058	4_BULLETIN_BOARD2
+quiz_02,288,241,4	duplicate(Wall#000)	Wall#059	4_BULLETIN_BOARD2
+quiz_02,288,242,4	duplicate(Wall#000)	Wall#060	4_BULLETIN_BOARD2
+quiz_02,288,243,4	duplicate(Wall#000)	Wall#061	4_BULLETIN_BOARD2
+quiz_02,288,244,4	duplicate(Wall#000)	Wall#062	4_BULLETIN_BOARD2
+quiz_02,288,245,4	duplicate(Wall#000)	Wall#063	4_BULLETIN_BOARD2
+quiz_02,288,246,4	duplicate(Wall#000)	Wall#064	4_BULLETIN_BOARD2
+quiz_02,288,247,4	duplicate(Wall#000)	Wall#065	4_BULLETIN_BOARD2
+quiz_02,288,248,4	duplicate(Wall#000)	Wall#066	4_BULLETIN_BOARD2
+quiz_02,288,249,4	duplicate(Wall#000)	Wall#067	4_BULLETIN_BOARD2
+quiz_02,288,250,4	duplicate(Wall#000)	Wall#068	4_BULLETIN_BOARD2
+quiz_02,288,251,4	duplicate(Wall#000)	Wall#069	4_BULLETIN_BOARD2
+quiz_02,288,252,4	duplicate(Wall#000)	Wall#070	4_BULLETIN_BOARD2
+quiz_02,288,253,4	duplicate(Wall#000)	Wall#071	4_BULLETIN_BOARD2
+quiz_02,288,254,4	duplicate(Wall#000)	Wall#072	4_BULLETIN_BOARD2
+quiz_02,288,255,4	duplicate(Wall#000)	Wall#073	4_BULLETIN_BOARD2
+quiz_02,288,256,4	duplicate(Wall#000)	Wall#074	4_BULLETIN_BOARD2
+quiz_02,288,257,4	duplicate(Wall#000)	Wall#075	4_BULLETIN_BOARD2
+quiz_02,288,258,4	duplicate(Wall#000)	Wall#076	4_BULLETIN_BOARD2
+quiz_02,288,259,4	duplicate(Wall#000)	Wall#077	4_BULLETIN_BOARD2
+quiz_02,288,260,4	duplicate(Wall#000)	Wall#078	4_BULLETIN_BOARD2
+quiz_02,288,261,4	duplicate(Wall#000)	Wall#079	4_BULLETIN_BOARD2
+quiz_02,288,262,4	duplicate(Wall#000)	Wall#080	4_BULLETIN_BOARD2
+quiz_02,288,263,4	duplicate(Wall#000)	Wall#081	4_BULLETIN_BOARD2
+			
+quiz_02,319,264,4	duplicate(Wall#000)	Wall#082	4_BULLETIN_BOARD2
+quiz_02,318,264,4	duplicate(Wall#000)	Wall#083	4_BULLETIN_BOARD2
+quiz_02,317,264,4	duplicate(Wall#000)	Wall#084	4_BULLETIN_BOARD2
+quiz_02,316,264,4	duplicate(Wall#000)	Wall#085	4_BULLETIN_BOARD2
+quiz_02,315,264,4	duplicate(Wall#000)	Wall#086	4_BULLETIN_BOARD2
+quiz_02,314,264,4	duplicate(Wall#000)	Wall#087	4_BULLETIN_BOARD2
+quiz_02,313,264,4	duplicate(Wall#000)	Wall#088	4_BULLETIN_BOARD2
+quiz_02,312,264,4	duplicate(Wall#000)	Wall#089	4_BULLETIN_BOARD2
+quiz_02,311,264,4	duplicate(Wall#000)	Wall#090	4_BULLETIN_BOARD2
+quiz_02,310,264,4	duplicate(Wall#000)	Wall#091	4_BULLETIN_BOARD2
+quiz_02,309,264,4	duplicate(Wall#000)	Wall#092	4_BULLETIN_BOARD2
+quiz_02,308,264,4	duplicate(Wall#000)	Wall#093	4_BULLETIN_BOARD2
+quiz_02,307,264,4	duplicate(Wall#000)	Wall#094	4_BULLETIN_BOARD2
+quiz_02,306,264,4	duplicate(Wall#000)	Wall#095	4_BULLETIN_BOARD2
+			
+quiz_02,306,263,4	duplicate(Wall#000)	Wall#096	4_BULLETIN_BOARD2
+quiz_02,306,262,4	duplicate(Wall#000)	Wall#097	4_BULLETIN_BOARD2
+quiz_02,306,261,4	duplicate(Wall#000)	Wall#098	4_BULLETIN_BOARD2
+quiz_02,306,260,4	duplicate(Wall#000)	Wall#099	4_BULLETIN_BOARD2
+quiz_02,306,259,4	duplicate(Wall#000)	Wall#100	4_BULLETIN_BOARD2
+quiz_02,306,258,4	duplicate(Wall#000)	Wall#101	4_BULLETIN_BOARD2
+quiz_02,306,257,4	duplicate(Wall#000)	Wall#102	4_BULLETIN_BOARD2
+quiz_02,306,256,4	duplicate(Wall#000)	Wall#103	4_BULLETIN_BOARD2
+quiz_02,306,255,4	duplicate(Wall#000)	Wall#104	4_BULLETIN_BOARD2
+quiz_02,306,254,4	duplicate(Wall#000)	Wall#105	4_BULLETIN_BOARD2
+quiz_02,306,253,4	duplicate(Wall#000)	Wall#106	4_BULLETIN_BOARD2
+quiz_02,306,252,4	duplicate(Wall#000)	Wall#107	4_BULLETIN_BOARD2
+quiz_02,306,251,4	duplicate(Wall#000)	Wall#108	4_BULLETIN_BOARD2
+quiz_02,306,250,4	duplicate(Wall#000)	Wall#109	4_BULLETIN_BOARD2
+quiz_02,306,249,4	duplicate(Wall#000)	Wall#110	4_BULLETIN_BOARD2
+quiz_02,306,248,4	duplicate(Wall#000)	Wall#111	4_BULLETIN_BOARD2
+quiz_02,306,247,4	duplicate(Wall#000)	Wall#112	4_BULLETIN_BOARD2
+quiz_02,306,246,4	duplicate(Wall#000)	Wall#113	4_BULLETIN_BOARD2
+quiz_02,306,245,4	duplicate(Wall#000)	Wall#114	4_BULLETIN_BOARD2
+quiz_02,306,244,4	duplicate(Wall#000)	Wall#115	4_BULLETIN_BOARD2
+quiz_02,306,243,4	duplicate(Wall#000)	Wall#116	4_BULLETIN_BOARD2
+quiz_02,306,242,4	duplicate(Wall#000)	Wall#117	4_BULLETIN_BOARD2
+quiz_02,306,241,4	duplicate(Wall#000)	Wall#118	4_BULLETIN_BOARD2
+quiz_02,306,240,4	duplicate(Wall#000)	Wall#119	4_BULLETIN_BOARD2
+quiz_02,306,239,4	duplicate(Wall#000)	Wall#120	4_BULLETIN_BOARD2
+quiz_02,306,238,4	duplicate(Wall#000)	Wall#121	4_BULLETIN_BOARD2
+quiz_02,306,237,4	duplicate(Wall#000)	Wall#122	4_BULLETIN_BOARD2
+			
+quiz_02,307,237,4	duplicate(Wall#000)	Wall#123	4_BULLETIN_BOARD2
+quiz_02,308,237,4	duplicate(Wall#000)	Wall#124	4_BULLETIN_BOARD2
+quiz_02,309,237,4	duplicate(Wall#000)	Wall#125	4_BULLETIN_BOARD2
+quiz_02,310,237,4	duplicate(Wall#000)	Wall#126	4_BULLETIN_BOARD2
+quiz_02,311,237,4	duplicate(Wall#000)	Wall#127	4_BULLETIN_BOARD2
+quiz_02,312,237,4	duplicate(Wall#000)	Wall#128	4_BULLETIN_BOARD2
+quiz_02,313,237,4	duplicate(Wall#000)	Wall#129	4_BULLETIN_BOARD2
+quiz_02,314,237,4	duplicate(Wall#000)	Wall#130	4_BULLETIN_BOARD2
+quiz_02,315,237,4	duplicate(Wall#000)	Wall#131	4_BULLETIN_BOARD2
+quiz_02,316,237,4	duplicate(Wall#000)	Wall#132	4_BULLETIN_BOARD2
+quiz_02,317,237,4	duplicate(Wall#000)	Wall#133	4_BULLETIN_BOARD2
+quiz_02,318,237,4	duplicate(Wall#000)	Wall#134	4_BULLETIN_BOARD2
+quiz_02,319,237,4	duplicate(Wall#000)	Wall#135	4_BULLETIN_BOARD2
+			
+quiz_02,319,238,4	duplicate(Wall#000)	Wall#136	4_BULLETIN_BOARD2
+quiz_02,319,239,4	duplicate(Wall#000)	Wall#137	4_BULLETIN_BOARD2
+quiz_02,319,240,4	duplicate(Wall#000)	Wall#138	4_BULLETIN_BOARD2
+quiz_02,319,241,4	duplicate(Wall#000)	Wall#139	4_BULLETIN_BOARD2
+quiz_02,319,242,4	duplicate(Wall#000)	Wall#140	4_BULLETIN_BOARD2
+quiz_02,319,243,4	duplicate(Wall#000)	Wall#141	4_BULLETIN_BOARD2
+quiz_02,319,244,4	duplicate(Wall#000)	Wall#142	4_BULLETIN_BOARD2
+quiz_02,319,245,4	duplicate(Wall#000)	Wall#143	4_BULLETIN_BOARD2
+quiz_02,319,246,4	duplicate(Wall#000)	Wall#144	4_BULLETIN_BOARD2
+quiz_02,319,247,4	duplicate(Wall#000)	Wall#145	4_BULLETIN_BOARD2
+quiz_02,319,248,4	duplicate(Wall#000)	Wall#146	4_BULLETIN_BOARD2
+quiz_02,319,249,4	duplicate(Wall#000)	Wall#147	4_BULLETIN_BOARD2
+quiz_02,319,250,4	duplicate(Wall#000)	Wall#148	4_BULLETIN_BOARD2
+quiz_02,319,251,4	duplicate(Wall#000)	Wall#149	4_BULLETIN_BOARD2
+quiz_02,319,252,4	duplicate(Wall#000)	Wall#150	4_BULLETIN_BOARD2
+quiz_02,319,253,4	duplicate(Wall#000)	Wall#151	4_BULLETIN_BOARD2
+quiz_02,319,254,4	duplicate(Wall#000)	Wall#152	4_BULLETIN_BOARD2
+quiz_02,319,255,4	duplicate(Wall#000)	Wall#153	4_BULLETIN_BOARD2
+quiz_02,319,256,4	duplicate(Wall#000)	Wall#154	4_BULLETIN_BOARD2
+quiz_02,319,257,4	duplicate(Wall#000)	Wall#155	4_BULLETIN_BOARD2
+quiz_02,319,258,4	duplicate(Wall#000)	Wall#156	4_BULLETIN_BOARD2
+quiz_02,319,259,4	duplicate(Wall#000)	Wall#157	4_BULLETIN_BOARD2
+quiz_02,319,260,4	duplicate(Wall#000)	Wall#158	4_BULLETIN_BOARD2
+quiz_02,319,261,4	duplicate(Wall#000)	Wall#159	4_BULLETIN_BOARD2
+quiz_02,319,262,4	duplicate(Wall#000)	Wall#160	4_BULLETIN_BOARD2
+quiz_02,319,263,4	duplicate(Wall#000)	Wall#161	4_BULLETIN_BOARD2
+			
+quiz_02,289,255,4	duplicate(Wall#000)	Wall#162	4_BULLETIN_BOARD2
+quiz_02,290,255,4	duplicate(Wall#000)	Wall#163	4_BULLETIN_BOARD2
+quiz_02,291,255,4	duplicate(Wall#000)	Wall#164	4_BULLETIN_BOARD2
+quiz_02,292,255,4	duplicate(Wall#000)	Wall#165	4_BULLETIN_BOARD2
+quiz_02,293,255,4	duplicate(Wall#000)	Wall#166	4_BULLETIN_BOARD2
+quiz_02,294,255,4	duplicate(Wall#000)	Wall#167	4_BULLETIN_BOARD2
+quiz_02,295,255,4	duplicate(Wall#000)	Wall#168	4_BULLETIN_BOARD2
+quiz_02,296,255,4	duplicate(Wall#000)	Wall#169	4_BULLETIN_BOARD2
+quiz_02,297,255,4	duplicate(Wall#000)	Wall#170	4_BULLETIN_BOARD2
+quiz_02,298,255,4	duplicate(Wall#000)	Wall#171	4_BULLETIN_BOARD2
+quiz_02,299,255,4	duplicate(Wall#000)	Wall#172	4_BULLETIN_BOARD2
+quiz_02,300,255,4	duplicate(Wall#000)	Wall#173	4_BULLETIN_BOARD2
+			
+quiz_02,307,255,4	duplicate(Wall#000)	Wall#174	4_BULLETIN_BOARD2
+quiz_02,308,255,4	duplicate(Wall#000)	Wall#175	4_BULLETIN_BOARD2
+quiz_02,309,255,4	duplicate(Wall#000)	Wall#176	4_BULLETIN_BOARD2
+quiz_02,310,255,4	duplicate(Wall#000)	Wall#177	4_BULLETIN_BOARD2
+quiz_02,311,255,4	duplicate(Wall#000)	Wall#178	4_BULLETIN_BOARD2
+quiz_02,312,255,4	duplicate(Wall#000)	Wall#179	4_BULLETIN_BOARD2
+quiz_02,313,255,4	duplicate(Wall#000)	Wall#180	4_BULLETIN_BOARD2
+quiz_02,314,255,4	duplicate(Wall#000)	Wall#181	4_BULLETIN_BOARD2
+quiz_02,315,255,4	duplicate(Wall#000)	Wall#182	4_BULLETIN_BOARD2
+quiz_02,316,255,4	duplicate(Wall#000)	Wall#183	4_BULLETIN_BOARD2
+quiz_02,317,255,4	duplicate(Wall#000)	Wall#184	4_BULLETIN_BOARD2
+quiz_02,318,255,4	duplicate(Wall#000)	Wall#185	4_BULLETIN_BOARD2
+			
+quiz_02,289,246,4	duplicate(Wall#000)	Wall#186	4_BULLETIN_BOARD2
+quiz_02,290,246,4	duplicate(Wall#000)	Wall#187	4_BULLETIN_BOARD2
+quiz_02,291,246,4	duplicate(Wall#000)	Wall#188	4_BULLETIN_BOARD2
+quiz_02,292,246,4	duplicate(Wall#000)	Wall#189	4_BULLETIN_BOARD2
+quiz_02,293,246,4	duplicate(Wall#000)	Wall#190	4_BULLETIN_BOARD2
+quiz_02,294,246,4	duplicate(Wall#000)	Wall#191	4_BULLETIN_BOARD2
+quiz_02,295,246,4	duplicate(Wall#000)	Wall#192	4_BULLETIN_BOARD2
+quiz_02,296,246,4	duplicate(Wall#000)	Wall#193	4_BULLETIN_BOARD2
+quiz_02,297,246,4	duplicate(Wall#000)	Wall#194	4_BULLETIN_BOARD2
+quiz_02,298,246,4	duplicate(Wall#000)	Wall#195	4_BULLETIN_BOARD2
+quiz_02,299,246,4	duplicate(Wall#000)	Wall#196	4_BULLETIN_BOARD2
+quiz_02,300,246,4	duplicate(Wall#000)	Wall#197	4_BULLETIN_BOARD2
+			
+quiz_02,307,246,4	duplicate(Wall#000)	Wall#198	4_BULLETIN_BOARD2
+quiz_02,308,246,4	duplicate(Wall#000)	Wall#199	4_BULLETIN_BOARD2
+quiz_02,309,246,4	duplicate(Wall#000)	Wall#200	4_BULLETIN_BOARD2
+quiz_02,310,246,4	duplicate(Wall#000)	Wall#201	4_BULLETIN_BOARD2
+quiz_02,311,246,4	duplicate(Wall#000)	Wall#202	4_BULLETIN_BOARD2
+quiz_02,312,246,4	duplicate(Wall#000)	Wall#203	4_BULLETIN_BOARD2
+quiz_02,313,246,4	duplicate(Wall#000)	Wall#204	4_BULLETIN_BOARD2
+quiz_02,314,246,4	duplicate(Wall#000)	Wall#205	4_BULLETIN_BOARD2
+quiz_02,315,246,4	duplicate(Wall#000)	Wall#206	4_BULLETIN_BOARD2
+quiz_02,316,246,4	duplicate(Wall#000)	Wall#207	4_BULLETIN_BOARD2
+quiz_02,317,246,4	duplicate(Wall#000)	Wall#208	4_BULLETIN_BOARD2
+quiz_02,318,246,4	duplicate(Wall#000)	Wall#209	4_BULLETIN_BOARD2
+
+// NPCs for Rolling effect
+//========================================
+quiz_02,295,259,4	script	Effect_NPC#1	4_CRACK,{end;}
+quiz_02,295,250,4	script	Effect_NPC#2	4_CRACK,{end;}
+quiz_02,295,241,4	script	Effect_NPC#3	4_CRACK,{end;}
+quiz_02,312,259,4	script	Effect_NPC#4	4_CRACK,{end;}
+quiz_02,312,250,4	script	Effect_NPC#5	4_CRACK,{end;}
+quiz_02,312,241,4	script	Effect_NPC#6	4_CRACK,{end;}
+
+// HIDDEN_MOBs for Waiting room
+//========================================
+quiz_02,295,254,4	script	WT#1	HIDDEN_MOB,{
+	end;
+
+OnInit:
+	initnpctimer;
+
+OnTimer1000:
+    showscript(" DICE # 1 ");
+    setnpctimer 0;
+    end;
+}
+quiz_02,295,245,4	script	WT#2	HIDDEN_MOB,{
+	end;
+
+OnInit:
+	initnpctimer;
+
+OnTimer1000:
+    showscript(" DICE # 2 ");
+    setnpctimer 0;
+    end;
+}
+quiz_02,295,236,4	script	WT#3	HIDDEN_MOB,{
+	end;
+
+OnInit:
+	initnpctimer;
+
+OnTimer1000:
+    showscript(" DICE # 3 ");
+    setnpctimer 0;
+    end;
+}
+quiz_02,313,254,4	script	WT#4	HIDDEN_MOB,{
+	end;
+
+OnInit:
+	initnpctimer;
+
+OnTimer1000:
+    showscript(" DICE # 4 ");
+    setnpctimer 0;
+    end;
+}
+quiz_02,313,245,4	script	WT#5	HIDDEN_MOB,{
+	end;
+
+OnInit:
+	initnpctimer;
+
+OnTimer1000:
+    showscript(" DICE # 5 ");
+    setnpctimer 0;
+    end;
+}
+quiz_02,313,236,4	script	WT#6	HIDDEN_MOB,{
+	end;
+
+OnInit:
+	initnpctimer;
+
+OnTimer1000:
+    showscript(" DICE # 6 ");
+    setnpctimer 0;
+    end;
+}

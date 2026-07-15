@@ -1,0 +1,83 @@
+//==============================================
+// - Script By : แม่มดน้อย จอมป่วน
+// - Script City : Thailand 
+// - Script Support Server : rAthena & Hercules
+// - Revised edition : TranscendedRO
+// Contacts
+// Facebook https://www.facebook.com/appleroplus2
+// Gmail appleroplus@gmail.com
+// Skype appleroplus@hotmail.com
+//==============================================
+
+-	script	TownBox	-1,{
+
+OnClock0000:
+OnClock0100:
+OnClock0200:
+OnClock0300:
+OnClock0400:
+OnClock0500:
+OnClock0600:
+OnClock0700:
+OnClock0800:
+OnClock0900:
+OnClock1000:
+OnClock1100:
+OnClock1200:
+OnClock1300:
+OnClock1400:
+OnClock1500:
+OnClock1600:
+OnClock1700:
+OnClock1800:
+OnClock1900:
+OnClock2000:
+OnClock2100:
+OnClock2200:
+OnClock2300:
+	set $@PB_Count,0;
+	announce "[Event]: Morocc is currently under attack by 30x [Suspicious Stones]. Find and destroy it to collect your reward.",0;
+	monster "morocc",0,0,"Suspicious Stone",22170,30,"TownBox::OnBox";
+	initnpctimer;
+	end;
+
+OnBox:
+	set $@PB_Count,$@PB_Count+1;
+	set .@raterditem,rand(1,151);
+	if (.@raterditem < 83) {
+		getitem 6635,1;
+		announce "[Event]: Oh! ["+strcharinfo(0)+"] just found [1x Blacksmith Blessing] on Suspicious Stones ["+$@PB_Count+"/30]. Congrats!!!",0,0xFF3399;
+	} else {
+		announce "[Event]: Suspicious Stones ["+$@PB_Count+"/30] has been destroyed by ["+strcharinfo(0)+"] ! Nothing found!",0;
+	}
+	end;
+
+OnTimer60000:
+	if($@PB_Count==30) { stopnpctimer; set $@PB_Count,0; }
+	announce "[Event]: 4 minutes left to destroy the Suspicious Stones.",0;
+	end;
+
+OnTimer120000:
+	if($@PB_Count==30){ stopnpctimer; set $@PB_Count,0; }
+	announce "[Event]: 3 minutes left to destroy the Suspicious Stones.",0;
+	end;
+
+OnTimer180000:
+	if($@PB_Count==30){ stopnpctimer; set $@PB_Count,0; }
+	announce "[Event]: 2 minutes left to destroy the Suspicious Stones.",0;
+	end;
+
+OnTimer240000:
+	if($@PB_Count==30){ stopnpctimer; set $@PB_Count,0; }
+	announce "[Event]: 1 last minute left to destroy the Suspicious Stones.",0;
+	end;
+
+OnTimer300000:
+	announce "[Event]: Time is up! All Suspicious Stones have been destroyed.",0;
+	stopnpctimer;
+	set $@PB_Count,0;
+	killmonsterall "morocc";
+	end;
+}
+
+morocc	mapflag	noskill

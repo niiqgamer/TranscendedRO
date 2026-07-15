@@ -611,7 +611,8 @@ I20: Restrict("RE");
 // --------------------------------------------------
 	Special:
 // --------------------------------------------------
-menu	"Auction Hall",S1, "Battlegrounds",S2, "Casino",S3, "Dimensional Rift",S4,
+menu	"^FF0000[Test Damage Area]^000000 Training Ground",S11, "Auction Hall",S1, 
+		"Battlegrounds",S2, "Casino",S3, "Dimensional Rift",S4,
 		"Eden Group Headquarters",S5, "Kunlun Arena",S6, "Izlude Arena",S7, 
 		"Monster Race Arena",S8, "Para Market",S9, "Turbo Track",S10;
 
@@ -628,6 +629,7 @@ S8: Go("p_track01",62,41);
 S9: Restrict("RE");
 	Go("paramk",97,17);
 S10: Go("turbo_room",99,114);
+S11: Go("tra_fild",97,170);
 
 OnNaviGenerate:
 
@@ -1355,7 +1357,7 @@ hugel,101,151,4	duplicate(Warper)	Warper#hug	10458
 izlu2dun,110,92,4	duplicate(Warper)	Warper#izd	10458
 izlude,124,148,6	duplicate(Warper)	Warper#izl	10458	//Pre-RE: (132,120)
 jawaii,253,138,4	duplicate(Warper)	Warper#jaw	10458
-lighthalzen,162,102,4	duplicate(Warper)	Warper#lhz	10458
+lighthalzen,167,100,4	duplicate(Warper)	Warper#lhz	10458
 louyang,208,103,6	duplicate(Warper)	Warper#lou	10458
 manuk,274,146,6	duplicate(Warper)	Warper#man	10458
 mid_camp,216,288,4	duplicate(Warper)	Warper#mid	10458

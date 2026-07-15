@@ -63,7 +63,6 @@
 #include "storage.hpp"
 #include "unit.hpp" // unit_stop_attack(), unit_stop_walking()
 #include "vending.hpp" // struct s_vending
-#include "autobot.hpp"
 
 using namespace rathena;
 
@@ -2088,7 +2087,6 @@ bool pc_authok(map_session_data *sd, uint32 login_id2, time_t expiration_time, i
 
 	/* load user permissions */
 	pc_group_pc_load(sd);
-	autobot_init(sd);
 
 	memcpy(&sd->status, st, sizeof(*st));
 

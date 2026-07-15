@@ -6901,6 +6901,7 @@ sp_cor,255,285,1	script	Rookie#rm171_2	4_M_ROOKIE,{
 		getexp 0,400000;
 		getexp 0,400000;
 		close2;
+		announce "Congratulations! ["+strcharinfo(0)+"] has completed Episode 17.1 - Illusion Main Quest!",0,0x27C5F5;
 		cloakonnpcself( "Goni#rm171_2" );
 		cloakonnpcself( "Elyumina#rm171_3" );
 		cloakonnpcself( "Elena Volkova#rm171_3" );

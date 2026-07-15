@@ -22333,6 +22333,9 @@ Body:
       NoGuildStorage: true
       NoMail: true
       NoAuction: true
+    Flags:
+      BuyingStore: true
+      DropEffect: CLIENT
   - Id: 6821
     AegisName: Solo_Troops_Badge
     Name: Single Union Badge
@@ -89794,6 +89797,24 @@ Body:
             }
          }
       }
+  - Id: 313953
+    AegisName: Blossom_Foot
+    Name: Cherry Blossom Footprints
+    Type: Card
+    SubType: Enchant
+    Script: |
+      hateffect FOOTPRINT_EF_BLOSSOM,true;
+    UnEquipScript: |
+      hateffect FOOTPRINT_EF_BLOSSOM,false;
+  - Id: 313954
+    AegisName: Sprout_Foot
+    Name: Sprout Footprints
+    Type: Card
+    SubType: Enchant
+    Script: |
+      hateffect FOOTPRINT_EF_FEATHER,true;
+    UnEquipScript: |
+      hateffect FOOTPRINT_EF_FEATHER,false;
   - Id: 313955
     AegisName: aegis_313955
     Name: Blue Butterfly Footprint
@@ -89931,7 +89952,7 @@ Body:
       hateffect HAT_EF_ROS_BlueSpirit,false;
   - Id: 314095
     AegisName: aegis_314095
-    Name: Red Fighting Spirit Effect    # !todo check english name
+    Name: Spirit of Influence
     Type: Card
     SubType: Enchant
     Script: |
@@ -89940,7 +89961,7 @@ Body:
       hateffect HAT_EF_ROS_RedSpirit,false;
   - Id: 314171
     AegisName: aegis_314171
-    Name: Footprint (2D)
+    Name: Toothless Footprints
     Type: Card
     SubType: Enchant
     Script: |
@@ -89949,7 +89970,7 @@ Body:
       hateffect FOOTPRINT_EF_DRAGON_FACE_2D,false;
   - Id: 314172
     AegisName: aegis_314172
-    Name: Footprint (3D)
+    Name: Bouncing Toothless Footprints
     Type: Card
     SubType: Enchant
     Script: |
@@ -90605,13 +90626,22 @@ Body:
       }
   - Id: 315055
     AegisName: aegis_315055
-    Name: Flower Garden
+    Name: Flower Garden Footprint
     Type: Card
     SubType: Enchant
     Script: |
       hateffect FOOTPRINT_EF_FLOWER_GARDEN,true;
     UnEquipScript: |
       hateffect FOOTPRINT_EF_FLOWER_GARDEN,false;
+  - Id: 315056
+    AegisName: aegis_315056
+    Name: Fox Footprints
+    Type: Card
+    SubType: Enchant
+    Script: |
+      hateffect FOOTPRINT_EF_BUD,true;
+    UnEquipScript: |
+      hateffect FOOTPRINT_EF_BUD,false;
   - Id: 1000000
     AegisName: IDTest_event
     Name: IDTest event
@@ -100820,12 +100850,12 @@ Body:
     Type: Etc
   - Id: 1002239
     AegisName: CLB_DT_2D_Foot_Robe
-    Name: Footprint (2D) (Garment)
+    Name: Toothless Footprints (Garment)
     Type: Etc
     Weight: 100
   - Id: 1002240
     AegisName: CLB_DT_3D_Foot_Robe
-    Name: Footprint (3D) (Garment)
+    Name: Bouncing Toothless Footprints (Garment)
     Type: Etc
     Weight: 100
   - Id: 1002243
@@ -102021,7 +102051,7 @@ Body:
       NoAuction: true
   - Id: 1002822
     AegisName: aegis_1002822
-    Name: "[Footprints] Flower Garden"
+    Name: "Flower Garden Footprint (Garment)"
     Type: Etc
     Weight: 100
   - Id: 1002827
@@ -102031,6 +102061,11 @@ Body:
     Weight: 10
     Trade:
       NoDrop: true
+  - Id: 1002830
+    AegisName: FP_Fox_Footprints
+    Name: "Fox Footprints (Garment)"
+    Type: Etc
+    Weight: 100
   - Id: 1002834
     AegisName: ABI_Ground_Essence
     Name: Ground Essence of the Rift    # !todo check english name
@@ -102076,6 +102111,16 @@ Body:
     Name: Dimensional Volcano Card Shard    # !todo check english name
     Type: Etc
     Weight: 10
+  - Id: 1002855
+    AegisName: Blossom_Foot_Blueprint
+    Name: "Cherry Blossom Footprints (Garment)"
+    Type: Etc
+    Weight: 100
+  - Id: 1002856
+    AegisName: Sprout_Footprint
+    Name: "Sprout Footprints (Garment)"
+    Type: Etc
+    Weight: 100
   - Id: 1200000
     AegisName: IDTest_arrow
     Name: IDTest arrow

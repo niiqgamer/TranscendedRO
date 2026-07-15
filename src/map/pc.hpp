@@ -26,7 +26,6 @@
 #include "status.hpp" // unit_data
 #include "unit.hpp" // unit_data
 #include "vending.hpp" // struct s_vending
-#include "autobot.hpp"
 
 enum AtCommandType : uint8;
 enum e_instance_mode : uint8;
@@ -381,7 +380,6 @@ struct s_qi_display {
 
 class map_session_data : public block_list {
 public:
-	struct autobot_data bot;
 	struct unit_data ud;
 	struct view_data vd;
 	struct status_data base_status, battle_status;

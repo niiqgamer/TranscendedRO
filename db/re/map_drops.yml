@@ -44,6 +44,70 @@ Header:
   Version: 2
 
 Body:
+  - Map: tha_t09
+    GlobalDrops:
+      - Index: 0
+        Item: Fate_Fragment
+        Rate: 2500
+      - Index: 1
+        Item: Sin_Fragment
+        Rate: 2500
+      - Index: 2
+        Item: Thanatos_Antiquity
+        Rate: 2000
+  - Map: tha_t10
+    GlobalDrops:
+      - Index: 0
+        Item: Fate_Fragment
+        Rate: 2500
+      - Index: 1
+        Item: Sin_Fragment
+        Rate: 2500
+      - Index: 2
+        Item: Thanatos_Antiquity
+        Rate: 2000
+    SpecificDrops:
+      - Monster: VOID_MIMIC
+        Drops:
+          - Index: 0
+            Item: Void_Mimic_Card
+            Rate: 500
+  - Map: tha_t11
+    GlobalDrops:
+      - Index: 0
+        Item: Fate_Fragment
+        Rate: 2500
+      - Index: 1
+        Item: Sin_Fragment
+        Rate: 2500
+      - Index: 2
+        Item: Thanatos_Antiquity
+        Rate: 2000
+  - Map: tha_t12
+    GlobalDrops:
+      - Index: 0
+        Item: Fate_Fragment
+        Rate: 2500
+      - Index: 1
+        Item: Sin_Fragment
+        Rate: 2500
+      - Index: 2
+        Item: Thanatos_Antiquity
+        Rate: 2000
+  - Map: lhz_dun_n
+    GlobalDrops:
+      - Index: 0
+        Item: Pieces_Of_Sentiment
+        Rate: 9000
+      - Index: 1
+        Item: Pieces_Of_Grudge
+        Rate: 8000
+      - Index: 2
+        Item: Particles_Of_Energy
+        Rate: 7500
+      - Index: 3
+        Item: Crystal_Of_Grudge
+        Rate: 5000
   - Map: tur_d03_i
     SpecificDrops:
       - Monster: ILL_ASSULTER

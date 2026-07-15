@@ -1,8 +1,14 @@
 -	script	ban_gm_name	-1,{
 
-	OnPCLoginEvent:
-	if(getgmlevel() >=99) {
-		atcommand "@speed 50";
+OnPCLoginEvent:
+	unbindatcmd "autoloot";
+	.@account_id = getcharid(3);
+	.@char_id = getcharid(0);
+	if (getgmlevel() >=99) {
+		atcommand "@speed 40";
+		if (.@char_id == 150045) {
+			atcommand "@size 2";
+		}
 	}
 	end;
 

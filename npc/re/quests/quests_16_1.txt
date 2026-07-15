@@ -5744,6 +5744,7 @@ prt_cas_q,19,85,4	script	Kronecker G. Heine#ep16_01	4_EP16_GRANZ,{
 		erasequest 7698;// Heine Now
 		getitem 6919,20;// TokenOfHonor
 		getexp 400000,400000;
+		announce "Congratulations! ["+strcharinfo(0)+"] has completed Episode 16.1 - The Royal Banquet Main Quest!",0,0x27C5F5;
 		close3;
 	}
 	if (ep16_royal == 17) {

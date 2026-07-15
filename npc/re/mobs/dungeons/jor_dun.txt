@@ -16,5 +16,5 @@ jor_dun02	monster	Junior Rgan	21528,50
 jor_dun02	monster	Intermediate Rgan	21529,15
 jor_dun02	monster	Heart Hunter AT	21599,10
 
-jor_que	monster	겁먹은 르간	21534,3
-jor_que	monster	나뉘어진 르간	21535,5
+jor_que	monster	--ja--	21534,3
+jor_que	monster	--ja--	21535,5

@@ -3652,6 +3652,7 @@ que_swat,145,57,3	script	Philopontess#ep162_04	4_M_PHILOFONTES,{
 		close2;
 		cutin "",255;
 		npctalk "Oh, please come here for a moment.", "Rookie#ep162_03", bc_self;
+		announce "Congratulations! ["+strcharinfo(0)+"] has completed Episode 16.2 - Terra Gloria Main Quest!",0,0x27C5F5;
 		end;
 	}
 	switch( checkquest(7745,PLAYTIME) ) {

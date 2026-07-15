@@ -1,0 +1,1162 @@
+//===== rAthena Script =======================================
+//= Old Glast Heim - Challenge Mode
+//===== Description: =========================================
+//= [Walkthrough Conversion]
+//= kRO/iRO based Challenge Mode instance (1@gl_he / 1@gl_he2)
+//= Spawns official Challenge Mode mobs (MD_C_* / IDs 20572-20581).
+//= Solo (1 registered player): one random wing only, official 1-player flow.
+//============================================================
+
+function	script	F_OGHCM_MaxLevel	{
+	.@clears = #OGHCM_Clear;
+	if (.@clears >= 100) return 10;
+	if (.@clears >= 80) return 9;
+	if (.@clears >= 60) return 8;
+	if (.@clears >= 45) return 7;
+	if (.@clears >= 35) return 6;
+	if (.@clears >= 26) return 5;
+	if (.@clears >= 18) return 4;
+	if (.@clears >= 11) return 3;
+	if (.@clears >= 5) return 2;
+	return 1;
+}
+
+function	script	F_OGHCM_Reward	{
+	.@level = getarg(0);
+	.@bonus_root = getarg(1,0);
+	.@bonus_slave = getarg(2,0);
+	.@bonus_clean = getarg(3,0);
+
+	// Oscar performance bonus (separate from the boss treasure chest).
+	switch (.@level) {
+	case 1: .@c_min = 1; .@c_max = 2; break;
+	case 2: .@c_min = 1; .@c_max = 2; break;
+	case 3: .@c_min = 2; .@c_max = 3; break;
+	case 4: .@c_min = 2; .@c_max = 3; break;
+	case 5: .@c_min = 2; .@c_max = 4; break;
+	default: .@c_min = 3; .@c_max = 5; break;
+	}
+	if (.@bonus_root) .@c_max++;
+	if (.@bonus_slave) .@c_max++;
+	if (.@bonus_clean) .@c_max++;
+	getitem 25864, rand(.@c_min, min(.@c_max, 10)); // S_Circlet_Of_Time
+	return;
+}
+
+function	script	F_OGHCM_ChestDrop	{
+	.@level = getarg(0);
+	switch (.@level) {
+	case 1:  .@c_min = 1;  .@c_max = 6;  .@f_min = 1;  .@f_max = 16; .@g_min = 0; .@g_max = 0;  .@s_min = 0;  .@s_max = 0;  break;
+	case 2:  .@c_min = 2;  .@c_max = 7;  .@f_min = 2;  .@f_max = 18; .@g_min = 0; .@g_max = 0;  .@s_min = 0;  .@s_max = 0;  break;
+	case 3:  .@c_min = 2;  .@c_max = 8;  .@f_min = 2;  .@f_max = 20; .@g_min = 1; .@g_max = 4;  .@s_min = 0;  .@s_max = 0;  break;
+	case 4:  .@c_min = 3;  .@c_max = 9;  .@f_min = 3;  .@f_max = 22; .@g_min = 1; .@g_max = 5;  .@s_min = 0;  .@s_max = 0;  break;
+	case 5:  .@c_min = 3;  .@c_max = 10; .@f_min = 3;  .@f_max = 24; .@g_min = 1; .@g_max = 6;  .@s_min = 1;  .@s_max = 4;  break;
+	case 6:  .@c_min = 4;  .@c_max = 11; .@f_min = 3;  .@f_max = 28; .@g_min = 2; .@g_max = 7;  .@s_min = 2;  .@s_max = 5;  break;
+	case 7:  .@c_min = 4;  .@c_max = 12; .@f_min = 4;  .@f_max = 32; .@g_min = 2; .@g_max = 8;  .@s_min = 2;  .@s_max = 6;  break;
+	case 8:  .@c_min = 4;  .@c_max = 13; .@f_min = 4;  .@f_max = 36; .@g_min = 2; .@g_max = 9;  .@s_min = 2;  .@s_max = 7;  break;
+	case 9:  .@c_min = 5;  .@c_max = 14; .@f_min = 4;  .@f_max = 42; .@g_min = 2; .@g_max = 10; .@s_min = 2;  .@s_max = 8;  break;
+	default: .@c_min = 5;  .@c_max = 20; .@f_min = 4;  .@f_max = 50; .@g_min = 2; .@g_max = 15; .@s_min = 14; .@s_max = 34; break;
+	}
+	if (checkweight(1201,1) == 0)
+		return 0;
+	getitem 25864, rand(.@c_min, .@c_max);
+	getitem 25867, rand(.@f_min, .@f_max);
+	if (.@g_max)
+		getitem 25865, rand(.@g_min, .@g_max);
+	if (.@s_max)
+		getitem 25866, rand(.@s_min, .@s_max);
+	if (rand(100) < 15)
+		getitem 7925, 1; // M_Dimension_Essence
+	return 1;
+}
+
+function	script	F_OGHCM_MobDrop	{
+	if (rand(10000) <= 100) {
+		setarray .@weapon[0],
+			1336, 1870, 2060, 13347, 18191, 18198, 21055, 26165, 26166, 26172,
+			26216, 28046, 28141, 28636, 28774, 28775, 28776, 32027, 32111, 32304,
+			32353, 32401, 32402, 32403;
+		.@idx = rand(getarraysize(.@weapon));
+		if (checkweight(.@weapon[.@idx], 1))
+			getitem .@weapon[.@idx], 1;
+		return;
+	}
+	if (rand(100) <= 35 && checkweight(25867, 3))
+		getitem 25867, rand(1, 3); // Fragment_Of_Time
+	return;
+}
+
+function	script	F_OGHCM_RootDrop	{
+	if (checkweight(25865, 2) == 0)
+		return;
+	if (rand(100) <= 80)
+		getitem 25865, rand(1, 2); // Jewel_Of_Time_Ore
+	if (rand(100) <= 40)
+		getitem 25867, rand(1, 3);
+	return;
+}
+
+function	script	F_OGHCM_BossHP	{
+	switch (getarg(0)) {
+	case 10: return 2000000000;
+	case 9:  return 1800000000;
+	case 8:  return 1650000000;
+	case 7:  return 1500000000;
+	case 6:  return 1350000000;
+	case 5:  return 1200000000;
+	case 4:  return 1050000000;
+	case 3:  return 900000000;
+	case 2:  return 750000000;
+	default: return 600000000;
+	}
+}
+
+function	script	F_OGHCM_HimmelChance	{
+	// Official PH spawn chance in basis points (out of 10000).
+	switch (getarg(0)) {
+	case 10: return 5000;
+	case 9:  return 1724;
+	case 8:  return 1087;
+	case 7:  return 820;
+	case 6:  return 676;
+	case 5:  return 588;
+	case 4:  return 532;
+	case 3:  return 495;
+	case 2:  return 472;
+	default: return 459;
+	}
+}
+
+function	script	F_OGHCM_MobScale	{
+	.@gid = getarg(0);
+	.@level = getarg(1, 1);
+	if (.@gid <= 0 || .@level < 1)
+		return;
+	getunitdata .@gid, .@u;
+	setunitdata .@gid, UMOB_ATKMIN, max(1, .@u[UMOB_ATKMIN] * .@level);
+	setunitdata .@gid, UMOB_ATKMAX, max(1, .@u[UMOB_ATKMAX] * .@level);
+	setunitdata .@gid, UMOB_MATKMIN, max(1, .@u[UMOB_MATKMIN] * .@level);
+	setunitdata .@gid, UMOB_MATKMAX, max(1, .@u[UMOB_MATKMAX] * .@level);
+	return;
+}
+
+function	script	F_OGHCM_ThornScale	{
+	.@gid = getarg(0);
+	.@level = getarg(1, 1);
+	if (.@gid <= 0 || .@level < 1)
+		return;
+	.@hp = (5 + (.@level * 4)) * 10000;
+	setunitdata .@gid, UMOB_MAXHP, .@hp;
+	setunitdata .@gid, UMOB_HP, .@hp;
+	return;
+}
+
+function	script	F_OGHCM_CountLivingArena	{
+	.@party_id = getarg(0);
+	.@map$ = getarg(1);
+	.@alive = 0;
+	.@back_aid = getcharid(0);
+	getpartymember .@party_id, 1;
+	getpartymember .@party_id, 2;
+	for (.@i = 0; .@i < $@partymembercount; .@i++) {
+		if (isloggedin($@partymemberaid[.@i], $@partymembercid[.@i]) == 0)
+			continue;
+		if (attachrid($@partymemberaid[.@i]) == 0)
+			continue;
+		if (strcharinfo(3) == .@map$ && Hp > 0)
+			.@alive++;
+	}
+	if (.@back_aid)
+		attachrid(.@back_aid);
+	return .@alive;
+}
+
+function	script	F_OGHCM_ApplyBossPenalty	{
+	.@gid = getarg(0);
+	.@active = getarg(1);
+	if (.@gid <= 0)
+		return;
+	getunitdata .@gid, .@u;
+	if (.@active) {
+		if (!'OGHCM_BossPenalty) {
+			'OGHCM_BossBaseDef = .@u[UMOB_DEF];
+			'OGHCM_BossBaseMDef = .@u[UMOB_MDEF];
+			setunitdata .@gid, UMOB_DEF, .@u[UMOB_DEF] * 1000;
+			setunitdata .@gid, UMOB_MDEF, .@u[UMOB_MDEF] * 1000;
+			'OGHCM_BossPenalty = 1;
+		}
+	} else if ('OGHCM_BossPenalty) {
+		setunitdata .@gid, UMOB_DEF, 'OGHCM_BossBaseDef;
+		setunitdata .@gid, UMOB_MDEF, 'OGHCM_BossBaseMDef;
+		'OGHCM_BossPenalty = 0;
+	}
+	return;
+}
+
+function	script	F_OGHCM_BossScale	{
+	.@gid = getarg(0);
+	.@level = getarg(1);
+	if (.@gid <= 0 || .@level < 1)
+		return;
+	getunitdata .@gid, .@u;
+	.@maxhp = callfunc("F_OGHCM_BossHP", .@level);
+	setunitdata .@gid, UMOB_MAXHP, .@maxhp;
+	setunitdata .@gid, UMOB_HP, .@maxhp;
+	setunitdata .@gid, UMOB_ATKMIN, max(1, .@u[UMOB_ATKMIN] * .@level);
+	setunitdata .@gid, UMOB_ATKMAX, max(1, .@u[UMOB_ATKMAX] * .@level);
+	setunitdata .@gid, UMOB_MATKMIN, max(1, .@u[UMOB_MATKMIN] * .@level);
+	setunitdata .@gid, UMOB_MATKMAX, max(1, .@u[UMOB_MATKMAX] * .@level);
+	setunitdata .@gid, UMOB_DEF, .@u[UMOB_DEF] + ((.@level - 1) * 50);
+	setunitdata .@gid, UMOB_MDEF, .@u[UMOB_MDEF] + ((.@level - 1) * 10);
+	'OGHCM_BossBaseDef = .@u[UMOB_DEF] + ((.@level - 1) * 50);
+	'OGHCM_BossBaseMDef = .@u[UMOB_MDEF] + ((.@level - 1) * 10);
+	'OGHCM_BossPenalty = 0;
+	return;
+}
+
+function	script	F_OGHCM_ShowNpc	{
+	.@name$ = getarg(0);
+	enablenpc .@name$;
+	cloakoffnpc .@name$;
+	return;
+}
+
+function	script	F_OGHCM_HidePortals	{
+	disablenpc instance_npcname("#oghcm_w_portal");
+	disablenpc instance_npcname("#oghcm_e_portal");
+	disablenpc instance_npcname("#oghcm_corridor_warp");
+	return;
+}
+
+// Returns 0 = ok, 1 = self on cooldown, 2 = party leader on cooldown.
+function	script	F_OGHCM_CheckEntryCooldown	{
+	.@party_id = getarg(0);
+
+	switch( checkquest(12493,PLAYTIME) ) {
+	case 0:
+	case 1:
+		return 1;
+	case 2:
+		if (isbegin_quest(12493) > 0)
+			erasequest 12493;
+		break;
+	}
+
+	if (.@party_id > 0) {
+		.@leader_cid = getpartyleader(.@party_id, 2);
+		if (.@leader_cid > 0 && .@leader_cid != getcharid(0)) {
+			.@leader_aid = getpartyleader(.@party_id, 1);
+			if (.@leader_aid > 0 && isloggedin(.@leader_aid, .@leader_cid)) {
+				switch( checkquest(12493,PLAYTIME, .@leader_cid) ) {
+				case 0:
+				case 1:
+					return 2;
+				case 2:
+					if (isbegin_quest(12493, .@leader_cid) > 0)
+						erasequest 12493, .@leader_cid;
+					break;
+				}
+			}
+		}
+	}
+	return 0;
+}
+
+function	script	F_OGHCM_ApplyEntryQuest	{
+	if (isbegin_quest(12493) == 0)
+		setquest 12493;
+	return;
+}
+
+function	script	F_OGHCM_InstanceExit	{
+	.@party_id = getarg(0);
+	getpartymember .@party_id, 1;
+	getpartymember .@party_id, 2;
+	for (.@i = 0; .@i < $@partymembercount; .@i++) {
+		if (isloggedin($@partymemberaid[.@i], $@partymembercid[.@i]) == 0)
+			continue;
+		warpchar "glast_01", 139, 283, $@partymembercid[.@i];
+	}
+	instance_destroy;
+	return;
+}
+
+function	script	F_OGHCM_ApplyClearCooldown	{
+	if (isbegin_quest(12493) == 0)
+		setquest 12493;
+	else if (checkquest(12493,PLAYTIME) == 2) {
+		erasequest 12493;
+		setquest 12493;
+	}
+	completequest 12493;
+	return;
+}
+
+glast_01,139,285,5	script	Oscar#oghcm	4_ED_OSCAR,{
+	if (BaseLevel < 170) {
+		mes "[Oscar]";
+		mes "This contaminated time zone is too dangerous for you.";
+		mes "Come back after reaching Base Level 170.";
+		close;
+	}
+	if (!#OGHCM_Unlocked) {
+		#OGHCM_Unlocked = 1;
+		mes "[Oscar]";
+		mes "Since you've found this time gap, I'll introduce you to Huginn and Muninn nearby.";
+		mes "They can craft Temporal Circlets, exchange cards, and trade Royal or Guardian weapons.";
+		next;
+		mes "[Oscar]";
+		mes "You don't need to clear the instance to use their services. Walk around and they'll assist you.";
+		next;
+	}
+	.@md_name$ = "Old Glast Heim (Challenge Mode)";
+	.@max_level = callfunc("F_OGHCM_MaxLevel");
+
+	mes "[Oscar]";
+	mes "The dimension we've discovered this time is a variant of Himmelmez's attack timeline.";
+	mes "Before the contaminated time erodes the present, we must stop it from growing.";
+	next;
+	mes "[Oscar]";
+	mes "Your total clears: ^0000CD" + #OGHCM_Clear + "^000000";
+	mes "Highest contamination level available: ^0000CD" + .@max_level + "^000000";
+	next;
+
+	.@party_id = getcharid(1);
+	if (.@party_id == 0) {
+		mes "[Oscar]";
+		mes "Create a party first, even if you plan to challenge alone.";
+		close;
+	}
+	if (!instance_check_party(.@party_id, 1, 170)) {
+		mes "[Oscar]";
+		mes "All party members must be Base Level 170+ to enter.";
+		close;
+	}
+
+	switch( callfunc("F_OGHCM_CheckEntryCooldown", .@party_id) ) {
+	case 1:
+		mes "[Oscar]";
+		mes "You still have after-effects from the last challenge.";
+		mes "Please rest and return later.";
+		close;
+	case 2:
+		mes "[Oscar]";
+		mes "Your party leader still has after-effects from the last challenge.";
+		mes "Please wait until they recover before trying again.";
+		close;
+	}
+
+	if (is_party_leader()) {
+		switch( select("Open Time Gap", "Enter " + .@md_name$, "Cancel") ) {
+		case 1:
+			switch( instance_create(.@md_name$) ) {
+			case -3:
+				dispbottom "Memorial Dungeon, '" + .@md_name$ + "' is already in progress.", 0xFFFFFF;
+				close;
+			case -4:
+			case -2:
+			case -1:
+				mes "[Oscar]";
+				mes "^0000FF" + .@md_name$ + "^000000 - time gap generation failed.";
+				close;
+			}
+			mes "[Oscar]";
+			mes "The time gap is open. Party members can use Enter, or accept the memorial dungeon invitation.";
+			close;
+		case 2:
+			break;
+		case 3:
+			close;
+		}
+	} else {
+		switch( select("Enter " + .@md_name$, "Cancel") ) {
+		case 1:
+			break;
+		case 2:
+			close;
+		}
+	}
+
+	switch( instance_enter(.@md_name$) ) {
+	case IE_OTHER:
+		mes "[Oscar]";
+		mes "An unknown error has occurred.";
+		close;
+	case IE_NOINSTANCE:
+		mes "[Oscar]";
+		mes "The time gap is not open yet. Ask your party leader to generate it first.";
+		close;
+	case IE_NOMEMBER:
+		mes "[Oscar]";
+		mes "You must be in a party to enter.";
+		close;
+	case IE_OK:
+		mapannounce "glast_01", getpartyname(getcharid(1)) + " party member " + strcharinfo(0) + " enters " + .@md_name$ + ".", bc_map, 0x00FF99;
+		callfunc("F_OGHCM_ApplyEntryQuest");
+		end;
+	}
+	end;
+}
+
+1@gl_he,150,40,5	script	Oscar#oghcm_start	4_ED_OSCAR,{
+	if (!is_party_leader()) {
+		mes "[Oscar]";
+		mes "The party leader must choose the contamination level.";
+		close;
+	}
+	if ('OGHCM_Started) {
+		mes "[Oscar]";
+		mes "The challenge has already begun.";
+		close;
+	}
+	.@max = callfunc("F_OGHCM_MaxLevel");
+	mes "[Oscar]";
+	mes "Select the contamination level for this run.";
+	mes "Higher levels mean stronger enemies and better rewards.";
+	getpartymember getcharid(1), 1;
+	getpartymember getcharid(1), 2;
+	.@online = 0;
+	for (.@i = 0; .@i < $@partymembercount; .@i++) {
+		if (isloggedin($@partymemberaid[.@i], $@partymembercid[.@i]))
+			.@online++;
+	}
+	if (.@online <= 1) {
+		mes "^0000CDOfficial solo mode:^000000 only one wing will appear.";
+		mes "Clear that wing, survive the root phase, then continue to the boss.";
+	}
+	next;
+	.@menu$ = "";
+	for (.@i = 1; .@i <= .@max; .@i++)
+		.@menu$ = .@menu$ + "Level " + .@i + ":";
+	.@menu$ = .@menu$ + "Cancel";
+	.@pick = select(.@menu$);
+	if (.@pick > .@max) {
+		close;
+	}
+	'OGHCM_Level = .@pick;
+	'OGHCM_Started = 1;
+	'OGHCM_WestClear = 0;
+	'OGHCM_EastClear = 0;
+	'OGHCM_RootKilled = 0;
+	'OGHCM_SlaveKills = 0;
+	'OGHCM_BossClean = 1;
+	'map1$ = instance_mapname("1@gl_he");
+	'map2$ = instance_mapname("1@gl_he2");
+	'party_id = getcharid(1);
+
+	getpartymember 'party_id, 1;
+	getpartymember 'party_id, 2;
+	.@count = 0;
+	for (.@i = 0; .@i < $@partymembercount; .@i++) {
+		if (isloggedin($@partymemberaid[.@i], $@partymembercid[.@i]) == 0)
+			continue;
+		.@count++;
+	}
+	'OGHCM_Registered = .@count;
+	'OGHCM_SoloMode = (.@count <= 1);
+
+	mapannounce 'map1$, "Oscar: Contamination Level " + 'OGHCM_Level + " selected.", bc_map, 0xFFFF00;
+	if ('OGHCM_SoloMode) {
+		'OGHCM_SoloWing = rand(2);
+		if ('OGHCM_SoloWing)
+			mapannounce 'map1$, "Oscar: Solo challenge — clear the east wing, then proceed through the corridor.", bc_map, 0xFFFF00;
+		else
+			mapannounce 'map1$, "Oscar: Solo challenge — clear the west wing, then proceed through the corridor.", bc_map, 0xFFFF00;
+		for (.@i = 0; .@i < $@partymembercount; .@i++) {
+			if (isloggedin($@partymemberaid[.@i], $@partymembercid[.@i]) == 0)
+				continue;
+			if ('OGHCM_SoloWing)
+				warpchar 'map1$, 215, 79, $@partymembercid[.@i];
+			else
+				warpchar 'map1$, 80, 80, $@partymembercid[.@i];
+		}
+	} else {
+		mapannounce 'map1$, "Oscar: Splitting the party between the west and east wings.", bc_map, 0xFFFF00;
+		for (.@i = 0; .@i < $@partymembercount; .@i++) {
+			if (isloggedin($@partymemberaid[.@i], $@partymembercid[.@i]) == 0)
+				continue;
+			if (.@i % 2)
+				warpchar 'map1$, 215, 79, $@partymembercid[.@i];
+			else
+				warpchar 'map1$, 80, 80, $@partymembercid[.@i];
+		}
+	}
+	donpcevent instance_npcname("OGHCM Controller") + "::OnStart";
+	close;
+}
+
+1@gl_he,1,2,0	script	OGHCM Controller	-1,{
+OnStart:
+	sleep 2000;
+	.@map$ = 'map1$;
+	.@label_w$ = instance_npcname("OGHCM Controller") + "::OnWestDead";
+	.@label_e$ = instance_npcname("OGHCM Controller") + "::OnEastDead";
+	if ('OGHCM_SoloMode) {
+		if ('OGHCM_SoloWing) {
+			areamonster .@map$, 190, 55, 240, 105, "--ja--", "MD_C_WHITEKNIGHT", 10, .@label_e$;
+			areamonster .@map$, 190, 55, 240, 105, "--ja--", "MD_C_KHALITZBURG", 10, .@label_e$;
+			areamonster .@map$, 190, 55, 240, 105, "--ja--", "MD_C_RAYDRIC", 10, .@label_e$;
+			areamonster .@map$, 190, 55, 240, 105, "--ja--", "MD_C_RAYDRIC_ARCHER", 10, .@label_e$;
+			areamonster .@map$, 190, 55, 240, 105, "--ja--", "MD_C_ZOMBIE", 10, .@label_e$;
+			'OGHCM_EastLeft = 50;
+			'OGHCM_WestLeft = 0;
+			'OGHCM_WestClear = 1;
+		} else {
+			areamonster .@map$, 55, 55, 105, 105, "--ja--", "MD_C_WHITEKNIGHT", 10, .@label_w$;
+			areamonster .@map$, 55, 55, 105, 105, "--ja--", "MD_C_KHALITZBURG", 10, .@label_w$;
+			areamonster .@map$, 55, 55, 105, 105, "--ja--", "MD_C_RAYDRIC", 10, .@label_w$;
+			areamonster .@map$, 55, 55, 105, 105, "--ja--", "MD_C_ZOMBIE", 10, .@label_w$;
+			areamonster .@map$, 55, 55, 105, 105, "--ja--", "MD_C_GHOUL", 10, .@label_w$;
+			'OGHCM_WestLeft = 50;
+			'OGHCM_EastLeft = 0;
+			'OGHCM_EastClear = 1;
+		}
+		end;
+	}
+	areamonster .@map$, 55, 55, 105, 105, "--ja--", "MD_C_WHITEKNIGHT", 10, .@label_w$;
+	areamonster .@map$, 55, 55, 105, 105, "--ja--", "MD_C_KHALITZBURG", 10, .@label_w$;
+	areamonster .@map$, 55, 55, 105, 105, "--ja--", "MD_C_RAYDRIC", 10, .@label_w$;
+	areamonster .@map$, 55, 55, 105, 105, "--ja--", "MD_C_ZOMBIE", 10, .@label_w$;
+	areamonster .@map$, 55, 55, 105, 105, "--ja--", "MD_C_GHOUL", 10, .@label_w$;
+	areamonster .@map$, 190, 55, 240, 105, "--ja--", "MD_C_WHITEKNIGHT", 10, .@label_e$;
+	areamonster .@map$, 190, 55, 240, 105, "--ja--", "MD_C_KHALITZBURG", 10, .@label_e$;
+	areamonster .@map$, 190, 55, 240, 105, "--ja--", "MD_C_RAYDRIC", 10, .@label_e$;
+	areamonster .@map$, 190, 55, 240, 105, "--ja--", "MD_C_RAYDRIC_ARCHER", 10, .@label_e$;
+	areamonster .@map$, 190, 55, 240, 105, "--ja--", "MD_C_ZOMBIE", 10, .@label_e$;
+	'OGHCM_WestLeft = 50;
+	'OGHCM_EastLeft = 50;
+	end;
+
+OnWestDead:
+	if ('OGHCM_WestLeft <= 0)
+		end;
+	callfunc("F_OGHCM_MobDrop");
+	if (--'OGHCM_WestLeft > 3)
+		end;
+	if ('OGHCM_WestClear)
+		end;
+	'OGHCM_WestClear = 1;
+	callsub S_StartRootPhase;
+	callsub S_OnWingClear, 0;
+	callsub S_TryEnableMid;
+	end;
+
+OnEastDead:
+	if ('OGHCM_EastLeft <= 0)
+		end;
+	callfunc("F_OGHCM_MobDrop");
+	if (--'OGHCM_EastLeft > 3)
+		end;
+	if ('OGHCM_EastClear)
+		end;
+	'OGHCM_EastClear = 1;
+	callsub S_StartRootPhase;
+	callsub S_OnWingClear, 1;
+	callsub S_TryEnableMid;
+	end;
+
+S_OnWingClear:
+	.@east = getarg(0);
+	if ('OGHCM_SoloMode) {
+		mapannounce 'map1$, "Oscar: The wing is secure. Use the portal to enter the central corridor and purify the corruption roots!", bc_map, 0x00FF99;
+		if ('OGHCM_SoloWing)
+			callfunc("F_OGHCM_ShowNpc", instance_npcname("#oghcm_e_portal"));
+		else
+			callfunc("F_OGHCM_ShowNpc", instance_npcname("#oghcm_w_portal"));
+		return;
+	}
+	if ('OGHCM_WestClear && 'OGHCM_EastClear) {
+		mapannounce 'map1$, "Oscar: Both wings are secure. Use the portals to reach the central corridor and purify the corruption roots!", bc_map, 0x00FF99;
+		callfunc("F_OGHCM_ShowNpc", instance_npcname("#oghcm_w_portal"));
+		callfunc("F_OGHCM_ShowNpc", instance_npcname("#oghcm_e_portal"));
+		return;
+	}
+	if (.@east) {
+		mapannounce 'map1$, "Oscar: The east wing portal is open. Use it to reinforce the west wing, or enter the corridor for the corruption roots.", bc_map, 0x00FF99;
+		callfunc("F_OGHCM_ShowNpc", instance_npcname("#oghcm_e_portal"));
+	} else {
+		mapannounce 'map1$, "Oscar: The west wing portal is open. Use it to reinforce the east wing, or enter the corridor for the corruption roots.", bc_map, 0x00FF99;
+		callfunc("F_OGHCM_ShowNpc", instance_npcname("#oghcm_w_portal"));
+	}
+	return;
+
+S_StartRootPhase:
+	if ('OGHCM_RootPhase)
+		return;
+	'OGHCM_RootPhase = 1;
+	mapannounce 'map1$, "Oscar: Prime Corruption Roots have appeared in the central corridor! Purify them within 30 seconds!", bc_map, 0xFF5555;
+	.@roots = 1;
+	if ('OGHCM_Level >= 4) .@roots = rand(1,2);
+	if ('OGHCM_Level >= 6) .@roots = rand(1,3);
+	if ('OGHCM_Level >= 8) .@roots = rand(1,4);
+	for (.@i = 0; .@i < .@roots; .@i++)
+		monster 'map1$, 145 + (.@i * 5), 155, "--ja--", "MD_C_CORRUPTION_ROOT", 1, instance_npcname("OGHCM Controller") + "::OnRootDead";
+	initnpctimer;
+	return;
+
+S_TryEnableMid:
+	if ('OGHCM_MidReady)
+		return;
+	if ('OGHCM_SoloMode) {
+		if (!'OGHCM_WestClear && !'OGHCM_EastClear)
+			return;
+	} else if (!'OGHCM_WestClear || !'OGHCM_EastClear)
+		return;
+	if (!'OGHCM_RootPhaseDone)
+		return;
+	'OGHCM_MidReady = 1;
+	callfunc("F_OGHCM_ShowNpc", instance_npcname("Oscar#oghcm_mid"));
+	mapannounce 'map1$, "Oscar: The central corridor is secure. Talk to me to open the time gap.", bc_map, 0x00FF99;
+	return;
+
+OnCorridorWarpCast:
+	if ('OGHCM_CorridorWarp)
+		end;
+	'OGHCM_CorridorWarp = 1;
+	.@oscar$ = instance_npcname("Oscar#oghcm_mid");
+	.@fx$ = instance_npcname("#oghcm_warp_fx");
+	disablenpc instance_npcname("#oghcm_w_portal");
+	disablenpc instance_npcname("#oghcm_e_portal");
+	npctalk "Oscar: This will take only a minute.", .@oscar$;
+	specialeffect EF_PORTAL2, AREA, .@fx$;
+	specialeffect EF_COUPLECASTING, AREA, .@fx$;
+	progressbar_npc "3132FF", 15, .@oscar$;
+	specialeffect EF_PORTAL2, AREA, .@fx$;
+	specialeffect EF_WARP, AREA, .@fx$;
+	'OGHCM_CorridorWarpReady = 1;
+	callfunc("F_OGHCM_ShowNpc", instance_npcname("#oghcm_corridor_warp"));
+	disablenpc .@oscar$;
+	end;
+
+OnBossSummonStart:
+	.@lvl = 'OGHCM_Level;
+	'OGHCM_BossStarted = 1;
+	if (rand(10000) < callfunc("F_OGHCM_HimmelChance", .@lvl)) {
+		'OGHCM_BossIsHimmel = 1;
+		monster 'map2$, 158, 239, "--ja--", "MD_C_HEMEL", 1, instance_npcname("OGHCM Controller") + "::OnBossDead";
+	} else {
+		'OGHCM_BossIsHimmel = 0;
+		monster 'map2$, 158, 239, "--ja--", "MD_C_AMDARAIS", 1, instance_npcname("OGHCM Controller") + "::OnBossDead";
+	}
+	'OGHCM_BossGid = $@mobid[0];
+	callfunc("F_OGHCM_BossScale", 'OGHCM_BossGid, .@lvl);
+	getunitdata 'OGHCM_BossGid, .@u;
+	.@mode = .@u[UMOB_MODE];
+	setunitdata 'OGHCM_BossGid, UMOB_MODE, (.@mode | MD_IGNOREMELEE | MD_IGNOREMAGIC | MD_IGNORERANGED | MD_IGNOREMISC);
+	getpartymember 'party_id, 1;
+	getpartymember 'party_id, 2;
+	for (.@i = 0; .@i < $@partymembercount; .@i++) {
+		if (isloggedin($@partymemberaid[.@i], $@partymembercid[.@i]) == 0)
+			continue;
+		warpchar 'map2$, 158, 248, $@partymembercid[.@i];
+	}
+	'OGHCM_Phase90 = 0;
+	'OGHCM_Phase70 = 0;
+	'OGHCM_Phase50 = 0;
+	'OGHCM_Phase30 = 0;
+	'OGHCM_ArenaWarn = 0;
+	'OGHCM_ArenaExpire = 0;
+	'OGHCM_GridExpire = 0;
+	'OGHCM_GridCrossActive = 0;
+	'OGHCM_GridCrossExpire = 0;
+	'OGHCM_MaxPainCd = 0;
+	'OGHCM_GrimActive = 0;
+	'OGHCM_GrimStacks = 0;
+	'OGHCM_GrimTick = 0;
+	'OGHCM_ImmuneExpire = gettimetick(2) + 30;
+	'OGHCM_GravityExpire = 0;
+	'OGHCM_CircleExpire = 0;
+	'OGHCM_CircleX = 0;
+	'OGHCM_CircleY = 0;
+	'OGHCM_CircleEnrage = 0;
+	sleep 1000;
+	getunitdata 'OGHCM_BossGid, .@u;
+	setunitdata 'OGHCM_BossGid, UMOB_MODE, (.@u[UMOB_MODE] & ~(MD_IGNOREMELEE | MD_IGNOREMAGIC | MD_IGNORERANGED | MD_IGNOREMISC));
+	if ('OGHCM_BossIsHimmel)
+		mapannounce 'map2$, "Oscar: Phantom Himmelmez has appeared!", bc_map, 0xFF00FF;
+	else
+		mapannounce 'map2$, "Oscar: Phantom Amdarais has appeared!", bc_map, 0xFF0000;
+	.@slaves = 5 + 'OGHCM_Level;
+	for (.@i = 0; .@i < .@slaves; .@i++) {
+		monster 'map2$, 148 + rand(20), 228 + rand(20), "--ja--", "MD_C_KHALITZBURG", 1, instance_npcname("OGHCM Controller") + "::OnSlaveDead";
+		callfunc("F_OGHCM_MobScale", $@mobid[0], .@lvl);
+	}
+	if ('OGHCM_Level >= 9) {
+		'OGHCM_GravityExpire = gettimetick(2) + 20;
+		'OGHCM_CircleX = 150 + rand(16);
+		'OGHCM_CircleY = 230 + rand(18);
+		'OGHCM_CircleExpire = gettimetick(2) + 60;
+		mapannounce 'map2$, "Oscar: A temporal circle appeared in the arena. Lure the phantom into it!", bc_map, 0x00CCFF;
+	}
+	donpcevent instance_npcname("#oghcm_boss_ai") + "::OnStart";
+	end;
+
+OnTimer30000:
+	killmonster 'map1$, instance_npcname("OGHCM Controller") + "::OnRootDead";
+	if (!'OGHCM_RootKilled) {
+		mapannounce 'map1$, "Oscar: I purified the corruption roots for you. Rewards will be reduced.", bc_map, 0xFF9900;
+		'OGHCM_BossClean = 0;
+	}
+	'OGHCM_RootPhaseDone = 1;
+	stopnpctimer;
+	callsub S_TryEnableMid;
+	end;
+
+OnRootDead:
+	callfunc("F_OGHCM_RootDrop");
+	if (!'OGHCM_RootKilled)
+		'OGHCM_RootKilled = 1;
+	if (mobcount('map1$, instance_npcname("OGHCM Controller") + "::OnRootDead") > 0)
+		end;
+	stopnpctimer;
+	'OGHCM_RootPhaseDone = 1;
+	callsub S_TryEnableMid;
+	end;
+
+OnBossDead:
+	'OGHCM_BossGid = 0;
+	killmonster 'map2$, instance_npcname("OGHCM Controller") + "::OnSlaveDead";
+	killmonster 'map2$, instance_npcname("OGHCM Controller") + "::OnGridDead";
+	'OGHCM_Complete = 1;
+	callfunc("F_OGHCM_ShowNpc", instance_npcname("#oghcm_chest"));
+	callfunc("F_OGHCM_ShowNpc", instance_npcname("Oscar#oghcm_reward"));
+	mapannounce 'map2$, "Oscar: The phantom has fallen. Claim the treasure chest, then speak with me.", bc_map, 0x00FF99;
+	end;
+
+OnBossEscape:
+	if ('OGHCM_BossGid > 0) {
+		unitkill 'OGHCM_BossGid;
+		'OGHCM_BossGid = 0;
+	}
+	'OGHCM_BossStarted = 0;
+	'OGHCM_BossCine = 2;
+	'OGHCM_Phase90 = 0;
+	'OGHCM_Phase70 = 0;
+	'OGHCM_Phase50 = 0;
+	'OGHCM_Phase30 = 0;
+	'OGHCM_ArenaWarn = 0;
+	'OGHCM_ArenaExpire = 0;
+	'OGHCM_GridExpire = 0;
+	'OGHCM_GridCrossActive = 0;
+	'OGHCM_GridCrossExpire = 0;
+	'OGHCM_MaxPainCd = 0;
+	'OGHCM_GrimActive = 0;
+	'OGHCM_GrimStacks = 0;
+	'OGHCM_GrimTick = 0;
+	'OGHCM_ImmuneExpire = 0;
+	'OGHCM_GravityExpire = 0;
+	'OGHCM_CircleExpire = 0;
+	'OGHCM_CircleEnrage = 0;
+	'OGHCM_BossPenalty = 0;
+	'oscar_boss$ = instance_npcname("Oscar#oghcm_boss");
+	setnpcdisplay 'oscar_boss$, 4_ED_OSCAR;
+	movenpc 'oscar_boss$, 157, 229;
+	callfunc("F_OGHCM_ShowNpc", 'oscar_boss$);
+	end;
+
+OnSlaveDead:
+	callfunc("F_OGHCM_MobDrop");
+	'OGHCM_SlaveKills++;
+	end;
+
+OnGridDead:
+	end;
+}
+
+1@gl_he2,1,3,0	script	#oghcm_boss_ai	-1,{
+OnStart:
+	'OGHCM_GridExpire = 0;
+	'OGHCM_GridCrossActive = 0;
+	'OGHCM_GridCrossExpire = 0;
+	'OGHCM_ArenaExpire = 0;
+	'OGHCM_MaxPainCd = 0;
+	'OGHCM_GrimTick = gettimetick(2);
+	while (1) {
+		if ('OGHCM_BossGid <= 0 || !unitexists('OGHCM_BossGid))
+			end;
+		getunitdata 'OGHCM_BossGid, .@u;
+		.@hp = .@u[UMOB_HP];
+		.@maxhp = .@u[UMOB_MAXHP];
+		if (.@maxhp <= 0) {
+			sleep 2000;
+			continue;
+		}
+		.@pct = .@hp * 100 / .@maxhp;
+		.@lvl = 'OGHCM_Level;
+
+		.@alive = callfunc("F_OGHCM_CountLivingArena", 'party_id, 'map2$);
+		if ('OGHCM_Registered > 0 && .@alive != 'OGHCM_Registered)
+			callfunc("F_OGHCM_ApplyBossPenalty", 'OGHCM_BossGid, 1);
+		else
+			callfunc("F_OGHCM_ApplyBossPenalty", 'OGHCM_BossGid, 0);
+
+		if (gettimetick(2) >= 'OGHCM_ImmuneExpire) {
+			if ('OGHCM_BossIsHimmel) {
+				unitskilluseid 'OGHCM_BossGid, "NPC_CHANGEDARKNESS", 1;
+				unitskilluseid 'OGHCM_BossGid, "NPC_RELIEVE_ON", min(10, .@lvl);
+			} else {
+				unitskilluseid 'OGHCM_BossGid, "NPC_CHANGEHOLY", 1;
+				unitskilluseid 'OGHCM_BossGid, "NPC_RELIEVE_ON", min(10, .@lvl);
+			}
+			mapannounce 'map2$, "Oscar: The phantom cloaks itself against its weakness!", bc_map, 0xFF9900;
+			'OGHCM_ImmuneExpire = gettimetick(2) + 45;
+		}
+
+		if (.@pct <= 90 && !'OGHCM_Phase90) {
+			'OGHCM_Phase90 = 1;
+			mapannounce 'map2$, "Oscar: Mutated Thorns are sprouting around the phantom!", bc_map, 0xFF9900;
+			for (.@i = 0; .@i < 9; .@i++) {
+				monster 'map2$, 150 + (.@i % 3) * 4, 233 + (.@i / 3) * 4, "--ja--", "MD_C_THORN", 1, instance_npcname("OGHCM Controller") + "::OnGridDead";
+				callfunc("F_OGHCM_ThornScale", $@mobid[0], .@lvl);
+			}
+			'OGHCM_GridExpire = gettimetick(2) + 5;
+		}
+		if ('OGHCM_GridExpire > 0 && gettimetick(2) >= 'OGHCM_GridExpire) {
+			'OGHCM_GridExpire = 0;
+			'OGHCM_GridCrossActive = 1;
+			'OGHCM_GridCrossExpire = gettimetick(2) + 10;
+			mapannounce 'map2$, "Oscar: Surviving thorns unleash Grand Darkness!", bc_map, 0xFF0000;
+			if ('OGHCM_BossIsHimmel)
+				unitskilluseid 'OGHCM_BossGid, "CR_GRANDCROSS", min(10, .@lvl);
+			else
+				unitskilluseid 'OGHCM_BossGid, "NPC_GRANDDARKNESS", min(10, .@lvl);
+		}
+		if ('OGHCM_GridCrossActive > 0 && gettimetick(2) >= 'OGHCM_GridCrossExpire) {
+			killmonster 'map2$, instance_npcname("OGHCM Controller") + "::OnGridDead";
+			'OGHCM_GridCrossActive = 0;
+		}
+
+		if (.@pct <= 70 && !'OGHCM_Phase70) {
+			'OGHCM_Phase70 = 1;
+			mapannounce 'map2$, "Oscar: Mutated Khalitzburgs join the battle!", bc_map, 0xFFFF00;
+			for (.@i = 0; .@i < 4 + .@lvl; .@i++) {
+				monster 'map2$, 148 + rand(20), 228 + rand(20), "--ja--", "MD_C_KHALITZBURG", 1, instance_npcname("OGHCM Controller") + "::OnSlaveDead";
+				callfunc("F_OGHCM_MobScale", $@mobid[0], .@lvl);
+			}
+			if (.@lvl >= 3) {
+				'OGHCM_MaxPainCd = gettimetick(2);
+				unitskilluseid 'OGHCM_BossGid, "NPC_MAXPAIN", min(10, .@lvl);
+				mapannounce 'map2$, "Oscar: Max Pain! Hold your attacks or suffer the recoil!", bc_map, 0xFF00FF;
+				'OGHCM_GrimActive = 1;
+				'OGHCM_GrimStacks = 1;
+				mapannounce 'map2$, "Oscar: A Grim Reaper is approaching the phantom!", bc_map, 0x9900FF;
+			}
+		}
+		if (.@lvl >= 3 && .@pct <= 70 && 'OGHCM_MaxPainCd > 0 && gettimetick(2) >= 'OGHCM_MaxPainCd + 30) {
+			'OGHCM_MaxPainCd = gettimetick(2);
+			unitskilluseid 'OGHCM_BossGid, "NPC_MAXPAIN", min(10, .@lvl);
+			mapannounce 'map2$, "Oscar: Max Pain surges again!", bc_map, 0xFF00FF;
+		}
+		if ('OGHCM_GrimActive > 0 && gettimetick(2) >= 'OGHCM_GrimTick + 60) {
+			'OGHCM_GrimTick = gettimetick(2);
+			if ('OGHCM_GrimStacks < 5)
+				'OGHCM_GrimStacks++;
+		}
+
+		if (.@pct <= 50 && !'OGHCM_Phase50) {
+			'OGHCM_Phase50 = 1;
+			mapannounce 'map2$, "Oscar: Mutated White Knights charge in!", bc_map, 0xFFFF00;
+			for (.@i = 0; .@i < 3 + .@lvl; .@i++) {
+				monster 'map2$, 148 + rand(20), 228 + rand(20), "--ja--", "MD_C_WHITEKNIGHT", 1, instance_npcname("OGHCM Controller") + "::OnSlaveDead";
+				callfunc("F_OGHCM_MobScale", $@mobid[0], .@lvl);
+			}
+			if ('OGHCM_BossIsHimmel)
+				unitskilluseid 'OGHCM_BossGid, "NPC_CHANGEDARKNESS", 1;
+			else
+				unitskilluseid 'OGHCM_BossGid, "NPC_CHANGEUNDEAD", 1;
+		}
+		if (.@pct <= 30 && !'OGHCM_Phase30) {
+			'OGHCM_Phase30 = 1;
+			mapannounce 'map2$, "Oscar: Mutated Raydric Archers surround the arena!", bc_map, 0xFFFF00;
+			for (.@i = 0; .@i < 3 + .@lvl; .@i++) {
+				monster 'map2$, 148 + rand(20), 228 + rand(20), "--ja--", "MD_C_RAYDRIC_ARCHER", 1, instance_npcname("OGHCM Controller") + "::OnSlaveDead";
+				callfunc("F_OGHCM_MobScale", $@mobid[0], .@lvl);
+			}
+			unitskilluseid 'OGHCM_BossGid, "NPC_HELLJUDGEMENT", min(10, .@lvl);
+		}
+
+		if (.@lvl >= 9 && 'OGHCM_GravityExpire > 0 && gettimetick(2) >= 'OGHCM_GravityExpire) {
+			unitskilluseid 'OGHCM_BossGid, "NPC_GRADUAL_GRAVITY", min(10, .@lvl);
+			'OGHCM_GravityExpire = gettimetick(2) + 40;
+		}
+		if (.@lvl >= 9 && 'OGHCM_CircleExpire > 0) {
+			if (gettimetick(2) >= 'OGHCM_CircleExpire) {
+				if (!'OGHCM_CircleEnrage && distance('OGHCM_CircleX, 'OGHCM_CircleY, .@u[UMOB_X], .@u[UMOB_Y]) > 5) {
+					'OGHCM_CircleEnrage = 1;
+					getunitdata 'OGHCM_BossGid, .@u;
+					setunitdata 'OGHCM_BossGid, UMOB_ATKMIN, .@u[UMOB_ATKMIN] * 3 / 2;
+					setunitdata 'OGHCM_BossGid, UMOB_ATKMAX, .@u[UMOB_ATKMAX] * 3 / 2;
+					setunitdata 'OGHCM_BossGid, UMOB_MATKMIN, .@u[UMOB_MATKMIN] * 3 / 2;
+					setunitdata 'OGHCM_BossGid, UMOB_MATKMAX, .@u[UMOB_MATKMAX] * 3 / 2;
+					mapannounce 'map2$, "Oscar: The phantom is enraged outside the temporal circle!", bc_map, 0xFF0000;
+				}
+				'OGHCM_CircleX = 150 + rand(16);
+				'OGHCM_CircleY = 230 + rand(18);
+				'OGHCM_CircleExpire = gettimetick(2) + 60;
+				'OGHCM_CircleEnrage = 0;
+				mapannounce 'map2$, "Oscar: A new temporal circle appeared. Lure the phantom into it!", bc_map, 0x00CCFF;
+			} else if (distance('OGHCM_CircleX, 'OGHCM_CircleY, .@u[UMOB_X], .@u[UMOB_Y]) <= 5 && 'OGHCM_CircleEnrage) {
+				'OGHCM_CircleEnrage = 0;
+				getunitdata 'OGHCM_BossGid, .@u;
+				setunitdata 'OGHCM_BossGid, UMOB_ATKMIN, (.@u[UMOB_ATKMIN] * 2) / 3;
+				setunitdata 'OGHCM_BossGid, UMOB_ATKMAX, (.@u[UMOB_ATKMAX] * 2) / 3;
+				setunitdata 'OGHCM_BossGid, UMOB_MATKMIN, (.@u[UMOB_MATKMIN] * 2) / 3;
+				setunitdata 'OGHCM_BossGid, UMOB_MATKMAX, (.@u[UMOB_MATKMAX] * 2) / 3;
+			}
+		}
+
+		.@regen = 300000 * .@lvl;
+		if ('OGHCM_GrimActive > 0)
+			.@regen = max(0, .@regen - (50000 * 'OGHCM_GrimStacks));
+		if (.@hp < .@maxhp)
+			setunitdata 'OGHCM_BossGid, UMOB_HP, min(.@maxhp, .@hp + .@regen);
+
+		if (distance(158, 239, .@u[UMOB_X], .@u[UMOB_Y]) > 12 && !'OGHCM_ArenaWarn) {
+			'OGHCM_ArenaWarn = 1;
+			'OGHCM_ArenaExpire = gettimetick(2) + 30;
+			mapannounce 'map2$, "Oscar: Bring the phantom back to the center within 30 seconds!", bc_map, 0xFF0000;
+		} else if (distance(158, 239, .@u[UMOB_X], .@u[UMOB_Y]) <= 12 && 'OGHCM_ArenaWarn) {
+			'OGHCM_ArenaWarn = 0;
+			'OGHCM_ArenaExpire = 0;
+		}
+		if ('OGHCM_ArenaExpire > 0 && gettimetick(2) >= 'OGHCM_ArenaExpire) {
+			mapannounce 'map2$, "Oscar: The phantom fled the arena. The battle restarts!", bc_map, 0xFF0000;
+			killmonster 'map2$, instance_npcname("OGHCM Controller") + "::OnSlaveDead";
+			killmonster 'map2$, instance_npcname("OGHCM Controller") + "::OnGridDead";
+			donpcevent instance_npcname("OGHCM Controller") + "::OnBossEscape";
+			end;
+		}
+		sleep 2000;
+	}
+	end;
+}
+
+1@gl_he,150,157,5	script	Oscar#oghcm_mid	4_ED_OSCAR,{
+	if (!'OGHCM_MidReady || 'OGHCM_CorridorWarp)
+		end;
+	mes "[Oscar]";
+	mes "The central corridor is secure.";
+	mes "Shall I open a time gap to the boss chamber?";
+	next;
+	if (select("Create the time gap.", "Not yet.") == 2)
+		close;
+	close2;
+	donpcevent instance_npcname("OGHCM Controller") + "::OnCorridorWarpCast";
+	end;
+}
+
+1@gl_he,150,162,0	script	#oghcm_corridor_warp	WARPNPC,2,2,{
+	end;
+OnTouch:
+	if (!'OGHCM_CorridorWarpReady)
+		end;
+	warp 'map2$, 149, 171;
+	if ('OGHCM_BossCine < 1)
+		donpcevent instance_npcname("Oscar#oghcm_boss") + "::OnEntryCine";
+	end;
+}
+
+1@gl_he,150,162,0	script	#oghcm_warp_fx	HIDDEN_WARP_NPC,{
+	end;
+}
+
+1@gl_he,135,140,0	script	#oghcm_w_portal	WARPNPC,2,2,{
+	end;
+OnTouch:
+	if ('OGHCM_CorridorWarp)
+		end;
+	if ('OGHCM_EastClear)
+		warp 'map1$, 150, 155;
+	else
+		warp 'map1$, 215, 79;
+	end;
+}
+
+1@gl_he,164,120,0	script	#oghcm_e_portal	WARPNPC,2,2,{
+	end;
+OnTouch:
+	if ('OGHCM_CorridorWarp)
+		end;
+	if ('OGHCM_WestClear)
+		warp 'map1$, 150, 155;
+	else
+		warp 'map1$, 80, 80;
+	end;
+}
+
+// Block default corridor warps on the shared Glast Heim wing layout.
+1@gl_he,96,80,0	warp	#oghcm_junc_w1	2,2,1@gl_he,80,80
+1@gl_he,90,80,0	warp	#oghcm_junc_w2	2,2,1@gl_he,105,80
+1@gl_he,202,79,0	warp	#oghcm_junc_e1	2,2,1@gl_he,215,79
+1@gl_he,206,79,0	warp	#oghcm_junc_e2	2,2,1@gl_he,195,79
+
+1@gl_he2,157,229,5	script	Oscar#oghcm_boss	4_ED_OSCAR,{
+	if ('OGHCM_BossCine < 2)
+		end;
+	if ('OGHCM_BossStarted)
+		end;
+	mes "[Oscar]";
+	mes "I will summon the phantom of this timeline.";
+	mes "Prepare yourselves. All party members will be drawn into the arena.";
+	next;
+	if (select("Summon the boss.", "Wait.") == 2)
+		close;
+	close2;
+	.@oscar$ = instance_npcname("Oscar#oghcm_boss");
+	npctalk "Oscar: The contamination is level " + 'OGHCM_Level + ". Environment is getting dangerous. Proceed with caution.", .@oscar$;
+	donpcevent .@oscar$ + "::OnBossSummonPrep";
+	end;
+
+OnEntryCine:
+	'oscar_boss$ = instance_npcname("Oscar#oghcm_boss");
+	if ('OGHCM_BossCine >= 1)
+		end;
+	callfunc("F_OGHCM_ShowNpc", 'oscar_boss$);
+	movenpc 'oscar_boss$, 157, 229;
+	setnpcdisplay 'oscar_boss$, 4_ED_OSCAR;
+	'OGHCM_BossCine = 2;
+	npctalk "Oscar: Are you ready to face the phantom of this timeline?", 'oscar_boss$;
+	end;
+
+OnBossSummonPrep:
+	'oscar_boss$ = instance_npcname("Oscar#oghcm_boss");
+	callfunc("F_OGHCM_ShowNpc", 'oscar_boss$);
+	movenpc 'oscar_boss$, 157, 229;
+	setnpcdisplay 'oscar_boss$, 4_ED_OSCAR;
+	.@fx$ = instance_npcname("#oghcm_boss_fx");
+	specialeffect EF_BOTTOM_BASILICA2, AREA, .@fx$;
+	specialeffect EF_MAPPILLAR2, AREA, .@fx$;
+	specialeffect EF_COUPLECASTING, AREA, .@fx$;
+	progressbar_npc "3132FF", 10, .@fx$;
+	specialeffect EF_ENTRY, AREA, .@fx$;
+	specialeffect EF_LORD, AREA, .@fx$;
+	disablenpc 'oscar_boss$;
+	donpcevent instance_npcname("OGHCM Controller") + "::OnBossSummonStart";
+	end;
+}
+
+1@gl_he2,158,239,0	script	#oghcm_boss_fx	HIDDEN_WARP_NPC,{
+	end;
+}
+
+1@gl_he2,158,248,0	script	#oghcm_chest	4_TREASURE_BOX,{
+	if (@oghcm_chest)
+		end;
+	mes "[Treasure Chest]";
+	mes "Temporal rewards spill from the shattered chest.";
+	next;
+	if (select("Collect the loot.", "Leave it.") == 2)
+		close;
+	if (@oghcm_chest) {
+		mes "You already collected your share of this chest.";
+		close;
+	}
+	if (callfunc("F_OGHCM_ChestDrop", 'OGHCM_Level) == 0) {
+		mes "Your inventory is too full.";
+		close;
+	}
+	@oghcm_chest = 1;
+	specialeffect2 EF_STORMGUST;
+	close;
+}
+
+1@gl_he2,149,165,5	script	Oscar#oghcm_reward	4_ED_OSCAR,{
+	if (!'OGHCM_Complete) {
+		mes "[Oscar]";
+		mes "Defeat the phantom boss first.";
+		close;
+	}
+	if (@oghcm_chest == 0) {
+		mes "[Oscar]";
+		mes "Claim the treasure chest first.";
+		close;
+	}
+	if (@oghcm_reward) {
+		mes "[Oscar]";
+		mes "You already received your performance rewards.";
+		mes "Shall I send you outside?";
+		next;
+		if (select("Leave the time gap.", "Stay.") == 2)
+			close;
+		close2;
+		callfunc("F_OGHCM_InstanceExit", 'party_id);
+		end;
+	}
+	mes "[Oscar]";
+	mes "Well done. Here are your performance rewards for Contamination Level " + 'OGHCM_Level + ".";
+	callfunc("F_OGHCM_Reward", 'OGHCM_Level, 'OGHCM_RootKilled, ('OGHCM_SlaveKills >= 100), 'OGHCM_BossClean);
+	if ('OGHCM_BossIsHimmel)
+		getitem 102553, 1; // C_Himel_Antiquity
+	else
+		getitem 102552, 1; // C_Amdarais_Antiquity
+	#OGHCM_Clear++;
+	callfunc("F_OGHCM_ApplyClearCooldown");
+	@oghcm_reward = 1;
+	mes "[Oscar]";
+	mes "Total clears: ^0000CD" + #OGHCM_Clear + "^000000";
+	close2;
+	callfunc("F_OGHCM_InstanceExit", 'party_id);
+	end;
+}
+
+1@gl_he,1,1,0	script	#oghcm_init	-1,{
+OnInstanceInit:
+	'OGHCM_Started = 0;
+	'OGHCM_Complete = 0;
+	'OGHCM_BossStarted = 0;
+	'OGHCM_BossGid = 0;
+	'OGHCM_BossIsHimmel = 0;
+	'OGHCM_RootPhase = 0;
+	'OGHCM_RootPhaseDone = 0;
+	'OGHCM_RootKilled = 0;
+	'OGHCM_WestClear = 0;
+	'OGHCM_EastClear = 0;
+	'OGHCM_WestLeft = 0;
+	'OGHCM_EastLeft = 0;
+	'OGHCM_SlaveKills = 0;
+	'OGHCM_BossClean = 1;
+	'OGHCM_SoloMode = 0;
+	'OGHCM_SoloWing = 0;
+	'OGHCM_Registered = 0;
+	'OGHCM_Phase90 = 0;
+	'OGHCM_Phase70 = 0;
+	'OGHCM_Phase50 = 0;
+	'OGHCM_Phase30 = 0;
+	'OGHCM_ArenaWarn = 0;
+	'OGHCM_ArenaExpire = 0;
+	'OGHCM_MidReady = 0;
+	'OGHCM_GridExpire = 0;
+	'OGHCM_CorridorWarp = 0;
+	'OGHCM_CorridorWarpReady = 0;
+	'OGHCM_BossCine = 0;
+	'OGHCM_GridCrossActive = 0;
+	'OGHCM_GridCrossExpire = 0;
+	'OGHCM_MaxPainCd = 0;
+	'OGHCM_GrimActive = 0;
+	'OGHCM_GrimStacks = 0;
+	'OGHCM_GrimTick = 0;
+	'OGHCM_ImmuneExpire = 0;
+	'OGHCM_GravityExpire = 0;
+	'OGHCM_CircleExpire = 0;
+	'OGHCM_CircleX = 0;
+	'OGHCM_CircleY = 0;
+	'OGHCM_CircleEnrage = 0;
+	'OGHCM_BossPenalty = 0;
+	'OGHCM_BossBaseDef = 0;
+	'OGHCM_BossBaseMDef = 0;
+	'oscar_boss$ = "";
+	disablenpc instance_npcname("Oscar#oghcm_mid");
+	disablenpc instance_npcname("Oscar#oghcm_boss");
+	disablenpc instance_npcname("Oscar#oghcm_reward");
+	disablenpc instance_npcname("#oghcm_chest");
+	disablenpc instance_npcname("#oghcm_w_portal");
+	disablenpc instance_npcname("#oghcm_e_portal");
+	disablenpc instance_npcname("#oghcm_corridor_warp");
+	enablenpc instance_npcname("#oghcm_warp_fx");
+	enablenpc instance_npcname("#oghcm_boss_fx");
+	disablenpc instance_npcname("#oghcm_junc_w1");
+	disablenpc instance_npcname("#oghcm_junc_w2");
+	disablenpc instance_npcname("#oghcm_junc_e1");
+	disablenpc instance_npcname("#oghcm_junc_e2");
+	end;
+}

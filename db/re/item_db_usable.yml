@@ -46284,6 +46284,8 @@ Body:
     Weight: 10
     Flags:
       Container: true
+      BuyingStore: true
+      DropEffect: CLIENT
     Trade:
       NoDrop: true
       NoTrade: true
@@ -58001,6 +58003,7 @@ Body:
     EquipLevelMin: 100
     Flags:
       BuyingStore: true
+      DropEffect: CLIENT
     Delay:
       Duration: 5000
       Status: Reuse_Limit_F
@@ -61035,6 +61038,7 @@ Body:
     Flags:
       BuyingStore: true
       Container: true
+      DropEffect: CLIENT
     Script: |
       getgroupitem(IG_CRYSTAL_OF_GRUDGE);
   - Id: 23081
@@ -62007,6 +62011,7 @@ Body:
     Script: |
       vip_time(60*24*30);
       getitem 23165,1;
+      rentitem 9956700,2592000;
       bonus_script "{ bonus2 bExpAddRace,RC_All,100; bonus2 bDropAddRace,RC_All,100; }",2592000,1,0,EFST_OVERSEAEXPUP;
       dispbottom "You have activated VIP status for 30 days.";
   - Id: 23209
@@ -62024,6 +62029,7 @@ Body:
       NoAuction: true
     Script: |
       vip_time(60*24);
+      rentitem 9956700,86400;
       bonus_script "{ bonus2 bExpAddRace,RC_All,100; bonus2 bDropAddRace,RC_All,100; }",86400,1,0,EFST_OVERSEAEXPUP;
       dispbottom "You have activated VIP status for a day.";
   - Id: 23210
@@ -62041,6 +62047,7 @@ Body:
       NoAuction: true
     Script: |
       vip_time(60*24*4);
+      rentitem 9956700,345600;
       bonus_script "{ bonus2 bExpAddRace,RC_All,100; bonus2 bDropAddRace,RC_All,100; }",345600,1,0,EFST_OVERSEAEXPUP;
       dispbottom "You have activated VIP status for 4 days.";
   - Id: 23211
@@ -62058,6 +62065,7 @@ Body:
       NoAuction: true
     Script: |
       vip_time(60*24*5);
+      rentitem 9956700,432000;
       bonus_script "{ bonus2 bExpAddRace,RC_All,100; bonus2 bDropAddRace,RC_All,100; }",432000,1,0,EFST_OVERSEAEXPUP;
       dispbottom "You have activated VIP status for 5 days.";
   - Id: 23212
@@ -62075,6 +62083,7 @@ Body:
       NoAuction: true
     Script: |
       vip_time(60*24*6);
+      rentitem 9956700,518400;
       bonus_script "{ bonus2 bExpAddRace,RC_All,100; bonus2 bDropAddRace,RC_All,100; }",518400,1,0,EFST_OVERSEAEXPUP;
       dispbottom "You have activated VIP status for 6 days.";
   - Id: 23213
@@ -62092,6 +62101,7 @@ Body:
       NoAuction: true
     Script: |
       vip_time(60*24*7);
+      rentitem 9956700,604800;
       bonus_script "{ bonus2 bExpAddRace,RC_All,100; bonus2 bDropAddRace,RC_All,100; }",604800,1,0,EFST_OVERSEAEXPUP;
       dispbottom "You have activated VIP status for 7 days.";
   - Id: 23214
@@ -62109,6 +62119,7 @@ Body:
       NoAuction: true
     Script: |
       vip_time(60*24*8);
+      rentitem 9956700,691200;
       bonus_script "{ bonus2 bExpAddRace,RC_All,100; bonus2 bDropAddRace,RC_All,100; }",691200,1,0,EFST_OVERSEAEXPUP;
       dispbottom "You have activated VIP status for 8 days.";
   - Id: 23215
@@ -62126,6 +62137,7 @@ Body:
       NoAuction: true
     Script: |
       vip_time(60*24*9);
+      rentitem 9956700,777600;
       bonus_script "{ bonus2 bExpAddRace,RC_All,100; bonus2 bDropAddRace,RC_All,100; }",777600,1,0,EFST_OVERSEAEXPUP;
       dispbottom "You have activated VIP status for 9 days.";
   - Id: 23216
@@ -62143,6 +62155,7 @@ Body:
       NoAuction: true
     Script: |
       vip_time(60*24*10);
+      rentitem 9956700,864000;
       bonus_script "{ bonus2 bExpAddRace,RC_All,100; bonus2 bDropAddRace,RC_All,100; }",864000,1,0,EFST_OVERSEAEXPUP;
       dispbottom "You have activated VIP status for 10 days.";
   - Id: 23217

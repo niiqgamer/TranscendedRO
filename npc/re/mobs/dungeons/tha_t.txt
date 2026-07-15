@@ -112,45 +112,41 @@ tha_t08,0,0	monster	Odium of Thanatos	1704,2,5000
 //==================================================
 // tha_t09 - Thanatos Tower - Upper Level
 //==================================================
-tha_t09,0,0	monster	Lady Solace	1703,20,5000
-tha_t09,0,0	monster	Dame of Sentinel	1700,5,5000
-tha_t09,0,0	monster	Baroness of Retribution	1702,5,5000
-tha_t09,0,0	monster	Mistress of Shelter	1701,5,5000
-tha_t09,0,0	monster	Plasma	1694,5,5000
-tha_t09,0,0	monster	Dolor of Thanatos	1712,3,5000
-tha_t09,0,0	monster	Dolor of Thanatos	1707,1,5000
+tha_t09,0,0	monster	--ja--	20779,5,5000
+tha_t09,0,0	monster	--ja--	20780,5,5000
+tha_t09,0,0	monster	--ja--	20781,5,5000
+tha_t09,0,0	monster	--ja--	20782,10,5000
+tha_t09,0,0	monster	--ja--	20783,15,5000
 
 //==================================================
 // tha_t10 - Thanatos Tower - Upper Level
 //==================================================
-tha_t10,0,0	monster	Baroness of Retribution	1702,20,5000
-tha_t10,0,0	monster	Dame of Sentinel	1700,5,5000
-tha_t10,0,0	monster	Mistress of Shelter	1701,5,5000
-tha_t10,0,0	monster	Lady Solace	1703,5,5000
-tha_t10,0,0	monster	Plasma	1697,5,5000
-tha_t10,0,0	monster	Maero of Thanatos	1711,3,5000
-tha_t10,0,0	monster	Maero of Thanatos	1706,1,5000
+tha_t10,0,0	monster	--ja--	20773,3,5000
+tha_t10,0,0	monster	--ja--	20774,3,5000
+tha_t10,0,0	monster	--ja--	20779,20,5000
+tha_t10,0,0	monster	--ja--	20780,15,5000
+tha_t10,0,0	monster	--ja--	20781,15,5000
 
 //==================================================
 // tha_t11 - Thanatos Tower - Upper Level
 //==================================================
-tha_t11,0,0	monster	Mistress of Shelter	1701,20,5000
-tha_t11,0,0	monster	Dame of Sentinel	1700,5,5000
-tha_t11,0,0	monster	Baroness of Retribution	1702,5,5000
-tha_t11,0,0	monster	Lady Solace	1703,5,5000
-tha_t11,0,0	monster	Plasma	1695,5,5000
-tha_t11,0,0	monster	Despero of Thanatos	1710,3,5000
-tha_t11,0,0	monster	Despero of Thanatos	1705,1,5000
+tha_t11,0,0	monster	--ja--	20773,14,5000
+tha_t11,0,0	monster	--ja--	20776,2,5000
+tha_t11,0,0	monster	--ja--	20845,15,5000
+tha_t11,0,0	monster	--ja--	20774,14,5000
+tha_t11,0,0	monster	--ja--	20779,3,5000
+tha_t11,0,0	monster	--ja--	20844,15,5000
+tha_t11,0,0	monster	--ja--	20780,3,5000
+tha_t11,0,0	monster	--ja--	20777,2,5000
 
 //==================================================
 // tha_t12 - Thanatos Tower - Upper Level
 //==================================================
-tha_t12,0,0	monster	Dame of Sentinel	1700,13,5000
-tha_t12,0,0	monster	Baroness of Retribution	1702,5,5000
-tha_t12,0,0	monster	Mistress of Shelter	1701,5,5000
-tha_t12,0,0	monster	Lady Solace	1703,5,5000
-tha_t12,0,0	monster	Plasma	1693,5,5000
-tha_t12,0,0	monster	Odium of Thanatos	1709,4,5000
+tha_t12,0,0	monster	--ja--	20775,26,5000
+tha_t12,0,0	monster	--ja--	20776,15,5000
+tha_t12,0,0	monster	--ja--	20777,14,5000
+tha_t12,0,0	monster	--ja--	20778,15,5000
+tha_t12,0,0	monster	--ja--	20780,3,5000
 
 
 //============================================================

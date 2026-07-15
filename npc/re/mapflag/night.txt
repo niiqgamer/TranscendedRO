@@ -45,4 +45,5 @@ prt_fild08c	mapflag	nightenabled
 prt_fild08d	mapflag	nightenabled
 
 izlude	mapflag	nightenabled
+tra_fild	mapflag	nightenabled
 icecastle	mapflag	nightenabled

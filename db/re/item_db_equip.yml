@@ -104447,7 +104447,7 @@ Body:
     View: 157
   - Id: 19933
     AegisName: C_711_Headphone
-    Name: Costume 711 Headphone    # !todo check english name
+    Name: Costume 7-77 Headphone
     Type: Armor
     Buy: 10
     Locations:
@@ -180817,7 +180817,7 @@ Body:
       }
   - Id: 410002
     AegisName: 711_Headphone
-    Name: 7-Eleven Headphones
+    Name: 7-77 Headphones
     Type: Armor
     Weight: 200
     Defense: 7
@@ -180836,7 +180836,7 @@ Body:
       bonus bMatk,BaseLevel;
   - Id: 410003
     AegisName: 711_Headphone_
-    Name: 7-Eleven Headphones
+    Name: 7-77 Headphones
     Type: Armor
     Weight: 200
     Defense: 7
