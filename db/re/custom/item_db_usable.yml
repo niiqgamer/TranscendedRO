@@ -168,39 +168,3 @@ Body:
       NoSell: true
     Script: |
       item_enchant(67);
-  - Id: 9956700
-    AegisName: AutolootHandheld
-    Name: "@autoloot Handheld"
-    Type: DelayConsume
-    Weight: 0
-    Flags:
-      BuyingStore: true
-      DropEffect: CLIENT
-    Trade:
-      NoDrop: true
-      NoTrade: true
-      NoCart: true
-      NoGuildStorage: true
-      NoMail: true
-      NoAuction: true
-      NoSell: true
-    Script: |
-      autoloot;
-  - Id: 9956701
-    AegisName: AutolootHandheld_test
-    Name: "@autoloot Handheld TEST"
-    Type: DelayConsume
-    Weight: 0
-    Flags:
-      BuyingStore: true
-      DropEffect: CLIENT
-    Trade:
-      NoDrop: true
-      NoTrade: true
-      NoCart: true
-      NoGuildStorage: true
-      NoMail: true
-      NoAuction: true
-      NoSell: true
-    Script: |
-      doevent "Autoloot_NPC::OnUseItem";

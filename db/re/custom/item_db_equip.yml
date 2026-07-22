@@ -3346,23 +3346,37 @@ Body:
     EquipLevelMin: 1
     Refineable: true
     Gradable: true
+    Trade:
+      NoDrop: true
+      NoTrade: true
+      NoSell: true
+      NoCart: true
+      NoStorage: true
+      NoGuildStorage: true
+      NoMail: true
+      NoAuction: true
     Script: |
       .@r = getrefine();
       .@g = getenchantgrade();
-      skill "WL_COMET",5;
-      skill "MO_BODYRELOCATION",1;
-      skill "SH_KI_SUL_WATER_SPRAYING",7;
-      bonus2 bSkillCooldown,"WL_COMET",-20000;
-      bonus2 bSkillCooldown,"SH_KI_SUL_WATER_SPRAYING",-3000;
-      bonus bFixedCast,-5000;
-      bonus bDelayRate,-100;
-      bonus bVariableCastRate,-100;
-      bonus bMatk,200;
-      bonus bMatkRate,200;
-      bonus2 bMagicAddRace,RC_All,200;
-      bonus2 bMagicAddSize,Size_All,200;
-      bonus2 bMagicAtkEle,Ele_All,200;
-      bonus2 bSubClass,Class_All,100;
+      if (getgmlevel() >=99) {
+         skill "WL_COMET",5;
+         skill "CH_SOULCOLLECT",1;
+         skill "MO_BODYRELOCATION",1;
+         skill "SR_RAISINGDRAGON",10;
+         skill "SH_KI_SUL_WATER_SPRAYING",7;
+         bonus2 bSkillCooldown,"WL_COMET",-20000;
+         bonus2 bSkillCooldown,"SH_KI_SUL_WATER_SPRAYING",-3000;
+         bonus bFixedCast,-5000;
+         bonus bDelayRate,-100;
+         bonus bVariableCastRate,-100;
+         bonus bMatk,200;
+         bonus bMatkRate,200;
+         bonus2 bMagicAddRace,RC_All,200;
+         bonus2 bMagicAddSize,Size_All,200;
+         bonus2 bMagicAtkEle,Ele_All,200;
+         bonus2 bSubClass,Class_All,100;
+         bonus bAddMaxWeight,200000;
+      }
   - Id: 7000001
     AegisName: Glittering_Cat_Choker_TH
     Name: Glittering Meow Meow Choker [GGT]
