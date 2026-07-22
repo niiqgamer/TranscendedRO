@@ -29,7 +29,7 @@ menu	"Last Warp ^777777["+lastwarp$+"]^000000",-,
     	" ~ Dungeons",Dungeons,
     	" ~ Guild Castles",Castles,
     	" ~ Guild Dungeons",Guild_Dungeons,
-    	" ~ Instances",Instances,
+    	"^FF0000 ~ Instances^000000",Instances,
     	" ~ Special Areas",Special;
 
 	if (lastwarp$ == "")
@@ -567,9 +567,10 @@ menu	"Bakonawa Lake",I1, "Bangungot Hospital 2F",I2, "Buwaya Cave",I3,
 		"Devil Tower",I4, "Eclage Interior",I5, "Endless Tower",I6,
 		"Faceworms Nest",I7, "Geffen Magic Tournament",I8, "Ghost Palace",I9,
 		"Hazy Forest",I10, "Horror Toy Factory",I11, "Malangdo Culvert",I12,
-		"Nidhoggur's Nest",I13, "Octopus Cave",I14, "Old Glast Heim",I15,
-		"Orc's Memory",I16, "Sarah and Fenrir",I17, "Sara Memory",I18,
-		"Sealed Shrine",I19, "Wolfchev's Laboratory",I20;
+		"Nidhoggur's Nest",I13, "Octopus Cave",I14, "Old Glast Heim ^FF0000*^000000",I15,
+		"Old Glast Heim Challenge Mode ^FF0000*^000000",I21,
+		"Orc's Memory ^FF0000*^000000",I16, "Sarah and Fenrir",I17, "Sara Memory",I18,
+		"Sealed Shrine",I19, "Sunken Tower ^FF0000*^000000",I22, "Wolfchev's Laboratory",I20;
 
 I1: Restrict("RE");
 	Go("ma_scene01",172,175);
@@ -607,6 +608,10 @@ I18: Restrict("RE");
 I19: Go("monk_test",306,143);
 I20: Restrict("RE");
 	Go("lhz_dun04",148,269);
+I21: Restrict("RE");
+	Go("glast_01",138,284);
+I22: Restrict("RE");
+	Go("alberta",218,74);
 
 // --------------------------------------------------
 	Special:
@@ -1355,7 +1360,7 @@ glast_01,372,308,4	duplicate(Warper)	Warper#glh	10458
 gonryun,162,122,4	duplicate(Warper)	Warper#gon	10458
 hugel,101,151,4	duplicate(Warper)	Warper#hug	10458
 izlu2dun,110,92,4	duplicate(Warper)	Warper#izd	10458
-izlude,124,148,6	duplicate(Warper)	Warper#izl	10458	//Pre-RE: (132,120)
+izlude,124,148,5	duplicate(Warper)	Warper#izl	10458	//Pre-RE: (132,120)
 jawaii,253,138,4	duplicate(Warper)	Warper#jaw	10458
 lighthalzen,167,100,4	duplicate(Warper)	Warper#lhz	10458
 louyang,208,103,6	duplicate(Warper)	Warper#lou	10458

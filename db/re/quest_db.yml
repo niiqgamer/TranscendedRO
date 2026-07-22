@@ -9141,6 +9141,16 @@ Body:
     TimeLimit: 3d 4h
   - Id: 12335
     Title: Space Distortion
+  - Id: 12336
+    Title: Corrupted Soul Hunt
+    Targets:
+      - Mob: MG_CORRUPTION_ROOT_H
+        Count: 1
+  - Id: 12337
+    Title: Amdarais Soul Hunt
+    Targets:
+      - Mob: MG_AMDARAIS_H
+        Count: 1
   - Id: 12338
     Title: Time Traveler
   - Id: 12339
@@ -9389,6 +9399,9 @@ Body:
     Title: Scattered Goods (East)
   - Id: 12539
     Title: Scattered Goods (South)
+  - Id: 12541
+    Title: High Tide Time
+    TimeLimit: 4h
   - Id: 12592
     Title: Garden of Time
   - Id: 12593
@@ -13398,3 +13411,11 @@ Body:
   - Id: 62238
     Title: Midgardian Mercenary timer
     TimeLimit: +3h
+###################################
+# Custom Quests
+###################################
+  - Id: 7770000
+    Title: Member of Union
+    Drops:
+      - Item: Union_Token
+        Rate: 1000

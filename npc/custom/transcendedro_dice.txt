@@ -187,7 +187,7 @@ OnStartDice:
 	.@rounds = 0;
 	while (.@rounds < 5) {
 		sleep 10000;
-		mapannounce "quiz_02", "DICE! Round #" + (.@rounds + 1) + "!!!", bc_map, 0xEA0000, FW_BOLD, 50, 0, 0;
+		mapannounce "quiz_02", "DICE! Round # " + (.@rounds + 1) + "!!!", bc_map, 0xEA0000, FW_BOLD, 50, 0, 0;
 		sleep 2000;
 		
 		// เริ่ม Effect

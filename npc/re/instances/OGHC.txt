@@ -292,7 +292,7 @@ function	script	F_OGHCM_ApplyClearCooldown	{
 	return;
 }
 
-glast_01,139,285,5	script	Oscar#oghcm	4_ED_OSCAR,{
+glast_01,139,285,4	script	Oscar#oghcm	4_ED_OSCAR,{
 	if (BaseLevel < 170) {
 		mes "[Oscar]";
 		mes "This contaminated time zone is too dangerous for you.";
@@ -398,7 +398,7 @@ glast_01,139,285,5	script	Oscar#oghcm	4_ED_OSCAR,{
 	end;
 }
 
-1@gl_he,150,40,5	script	Oscar#oghcm_start	4_ED_OSCAR,{
+1@gl_he,150,40,4	script	Oscar#oghcm_start	4_ED_OSCAR,{
 	if (!is_party_leader()) {
 		mes "[Oscar]";
 		mes "The party leader must choose the contamination level.";
@@ -931,7 +931,7 @@ OnStart:
 	end;
 }
 
-1@gl_he,150,157,5	script	Oscar#oghcm_mid	4_ED_OSCAR,{
+1@gl_he,150,157,4	script	Oscar#oghcm_mid	4_ED_OSCAR,{
 	if (!'OGHCM_MidReady || 'OGHCM_CorridorWarp)
 		end;
 	mes "[Oscar]";
@@ -990,7 +990,7 @@ OnTouch:
 1@gl_he,202,79,0	warp	#oghcm_junc_e1	2,2,1@gl_he,215,79
 1@gl_he,206,79,0	warp	#oghcm_junc_e2	2,2,1@gl_he,195,79
 
-1@gl_he2,157,229,5	script	Oscar#oghcm_boss	4_ED_OSCAR,{
+1@gl_he2,157,229,4	script	Oscar#oghcm_boss	4_ED_OSCAR,{
 	if ('OGHCM_BossCine < 2)
 		end;
 	if ('OGHCM_BossStarted)
@@ -1060,7 +1060,7 @@ OnBossSummonPrep:
 	close;
 }
 
-1@gl_he2,149,165,5	script	Oscar#oghcm_reward	4_ED_OSCAR,{
+1@gl_he2,149,165,4	script	Oscar#oghcm_reward	4_ED_OSCAR,{
 	if (!'OGHCM_Complete) {
 		mes "[Oscar]";
 		mes "Defeat the phantom boss first.";

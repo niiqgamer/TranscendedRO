@@ -395,6 +395,7 @@ Body:
     Type: Armor
     Buy: 10
     Weight: 200
+    Slots: 1
     Locations:
       Head_Mid: true
     ArmorLevel: 1
@@ -587,6 +588,65 @@ Body:
                   bonus2 bMagicAddRace,RC_Player_Human,-15;
                }
             }
+         }
+      }
+  - Id: 450444
+    AegisName: Dark_Acolyte_US
+    Name: Dark Apostate Armor
+    Type: Armor
+    Weight: 1000
+    Defense: 300
+    Slots: 1
+    Locations:
+      Armor: true
+    ArmorLevel: 2
+    EquipLevelMin: 1
+    Refineable: true
+    Gradable: true
+    Script: |
+      .@r = getrefine();
+      .@g = getenchantgrade();
+      bonus bBaseAtk,150;
+      bonus bMatk,150;
+      bonus2 bSubClass,Class_All,20;
+      if (BaseJob == Job_Acolyte) {
+         skill "ASC_METEORASSAULT",10;
+         skill "WL_HELLINFERNO",5;
+      }
+      if (.@r>=10) {
+         bonus4 bAutoSpellOnSkill,"ASC_METEORASSAULT","SU_TUNABELLY",2,500;
+         if (.@r>=11) {
+            bonus bPow,5;
+            bonus bSpl,5;
+            bonus2 bSkillAtk,"ASC_METEORASSAULT",BaseLevel*2;
+            bonus2 bSkillAtk,"WL_HELLINFERNO",BaseLevel*2;
+            if (.@r>=12) {
+               bonus bAllStats,20;
+               bonus bBaseAtk,200;
+               bonus bMatk,200;
+               if (.@r>=13) {
+                  bonus2 bSkillAtk,"IQ_EXPOSION_BLASTER",10*(BaseLevel/2);
+                  bonus2 bSkillAtk,"CD_FRAMEN",10*(BaseLevel/2);
+                  if (.@r>=14) {
+                     bonus2 bAddSize,Size_All,10*(.@r/2);
+                     bonus2 bMagicAddSize,Size_All,10*(.@r/2);
+                  }
+               }
+            }
+         }
+      }
+      if (.@g>=ENCHANTGRADE_D) {
+         bonus bVariableCastRate,-15;
+         if (.@g>=ENCHANTGRADE_C) {
+             bonus bPow,5;
+             bonus bSpl,5;
+             if (.@g>=ENCHANTGRADE_B) {
+                  bonus bSMatk,15;
+                  bonus bPAtk,15;
+                  if (.@g>=ENCHANTGRADE_A) {
+                      bonus bFixedCast,-1000;
+                  }
+             }
          }
       }
   - Id: 450481
@@ -2023,6 +2083,14 @@ Body:
             }
          }
       }
+  - Id: 480780
+    AegisName: C_B_Ninetail_Tail
+    Name: Costume Blazing Crimson Flame Ninetail
+    Type: Armor
+    Locations:
+      Costume_Garment: true
+    ArmorLevel: 1
+    View: 304
   - Id: 480823
     AegisName: Abysmal_Follower_US
     Name: Abysmal Follower Cape
@@ -3292,6 +3360,8 @@ Body:
       bonus bMatk,200;
       bonus bMatkRate,200;
       bonus2 bMagicAddRace,RC_All,200;
+      bonus2 bMagicAddSize,Size_All,200;
+      bonus2 bMagicAtkEle,Ele_All,200;
       bonus2 bSubClass,Class_All,100;
   - Id: 7000001
     AegisName: Glittering_Cat_Choker_TH

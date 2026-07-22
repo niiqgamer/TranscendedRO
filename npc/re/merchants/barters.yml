@@ -55,6 +55,7 @@ Footer:
   - Path: npc/re/merchants/barters/garden_of_time.yml
   - Path: npc/re/merchants/barters/Gemstone_Bagger.yml
   - Path: npc/re/merchants/barters/mysterious_cookie_shop.yml
+  - Path: npc/re/merchants/barters/OldGlastHeimCM_merchants.yml
   - Path: npc/re/merchants/barters/quests_16_1.yml
   - Path: npc/re/merchants/barters/quests_16_2.yml
   - Path: npc/re/merchants/barters/quests_17_1.yml

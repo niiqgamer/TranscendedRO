@@ -1872,6 +1872,7 @@ mal_in01,20,107,3	script	Lace La Zard#cos_ect	4_FROG,{
 
 OnInit:
 	initnpctimer;
+	end;
 
 OnTimer1000:
     showscript(" Garment Costume Enchant ");

@@ -35,23 +35,9 @@
 	specialeffect2 EF_HEAL2;
 	percentheal 100,100;
 	AP = 500;
+	repairall;
+	
 	if (.@Buffs) {
-		specialeffect2 EF_INCAGILITY;
-		sc_start SC_INCREASEAGI,3600000,5;
-		specialeffect2 EF_BLESSING;
-		sc_start SC_BLESSING,3600000,5;
-		specialeffect2 300;
-		sc_start SC_STRFOOD,3600000,5;
-		sc_start SC_AGIFOOD,3600000,5;
-		sc_start SC_VITFOOD,3600000,5;
-		sc_start SC_INTFOOD,3600000,5;
-		sc_start SC_DEXFOOD,3600000,5;
-		sc_start SC_LUKFOOD,3600000,5;
-		specialeffect2 154;
-//		specialeffect2 EF_TETRACASTING;
-//		specialeffect2 EF_FLASHER;
-		repairall;
-// remove status
 		sc_end SC_STONE;
 		sc_end SC_FREEZE;
 		sc_end SC_STUN;
@@ -75,24 +61,55 @@
 		sc_end SC_NOEQUIPARMOR;
 		sc_end SC_NOEQUIPHELM;
 		sc_end SC__STRIPACCESSARY;
-		sc_end SC_STRIPWEAPON;
-		sc_end SC_STRIPSHIELD;
-		sc_end SC_STRIPARMOR;
-		sc_end SC_STRIPHELM;
 		sc_end SC_PROPERTYUNDEAD;
 		sc_end SC_ORCISH;
 		sc_end SC_BERSERK;
 		sc_end SC_SKE;
 		sc_end SC_SWOO;
 		sc_end SC_SKA;
-		specialeffect2 EF_CLEARTIME;
-		specialeffect2 EF_DETECT3;
+		
+		if(vip_status(1)) {
+			specialeffect2 EF_INCAGILITY;
+			sc_start SC_INCREASEAGI,3600000,10;
+			specialeffect2 EF_BLESSING;
+			sc_start SC_BLESSING,3600000,10;
+			specialeffect2 EF_RICHMANKIM;
+			sc_start SC_RICHMANKIM,3600000,5;
+			specialeffect2 EF_CARTBOOST;
+			sc_start SC_GN_CARTBOOST,3600000,5;
+			specialeffect2 300;
+			sc_start SC_CP_WEAPON,3600000,5;
+			sc_start SC_CP_SHIELD,3600000,5;
+			sc_start SC_CP_ARMOR,3600000,5;
+			sc_start SC_CP_HELM,3600000,5;
+			specialeffect2 EF_DETECT3;
+			specialeffect2 EF_CLEARTIME;
+			sc_start SC_STRFOOD,3600000,10;
+			sc_start SC_AGIFOOD,3600000,10;
+			sc_start SC_VITFOOD,3600000,10;
+			sc_start SC_INTFOOD,3600000,10;
+			sc_start SC_DEXFOOD,3600000,10;
+			sc_start SC_LUKFOOD,3600000,10;
+		} else {
+			specialeffect2 EF_INCAGILITY;
+			sc_start SC_INCREASEAGI,3600000,5;
+			specialeffect2 EF_BLESSING;
+			sc_start SC_BLESSING,3600000,5;
+			sc_start SC_STRFOOD,3600000,5;
+			sc_start SC_AGIFOOD,3600000,5;
+			sc_start SC_VITFOOD,3600000,5;
+			sc_start SC_INTFOOD,3600000,5;
+			sc_start SC_DEXFOOD,3600000,5;
+			sc_start SC_LUKFOOD,3600000,5;
+		}
 	}
+
 	for(set .@i,0; .@i<@inventorylist_count; set .@i,.@i+1) {
 		if (@inventorylist_identify[.@i]) continue;
 			delitem2 @inventorylist_id[.@i],1,0,0,0,0,0,0,0;
 			getitem @inventorylist_id[.@i],1;
 		}
+
 	if (.@Delay)
 		@HD = gettimetick(2) + .@Delay;
 	end;	
@@ -110,7 +127,7 @@ einbroch,57,202,6	duplicate(Healer)	Healer#einbr	3527
 geffen,115,72,6	duplicate(Healer)	Healer#gef	3527
 gonryun,156,122,6	duplicate(Healer)	Healer#gon	3527
 hugel,89,150,6	duplicate(Healer)	Healer#hug	3527
-izlude,121,146,6	duplicate(Healer)	Healer#izl	3527	//Pre-RE: (125,118)
+izlude,121,146,5	duplicate(Healer)	Healer#izl	3527	//Pre-RE: (125,118)
 jawaii,250,139,4	duplicate(Healer)	Healer#jaw	3527
 lighthalzen,150,100,6	duplicate(Healer)	Healer#lhz	3527
 louyang,226,103,4	duplicate(Healer)	Healer#lou	3527

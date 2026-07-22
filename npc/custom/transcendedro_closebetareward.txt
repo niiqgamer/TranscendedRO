@@ -6,11 +6,11 @@ izlude,137,127,4	script	Close Beta Reward	10364,{
     }
 	else {
 		set #cbtreward,1;
-		getitem 1000254,2000;
-		getitem 25464,2000;
-		getitem 1000322,2000;
-		getitem 1000405,2000;
-		Zeny += 100000000;
+		getitem 1000254,5000;
+		getitem 25464,5000;
+		getitem 1000322,5000;
+		getitem 1000405,5000;
+		Zeny += 900000000;
 		#CASHPOINTS += 1000000;
 		mes "Thank you for joining us in Close Beta Testing.";
 		mes "If you find any bugs or incomplete information, please report in the Discord #ReportCBT room.";

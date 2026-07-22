@@ -37783,21 +37783,21 @@ Body:
     AegisName: S_Circlet_Of_Time
     Name: Sealed Temporal Circlet
     Type: Etc
-    Weight: 100
+    Weight: 0
     Flags:
       BuyingStore: true
   - Id: 25865
     AegisName: Jewel_Of_Time_Ore
     Name: Temporal Gemstone
     Type: Etc
-    Weight: 10
+    Weight: 0
     Flags:
       BuyingStore: true
   - Id: 25866
     AegisName: Spell_Of_Time
     Name: Temporal Spell
     Type: Etc
-    Weight: 10
+    Weight: 0
     Flags:
       BuyingStore: true
   - Id: 25867
@@ -92014,7 +92014,7 @@ Body:
     Name: Amber
     Type: Etc
     Buy: 45000
-    Weight: 100
+    Weight: 0
   - Id: 1000322
     AegisName: Etel_Dust
     Name: Etel Dust
@@ -92027,7 +92027,7 @@ Body:
     AegisName: Etel_Stone
     Name: Etel Stone
     Type: Etc
-    Weight: 10
+    Weight: 0
     Flags:
       BuyingStore: true
       DropEffect: CLIENT
@@ -92035,7 +92035,7 @@ Body:
     AegisName: Etel_Skyblue_Jewel
     Name: Etel Aquamarine
     Type: Etc
-    Weight: 10
+    Weight: 0
     Flags:
       BuyingStore: true
       DropEffect: CLIENT
@@ -92043,7 +92043,7 @@ Body:
     AegisName: Etel_Topaz
     Name: Etel Topaz
     Type: Etc
-    Weight: 10
+    Weight: 0
     Flags:
       BuyingStore: true
       DropEffect: CLIENT
@@ -92051,7 +92051,7 @@ Body:
     AegisName: Etel_Violet_Jewel
     Name: Etel Amethyst
     Type: Etc
-    Weight: 10
+    Weight: 0
     Flags:
       BuyingStore: true
       DropEffect: CLIENT
@@ -92059,7 +92059,7 @@ Body:
     AegisName: Etel_Amber
     Name: Etel Amber
     Type: Etc
-    Weight: 10
+    Weight: 0
     Flags:
       BuyingStore: true
       DropEffect: CLIENT
@@ -92067,49 +92067,49 @@ Body:
     AegisName: Ethernium
     Name: Etherium
     Type: Etc
-    Weight: 10
+    Weight: 0
     Flags:
       BuyingStore: true
   - Id: 1000332
     AegisName: Etherdeocon
     Name: Etherdeocon
     Type: Etc
-    Weight: 10
+    Weight: 0
     Flags:
       BuyingStore: true
   - Id: 1000333
     AegisName: Enriched_Ethernium
     Name: Enriched Etherium
     Type: Etc
-    Weight: 10
+    Weight: 0
     Flags:
       BuyingStore: true
   - Id: 1000334
     AegisName: Enriched_Etherdeocon
     Name: Enriched Etherdeocon
     Type: Etc
-    Weight: 10
+    Weight: 0
     Flags:
       BuyingStore: true
   - Id: 1000335
     AegisName: HD_Ethernium
     Name: HD Etherium
     Type: Etc
-    Weight: 10
+    Weight: 0
     Flags:
       BuyingStore: true
   - Id: 1000336
     AegisName: HD_Etherdeocon
     Name: HD Etherdeocon
     Type: Etc
-    Weight: 10
+    Weight: 0
     Flags:
       BuyingStore: true
   - Id: 1000337
     AegisName: Blessed_Etel_Dust
     Name: Blessed Etel Dust
     Type: Etc
-    Weight: 10
+    Weight: 0
     Flags:
       BuyingStore: true
   - Id: 1000345

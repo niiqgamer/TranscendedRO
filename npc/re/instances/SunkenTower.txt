@@ -1,0 +1,397 @@
+//===== rAthena Script =======================================
+//= Sunken Tower Instance
+//===== Description =========================================
+//= Custom implementation of Sunken Tower instance.
+//= Official mob values and quest exp values are unknown.
+//= I've set my own exp values but they are on the high end.
+//= Referenced: https://hazyforest.com/instances:sunken_tower
+//===== Author ==============================================
+//= https://github.com/re-null (virtutis on rAthena forums)
+//============================================================
+
+alberta,211,72,4	script	Leticia Re Instance#s_alberta	4_F_FAIRYKID6,{
+	
+	if (checkquest(12541,PLAYTIME) != 0){
+		mes "You don't want to do anything with me, go away!";
+		end;
+	}
+	
+	mes "If you have 3x Silvervine Fruits. ^i[6417]";
+	mes "I can ^FF0000RESET^000000 Sunken Tower Instance for you.";
+	mes "Do you interest?";
+	next;
+	switch(select("Please wait.:Yes, I'm in.")) {
+	case 1:
+		mes "All right, don't forget we don't have much time.";
+		end;
+	case 2:
+		.@itemNeeded = 6417;
+		.@itemCount = 3;
+		if (countitem(.@itemNeeded) < .@itemCount) {
+			mes "["+strnpcinfo(1)+"]", "What gives? You don't have enough " + mesitemlink(.@itemNeeded) + ".";
+			end;
+		}
+		if (checkquest(12541,PLAYTIME) != -1){
+			erasequest 12541;
+		}
+		delitem .@itemNeeded, .@itemCount;
+		specialeffect2 300;
+		dispbottom "The Sunken Tower's distortion is now RESET!!!";
+		mes "Successful Reset Instance!";
+		close3;
+		end;
+	}
+
+OnInit:
+	initnpctimer;
+	end;
+
+OnTimer1000:
+    showscript(" ! Reset Instance ! ");
+    setnpctimer 0;
+    end;
+}
+
+alberta,214,74,5	script	Leticia#s_alberta	4_4JOB_LETICIA,{
+	cutin "4job_leticia_01.png",2;
+	if (BaseLevel < 40) {
+		mes "["+strnpcinfo(1)+"]", "You're much too weak! Come back when you're stronger.";
+		close3;
+	}
+
+	// ID of cooldown quest
+	.@cooldown = 12541; 
+
+	if(checkquest(.@cooldown,PLAYTIME) == 2){
+		erasequest .@cooldown;
+	}
+	else if (checkquest(.@cooldown,PLAYTIME) != -1){
+		mes "["+strnpcinfo(1)+"]", "The Sunken Tower's distortion is still affecting you.", "Come back when it's worn off.";
+		close3;
+	}
+
+	.@party_id = getcharid(1);
+	.@instance$ = "Sunken Tower";
+
+	if (.@party_id < 1) {
+		mes "["+strnpcinfo(1)+"]", "Hmm? Where's your party? Please form a party even if you're going alone.";
+		close3;
+	}
+
+	if (BaseLevel >= 260) {
+		.@i = 260;
+		.@maxLvl = 275;
+	}
+	else {
+		for (.@i = 40; .@i < 275; .@i+=20) {
+			if (BaseLevel >= .@i && BaseLevel < .@i + 20) {
+				.@maxLvl = .@i + 19;
+				break;
+			}
+		}
+	}
+	
+	mes "["+strnpcinfo(1)+"]", "Wanna help clean up the Sunken Tower?";
+	next;
+	switch(select("Cancel", "Create " + .@instance$ + " " + .@i + "~" + .@maxLvl,"Enter " + .@instance$ + " " + .@i + "~" + .@maxLvl)){
+		case 2:
+			if(is_party_leader() == false){
+				mes "You're not the leader of this party.";
+				close3;
+			}
+			if(!instance_check_party(.@party_id, 1, .@i, .@maxLvl)) {
+				mes "["+strnpcinfo(1)+"]", "Looks like someone in your party isn't eligible to enter that tier.";
+				close3;
+			}
+			if (instance_create(.@instance$) < 0) {
+				mes "["+strnpcinfo(1)+"]", "Error creating instance.";
+				close3;
+			}
+			setinstancevar('rank, (.@i - 40) / 20, instance_id(IM_PARTY));
+			close3;
+		case 3:
+			if (instance_id(IM_PARTY) > 0) {
+				if (getinstancevar('partyCount, instance_id(IM_PARTY)) > 0) {
+					mes "["+strnpcinfo(1)+"]", "The clean up is already in progress. I can't let you join anymore.";
+					close3;
+				}
+			}
+			switch(instance_enter(.@instance$)){
+				case IE_OK:
+					if (isbegin_quest(.@cooldown) == 0) {
+						setquest .@cooldown;
+						mapannounce "alberta", "" + strcharinfo(0) + " of the party, " + getpartyname( getcharid(1) ) + ", is entering " + .@instance$ + ".",bc_map,"0x00FF99";
+					}
+					close3;
+				case IE_NOMEMBER:
+				case IE_OTHER:
+				case IE_NOINSTANCE:
+				default:
+					if (is_party_leader(.@party_id) == false) {
+						mes "^ff0000Please note that this Memorial Dungeon cannot be accessed for 72 hours after your last visit.^000000";
+						next;
+					}
+					mes "^ff0000Your party leader has not yet created the dungeon.^000000";
+					close3;
+			 }
+		case 1:
+			close3;
+	}
+	close3;
+
+OnInit:
+	initnpctimer;
+	end;
+
+OnTimer1000:
+    showscript(" ! Sunken Tower ! ");
+    setnpctimer 0;
+    end;
+}
+
+// Rank					   Mob EXP		 Reward EXP			Dust
+// Rank 0 (Lv 40 ~ 59)		  480			 12500			   15
+// Rank 1 (Lv 60 ~ 79)		  710			 32700			   20
+// Rank 2 (Lv 80 ~ 99)		  1500			74500			   25
+// Rank 3 (Lv 100 ~ 119)		2805			150680			  30
+// Rank 4 (Lv 120 ~ 139)		5150			400800			  35
+// Rank 5 (Lv 140 ~ 159)		10200		   1079000			 40
+// Rank 6 (Lv 160 ~ 179)		54000		   4750000			 45
+// Rank 7 (Lv 180 ~ 199)		150000		  15790000			50
+// Rank 8 (Lv 200 ~ 219)		205000		  24100000			65
+// Rank 9 (Lv 220 ~ 239)		250000		  41100000			70
+// Rank 10 (Lv 240 ~ 259)	   335000		  85000000			85
+// Rank 11 (Lv 260 ~ 275)	   999000		  199000000			85
+1@ch_u,1,1,5	script	#s_tower_controller	-1,{
+	end;
+	OnInstanceInit:
+		setarray .monsterType[0],1013,1016,1023,1026,1029,1032,1034,1035,1036,1037,1040,1041,1042,1044,1045,1058,1061,1064,1065,1066,1067,1069,1070,1071,1073,1074,1099,1100,1101,1108,1110,1111,1114,1116,1119,1121,1122,1123,1124,1125,1126,1127,1129,1130,1138,1139,1140,1141,1144,1146,1149,1151,1152,1153,1154,1156,1158,1164,1165,1166,1169,1170,1177,1178,1179,1180,1186,1188,1189,1191,1192,1195,1211,1212,1214,1243,1244,1248,1250,1254,1258,1260,1261,1264,1266,1271,1273,1274,1277,1278,1279,1280,1281,1308,1313,1317,1323,1369,1380,1381,1391,1400,1409,1415,1493,1494,1495,1497,1498,1499,1500,1584,1586,1587,1629,1664,1665,1666,1667,1686,1687,1861,2002,2069,2070,2072,2073,2074,3517,3636;
+
+		setarray .warpPoint[0],13,58,96,58,184,58,270,58,354,58;
+		setarray .elements$[0],"Neutral","Water","Earth","Fire","Wind","Poison","Holy","Dark","Ghost","Undead";
+		setarray .bonusExp[0],12500,32700,74500,150680,400800,1079000,4750000,15790000,24100000,41100000,85000000,199000000;
+		setarray .mobExp[0],480,710,1500,2805,5150,10200,54000,150000,205000,250000,335000,999000;
+		setarray .mobHp[0],950,2600,5200,13000,37000,90000,450000,1000000,2800000,5700000,7700000,9999999;
+		setarray .mobAtk[0],130,210,356,600,1000,1400,2100,2900,4000,5200,7500,9999;
+
+		setarray 'partyMembers[0],0;
+		'partyMembersClaimed = 0;
+
+		.monsterArraySize = getarraysize(.monsterType);
+
+		.@instanceName$ = instance_live_info(ILI_NAME);
+		.@instance_db_id = instance_info(.@instanceName$, IIT_ID);
+
+		'difficulty = 1;
+		'floor = 0;
+		'map$ = instance_mapname("1@ch_u");
+		'preferredElement = rand(0,9);
+		'partyCount = 0;
+		
+		// Set to 1 to prevent mob skills, 0 to allow
+		// Seems like mobs in here do not use skills at all in kRO
+		'skillsDisabled = 1;
+		initnpctimer;
+
+		end;
+
+	OnWarpParty:
+		cleararray 'partyMembers[0], 0, 'partyMembersClaimed;
+		'partyMembersClaimed = 0;
+		'floor++;
+		mapannounce 'map$, "[ Floor " + ('floor + 1) + " Start ]", bc_map,0x00FFFF,FW_NORMAL,14;
+		.@index = 'floor % 5;
+		.@x_start = .warpPoint[.@index*2];
+		.@y_start = .warpPoint[.@index*2 + 1];
+		warpparty 'map$, .@x_start, .@y_start, 'partyId, 'map$;
+
+	OnFloorStart:
+		.@index = 'floor % 5;
+		.@x_start = .warpPoint[.@index*2];
+		.@y_start = .warpPoint[.@index*2 + 1];
+		.@mobName$ = "Sunken Floor " + ('floor + 1) + " Variant";
+		.@label$ = instance_npcname(strnpcinfo(0))+"::OnMobKill";
+		sleep 1000;
+		for (.@i = 0; .@i < (20 + 'difficulty * 5); .@i++) {
+			.@mob = .monsterType[rand(.monsterArraySize)];
+			areamonster 'map$, .@x_start-6, .@y_start-40, .@x_start+37, .@y_start-6, .@mobName$, .@mob, 1, .@label$;
+			.@gid = $@mobid[0];
+			setunitdata .@gid, UMOB_SIZE, rand(3);
+			setunitdata .@gid, UMOB_LEVEL, 50 + 'rank * 20;
+			setunitdata .@gid, UMOB_MAXHP, 'hp + 'hp * rand(0,25) / 100;
+			// These won't work without source changes
+			//setunitdata .@gid, UMOB_ATK, 'atk + 'atk * rand(0,20) / 100;
+			//setunitdata .@gid, UMOB_BASEEXP, 'mobExp;
+			//setunitdata .@gid, UMOB_JOBEXP, 'mobExp * 8 / 10;
+			setunitdata .@gid, UMOB_HIT, 'hit + 'hit * rand(0,50) / 100;
+			setunitdata .@gid, UMOB_RACE, rand(0,9);
+			if (rand(100) < 50) {
+				setunitdata .@gid, UMOB_ELETYPE, 'preferredElement;
+			} else {
+				setunitdata .@gid, UMOB_ELETYPE, rand(0,9);
+			}
+			setunitdata .@gid, UMOB_ELELEVEL, rand(1,4);
+			unitskilluseid .@gid,"NPC_RELIEVE_ON",'difficulty;
+			unitblockskill .@gid,'skillsDisabled;
+			sc_start4 SC_MODECHANGE, 100, 1, 0, MD_CANMOVE|MD_NORANDOMWALK|MD_AGGRESSIVE|MD_CANATTACK, 0, 10000, 0, .@gid;
+			sleep 20;
+		}
+		end;
+
+	OnFirstStart:
+		getpartymember 'partyId, 1, .@partycid;
+		getpartymember 'partyId, 2, .@partyaid;
+		.@count = $@partymembercount;
+		'partyCount = 0;
+
+		// Only count party members in the instance
+		for(.@i = 0; .@i < .@count; .@i++) {
+			if (isloggedin(.@partyaid[.@i]) && strcharinfo(3, .@partycid[.@i]) == 'map$) {
+				'partyCount++;
+			}
+		}
+
+		'bonusExp = .bonusExp['rank];
+		'mobExp = .mobExp['rank];
+		'bonusExp += 'bonusExp / 10 * (5 * ('difficulty - 1));
+		'hp = .mobHp['rank] + .mobHp['rank]  * 'difficulty / 10;
+		'atk = .mobAtk['rank] + .mobAtk['rank]  * 'difficulty * 2 / 10;
+		'hit = 250 + 45 * 'rank;
+		'dustChance = 15 + 5 * 'rank + 5 * ('difficulty - 1);
+		
+		donpcevent instance_npcname("#s_tower_controller")+"::OnFloorStart";
+		mapannounce 'map$, "Leticia: After the Endless Tower collapsed, these monsters' attributes became distorted.", bc_map,0xCC6666,FW_NORMAL,14;
+		sleep 5000;
+		mapannounce 'map$, "Leticia: It seems that " +  .elements$['preferredElement] + " energy is strong today.", bc_map,0xCC6666,FW_NORMAL,14;
+		end;
+
+	OnTimer1500000:
+		mapannounce 'map$, "Leticia: You've got 5 minutes left before the place completely floods.", bc_map,0xCC6666,FW_NORMAL,14;
+		end;
+	OnTimer1560000:
+		mapannounce 'map$, "Leticia: 4 minutes left.", bc_map,0xCC6666,FW_NORMAL,14;
+		end;
+	OnTimer1620000:
+		mapannounce 'map$, "Leticia: 3 minutes left.", bc_map,0xCC6666,FW_NORMAL,14;
+		end;
+	OnTimer1680000:
+		mapannounce 'map$, "Leticia: 2 minutes left.", bc_map,0xCC6666,FW_NORMAL,14;
+		end;
+	OnTimer1740000:
+		mapannounce 'map$, "Leticia: 1 minute left...", bc_map,0xCC6666,FW_NORMAL,14;
+		end;
+	OnTimer1770000:
+		mapannounce 'map$, "Leticia: 30 seconds...", bc_map,0xCC6666,FW_NORMAL,14;
+		end;
+	OnMobKill:
+		getexp ('mobExp * (13 * 'difficulty) + 'mobExp),('mobExp * (11 * 'difficulty));
+		end;
+}
+
+1@ch_u,8,55,5	script	Leticia#s_tower	4_4JOB_LETICIA,{
+	cutin "4job_leticia_01.png",2;
+	if (!is_party_leader()) {
+		mes "["+strnpcinfo(1)+"]", "Who are you? Don't talk to me unless you're the leader.";
+		close3;
+	}
+	'partyId = getcharid(1);
+
+	L_MainMenu:
+		if (!'hasTalked) {
+			mes "["+strnpcinfo(1)+"]", "Looks like the water is still flowing in.", "I'd say there's about 30 minutes until you're all underwater.", "Better hurry up.";
+		} else {
+			mes "["+strnpcinfo(1)+"]", "Time's running out now. What are you gonna do?";
+		}
+		mes "---------------";
+		mes "Current Difficulty: ^0000CCLevel " + 'difficulty;
+		'hasTalked = 1;
+		next;
+		switch(select("Hold on a moment!", "Let's go.", "^0000CCChange Difficulty")) {
+			case 1:
+				close3;
+			case 2:
+				donpcevent instance_npcname("#s_tower_controller")+"::OnFirstStart";
+				hideonnpc instance_npcname(strnpcinfo(0));
+				close3;
+			case 3:
+				// You can change the item needed and required amount here
+				.@itemNeeded = 1000372;
+				.@itemCount = 10;
+				mes "["+strnpcinfo(1)+"]", "With 10 " + mesitemlink(.@itemNeeded) + ", you can increase the number and strength of monsters.", "It goes without saying that you'll get more experience too.";
+				mes "---------------";
+				mes "Current Difficulty: ^0000CCLevel " + 'difficulty;
+				next;
+				.@selection = select("Nevermind.", "Difficulty 1", "Difficulty 2", "Difficulty 3", "Difficulty 4", "Difficulty 5");
+				if (.@selection == 1)
+					close3;
+
+				if (countitem(.@itemNeeded) < .@itemCount) {
+					mes "["+strnpcinfo(1)+"]", "What gives? You don't have enough " + mesitemlink(.@itemNeeded) + ".";
+					close3;
+				}
+
+				if ('level == (.@selection - 1)) {
+					mes "["+strnpcinfo(1)+"]", "What are you doing? The current difficulty is already ^0000CCLevel " + 'difficulty + ".";
+					close3;
+				}
+
+				mes "["+strnpcinfo(1)+"]", "You want to change the difficulty to ^0000CCLevel " + (.@selection - 1) + "?";
+				next;
+				if (select("Nevermind.", "Yeah, change it.") == 1) {
+					close3;
+				}
+
+				'difficulty = .@selection - 1;
+				mapannounce 'map$, "Leticia: The difficulty is now level " + 'difficulty + ".", bc_map,0xCC6666,FW_NORMAL,14;
+				delitem .@itemNeeded, .@itemCount;
+				close3;
+		}
+
+	close3;
+	end;
+}
+
+1@ch_u,47,28,5	script	Dimensional Portal#s_tower1	PORTAL,{
+	if (mobcount('map$,instance_npcname("#s_tower_controller")+"::OnMobKill") < 1) {
+		if (('floor % 5) == 4) {
+			if (inarray('partyMembers, getcharid(0)) == -1) {
+				'partyMembers['partyMembersClaimed] = getcharid(0);
+				'partyMembersClaimed++;
+				.@message$ = "Received EXP";
+
+				getexp 'bonusExp, 'jobExp;
+				if (rand(100) < 'dustChance) {
+					getitem 1000372, 5 * 'difficulty;
+					getitem 9900009, 2 * 'difficulty;
+					.@message$ += " Meteor Powders and Instance Emblems.";
+				}
+
+				unittalk getcharid(3), "" + strcharinfo(0) + ": " + .@message$;
+
+				end;
+			}
+
+			if (is_party_leader() && 'partyMembersClaimed < 'partyCount) {
+				mes "Only " + 'partyMembersClaimed + " out of " + 'partyCount + " party members have picked up their rewards.";
+				mes "----------------", "If you continue, they will not be able to get this floor's reward. Do you want to force everyone to move?";
+				if (select("Cancel.","Warp the party.") == 1) {
+					close;
+				}
+			}
+		}
+		if (is_party_leader()) {
+			donpcevent instance_npcname("#s_tower_controller")+"::OnWarpParty";
+		}
+	} else {
+		mapannounce 'map$, "Leticia: There's still some small fry hanging around. Get rid of them.", bc_map,0xCC6666,FW_NORMAL,14;
+		end;
+	}
+	end;
+}
+
+1@ch_u,130,28,5	duplicate(Dimensional Portal#s_tower1)	Dimensional Portal#s_tower2	PORTAL
+1@ch_u,219,28,5	duplicate(Dimensional Portal#s_tower1)	Dimensional Portal#s_tower3	PORTAL
+1@ch_u,306,28,5	duplicate(Dimensional Portal#s_tower1)	Dimensional Portal#s_tower4	PORTAL
+1@ch_u,389,28,5	duplicate(Dimensional Portal#s_tower1)	Dimensional Portal#s_tower5	PORTAL
+
+1@ch_u	mapflag	noloot

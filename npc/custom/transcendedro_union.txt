@@ -2,53 +2,53 @@ moc_para01,52,30,4	script	Member of Union	3630,{
 	if (checkquest(7770000) == -1) {
 		mes "[City Merchant Union Manager]";
 		mes "";
-		mes "ท่านยังไม่ได้เข้าร่วม Midguard City Merchant Union";
+		mes "You have not yet joined the Midgard City Merchant Union.";
 		mes "";
-		mes "^FF0000ยังไม่สามารถเปิดร้านค้าได้ค่ะ^000000";
+		mes "^FF0000You cannot open a shop yet.^000000";
 		next;
 		mes "[City Merchant Union Manager]";
 		mes "";
-		mes "แต่เมื่อเข้าร่วม Menber of Union แล้วท่านจะสามารถ";
-		mes "สามารถผลิตอุปกรณ์มากมายได้ที่นี่ค่ะ";
+		mes "However, once you join the Union,";
+		mes "you will be able to craft various equipment here.";
 		next;
-		switch(select("• ยังไม่เข้าร่วมดีกว่า:• เข้าร่วมตอนนี้เลย")) {
+		switch(select("• I'd rather not join yet:• I want to join right now")) {
 			case 1:
 				mes "[City Merchant Union Manager]";
 				mes "";
-				mes "ถ้าเปลี่ยนใจก็กลับมาหากันใหม่นะ";
+				mes "If you change your mind, feel free to come back anytime.";
 				end;
 			case 2:
 				mes "[City Merchant Union Manager]";
 				mes "";
-				mes "ระหว่างที่ท่านเป็นสมาชิกในสมาคมของพวกเรา";
-				mes "^FF0000ตอนออกไปล่ามอนสเตอร์จะมีโอกาสได้รับ^000000";
-				mes "^FF0000Union Token ได้ในอัตราที่กำหนด^000000";
+				mes "While you are a member of our union,";
+				mes "^FF0000you will have a chance to obtain^000000";
+				mes "^FF0000Union Tokens at a set rate while hunting monsters.^000000";
 				next;
 				mes "[City Merchant Union Manager]";
 				mes "";
-				mes "และสามารถนำมาซื้อสินค้าในร้านได้ด้วย";
+				mes "You can also use them to purchase items in the shop.";
 				mes "";
-				mes "เอาหล่ะ ^FF0000ท่านได้สมัครเข้าร่วมเรียบร้อยแล้ว^000000";
+				mes "Alright, ^FF0000you have successfully registered as a member.^000000";
 				setquest 7770000;
 				end;
 		}
 	} else {
 		mes "[City Merchant Union Manager]";
 		mes "";
-		mes "เป็นอย่างไรบ้าง? สะสม Union Token ได้เยอะแล้วใช่มั้ยหล่ะ";
+		mes "How is it going? Have you collected a lot of Union Tokens?";
 		next;
-		switch(select("• อยากแลกอุปกรณ์ต่าง ๆ แล้ว:• ข้ามีธุระ ขอออกจากสมาคมสักครู่")) {
+		switch(select("• I want to exchange for equipment:• I have other business, I'll leave the union for now")) {
 			case 1:
 				mes "[City Merchant Union Manager]";
 				mes "";
-				mes "เอาหล่ะ เลือกของที่ท่านต้องการได้เลย";
+				mes "Alright, please select the items you want.";
 				close2;
-				callshop "everyro_union";
+				callshop "union_shop";
 				end;
 			case 2:
 				mes "[City Merchant Union Manager]";
 				mes "";
-				mes "หวังเป็นอย่างยิ่งว่าจะได้เจอท่านอีก สวัสดีค่ะ";
+				mes "I sincerely hope to see you again. Goodbye.";
 				erasequest 7770000;
 				end;
 		}

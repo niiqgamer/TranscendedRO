@@ -40,8 +40,8 @@ gef_fild10,242,202,0	script	Dimensional Gorge Piece	406,{
 	set .@party_id,getcharid(1);
 	set .@md_name$,"Orc's Memory";
 
-	if (!instance_check_party(.@party_id,2,30,80)) {
-		mes "Only users between Levels ^ff000030 ~ 80^000000 can enter this Dungeon.";
+	if (!instance_check_party(.@party_id,1,30,275)) {
+		mes "Only users between Levels ^ff000030 ~ 275^000000 can enter this Dungeon.";
 		close;
 	}
 
@@ -861,6 +861,7 @@ OnEnable:
 	end;
 
 OnTouch_:
+	getitem 9900009, 10;
 	warp "gef_fild10",240,197;
 	end;
 }

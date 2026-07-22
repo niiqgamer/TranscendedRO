@@ -1029,3 +1029,7 @@ Body:
     Option: VAR_CRITICAL_RATE
     Script: |
       bonus bCRate,getrandomoptinfo(ROA_VALUE);
+  - Id: 255
+    Option: NON_CRIT_ATK_RATE
+    Script: |
+      bonus bNonCritAtkRate,getrandomoptinfo(ROA_VALUE);

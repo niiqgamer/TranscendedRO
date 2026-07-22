@@ -470,6 +470,19 @@ void init_random_option_constants() {
 	export_constant2("RDMOPT_ADDEXPPERCENT_KILLRACE_ANGEL", 240);
 	export_constant2("RDMOPT_ADDEXPPERCENT_KILLRACE_DRAGON", 241);
 	export_constant2("RDMOPT_ADDEXPPERCENT_KILLRACE_ALL", 242);
+	export_constant2("RDMOPT_VAR_POWAMOUNT", 243);
+	export_constant2("RDMOPT_VAR_SPLAMOUNT", 244);
+	export_constant2("RDMOPT_VAR_STAAMOUNT", 245);
+	export_constant2("RDMOPT_VAR_WISAMOUNT", 246);
+	export_constant2("RDMOPT_VAR_CONAMOUNT", 247);
+	export_constant2("RDMOPT_VAR_CRTAMOUNT", 248);
+	export_constant2("RDMOPT_VAR_PATKAMOUNT", 249);
+	export_constant2("RDMOPT_VAR_SMATKAMOUNT", 250);
+	export_constant2("RDMOPT_VAR_RESAMOUNT", 251);
+	export_constant2("RDMOPT_VAR_MRESAMOUNT", 252);
+	export_constant2("RDMOPT_VAR_HEAL_PLUS", 253);
+	export_constant2("RDMOPT_VAR_CRITICAL_RATE", 254);
+	export_constant2("RDMOPT_NON_CRIT_ATK_RATE", 255);
 
 	#undef export_constant2
 }

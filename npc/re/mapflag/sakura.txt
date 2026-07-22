@@ -1,2 +1,3 @@
 izlude	mapflag	sakura
 tra_fild	mapflag	sakura
+prt_mk	mapflag	sakura

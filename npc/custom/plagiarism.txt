@@ -1,0 +1,326 @@
+-	script	Plagiarism_Master	-1,{
+	// Begin of the Npc
+	mes .NpcName$;
+	
+	if (!getskilllv("RG_PLAGIARISM"))
+	{
+		mes "The ^0055FFPlagiarism^000000 skill is required.";
+		close;
+	}
+	
+	if (getstatus(SC__REPRODUCE))
+	{
+		mes "Pick a skill to reproduce: ";
+	}
+	else
+	{
+		if (getskilllv("SC_REPRODUCE"))
+		{
+			mes "Activate the ^0055FFReproduce^000000 skill to unlock 3rd Job skills.";
+		}
+		
+		mes "Pick a skill to plagiarize: ";
+	}
+	
+	if (getstatus(SC__REPRODUCE))
+	{
+		.@Selected = select("1st and 2nd Job skills:3rd Job skills");
+	}
+	else
+	{
+		.@Selected = select("1st and 2nd Job skills");
+	}
+	
+	switch (.@Selected)
+	{
+		case 1:
+			// 1st and 2nd Job skills
+			if (getskilllv("SC_AUTOSHADOWSPELL"))
+			{
+				.@Selected = select("Swordman:Magician:Acolyte:Merchant:Archer:Thief:Taekwon:Ninja:Auto Shadow Spell skills");
+			}
+			else
+			{
+				.@Selected = select("Swordman:Magician:Acolyte:Merchant:Archer:Thief:Taekwon:Ninja");
+			}
+			
+			switch (.@Selected)
+			{
+				case 1:
+					// Swordman
+					copyarray .@SkillIds[0], .SwordmanSkillIds[0], getarraysize(.SwordmanSkillIds);
+					copyarray .@SkillNames$[0], .SwordmanSkillNames$[0], getarraysize(.SwordmanSkillNames$);
+					break;
+				case 2:
+					// Magician
+					copyarray .@SkillIds[0], .MagicianSkillIds[0], getarraysize(.MagicianSkillIds);
+					copyarray .@SkillNames$[0], .MagicianSkillNames$[0], getarraysize(.MagicianSkillNames$);
+					break;
+				case 3:
+					// Acolyte
+					copyarray .@SkillIds[0], .AcolyteSkillIds[0], getarraysize(.AcolyteSkillIds);
+					copyarray .@SkillNames$[0], .AcolyteSkillNames$[0], getarraysize(.AcolyteSkillNames$);
+					break;
+				case 4:
+					// Merchant
+					copyarray .@SkillIds[0], .MerchantSkillIds[0], getarraysize(.MerchantSkillIds);
+					copyarray .@SkillNames$[0], .MerchantSkillNames$[0], getarraysize(.MerchantSkillNames$);
+					break;
+				case 5:
+					// Archer
+					copyarray .@SkillIds[0], .ArcherSkillIds[0], getarraysize(.ArcherSkillIds);
+					copyarray .@SkillNames$[0], .ArcherSkillNames$[0], getarraysize(.ArcherSkillNames$);
+					break;
+				case 6:
+					// Thief
+					copyarray .@SkillIds[0], .ThiefSkillIds[0], getarraysize(.ThiefSkillIds);
+					copyarray .@SkillNames$[0], .ThiefSkillNames$[0], getarraysize(.ThiefSkillNames$);
+					break;
+				case 7:
+					// Taekwon
+					copyarray .@SkillIds[0], .TaekwonSkillIds[0], getarraysize(.TaekwonSkillIds);
+					copyarray .@SkillNames$[0], .TaekwonSkillNames$[0], getarraysize(.TaekwonSkillNames$);
+					break;
+				case 8:
+					// Ninja
+					copyarray .@SkillIds[0], .NinjaSkillIds[0], getarraysize(.NinjaSkillIds);
+					copyarray .@SkillNames$[0], .NinjaSkillNames$[0], getarraysize(.NinjaSkillNames$);
+					break;
+				case 9:
+					// Auto Shadow Spell skills
+					copyarray .@SkillIds[0], .AutoShadowSpellSkillIds[0], getarraysize(.AutoShadowSpellSkillIds);
+					copyarray .@SkillNames$[0], .AutoShadowSpellSkillNames$[0], getarraysize(.AutoShadowSpellSkillNames$);
+					break;
+			}
+			break;
+		case 2:
+			// 3rd Job skills
+			.@Selected = select("Rune Knight:Warlock:Guillotine Cross:Arch Bishop:Ranger:Royal Guard:Sura:Minstrel and Wanderer:Sorcerer:Genetic:Mechanic");
+			
+			switch (.@Selected)
+			{
+				case 1:
+					// Rune Knight
+					copyarray .@SkillIds[0], .RuneKnightSkillIds[0], getarraysize(.RuneKnightSkillIds);
+					copyarray .@SkillNames$[0], .RuneKnightSkillNames$[0], getarraysize(.RuneKnightSkillNames$);
+					break;
+				case 2:
+					// Warlock
+					copyarray .@SkillIds[0], .WarlockSkillIds[0], getarraysize(.WarlockSkillIds);
+					copyarray .@SkillNames$[0], .WarlockSkillNames$[0], getarraysize(.WarlockSkillNames$);
+					break;
+				case 3:
+					// Guillotine Cross
+					copyarray .@SkillIds[0], .GuillotineCrossSkillIds[0], getarraysize(.GuillotineCrossSkillIds);
+					copyarray .@SkillNames$[0], .GuillotineCrossSkillNames$[0], getarraysize(.GuillotineCrossSkillNames$);
+					break;
+				case 4:
+					// Arch Bishop
+					copyarray .@SkillIds[0], .ArchBishopSkillIds[0], getarraysize(.ArchBishopSkillIds);
+					copyarray .@SkillNames$[0], .ArchBishopSkillNames$[0], getarraysize(.ArchBishopSkillNames$);
+					break;
+				case 5:
+					// Ranger
+					copyarray .@SkillIds[0], .RangerSkillIds[0], getarraysize(.RangerSkillIds);
+					copyarray .@SkillNames$[0], .RangerSkillNames$[0], getarraysize(.RangerSkillNames$);
+					break;
+				case 6:
+					// Royal Guard
+					copyarray .@SkillIds[0], .RoyalGuardSkillIds[0], getarraysize(.RoyalGuardSkillIds);
+					copyarray .@SkillNames$[0], .RoyalGuardSkillNames$[0], getarraysize(.RoyalGuardSkillNames$);
+					break;
+				case 7:
+					// Sura
+					copyarray .@SkillIds[0], .SuraSkillIds[0], getarraysize(.SuraSkillIds);
+					copyarray .@SkillNames$[0], .SuraSkillNames$[0], getarraysize(.SuraSkillNames$);
+					break;
+				case 8:
+					// Minstrel and Wanderer
+					copyarray .@SkillIds[0], .MinstrelWandererSkillIds[0], getarraysize(.MinstrelWandererSkillIds);
+					copyarray .@SkillNames$[0], .MinstrelWandererSkillNames$[0], getarraysize(.MinstrelWandererSkillNames$);
+					break;
+				case 9:
+					// Sorcerer
+					copyarray .@SkillIds[0], .SorcererSkillIds[0], getarraysize(.SorcererSkillIds);
+					copyarray .@SkillNames$[0], .SorcererSkillNames$[0], getarraysize(.SorcererSkillNames$);
+					break;
+				case 10:
+					// Genetic
+					copyarray .@SkillIds[0], .GeneticSkillIds[0], getarraysize(.GeneticSkillIds);
+					copyarray .@SkillNames$[0], .GeneticSkillNames$[0], getarraysize(.GeneticSkillNames$);
+					break;
+				case 11:
+					// Mechanic
+					copyarray .@SkillIds[0], .MechanicSkillIds[0], getarraysize(.MechanicSkillIds);
+					copyarray .@SkillNames$[0], .MechanicSkillNames$[0], getarraysize(.MechanicSkillNames$);
+					break;
+			}
+			break;
+	}
+	
+	if (getarraysize(.@SkillIds) == 0 || getarraysize(.@SkillNames$) == 0)
+	{
+		clear;
+		mes .NpcName$;
+		mes "There are no skills available.";
+		close;
+	}
+	
+	.@SelectedIndex = select(implode(.@SkillNames$, ":")) - 1;
+	
+	clear;
+	mes .NpcName$;
+	.@SkillId = .@SkillIds[.@SelectedIndex];
+	
+	if (getstatus(SC__AUTOSHADOWSPELL))
+	{
+		sc_end SC__AUTOSHADOWSPELL;
+		mes "The ^0055FFAuto Shadow Spell^000000 skill effect has been ^FF0055canceled^000000.";
+	}
+	
+	if (getstatus(SC__REPRODUCE))
+	{
+		plagiarizeskillreset 2;
+	}
+	else
+	{
+		if (getstatus(SC_PRESERVE))
+		{
+			sc_end SC_PRESERVE;
+			mes "The ^0055FFPreserve^000000 skill effect has been ^FF0055canceled^000000.";
+		}
+		
+		plagiarizeskillreset 1;
+	}
+	
+	plagiarizeskill .@SkillId, 10;
+	
+	if (getskilllv(.@SkillId))
+	{
+		if (getstatus(SC__REPRODUCE))
+		{
+			mes "The ^0055FF" + .@SkillNames$[.@SelectedIndex] + "^000000 skill has been reproduced.";
+		}
+		else
+		{
+			mes "The ^0055FF" + .@SkillNames$[.@SelectedIndex] + "^000000 skill has been plagiarized.";
+		}
+	}
+	else
+	{
+		if (getstatus(SC__REPRODUCE))
+		{
+			mes "^FF0055Failed^000000 to reproduce the ^0055FF" + .@SkillNames$[.@SelectedIndex] + "^000000 skill.";
+		}
+		else
+		{
+			mes "^FF0055Failed^000000 to plagiarize the ^0055FF" + .@SkillNames$[.@SelectedIndex] + "^000000 skill.";
+		}
+	}
+	
+	close;
+	
+OnInit:
+	initnpctimer;
+	// Initialisation
+	.NpcName$ = "[Plagiarism Master]";
+	
+	// Settings
+	.ResetOnLogin = false;
+	.ResetOnDeath = false;
+	
+	setarray .SwordmanSkillIds[0],		5,		7,				62,				1001,				250,				251,				253, 			254;
+	setarray .SwordmanSkillNames$[0],	"Bash",	"Magnum Break",	"Bowling Bash",	"Charge Attack",	"Shield Charge",	"Shield Boomerang",	"Holy Cross",	"Grand Cross";
+	
+	setarray .MagicianSkillIds[0],		11,				13,				14,				15,				17,				18,				19,				20,					21,					80,				81,				83,				84,					85,						86,				88,				89,				90,				91,					1006;
+	setarray .MagicianSkillNames$[0],	"Napalm Beat",	"Soul Strike",	"Cold Bolt",	"Frost Diver",	"Fire Ball",	"Fire Wall",	"Fire Bolt",	"Lightning Bolt",	"Thunder Storm",	"Fire Pillar",	"Sightrasher",	"Meteor Storm",	"Jupitel Thunder",	"Lord of Vermilion",	"Water Ball",	"Frost Nova",	"Storm Gust",	"Earth Spike",	"Heaven's Drive",	"Sight Blaster";
+	
+	setarray .AcolyteSkillIds[0],		24,			28,		156,			54,				68,			69,					70,				77,				79,						263,				266,			267,				271,			272,			1015;
+	setarray .AcolyteSkillNames$[0],	"Ruwach",	"Heal",	"Holy Light",	"Resurrection",	"Aspersio",	"B.S Sacramenti",	"Sanctuary",	"Turn Undead",	"Magnus Exorcismus",	"Triple Attack",	"Investigate",	"Finger Offensive",	"Asura Strike",	"Chain Combo",	"Spiritual Bestowment";
+	
+	setarray .MerchantSkillIds[0],		42,				229,				230;
+	setarray .MerchantSkillNames$[0],	"Mammonite",	"Demonstration",	"Acid Terror";
+	
+	setarray .ArcherSkillIds[0],	47,				148,			116,			121,				122,			123,				1009;
+	setarray .ArcherSkillNames$[0],	"Arrow Shower",	"Charge Arrow",	"Land Mine",	"Freezing Trap",	"Blast Mine",	"Claymore Trap",	"Phantasmic Arrow";
+	
+	setarray .ThiefSkillIds[0],		141,				1004;
+	setarray .ThiefSkillNames$[0],	"Venom Splasher",	"Venom Knife";
+	
+	setarray .TaekwonSkillIds[0],		421;
+	setarray .TaekwonSkillNames$[0],	"Flying Kick";
+	
+	setarray .NinjaSkillIds[0],		526,			527,			528,			529,			530,			531,				534,				535,			536,				537,				539,				540,			541,				542,			3008;
+	setarray .NinjaSkillNames$[0],	"Throw Zeny",	"Flip Tatami",	"Haze Slasher",	"Shadow Leap",	"Shadow Slash",	"Cicada Skin Shed",	"Flaming Petals",	"Blaze Shield",	"Exploding Dragon",	"Freezing Spear",	"Snow Flake Draft",	"Wind Blade",	"Lightning Jolt",	"First Wind",	"Rapid Throw";
+	
+	setarray .AutoShadowSpellSkillIds[0],		11,				13,				14,				15,				17,				18,				19,				20,					21,					28,		54,				80,				81,				83,				84,					85,						86,				88,				89,				90,				91;
+	setarray .AutoShadowSpellSkillNames$[0],	"Napalm Beat",	"Soul Strike",	"Cold Bolt",	"Frost Diver",	"Fire Ball",	"Fire Wall",	"Fire Bolt",	"Lightning Bolt",	"Thunder Storm",	"Heal",	"Resurrection",	"Fire Pillar",	"Sightrasher",	"Meteor Storm",	"Jupitel Thunder",	"Lord of Vermilion",	"Water Ball",	"Frost Nova",	"Storm Gust",	"Earth Spike",	"Heaven's Drive";
+	
+	setarray .RuneKnightSkillIds[0],	2002,			2005,			2006;
+	setarray .RuneKnightSkillNames$[0],	"Sonic Wave",	"Wind Cutter",	"Ignition Break";
+	
+	setarray .WarlockSkillIds[0],		2202,				2203,			2204,			2210,			2211,			2212,			2213,		2214,				2216,			2217,			2222,				2223,						2224,					2229;
+	setarray .WarlockSkillNames$[0],	"Soul Expansion",	"Frost Misty",	"Jack Frost",	"Drain Life",	"Crimson Rock",	"Hell Inferno",	"Comet",	"Chain Lightning",	"Earth Strain",	"Tetra Vortex",	"Summon Fire Ball",	"Summon Lightning Ball",	"Summon Water Ball",	"Summon Stone";
+	
+	setarray .GuillotineCrossSkillIds[0],		2022,			2023,				2034,				5001;
+	setarray .GuillotineCrossSkillNames$[0],	"Cross Impact",	"Dark Illusion",	"Phantom Menace",	"Dark Claw";
+	
+	setarray .ArchBishopSkillIds[0],	2038,		2040,		2050,			2051,				2054;
+	setarray .ArchBishopSkillNames$[0],	"Judex",	"Adoramus",	"Renovatio",	"Highness Heal",	"Duple Light";
+	
+	setarray .RangerSkillIds[0],	2233,			2236,			2239,			2253,			2254;
+	setarray .RangerSkillNames$[0],	"Arrow Storm",	"Aimed Bolt",	"Cluster Bomb",	"Firing Trap",	"Ice Bound Trap";
+	
+	setarray .RoyalGuardSkillIds[0],	2310,			2316,			2320,			2323;
+	setarray .RoyalGuardSkillNames$[0],	"Shield Press",	"Exceed Break",	"Moon Slasher",	"Earth Drive";
+	
+	setarray .SuraSkillIds[0],		2326,			2327,			2328,			2330,			2332,				2336,				2337,		2343,			2344,					2517,				2518;
+	setarray .SuraSkillNames$[0],	"Dragon Combo",	"Sky Net Blow",	"Earth Shaker",	"Tiger Cannon",	"Rampage Blaster",	"Knuckle Arrow",	"Windmill",	"Gate of Hell",	"Gentle Touch Silence",	"Howling of Lion",	"Ride In Lightning";
+	
+	setarray .MinstrelWandererSkillIds[0],		2413,				2414,				2418;
+	setarray .MinstrelWandererSkillNames$[0],	"Metallic Sound",	"Reverberation",	"Severe Rainstorm";
+	
+	setarray .SorcererSkillIds[0],		2443,			2444,				2446,			2447,			2448,				2449,			2450,				2454;
+	setarray .SorcererSkillNames$[0],	"Fire Walk",	"Electric Walk",	"Earth Grave",	"Diamond Dust",	"Poison Buster",	"Psychic Wave",	"Killing Cloud",	"Varetyr Spear";
+	
+	setarray .GeneticSkillIds[0],		2479,			2480,			2481,				2482,				2483,			2490,			5003;
+	setarray .GeneticSkillNames$[0],	"Thorns Trap",	"Blood Sucker",	"Spore Explosion",	"Wall of Thorn",	"Crazy Weed",	"Hell's Plant",	"Illusion Doping";
+	
+	setarray .MechanicSkillIds[0],		5006;
+	setarray .MechanicSkillNames$[0],	"Magma Eruption";
+end;
+
+OnPCLoginEvent:
+	if (.ResetOnLogin)
+	{
+		if (getskilllv("RG_PLAGIARISM"))
+		{
+			if (getstatus(SC__AUTOSHADOWSPELL))
+			{
+				sc_end SC__AUTOSHADOWSPELL;
+			}
+			
+			plagiarizeskillreset 1;
+			plagiarizeskillreset 2;
+		}
+	}
+end;
+
+OnPCDieEvent:
+	if (.ResetOnDeath)
+	{
+		if (getskilllv("RG_PLAGIARISM"))
+		{
+			plagiarizeskillreset 1;
+			plagiarizeskillreset 2;
+		}
+	}
+end;
+
+OnTimer1000:
+    showscript(" Plagiarism Skill Copycat ");
+    setnpctimer 0;
+    end;
+}
+
+izlude,149,144,3	duplicate(Plagiarism_Master)	Plagiarism Master#iz	4_M_TWMASKMAN

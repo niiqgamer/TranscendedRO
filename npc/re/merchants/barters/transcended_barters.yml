@@ -2719,3 +2719,187 @@ Body:
           - Index: 0
             Item: Silvervine
             Amount: 50
+  - Name: union_shop
+    Items:
+      - Index: 0
+        Item: Union_Bible
+        Zeny: 100
+        RequiredItems:
+          - Index: 0
+            Item: Union_Token
+            Amount: 10
+      - Index: 1
+        Item: Union_Bow
+        Zeny: 100
+        RequiredItems:
+          - Index: 0
+            Item: Union_Token
+            Amount: 10
+      - Index: 2
+        Item: Union_Buckler
+        Zeny: 100
+        RequiredItems:
+          - Index: 0
+            Item: Union_Token
+            Amount: 10
+      - Index: 3
+        Item: Union_Dagger
+        Zeny: 100
+        RequiredItems:
+          - Index: 0
+            Item: Union_Token
+            Amount: 10
+      - Index: 4
+        Item: Union_CRI_Muffler
+        Zeny: 100
+        RequiredItems:
+          - Index: 0
+            Item: Union_Token
+            Amount: 10
+      - Index: 5
+        Item: Union_DEX_Shoes
+        Zeny: 100
+        RequiredItems:
+          - Index: 0
+            Item: Union_Token
+            Amount: 10
+      - Index: 6
+        Item: Union_Guard
+        Zeny: 100
+        RequiredItems:
+          - Index: 0
+            Item: Union_Token
+            Amount: 10
+      - Index: 7
+        Item: Union_Katar
+        Zeny: 100
+        RequiredItems:
+          - Index: 0
+            Item: Union_Token
+            Amount: 10
+      - Index: 8
+        Item: Union_Mace
+        Zeny: 100
+        RequiredItems:
+          - Index: 0
+            Item: Union_Token
+            Amount: 10
+      - Index: 9
+        Item: Union_Mail
+        Zeny: 100
+        RequiredItems:
+          - Index: 0
+            Item: Union_Token
+            Amount: 10
+      - Index: 10
+        Item: Union_Mattle
+        Zeny: 100
+        RequiredItems:
+          - Index: 0
+            Item: Union_Token
+            Amount: 10
+      - Index: 11
+        Item: Union_AGI_Boots
+        Zeny: 100
+        RequiredItems:
+          - Index: 0
+            Item: Union_Token
+            Amount: 10
+      - Index: 12
+        Item: Union_FLEE_Manteau
+        Zeny: 100
+        RequiredItems:
+          - Index: 0
+            Item: Union_Token
+            Amount: 10
+      - Index: 13
+        Item: Union_Revolver
+        Zeny: 100
+        RequiredItems:
+          - Index: 0
+            Item: Union_Token
+            Amount: 10
+      - Index: 14
+        Item: Union_Robe
+        Zeny: 100
+        RequiredItems:
+          - Index: 0
+            Item: Union_Token
+            Amount: 10
+      - Index: 15
+        Item: Union_Huuma
+        Zeny: 100
+        RequiredItems:
+          - Index: 0
+            Item: Union_Token
+            Amount: 10
+      - Index: 16
+        Item: Union_SP_Muffler
+        Zeny: 100
+        RequiredItems:
+          - Index: 0
+            Item: Union_Token
+            Amount: 10
+      - Index: 17
+        Item: Union_INT_Shoes
+        Zeny: 100
+        RequiredItems:
+          - Index: 0
+            Item: Union_Token
+            Amount: 10
+      - Index: 18
+        Item: Union_Suit
+        Zeny: 100
+        RequiredItems:
+          - Index: 0
+            Item: Union_Token
+            Amount: 10
+      - Index: 19
+        Item: Union_Sword
+        Zeny: 100
+        RequiredItems:
+          - Index: 0
+            Item: Union_Token
+            Amount: 10
+      - Index: 20
+        Item: Union_STR_Boots
+        Zeny: 100
+        RequiredItems:
+          - Index: 0
+            Item: Union_Token
+            Amount: 10
+      - Index: 21
+        Item: Union_MHP_Manteau
+        Zeny: 100
+        RequiredItems:
+          - Index: 0
+            Item: Union_Token
+            Amount: 10
+      - Index: 22
+        Item: Union_Twohand_Axe
+        Zeny: 100
+        RequiredItems:
+          - Index: 0
+            Item: Union_Token
+            Amount: 10
+      - Index: 23
+        Item: Union_Twohand_Staff
+        Zeny: 100
+        RequiredItems:
+          - Index: 0
+            Item: Union_Token
+            Amount: 10
+      - Index: 24
+        Item: Union_Viollin
+        Zeny: 100
+        RequiredItems:
+          - Index: 0
+            Item: Union_Token
+            Amount: 10
+      - Index: 25
+        Item: Union_Wire
+        Zeny: 100
+        RequiredItems:
+          - Index: 0
+            Item: Union_Token
+            Amount: 10

@@ -106207,12 +106207,102 @@ Body:
       SkillImmune: true
 #  - Id: 20582
 #    AegisName: MD_MANHOLE4
-#  - Id: 20583
-#    AegisName: MD_C_WHITEKNIGHT_G
-#  - Id: 20584
-#    AegisName: MD_C_KHALITZBURG_G
-#  - Id: 20585
-#    AegisName: MD_C_RAY_ARCHER_G
+  - Id: 20583
+    AegisName: MD_C_WHITEKNIGHT_G
+    Name: Mutating White Knight
+    Level: 188
+    Hp: 2450483
+    BaseExp: 9292
+    JobExp: 9116
+    Attack: 10846
+    Attack2: 3231
+    Defense: 802
+    MagicDefense: 77
+    Str: 365
+    Agi: 229
+    Vit: 354
+    Int: 176
+    Dex: 346
+    Luk: 109
+    AttackRange: 2
+    SkillRange: 10
+    ChaseRange: 12
+    Size: Large
+    Race: Undead
+    RaceGroups:
+      Ogh_Atk_Def: true
+    Element: Dark
+    ElementLevel: 3
+    WalkSpeed: 300
+    AttackDelay: 1000
+    AttackMotion: 500
+    DamageMotion: 1000
+    Ai: 21
+    Class: Boss
+  - Id: 20584
+    AegisName: MD_C_KHALITZBURG_G
+    Name: Mutated Khalitzburg
+    Level: 185
+    Hp: 2401358
+    BaseExp: 8771
+    JobExp: 8064
+    Attack: 12605
+    Attack2: 7553
+    Defense: 671
+    MagicDefense: 85
+    Str: 432
+    Agi: 389
+    Vit: 289
+    Int: 280
+    Dex: 311
+    Luk: 97
+    AttackRange: 2
+    SkillRange: 10
+    ChaseRange: 12
+    Size: Large
+    Race: Undead
+    RaceGroups:
+      Ogh_Atk_Def: true
+    Element: Dark
+    ElementLevel: 3
+    WalkSpeed: 350
+    AttackMotion: 1000
+    DamageMotion: 396
+    Ai: 21
+    Class: Boss
+  - Id: 20585
+    AegisName: MD_C_RAY_ARCHER_G
+    Name: Cursed Raydric Archer
+    Level: 186
+    Hp: 2394654
+    BaseExp: 7124
+    JobExp: 5157
+    Attack: 9174
+    Attack2: 7699
+    Defense: 417
+    MagicDefense: 86
+    Str: 311
+    Agi: 481
+    Vit: 162
+    Int: 287
+    Dex: 576
+    Luk: 77
+    AttackRange: 14
+    SkillRange: 10
+    ChaseRange: 12
+    Size: Medium
+    Race: Undead
+    RaceGroups:
+      Ogh_Atk_Def: true
+    Element: Dark
+    ElementLevel: 2
+    WalkSpeed: 200
+    AttackDelay: 1152
+    AttackMotion: 1152
+    DamageMotion: 480
+    Ai: 05
+    Modes:
+      Detector: true
 #  - Id: 20586
 #    AegisName: NYA_BRZ
 #  - Id: 20587
@@ -124389,7 +124479,8 @@ Body:
   - Id: 21853
     AegisName: EP19_MD_BOX1
     Name: Suspicious Storage Stone
-    Level: 230
+#    Level: 230
+    Level: 1
     Attack: 0
     Attack2: 0
     Str: 0
@@ -124405,7 +124496,7 @@ Body:
     Race: Formless
     Element: Neutral
     ElementLevel: 1
-    Class: Boss
+#    Class: Boss
   - Id: 21854
     AegisName: EP19_MD_BOX2
     Name: Suspicious Storage Stone
