@@ -105303,22 +105303,21 @@ Body:
       NoRandomWalk: true
   - Id: 20536
     AegisName: MD_ED_B_YGNIZEM
-    Name: Nameless Swordsman
+    Name: Unknown Swordsman
     Level: 180
-    Hp: 75000000
-    BaseExp: 1
-    JobExp: 1500000000
-    MvpExp: 900000000
-    Attack: 5030
-    Attack2: 7310
+    Hp: 75500000
+    BaseExp: 5885540
+    JobExp: 4780000
+    Attack: 5585
+    Attack2: 2532
     Defense: 585
     MagicDefense: 235
-    Str: 290
-    Agi: 227
-    Vit: 254
-    Int: 219
-    Dex: 429
-    Luk: 186
+    Str: 188
+    Agi: 177
+    Vit: 165
+    Int: 142
+    Dex: 278
+    Luk: 105
     AttackRange: 1
     SkillRange: 10
     ChaseRange: 12
@@ -105326,42 +105325,47 @@ Body:
     Race: Demihuman
     Element: Fire
     ElementLevel: 2
-    WalkSpeed: 145
-    AttackDelay: 576
-    AttackMotion: 432
+    WalkSpeed: 100
+    AttackDelay: 76
+    AttackMotion: 384
     DamageMotion: 288
     Ai: 21
     Class: Boss
-    Modes:
-      Mvp: true
-      NoRandomWalk: true
-    MvpDrops:
-      - Item: Bio_Reseearch_Docu
-        Rate: 10000
-      - Item: Bio_Test_Fragment
-        Rate: 10000
     Drops:
       - Item: Bio_Reseearch_Docu
-        Rate: 10000
+        Rate: 3500
       - Item: Bio_Test_Fragment
-        Rate: 10000
+        Rate: 3500
+      - Item: Hero_Weapon_Box
+        Rate: 100
+      - Item: Bio_Reactant_Box
+        Rate: 1000
+      - Item: Bio_Docu_Box
+        Rate: 500
+      - Item: Bio_W_Box
+        Rate: 100
+      - Item: Unknown_Swordman_Card
+        Rate: 1
+        StealProtected: true
+      - Item: Subject_Aura
+        Rate: 50
   - Id: 20537
     AegisName: MD_ED_YGNIZEM
-    Name: Nameless Swordsman
-    Level: 176
+    Name: Unknown Swordsman
+    Level: 178
     Hp: 1519762
-    BaseExp: 6217200
-    JobExp: 4352040
-    Attack: 4422
-    Attack2: 6422
+    BaseExp: 138160
+    JobExp: 96712
+    Attack: 4228
+    Attack2: 1283
     Defense: 340
     MagicDefense: 109
-    Str: 246
-    Agi: 207
-    Vit: 216
-    Int: 186
-    Dex: 364
-    Luk: 129
+    Str: 190
+    Agi: 140
+    Vit: 54
+    Int: 162
+    Dex: 183
+    Luk: 103
     AttackRange: 1
     SkillRange: 10
     ChaseRange: 12
@@ -105377,27 +105381,31 @@ Body:
     Drops:
       - Item: Lab_Staff_Record
         Rate: 500
+      - Item: Silent_Energy_Particle
+        Rate: 1000
+      - Item: Weak_Energy_Particle
+        Rate: 250
+      - Item: Goast_Chill
+        Rate: 1
       - Item: Bio_Test_Fragment
-        Rate: 10
-      - Item: Bio_Reseearch_Docu
         Rate: 10
   - Id: 20538
     AegisName: MD_ED_EREND
-    Name: Nameless Acolyte
+    Name: Unknown Acolyte
     Level: 176
     Hp: 1500486
-    BaseExp: 4090200
-    JobExp: 2863140
-    Attack: 3085
-    Attack2: 4485
+    BaseExp: 136341
+    JobExp: 95439
+    Attack: 3168
+    Attack2: 1128
     Defense: 278
     MagicDefense: 113
-    Str: 109
-    Agi: 81
-    Vit: 127
-    Int: 205
-    Dex: 185
-    Luk: 81
+    Str: 144
+    Agi: 102
+    Vit: 34
+    Int: 201
+    Dex: 175
+    Luk: 98
     AttackRange: 1
     SkillRange: 10
     ChaseRange: 12
@@ -105405,7 +105413,7 @@ Body:
     Race: Demihuman
     Element: Holy
     ElementLevel: 2
-    WalkSpeed: 145
+    WalkSpeed: 130
     AttackDelay: 576
     AttackMotion: 432
     DamageMotion: 288
@@ -105413,35 +105421,39 @@ Body:
     Drops:
       - Item: Lab_Staff_Record
         Rate: 500
+      - Item: Particles_Of_Energy
+        Rate: 1000
+      - Item: Silent_Energy_Particle
+        Rate: 2500
+      - Item: Goast_Chill
+        Rate: 1
       - Item: Bio_Test_Fragment
-        Rate: 10
-      - Item: Bio_Reseearch_Docu
         Rate: 10
   - Id: 20539
     AegisName: MD_ED_ARMAIA
-    Name: Nameless Merchant
+    Name: Unknown Merchant
     Level: 175
     Hp: 1507840
-    BaseExp: 4323060
-    JobExp: 3026130
-    Attack: 3951
-    Attack2: 5751
+    BaseExp: 136097
+    JobExp: 95268
+    Attack: 3828
+    Attack2: 1213
     Defense: 397
     MagicDefense: 103
-    Str: 176
-    Agi: 73
-    Vit: 121
-    Int: 93
-    Dex: 206
-    Luk: 81
+    Str: 175
+    Agi: 132
+    Vit: 74
+    Int: 122
+    Dex: 185
+    Luk: 122
     AttackRange: 1
     SkillRange: 10
     ChaseRange: 12
     Size: Medium
     Race: Demihuman
-    Element: Earth
+    Element: Fire
     ElementLevel: 3
-    WalkSpeed: 145
+    WalkSpeed: 120
     AttackDelay: 576
     AttackMotion: 432
     DamageMotion: 288
@@ -105449,27 +105461,31 @@ Body:
     Drops:
       - Item: Lab_Staff_Record
         Rate: 500
+      - Item: Weak_Energy_Particle
+        Rate: 250
+      - Item: Silent_Energy_Particle
+        Rate: 1000
+      - Item: Goast_Chill
+        Rate: 1
       - Item: Bio_Test_Fragment
-        Rate: 10
-      - Item: Bio_Reseearch_Docu
         Rate: 10
   - Id: 20541
     AegisName: MD_ED_LGTHIGHGUARD
     Name: Rekenber Senior Guard
     Level: 174
-    Hp: 1475486
-    BaseExp: 4052040
-    JobExp: 2836410
-    Attack: 3161
-    Attack2: 4561
+    Hp: 1485755
+    BaseExp: 135069
+    JobExp: 94548
+    Attack: 3589
+    Attack2: 1021
     Defense: 339
     MagicDefense: 98
-    Str: 187
-    Agi: 218
-    Vit: 87
-    Int: 110
-    Dex: 251
-    Luk: 106
+    Str: 165
+    Agi: 112
+    Vit: 55
+    Int: 88
+    Dex: 220
+    Luk: 84
     AttackRange: 9
     SkillRange: 10
     ChaseRange: 12
@@ -105477,35 +105493,40 @@ Body:
     Race: Demihuman
     Element: Neutral
     ElementLevel: 2
-    WalkSpeed: 145
-    AttackDelay: 576
-    AttackMotion: 432
-    DamageMotion: 288
+    WalkSpeed: 175
+    AttackDelay: 864
+    AttackMotion: 1268
+    DamageMotion: 480
     Ai: 04
     Drops:
+      - Item: Seed_Of_Yggdrasil
+        Rate: 300
       - Item: Lab_Staff_Record
         Rate: 500
-      - Item: Bio_Test_Fragment
-        Rate: 10
+      - Item: Yggdrasilberry
+        Rate: 150
       - Item: Bio_Reseearch_Docu
         Rate: 10
+      - Item: Reken_H_Guard_Card
+        Rate: 1
+        StealProtected: true
   - Id: 20542
     AegisName: MD_ED_LGTGUARD
     Name: Rekenber Guard
-    Level: 176
+    Level: 173
     Hp: 1475486
-    BaseExp: 5700690
-    JobExp: 3990480
-    Attack: 3067
-    Attack2: 4409
+    BaseExp: 134135
+    JobExp: 93895
+    Attack: 3395
+    Attack2: 895
     Defense: 346
     MagicDefense: 96
-    Str: 207
-    Agi: 100
-    Vit: 75
-    Int: 110
-    Dex: 251
-    Luk: 88
+    Str: 157
+    Agi: 108
+    Vit: 43
+    Int: 75
+    Dex: 164
+    Luk: 65
     AttackRange: 1
     SkillRange: 10
     ChaseRange: 12
@@ -105513,21 +105534,26 @@ Body:
     Race: Demihuman
     Element: Neutral
     ElementLevel: 2
-    WalkSpeed: 145
-    AttackDelay: 576
-    AttackMotion: 432
-    DamageMotion: 288
+    WalkSpeed: 175
+    AttackDelay: 432
+    AttackMotion: 480
+    DamageMotion: 1268
     Ai: 04
     Drops:
+      - Item: Seed_Of_Yggdrasil
+        Rate: 100
       - Item: Lab_Staff_Record
         Rate: 500
-      - Item: Bio_Test_Fragment
-        Rate: 10
+      - Item: Yggdrasilberry
+        Rate: 50
       - Item: Bio_Reseearch_Docu
         Rate: 10
+      - Item: Reken_Guard_Card
+        Rate: 1
+        StealProtected: true
   - Id: 20543
     AegisName: MD_ED_M_SCIENCE
-    Name: MD_ED_M_SCIENCE
+    Name: Rengenschirm Scientist
     Level: 172
     Hp: 1469107
     BaseExp: 133555
@@ -105552,20 +105578,19 @@ Body:
     WalkSpeed: 200
     AttackDelay: 864
     AttackMotion: 1268
-    ClientAttackMotion: 1584
     DamageMotion: 480
     Ai: 04
     Drops:
-      - Item: Lab_Staff_Record
-        Rate: 500
-      - Item: Bio_Test_Fragment
-        Rate: 10
-      - Item: Bio_Reseearch_Docu
-        Rate: 10
       - Item: Seed_Of_Yggdrasil
         Rate: 200
+      - Item: Lab_Staff_Record
+        Rate: 500
       - Item: Yggdrasilberry
         Rate: 100
+      - Item: Bio_Reseearch_Docu
+        Rate: 10
+      - Item: Bio_Test_Fragment
+        Rate: 10
       - Item: Regen_Scientist_Card
         Rate: 1
         StealProtected: true
@@ -111661,6 +111686,7 @@ Body:
     AttackDelay: 115
     AttackMotion: 716
     DamageMotion: 504
+    DamageTaken: 100
     Ai: 21
     Class: Boss
     Modes:
@@ -111697,6 +111723,7 @@ Body:
     AttackDelay: 115
     AttackMotion: 716
     DamageMotion: 504
+    DamageTaken: 100
     Ai: 21
     Class: Boss
     Modes:

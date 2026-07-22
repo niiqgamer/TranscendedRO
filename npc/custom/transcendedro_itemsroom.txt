@@ -162,4 +162,32 @@ OnTimer1000:
 	
 -	shop	Decomposing	-1,909:-1
 
+grademk,108,89,4	script	Universal Exchanges#itroom	4_GACHA_MACHINE,{
+	callshop "UniversalExchanges";
+	end;
+
+OnInit:
+	initnpctimer;
+	end;
+
+OnTimer1000:
+    showscript(" ! Universal Exchanges ! ");
+    setnpctimer 0;
+    end;
+}
+
+grademk,65,102,4	script	Ring of Unknown Hero#itroom	4_F_SCIENCE,{
+	callshop "RingUnknownHero";
+	end;
+
+OnInit:
+	initnpctimer;
+	end;
+
+OnTimer1000:
+    showscript(" ! Ring of Unknown Hero ! ");
+    setnpctimer 0;
+    end;
+}
+
 grademk	mapflag	noteleport

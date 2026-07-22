@@ -583,7 +583,22 @@ Body:
       Map: 1@exsh
       X: 90
       Y: 35
-  - Id: 100
+  - Id: 118
+    Name: Memory of Thanatos
+    TimeLimit: 3600
+    Enter:
+      Map: 1@thts
+      X: 74
+      Y: 371
+    AdditionalMaps:
+      2@thts: true
+      3@thts: true
+      4@thts: true
+      5@thts: true
+      6@thts: true
+      7@thts: true
+      8@thts: true
+  - Id: 121
     Name: Old Glast Heim Hard
     Enter:
       Map: 1@gl_k
@@ -591,3 +606,109 @@ Body:
       Y: 20
     AdditionalMaps:
       2@gl_k: true
+  - Id: 130
+    Name: Maze of Oz
+    TimeLimit: 7200
+    Enter:
+      Map: 1@oz
+      X: 284
+      Y: 167
+  - Id: 132
+    Name: Gathering of Wolves
+    TimeLimit: 7200
+    Enter:
+      Map: 1@nyr
+      X: 194
+      Y: 30
+    AdditionalMaps:
+      2@nyr: true
+  - Id: 133
+    Name: Pontifex Villa
+    TimeLimit: 7200
+    Enter:
+      Map: 1@adv
+      X: 123
+      Y: 17
+  - Id: 135
+    Name: Villa of Deceit
+    TimeLimit: 7200
+    Enter:
+      Map: 1@adv
+      X: 111
+      Y: 19
+  - Id: 136
+    Name: Villa of Deceit(Advance)
+    TimeLimit: 7200
+    Enter:
+      Map: 1@adv
+      X: 134
+      Y: 19
+  - Id: 141
+    Name: Canyon Exploration
+    TimeLimit: 3600
+    Enter:
+      Map: 1@20cn1
+      X: 256
+      Y: 75
+    AdditionalMaps:
+      1@20cn2: true
+  - Id: 142
+    Name: Drift Ice Zone
+    TimeLimit: 3600
+    Enter:
+      Map: 1@twsd
+      X: 314
+      Y: 92
+  - Id: 143
+    Name: Nest of Twigs
+    TimeLimit: 3600
+    Enter:
+      Map: 1@twig
+      X: 100
+      Y: 100
+  - Id: 144
+    Name: The Immortal
+    TimeLimit: 3600
+    Enter:
+      Map: 1@twig
+      X: 150
+      Y: 150
+  - Id: 145
+    Name: EDDA Biolabs
+    TimeLimit: 7200
+    Enter:
+      Map: 1@gol1
+      X: 198
+      Y: 37
+    AdditionalMaps:
+      1@gol2: true
+  - Id: 146
+    Name: Bio 5 Bed of Honor Hard
+    TimeLimit: 7200
+    Enter:
+      Map: lhz_dun_n
+      X: 100
+      Y: 202
+  - Id: 149
+    Name: EDDA Somatology Laboratory (Hard)
+    TimeLimit: 7200
+    Enter:
+      Map: 1@gol1
+      X: 198
+      Y: 37
+    AdditionalMaps:
+      1@gol2: true
+  - Id: 147
+    Name: Lake of Fire
+    TimeLimit: 3600
+    Enter:
+      Map: 1@f_lake
+      X: 100
+      Y: 50
+  - Id: 148
+    Name: Hall of Life
+    TimeLimit: 3600
+    Enter:
+      Map: 1@ba_go
+      X: 200
+      Y: 50

@@ -1,0 +1,1081 @@
+//===== rAthena Script =======================================
+//= EDDA Biolab (Unofficial Investigations Unit Data) Instance
+//===== Author ==============================================
+//= https://github.com/re-null (virtutis on rAthena forums)
+//============================================================
+
+yuno,216,350,4	script	Sierra Re Instance#s_yuno	408,{
+	
+	if (checkquest(16390,PLAYTIME) != 0){
+		mes "You don't want to do anything with me, go away!";
+		end;
+	}
+	
+	mes "If you have 3x Silvervine Fruits. ^i[6417]";
+	mes "I can ^FF0000RESET^000000 EDDA Biolabs Instance for you.";
+	mes "Do you interest?";
+	next;
+	switch(select("Please wait.:Yes, I'm in.")) {
+	case 1:
+		mes "All right, don't forget we don't have much time.";
+		end;
+	case 2:
+		.@itemNeeded = 6417;
+		.@itemCount = 3;
+		if (countitem(.@itemNeeded) < .@itemCount) {
+			mes "["+strnpcinfo(1)+"]", "What gives? You don't have enough " + mesitemlink(.@itemNeeded) + ".";
+			end;
+		}
+		if (checkquest(16390,PLAYTIME) != -1){
+			erasequest 16390;
+		}
+		delitem .@itemNeeded, .@itemCount;
+		specialeffect2 300;
+		dispbottom "The EDDA Biolabs is now RESET!!!";
+		mes "Successful Reset Instance!";
+		close3;
+		end;
+	}
+
+OnInit:
+	initnpctimer;
+	end;
+
+OnTimer1000:
+    showscript(" ! Reset Instance ! ");
+    setnpctimer 0;
+    end;
+}
+
+yuno,213,348,4	script	Lavian	407,{
+	if ((MaxWeight - Weight) < 1000 || checkweight(501,1) == 0) {
+		mes "You're carrying too much.";
+		close;
+	}
+
+	disable_items;
+
+	mes "[Lavian]", "I can provide enchanting services for weapons found in the investigations.";
+	next;
+	if ( select( "Enchant Weapon", "Cancel" )  == 2) {
+		close;
+	} 
+	.@equip_id = getequipid(EQI_HAND_R);
+	switch(.@equip_id) {
+		case 21051:// Volar
+		case 21052:// Vernan
+		case 32023:// Argen Blanco
+		case 1333:// Golden Wrench
+		case 16092:// Engine Pilebunker
+		case 28138:// Maxi Spanner
+		case 28765:// Judgment Slasher
+		case 28044:// Agudo Filo
+		case 28042:// Ripper Cross
+		case 26158:// Crimson Rose Stick
+		case 2055:// Staff of Miracle
+		case 2056:// Gravitation Staff
+		case 26161:// Penitentia
+		case 2057:// Adorare Staff
+		case 16095:// Lucis Flail
+		case 18185:// Sharp Star
+		case 18187:// Falken Shooter
+		case 18186:// Aiming Bow
+		case 32350:// Farthezan
+		case 32024:// Harve
+		case 32025:// Fartridge
+		case 32351:// Estal
+		case 16093:// Coolant Injection
+		case 16094:// Gene Rod
+		case 28767:// Jack the Knife
+		case 28768:// Platinum Dagger
+		case 18184:// Rapid Fire
+		case 28633:// Boltijin
+		case 26159:// Psychic Spear Rod
+		case 26160:// Dust Grave
+		case 1865:// Raging Dragon Fist
+		case 1866:// Fighting God's Bandage
+		case 16096:// Bright Pendulum
+		case 18188:// Wind Gale
+		case 26212:// Heart Whip
+		case 26213:// Scarlet Ribbon
+		case 32107:// Black Circle
+		case 32108:// Antique Cello
+			break;
+		default:
+			mes "[Lavian]";
+			mes "^FF0000You're not wearing an eligible weapon.^000000";
+			close;
+	}
+	mes "[Lavian]";
+
+	if (getequipcardid(EQI_HAND_R,3) == 0) {
+		.@enchantNum = 1;
+	} else if (getequipcardid(EQI_HAND_R,2) == 0) {
+		.@enchantNum = 2;
+	} else {
+		mes "^FF0000You can't enchant this any further.^000000";
+		close;
+	}
+	mes "Select which service you want. Advanced Enchants will be safer than the General Enchants.";
+	next;
+	switch(select("Cancel","General Enchant","Advanced Enchant",.@enchantNum == 2 ? "Choice Enchant" : "")) {
+		case 1:
+			mes "[Lavian]";
+			mes "See you later.";
+			close;
+		case 2:
+			if (.@enchantNum == 1) {
+				callsub F_DoEnchant,35,5,.generalCost,.generalCost,4;
+			} else {
+				callsub F_DoEnchant,70,20,.generalCost,.generalCost,3;
+			}
+			break;
+		case 3:
+			if (.@enchantNum == 1) {
+				callsub F_DoEnchant,10,0,.advancedCost,.advancedCost,4;
+			} else {
+				callsub F_DoEnchant,30,0,.advancedCost,.advancedCost,3;
+			}
+			break;
+		case 4:
+			goto L_Determined;
+			break;
+	}		
+		
+	L_Determined:
+        next;
+		if (countitem(.docItem) < .choiceCost) {
+			mes "You need " + .choiceCost +  "x " + mesitemlink(.docItem);
+			close;
+		}
+		mes "[Lavian]";
+		mes "Tell me which one you want.";
+		next;
+		switch( select( "Seyren's Memory", "Howard's Memory", "Eremes's Memory", 
+                    "Kathryne's Memory", "Margaretha's Memory", "Cecil's Memory", "Randel's Memory",
+                         "Flamel's Memory", "Gertie's Memory", "Celia's Memory", "Chen's Memory", 
+                         "Trentini's Memory", "Alphoccio's Memory") ) {
+            case 1:
+                .@enchantNum = 29594;
+                break;
+            case 2:
+                .@enchantNum = 29595;
+                break;
+            case 3:
+                .@enchantNum = 29596;
+                break;
+            case 4:
+                .@enchantNum = 29598;
+                break;
+            case 5:
+                .@enchantNum = 29599;
+                break;
+            case 6:
+                .@enchantNum = 29600;
+                break;
+            case 7:
+                .@enchantNum = 29601;
+                break;
+            case 8:
+                .@enchantNum = 29602;
+                break;
+            case 9:
+                .@enchantNum = 29603;
+                break;
+            case 10:
+                .@enchantNum = 29604;
+                break;
+            case 11:
+                .@enchantNum = 29605;
+                break;
+            case 12:
+                .@enchantNum = 29606;
+                break;
+            case 13:
+                .@enchantNum = 29607;
+                break;
+		}
+		mes "[Lavian]";
+        mes "Are you sure you want " + mesitemlink(.@enchantNum, true) + "?";
+        next;
+        if (select( "I want a different one.", "I want this enchant."  ) == 1) {
+			close;
+		}
+
+        callsub F_DoEnchant,0,0,0,.choiceCost,3,.@enchantNum;
+
+		close;
+
+
+	F_DoEnchant:
+        .@failRate = getarg(0);
+        .@breakRate = getarg(1);
+        .@fragCost = getarg(2);
+        .@docuCost = getarg(3);
+        .@slot = getarg(4);
+        .@enchant = getarg(5,0);
+
+        .@equip_id = getequipid(EQI_HAND_R);
+        setarray .@card[0], getequipcardid(EQI_HAND_R,0), getequipcardid(EQI_HAND_R,1), getequipcardid(EQI_HAND_R,2), getequipcardid(EQI_HAND_R,3);
+	    .@refine = getequiprefinerycnt(EQI_HAND_R);
+
+        if (callfunc("F_IsEquipIDHack", EQI_HAND_R, .@equip_id) || callfunc("F_IsEquipCardHack", EQI_HAND_R, .@card[0], .@card[1], .@card[2], .@card[3]) || callfunc("F_IsEquipRefineHack", EQI_HAND_R, .@refine))
+		    close;
+
+    	if ((countitem(.fragItem) < .@fragCost) || (countitem(.docItem) < .@docuCost)) {
+			mes "You're going to need " + .@fragCost + "x " + mesitemlink(.fragItem) + "and" + .@docuCost + "x " + mesitemlink(.docItem) + ".";
+			close;
+		}
+
+        mes "[Lavian]";
+        mes "The success rate for this is " + (100 - .@failrate) +"%.";
+        if (.@breakRate > 0)
+		    mes "^FF0000On failure, there is a " + (.@breakrate) + "% chance to destroy your weapon.^000000";
+        mes "The cost is " + .@fragCost + "x " + mesitemlink(.fragItem) + "and " + .@docuCost + "x " + mesitemlink(.docItem) + ".";
+		mes "Is this alright with you?";
+		next;
+		if (select(  "I've changed my mind.","Go ahead." ) == 1) {
+			close;
+		}
+        next;
+        mes "[Lavian]";
+
+        delitem .fragItem, .@fragCost;
+		delitem .docItem, .@docuCost;
+        
+        if (.@enchant == 0) {
+            if (.@slot == 4)
+                .@enchant =  callfunc("F_Rand",4832,4833,4834,4808,4820,4821,4818,4817,4816,4815,4814,4813,4863,4864,4865);
+            else if (.@slot == 3)
+                .@enchant = callfunc("F_Rand",29594,29595,29596,29598,29599,29600,29601,29602,29603,29604,29605,29606,29607);
+            else
+                close;
+        }
+	    
+        .@rate = rand(100);
+		if (.@rate < .@failrate) {
+            .@rate = rand(100);
+            if (.@rate < .@breakrate) {
+                delequip EQI_HAND_R;
+                specialeffect2 EF_SUI_EXPLOSION;
+                mes "^FF0000A spectacular failure.^000000.";
+                close;
+            } else {
+                mes "^FF0000A failure...but your equipment is fine.^000000.";
+                close;
+            }
+        }
+		else {
+			specialeffect2 154;
+            delequip EQI_HAND_R;
+            if (.@slot == 4)
+                getitem2 .@equip_id,1,1,.@refine,0,.@card[0],.@card[1],.@card[2],.@enchant;
+            else
+			    getitem2 .@equip_id,1,1,.@refine,0,.@card[0],.@card[1],.@enchant,.@card[3];
+			mes "^0000cdA success.^000000";
+			close;
+		}
+        return;
+
+	// ENCHANT_SETTINGS
+	OnInit:
+        .generalCost = 50;
+        .advancedCost = 500;
+		// Note: Choice will only use documents
+        .choiceCost = 5000;
+		.fragItem = 25787;
+		.docItem = 25786;
+        end;
+}	
+	
+
+yuno,216,345,3	script	Sierra#yuno	4_F_SCIENCE,{
+	mes "[Sierra]";
+	cutin "3rd_gn_demi01",2;
+	if (BaseLevel  < 170) {
+	    mes "You're a bit too weak to experience this!","Come back when you're above level 170."; 
+        close3;
+    }
+
+	.@cooldown = 16390;
+
+	if(checkquest(.@cooldown,PLAYTIME) == 2){
+		erasequest .@cooldown;
+	}
+	else if (checkquest(.@cooldown,PLAYTIME) != -1){
+		mes "Sorry, we can't let you enter again so soon.", "Come back later!";
+		cutin "",255;
+		close3;
+	}
+
+	.@party_id = getcharid(1);
+	.@instance$ = "EDDA Biolabs";
+
+	if (.@party_id < 1) {
+		mes "Hmm? Where's your party? Please form a party even if you're going alone.";
+		cutin "",255;
+		close3;
+	}
+
+	mes "We're collecting data on the Unofficial Investigation Unit. Would you like to help?"; 
+	next;
+	switch(select("Reserve " + .@instance$ + " Entry","Enter " + .@instance$, "Cancel")){
+		case 1:
+			if(is_party_leader() == false){
+				mes "You're not the leader of this party.";
+				end;
+			}
+			instance_create(.@instance$);
+			cutin "",255;
+			end;
+		case 2:
+			switch(instance_enter(.@instance$)){
+				case IE_NOMEMBER:
+				case IE_OTHER:
+				case IE_NOINSTANCE:
+					if (is_party_leader(.@party_id) == false) {
+						mes "^ff0000Please note that This Memorial Dungeon cannot be accessed for 23 hours after your last visit.^000000";
+						next;
+					}
+					mes "^ff0000Your party leader has not yet created the dungeon.^000000";
+					cutin "",255;
+					close3;
+				case IE_OK:
+					if (isbegin_quest(.@cooldown) == 0) {
+						setquest .@cooldown;
+						mapannounce "yuno", "" + strcharinfo(0) + " of the party, " + getpartyname( getcharid(1) ) + ", is entering " + .@instance$ + ".",bc_map,"0x00FF99";
+					}
+					cutin "",255;
+					end;
+			 }
+	
+	}
+	end;
+
+OnInit:
+	initnpctimer;
+	end;
+
+OnTimer1000:
+    showscript(" ! EDDA Biolabs ! ");
+    setnpctimer 0;
+    end;
+}
+
+// 
+1@gol1,196,38,3	script	Sierra#1	4_F_SCIENCE,{
+	if('floor1Clear) {
+		warp 'map1$,164,187;
+		end;
+	}
+	
+	.@sierra1$ = instance_npcname("Sierra#1");
+
+	if(is_party_leader()){
+		cutin "3rd_gn_demi01",2;
+		mes "You're here for our research session in combat mode.", "In combat mode, we'll proceed to analyze the data experienced by the Unofficial Investigation Unit.";
+		npctalk "In combat mode, we'll proceed to analyze the battle data experienced by the Unofficial Investigation Unit.", .@sierra1$;
+		next;
+		mes "I'm able to advise you on the situation, but I can't assist in battle.", "Please proceed with that in mind.";
+		npctalk "I'm able to advise you on the situation, but I can't assist in battle. Please proceed with that in mind.", .@sierra1$;
+		next;
+		mes "Once a battle is over, only those still standing will be moved to the next area.", "Come speak to me if you were not among those.";
+		npctalk "Once a battle is over, only those still standing will be moved to the next area. Come speak to me if you were not among those.", .@sierra1$;
+		next;
+		mes "Let's take you over to the Reception Room, where the Unofficial Investigation Unit faced their first battle.";
+		npctalk "Let's take you over to the Reception Room, where the Unofficial Investigation Unit faced their first battle.", .@sierra1$;
+		next;
+		cutin "",255;
+		'partyId = getcharid(1);
+		'floor1Clear = 1;
+		warpparty 'map1$,164,187,'partyId,'map1$;
+		donpcevent instance_npcname("Sierra#f2")+"::OnMobSpawn";
+	}
+	end;
+
+	OnInstanceInit:
+		'map1$ = instance_mapname("1@gol1");
+		'map2$ = instance_mapname("1@gol2");
+		'spawned1 = 0;
+		'spawned2 = 0;
+		'spawned3 = 0;
+		'spawned4 = 0;
+		
+
+		for (.@i = 1; .@i <= 38; .@i++){
+			disablenpc instance_npcname("#block_"+.@i);
+		}
+		
+		for(.@i = 1; .@i <= 16;.@i++){
+			disablenpc instance_npcname("#block_s1b"+.@i);
+			disablenpc instance_npcname("#block_s3b"+.@i);
+			disablenpc instance_npcname("#block_s7b"+.@i);
+			disablenpc instance_npcname("#block_s9b"+.@i);
+		}
+	
+	end;
+}
+
+1@gol1,171,204,3	script	Sierra#f2	4_F_SCIENCE,{
+	if(mobcount('map1$,instance_npcname("Sierra#f2")+"::OnMobKill") < 1)
+		warp 'map1$,67,274;
+	end;
+
+
+	OnMobKill:
+		if(mobcount('map1$,instance_npcname("Sierra#f2")+"::OnMobKill") < 1) {
+			mapannounce 'map1$, "???: Sleep soundly, my dear test subjects.", bc_map,0xFFFF00,FW_NORMAL,16;
+			donpcevent instance_npcname("Sierra#f3")+"::OnMobSpawn";
+			warpparty 'map1$,67,274,'partyId,'map1$;
+		}
+		end;
+
+	OnMobSpawn:
+		areamonster 'map1$,160,203,163,207,"--ja--",20541,rand(2,4),instance_npcname("Sierra#f2")+"::OnMobKill";
+		areamonster 'map1$,156,186,159,190,"--ja--",20542,rand(2,4),instance_npcname("Sierra#f2")+"::OnMobKill";
+		areamonster 'map1$,172,202,176,205,"--ja--",20542,rand(2,4),instance_npcname("Sierra#f2")+"::OnMobKill";
+		areamonster 'map1$,173,186,177,189,"--ja--",20543,rand(2,4),instance_npcname("Sierra#f2")+"::OnMobKill";
+		end;
+}
+
+1@gol1,64,276,3	script	Sierra#f3	4_F_SCIENCE,{
+	if(mobcount('map1$,instance_npcname("Sierra#f3")+"::OnMobKill") < 1) 
+		warp 'map1$,113,191;
+	end;
+
+	OnMobKill:
+		if(mobcount('map1$,instance_npcname("Sierra#f3")+"::OnMobKill") < 1) {
+			donpcevent instance_npcname("Sierra#f4")+"::OnMobSpawn";
+			warpparty 'map1$,113,191,'partyId,'map1$;
+		}
+		end;
+
+	OnMobSpawn:
+		areamonster 'map1$,70,288,75,295,"--ja--",20541,rand(2,3),instance_npcname("Sierra#f3")+"::OnMobKill";
+		areamonster 'map1$,70,288,75,295,"--ja--",20542,rand(4,5),instance_npcname("Sierra#f3")+"::OnMobKill";
+		areamonster 'map1$,70,288,75,295,"--ja--",20543,rand(2,3),instance_npcname("Sierra#f3")+"::OnMobKill";
+		areamonster 'map1$,64,302,69,309,"--ja--",20541,rand(2,3),instance_npcname("Sierra#f3")+"::OnMobKill";
+		areamonster 'map1$,64,302,69,309,"--ja--",20542,rand(4,5),instance_npcname("Sierra#f3")+"::OnMobKill";
+		areamonster 'map1$,64,302,69,309,"--ja--",20538,1,instance_npcname("Sierra#f3")+"::OnMobKill";
+		areamonster 'map1$,8,316,13,321,"--ja--",20541,rand(2,3),instance_npcname("Sierra#f3")+"::OnMobKill";
+		areamonster 'map1$,8,316,13,321,"--ja--",20542,rand(4,5),instance_npcname("Sierra#f3")+"::OnMobKill";
+		areamonster 'map1$,8,316,13,321,"--ja--",20543,rand(2,3),instance_npcname("Sierra#f3")+"::OnMobKill";
+		end;
+}
+
+1@gol1,119,196,3	script	Sierra#f4	4_F_SCIENCE,{
+	if(mobcount('map1$,instance_npcname("Sierra#f4")+"::OnMobKill") < 1) 
+		warp 'map1$,80,110;
+	end;
+
+	OnMobKill:
+		if(mobcount('map1$,instance_npcname("Sierra#f4")+"::OnMobKill") < 1) {
+			donpcevent instance_npcname("Sierra#f5")+"::OnMobSpawn";
+			warpparty 'map1$,80,110,'partyId,'map1$;
+		}
+		end;
+
+	OnMobSpawn:
+		areamonster 'map1$,102,188,105,193,"--ja--",20542,rand(3,4),instance_npcname("Sierra#f4")+"::OnMobKill";
+		areamonster 'map1$,108,204,113,207,"--ja--",20543,rand(2,3),instance_npcname("Sierra#f4")+"::OnMobKill";
+		areamonster 'map1$,126,194,131,197,"--ja--",20542,rand(3,4),instance_npcname("Sierra#f4")+"::OnMobKill";
+		areamonster 'map1$,130,204,134,208,"--ja--",20541,3,instance_npcname("Sierra#f4")+"::OnMobKill";
+		
+		areamonster 'map1$,118,220,121,225,"--ja--",20543,rand(5,6),instance_npcname("Sierra#f4")+"::OnMobKill";
+		areamonster 'map1$,92,218,97,2223,"--ja--",20542,rand(5,6),instance_npcname("Sierra#f4")+"::OnMobKill";
+
+		end;
+}
+
+1@gol1,74,118,3	script	Sierra#f5	4_F_SCIENCE,{
+	if(mobcount('map1$,instance_npcname("Sierra#f5")+"::OnMobKill") < 1) 
+		warp 'map1$,117,28;
+	end;
+
+	OnMobKill:
+		if(mobcount('map1$,instance_npcname("Sierra#f5")+"::OnMobKill") < 1) {
+			donpcevent instance_npcname("Sierra#f6")+"::OnMobSpawn";
+			warpparty 'map1$,117,28,'partyId,'map1$;
+		}
+		end;
+
+	OnMobSpawn:
+		areamonster 'map1$,56,106,61,111,"--ja--",20542,rand(3,4),instance_npcname("Sierra#f5")+"::OnMobKill";
+		areamonster 'map1$,56,106,61,111,"--ja--",20543,rand(3,4),instance_npcname("Sierra#f5")+"::OnMobKill";
+		areamonster 'map1$,56,106,61,111,"--ja--",20541,rand(1,2),instance_npcname("Sierra#f5")+"::OnMobKill";
+
+		areamonster 'map1$,82,88,89,93,"--ja--",20542,3,instance_npcname("Sierra#f5")+"::OnMobKill";
+		areamonster 'map1$,82,88,89,93,"--ja--",20538,2,instance_npcname("Sierra#f5")+"::OnMobKill";
+		areamonster 'map1$,82,88,89,93,"--ja--",20541,1,instance_npcname("Sierra#f5")+"::OnMobKill";
+
+		areamonster 'map1$,91,132,95,139,"--ja--",20542,rand(3,5),instance_npcname("Sierra#f5")+"::OnMobKill";
+		areamonster 'map1$,91,132,95,139,"--ja--",20543,rand(2,4),instance_npcname("Sierra#f5")+"::OnMobKill";
+		areamonster 'map1$,91,132,95,139,"--ja--",20541,rand(1,2),instance_npcname("Sierra#f5")+"::OnMobKill";
+
+		areamonster 'map1$,44,134,49,139,"--ja--",20542,3,instance_npcname("Sierra#f5")+"::OnMobKill";
+		areamonster 'map1$,44,134,49,139,"--ja--",20538,2,instance_npcname("Sierra#f5")+"::OnMobKill";
+		areamonster 'map1$,44,134,49,139,"--ja--",20541,1,instance_npcname("Sierra#f5")+"::OnMobKill";
+
+		end;
+}
+
+1@gol1,118,22,3	script	#block_release0	S_EMPEL_2,{
+	if (mobcount('map1$,instance_npcname("Sierra#f6")+"::OnMobKill") < 1) {
+		disablenpc instance_npcname("#block_33");
+		disablenpc instance_npcname("#block_34");
+		disablenpc instance_npcname("#block_35");
+		disablenpc instance_npcname("#block_36");
+		setcell 'map1$,127,37,132,37,cell_walkable,1;
+	}
+	end;
+}
+
+1@gol1,113,26,3	script	Sierra#f6	4_F_SCIENCE,{
+	if('floor6Clear)
+		warp 'map1$,168,105;
+	end;
+
+	OnMobKill:
+		if(mobcount('map1$,instance_npcname("Sierra#f6")+"::OnMobKill") < 1) {
+			disablenpc instance_npcname("#block_33");
+			disablenpc instance_npcname("#block_34");
+			disablenpc instance_npcname("#block_35");
+			disablenpc instance_npcname("#block_36");
+			setcell 'map1$,127,37,132,37,cell_walkable,1;
+		}
+		end;
+
+	OnMobSpawn: 
+		areamonster 'map1$,113,20,115,22,"--ja--",20542,5,instance_npcname("Sierra#f6")+"::OnMobKill";
+		areamonster 'map1$,113,20,115,22,"--ja--",20541,rand(1,2),instance_npcname("Sierra#f6")+"::OnMobKill";
+		
+		enablenpc instance_npcname("#block_33");
+		enablenpc instance_npcname("#block_34");
+		enablenpc instance_npcname("#block_35");
+		enablenpc instance_npcname("#block_36");
+		
+		setcell 'map1$,127,37,132,37,cell_walkable,0; 
+		
+		end;
+}
+
+
+// 3rd arg = 1 to block, 0 to disable blocks
+function	script	F_SetBlocker	{
+	.@setValue = getarg(2);
+	.@blockArraySize = getarraysize(getarg(0));
+	.@cellArraySize = getarraysize(getarg(1));
+
+	for(.@i = 0; .@i < .@blockArraySize; .@i++) {
+		if (.@setValue)
+			enablenpc instance_npcname("#block_" + getelementofarray(getarg(0), .@i));
+		else
+			disablenpc instance_npcname("#block_" +  getelementofarray(getarg(0), .@i));
+	}
+
+	.@setValue = .@setValue^1;
+
+	for(.@i = 0; .@i < .@cellArraySize; .@i += 4) {
+		setcell 'map1$, getelementofarray(getarg(1), .@i), getelementofarray(getarg(1), .@i+1),
+						getelementofarray(getarg(1), .@i+2), getelementofarray(getarg(1), .@i+3), 
+						cell_walkable, .@setValue;
+	}
+	return;
+}
+
+function	script	F_CheckSpawnsCleared	{
+	'spawnsCleared += 1;
+	if('spawnsCleared == 4){
+		'floor6Clear = 1;
+		warpparty 'map1$,168,105,'partyId,'map1$;
+		donpcevent instance_npcname("Sierra#f7")+"::OnMobSpawn";
+	}
+	return;
+}
+
+
+1@gol1,145,18,5	script	#spawn_control1	S_EMPEL_2,5,5,{
+	if(mobcount('map1$,instance_npcname(strnpcinfo(0))+"::OnMobKill") < 1) {
+		callfunc "F_SetBlocker", .blockerArray, .cellArray, 0;
+	}
+	end;
+
+	OnInstanceInit:
+		setarray .blockerArray[0], 1,2,3,4,5,6;
+		setarray .cellArray[0], 140, 33, 151, 33;
+		hideonnpc instance_npcname(strnpcinfo(0));
+		end;
+
+	OnMobKill:
+		if(mobcount('map1$,instance_npcname(strnpcinfo(0))+"::OnMobKill") < 1) {
+			callfunc "F_SetBlocker", .blockerArray, .cellArray, 0;
+
+			callfunc "F_CheckSpawnsCleared";
+		}
+		end;
+
+	OnTouch:
+		if('spawned1 == 0) {
+			hideoffnpc instance_npcname(strnpcinfo(0));
+			'spawned1 = 1;
+			callfunc "F_SetBlocker", .blockerArray, .cellArray, 1;
+			areamonster 'map1$,143,15,148,20,"--ja--",20542,rand(4,6),instance_npcname("#spawn_control1")+"::OnMobKill";
+			areamonster 'map1$,143,15,148,20,"--ja--",20537,5,instance_npcname("#spawn_control1")+"::OnMobKill";
+			areamonster 'map1$,143,15,148,20,"--ja--",20541,rand(1,2),instance_npcname("#spawn_control1")+"::OnMobKill";
+		}
+		end;
+
+	
+}
+
+1@gol1,142,68,5	script	#spawn_control2	S_EMPEL_2,5,5,{
+	if(mobcount('map1$,instance_npcname(strnpcinfo(0))+"::OnMobKill") < 1) {
+		callfunc "F_SetBlocker", .blockerArray, .cellArray, 0;
+	}
+	end;
+
+	OnInstanceInit:
+		setarray .blockerArray[0], 7,8,9,10,11,12,25,26,27,28;
+		setarray .cellArray[0], 147,57,136,57,134,77,134,71;
+		hideonnpc instance_npcname(strnpcinfo(0));
+		end;
+
+	OnMobKill:
+		if(mobcount('map1$,instance_npcname(strnpcinfo(0))+"::OnMobKill") < 1) {
+			callfunc "F_SetBlocker", .blockerArray, .cellArray, 0;
+			callfunc "F_CheckSpawnsCleared";
+		}
+		end;
+
+	OnTouch:
+		if('spawned2 == 0) {
+			hideoffnpc instance_npcname(strnpcinfo(0));
+			'spawned2 = 1;
+			callfunc "F_SetBlocker", .blockerArray, .cellArray, 1;
+			areamonster 'map1$,141,71,146,67,"--ja--",20542,rand(5,6),instance_npcname("#spawn_control2")+"::OnMobKill";
+			areamonster 'map1$,141,71,146,67,"--ja--",20537,5,instance_npcname("#spawn_control2")+"::OnMobKill";
+			areamonster 'map1$,141,71,146,67,"--ja--",20541,rand(1,2),instance_npcname("#spawn_control2")+"::OnMobKill";
+		}
+		end;
+
+	
+
+}
+
+1@gol1,94,68,5	script	#spawn_control3	1908,3,3,{
+	if(mobcount('map1$,instance_npcname(strnpcinfo(0))+"::OnMobKill") < 1) {
+		callfunc "F_SetBlocker", .blockerArray, .cellArray, 0;
+	}
+	end;
+
+	OnInstanceInit:
+		setarray .blockerArray[0], 13,14,15,16,17,18,29,30,31,32;
+		setarray .cellArray[0],99,55,88,55,101,70,101,77;
+		hideonnpc instance_npcname(strnpcinfo(0));
+		end;
+
+	OnMobKill:
+		if(mobcount('map1$,instance_npcname(strnpcinfo(0))+"::OnMobKill") < 1) {
+			callfunc "F_SetBlocker", .blockerArray, .cellArray, 0;
+			callfunc "F_CheckSpawnsCleared";
+		}
+		end;
+
+	OnTouch:
+		if('spawned3 == 0) {
+			hideoffnpc instance_npcname(strnpcinfo(0));
+			'spawned3 = 1;
+			callfunc "F_SetBlocker", .blockerArray, .cellArray, 1;
+			areamonster 'map1$,92,71,96,67,"--ja--",20542,rand(5,6),instance_npcname("#spawn_control3")+"::OnMobKill";
+			areamonster 'map1$,92,71,96,67,"--ja--",20537,5,instance_npcname("#spawn_control3")+"::OnMobKill";
+			areamonster 'map1$,92,71,96,67,"--ja--",20541,rand(1,2),instance_npcname("#spawn_control3")+"::OnMobKill";
+		}
+		end;	
+}
+
+
+1@gol1,90,18,5	script	#spawn_control4	1908,3,3,{
+	if(mobcount('map1$,instance_npcname(strnpcinfo(0))+"::OnMobKill") < 1) {
+		callfunc "F_SetBlocker", .blockerArray, .cellArray, 0;
+	}
+	end;
+
+	OnInstanceInit:
+		setarray .blockerArray[0], 19,20,21,22,23,24;
+		setarray .cellArray[0],95,32,84,32;
+		hideonnpc instance_npcname(strnpcinfo(0));
+		end;
+
+	OnMobKill:
+		if(mobcount('map1$,instance_npcname(strnpcinfo(0))+"::OnMobKill") < 1) {
+			callfunc "F_SetBlocker", .blockerArray, .cellArray, 0;
+			callfunc "F_CheckSpawnsCleared";
+		}
+		end;
+
+	OnTouch:
+		if('spawned4 == 0) {
+			hideoffnpc instance_npcname(strnpcinfo(0));
+			'spawned4 = 1;
+			callfunc "F_SetBlocker", .blockerArray, .cellArray, 1;
+			areamonster 'map1$,88,21,92,17,"--ja--",20542,rand(5,6),instance_npcname("#spawn_control4")+"::OnMobKill";
+			areamonster 'map1$,88,21,92,17,"--ja--",20537,5,instance_npcname("#spawn_control4")+"::OnMobKill";
+			areamonster 'map1$,88,21,92,17,"--ja--",20541,rand(1,2),instance_npcname("#spawn_control4")+"::OnMobKill";
+		}
+		end;
+}
+
+1@gol1,159,112,3	script	Sierra#f7	4_F_SCIENCE,{
+	if(mobcount('map1$,instance_npcname("Sierra#f7")+"::OnMobKill") < 1) 
+		warp 'map1$,162,299;
+	end;
+
+		OnMobKill:
+		if(mobcount('map1$,instance_npcname("Sierra#f7")+"::OnMobKill") < 1) {
+			warpparty 'map1$,162,299,'partyId,'map1$;
+			donpcevent instance_npcname("Sierra#f8")+"::OnMobSpawn";
+		}
+		end;
+
+	OnMobSpawn:
+		areamonster 'map1$,157,105,162,109,"--ja--",20537,rand(4,6),instance_npcname("Sierra#f7")+"::OnMobKill";
+
+		areamonster 'map1$,162,121,167,118,"--ja--",20542,rand(3,5),instance_npcname("Sierra#f7")+"::OnMobKill";
+
+		areamonster 'map1$,144,107,148,110,"--ja--",20539,rand(4,6),instance_npcname("Sierra#f7")+"::OnMobKill";
+		areamonster 'map1$,144,107,148,110,"--ja--",20543,2,instance_npcname("Sierra#f7")+"::OnMobKill";
+
+		areamonster 'map1$,144,118,148,122,"--ja--",20538,rand(2,3),instance_npcname("Sierra#f7")+"::OnMobKill";
+
+		areamonster 'map1$,162,118,168,121,"--ja--",20542,rand(2,4),instance_npcname("Sierra#f7")+"::OnMobKill";
+
+		areamonster 'map1$,152,132,163,141,"--ja--",20543,2,instance_npcname("Sierra#f7")+"::OnMobKill";
+		areamonster 'map1$,152,132,163,141,"--ja--",20537,rand(5,7),instance_npcname("Sierra#f7")+"::OnMobKill";
+		areamonster 'map1$,152,132,163,141,"--ja--",20542,rand(2,4),instance_npcname("Sierra#f7")+"::OnMobKill";
+		areamonster 'map1$,152,132,163,141,"--ja--",20539,rand(5,7),instance_npcname("Sierra#f7")+"::OnMobKill";
+		areamonster 'map1$,152,132,163,141,"--ja--",20538,rand(2,3),instance_npcname("Sierra#f7")+"::OnMobKill";
+
+		end;
+}
+
+1@gol1,170,305,3	script	Sierra#f8	4_F_SCIENCE,{
+	if(mobcount('map1$,instance_npcname("Sierra#f8")+"::OnMobKill") < 1) 
+		warp 'map2$,49,20;
+	end;
+
+		OnMobKill:
+		if(mobcount('map1$,instance_npcname("Sierra#f8")+"::OnMobKill") < 1) {
+			npctalk "Next, we'll take you to the morgue where the bodies of the Unofficial Investigation Unit were kept.", instance_npcname("Sierra#f8");
+		}
+		end;
+
+	OnMobSpawn:
+		areamonster 'map1$,146,304,150,308,"--ja--",20542,rand(4,6),instance_npcname("Sierra#f8")+"::OnMobKill";
+		areamonster 'map1$,152,300,153,303,"--ja--",20541,rand(2,4),instance_npcname("Sierra#f8")+"::OnMobKill";
+		areamonster 'map1$,149,294,152,298,"--ja--",20543,rand(5,6),instance_npcname("Sierra#f8")+"::OnMobKill";
+		areamonster 'map1$,172,300,174,302,"--ja--",20537,rand(4,6),instance_npcname("Sierra#f8")+"::OnMobKill";
+		
+		end;
+}
+
+//============================================================
+//====== BLOCK SPAWNS
+//============================================================
+// spawn 1 (3)
+1@gol1,140,33,5	script	#block_1	802,{}
+1@gol1,142,33,5	script	#block_2	802,{}
+1@gol1,144,33,5	script	#block_3	802,{}
+1@gol1,146,33,5	script	#block_4	802,{}
+1@gol1,148,33,5	script	#block_5	802,{}
+1@gol1,150,33,5	script	#block_6	802,{}
+// spawn 2 (9)
+1@gol1,147,57,5	script	#block_7	802,{}
+1@gol1,145,57,5	script	#block_8	802,{}
+1@gol1,143,57,5	script	#block_9	802,{}
+1@gol1,141,57,5	script	#block_10	802,{}
+1@gol1,139,57,5	script	#block_11	802,{}
+1@gol1,137,57,5	script	#block_12	802,{}
+// spawn 3 (7)
+1@gol1,99,55,5	script	#block_13	802,{}
+1@gol1,97,55,5	script	#block_14	802,{}
+1@gol1,95,55,5	script	#block_15	802,{}
+1@gol1,93,55,5	script	#block_16	802,{}
+1@gol1,91,55,5	script	#block_17	802,{}
+1@gol1,89,55,5	script	#block_18	802,{}
+// spawn 4 (1)
+1@gol1,95,32,5	script	#block_19	802,{}
+1@gol1,93,32,5	script	#block_20	802,{}
+1@gol1,91,32,5	script	#block_21	802,{}
+1@gol1,89,32,5	script	#block_22	802,{}
+1@gol1,87,32,5	script	#block_23	802,{}
+1@gol1,85,32,5	script	#block_24	802,{}
+// <<<<
+1@gol1,134,77,5	script	#block_25	802,{}
+1@gol1,134,75,5	script	#block_26	802,{}
+1@gol1,134,73,5	script	#block_27	802,{}
+1@gol1,134,71,5	script	#block_28	802,{}
+// >>>>
+1@gol1,101,70,5	script	#block_29	802,{}
+1@gol1,101,72,5	script	#block_30	802,{}
+1@gol1,101,74,5	script	#block_31	802,{}
+1@gol1,101,76,5	script	#block_32	802,{}
+// =====
+1@gol1,132,37,5	script	#block_33	802,{}
+1@gol1,130,37,5	script	#block_34	802,{}
+1@gol1,128,37,5	script	#block_35	802,{}
+1@gol1,126,37,5	script	#block_36	802,{}
+// mvp room
+1@gol2,50,44,5	script	#block_37	802,{}
+1@gol2,52,44,5	script	#block_38	802,{}
+//=========================================
+// ================== ^^^^>>>>vvvv<<<<
+//=========================================
+1@gol2,51,66,5	script	#block_s9b1	802,{}
+1@gol2,51,68,5	script	#block_s9b2	802,{}
+1@gol2,51,70,5	script	#block_s9b3	802,{}
+1@gol2,51,72,5	script	#block_s9b4	802,{}
+1@gol2,52,73,5	script	#block_s9b5	802,{}
+1@gol2,54,73,5	script	#block_s9b6	802,{}
+1@gol2,56,73,5	script	#block_s9b7	802,{}
+1@gol2,58,73,5	script	#block_s9b8	802,{}
+1@gol2,59,72,5	script	#block_s9b9	802,{}
+1@gol2,59,70,5	script	#block_s9b10	802,{}
+1@gol2,59,68,5	script	#block_s9b11	802,{}
+1@gol2,59,66,5	script	#block_s9b12	802,{}
+1@gol2,58,65,5	script	#block_s9b13	802,{}
+1@gol2,56,65,5	script	#block_s9b14	802,{}
+1@gol2,54,65,5	script	#block_s9b15	802,{}
+1@gol2,52,65,5	script	#block_s9b16	802,{}
+// mob spawn: 55 70
+//=========================================
+// ================== ^^^^<<<<vvvv>>>>
+//=========================================
+1@gol2,48,66,5	script	#block_s7b1	802,{}
+1@gol2,48,68,5	script	#block_s7b2	802,{}
+1@gol2,48,70,5	script	#block_s7b3	802,{}
+1@gol2,48,72,5	script	#block_s7b4	802,{}
+1@gol2,47,73,5	script	#block_s7b5	802,{}
+1@gol2,45,73,5	script	#block_s7b6	802,{}
+1@gol2,43,73,5	script	#block_s7b7	802,{}
+1@gol2,41,73,5	script	#block_s7b8	802,{}
+1@gol2,40,72,5	script	#block_s7b9	802,{}
+1@gol2,40,70,5	script	#block_s7b10	802,{}
+1@gol2,40,68,5	script	#block_s7b11	802,{}
+1@gol2,40,66,5	script	#block_s7b12	802,{}
+1@gol2,41,65,5	script	#block_s7b13	802,{}
+1@gol2,43,65,5	script	#block_s7b14	802,{}
+1@gol2,45,65,5	script	#block_s7b15	802,{}
+1@gol2,47,65,5	script	#block_s7b16	802,{}
+// mob spawn: 44 70
+//=========================================
+// ================== vvvv>>>>^^^^<<<<
+//=========================================
+1@gol2,51,61,5	script	#block_s3b1	802,{}
+1@gol2,51,59,5	script	#block_s3b2	802,{}
+1@gol2,51,57,5	script	#block_s3b3	802,{}
+1@gol2,51,55,5	script	#block_s3b4	802,{}
+1@gol2,58,54,5	script	#block_s3b8	802,{}
+1@gol2,56,54,5	script	#block_s3b7	802,{}
+1@gol2,54,54,5	script	#block_s3b6	802,{}
+1@gol2,52,54,5	script	#block_s3b5	802,{}
+1@gol2,59,55,5	script	#block_s3b9	802,{}
+1@gol2,59,57,5	script	#block_s3b10	802,{}
+1@gol2,59,59,5	script	#block_s3b11	802,{}
+1@gol2,59,61,5	script	#block_s3b12	802,{}
+1@gol2,58,62,5	script	#block_s3b13	802,{}
+1@gol2,56,62,5	script	#block_s3b14	802,{}
+1@gol2,54,62,5	script	#block_s3b15	802,{}
+1@gol2,52,62,5	script	#block_s3b16	802,{}
+// mob spawn: 55 58
+//=========================================
+// ================== vvvv<<<<^^^^>>>>
+//=========================================
+1@gol2,48,61,5	script	#block_s1b1	802,{}
+1@gol2,48,59,5	script	#block_s1b2	802,{}
+1@gol2,48,57,5	script	#block_s1b3	802,{}
+1@gol2,48,55,5	script	#block_s1b4	802,{}
+1@gol2,47,54,5	script	#block_s1b5	802,{}
+1@gol2,45,54,5	script	#block_s1b6	802,{}
+1@gol2,43,54,5	script	#block_s1b7	802,{}
+1@gol2,41,54,5	script	#block_s1b8	802,{}
+1@gol2,40,55,5	script	#block_s1b9	802,{}
+1@gol2,40,57,5	script	#block_s1b10	802,{}
+1@gol2,40,59,5	script	#block_s1b11	802,{}
+1@gol2,40,61,5	script	#block_s1b12	802,{}
+1@gol2,41,62,5	script	#block_s1b13	802,{}
+1@gol2,43,62,5	script	#block_s1b14	802,{}
+1@gol2,45,62,5	script	#block_s1b15	802,{}
+1@gol2,47,62,5	script	#block_s1b16	802,{}
+
+1@gol2,50,25,3	script	Sierra#premvp	4_F_SCIENCE,{
+	cutin "3rd_gn_demi02",2;
+	mes "[Sierra]", "The morgue...This is where they had their final battle against one of Wolfchev's test subjects.";
+	next;
+	mes "[Sierra]", "Wolfchev merely thought of this entire process as his experiment. However the results of the battle were unexpected, even to Wolfchev.";
+	next;
+	mes "[Sierra]", "Proceed down the corridor to our 12. I'll be waiting for you there.";
+	close3;
+}
+
+
+1@gol2,49,65,3	script	Sierra#mvp	4_F_SCIENCE,{
+	if (!is_party_leader()) 
+		end;
+
+	cutin "3rd_gn_demi02",2;
+	mes "[Sierra]", "Are all the members here? In order to replicate the final battle, the area will be sealed once the battle begins.";
+	next;
+	switch(select("Everyone is here.","Give me more time.")) {
+		case 1:
+			mes "[Sierra]", "I will begin loading the Unknown Swordsman's data. Once finished, all party members on this floor will be sent to the center of the morgue.";
+			next;
+			cutin "",255;
+			break;
+		case 2:
+			close3;
+	}
+
+	disablenpc instance_npcname("Sierra#premvp");
+	enablenpc instance_npcname("#block_37");
+	enablenpc instance_npcname("#block_38");
+	setcell 'map2$,50,44,52,44,cell_walkable,0;
+
+	disablenpc instance_npcname("Sierra#mvp");
+	warpparty 'map2$,49,65,'partyId,'map2$;
+	
+	
+	donpcevent instance_npcname("#Unknown_Swordsman_Control")+"::OnBossSpawn";
+
+	
+}
+
+1@gol2,0,0,0	script	#Unknown_Swordsman_Control	HIDDEN_NPC,{
+	OnBossSpawn:
+		monster 'map2$,50,60,"--ja--",20536,1,instance_npcname("#Unknown_Swordsman_Control")+"::OnBossKill";
+	OnBattlePattern:
+		for(.@i = 1; .@i <= 16;.@i++){
+			if (mobcount('map2$,instance_npcname("#Unknown_Swordsman_Control")+"::OnBossKill") < 1) {
+				end;
+			}
+
+			if(.@i == 4){
+				setcell 'map2$,48,62,48,54,cell_walkable,0;
+				setcell 'map2$,51,62,51,54,cell_walkable,0;
+				setcell 'map2$,48,65,48,73,cell_walkable,0;
+				setcell 'map2$,51,65,51,73,cell_walkable,0;
+			} else if (.@i == 8){
+				setcell 'map2$,48,54,40,54,cell_walkable,0;
+				setcell 'map2$,51,54,59,54,cell_walkable,0;
+				setcell 'map2$,48,73,40,73,cell_walkable,0;
+				setcell 'map2$,51,73,59,73,cell_walkable,0;
+			} else if (.@i == 12) {
+				setcell 'map2$,40,54,40,62,cell_walkable,0;
+				setcell 'map2$,59,54,59,62,cell_walkable,0;
+				setcell 'map2$,40,73,40,65,cell_walkable,0;
+				setcell 'map2$,59,73,59,65,cell_walkable,0;
+			} else if (.@i == 16) {
+				setcell 'map2$,40,62,48,62,cell_walkable,0;
+				setcell 'map2$,59,62,51,62,cell_walkable,0;
+				setcell 'map2$,40,65,48,65,cell_walkable,0;
+				setcell 'map2$,59,65,51,65,cell_walkable,0;
+			}
+			
+			enablenpc instance_npcname("#block_s1b"+.@i);
+			enablenpc instance_npcname("#block_s3b"+.@i);
+			enablenpc instance_npcname("#block_s7b"+.@i);
+			enablenpc instance_npcname("#block_s9b"+.@i);
+			sleep 500;
+		}
+
+		if(mobcount('map2$,instance_npcname("#Unknown_Swordsman_Control")+"::OnBossKill") < 1){
+			end;
+		}
+
+		for(.@i = 1; .@i <= 16;.@i++){
+			disablenpc instance_npcname("#block_s1b"+.@i);
+			disablenpc instance_npcname("#block_s3b"+.@i);
+			disablenpc instance_npcname("#block_s7b"+.@i);
+			disablenpc instance_npcname("#block_s9b"+.@i);
+			// SPOT 9
+			setcell 'map2$,51,65,51,73,cell_walkable,1;
+			setcell 'map2$,51,73,59,73,cell_walkable,1;
+			setcell 'map2$,59,73,59,65,cell_walkable,1;
+			setcell 'map2$,59,65,51,65,cell_walkable,1;
+			// spot 3
+			setcell 'map2$,51,62,51,54,cell_walkable,1;
+			setcell 'map2$,51,54,59,54,cell_walkable,1;
+			setcell 'map2$,59,54,59,62,cell_walkable,1;
+			setcell 'map2$,59,62,51,62,cell_walkable,1;
+			// spot 1
+			setcell 'map2$,48,62,48,54,cell_walkable,1;
+			setcell 'map2$,48,54,40,54,cell_walkable,1;
+			setcell 'map2$,40,54,40,62,cell_walkable,1;
+			setcell 'map2$,40,62,48,62,cell_walkable,1;
+			// spot 7
+			setcell 'map2$,48,65,48,73,cell_walkable,1;
+			setcell 'map2$,48,73,40,73,cell_walkable,1;
+			setcell 'map2$,40,73,40,65,cell_walkable,1;
+			setcell 'map2$,40,65,48,65,cell_walkable,1;			
+		}
+		goto OnBattlePattern;
+		end;
+
+	OnBossKill:
+		if (mobcount('map2$,instance_npcname("#Unknown_Swordsman_Control")+"::OnBossKill") < 1) {
+			enablenpc instance_npcname("Sierra#leave");
+
+			for(.@i = 1; .@i <= 16;.@i++){
+				disablenpc instance_npcname("#block_s1b"+.@i);
+				disablenpc instance_npcname("#block_s3b"+.@i);
+				disablenpc instance_npcname("#block_s7b"+.@i);
+				disablenpc instance_npcname("#block_s9b"+.@i);
+				// SPOT 9
+				setcell 'map2$,51,65,51,73,cell_walkable,1;
+				setcell 'map2$,51,73,59,73,cell_walkable,1;
+				setcell 'map2$,59,73,59,65,cell_walkable,1;
+				setcell 'map2$,59,65,51,65,cell_walkable,1;
+				// spot 3
+				setcell 'map2$,51,62,51,54,cell_walkable,1;
+				setcell 'map2$,51,54,59,54,cell_walkable,1;
+				setcell 'map2$,59,54,59,62,cell_walkable,1;
+				setcell 'map2$,59,62,51,62,cell_walkable,1;
+				// spot 1
+				setcell 'map2$,48,62,48,54,cell_walkable,1;
+				setcell 'map2$,48,54,40,54,cell_walkable,1;
+				setcell 'map2$,40,54,40,62,cell_walkable,1;
+				setcell 'map2$,40,62,48,62,cell_walkable,1;
+				// spot 7
+				setcell 'map2$,48,65,48,73,cell_walkable,1;
+				setcell 'map2$,48,73,40,73,cell_walkable,1;
+				setcell 'map2$,40,73,40,65,cell_walkable,1;
+				setcell 'map2$,40,65,48,65,cell_walkable,1;			
+			}
+
+		}
+		end;
+}
+
+1@gol2,49,65,3	script	Sierra#leave	4_F_SCIENCE,{
+	cutin "3rd_gn_demi01",2;
+	mes "[Sierra]", "I'm glad you completed the data gathering safely. We've collected good data from your party.";
+	next;
+	mes "[Sierra]", "We'll distribute the items obtained from the battle. We wish you well on your future endeavors.";
+	// COMPLETION_REWARDS
+	switch ( select("Take me back to Yuno.","I'd like to stay a while longer.") ) {
+		case 1:
+			getitem 23806,rand(1,5); //Hero_Weapon_Box
+			getitem 23992,rand(1,5); //Bio_W_Box
+			getitem 25786,rand(10,25); //Documents
+			getitem 25787,rand(10,25); //Fragments
+			getitem 9900009,rand(20,50); // Instance Emblem
+			cutin "",255;
+			warp "yuno",216,343;
+			end;
+		case 2:
+			close3;
+	}
+	end;
+
+	OnInstanceInit:
+		disablenpc instance_npcname("Sierra#leave");
+}

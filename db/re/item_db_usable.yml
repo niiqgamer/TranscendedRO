@@ -65421,7 +65421,7 @@ Body:
     AegisName: Hero_Weapon_Box
     Name: Ancient Heros Weapon Box
     Type: Usable
-    Weight: 2000
+    Weight: 0
     Flags:
       BuyingStore: true
       Container: true
@@ -66493,7 +66493,7 @@ Body:
     AegisName: Bio_W_Box
     Name: Experimental Weapon Box
     Type: Usable
-    Weight: 10
+    Weight: 0
     Flags:
       Container: true
     Script: |

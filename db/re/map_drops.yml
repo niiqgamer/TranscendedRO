@@ -883,6 +883,22 @@ Body:
             Item: S_Underwater_Box_IL
             Rate: 150
   - Map: amicitia2
+    GlobalDrops:
+      - Index: 0
+        Item: Etel_Dust
+        Rate: 1500
+      - Index: 1
+        Item: Shadowdecon_Ore
+        Rate: 3000
+      - Index: 2
+        Item: Zelunium_Ore
+        Rate: 2500
+      - Index: 3
+        Item: Shadowdecon
+        Rate: 1500
+      - Index: 4
+        Item: Zelunium
+        Rate: 1250
     SpecificDrops:
       - Monster: CHIMERA_LAVA
         Drops:
@@ -1033,6 +1049,22 @@ Body:
             Item: Fourth_1h_Wand
             Rate: 750
   - Map: amicitia1
+    GlobalDrops:
+      - Index: 0
+        Item: Etel_Dust
+        Rate: 1500
+      - Index: 1
+        Item: Shadowdecon_Ore
+        Rate: 3000
+      - Index: 2
+        Item: Zelunium_Ore
+        Rate: 2500
+      - Index: 3
+        Item: Shadowdecon
+        Rate: 1500
+      - Index: 4
+        Item: Zelunium
+        Rate: 1250
     SpecificDrops:
       - Monster: CHIMERA_AMITERA
         Drops:
@@ -1103,6 +1135,22 @@ Body:
             Item: Fourth_Bh_Staff
             Rate: 150
   - Map: sp_rudus4
+    GlobalDrops:
+      - Index: 0
+        Item: Etel_Dust
+        Rate: 1500
+      - Index: 1
+        Item: Shadowdecon_Ore
+        Rate: 3000
+      - Index: 2
+        Item: Zelunium_Ore
+        Rate: 2500
+      - Index: 3
+        Item: Shadowdecon
+        Rate: 1500
+      - Index: 4
+        Item: Zelunium
+        Rate: 1250
     SpecificDrops:
       - Monster: GIANT_CAPUT
         Drops:
@@ -1318,6 +1366,22 @@ Body:
             Item: Fourth_1h_Whip
             Rate: 750
   - Map: nif_dun01
+    GlobalDrops:
+      - Index: 0
+        Item: Etel_Dust
+        Rate: 1500
+      - Index: 1
+        Item: Shadowdecon_Ore
+        Rate: 3000
+      - Index: 2
+        Item: Zelunium_Ore
+        Rate: 2500
+      - Index: 3
+        Item: Shadowdecon
+        Rate: 1500
+      - Index: 4
+        Item: Zelunium
+        Rate: 1250
     SpecificDrops:
       - Monster: GAN_CEANN
         Drops:
@@ -1400,6 +1464,22 @@ Body:
             Item: Fourth_Bh_Katar
             Rate: 150
   - Map: nif_dun02
+    GlobalDrops:
+      - Index: 0
+        Item: Etel_Dust
+        Rate: 1500
+      - Index: 1
+        Item: Shadowdecon_Ore
+        Rate: 3000
+      - Index: 2
+        Item: Zelunium_Ore
+        Rate: 2500
+      - Index: 3
+        Item: Shadowdecon
+        Rate: 1500
+      - Index: 4
+        Item: Zelunium
+        Rate: 1250
     SpecificDrops:
       - Monster: DISGUISER
         Drops:
@@ -3130,17 +3210,98 @@ Body:
     GlobalDrops:
       - Index: 0
         Item: Etel_Dust
-        Rate: 5000
+        Rate: 2000
+      - Index: 1
+        Item: Weapon_Ore_1
+        Rate: 1600
+      - Index: 2
+        Item: Armor_Ore_1
+        Rate: 1600
+      - Index: 3
+        Item: Acc_Ore_1
+        Rate: 1600
+      - Index: 4
+        Item: Weapon_Stone_1
+        Rate: 800
+      - Index: 5
+        Item: Armor_Stone_1
+        Rate: 800
+      - Index: 6
+        Item: Acc_Stone_1
+        Rate: 800
+      - Index: 7
+        Item: Death_Barmund_Rune
+        Rate: 2000
+      - Index: 8
+        Item: Death_Barmund_Rune2
+        Rate: 400
+      - Index: 9
+        Item: Barmund_Death_Essence
+        Rate: 800
   - Map: bl_grass
     GlobalDrops:
       - Index: 0
         Item: Etel_Dust
-        Rate: 5000
+        Rate: 2000
+      - Index: 1
+        Item: Weapon_Ore_1
+        Rate: 1600
+      - Index: 2
+        Item: Armor_Ore_1
+        Rate: 1600
+      - Index: 3
+        Item: Acc_Ore_1
+        Rate: 1600
+      - Index: 4
+        Item: Weapon_Stone_1
+        Rate: 800
+      - Index: 5
+        Item: Armor_Stone_1
+        Rate: 800
+      - Index: 6
+        Item: Acc_Stone_1
+        Rate: 800
+      - Index: 7
+        Item: Plain_Barmund_Rune
+        Rate: 2000
+      - Index: 8
+        Item: Plain_Barmund_Rune2
+        Rate: 400
+      - Index: 9
+        Item: Barmund_Plain_Essence
+        Rate: 800
   - Map: bl_ice
     GlobalDrops:
       - Index: 0
         Item: Etel_Dust
-        Rate: 5000
+        Rate: 2000
+      - Index: 1
+        Item: Weapon_Ore_1
+        Rate: 1600
+      - Index: 2
+        Item: Armor_Ore_1
+        Rate: 1600
+      - Index: 3
+        Item: Acc_Ore_1
+        Rate: 1600
+      - Index: 4
+        Item: Weapon_Stone_1
+        Rate: 800
+      - Index: 5
+        Item: Armor_Stone_1
+        Rate: 800
+      - Index: 6
+        Item: Acc_Stone_1
+        Rate: 800
+      - Index: 7
+        Item: Ice_Barmund_Rune
+        Rate: 2000
+      - Index: 8
+        Item: Ice_Barmund_Rune2
+        Rate: 400
+      - Index: 9
+        Item: Barmund_Ice_Essence
+        Rate: 800
   - Map: bl_lava
     GlobalDrops:
       - Index: 0
@@ -3256,3 +3417,85 @@ Body:
           - Index: 7
             Item: ST_Naga_Armor
             Rate: 10000
+  - Map: 1@ch_u
+    GlobalDrops:
+      - Index: 0
+        Item: Etel_Dust
+        Rate: 2000
+  - Map: sp_rudus
+    GlobalDrops:
+      - Index: 0
+        Item: OS_Helm_Box
+        Rate: 3000
+      - Index: 1
+        Item: EL_A17T_Antiquity
+        Rate: 2000
+      - Index: 2
+        Item: Miguel_Antiquity
+        Rate: 2000
+      - Index: 3
+        Item: EP17_1_EVT02
+        Rate: 10000
+      - Index: 4
+        Item: EP17_1_EVT39
+        Rate: 7000
+      - Index: 5
+        Item: EP17_1_EVT01
+        Rate: 5000
+  - Map: sp_rudus2
+    GlobalDrops:
+      - Index: 0
+        Item: OS_Helm_Box
+        Rate: 3500
+      - Index: 1
+        Item: EL_A17T_Antiquity
+        Rate: 2500
+      - Index: 2
+        Item: Miguel_Antiquity
+        Rate: 2500
+      - Index: 3
+        Item: EP17_1_EVT02
+        Rate: 11000
+      - Index: 4
+        Item: EP17_1_EVT39
+        Rate: 8000
+      - Index: 5
+        Item: EP17_1_EVT01
+        Rate: 6000
+  - Map: sp_rudus3
+    GlobalDrops:
+      - Index: 0
+        Item: OS_Helm_Box
+        Rate: 3500
+      - Index: 1
+        Item: EL_A17T_Antiquity
+        Rate: 2500
+      - Index: 2
+        Item: Miguel_Antiquity
+        Rate: 2500
+      - Index: 3
+        Item: EP17_1_EVT02
+        Rate: 11000
+      - Index: 4
+        Item: EP17_1_EVT39
+        Rate: 8000
+      - Index: 5
+        Item: EP17_1_EVT01
+        Rate: 6000
+  - Map: clock_01
+    GlobalDrops:
+      - Index: 0
+        Item: Etel_Dust
+        Rate: 10000
+      - Index: 1
+        Item: Shadowdecon_Ore
+        Rate: 6000
+      - Index: 2
+        Item: Zelunium_Ore
+        Rate: 5000
+      - Index: 3
+        Item: Shadowdecon
+        Rate: 3000
+      - Index: 4
+        Item: Zelunium
+        Rate: 2500

@@ -11631,7 +11631,10 @@ Body:
     Title: Today's help
     TimeLimit: 4h
   - Id: 16390
-    Title: Standby
+    Title: Investigations Cooldown
+    TimeLimit: 4h
+  - Id: 16400
+    Title: EDDA Somatology Laboratory - Waiting
     TimeLimit: 4h
   - Id: 16405
     Title: Happy Egg Exploration-Standby

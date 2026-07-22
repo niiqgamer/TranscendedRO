@@ -2903,3 +2903,441 @@ Body:
           - Index: 0
             Item: Union_Token
             Amount: 10
+  - Name: Hero&EDDA Reform
+    Map: rgsr_in
+    X: 106
+    Y: 180
+    Direction: East
+    Sprite: 4_M_ATEIL
+    Items:
+      - Index: 0
+        Item: Oriental_Sword_Cube
+        RequiredItems:
+          - Index: 0
+            Item: Instance_Emblem
+            Amount: 2
+      - Index: 1
+        Item: Dragonic_Slayer_Cube
+        RequiredItems:
+          - Index: 0
+            Item: Instance_Emblem
+            Amount: 2
+      - Index: 2
+        Item: Shiver_Katar_K_Cube
+        RequiredItems:
+          - Index: 0
+            Item: Instance_Emblem
+            Amount: 2
+      - Index: 3
+        Item: Blade_Katar_Cube
+        RequiredItems:
+          - Index: 0
+            Item: Instance_Emblem
+            Amount: 2
+      - Index: 4
+        Item: Sword_Of_Bluefire_Cube
+        RequiredItems:
+          - Index: 0
+            Item: Instance_Emblem
+            Amount: 2
+      - Index: 5
+        Item: Slate_Sword_Cube
+        RequiredItems:
+          - Index: 0
+            Item: Instance_Emblem
+            Amount: 2
+      - Index: 6
+        Item: Narcis_Bow_Cube
+        RequiredItems:
+          - Index: 0
+            Item: Instance_Emblem
+            Amount: 2
+      - Index: 7
+        Item: Trumpet_Shell_K_Cube
+        RequiredItems:
+          - Index: 0
+            Item: Instance_Emblem
+            Amount: 2
+      - Index: 8
+        Item: Barb_Wire_K_Cube
+        RequiredItems:
+          - Index: 0
+            Item: Instance_Emblem
+            Amount: 2
+      - Index: 9
+        Item: Avenger_Cube
+        RequiredItems:
+          - Index: 0
+            Item: Instance_Emblem
+            Amount: 2
+      - Index: 10
+        Item: Meteor_Striker_Cube
+        RequiredItems:
+          - Index: 0
+            Item: Instance_Emblem
+            Amount: 2
+      - Index: 11
+        Item: Magic_Sword_Cube
+        RequiredItems:
+          - Index: 0
+            Item: Instance_Emblem
+            Amount: 2
+      - Index: 12
+        Item: Fatalist_Cube
+        RequiredItems:
+          - Index: 0
+            Item: Instance_Emblem
+            Amount: 2
+      - Index: 13
+        Item: Royal_Bow_K_Cube
+        RequiredItems:
+          - Index: 0
+            Item: Instance_Emblem
+            Amount: 2
+      - Index: 14
+        Item: Scalet_Dragon_L_Cube
+        RequiredItems:
+          - Index: 0
+            Item: Instance_Emblem
+            Amount: 2
+      - Index: 15
+        Item: Shadow_Staff_K_Cube
+        RequiredItems:
+          - Index: 0
+            Item: Instance_Emblem
+            Amount: 2
+      - Index: 16
+        Item: Freezing_Rod_Cube
+        RequiredItems:
+          - Index: 0
+            Item: Instance_Emblem
+            Amount: 2
+      - Index: 17
+        Item: Iron_Nail_K_Cube
+        RequiredItems:
+          - Index: 0
+            Item: Instance_Emblem
+            Amount: 2
+      - Index: 18
+        Item: Ray_Knuckle_Cube
+        RequiredItems:
+          - Index: 0
+            Item: Instance_Emblem
+            Amount: 2
+      - Index: 19
+        Item: Undine_Spear_K_Cube
+        RequiredItems:
+          - Index: 0
+            Item: Instance_Emblem
+            Amount: 2
+      - Index: 20
+        Item: Light_Blade_Cube
+        RequiredItems:
+          - Index: 0
+            Item: Instance_Emblem
+            Amount: 2
+      - Index: 21
+        Item: Iron_Staff_Cube
+        RequiredItems:
+          - Index: 0
+            Item: Instance_Emblem
+            Amount: 2
+      - Index: 22
+        Item: Blue_Crystal_Staff_Cube
+        RequiredItems:
+          - Index: 0
+            Item: Instance_Emblem
+            Amount: 2
+      - Index: 23
+        Item: Demon_Hunt_Bible_Cube
+        RequiredItems:
+          - Index: 0
+            Item: Instance_Emblem
+            Amount: 2
+      - Index: 24
+        Item: Saint_Hall_Cube
+        RequiredItems:
+          - Index: 0
+            Item: Instance_Emblem
+            Amount: 2
+      - Index: 25
+        Item: MeawFoxtail_Cube
+        RequiredItems:
+          - Index: 0
+            Item: Instance_Emblem
+            Amount: 2
+      - Index: 26
+        Item: Fog_Dew_Sword_Cube
+        RequiredItems:
+          - Index: 0
+            Item: Instance_Emblem
+            Amount: 2
+      - Index: 27
+        Item: Humma_Clear_Cube
+        RequiredItems:
+          - Index: 0
+            Item: Instance_Emblem
+            Amount: 2
+      - Index: 28
+        Item: OneSkyOneSun_Cube
+        RequiredItems:
+          - Index: 0
+            Item: Instance_Emblem
+            Amount: 2
+      - Index: 29
+        Item: SoulWeight_Cube
+        RequiredItems:
+          - Index: 0
+            Item: Instance_Emblem
+            Amount: 2
+      - Index: 30
+        Item: Crimson_Rose_Cube
+        RequiredItems:
+          - Index: 0
+            Item: Instance_Emblem
+            Amount: 2
+      - Index: 31
+        Item: Master_Soul_Rifle_Cube
+        RequiredItems:
+          - Index: 0
+            Item: Instance_Emblem
+            Amount: 2
+      - Index: 32
+        Item: Golden_L_Launcher_Cube
+        RequiredItems:
+          - Index: 0
+            Item: Instance_Emblem
+            Amount: 2
+      - Index: 33
+        Item: The_Black_Gatling_Cube
+        RequiredItems:
+          - Index: 0
+            Item: Instance_Emblem
+            Amount: 2
+      - Index: 34
+        Item: Demon_S_Shot_Cube
+        RequiredItems:
+          - Index: 0
+            Item: Instance_Emblem
+            Amount: 2
+      - Index: 35
+        Item: Freedom_Stick_Cube
+        RequiredItems:
+          - Index: 0
+            Item: Instance_Emblem
+            Amount: 2
+      - Index: 36
+        Item: Blessed_Knife_Cube
+        RequiredItems:
+          - Index: 0
+            Item: Instance_Emblem
+            Amount: 2
+      - Index: 37
+        Item: Oriental_Sword_Cube
+        RequiredItems:
+          - Index: 0
+            Item: Instance_Emblem
+            Amount: 2
+      - Index: 38
+        Item: Dragonic_Slayer_Cube
+        RequiredItems:
+          - Index: 0
+            Item: Instance_Emblem
+            Amount: 2
+      - Index: 39
+        Item: Shiver_Katar_K_Cube
+        RequiredItems:
+          - Index: 0
+            Item: Instance_Emblem
+            Amount: 2
+  - Name: RingUnknownHero
+    Items:
+      - Index: 0
+        Item: Unknown_Hero_Ring_AB
+        Zeny: 50000
+        RequiredItems:
+          - Index: 0
+            Item: Instance_Emblem
+            Amount: 1
+          - Index: 1
+            Item: Nose_Ring
+            Amount: 100
+      - Index: 1
+        Item: Unknown_Hero_Ring_GN
+        Zeny: 50000
+        RequiredItems:
+          - Index: 0
+            Item: Instance_Emblem
+            Amount: 1
+          - Index: 1
+            Item: Nose_Ring
+            Amount: 100
+      - Index: 2
+        Item: Unknown_Hero_Ring_GC
+        Zeny: 50000
+        RequiredItems:
+          - Index: 0
+            Item: Instance_Emblem
+            Amount: 1
+          - Index: 1
+            Item: Nose_Ring
+            Amount: 100
+      - Index: 3
+        Item: Unknown_Hero_Ring_NC
+        Zeny: 50000
+        RequiredItems:
+          - Index: 0
+            Item: Instance_Emblem
+            Amount: 1
+          - Index: 1
+            Item: Nose_Ring
+            Amount: 100
+      - Index: 4
+        Item: Unknown_Hero_Ring_WM
+        Zeny: 50000
+        RequiredItems:
+          - Index: 0
+            Item: Instance_Emblem
+            Amount: 1
+          - Index: 1
+            Item: Nose_Ring
+            Amount: 100
+      - Index: 5
+        Item: Unknown_Hero_Ring_NJ
+        Zeny: 50000
+        RequiredItems:
+          - Index: 0
+            Item: Instance_Emblem
+            Amount: 1
+          - Index: 1
+            Item: Nose_Ring
+            Amount: 100
+      - Index: 6
+        Item: Unknown_Hero_Ring_NV
+        Zeny: 50000
+        RequiredItems:
+          - Index: 0
+            Item: Instance_Emblem
+            Amount: 1
+          - Index: 1
+            Item: Nose_Ring
+            Amount: 100
+      - Index: 7
+        Item: Unknown_Hero_Ring_RA
+        Zeny: 50000
+        RequiredItems:
+          - Index: 0
+            Item: Instance_Emblem
+            Amount: 1
+          - Index: 1
+            Item: Nose_Ring
+            Amount: 100
+      - Index: 8
+        Item: Unknown_Hero_Ring_RL
+        Zeny: 50000
+        RequiredItems:
+          - Index: 0
+            Item: Instance_Emblem
+            Amount: 1
+          - Index: 1
+            Item: Nose_Ring
+            Amount: 100
+      - Index: 9
+        Item: Unknown_Hero_Ring_RG
+        Zeny: 50000
+        RequiredItems:
+          - Index: 0
+            Item: Instance_Emblem
+            Amount: 1
+          - Index: 1
+            Item: Nose_Ring
+            Amount: 100
+      - Index: 10
+        Item: Unknown_Hero_Ring_RK
+        Zeny: 50000
+        RequiredItems:
+          - Index: 0
+            Item: Instance_Emblem
+            Amount: 1
+          - Index: 1
+            Item: Nose_Ring
+            Amount: 100
+      - Index: 11
+        Item: Unknown_Hero_Ring_SC
+        Zeny: 50000
+        RequiredItems:
+          - Index: 0
+            Item: Instance_Emblem
+            Amount: 1
+          - Index: 1
+            Item: Nose_Ring
+            Amount: 100
+      - Index: 12
+        Item: Unknown_Hero_Ring_SO
+        Zeny: 50000
+        RequiredItems:
+          - Index: 0
+            Item: Instance_Emblem
+            Amount: 1
+          - Index: 1
+            Item: Nose_Ring
+            Amount: 100
+      - Index: 13
+        Item: Unknown_Hero_Ring_SU
+        Zeny: 50000
+        RequiredItems:
+          - Index: 0
+            Item: Instance_Emblem
+            Amount: 1
+          - Index: 1
+            Item: Nose_Ring
+            Amount: 100
+      - Index: 14
+        Item: Unknown_Hero_Ring_SR
+        Zeny: 50000
+        RequiredItems:
+          - Index: 0
+            Item: Instance_Emblem
+            Amount: 1
+          - Index: 1
+            Item: Nose_Ring
+            Amount: 100
+      - Index: 15
+        Item: Unknown_Hero_Ring_TK
+        Zeny: 50000
+        RequiredItems:
+          - Index: 0
+            Item: Instance_Emblem
+            Amount: 1
+          - Index: 1
+            Item: Nose_Ring
+            Amount: 100
+      - Index: 16
+        Item: Unknown_Hero_Ring_WL
+        Zeny: 50000
+        RequiredItems:
+          - Index: 0
+            Item: Instance_Emblem
+            Amount: 1
+          - Index: 1
+            Item: Nose_Ring
+            Amount: 100
+  - Name: UniversalExchanges
+    Items:
+      - Index: 0
+        Item: Blacksmith_Blessing
+        Zeny: 100000
+        RequiredItems:
+          - Index: 0
+            Item: Instance_Emblem
+            Amount: 2
+      - Index: 1
+        Item: Blacksmith_Blessing
+        Zeny: 100000
+        RequiredItems:
+          - Index: 0
+            Item: Shadowdecon
+            Amount: 1
+          - Index: 1
+            Item: Zelunium
+            Amount: 2
