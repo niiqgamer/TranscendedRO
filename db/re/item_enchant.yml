@@ -12528,7 +12528,6 @@ Body:
       C_Black_Cat_Hood_kr: true
       C_Squirrel_Ear_Hat_Kr: true
       C_Black_Moon_Cat_kr: true
-      C_SantaPoring_Balloon: true
     Order:
       - Slot: 2
       - Slot: 1

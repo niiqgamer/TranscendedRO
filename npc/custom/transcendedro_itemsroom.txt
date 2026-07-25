@@ -162,7 +162,8 @@ OnTimer1000:
 	
 -	shop	Decomposing	-1,909:-1
 
-grademk,108,89,4	script	Universal Exchanges#itroom	4_GACHA_MACHINE,{
+// Universal Exchanges
+grademk,109,90,4	script	Universal Exchanges#itroom	4_GACHA_MACHINE,{
 	callshop "UniversalExchanges";
 	end;
 
@@ -176,8 +177,93 @@ OnTimer1000:
     end;
 }
 
-grademk,65,102,4	script	Ring of Unknown Hero#itroom	4_F_SCIENCE,{
-	callshop "RingUnknownHero";
+// Instance Shop
+grademk,113,90,4	script	Instance Shop#itroom	4_GACHA_MACHINE,{
+	switch(select(
+	
+	"~ Headgears Top-Mid-Low",
+	"~ Armors",
+	"~ Weapons / Shields",
+	"~ Garments",
+	"~ Footgears",
+	"~ Accessories",
+	"Cancel"
+	
+	)) {
+		case 1:
+			callshop "InstanceShopHeads";
+			end;
+		case 2:
+			callshop "InstanceShopArmors";
+			end;
+		case 3:
+			callshop "InstanceShopWeapons";
+			end;
+		case 4:
+			callshop "InstanceShopGarments";
+			end;
+		case 5:
+			callshop "InstanceShopFootgears";
+			end;
+		case 6:
+			callshop "InstanceShopAccessories";
+			end;
+		case 7:
+			mes "Bye, guys!";
+			close2;
+			end;
+	}
+	close;
+
+OnInit:
+	initnpctimer;
+	end;
+
+OnTimer1000:
+    showscript(" ! Instance Shop ! ");
+    setnpctimer 0;
+    end;
+}
+
+// Set Hero & Unknown Hero
+grademk,65,102,4	script	Set Hero & Unknown Hero#itroom	4_F_SCIENCE,{
+	switch(select(
+	
+	"~ Ring of Unknown Hero",
+	"~ Set Hero's Boots / Hero's Cape",
+	"~ Heroic Token",
+	"Cancel"
+	
+	)) {
+		case 1:
+			callshop "RingUnknownHero";
+			end;
+		case 2:
+			callshop "SetHero";
+			end;
+		case 3:
+			callshop "HeroicToken";
+			end;
+		case 4:
+			mes "Bye, guys!";
+			close2;
+			end;
+	}
+	close;
+
+OnInit:
+	initnpctimer;
+	end;
+
+OnTimer1000:
+    showscript(" ! Set Hero & Unknown Hero ! ");
+    setnpctimer 0;
+    end;
+}
+
+// Records & Documents
+grademk,127,88,3	script	Records & Documents#itroom	4_M_TWBOY,{
+	callshop "RecordsDocuments";
 	end;
 
 OnInit:
@@ -185,9 +271,57 @@ OnInit:
 	end;
 
 OnTimer1000:
-    showscript(" ! Ring of Unknown Hero ! ");
+    showscript(" ! Records & Documents ! ");
+    setnpctimer 0;
+    end;
+}
+
+// Helm of Faith
+grademk,75,102,5	script	Asad#itroom	4_EP18_GW_MAN01,{
+	switch(select(
+	
+	"~ Buy Helm of Faith",
+	"~ Enchant Helm of Faith",
+	"Cancel"
+	
+	)) {
+		case 1:
+			callshop "HOF";
+			end;
+		case 2:
+			item_enchant(25);
+			end;
+		case 3:
+			mes "Bye, guys!";
+			close2;
+			end;
+	}
+	close;
+
+OnInit:
+	initnpctimer;
+	end;
+
+OnTimer1000:
+    showscript(" ! Helm of Faith ! ");
+    setnpctimer 0;
+    end;
+}
+
+// Thanos Others & Thanos Boots
+grademk,69,100,5	script	Thanos EQ#itroom	4_F_SHABBY,{
+	callshop "ThanosEQ";
+	end;
+
+OnInit:
+	initnpctimer;
+	end;
+
+OnTimer1000:
+    showscript(" ! Thanos Equipments ! ");
     setnpctimer 0;
     end;
 }
 
 grademk	mapflag	noteleport
+grademk	mapflag	novending

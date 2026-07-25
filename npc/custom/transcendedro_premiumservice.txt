@@ -1,23 +1,24 @@
 sec_in02,142,180,4	script	Premium Service#hid	4_F_PREMI,{
-	cutin "F_PREMI",2;
 	if(vip_status(1)) {
+		cutin "prm_1",2;
 		mes "[Premium Service]";
 		mes "Hello, my master, ^00AA00"+strcharinfo(0)+"^000000";
 		mes "Your ^FF0000VIP^000000 service will end on:";
 		mes gettimestr("%Y-%m/%d %H:%M:%S",21,vip_status(VIP_STATUS_EXPIRE));
 		mes "";
 		mes "Thank you.";
-		cutin "",255;
 		close2;
+		cutin "",255;
 		end;
 	} else {
+		cutin "prm_1",2;
 		mes "[Premium Service]";
 		mes "Sorry sir, ^00AA00"+strcharinfo(0)+"^000000";
 		mes "Only the ^FF0000VIP^000000 can use my service.";
 		mes "";
 		mes "Goodbye.";
-		cutin "",255;
 		close2;
+		cutin "",255;
 		end;
 	}
 	close;

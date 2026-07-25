@@ -1976,6 +1976,34 @@ Body:
         ResultItem: Dolor_HatK_LT
         ChangeRefine: -5
         RandomOptionGroup: Group_0
+      - BaseItem: Kafra_Suit
+        MinimumRefine: 9
+        Materials:
+          - Material: Zelunium
+            Amount: 1000
+          - Material: Alice's_Apron
+            Amount: 300
+          - Material: Reform_Stone_TH
+            Amount: 2
+          - Material: Armor_Stone_2
+            Amount: 100
+        ResultItem: Kafra_Suit_LT
+        ChangeRefine: -5
+        RandomOptionGroup: Group_0
+      - BaseItem: Kafra_Suit
+        MinimumRefine: 9
+        Materials:
+          - Material: Zelunium
+            Amount: 1000
+          - Material: Alice's_Apron
+            Amount: 300
+          - Material: Reform_Stone_TH
+            Amount: 4
+          - Material: Armor_Stone_2
+            Amount: 100
+        ResultItem: Kafra_Suit_LT
+        ChangeRefine: -1
+        RandomOptionGroup: Group_0
   - Item: C_Armor_Reform_2
     BaseItems:
       - BaseItem: Thanos_Helm_1

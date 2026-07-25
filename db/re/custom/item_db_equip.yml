@@ -1737,6 +1737,72 @@ Body:
       Costume_Garment: true
     ArmorLevel: 1
     View: 74
+  - Id: 480533
+    AegisName: Hero_Courage_TH
+    Name: Hero Courage Cape
+    Type: Armor
+    Weight: 800
+    Defense: 0
+    Slots: 1
+    Locations:
+      Garment: true
+    ArmorLevel: 1
+    EquipLevelMin: 100
+    Refineable: true
+    Script: |
+      .@r = getrefine();
+      bonus bMaxHP,3000;
+      bonus bMaxSP,200;
+      bonus bPAtk,BaseLevel/10;
+      bonus bRes,5*(BaseLevel/10);
+      bonus bMRes,5*(BaseLevel/10);
+      bonus bBaseAtk,10*(.@r/2);
+      bonus bAtkRate,2*(.@r/3);
+      if (.@r>=7) {
+         bonus bASPD,10;
+         if (.@r>=9) {
+            bonus2 bAddSize,Size_All,10;
+            if (.@r>=11) {
+               bonus bDelayRate,-10;
+               if (.@r>=13) {
+                  bonus2 bAddRace,RC_All,15;
+               }
+            }
+         }
+      }
+  - Id: 480534
+    AegisName: Hero_Favor_TH
+    Name: Hero Favor Cape
+    Type: Armor
+    Weight: 800
+    Defense: 0
+    Slots: 1
+    Locations:
+      Garment: true
+    ArmorLevel: 1
+    EquipLevelMin: 100
+    Refineable: true
+    Script: |
+      .@r = getrefine();
+      bonus bMaxHP,3000;
+      bonus bMaxSP,200;
+      bonus bSMatk,BaseLevel/10;
+      bonus bRes,5*(BaseLevel/10);
+      bonus bMRes,5*(BaseLevel/10);
+      bonus bMatk,10*(.@r/2);
+      bonus bMatkRate,2*(.@r/3);
+      if (.@r>=7) {
+         bonus bASPD,10;
+         if (.@r>=9) {
+            bonus2 bMagicAddSize,Size_All,10;
+            if (.@r>=11) {
+               bonus bDelayRate,-10;
+               if (.@r>=13) {
+                  bonus2 bMagicAddRace,RC_All,15;
+               }
+            }
+         }
+      }
   - Id: 480536
     AegisName: Will_Karasu_US
     Name: Will of Karasu
@@ -2079,6 +2145,173 @@ Body:
                if (.@g>=ENCHANTGRADE_A) {
                   bonus2 bAddRace,RC_All,30;
                   bonus2 bMagicAddRace,RC_All,30;
+               }
+            }
+         }
+      }
+  - Id: 480709
+    AegisName: Hero_Courage_TH_LT
+    Name: Hero Courage Cape-LT
+    Type: Armor
+    Weight: 100
+    Defense: 0
+    Slots: 1
+    Locations:
+      Garment: true
+    ArmorLevel: 2
+    EquipLevelMin: 100
+    Refineable: true
+    Gradable: true
+    Script: |
+      .@g = getenchantgrade();
+      .@r = getrefine();
+      bonus bMaxHP,8000;
+      bonus bMaxSP,300;
+      bonus bPAtk,BaseLevel/10;
+      bonus bRes,7*(BaseLevel/10);
+      bonus bMRes,7*(BaseLevel/10);
+      bonus bBaseAtk,20*(.@r/2);
+      bonus bAtkRate,4*(.@r/3);
+      if (.@r>=7) {
+         bonus bASPD,15;
+         if (.@r>=9) {
+            bonus2 bAddSize,Size_All,15;
+            if (.@r>=11) {
+               bonus bDelayRate,-15;
+               if (.@r>=13) {
+                  bonus2 bAddRace,RC_All,15;
+               }
+            }
+         }
+      }
+      if (.@g>=ENCHANTGRADE_D) {
+         bonus bFixedCast,-200;
+         if (.@g>=ENCHANTGRADE_C) {
+            bonus bShortAtkRate,15;
+            bonus bLongAtkRate,15;
+            if (.@g>=ENCHANTGRADE_B) {
+               bonus2 bAddEle,Ele_All,12;
+               if (.@g>=ENCHANTGRADE_A) {
+                  bonus bNoKnockback;
+               }
+            }
+         }
+      }
+  - Id: 480710
+    AegisName: Hero_Favor_TH_LT
+    Name: Hero Favor Cape-LT
+    Type: Armor
+    Weight: 100
+    Defense: 0
+    Slots: 1
+    Locations:
+      Garment: true
+    ArmorLevel: 2
+    EquipLevelMin: 100
+    Refineable: true
+    Gradable: true
+    Script: |
+      .@g = getenchantgrade();
+      .@r = getrefine();
+      bonus bMaxHP,8000;
+      bonus bMaxSP,300;
+      bonus bSMatk,BaseLevel/10;
+      bonus bRes,7*(BaseLevel/10);
+      bonus bMRes,7*(BaseLevel/10);
+      bonus bMatk,20*(.@r/2);
+      bonus bMatkRate,4*(.@r/3);
+      if (.@r>=7) {
+         bonus bASPD,15;
+         if (.@r>=9) {
+            bonus2 bMagicAddSize,Size_All,15;
+            if (.@r>=11) {
+               bonus bDelayRate,-15;
+               if (.@r>=13) {
+                  bonus2 bMagicAddRace,RC_All,15;
+               }
+            }
+         }
+      }
+      if (.@g>=ENCHANTGRADE_D) {
+         bonus bFixedCast,-300;
+         if (.@g>=ENCHANTGRADE_C) {
+            bonus2 bMagicAtkEle,Ele_All,15;
+            if (.@g>=ENCHANTGRADE_B) {
+               bonus2 bMagicAddEle,Ele_All,12;
+               if (.@g>=ENCHANTGRADE_A) {
+                  bonus bNoKnockback;
+               }
+            }
+         }
+      }
+  - Id: 480760
+    AegisName: Fallen_Angel_Wing_LT
+    Name: Fallen Angel Wing-LT
+    Type: Armor
+    Weight: 200
+    Defense: 18
+    Slots: 1
+    Locations:
+      Garment: true
+    ArmorLevel: 2
+    EquipLevelMin: 1
+    Refineable: true
+    Gradable: true
+    Script: |
+      .@g = getenchantgrade();
+      .@r = getrefine();
+      bonus bAllTraitStats,5;
+      bonus bBaseAtk,10*(readparam(bStr)/20);
+      bonus bPAtk,3*(readparam(bStr)/20);
+      bonus bMatk,10*(readparam(bInt)/20);
+      bonus bSMatk,3*(readparam(bInt)/20);
+      bonus2 bSubEle,Ele_Neutral,5*(readparam(bVit)/20);
+      bonus bRes,30*(readparam(bVit)/20);
+      bonus bMRes,30*(readparam(bVit)/20);
+      bonus bAspdRate,3*(readparam(bAgi)/20);
+      bonus bDelayRate,-3*(readparam(bAgi)/20);
+      bonus bShortAtkRate,3*(readparam(bDex)/20);
+      bonus bLongAtkRate,3*(readparam(bDex)/20);
+      bonus bVariableCastRate,3*(readparam(bDex)/20);
+      bonus bCritAtkRate,3*(readparam(bLuk)/20);
+      bonus bBaseAtk,8*(readparam(bStr)/20);
+      bonus bMatk,8*(readparam(bInt)/20);
+      if (.@r>=12) {
+         bonus2 bSkillAtk,"DK_DRAGONIC_BREATH",25;
+         bonus2 bSkillAtk,"IG_OVERSLASH",25;
+         bonus2 bSkillAtk,"AG_MYSTERY_ILLUSION",25;
+         bonus2 bSkillAtk,"EM_VENOM_SWAMP",25;
+         bonus2 bSkillAtk,"MT_SPARK_BLASTER",25;
+         bonus2 bSkillAtk,"BO_EXPLOSIVE_POWDER",25;
+         bonus2 bSkillAtk,"SHC_ETERNAL_SLASH",25;
+         bonus2 bSkillAtk,"ABC_ABYSS_SQUARE",25;
+         bonus2 bSkillAtk,"CD_ARBITRIUM",25;
+         bonus2 bSkillAtk,"CD_ARBITRIUM_ATK",25;
+         bonus2 bSkillAtk,"IQ_EXPOSION_BLASTER",25;
+         bonus2 bSkillAtk,"WH_GALESTORM",25;
+         bonus2 bSkillAtk,"TR_RHYTHMSHOOTING",25;
+         bonus2 bSkillAtk,"SKE_STAR_CANNON",25;
+         bonus2 bSkillAtk,"SOA_EXORCISM_OF_MALICIOUS_SOUL",25;
+         bonus2 bSkillAtk,"SS_KAGEGISSEN",25;
+         bonus2 bSkillAtk,"SS_SEKIENHOU",25;
+         bonus2 bSkillAtk,"NW_MAGAZINE_FOR_ONE",25;
+         bonus2 bSkillAtk,"SH_CHUL_HO_SONIC_CLAW",25;
+         bonus2 bSkillAtk,"HN_JUPITEL_THUNDER_STORM",25;
+      }
+      if (.@g>=ENCHANTGRADE_D) {
+         bonus bPow,2*(.@r/2);
+         bonus bSpl,2*(.@r/2);
+         bonus bCon,2*(.@r/2);
+         if (.@g>=ENCHANTGRADE_C) {
+            bonus bPerfectHitAddRate,12*(.@r/2);
+            bonus bMatkRate,2*(.@r/2);
+            if (.@g>=ENCHANTGRADE_B) {
+               bonus2 bAddEle,Ele_All,12;
+               bonus2 bMagicAtkEle,Ele_All,12;
+               if (.@g>=ENCHANTGRADE_A) {
+                  bonus bFixedCast,-500;
+                  bonus bDef,150;
+                  bonus bMdef,25;
                }
             }
          }

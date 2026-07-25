@@ -148,9 +148,9 @@ OnTimer1000:
 		case 106:
 			npctalk "Our friendship is forever~!!!", instance_npcname("Young Lady#gef3");
 			emotion ET_THROB, getnpcid(0, instance_npcname("Handsome Adventurer#gef"));
-			sleep 500;
+			sleep 250;
 			npctalk "Our friendship is forever~!!!", instance_npcname("Young Lady#gef1");
-			sleep 500;
+			sleep 250;
 			npctalk "Our friendship is forever~!!!", instance_npcname("Young Lady#gef2");
 			'm1_timer++;
 			break;
@@ -434,7 +434,7 @@ OnTouch_:
 		else setarray .@quotes$, "Dwigh: I want this Magic Tournament to become my turning point.","Dwigh: I am quite depressed these days...","Dwigh: I will show my great skills to all of my students.";
 	}
 	
-	showscript .@quotes$[rand(getarraysize(.@quotes$))], getnpcid(0);
+	showscript .@quotes$[rand(0,getarraysize(.@quotes$))], getnpcid(0);
 	end;
 }
 
@@ -1438,6 +1438,7 @@ OnInstanceInit:
 				close2;
 				cutin "",255;
 				getitem 6671,'reward[getarraysize('reward[0]) - 1];
+				getitem 9900009,'reward[getarraysize('reward[0]) - 1];
 				warp instance_mapname("1@gef"), 120,35;
 				end;
 			case 2:
@@ -1467,6 +1468,7 @@ OnInstanceInit:
 					mes "The "+callfunc("F_GetNumSuffix",('GMT_1QUE-9))+" match of Group A is about to begin!";
 					close2;
 					getitem 6671, 'reward['GMT_1QUE-11];
+					getitem 9900009, 'reward['GMT_1QUE-11];
 					hideonnpc instance_npcname("Tournament Healer#1");
 					
 					switch ('GMT_1QUE) {
@@ -1549,75 +1551,75 @@ OnStart:
 		case 11:
 			donpcevent instance_npcname("#Talkcontrol")+"::OnStart";
 			npctalk "Ladies and Gentlemen!";
-			sleep 3000;
+			sleep 1500;
 			npctalk "I do my best to be as loud as I can!";
 			donpcevent instance_npcname("#FireworksControl")+"::OnStart";
 			enablenpc instance_npcname("Arhi#1");
-			sleep 3000;
+			sleep 1500;
 			npctalk "The Geffen Magic Tournament will now commence!";
-			sleep 1000;
+			sleep 250;
 			.@spec = rand(70,257);
 			showscript "Tournament Spectator: Wow~!!! Looks fun~~!! Yahoo~!",getnpcid(0,instance_npcname("Tournament Spectator#"+.@spec));
-			sleep 1000;
+			sleep 250;
 			.@spec = rand(70,257);
 			showscript "Tournament Spectator: This is getting exciting~!",getnpcid(0,instance_npcname("Tournament Spectator#"+.@spec));
-			sleep 1000;
+			sleep 250;
 			.@spec = rand(70,257);
 			showscript "Tournament Spectator: When is the game going to start~!",getnpcid(0,instance_npcname("Tournament Spectator#"+.@spec));
-			sleep 500;
+			sleep 250;
 			donpcevent instance_npcname("Arhi#1")+"::OnActivate";
-			sleep 500;
+			sleep 250;
 			npctalk "We are starting the 1st match for Group A";
-			sleep 2000;
+			sleep 250;
 			npctalk "On this corner, "+('sex?"he":"she")+" looks weak enough to lose in the 1st match!";
-			sleep 3000;
+			sleep 1500;
 			npctalk "Give a big welcome to the unknown competitor! "+'charname$+"~!";
-			sleep 2000;
+			sleep 250;
 			npctalk "And on the other corner, Arhi the Novice! Give it your best shot!";
 			end;
 		case 12:
 			donpcevent instance_npcname("#Talkcontrol")+"::OnStart";
 			donpcevent instance_npcname("#FireworksControl")+"::OnStart";
 			npctalk "The 2nd match of Group A is about to begin!";
-			sleep 3000;
+			sleep 1500;
 			npctalk "On this corner, the competitor who exceeded our expectations by getting past the first round!";
-			sleep 3000;
+			sleep 1500;
 			npctalk "The extremely weak looking competitor, "+'charname$+"!";
-			sleep 3000;
+			sleep 1500;
 			donpcevent instance_npcname("Dio Anemos#1")+"::OnActivate";
-			sleep 500;
+			sleep 250;
 			npctalk "And "+('sex ? "his" : "her")+" opponent...";
-			sleep 3000;
+			sleep 1500;
 			npctalk "Despite his skipping classes at the Magic Academy...";
-			sleep 3000;
+			sleep 1500;
 			npctalk "A crowd favorite! A big round of applause to the Magician Apprentice, Dio Anemos!";
 			end;
 		case 13:
 			donpcevent instance_npcname("#Talkcontrol")+"::OnStart";
 			donpcevent instance_npcname("#FireworksControl")+"::OnStart";
 			npctalk "The 3rd match of Group A is about to begin!";
-			sleep 2000;
+			sleep 250;
 			npctalk "Welcome back our unlikely competitor, "+'charname$+"!";
-			sleep 3000;
+			sleep 1500;
 			npctalk "And "+('sex ? "his" : "her")+" opponent...";
-			sleep 2000;
+			sleep 250;
 			if ('GMTQuest == 1) {
 				donpcevent instance_npcname("Geffen Gangster#n1")+"::OnActivate";
-				sleep 500;
+				sleep 250;
 				npctalk "Whose looks give off a creepy air about him...";
-				sleep 3000;
+				sleep 1500;
 				npctalk "A member of the Curvy Woman Loving club~!! Geffen Gangster!";
 			} else if ('GMTQuest == 2) {
 				donpcevent instance_npcname("Geffen Bully#n1")+"::OnActivate";
-				sleep 500;
+				sleep 250;
 				npctalk "With a face only a mother can love!";
-				sleep 3000;
+				sleep 1500;
 				npctalk "The ruthless Geffen Bully!";
 			} else {
 				donpcevent instance_npcname("Geffen Shoplifter#n1")+"::OnActivate";
-				sleep 500;
+				sleep 250;
 				npctalk "With a mischievous grin on her face!";
-				sleep 3000;
+				sleep 1500;
 				npctalk "The Geffen Thief Guild's Guildmaster! Geffen Shoplifter!";
 			}
 			end;
@@ -1625,63 +1627,63 @@ OnStart:
 			donpcevent instance_npcname("#Talkcontrol")+"::OnStart";
 			donpcevent instance_npcname("#FireworksControl")+"::OnStart";
 			npctalk "The surprise of this year's Tournament~!";
-			sleep 3000;
+			sleep 1500;
 			npctalk "The unrivaled warrior! "+'charname$+"!";
-			sleep 3000;
+			sleep 1500;
 			donpcevent instance_npcname("Faymont#1")+"::OnActivate";
 			npctalk "And "+('sex ? "his" : "her")+" opponent~!!!";
-			sleep 3000;
+			sleep 1500;
 			npctalk "Entering the ring with pomp and circumstance.";
-			sleep 3000;
+			sleep 1500;
 			npctalk "Prontera's pride and style, Faymont!";
 			npctalk "Oh~ A player from Prontera ah!", instance_npcname("Prontera Spectator#a1");
-			sleep 2000;
+			sleep 250;
 			npctalk "Do not give Prontera a bad name!!", instance_npcname("Prontera Spectator#a2");
 			end;
 		case 15:
 			donpcevent instance_npcname("#Talkcontrol")+"::OnStart";
 			donpcevent instance_npcname("#FireworksControl")+"::OnStart";
 			npctalk "This isn't just a fluke ladies and gents!";
-			sleep 3000;
+			sleep 1500;
 			npctalk "The remarkable rookie! "+'charname$+"!";
-			sleep 3000;
+			sleep 1500;
 			npctalk "And "+('sex ? "his" : "her")+" opponent~!!!";
-			sleep 500;
+			sleep 250;
 			donpcevent instance_npcname("Ordre#1")+"::OnActivate";
-			sleep 3000;
+			sleep 1500;
 			npctalk "One who promises to fight with honor!";
-			sleep 3000;
+			sleep 1500;
 			npctalk "The self-proclaimed master of battle, Ordre!";
 			end;
 		case 16:
 			donpcevent instance_npcname("#Talkcontrol")+"::OnStart";
 			donpcevent instance_npcname("#FireworksControl")+"::OnStart";
 			npctalk "Suddenly, the incredibly powerful!";
-			sleep 3000;
+			sleep 1500;
 			npctalk "Super rookie of this year's tournament~! "+'charname$+"!";
-			sleep 3000;
+			sleep 1500;
 			npctalk "And "+('sex ? "his" : "her")+" opponent~!!!";
-			sleep 500;
+			sleep 250;
 			donpcevent instance_npcname("Blut Hase#1")+"::OnActivate";
-			sleep 3000;
+			sleep 1500;
 			npctalk "Cute on the outside, but cruely destroys enemies!";
-			sleep 3000;
+			sleep 1500;
 			npctalk "Bloody Rabbit Ears~!! Blut Hase!";
 			end;
 		case 17:
 			donpcevent instance_npcname("#Talkcontrol")+"::OnStart";
 			donpcevent instance_npcname("#FireworksControl")+"::OnStart";
 			npctalk "Onwards to the 7th Round!";
-			sleep 3000;
+			sleep 1500;
 			npctalk "Welcome back "+'charname$+"!";
-			sleep 3000;
+			sleep 1500;
 			npctalk "And "+('sex ? "his" : "her")+" opponent~!!!";
-			sleep 2000;
+			sleep 250;
 			donpcevent instance_npcname("#Talkcontrol")+"::OnRndtalk";
 			npctalk "A competitor more evil than any we've seen before!";
-			sleep 500;
+			sleep 250;
 			donpcevent instance_npcname("Kuro Akuma#1")+"::OnActivate";
-			sleep 3000;
+			sleep 1500;
 			npctalk "The Devil's Tooth, Kuro Akuma!";
 			donpcevent instance_npcname("#Talkcontrol")+"::OnRndtalk";
 			end;
@@ -1689,21 +1691,21 @@ OnStart:
 			donpcevent instance_npcname("#Talkcontrol")+"::OnStart";
 			donpcevent instance_npcname("#FireworksControl")+"::OnStart";
 			npctalk "Starting up Round 8 for Group A!";
-			sleep 3000;
+			sleep 1500;
 			npctalk "The darling of this year's tournament!";
-			sleep 3000;
+			sleep 1500;
 			npctalk "Rune-Midgarts newest star, "+'charname$+"!";
-			sleep 2000;
+			sleep 250;
 			npctalk "And "+('sex ? "his" : "her")+" opponent~!!!";
-			sleep 2000;
+			sleep 250;
 			npctalk "They look very strong!", instance_npcname("Payon Spectator#a1");
 			sleep 250;
 			donpcevent instance_npcname("Ifodes#1")+"::OnActivate";
 			sleep 250;
 			npctalk "Looks good and strong ah!", instance_npcname("Veins Spectator#a1");
-			sleep 1000;
+			sleep 250;
 			npctalk "Slow as a turtle, fast as a hare!";
-			sleep 3000;
+			sleep 1500;
 			npctalk "The maniac of Rune-Midgarts! Ifodes!";
 			donpcevent instance_npcname("#Talkcontrol")+"::OnRndtalk";
 			end;
@@ -1711,21 +1713,21 @@ OnStart:
 			donpcevent instance_npcname("#Talkcontrol")+"::OnStart";
 			donpcevent instance_npcname("#FireworksControl")+"::OnStart";
 			npctalk "We have now entered the 9th Round of this competition!";
-			sleep 3000;
+			sleep 1500;
 			npctalk "Nobody can stop "+('sex ? "him" : "her")+"!";
-			sleep 3000;
+			sleep 1500;
 			npctalk ""+('sex ? "His" : "Her")+" strength has been recognized by the people! "+'charname$;
-			sleep 2000;
+			sleep 250;
 			npctalk "And "+('sex ? "his" : "her")+" opponent~!!!";
-			sleep 500;
+			sleep 250;
 			donpcevent instance_npcname("Licheniyes#1")+"::OnActivate";
-			sleep 500;
+			sleep 250;
 			donpcevent instance_npcname("#Talkcontrol")+"::OnRndtalk";
-			sleep 1000;
+			sleep 250;
 			npctalk "She might look like a nice lady, but you better watch out!";
-			sleep 3000;
+			sleep 1500;
 			npctalk "She'll attack you with the swiftness of a snake!";
-			sleep 3000;
+			sleep 1500;
 			npctalk "The Lady of Death! Licheniyes!";
 			donpcevent instance_npcname("#Talkcontrol")+"::OnRndtalk";
 			end;
@@ -1733,21 +1735,21 @@ OnStart:
 			donpcevent instance_npcname("#Talkcontrol")+"::OnStart";
 			donpcevent instance_npcname("#FireworksControl")+"::OnStart";
 			npctalk "Let us begin the 10th Round of Group A!";
-			sleep 3000;
+			sleep 1500;
 			npctalk "In this corner, back to entertain us again!";
-			sleep 3000;
+			sleep 1500;
 			npctalk "None other than the incredible "+'charname$+"!";
-			sleep 1000;
+			sleep 250;
 			donpcevent instance_npcname("#Talkcontrol")+"::OnRndtalk";
-			sleep 1000;
+			sleep 250;
 			npctalk "And "+('sex ? "his" : "her")+" opponent~!!!";
-			sleep 1000;
+			sleep 250;
 			npctalk "Seductress of Rune-Midgarts...";
-			sleep 500;
+			sleep 250;
 			donpcevent instance_npcname("Odoric#1")+"::OnActivate";
-			sleep 500;
+			sleep 250;
 			npctalk "You can't look away from her curves!";
-			sleep 3000;
+			sleep 1500;
 			npctalk "The Songstress of Death! Odoric!";
 			donpcevent instance_npcname("#Talkcontrol")+"::OnRndtalk";
 			end;
@@ -1755,21 +1757,21 @@ OnStart:
 			donpcevent instance_npcname("#Talkcontrol")+"::OnStart";
 			donpcevent instance_npcname("#FireworksControl")+"::OnStart";
 			npctalk "We're getting closer to the end, next up is Quarter-Finals!";
-			sleep 3000;
+			sleep 1500;
 			npctalk "The winning never ends with "+'charname$+"!";
-			sleep 2000;
+			sleep 250;
 			donpcevent instance_npcname("#Talkcontrol")+"::OnRndtalk";
-			sleep 1000;
+			sleep 250;
 			npctalk "And "+('sex ? "his" : "her")+" opponent~!!!";
-			sleep 500;
+			sleep 250;
 			donpcevent instance_npcname("Ju#1")+"::OnActivate";
 			sleep 250;
 			npctalk "I can smell blood...",instance_npcname("Loki#a2");
-			sleep 1000;
+			sleep 250;
 			npctalk "Oh... A fierce competitor, is not it?",instance_npcname("Iris#a2");
-			sleep 500;
+			sleep 250;
 			npctalk "Hidden behind a shroud of mystery...";
-			sleep 3000;
+			sleep 1500;
 			npctalk "Master of power and speed! Ju!";
 			donpcevent instance_npcname("#Talkcontrol")+"::OnRndtalk";
 			end;
@@ -1777,27 +1779,27 @@ OnStart:
 			donpcevent instance_npcname("#Talkcontrol")+"::OnStart";
 			donpcevent instance_npcname("#FireworksControl")+"::OnStart";
 			npctalk "We are now at the Semi-Finals of this competition, this match will decide the winner for Group A!";
-			sleep 3000;
+			sleep 1500;
 			npctalk "Winning against all odds, Group A's Dark Horse, "+'charname$+"!";
-			sleep 3000;
+			sleep 1500;
 			npctalk "And "+('sex ? "his" : "her")+" opponent~!!!";
 			if ('half) {
-				sleep 500;
+				sleep 250;
 				donpcevent instance_npcname("Dwigh#1")+"::OnActivate";
 				sleep 1500;
 				npctalk "Chief Professor of the Mage Academy, loved by her many disciples!";
-				sleep 1000;
+				sleep 250;
 				donpcevent instance_npcname("#Talkcontrol")+"::OnRndtalk";
-				sleep 2000;
+				sleep 250;
 				npctalk "Commander of battle and wits! Dwigh!";
 			}	else {
-				sleep 2000;
+				sleep 250;
 				npctalk "An Alchemist from Aldebaran, the city of science!";
-				sleep 500;
+				sleep 250;
 				donpcevent instance_npcname("Fay Kanavian#1")+"::OnActivate";
-				sleep 500;
+				sleep 250;
 				donpcevent instance_npcname("#Talkcontrol")+"::OnRndtalk";
-				sleep 2000;
+				sleep 250;
 				npctalk "Fay Kanavian and her homunculus, Alphonse!";
 				}
 			end;
@@ -1805,27 +1807,27 @@ OnStart:
 			donpcevent instance_npcname("#Talkcontrol")+"::OnStart";
 			donpcevent instance_npcname("#FireworksControl")+"::OnStart";
 			npctalk "A previously anonymous fighter";
-			sleep 3000;
+			sleep 1500;
 			npctalk "Despite this, unmatched in Group A!";
-			sleep 2000;
+			sleep 250;
 			npctalk "The most talked about competitor this year!";
-			sleep 3000;
+			sleep 1500;
 			npctalk "The unrivaled! "+'charname$+"!";
-			sleep 3000;
+			sleep 1500;
 			npctalk "Aha, this match looks like it will be interesting.",instance_npcname("Loki#a2");
-			sleep 3000;
+			sleep 1500;
 			npctalk "And the champion of Group B~!!!";
 			sleep 1500;
 			donpcevent instance_npcname("Fenrir#f")+"::OnActivate";
 			sleep 1500;
 			npctalk "A Warlock with incredible powers!";
-			sleep 3000;
+			sleep 1500;
 			npctalk "A competitor who swept through Group B like a hurricane!";
-			sleep 1000;
+			sleep 250;
 			npctalk "Oh! This match is going to be exciting!",instance_npcname("Chaos#a2");
-			sleep 2000;
+			sleep 250;
 			npctalk "Is there any Wizard stronger in all of Rune-Midgarts?!";
-			sleep 3000;
+			sleep 1500;
 			npctalk "The Blue Wizard! Fenris Fenrir~!!";
 			end;
 	}
@@ -1840,11 +1842,11 @@ OnTalk2:
 	}
 	else {
 		npctalk "The "+callfunc("F_GetNumSuffix",('GMT_1QUE-10))+" match of Group A is finished~! Congratulations "+'charname$+"!"; 
-		sleep 6000;
-		npctalk "You may take some time to heal your wounds.";
-		sleep 6000;
-		npctalk "Please speak with the Tournament Guide when you are ready for the next round.";
 		sleep 3000;
+		npctalk "You may take some time to heal your wounds.";
+		sleep 3000;
+		npctalk "Please speak with the Tournament Guide when you are ready for the next round.";
+		sleep 750;
 	}
 	switch ('GMT_1QUE) {
 	case 11:
@@ -1858,31 +1860,31 @@ OnTalk2:
 		break;
 	case 13:
 		npctalk "Fenris Fenrir has 3 consecutive victories in Group B~!";
-		sleep 3000;
+		sleep 1500;
 		break;
 	case 16:
 		npctalk "Okay~! There is news from Group B!";
-		sleep 3000;
+		sleep 1500;
 		npctalk "While all of the other competitors are doing their best,";
-		sleep 3000;
+		sleep 1500;
 		npctalk "Fenrir is taking the tournament by storm, and has won 5 consecutive matches!";
-		sleep 1000;
+		sleep 250;
 		break;
 	case 19:
 		npctalk "This is getting exciting! More news from Group B!";
-		sleep 3000;
+		sleep 1500;
 		npctalk "Fenris Fenrir is continuing her reign of dominance~! Those in Group A better beware!";
-		sleep 2000;
+		sleep 250;
 		break;
 	case 22:
 		npctalk "Group B has completed their 12th match as well~!";
-		sleep 3000;
+		sleep 1500;
 		npctalk "Have you heard of Tetra Vortex? There is a competitor using this mysterious spell!";
-		sleep 3000;
+		sleep 1500;
 		npctalk "Her name is none other than Fenris Fenrir!";
-		sleep 3000;
+		sleep 1500;
 		npctalk "The final match of this tournament is bound to be challenging!";
-		sleep 1000;
+		sleep 250;
 		break;
 	}
 	hideoffnpc instance_npcname("Tournament Guide#gefMT");
@@ -1895,9 +1897,9 @@ OnTalk3:
 	end;
 OnTalk4:
 	npctalk "The Final Match of this year's Geffen Magic Tournament is finished~!";
-	sleep 3000;
+	sleep 1500;
 	npctalk "Everyone! Thank you for supporting the Geffen Magic Tournament~!!";
-	sleep 3000;
+	sleep 1500;
 	npctalk "This year's Geffen Magic Tournament Champion is "+'charname$+"~!!";
 	donpcevent instance_npcname("#FireworksControl")+"::OnWin";
 	end;
@@ -1934,8 +1936,8 @@ OnStart:
 	.@label$ = instance_npcname("#GMTcontroller")+"::OnMobDead";
 	'timeout = 180;
 	if ('GMT_1QUE == 23) 'timeout = 300;
-	mapannounce .@map$, "<Magic Tournament Broadcast>: Time limit is " + ('timeout / 60) + " minutes.",bc_blue; sleep 2000;
-	mapannounce .@map$, "<Magic Tournament Broadcast>: Ready... Set...",bc_blue; sleep 2000;
+	mapannounce .@map$, "<Magic Tournament Broadcast>: Time limit is " + ('timeout / 60) + " minutes.",bc_blue; sleep 250;
+	mapannounce .@map$, "<Magic Tournament Broadcast>: Ready... Set...",bc_blue; sleep 250;
 	mapannounce .@map$, "<Magic Tournament Broadcast>: Fight!",bc_blue;
 	
 	donpcevent instance_npcname("#FireworksControl")+"::OnTurn";
@@ -2102,7 +2104,7 @@ OnTimeout2:
 		'HomID = 0;
 	}
 	
-	sleep 3000;
+	sleep 1500;
 	hideoffnpc instance_npcname("Geffen Academy Master");
 //	npctalk "The votes are in... And the winner is...",instance_npcname("Geffen Academy Master");
 //	sleep 1500;
@@ -2213,7 +2215,7 @@ OnTimeout2:
 	npctalk "Give a warm round of applause to the losing competitor.", "Geffen Academy Master";
 	sleep 1500;
 	npctalk "Defeated competitors please leave the arena!", "Geffen Academy Master";
-	sleep 3000;
+	sleep 1500;
 	movenpc instance_npcname("#gefmagic_warp02"),120,213;
 	movenpc instance_npcname("#invisGMTquests"),120,61;
 	
@@ -2252,7 +2254,7 @@ OnTimer10000:
 		getunitdata 'HomID,.@homdata;
 			if (distance(.@bossdata[6],.@bossdata[7],.@homdata[6],.@homdata[7]) > 10) {
 				unittalk 'BossID,"Alphonse, come!";
-				sleep 500;
+				sleep 250;
 				if (unitexists('HomID))
 					unitwarp 'HomID, instance_mapname("1@ge_st"),.@bossdata[6],.@bossdata[7];
 			}
@@ -2331,15 +2333,15 @@ OnWin:
 	for ( .@i = 1; .@i <= 5; .@i++ ) {
 		specialeffect EF_LORD, AREA, instance_npcname("#fireworks_f" + .@i);
 	}
-	sleep 3000;
+	sleep 1500;
 	for ( .@i = 1; .@i <= 5; .@i++ ) {
 		specialeffect EF_SIGHTRASHER, AREA, instance_npcname("#fireworks_f" + .@i);
 	}
-	sleep 500;
+	sleep 250;
 	for ( .@i = 1; .@i <= 5; .@i++ ){
 		specialeffect EF_STORMGUST, AREA, instance_npcname("#fireworks_f" + .@i);
 	}
-	sleep 3000;
+	sleep 1500;
 	for ( .@i = 1; .@i <= 5; .@i++ ) {
 		specialeffect EF_VIOLENTGALE, AREA, instance_npcname("#fireworks_f" + .@i);
 	}
@@ -2493,35 +2495,35 @@ end;
 OnActivate:
 	enablenpc instance_npcname("Arhi#1");
 	npctalk "The first match always makes me nervous~!";
-	sleep 2000;
+	sleep 250;
 	npctalk "Can I win?";
-	sleep 3000;
+	sleep 1500;
 	npctalk "I guess it will be okay, this "+('sex ? "guy" : "girl")+" seems weak.";
-	sleep 3000;
+	sleep 1500;
 	npctalk "Okay, just relax~!";
-	sleep 3000;
+	sleep 1500;
 	npctalk "Ah... Finally, It's going to start soon!";
-	sleep 3000;
+	sleep 1500;
 	npctalk "Just relax~!";
-	sleep 2000;
+	sleep 250;
 	donpcevent instance_npcname("#GMTcontroller")+"::OnStart";
 	end;
 
 OnDefeat:
 	hideoffnpc instance_npcname("Arhi#1");
-	sleep 1000;
+	sleep 250;
 	npctalk "Ah... I lost the first match...";
-	sleep 3000;
+	sleep 1500;
 	npctalk "How can I face my family...";
-	sleep 3000;
+	sleep 1500;
 	npctalk "So shameful...";
-	sleep 3000;
+	sleep 1500;
 	npctalk "Ah... My friends will laugh at me...";
-	sleep 3000;
+	sleep 1500;
 	npctalk "Sob...";
-	sleep 1000;	
+	sleep 250;	
 	hideonnpc instance_npcname("Arhi#1");
-	sleep 1000;
+	sleep 250;
 	movenpc instance_npcname("Arhi#z1_0et"),145,125;
 	hideoffnpc instance_npcname("Tournament Guide#gefMT");
 	disablenpc instance_npcname("Arhi#1");
@@ -2529,15 +2531,15 @@ OnDefeat:
 	
 OnVictory:
 	hideoffnpc instance_npcname("Arhi#1");
-	sleep 1000;
+	sleep 250;
 	npctalk "I knew I would win!";
-	sleep 3000;
+	sleep 1500;
 	npctalk "I'm so relieved!";
-	sleep 3000;
+	sleep 1500;
 	npctalk "I was able to beat a weak competitor.";
-	sleep 3000;
+	sleep 1500;
 	npctalk "Yahoo!";
-	sleep 5000;
+	sleep 2500;
 	instance_warpall instance_mapname("1@gef"),120,61, instance_id();
 	end;
 	
@@ -2548,53 +2550,53 @@ end;
 
 OnActivate:
 	npctalk "Second round huh...";
-	sleep 2000;
+	sleep 250;
 	npctalk "You look like a weak competitor.";
-	sleep 3000;
+	sleep 1500;
 	npctalk "I think I've got a good chance against you.";
-	sleep 3000;
+	sleep 1500;
 	npctalk "I wish the match would start already...";
-	sleep 3000;
+	sleep 1500;
 	npctalk "If I finish it quickly maybe I can go buy some cookies!";
-	sleep 3000;
+	sleep 1500;
 	npctalk "Okay then let's start!";
-	sleep 2000;
+	sleep 250;
 	npctalk "Boring...",instance_npcname("Loki#a2");
 	donpcevent instance_npcname("#GMTcontroller")+"::OnStart";
 	end;
 
 OnDefeat:
 	hideoffnpc instance_npcname("Dio Anemos#1");
-	sleep 1000;
+	sleep 250;
 	npctalk "Oh my god....";
-	sleep 2000;
+	sleep 250;
 	npctalk "I lost...";
-	sleep 2000;
+	sleep 250;
 	npctalk "Ah... and to this random loser too...";
-	sleep 3000;
+	sleep 1500;
 	npctalk "My skills have gotten worse...";
-	sleep 3000;
+	sleep 1500;
 	npctalk "This is so sad...";
-	sleep 2000;
+	sleep 250;
 	npctalk "Ahhhh! Why?...";
-	sleep 1000;
+	sleep 250;
 	hideonnpc instance_npcname("Dio Anemos#1");
-	sleep 1000;
+	sleep 250;
 	movenpc instance_npcname("Dio Anemos#z1_0et"),91,117;
 	disablenpc instance_npcname("Dio Anemos#1");
 	end;
 	
 OnVictory:
 	hideoffnpc instance_npcname("Dio Anemos#1");
-	sleep 1000;
+	sleep 250;
 	npctalk "Phew... That was easy.";
-	sleep 3000;
+	sleep 1500;
 	npctalk "You should go home and ask your mommy to feed you!";
-	sleep 3000;
+	sleep 1500;
 	npctalk "Ha ha ha ha~!!!!";
-	sleep 3000;
+	sleep 1500;
 	npctalk "Time to get ready for my next match.";
-	sleep 5000;
+	sleep 2500;
 	instance_warpall instance_mapname("1@gef"),120,61, instance_id();
 	end;
 	
@@ -2605,51 +2607,51 @@ end;
 
 OnActivate:
 	npctalk "Hmmm, you're that kid from before...";
-	sleep 3000;
+	sleep 1500;
 	npctalk "I've got a lesson to teach you!";
-	sleep 3000;
+	sleep 1500;
 	npctalk "It's my turn to beat you!";
-	sleep 3000;
+	sleep 1500;
 	npctalk "First I'll take care of you, and then I'll go back for that Kafra...";
-	sleep 3000;
+	sleep 1500;
 	npctalk "Watcha got punk?!";
-	sleep 3000;
+	sleep 1500;
 	npctalk "Prepare to die!";
-	sleep 2000;
+	sleep 250;
 	donpcevent instance_npcname("#GMTcontroller")+"::OnStart";
 	end;
 
 OnDefeat:
 	hideoffnpc instance_npcname("Geffen Gangster#n1");
-	sleep 1000;
+	sleep 250;
 	npctalk "I was defeated! This doesn't make any sense!";
-	sleep 2000;
+	sleep 250;
 	npctalk "I can't believe I lost to you!";
-	sleep 3000;
+	sleep 1500;
 	npctalk "To be embarrassed in front of the Kafra with the luscious legs...!";
-	sleep 3000;
+	sleep 1500;
 	npctalk "Sob.. This can't be happening!";
-	sleep 2000;
+	sleep 250;
 	npctalk "I shouldn't have to go through this depression alone!";
-	sleep 2000;
+	sleep 250;
 	npctalk "I'll have to go to see the Kafra gal' in Prontera hu-hu-hu...";
-	sleep 1000;
+	sleep 250;
 	hideonnpc instance_npcname("Geffen Gangster#n1");
-	sleep 1000;
+	sleep 250;
 	disablenpc instance_npcname("Geffen Gangster#n1");
 	end;
 	
 OnVictory:
 	hideoffnpc instance_npcname("Geffen Gangster#n1");
-	sleep 1000;
+	sleep 250;
 	npctalk "This is my real ability!";
-	sleep 3000;
+	sleep 1500;
 	npctalk "Hu hu... That... Kafra...!";
-	sleep 3000;
+	sleep 1500;
 	npctalk "I want to go back to my Kafra~!!";
-	sleep 3000;
+	sleep 1500;
 	npctalk "Hu hu hu hu hu...";
-	sleep 5000;
+	sleep 2500;
 	instance_warpall instance_mapname("1@gef"),120,61, instance_id();
 	end;
 }
@@ -2659,49 +2661,49 @@ end;
 
 OnActivate:
 	npctalk "Just you wait, you'll be immediately disabled!";
-	sleep 3000;
+	sleep 1500;
 	npctalk "I will beat you down today!";
-	sleep 3000;
+	sleep 1500;
 	npctalk "Give me your zeny!";
-	sleep 3000;
+	sleep 1500;
 	npctalk "I'll send you crying home!";
-	sleep 3000;
+	sleep 1500;
 	npctalk "I will make you experience my 20 years of bullying.";
-	sleep 3000;
+	sleep 1500;
 	npctalk "You're dead!";
-	sleep 2000;
+	sleep 250;
 	donpcevent instance_npcname("#GMTcontroller")+"::OnStart";
 	end;
 
 OnDefeat:
 	hideoffnpc instance_npcname("Geffen Bully#n1");
-	sleep 1000;
+	sleep 250;
 	npctalk "I can't believe you beat me...";
-	sleep 3000;
+	sleep 1500;
 	npctalk "It can't be!";
-	sleep 3000;
+	sleep 1500;
 	npctalk "This can't be! I only wanted to get more zeny!";
-	sleep 3000;
+	sleep 1500;
 	npctalk "Now I'll be the laughing stock of all of Geffen!";
-	sleep 3000;
+	sleep 1500;
 	npctalk "Ah! Ahhh!! It can't be!!!";
-	sleep 1000;
+	sleep 250;
 	hideonnpc instance_npcname("Geffen Bully#n1");
-	sleep 1000;
+	sleep 250;
 	disablenpc instance_npcname("Geffen Bully#n1");
 	end;
 	
 OnVictory:
 	hideoffnpc instance_npcname("Geffen Bully#n1");
-	sleep 1000;
+	sleep 250;
 	npctalk "You! How much zeny do you have left?";
-	sleep 3000;
+	sleep 1500;
 	npctalk "You messed with me once before!";
-	sleep 3000;
+	sleep 1500;
 	npctalk "And now I've left you speechless!";
-	sleep 3000;
+	sleep 1500;
 	npctalk "Never show your face in Geffen again!";
-	sleep 5000;
+	sleep 2500;
 	instance_warpall instance_mapname("1@gef"),120,61, instance_id();
 	end;
 	
@@ -2712,51 +2714,51 @@ end;
 
 OnActivate:
 	npctalk "There are so many people gathered here.";
-	sleep 3000;
+	sleep 1500;
 	npctalk "I thought there'd be something good to steal here";
-	sleep 3000;
+	sleep 1500;
 	npctalk "But I can't steal anything because of all the attention it'll cause.";
-	sleep 3000;
+	sleep 1500;
 	npctalk "Ah... This is no good...";
-	sleep 2000;
+	sleep 250;
 	npctalk "I guess I'll just participate in the tournament...";
-	sleep 2000;
+	sleep 250;
 	npctalk "Well~! Let's win anyway!";
-	sleep 2000;
+	sleep 250;
 	donpcevent instance_npcname("#GMTcontroller")+"::OnStart";
 	end;
 
 OnDefeat:
 	hideoffnpc instance_npcname("Geffen Shoplifter#n1");
-	sleep 1000;
+	sleep 250;
 	npctalk "Oh my god... I was defeated.";
-	sleep 2000;
+	sleep 250;
 	npctalk "I have been spending too much time stealing.";
-	sleep 2000;
+	sleep 250;
 	npctalk "My battle power has been reduced.";
-	sleep 3000;
+	sleep 1500;
 	npctalk "Ah... It can't be...";
-	sleep 2000;
+	sleep 250;
 	npctalk "I'll need to train more if I want to keep my position as Guild Leader...";
-	sleep 3000;
+	sleep 1500;
 	npctalk "Fine, I'm outta here!";
-	sleep 1000;
+	sleep 250;
 	hideonnpc instance_npcname("Geffen Shoplifter#n1");
-	sleep 1000;
+	sleep 250;
 	disablenpc instance_npcname("Geffen Shoplifter#n1");
 	end;
 	
 OnVictory:
 	hideoffnpc instance_npcname("Geffen Shoplifter#n1");
-	sleep 1000;
+	sleep 250;
 	npctalk "I know, I'm really good.";
-	sleep 3000;
+	sleep 1500;
 	npctalk "Okay! Time to keep winning~!!";
-	sleep 3000;
+	sleep 1500;
 	npctalk "I should take as many rewards as possible~!";
-	sleep 3000;
+	sleep 1500;
 	npctalk "You should go home~ Bye~!";
-	sleep 5000;
+	sleep 2500;
 	instance_warpall instance_mapname("1@gef"),120,61, instance_id();
 	end;
 }
@@ -2767,53 +2769,53 @@ end;
 OnActivate:
 	enablenpc instance_npcname("Faymont#1");
 	npctalk "Well would you look at that... this competitor seems...";
-	sleep 2000;
+	sleep 250;
 	npctalk "Like he's just gotten lucky up until now!";
-	sleep 3000;
+	sleep 1500;
 	npctalk "I really don't want to get my hands dirty.";
-	sleep 3000;
+	sleep 1500;
 	npctalk "I'll handle this in a sophisticated way...";
-	sleep 3000;
+	sleep 1500;
 	npctalk "Ahem... Looks like we're about to start now.";
-	sleep 3000;
+	sleep 1500;
 	npctalk "Maybe if I finish this quickly, I can buy that new headdress...";
 	npctalk "Come on!", instance_npcname("Prontera Spectator#a1");
-	sleep 2000;
+	sleep 250;
 	donpcevent instance_npcname("#GMTcontroller")+"::OnStart";
 	end;
 
 OnDefeat:
 	hideoffnpc instance_npcname("Faymont#1");
-	sleep 1000;
+	sleep 250;
 	npctalk "How could... How could I lose?!...";
-	sleep 2000;
+	sleep 250;
 	npctalk "And to the one "+('sex ? "guy" : "girl")+" with no taste...";
-	sleep 2000;
+	sleep 250;
 	npctalk "How shameful...";
-	sleep 2000;
+	sleep 250;
 	npctalk "My fans will be disappointed at me for losing...";
-	sleep 3000;
+	sleep 1500;
 	npctalk "Ahh.... What's the quickest way out of here?";
-	sleep 3000;
+	sleep 1500;
 	npctalk "I can't show my face around here any longer...";
-	sleep 1000;
+	sleep 250;
 	hideonnpc instance_npcname("Faymont#1");
-	sleep 1000;
+	sleep 250;
 	movenpc instance_npcname("Faymont#z1_0et"),53,90;
 	disablenpc instance_npcname("Faymont#1");
 	end;
 	
 OnVictory:
 	hideoffnpc instance_npcname("Faymont#1");
-	sleep 1000;
+	sleep 250;
 	npctalk "Can you see the difference between you and me? Noble and shallow.";
-	sleep 3000;
+	sleep 1500;
 	npctalk "This tournament is pointless.";
-	sleep 3000;
+	sleep 1500;
 	npctalk "What kind of shallow man will I have to fight with next?";
-	sleep 3000;
+	sleep 1500;
 	npctalk "No matter, I'll just prepare for the next match.";
-	sleep 5000;
+	sleep 2500;
 	instance_warpall instance_mapname("1@gef"),120,61, instance_id();
 	end;
 }
@@ -2824,55 +2826,55 @@ end;
 OnActivate:
 	enablenpc instance_npcname("Ordre#1");
 	npctalk "One! Two! One! Two!";
-	sleep 2000;
+	sleep 250;
 	npctalk "Let's climb the ladder one step at a time!";
-	sleep 2000;
+	sleep 250;
 	npctalk "I've been training so hard!";
-	sleep 3000;
+	sleep 1500;
 	npctalk "I'm not about to give up now!";
-	sleep 3000;
+	sleep 1500;
 	npctalk "I can't lose after coming so far";
-	sleep 3000;
+	sleep 1500;
 	npctalk "Now~! Let's do our best for those in the audience!";
-	sleep 3000;
+	sleep 1500;
 	npctalk "Shall we begin?";
 	npctalk "What? Is this really the level of competition?",instance_npcname("Chaos#a2");
-	sleep 2000;
+	sleep 250;
 	donpcevent instance_npcname("#GMTcontroller")+"::OnStart";
 	end;
 
 OnDefeat:
 	hideoffnpc instance_npcname("Ordre#1");
-	sleep 1000;
+	sleep 250;
 	npctalk "Defeated...";
-	sleep 2000;
+	sleep 250;
 	npctalk "I need more practice...";
-	sleep 2000;
+	sleep 250;
 	npctalk "I need more training...";
-	sleep 3000;
+	sleep 1500;
 	npctalk "I'll train twice as hard as before!";
-	sleep 3000;
+	sleep 1500;
 	npctalk "I must start over.";
-	sleep 2000;
+	sleep 250;
 	npctalk "Let's go.";
-	sleep 1000;
+	sleep 250;
 	hideonnpc instance_npcname("Ordre#1");
-	sleep 1000;
+	sleep 250;
 	movenpc instance_npcname("Ordre#z1_0et"),85,68;
 	disablenpc instance_npcname("Ordre#1");
 	end;
 	
 OnVictory:
 	hideoffnpc instance_npcname("Ordre#1");
-	sleep 1000;
+	sleep 250;
 	npctalk "I won!";
-	sleep 3000;
+	sleep 1500;
 	npctalk "As long as you try... you can get what you want!";
-	sleep 3000;
+	sleep 1500;
 	npctalk "Let's show respect to this competition!";
-	sleep 3000;
+	sleep 1500;
 	npctalk "I'm ready for the next match!!";
-	sleep 5000;
+	sleep 2500;
 	instance_warpall instance_mapname("1@gef"),120,61, instance_id();
 	end;
 }
@@ -2883,56 +2885,56 @@ end;
 
 OnActivate:
 	npctalk "You've gotten this far.";
-	sleep 2000;
+	sleep 250;
 	npctalk "I imagine by now the rest of the competitors are quite strong";
-	sleep 3000;
+	sleep 1500;
 	npctalk "But I did not build my reputation for nothing!";
-	sleep 3000;
+	sleep 1500;
 	npctalk "Fear my Bunny Band!";
-	sleep 3000;
+	sleep 1500;
 	npctalk "You are but an obstacle in my way!";
-	sleep 1000;
+	sleep 250;
 	donpcevent instance_npcname("#Talkcontrol")+"::OnRndtalk";
-	sleep 2000;
+	sleep 250;
 	npctalk "You will be sacrificed on my path to victory!";
-	sleep 1000;
+	sleep 250;
 	donpcevent instance_npcname("#Talkcontrol")+"::OnRndtalk";
-	sleep 1000;
+	sleep 250;
 	donpcevent instance_npcname("#GMTcontroller")+"::OnStart";
 	end;
 
 OnDefeat:
 	hideoffnpc instance_npcname("Blut Hase#1");
-	sleep 1000;
+	sleep 250;
 	npctalk "I will not lose!";
-	sleep 1000;
+	sleep 250;
 	npctalk "My reputation... My popularity...";
-	sleep 3000;
+	sleep 1500;
 	npctalk "I will lose them both...";
-	sleep 3000;
+	sleep 1500;
 	npctalk "I cannot accept this result!";
-	sleep 3000;
+	sleep 1500;
 	npctalk "I will regain my reputation!";
-	sleep 2000;
+	sleep 250;
 	npctalk "Next time I will be the winner!";
-	sleep 1000;
+	sleep 250;
 	hideonnpc instance_npcname("Blut Hase#1");
-	sleep 1000;
+	sleep 250;
 	movenpc instance_npcname("Blut Hase#z1_0et"),111,62;
 	disablenpc instance_npcname("Blut Hase#1");
 	end;
 	
 OnVictory:
 	hideoffnpc instance_npcname("Blut Hase#1");
-	sleep 1000;
+	sleep 250;
 	npctalk "In terms of reputation or popularity...";
-	sleep 3000;
+	sleep 1500;
 	npctalk "It was impossible for me to lose!";
-	sleep 3000;
+	sleep 1500;
 	npctalk "I will be known as Ultra Rabbit's Blood instead of Rabbit's Bloody Ear now!";
-	sleep 3000;
+	sleep 1500;
 	npctalk "Ha ha ha ha ha~!!";
-	sleep 5000;
+	sleep 2500;
 	instance_warpall instance_mapname("1@gef"),120,61, instance_id();
 	end;
 }
@@ -2941,52 +2943,52 @@ OnVictory:
 end;
 OnActivate:
 	npctalk "Finally the 7th game has started ~!";
-	sleep 2000;
+	sleep 250;
 	npctalk "You've never met anyone as evil as me ~!";
-	sleep 3000;
+	sleep 1500;
 	npctalk "You are lucky~!";
-	sleep 3000;
+	sleep 1500;
 	npctalk "This will be a good experience for you~!";
-	sleep 3000;
+	sleep 1500;
 	npctalk "Nobody who's faced me has ever survived~!";
-	sleep 3000;
+	sleep 1500;
 	npctalk "I will destroy you if I must~!";
-	sleep 1000;
+	sleep 250;
 	donpcevent instance_npcname("#Talkcontrol")+"::OnRndtalk";
-	sleep 1000;
+	sleep 250;
 	donpcevent instance_npcname("#GMTcontroller")+"::OnStart";
 	end;
 
 OnDefeat:
 	hideoffnpc instance_npcname("Kuro Akuma#1");
-	sleep 1000;
+	sleep 250;
 	npctalk "Oh my god...";
-	sleep 3000;
+	sleep 1500;
 	npctalk "I am The Devil's Tooth...";
-	sleep 2000;
+	sleep 250;
 	npctalk "And I have lost this match...";
-	sleep 3000;
+	sleep 1500;
 	npctalk "Yach, yikes, ah, ah, ah! Yikes ah, ah, ah!!";
-	sleep 3000;
+	sleep 1500;
 	npctalk "I can't lose! I'll have my revenge!";
-	sleep 2000;
+	sleep 250;
 	hideonnpc instance_npcname("Kuro Akuma#1");
-	sleep 1000;
+	sleep 250;
 	movenpc instance_npcname("Kuro Akuma#z1_0et"),104,42;
 	disablenpc instance_npcname("Kuro Akuma#1");
 	end;
 	
 OnVictory:
 	hideoffnpc instance_npcname("Kuro Akuma#1");
-	sleep 1000;
+	sleep 250;
 	npctalk "How is it~! My Power~!";
-	sleep 3000;
+	sleep 1500;
 	npctalk "I took pity on you and decided not to send you to hell~!";
-	sleep 3000;
+	sleep 1500;
 	npctalk "You should appreciate that!";
-	sleep 3000;
+	sleep 1500;
 	npctalk "Now, I shall prepare for my next match~!";
-	sleep 5000;
+	sleep 2500;
 	instance_warpall instance_mapname("1@gef"),120,61, instance_id();
 	end;
 	
@@ -2996,50 +2998,50 @@ OnVictory:
 end;
 OnActivate:
 	npctalk "At long last, the 8th game has started.";
-	sleep 3000;
+	sleep 1500;
 	npctalk "No one can pierce my defenses!";
-	sleep 3000;
+	sleep 1500;
 	npctalk "But I can surely get past yours.";
-	sleep 2000;
+	sleep 250;
 	npctalk "Therefore, you stand no chance!";
-	sleep 2000;
+	sleep 250;
 	npctalk "Once the match has started, your laughter will turn into tears!";
-	sleep 2000;
+	sleep 250;
 	npctalk "Shall we start?";
-	sleep 1000;
+	sleep 250;
 	donpcevent instance_npcname("#Talkcontrol")+"::OnRndtalk";
-	sleep 1000;
+	sleep 250;
 	donpcevent instance_npcname("#GMTcontroller")+"::OnStart";
 	end;
 
 OnDefeat:
 	hideoffnpc instance_npcname("Ifodes#1");
-	sleep 1000;
+	sleep 250;
 	npctalk "I will not lose this tournament!";
-	sleep 3000;
+	sleep 1500;
 	npctalk "This is nonsense.";
-	sleep 2000;
+	sleep 250;
 	npctalk "How could this happen?";
-	sleep 3000;
+	sleep 1500;
 	npctalk "I can't understand!";
-	sleep 3000;
+	sleep 1500;
 	npctalk "Arrgggh!";
-	sleep 2000;
+	sleep 250;
 	hideonnpc instance_npcname("Ifodes#1");
-	sleep 1000;
+	sleep 250;
 	movenpc instance_npcname("Ifodes#z1_0et"),115,66;
 	disablenpc instance_npcname("Ifodes#1");
 	end;
 	
 OnVictory:
 	hideoffnpc instance_npcname("Ifodes#1");
-	sleep 1000;
+	sleep 250;
 	npctalk "You can't penetrate my defense!";
-	sleep 3000;
+	sleep 1500;
 	npctalk "You can't even protect yourself from my powerful attacks!";
-	sleep 3000;
+	sleep 1500;
 	npctalk "Wahahaha~!!";
-	sleep 5000;
+	sleep 2500;
 	instance_warpall instance_mapname("1@gef"),120,61, instance_id();
 	end;
 	
@@ -3049,53 +3051,53 @@ OnVictory:
 end;
 OnActivate:
 	npctalk "Ho ho ho~!!";
-	sleep 3000;
+	sleep 1500;
 	npctalk "The competitor of the 9th match looks scary~!";
-	sleep 3000;
+	sleep 1500;
 	npctalk "You don't scare me though~!";
-	sleep 2000;
+	sleep 250;
 	npctalk "I'm a lady~!";
-	sleep 2000;
+	sleep 250;
 	npctalk "But once this match starts...!";
-	sleep 2000;
+	sleep 250;
 	npctalk "*Giggling*... I will bite you!";
-	sleep 1000;
+	sleep 250;
 	npctalk "good horror players ...", instance_npcname("Payon Spectator#a1");
-	sleep 1000;
+	sleep 250;
 	npctalk "Do not be afraid ah, dark horse contestant!", instance_npcname("Prontera Spectator#a1");
 	donpcevent instance_npcname("#GMTcontroller")+"::OnStart";
 	end;
 
 OnDefeat:
 	hideoffnpc instance_npcname("Licheniyes#1");
-	sleep 1000;
+	sleep 250;
 	npctalk "You try to beat me with cruelty, a lady like me...";
-	sleep 3000;
+	sleep 1500;
 	npctalk "I am very sad...";
-	sleep 2000;
+	sleep 250;
 	npctalk "Sob...";
-	sleep 3000;
+	sleep 1500;
 	npctalk "But, next time we meet...";
-	sleep 3000;
+	sleep 1500;
 	npctalk "I will destroy you with little effort!";
-	sleep 1000;
+	sleep 250;
 	hideonnpc instance_npcname("Licheniyes#1");
-	sleep 1000;
+	sleep 250;
 	movenpc instance_npcname("Licheniyes#z1_0et"),137,53;
 	disablenpc instance_npcname("Licheniyes#1");
 	end;
 	
 OnVictory:
 	hideoffnpc instance_npcname("Licheniyes#1");
-	sleep 1000;
+	sleep 250;
 	npctalk "Oh ho ho ho~~! I knew I would win~!";
-	sleep 3000;
+	sleep 1500;
 	npctalk "Oh my! Oh my! I am very sorry~!";
-	sleep 3000;
+	sleep 1500;
 	npctalk "Ah, Ah~ I need to prepare next match!";
-	sleep 3000;
+	sleep 1500;
 	npctalk "I'm so giddy to find out who I'm up against next!~";
-	sleep 5000;
+	sleep 2500;
 	instance_warpall instance_mapname("1@gef"),120,61, instance_id();
 	end;
 	
@@ -3105,54 +3107,54 @@ OnVictory:
 end;
 OnActivate:
 	npctalk "Lu lu~ What a fun tournament!";
-	sleep 3000;
+	sleep 1500;
 	npctalk "Dance~ Dance~ Bewitching dance~!";
-	sleep 3000;
+	sleep 1500;
 	npctalk "Everyone is mesmerized by my magical dance!";
-	sleep 3000;
+	sleep 1500;
 	npctalk "You will be captured by my charm~!";
-	sleep 2000;
+	sleep 250;
 	npctalk "Now, feast on my magical dance!";
-	sleep 2000;
+	sleep 250;
 	npctalk "Lah, Lah, Lah, Lah~~!";
-	sleep 1000;
+	sleep 250;
 	npctalk "How beautiful!", instance_npcname("Veins Spectator#a1");
-	sleep 1000;
+	sleep 250;
 	donpcevent instance_npcname("#GMTcontroller")+"::OnStart";
 	end;
 
 OnDefeat:
 	hideoffnpc instance_npcname("Odoric#1");
-	sleep 1000;
+	sleep 250;
 	npctalk "Sob...";
-	sleep 3000;
+	sleep 1500;
 	npctalk "I lost, even though I did my best...";
-	sleep 2000;
+	sleep 250;
 	npctalk "My charming poses...";
-	sleep 3000;
+	sleep 1500;
 	npctalk "They didn't work... Sob...";
-	sleep 3000;
+	sleep 1500;
 	npctalk "I'm so sad that I lost here...";
-	sleep 2000;
+	sleep 250;
 	npctalk "I have to leave~!";
-	sleep 1000;
+	sleep 250;
 	hideonnpc instance_npcname("Odoric#1");
-	sleep 1000;
+	sleep 250;
 	movenpc instance_npcname("Odoric#z1_0et"),158,63;
 	disablenpc instance_npcname("Odoric#1");
 	end;
 	
 OnVictory:
 	hideoffnpc instance_npcname("Odoric#1");
-	sleep 1000;
+	sleep 250;
 	npctalk "Even you... Against my fascinating dance moves...";
-	sleep 3000;
+	sleep 1500;
 	npctalk "You're nothing special~!!";
-	sleep 3000;
+	sleep 1500;
 	npctalk "You did a good job getting to this point~!!";
-	sleep 3000;
+	sleep 1500;
 	npctalk "I need to get ready for my next match now~";
-	sleep 5000;
+	sleep 2500;
 	instance_warpall instance_mapname("1@gef"),120,61, instance_id();
 	end;
 	
@@ -3162,53 +3164,53 @@ OnVictory:
 end;
 OnActivate:
 	npctalk "Another match has started...";
-	sleep 3000;
+	sleep 1500;
 	npctalk "A real battle is a serious matter...";
-	sleep 3000;
+	sleep 1500;
 	npctalk "It is something to be feared!";
-	sleep 3000;
+	sleep 1500;
 	npctalk "All of these novices who spent their time only training";
-	sleep 3000;
+	sleep 1500;
 	npctalk "They will never know the true meaning of battle!";
-	sleep 3000;
+	sleep 1500;
 	npctalk "I will make sure to handle them as fast as possible.";
-	sleep 3000;
+	sleep 1500;
 	npctalk "My heart is beating so fast! I'm so nervous!",instance_npcname("Lydia#a2");
 	donpcevent instance_npcname("#GMTcontroller")+"::OnStart";
 	end;
 
 OnDefeat:
 	hideoffnpc instance_npcname("Ju#1");
-	sleep 1000;
+	sleep 250;
 	npctalk "Sob... defeated...";
-	sleep 3000;
+	sleep 1500;
 	npctalk "You're stronger than I thought...";
-	sleep 3000;
+	sleep 1500;
 	npctalk "You must have experienced many cruel battles.";
-	sleep 3000;
+	sleep 1500;
 	npctalk "Sob... Victory was the only thing in my mind...";
-	sleep 3000;
+	sleep 1500;
 	npctalk "I wish you luck on your following matches.";
-	sleep 3000;
+	sleep 1500;
 	npctalk "You better not lose after defeating me!";
-	sleep 2000;
+	sleep 250;
 	hideonnpc instance_npcname("Ju#1");
-	sleep 1000;
+	sleep 250;
 	movenpc	instance_npcname("Ju#z1_0et"),178,91;
 	disablenpc instance_npcname("Ju#1");
 	end;
 	
 OnVictory:
 	hideoffnpc instance_npcname("Ju#1");
-	sleep 1000;
+	sleep 250;
 	npctalk "This is not a game.";
-	sleep 3000;
+	sleep 1500;
 	npctalk "This is real battle.";
-	sleep 3000;
+	sleep 1500;
 	npctalk "Yeahhhh !!";
-	sleep 3000;
+	sleep 1500;
 	npctalk "The real game is battle!";
-	sleep 5000;
+	sleep 2500;
 	instance_warpall instance_mapname("1@gef"),120,61, instance_id();
 	end;
 	
@@ -3218,28 +3220,28 @@ OnVictory:
 end;
 OnActivate:
 	npctalk "Semi-Finals huh...";
-	sleep 2000;
+	sleep 250;
 	npctalk "I can see the end...";
-	sleep 3000;
+	sleep 1500;
 	npctalk "You must be a decent fighter, making it all the way here...";
-	sleep 3000;
+	sleep 1500;
 	npctalk "But I came to here for my students.";
-	sleep 3000;
+	sleep 1500;
 	npctalk "People who are important to me are watching this battle!";
-	sleep 3000;
+	sleep 1500;
 	npctalk "Wow, teacher!",instance_npcname("Magic Academy Student#22");
 	npctalk "Teacher, show 'em what you've got!",instance_npcname("Magic Academy Student#3");
 	npctalk "What a great teacher, I want to be like her!",instance_npcname("Magic Academy Student#4");
-	sleep 2000;
+	sleep 250;
 	npctalk "I can't imagine teacher losing here~!",instance_npcname("Magic Academy Student#1");
 	npctalk "Everyone cheer loudly for our teacher!",instance_npcname("Magic Academy Student#5");
-	sleep 2000;
+	sleep 250;
 	npctalk "I can't lose in front of my students!";
-	sleep 2000;
+	sleep 250;
 	donpcevent instance_npcname("#GMTcontroller")+"::OnStart";
-	sleep 1000;
+	sleep 250;
 	npctalk "Ahh!~ Go teacher~!!",instance_npcname("Magic Academy Student#5");
-	sleep 1000;
+	sleep 250;
 	npctalk "Go! Go! Teacher~!!",instance_npcname("Magic Academy Student#22");
 	npctalk "Teacher! She's the one~!!",instance_npcname("Magic Academy Student#3");
 	npctalk "If she can't do it~!!",instance_npcname("Magic Academy Student#4");
@@ -3249,34 +3251,34 @@ OnActivate:
 
 OnDefeat:
 	hideoffnpc instance_npcname("Dwigh#1");
-	sleep 1000;
+	sleep 250;
 	npctalk "If I had just won one more game, I could have been in the finals...";
-	sleep 3000;
+	sleep 1500;
 	npctalk "I'm ashamed for losing in front of my students...";
-	sleep 3000;
+	sleep 1500;
 	npctalk "But the competition was too strong.";
-	sleep 3000;
+	sleep 1500;
 	npctalk "I admit defeat.";
-	sleep 3000;
+	sleep 1500;
 	npctalk "According to my students, Fenrir's strength should still be above me, I wish you luck.";
-	sleep 2000;
+	sleep 250;
 	hideonnpc instance_npcname("Dwigh#1");
-	sleep 1000;
+	sleep 250;
 	movenpc instance_npcname("Dwigh#z1_0et"),120,98;
 	disablenpc instance_npcname("Dwigh#1");
 	end;
 	
 OnVictory:
 	hideoffnpc instance_npcname("Dwigh#1");
-	sleep 1000;
+	sleep 250;
 	npctalk "Ugh... It was a tough match.";
-	sleep 3000;
+	sleep 1500;
 	npctalk "But I am happy to have won.";
-	sleep 3000;
+	sleep 1500;
 	npctalk "I will do my best for my students.";
-	sleep 3000;
+	sleep 1500;
 	npctalk "I have just one more match to win!";
-	sleep 5000;
+	sleep 2500;
 	instance_warpall instance_mapname("1@gef"),120,61, instance_id();
 	end;
 	
@@ -3328,22 +3330,22 @@ OnTalk2:
     sleep2 2000;
     cutin "", 255;
 	hideonnpc instance_npcname("Fay Kanavian#1");
-	sleep 1000;
+	sleep 250;
 	movenpc instance_npcname("Fay Kanavian#z1_0et"),117,72;
 	disablenpc instance_npcname("Fay Kanavian#1");
 	end;
 	
 OnVictory:
 	hideoffnpc instance_npcname("Fay Kanavian#1");
-	sleep 1000;
+	sleep 250;
 	npctalk "My abilities are amazing~!";
-	sleep 3000;
+	sleep 1500;
 	npctalk "This tournament is but a game to me, and not at all important.";
-	sleep 3000;
+	sleep 1500;
 	npctalk "But Fenrir has reached the finals by winning every single round...";
-	sleep 3000;
+	sleep 1500;
 	npctalk "I will defeat her and win this tournament!";
-	sleep 5000;
+	sleep 2500;
 	instance_warpall instance_mapname("1@gef"),120,61, instance_id();
 	end;
 	
@@ -3435,15 +3437,15 @@ OnTalk2:
 	
 OnVictory:
 	hideoffnpc instance_npcname("Fenrir#f");
-	sleep 1000;
+	sleep 250;
 	npctalk "Thank you~ It was a good match.";
-	sleep 3000;
+	sleep 1500;
 	npctalk "It feels good to be the winner.";
-	sleep 3000;
+	sleep 1500;
 	npctalk "I hope to see you again.";
-	sleep 3000;
+	sleep 1500;
 	npctalk "I have to go... My friends are waiting for me.";
-	sleep 5000;
+	sleep 2500;
 	instance_warpall instance_mapname("1@gef"),120,61, instance_id();
 	end;
 	
@@ -3497,7 +3499,7 @@ OnEnable:
 	movenpc instance_npcname("Fenrir#q1"), 112, 50;
 	hideoffnpc instance_npcname("Tournament Guide#gefMT");
 	hideoffnpc instance_npcname("Geffen Academy Master");
-	sleep 1000;
+	sleep 250;
 	npctalk "The other contestants want to congratulate you on winning as well!",instance_npcname("Fenrir#q1");
 	end;
 

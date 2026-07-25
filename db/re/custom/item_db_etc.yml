@@ -399,6 +399,13 @@ Body:
     Name: "Orrivane Orb (Imperial Guard)"
     Type: Card
     SubType: Enchant
+  - Id: 1001902
+    AegisName: Reform_Stone_TH
+    Name: Reform Stone
+    Type: Etc
+    Weight: 0
+    Flags:
+      BuyingStore: true
   - Id: 1002427
     AegisName: BP2_Mat_Melee_US
     Name: "[S2] Crystallized Shard (Melee)"

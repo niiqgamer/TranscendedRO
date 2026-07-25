@@ -528,9 +528,9 @@ OnStart:
 	.@mob_c = getmapusers('map_name$) + 1;
 	.@event$ = instance_npcname("#fwormcontrol1") + "::OnMyMobDead";
 	killmonster 'map_name$, .@event$;
-	areamonster 'map_name$,65,330,179,336,"Faceworm",2528, (.@mob_c*2), .@event$;
-	areamonster 'map_name$,62,62,68,332,"Faceworm",2528, (.@mob_c*7), .@event$;
-	areamonster 'map_name$,66,59,172,65,"Faceworm",2528, (.@mob_c*2), .@event$;
+	areamonster 'map_name$,65,330,179,336,"Faceworm",2528, (.@mob_c*10), .@event$;
+	areamonster 'map_name$,62,62,68,332,"Faceworm",2528, (.@mob_c*35), .@event$;
+	areamonster 'map_name$,66,59,172,65,"Faceworm",2528, (.@mob_c*10), .@event$;
 	end;
 OnMyMobDead:
 	.@mob_dead_num = mobcount( 'map_name$, instance_npcname("#fwormcontrol1") +"::OnMyMobDead" );
@@ -764,9 +764,9 @@ OnInstanceInit:
 OnStart:
 	.@mob_c = getmapusers('map_name$) + 1;
 	.@event$ = instance_npcname("#fwormcontrol2") + "::OnMyMobDead";
-	areamonster 'map_name$,107,102,113,154,"Faceworm",2528, (.@mob_c*2), .@event$;
-	areamonster 'map_name$,115,175,121,209,"Faceworm",2528, (.@mob_c*2), .@event$;
-	areamonster 'map_name$,118,240,204,292,"Faceworm",2528, (.@mob_c*7), .@event$;
+	areamonster 'map_name$,107,102,113,154,"Faceworm",2528, (.@mob_c*10), .@event$;
+	areamonster 'map_name$,115,175,121,209,"Faceworm",2528, (.@mob_c*10), .@event$;
+	areamonster 'map_name$,118,240,204,292,"Faceworm",2528, (.@mob_c*25), .@event$;
 	end;
 OnMyMobDead:
 	.@mob_dead_num = mobcount( 'map_name$,instance_npcname("#fwormcontrol2") +"::OnMyMobDead" );
@@ -952,7 +952,7 @@ OnInstanceInit:
 1@face,2,5,3	script	#fwormcontrol3	CLEAR_NPC,{
 	end;
 OnStart:
-	.@mon_num = ( getmapusers('map_name$) + 1 ) * 11;
+	.@mon_num = ( getmapusers('map_name$) + 1 ) * 25;
 	areamonster 'map_name$,238,274,308,344,"Faceworm",2528,.@mon_num,instance_npcname("#fwormcontrol3") + "::OnMyMobDead";
 	end;
 OnMyMobDead:
@@ -1114,9 +1114,9 @@ OnInstanceInit:
 	end;
 OnStart:
 	.@mob_c = getmapusers('map_name$) + 1;
-	.@mon_num = .@mob_c * 6;
+	.@mon_num = .@mob_c * 30;
 	areamonster 'map_name$,250,94,330,174,"Faceworm",2528,.@mon_num,instance_npcname("#fwormcontrol4") + "::OnMyMobDead";
-	.@mon_num = .@mob_c * 5;
+	.@mon_num = .@mob_c * 25;
 	areamonster 'map_name$,223,51,303,111,"Faceworm",2528,.@mon_num,instance_npcname("#fwormcontrol4") + "::OnMyMobDead";
 	end;
 OnMyMobDead:
@@ -2017,11 +2017,18 @@ OnInstanceInit:
 }
 
 1@face,215,159,4	script	Dimensional Device#6	PORTAL,{
+	if (checkweight(9900009,30) == 0) {
+		mes "- You cannot proceed because you have too many items. -";
+		close;
+	}
 	mes "[Dimensional Device]";
 	mes "Your time is finished here. You may look arround or go leave. What do you want to do?";
 	next;
-	if (select("Stop:Return to Dimensional Gap") == 2)
+	if (select("Stop:Return to Dimensional Gap") == 2) {
+		getitem 9900009,rand(20,30);
 		warp "dali",85,62;
+		end;
+	}
 	end;
 
 OnInstanceInit:

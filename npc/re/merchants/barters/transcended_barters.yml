@@ -47,6 +47,539 @@ Header:
   Version: 2
 
 Body:
+  - Name: UniversalExchanges
+    Items:
+      - Index: 0
+        Item: Blacksmith_Blessing
+        Zeny: 100000
+        RequiredItems:
+          - Index: 0
+            Item: Instance_Emblem
+            Amount: 2
+      - Index: 1
+        Item: Blacksmith_Blessing
+        Zeny: 100000
+        RequiredItems:
+          - Index: 0
+            Item: Shadowdecon
+            Amount: 1
+          - Index: 1
+            Item: Zelunium
+            Amount: 2
+      - Index: 2
+        Item: Reform_Stone_TH
+        Zeny: 100000
+        RequiredItems:
+          - Index: 0
+            Item: Instance_Emblem
+            Amount: 10
+      - Index: 3
+        Item: Enchant_Ticket
+        Zeny: 100000
+        RequiredItems:
+          - Index: 0
+            Item: Instance_Emblem
+            Amount: 5
+      - Index: 4
+        Item: Mightysoul_Essence
+        Zeny: 50000
+        RequiredItems:
+          - Index: 0
+            Item: Instance_Emblem
+            Amount: 2
+      - Index: 5
+        Item: M_Dimension_Essence
+        Zeny: 100000
+        RequiredItems:
+          - Index: 0
+            Item: Mightysoul_Essence
+            Amount: 4
+  - Name: InstanceShopHeads
+    Items:
+      - Index: 0
+        Item: Faith_Of_Yggdrasil
+        RequiredItems:
+          - Index: 0
+            Item: Instance_Emblem
+            Amount: 1000
+      - Index: 1
+        Item: GatesofNetherworld
+        RequiredItems:
+          - Index: 0
+            Item: Instance_Emblem
+            Amount: 1000
+      - Index: 2
+        Item: Magical_Feather_K
+        RequiredItems:
+          - Index: 0
+            Item: Instance_Emblem
+            Amount: 1000
+      - Index: 3
+        Item: Mountain_Helmet
+        RequiredItems:
+          - Index: 0
+            Item: Instance_Emblem
+            Amount: 1000
+      - Index: 4
+        Item: BioWeapon_Helm_NC
+        RequiredItems:
+          - Index: 0
+            Item: Instance_Emblem
+            Amount: 1000
+      - Index: 5
+        Item: BioWeapon_Helm_RA
+        RequiredItems:
+          - Index: 0
+            Item: Instance_Emblem
+            Amount: 1000
+      - Index: 6
+        Item: BioWeapon_Helm_SC
+        RequiredItems:
+          - Index: 0
+            Item: Instance_Emblem
+            Amount: 1000
+      - Index: 7
+        Item: BioWeapon_Helm_RK
+        RequiredItems:
+          - Index: 0
+            Item: Instance_Emblem
+            Amount: 1000
+      - Index: 8
+        Item: BioWeapon_Helm_WL
+        RequiredItems:
+          - Index: 0
+            Item: Instance_Emblem
+            Amount: 1000
+      - Index: 9
+        Item: BioWeapon_Helm_WM
+        RequiredItems:
+          - Index: 0
+            Item: Instance_Emblem
+            Amount: 1000
+      - Index: 10
+        Item: BioWeapon_Helm_SR
+        RequiredItems:
+          - Index: 0
+            Item: Instance_Emblem
+            Amount: 1000
+      - Index: 11
+        Item: BioWeapon_Helm_AB
+        RequiredItems:
+          - Index: 0
+            Item: Instance_Emblem
+            Amount: 1000
+      - Index: 12
+        Item: BioWeapon_Helm_SO
+        RequiredItems:
+          - Index: 0
+            Item: Instance_Emblem
+            Amount: 1000
+      - Index: 13
+        Item: BioWeapon_Helm_GN
+        RequiredItems:
+          - Index: 0
+            Item: Instance_Emblem
+            Amount: 1000
+      - Index: 14
+        Item: BioWeapon_Helm_LG
+        RequiredItems:
+          - Index: 0
+            Item: Instance_Emblem
+            Amount: 1000
+      - Index: 15
+        Item: BioWeapon_Helm_GC
+        RequiredItems:
+          - Index: 0
+            Item: Instance_Emblem
+            Amount: 1000
+      - Index: 16
+        Item: Rebirth_Circlet
+        RequiredItems:
+          - Index: 0
+            Item: Instance_Emblem
+            Amount: 2000
+      - Index: 17
+        Item: Themis_Helm
+        RequiredItems:
+          - Index: 0
+            Item: Instance_Emblem
+            Amount: 2000
+      - Index: 18
+        Item: Wolf_Officer_Hat
+        RequiredItems:
+          - Index: 0
+            Item: Instance_Emblem
+            Amount: 2000
+      - Index: 19
+        Item: Fafnir_Helm
+        RequiredItems:
+          - Index: 0
+            Item: Instance_Emblem
+            Amount: 2000
+      - Index: 20
+        Item: Ghost_Whisper
+        RequiredItems:
+          - Index: 0
+            Item: Instance_Emblem
+            Amount: 2000
+      - Index: 21
+        Item: Orcsuccessionhelm_TW
+        RequiredItems:
+          - Index: 0
+            Item: Instance_Emblem
+            Amount: 2000
+      - Index: 22
+        Item: Northern_Cross
+        RequiredItems:
+          - Index: 0
+            Item: Instance_Emblem
+            Amount: 2000
+      - Index: 23
+        Item: Q_Scaraba_Crown_TW
+        RequiredItems:
+          - Index: 0
+            Item: Instance_Emblem
+            Amount: 2000
+      - Index: 24
+        Item: Purple_Cat_Ears_Beret
+        RequiredItems:
+          - Index: 0
+            Item: Instance_Emblem
+            Amount: 2000
+      - Index: 25
+        Item: Cat_Shampoo_Hat
+        RequiredItems:
+          - Index: 0
+            Item: Instance_Emblem
+            Amount: 2000
+      - Index: 26
+        Item: Striking_hat
+        RequiredItems:
+          - Index: 0
+            Item: Instance_Emblem
+            Amount: 2000
+      - Index: 27
+        Item: Squirrel_Ear_Hat_W
+        RequiredItems:
+          - Index: 0
+            Item: Instance_Emblem
+            Amount: 2000
+  - Name: InstanceShopArmors
+    Items:
+      - Index: 0
+        Item: Armor_of_Purple_Thread
+        RequiredItems:
+          - Index: 0
+            Item: Instance_Emblem
+            Amount: 1000
+  - Name: InstanceShopWeapons
+    Items:
+      - Index: 0
+        Item: Valkyrie_Knife
+        RequiredItems:
+          - Index: 0
+            Item: Instance_Emblem
+            Amount: 1000
+      - Index: 1
+        Item: Valkyrie_Hammer
+        RequiredItems:
+          - Index: 0
+            Item: Instance_Emblem
+            Amount: 1000
+  - Name: InstanceShopGarments
+    Items:
+      - Index: 0
+        Item: Valkyrie_Knife
+        RequiredItems:
+          - Index: 0
+            Item: Instance_Emblem
+            Amount: 1000
+  - Name: InstanceShopFootgears
+    Items:
+      - Index: 0
+        Item: Valkyrie_Knife
+        RequiredItems:
+          - Index: 0
+            Item: Instance_Emblem
+            Amount: 1000
+  - Name: InstanceShopAccessories
+    Items:
+      - Index: 0
+        Item: Devil_Ring
+        RequiredItems:
+          - Index: 0
+            Item: Instance_Emblem
+            Amount: 1500
+      - Index: 1
+        Item: Harvest_Festival
+        RequiredItems:
+          - Index: 0
+            Item: Instance_Emblem
+            Amount: 1500
+      - Index: 2
+        Item: Paradise_Lost
+        RequiredItems:
+          - Index: 0
+            Item: Instance_Emblem
+            Amount: 1500
+      - Index: 3
+        Item: Magical_Ring
+        RequiredItems:
+          - Index: 0
+            Item: Instance_Emblem
+            Amount: 1500
+      - Index: 4
+        Item: Brooch_Of_Hero
+        RequiredItems:
+          - Index: 0
+            Item: Instance_Emblem
+            Amount: 2500
+      - Index: 5
+        Item: Crystal_Blade_Necklace
+        RequiredItems:
+          - Index: 0
+            Item: Instance_Emblem
+            Amount: 2500
+      - Index: 6
+        Item: Old_Cart_Acc
+        RequiredItems:
+          - Index: 0
+            Item: Instance_Emblem
+            Amount: 2500
+      - Index: 7
+        Item: Petal_Tail
+        RequiredItems:
+          - Index: 0
+            Item: Instance_Emblem
+            Amount: 2500
+      - Index: 8
+        Item: Pendant_of_Solomon
+        RequiredItems:
+          - Index: 0
+            Item: Instance_Emblem
+            Amount: 2500
+      - Index: 9
+        Item: Traveler_Ring
+        RequiredItems:
+          - Index: 0
+            Item: Instance_Emblem
+            Amount: 2500
+      - Index: 10
+        Item: LightOfCardinal
+        RequiredItems:
+          - Index: 0
+            Item: Instance_Emblem
+            Amount: 3500
+      - Index: 11
+        Item: WM_Job_Pick
+        RequiredItems:
+          - Index: 0
+            Item: Instance_Emblem
+            Amount: 3500
+      - Index: 12
+        Item: Time_Thief_Earring
+        RequiredItems:
+          - Index: 0
+            Item: Instance_Emblem
+            Amount: 3500
+      - Index: 13
+        Item: Armor_Drive_Wheel
+        RequiredItems:
+          - Index: 0
+            Item: Instance_Emblem
+            Amount: 3500
+      - Index: 14
+        Item: Firm_Faith_Ring
+        RequiredItems:
+          - Index: 0
+            Item: Instance_Emblem
+            Amount: 3500
+      - Index: 15
+        Item: HalfBlood_Princess_Ring
+        RequiredItems:
+          - Index: 0
+            Item: Instance_Emblem
+            Amount: 3500
+      - Index: 16
+        Item: RoyalGard_Seal_Ring
+        RequiredItems:
+          - Index: 0
+            Item: Instance_Emblem
+            Amount: 3500
+      - Index: 17
+        Item: Metal_Pick
+        RequiredItems:
+          - Index: 0
+            Item: Instance_Emblem
+            Amount: 3500
+      - Index: 18
+        Item: Military_Glove
+        RequiredItems:
+          - Index: 0
+            Item: Instance_Emblem
+            Amount: 3500
+      - Index: 19
+        Item: Overdrive_Rampage_
+        RequiredItems:
+          - Index: 0
+            Item: Instance_Emblem
+            Amount: 4500
+      - Index: 20
+        Item: Pollux_Ring_J
+        RequiredItems:
+          - Index: 0
+            Item: Instance_Emblem
+            Amount: 4500
+      - Index: 21
+        Item: RingOfAdoramus
+        RequiredItems:
+          - Index: 0
+            Item: Instance_Emblem
+            Amount: 4500
+      - Index: 22
+        Item: SkynetBlowRing
+        RequiredItems:
+          - Index: 0
+            Item: Instance_Emblem
+            Amount: 4500
+      - Index: 23
+        Item: Ring_Of_Hunter
+        RequiredItems:
+          - Index: 0
+            Item: Instance_Emblem
+            Amount: 4500
+      - Index: 24
+        Item: Skull_Ring
+        RequiredItems:
+          - Index: 0
+            Item: Instance_Emblem
+            Amount: 4500
+      - Index: 25
+        Item: RingofVenus
+        RequiredItems:
+          - Index: 0
+            Item: Instance_Emblem
+            Amount: 4500
+      - Index: 26
+        Item: Ameretat
+        RequiredItems:
+          - Index: 0
+            Item: Instance_Emblem
+            Amount: 4500
+      - Index: 27
+        Item: Anulus_Ira
+        RequiredItems:
+          - Index: 0
+            Item: Instance_Emblem
+            Amount: 4500
+      - Index: 28
+        Item: Chemical_R_Glove
+        RequiredItems:
+          - Index: 0
+            Item: Instance_Emblem
+            Amount: 4500
+      - Index: 29
+        Item: Dark_Ring
+        RequiredItems:
+          - Index: 0
+            Item: Instance_Emblem
+            Amount: 5500
+      - Index: 30
+        Item: Dimension_L_Stone
+        RequiredItems:
+          - Index: 0
+            Item: Instance_Emblem
+            Amount: 5500
+      - Index: 31
+        Item: Ring_Of_Nature
+        RequiredItems:
+          - Index: 0
+            Item: Instance_Emblem
+            Amount: 5500
+      - Index: 32
+        Item: Geffenia_Magictool_Ice
+        RequiredItems:
+          - Index: 0
+            Item: Instance_Emblem
+            Amount: 5500
+      - Index: 33
+        Item: Glittering_Cat_Choker_TH
+        RequiredItems:
+          - Index: 0
+            Item: Instance_Emblem
+            Amount: 5500
+      - Index: 34
+        Item: Jasper_Ring
+        RequiredItems:
+          - Index: 0
+            Item: Instance_Emblem
+            Amount: 5500
+      - Index: 35
+        Item: Themis_Balance
+        RequiredItems:
+          - Index: 0
+            Item: Instance_Emblem
+            Amount: 5500
+      - Index: 36
+        Item: Majesty_of_Yggdrasil
+        RequiredItems:
+          - Index: 0
+            Item: Instance_Emblem
+            Amount: 5500
+      - Index: 37
+        Item: Memento_Mori
+        RequiredItems:
+          - Index: 0
+            Item: Instance_Emblem
+            Amount: 5500
+      - Index: 38
+        Item: Paracelsus_Glove
+        RequiredItems:
+          - Index: 0
+            Item: Instance_Emblem
+            Amount: 5500
+      - Index: 39
+        Item: Sixth_Sense_Ring
+        RequiredItems:
+          - Index: 0
+            Item: Instance_Emblem
+            Amount: 5500
+      - Index: 40
+        Item: Ring_Of_Ceryneian
+        RequiredItems:
+          - Index: 0
+            Item: Instance_Emblem
+            Amount: 5500
+      - Index: 41
+        Item: Ring_of_Pazuzu
+        RequiredItems:
+          - Index: 0
+            Item: Instance_Emblem
+            Amount: 5500
+      - Index: 42
+        Item: Ring_Of_Phoenix
+        RequiredItems:
+          - Index: 0
+            Item: Instance_Emblem
+            Amount: 5500
+      - Index: 43
+        Item: Ring_of_SilverClaw
+        RequiredItems:
+          - Index: 0
+            Item: Instance_Emblem
+            Amount: 5500
+      - Index: 44
+        Item: SoulExpansionRing
+        RequiredItems:
+          - Index: 0
+            Item: Instance_Emblem
+            Amount: 5500
+      - Index: 45
+        Item: Twin_Dragonic_Ring
+        RequiredItems:
+          - Index: 0
+            Item: Instance_Emblem
+            Amount: 5500
   - Name: LubExchange
     Items:
       - Index: 0
@@ -3322,22 +3855,775 @@ Body:
           - Index: 1
             Item: Nose_Ring
             Amount: 100
-  - Name: UniversalExchanges
+  - Name: SetHero
     Items:
       - Index: 0
-        Item: Blacksmith_Blessing
+        Item: Ancient_Hero_Boots
+        Refine: 9
+        Zeny: 50000
+        RequiredItems:
+          - Index: 0
+            Item: Instance_Emblem
+            Amount: 1
+          - Index: 1
+            Item: Boots_
+            Amount: 1
+            Refine: 4
+          - Index: 2
+            Item: Elunium
+            Amount: 11
+      - Index: 1
+        Item: Great_Hero_Boots
+        Refine: 9
         Zeny: 100000
         RequiredItems:
           - Index: 0
             Item: Instance_Emblem
             Amount: 2
-      - Index: 1
-        Item: Blacksmith_Blessing
+          - Index: 1
+            Item: Ancient_Hero_Boots
+            Amount: 1
+            Refine: 11
+          - Index: 2
+            Item: Elunium
+            Amount: 11
+      - Index: 2
+        Item: Hero_Boots_LT
+        Refine: 4
+        Zeny: 500000
+        RequiredItems:
+          - Index: 0
+            Item: Great_Hero_Boots
+            Amount: 1
+            Refine: 9
+          - Index: 1
+            Item: Bio_Reseearch_Docu
+            Amount: 150
+          - Index: 2
+            Item: Bio_Test_Fragment
+            Amount: 300
+          - Index: 3
+            Item: Armor_Stone_2
+            Amount: 100
+          - Index: 4
+            Item: Reform_Stone_TH
+            Amount: 2
+      - Index: 3
+        Item: Hero_Boots_LT
+        Refine: 8
+        Zeny: 500000
+        RequiredItems:
+          - Index: 0
+            Item: Great_Hero_Boots
+            Amount: 1
+            Refine: 9
+          - Index: 1
+            Item: Bio_Reseearch_Docu
+            Amount: 250
+          - Index: 2
+            Item: Bio_Test_Fragment
+            Amount: 500
+          - Index: 3
+            Item: Armor_Stone_2
+            Amount: 100
+          - Index: 4
+            Item: Reform_Stone_TH
+            Amount: 3
+      - Index: 4
+        Item: Hero_Courage_TH
         Zeny: 100000
         RequiredItems:
           - Index: 0
+            Item: Instance_Emblem
+            Amount: 2
+          - Index: 1
+            Item: Doram_Only_Cape
+            Amount: 1
+            Refine: 4
+      - Index: 5
+        Item: Hero_Courage_TH_LT
+        Zeny: 500000
+        RequiredItems:
+          - Index: 0
+            Item: Hero_Courage_TH
+            Amount: 1
+            Refine: 9
+          - Index: 1
+            Item: Will_Of_Warrior
+            Amount: 100
+          - Index: 2
             Item: Shadowdecon
+            Amount: 1000
+          - Index: 3
+            Item: Armor_Stone_2
+            Amount: 100
+          - Index: 4
+            Item: Reform_Stone_TH
+            Amount: 2
+      - Index: 6
+        Item: Hero_Favor_TH
+        Zeny: 100000
+        RequiredItems:
+          - Index: 0
+            Item: Instance_Emblem
+            Amount: 2
+          - Index: 1
+            Item: Doram_Only_Cape
+            Amount: 1
+            Refine: 4
+      - Index: 7
+        Item: Hero_Favor_TH_LT
+        Zeny: 500000
+        RequiredItems:
+          - Index: 0
+            Item: Hero_Favor_TH
+            Amount: 1
+            Refine: 9
+          - Index: 1
+            Item: Will_Of_Warrior
+            Amount: 100
+          - Index: 2
+            Item: Shadowdecon
+            Amount: 1000
+          - Index: 3
+            Item: Armor_Stone_2
+            Amount: 100
+          - Index: 4
+            Item: Reform_Stone_TH
+            Amount: 2
+  - Name: HeroicToken
+    Items:
+      - Index: 0
+        Item: Hero_Token_ABC
+        Zeny: 50000
+        RequiredItems:
+          - Index: 0
+            Item: Instance_Emblem
+            Amount: 20
+          - Index: 1
+            Item: Unknown_Hero_Ring_SC
+            Amount: 1
+      - Index: 1
+        Item: Hero_Token_AG
+        Zeny: 50000
+        RequiredItems:
+          - Index: 0
+            Item: Instance_Emblem
+            Amount: 20
+          - Index: 1
+            Item: Unknown_Hero_Ring_WL
+            Amount: 1
+      - Index: 2
+        Item: Hero_Token_BO
+        Zeny: 50000
+        RequiredItems:
+          - Index: 0
+            Item: Instance_Emblem
+            Amount: 20
+          - Index: 1
+            Item: Unknown_Hero_Ring_GN
+            Amount: 1
+      - Index: 3
+        Item: Hero_Token_CD
+        Zeny: 50000
+        RequiredItems:
+          - Index: 0
+            Item: Instance_Emblem
+            Amount: 20
+          - Index: 1
+            Item: Unknown_Hero_Ring_AB
+            Amount: 1
+      - Index: 4
+        Item: Hero_Token_DK
+        Zeny: 50000
+        RequiredItems:
+          - Index: 0
+            Item: Instance_Emblem
+            Amount: 20
+          - Index: 1
+            Item: Unknown_Hero_Ring_RK
+            Amount: 1
+      - Index: 5
+        Item: Hero_Token_EM
+        Zeny: 50000
+        RequiredItems:
+          - Index: 0
+            Item: Instance_Emblem
+            Amount: 20
+          - Index: 1
+            Item: Unknown_Hero_Ring_SO
+            Amount: 1
+      - Index: 6
+        Item: Hero_Token_HN
+        Zeny: 50000
+        RequiredItems:
+          - Index: 0
+            Item: Instance_Emblem
+            Amount: 20
+          - Index: 1
+            Item: Unknown_Hero_Ring_NV
+            Amount: 1
+      - Index: 7
+        Item: Hero_Token_IG
+        Zeny: 50000
+        RequiredItems:
+          - Index: 0
+            Item: Instance_Emblem
+            Amount: 20
+          - Index: 1
+            Item: Unknown_Hero_Ring_RG
+            Amount: 1
+      - Index: 8
+        Item: Hero_Token_IQ
+        Zeny: 50000
+        RequiredItems:
+          - Index: 0
+            Item: Instance_Emblem
+            Amount: 20
+          - Index: 1
+            Item: Unknown_Hero_Ring_SR
+            Amount: 1
+      - Index: 9
+        Item: Hero_Token_MT
+        Zeny: 50000
+        RequiredItems:
+          - Index: 0
+            Item: Instance_Emblem
+            Amount: 20
+          - Index: 1
+            Item: Unknown_Hero_Ring_NC
+            Amount: 1
+      - Index: 10
+        Item: Hero_Token_NW
+        Zeny: 50000
+        RequiredItems:
+          - Index: 0
+            Item: Instance_Emblem
+            Amount: 20
+          - Index: 1
+            Item: Unknown_Hero_Ring_RL
+            Amount: 1
+      - Index: 11
+        Item: Hero_Token_SHC
+        Zeny: 50000
+        RequiredItems:
+          - Index: 0
+            Item: Instance_Emblem
+            Amount: 20
+          - Index: 1
+            Item: Unknown_Hero_Ring_GC
+            Amount: 1
+      - Index: 12
+        Item: Hero_Token_SS
+        Zeny: 50000
+        RequiredItems:
+          - Index: 0
+            Item: Instance_Emblem
+            Amount: 20
+          - Index: 1
+            Item: Unknown_Hero_Ring_NJ
+            Amount: 1
+      - Index: 13
+        Item: Hero_Token_SKE
+        Zeny: 50000
+        RequiredItems:
+          - Index: 0
+            Item: Instance_Emblem
+            Amount: 20
+          - Index: 1
+            Item: Unknown_Hero_Ring_TK
+            Amount: 1
+      - Index: 14
+        Item: Hero_Token_SOA
+        Zeny: 50000
+        RequiredItems:
+          - Index: 0
+            Item: Instance_Emblem
+            Amount: 20
+          - Index: 1
+            Item: Unknown_Hero_Ring_TK
+            Amount: 1
+      - Index: 15
+        Item: Hero_Token_SH
+        Zeny: 50000
+        RequiredItems:
+          - Index: 0
+            Item: Instance_Emblem
+            Amount: 20
+          - Index: 1
+            Item: Unknown_Hero_Ring_SU
+            Amount: 1
+      - Index: 16
+        Item: Hero_Token_TR
+        Zeny: 50000
+        RequiredItems:
+          - Index: 0
+            Item: Instance_Emblem
+            Amount: 20
+          - Index: 1
+            Item: Unknown_Hero_Ring_WM
+            Amount: 1
+      - Index: 17
+        Item: Hero_Token_WH
+        Zeny: 50000
+        RequiredItems:
+          - Index: 0
+            Item: Instance_Emblem
+            Amount: 20
+          - Index: 1
+            Item: Unknown_Hero_Ring_RA
+            Amount: 1
+  - Name: RecordsDocuments
+    Items:
+      - Index: 0
+        Item: Record_Acol_TH
+        Zeny: 5000
+        RequiredItems:
+          - Index: 0
+            Item: Instance_Emblem
+            Amount: 10
+          - Index: 1
+            Item: Lab_Staff_Record
+            Amount: 100
+      - Index: 1
+        Item: Record_Acol2_TH
+        Zeny: 5000
+        RequiredItems:
+          - Index: 0
+            Item: Instance_Emblem
+            Amount: 10
+          - Index: 1
+            Item: Lab_Staff_Record
+            Amount: 100
+      - Index: 2
+        Item: Document_Acolyte_TH
+        Zeny: 50000
+        RequiredItems:
+          - Index: 0
+            Item: Record_Acol_TH
             Amount: 1
           - Index: 1
-            Item: Zelunium
-            Amount: 2
+            Item: Record_Acol2_TH
+            Amount: 1
+      - Index: 3
+        Item: Record_Archer_TH
+        Zeny: 5000
+        RequiredItems:
+          - Index: 0
+            Item: Instance_Emblem
+            Amount: 10
+          - Index: 1
+            Item: Lab_Staff_Record
+            Amount: 100
+      - Index: 4
+        Item: Record_Archer2_TH
+        Zeny: 5000
+        RequiredItems:
+          - Index: 0
+            Item: Instance_Emblem
+            Amount: 10
+          - Index: 1
+            Item: Lab_Staff_Record
+            Amount: 100
+      - Index: 5
+        Item: Document_Archer_TH
+        Zeny: 50000
+        RequiredItems:
+          - Index: 0
+            Item: Record_Archer_TH
+            Amount: 1
+          - Index: 1
+            Item: Record_Archer2_TH
+            Amount: 1
+      - Index: 6
+        Item: Record_Mage_TH
+        Zeny: 5000
+        RequiredItems:
+          - Index: 0
+            Item: Instance_Emblem
+            Amount: 10
+          - Index: 1
+            Item: Lab_Staff_Record
+            Amount: 100
+      - Index: 7
+        Item: Record_Mage2_TH
+        Zeny: 5000
+        RequiredItems:
+          - Index: 0
+            Item: Instance_Emblem
+            Amount: 10
+          - Index: 1
+            Item: Lab_Staff_Record
+            Amount: 100
+      - Index: 8
+        Item: Document_Mage_TH
+        Zeny: 50000
+        RequiredItems:
+          - Index: 0
+            Item: Record_Mage_TH
+            Amount: 1
+          - Index: 1
+            Item: Record_Mage2_TH
+            Amount: 1
+      - Index: 9
+        Item: Record_Merchant_TH
+        Zeny: 5000
+        RequiredItems:
+          - Index: 0
+            Item: Instance_Emblem
+            Amount: 10
+          - Index: 1
+            Item: Lab_Staff_Record
+            Amount: 100
+      - Index: 10
+        Item: Record_Merchant2_TH
+        Zeny: 5000
+        RequiredItems:
+          - Index: 0
+            Item: Instance_Emblem
+            Amount: 10
+          - Index: 1
+            Item: Lab_Staff_Record
+            Amount: 100
+      - Index: 11
+        Item: Document_Merchant_TH
+        Zeny: 50000
+        RequiredItems:
+          - Index: 0
+            Item: Record_Merchant_TH
+            Amount: 1
+          - Index: 1
+            Item: Record_Merchant2_TH
+            Amount: 1
+      - Index: 12
+        Item: Record_Swordsman_TH
+        Zeny: 5000
+        RequiredItems:
+          - Index: 0
+            Item: Instance_Emblem
+            Amount: 10
+          - Index: 1
+            Item: Lab_Staff_Record
+            Amount: 100
+      - Index: 13
+        Item: Record_Swordsman2_TH
+        Zeny: 5000
+        RequiredItems:
+          - Index: 0
+            Item: Instance_Emblem
+            Amount: 10
+          - Index: 1
+            Item: Lab_Staff_Record
+            Amount: 100
+      - Index: 14
+        Item: Document_Swordsman_TH
+        Zeny: 50000
+        RequiredItems:
+          - Index: 0
+            Item: Record_Swordsman_TH
+            Amount: 1
+          - Index: 1
+            Item: Record_Swordsman2_TH
+            Amount: 1
+      - Index: 15
+        Item: Record_Thief_TH
+        Zeny: 5000
+        RequiredItems:
+          - Index: 0
+            Item: Instance_Emblem
+            Amount: 10
+          - Index: 1
+            Item: Lab_Staff_Record
+            Amount: 100
+      - Index: 16
+        Item: Record_Thief2_TH
+        Zeny: 5000
+        RequiredItems:
+          - Index: 0
+            Item: Instance_Emblem
+            Amount: 10
+          - Index: 1
+            Item: Lab_Staff_Record
+            Amount: 100
+      - Index: 17
+        Item: Document_Thief_TH
+        Zeny: 50000
+        RequiredItems:
+          - Index: 0
+            Item: Record_Thief_TH
+            Amount: 1
+          - Index: 1
+            Item: Record_Thief2_TH
+            Amount: 1
+  - Name: HOF
+    Items:
+      - Index: 0
+        Item: Viva_Adul_Hat_AB1
+        RequiredItems:
+          - Index: 0
+            Item: Ep18_Amethyst_Fragment
+            Amount: 1250
+      - Index: 1
+        Item: Viva_Adul_Hat_AB2
+        RequiredItems:
+          - Index: 0
+            Item: Ep18_Amethyst_Fragment
+            Amount: 1250
+      - Index: 2
+        Item: Viva_Adul_Hat_GN1
+        RequiredItems:
+          - Index: 0
+            Item: Ep18_Amethyst_Fragment
+            Amount: 1250
+      - Index: 3
+        Item: Viva_Adul_Hat_GN2
+        RequiredItems:
+          - Index: 0
+            Item: Ep18_Amethyst_Fragment
+            Amount: 1250
+      - Index: 4
+        Item: Viva_Adul_Hat_GC1
+        RequiredItems:
+          - Index: 0
+            Item: Ep18_Amethyst_Fragment
+            Amount: 1250
+      - Index: 5
+        Item: Viva_Adul_Hat_GC2
+        RequiredItems:
+          - Index: 0
+            Item: Ep18_Amethyst_Fragment
+            Amount: 1250
+      - Index: 6
+        Item: Viva_Adul_Hat_KO1
+        RequiredItems:
+          - Index: 0
+            Item: Ep18_Amethyst_Fragment
+            Amount: 1250
+      - Index: 7
+        Item: Viva_Adul_Hat_KO2
+        RequiredItems:
+          - Index: 0
+            Item: Ep18_Amethyst_Fragment
+            Amount: 1250
+      - Index: 8
+        Item: Viva_Adul_Hat_NC1
+        RequiredItems:
+          - Index: 0
+            Item: Ep18_Amethyst_Fragment
+            Amount: 1250
+      - Index: 9
+        Item: Viva_Adul_Hat_NC2
+        RequiredItems:
+          - Index: 0
+            Item: Ep18_Amethyst_Fragment
+            Amount: 1250
+      - Index: 10
+        Item: Viva_Adul_Hat_WM1
+        RequiredItems:
+          - Index: 0
+            Item: Ep18_Amethyst_Fragment
+            Amount: 1250
+      - Index: 11
+        Item: Viva_Adul_Hat_WM2
+        RequiredItems:
+          - Index: 0
+            Item: Ep18_Amethyst_Fragment
+            Amount: 1250
+      - Index: 12
+        Item: Viva_Adul_Hat_RA1
+        RequiredItems:
+          - Index: 0
+            Item: Ep18_Amethyst_Fragment
+            Amount: 1250
+      - Index: 13
+        Item: Viva_Adul_Hat_RA2
+        RequiredItems:
+          - Index: 0
+            Item: Ep18_Amethyst_Fragment
+            Amount: 1250
+      - Index: 14
+        Item: Viva_Adul_Hat_RL1
+        RequiredItems:
+          - Index: 0
+            Item: Ep18_Amethyst_Fragment
+            Amount: 1250
+      - Index: 15
+        Item: Viva_Adul_Hat_RL2
+        RequiredItems:
+          - Index: 0
+            Item: Ep18_Amethyst_Fragment
+            Amount: 1250
+      - Index: 16
+        Item: Viva_Adul_Hat_LG1
+        RequiredItems:
+          - Index: 0
+            Item: Ep18_Amethyst_Fragment
+            Amount: 1250
+      - Index: 17
+        Item: Viva_Adul_Hat_LG2
+        RequiredItems:
+          - Index: 0
+            Item: Ep18_Amethyst_Fragment
+            Amount: 1250
+      - Index: 18
+        Item: Viva_Adul_Hat_RK1
+        RequiredItems:
+          - Index: 0
+            Item: Ep18_Amethyst_Fragment
+            Amount: 1250
+      - Index: 19
+        Item: Viva_Adul_Hat_RK2
+        RequiredItems:
+          - Index: 0
+            Item: Ep18_Amethyst_Fragment
+            Amount: 1250
+      - Index: 20
+        Item: Viva_Adul_Hat_SC1
+        RequiredItems:
+          - Index: 0
+            Item: Ep18_Amethyst_Fragment
+            Amount: 1250
+      - Index: 21
+        Item: Viva_Adul_Hat_SC2
+        RequiredItems:
+          - Index: 0
+            Item: Ep18_Amethyst_Fragment
+            Amount: 1250
+      - Index: 22
+        Item: Viva_Adul_Hat_SO1
+        RequiredItems:
+          - Index: 0
+            Item: Ep18_Amethyst_Fragment
+            Amount: 1250
+      - Index: 23
+        Item: Viva_Adul_Hat_SO2
+        RequiredItems:
+          - Index: 0
+            Item: Ep18_Amethyst_Fragment
+            Amount: 1250
+      - Index: 24
+        Item: Viva_Adul_Hat_SP1
+        RequiredItems:
+          - Index: 0
+            Item: Ep18_Amethyst_Fragment
+            Amount: 1250
+      - Index: 25
+        Item: Viva_Adul_Hat_SP2
+        RequiredItems:
+          - Index: 0
+            Item: Ep18_Amethyst_Fragment
+            Amount: 1250
+      - Index: 26
+        Item: Viva_Adul_Hat_SJ1
+        RequiredItems:
+          - Index: 0
+            Item: Ep18_Amethyst_Fragment
+            Amount: 1250
+      - Index: 27
+        Item: Viva_Adul_Hat_SJ2
+        RequiredItems:
+          - Index: 0
+            Item: Ep18_Amethyst_Fragment
+            Amount: 1250
+      - Index: 28
+        Item: Viva_Adul_Hat_SU1
+        RequiredItems:
+          - Index: 0
+            Item: Ep18_Amethyst_Fragment
+            Amount: 1250
+      - Index: 29
+        Item: Viva_Adul_Hat_SU2
+        RequiredItems:
+          - Index: 0
+            Item: Ep18_Amethyst_Fragment
+            Amount: 1250
+      - Index: 30
+        Item: Viva_Adul_Hat_SR1
+        RequiredItems:
+          - Index: 0
+            Item: Ep18_Amethyst_Fragment
+            Amount: 1250
+      - Index: 31
+        Item: Viva_Adul_Hat_SR2
+        RequiredItems:
+          - Index: 0
+            Item: Ep18_Amethyst_Fragment
+            Amount: 1250
+      - Index: 32
+        Item: Viva_Adul_Hat_WL1
+        RequiredItems:
+          - Index: 0
+            Item: Ep18_Amethyst_Fragment
+            Amount: 1250
+      - Index: 33
+        Item: Viva_Adul_Hat_WL2
+        RequiredItems:
+          - Index: 0
+            Item: Ep18_Amethyst_Fragment
+            Amount: 1250
+  - Name: ThanosEQ
+    Items:
+      - Index: 0
+        Item: Knight_Sakray_Card
+        RequiredItems:
+          - Index: 0
+            Item: Gray_Shard
+            Amount: 10000
+      - Index: 1
+        Item: Gray_Charcoal_Melee
+        RequiredItems:
+          - Index: 0
+            Item: Gray_Shard
+            Amount: 50
+      - Index: 2
+        Item: Gray_Charcoal_Magic
+        RequiredItems:
+          - Index: 0
+            Item: Gray_Shard
+            Amount: 50
+      - Index: 3
+        Item: Gray_Charcoal_Range
+        RequiredItems:
+          - Index: 0
+            Item: Gray_Shard
+            Amount: 50
+      - Index: 4
+        Item: Thanos_Boots1
+        Zeny: 500000
+        RequiredItems:
+          - Index: 0
+            Item: Instance_Emblem
+            Amount: 10
+          - Index: 1
+            Item: Gray_Shard
+            Amount: 1000
+      - Index: 5
+        Item: Thanos_Boots2
+        Zeny: 500000
+        RequiredItems:
+          - Index: 0
+            Item: Instance_Emblem
+            Amount: 10
+          - Index: 1
+            Item: Gray_Shard
+            Amount: 1000
+      - Index: 6
+        Item: Thanos_Boots3
+        Zeny: 500000
+        RequiredItems:
+          - Index: 0
+            Item: Instance_Emblem
+            Amount: 10
+          - Index: 1
+            Item: Gray_Shard
+            Amount: 1000
+      - Index: 7
+        Item: Thanos_Boots4
+        Zeny: 500000
+        RequiredItems:
+          - Index: 0
+            Item: Instance_Emblem
+            Amount: 10
+          - Index: 1
+            Item: Gray_Shard
+            Amount: 1000

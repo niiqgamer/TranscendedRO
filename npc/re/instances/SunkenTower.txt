@@ -360,11 +360,11 @@ OnTimer1000:
 				.@message$ = "Received EXP";
 
 				getexp 'bonusExp, 'jobExp;
-				if (rand(100) < 'dustChance) {
+				//if (rand(100) < 'dustChance) {
 					getitem 1000372, 5 * 'difficulty;
 					getitem 9900009, 2 * 'difficulty;
 					.@message$ += " Meteor Powders and Instance Emblems.";
-				}
+				//}
 
 				unittalk getcharid(3), "" + strcharinfo(0) + ": " + .@message$;
 

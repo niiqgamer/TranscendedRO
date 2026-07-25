@@ -1,5 +1,5 @@
 sec_in02,142,180,4	script	Premium Service#hid	4_F_PREMI,{
-	cutin "F_PREMI",2;
+	cutin "PRM_1",2;
 	if(vip_status(1)) {
 		mes "[Premium Service]";
 		mes "";
