@@ -127875,24 +127875,318 @@ Body:
 #    AegisName: E_MANANANGGAL
 #  - Id: 22173
 #    AegisName: E_WAKWAK
-#  - Id: 22174
-#    AegisName: MD_PRI_RIGEL
-#  - Id: 22175
-#    AegisName: MD_PRI_RIGEL_AC
-#  - Id: 22176
-#    AegisName: MD_PRI_RIGEL_ACS
+  - Id: 22174
+    AegisName: MD_PRI_RIGEL
+    Name: Rigel
+    JapaneseName: Dimensional Criminal Rigel
+    Level: 275
+    Hp: 800000000
+    Attack: 24998
+    Attack2: 9505
+    Defense: 358
+    MagicDefense: 138
+    Resistance: 1833
+    MagicResistance: 850
+    Str: 515
+    Agi: 330
+    Vit: 413
+    Int: 408
+    Dex: 584
+    Luk: 580
+    AttackRange: 3
+    SkillRange: 10
+    ChaseRange: 12
+    Size: Large
+    Race: Formless
+    Element: Neutral
+    ElementLevel: 2
+    WalkSpeed: 120
+    AttackDelay: 1149
+    AttackMotion: 672
+    DamageMotion: 384
+    Ai: 21
+    Class: Boss
+    DamageTaken: 1
+    Modes:
+      Mvp: true
+  - Id: 22175
+    AegisName: MD_PRI_RIGEL_AC
+    Name: Rigel
+    JapaneseName: Dimensional Criminal Rigel
+    Level: 275
+    Hp: 100000000
+    Attack: 24998
+    Attack2: 9505
+    Defense: 358
+    MagicDefense: 138
+    Resistance: 1833
+    MagicResistance: 850
+    Str: 515
+    Agi: 330
+    Vit: 413
+    Int: 408
+    Dex: 584
+    Luk: 580
+    AttackRange: 10
+    SkillRange: 10
+    ChaseRange: 12
+    Size: Large
+    Race: Formless
+    Element: Neutral
+    ElementLevel: 2
+    WalkSpeed: 120
+    AttackDelay: 1149
+    AttackMotion: 672
+    DamageMotion: 384
+    Ai: 21
+    Class: Boss
+  - Id: 22176
+    AegisName: MD_PRI_RIGEL_ACS
+    Name: Rigel
+    JapaneseName: Dimensional Criminal Rigel
+    Level: 275
+    Hp: 100000000
+    Attack: 24998
+    Attack2: 9505
+    Defense: 358
+    MagicDefense: 138
+    Resistance: 1833
+    MagicResistance: 850
+    Str: 515
+    Agi: 330
+    Vit: 413
+    Int: 408
+    Dex: 584
+    Luk: 580
+    AttackRange: 10
+    SkillRange: 10
+    ChaseRange: 12
+    Size: Large
+    Race: Formless
+    Element: Neutral
+    ElementLevel: 2
+    WalkSpeed: 120
+    AttackDelay: 1149
+    AttackMotion: 672
+    DamageMotion: 384
+    Ai: 21
+    Class: Boss
   - Id: 22177
     AegisName: MD_PRI_DRAGON_1
-    Name: MD_PRI_DRAGON_1
+    Name: Floral Pegasus
+    JapaneseName: Floral Pegasus
+    Level: 275
+    Hp: 700000000
+    Attack: 45409
+    Attack2: 14662
+    Defense: 347
+    MagicDefense: 134
+    Resistance: 1741
+    MagicResistance: 807
+    Str: 486
+    Agi: 390
+    Vit: 386
+    Int: 311
+    Dex: 552
+    Luk: 520
+    AttackRange: 2
+    SkillRange: 10
+    ChaseRange: 12
+    Size: Large
+    Race: Angel
+    Element: Poison
+    ElementLevel: 1
+    WalkSpeed: 130
+    AttackDelay: 1072
+    AttackMotion: 672
+    DamageMotion: 384
+    Ai: 21
+    Class: Boss
+    DamageTaken: 1000
+    Modes:
+      Mvp: true
+    MvpDrops:
+      - Item: Energy_Of_Spring
+        Rate: 5000
+      - Item: Old_Card_Album
+        Rate: 2500
+      - Item: Magic_Card_Album
+        Rate: 2500
+    Drops:
+      - Item: Energy_Of_Spring
+        Rate: 2000
+      - Item: Energy_Of_Spring
+        Rate: 1000
+      - Item: MD_Hol_Fragment
+        Rate: 1000
+      - Item: Spring_Material_1
+        Rate: 500
+      - Item: Spring_Material_2
+        Rate: 500
+      - Item: Spring_Material_3
+        Rate: 500
   - Id: 22178
     AegisName: MD_PRI_DRAGON_2
-    Name: MD_PRI_DRAGON_2
+    Name: Coral Marine
+    JapaneseName: Coral Marine
+    Level: 275
+    Hp: 700000000
+    Attack: 43805
+    Attack2: 15192
+    Defense: 213
+    MagicDefense: 241
+    Resistance: 1020
+    MagicResistance: 1682
+    Str: 324
+    Agi: 303
+    Vit: 330
+    Int: 445
+    Dex: 521
+    Luk: 520
+    AttackRange: 3
+    SkillRange: 10
+    ChaseRange: 12
+    Size: Large
+    Race: Fish
+    Element: Earth
+    ElementLevel: 1
+    WalkSpeed: 150
+    AttackDelay: 1216
+    AttackMotion: 768
+    DamageMotion: 384
+    Ai: 21
+    Class: Boss
+    DamageTaken: 1000
+    Modes:
+      Mvp: true
+    MvpDrops:
+      - Item: Energy_Of_Summer
+        Rate: 5000
+      - Item: Old_Card_Album
+        Rate: 2500
+      - Item: Magic_Card_Album
+        Rate: 2500
+    Drops:
+      - Item: Energy_Of_Summer
+        Rate: 2000
+      - Item: Energy_Of_Summer
+        Rate: 1000
+      - Item: MD_Hol_Fragment
+        Rate: 1000
+      - Item: Summer_Material_1
+        Rate: 500
+      - Item: Summer_Material_2
+        Rate: 500
+      - Item: Summer_Material_3
+        Rate: 500
   - Id: 22179
     AegisName: MD_PRI_DRAGON_3
-    Name: MD_PRI_DRAGON_3
+    Name: Maple Tree
+    JapaneseName: Maple Tree
+    Level: 275
+    Hp: 700000000
+    Attack: 35450
+    Attack2: 16798
+    Defense: 213
+    MagicDefense: 241
+    Resistance: 1399
+    MagicResistance: 2324
+    Str: 415
+    Agi: 428
+    Vit: 467
+    Int: 485
+    Dex: 532
+    Luk: 525
+    AttackRange: 2
+    SkillRange: 10
+    ChaseRange: 12
+    Size: Large
+    Race: Plant
+    Element: Wind
+    ElementLevel: 1
+    WalkSpeed: 150
+    AttackDelay: 1448
+    AttackMotion: 900
+    DamageMotion: 432
+    Ai: 21
+    Class: Boss
+    DamageTaken: 1000
+    Modes:
+      Mvp: true
+    MvpDrops:
+      - Item: Energy_Of_Autumn
+        Rate: 5000
+      - Item: Old_Card_Album
+        Rate: 2500
+      - Item: Magic_Card_Album
+        Rate: 2500
+    Drops:
+      - Item: Energy_Of_Autumn
+        Rate: 2000
+      - Item: Energy_Of_Autumn
+        Rate: 1000
+      - Item: MD_Hol_Fragment
+        Rate: 1000
+      - Item: Autumn_Material_1
+        Rate: 500
+      - Item: Autumn_Material_2
+        Rate: 500
+      - Item: Autumn_Material_3
+        Rate: 500
   - Id: 22180
     AegisName: MD_PRI_DRAGON_4
-    Name: MD_PRI_DRAGON_4
+    Name: Monarch Penguin
+    JapaneseName: Monarch Penguin
+    Level: 275
+    Hp: 700000000
+    Attack: 45786
+    Attack2: 15077
+    Defense: 347
+    MagicDefense: 134
+    Resistance: 1741
+    MagicResistance: 807
+    Str: 486
+    Agi: 390
+    Vit: 386
+    Int: 311
+    Dex: 552
+    Luk: 515
+    AttackRange: 3
+    SkillRange: 10
+    ChaseRange: 12
+    Size: Large
+    Race: Dragon
+    Element: Water
+    ElementLevel: 1
+    WalkSpeed: 130
+    AttackDelay: 1144
+    AttackMotion: 720
+    DamageMotion: 384
+    Ai: 21
+    Class: Boss
+    DamageTaken: 1000
+    Modes:
+      Mvp: true
+    MvpDrops:
+      - Item: Energy_Of_Winter
+        Rate: 5000
+      - Item: Old_Card_Album
+        Rate: 2500
+      - Item: Magic_Card_Album
+        Rate: 2500
+    Drops:
+      - Item: Energy_Of_Winter
+        Rate: 2000
+      - Item: Energy_Of_Winter
+        Rate: 1000
+      - Item: MD_Hol_Fragment
+        Rate: 1000
+      - Item: Winter_Material_1
+        Rate: 500
+      - Item: Winter_Material_2
+        Rate: 500
+      - Item: Winter_Material_3
+        Rate: 500
 #  - Id: 22181
 #    AegisName: MD_COMMON_P
 #  - Id: 22182
@@ -130202,26 +130496,549 @@ Body:
 #    AegisName: VR_MD_ANGELING_SONIC
 #  - Id: 22251
 #    AegisName: VR_MD_HEATER_SONIC
-#  - Id: 22252
-#    AegisName: BIO_DUNEYRR
-#  - Id: 22253
-#    AegisName: BIO_NAGA
-#  - Id: 22254
-#    AegisName: BIO_ANCIENT_TREE
-#  - Id: 22255
-#    AegisName: BIO_DOLLOCARIS
-#  - Id: 22256
-#    AegisName: BIO_ICE_GARGOYLE
-#  - Id: 22257
-#    AegisName: BIO_FLAME_GHOST
-#  - Id: 22258
-#    AegisName: BIO_ACIDUS_
-#  - Id: 22259
-#    AegisName: BIO_MOROCC_1
-#  - Id: 22260
-#    AegisName: BIO_SALAMANDER
-#  - Id: 22261
-#    AegisName: BIO_MOSKILLO
+  - Id: 22252
+    AegisName: BIO_DUNEYRR
+    Name: Abyss Duneyrr
+    Level: 265
+    Hp: 166986400
+    BaseExp: 6625510
+    JobExp: 4615364
+    Attack: 47506
+    Attack2: 70919
+    Defense: 443
+    MagicDefense: 171
+    Resistance: 1725
+    MagicResistance: 2009
+    Str: 414
+    Agi: 274
+    Vit: 329
+    Int: 265
+    Dex: 368
+    Luk: 352
+    AttackRange: 2
+    SkillRange: 10
+    ChaseRange: 12
+    Size: Large
+    Race: Demihuman
+    Element: Fire
+    ElementLevel: 3
+    WalkSpeed: 130
+    AttackDelay: 672
+    AttackMotion: 300
+    ClientAttackMotion: 300
+    DamageMotion: 360
+    DamageTaken: 10
+    Ai: 21
+    Class: Boss
+    Drops:
+      - Item: Fur
+        Rate: 1500
+      - Item: Etel_Dust
+        Rate: 200
+        StealProtected: true
+      - Item: Abyss_Jewel_Fragment
+        Rate: 350
+        StealProtected: true
+      - Item: Time_Dim_J_Fragment
+        Rate: 350
+        StealProtected: true
+      - Item: Abyss_Magic_Jewel
+        Rate: 75
+        StealProtected: true
+      - Item: Time_Dimension_Jewel
+        Rate: 75
+        StealProtected: true
+      - Item: Abyss_Rune_Ore
+        Rate: 25
+        StealProtected: true
+  - Id: 22253
+    AegisName: BIO_NAGA
+    Name: Abyss Naga
+    Level: 265
+    Hp: 181266750
+    BaseExp: 6600885
+    JobExp: 4597516
+    Attack: 41543
+    Attack2: 61986
+    Defense: 432
+    MagicDefense: 167
+    Resistance: 1651
+    MagicResistance: 1923
+    Str: 393
+    Agi: 261
+    Vit: 312
+    Int: 252
+    Dex: 350
+    Luk: 334
+    AttackRange: 2
+    SkillRange: 10
+    ChaseRange: 12
+    Size: Large
+    Race: Brute
+    Element: Earth
+    ElementLevel: 2
+    WalkSpeed: 150
+    AttackDelay: 400
+    AttackMotion: 720
+    ClientAttackMotion: 720
+    DamageMotion: 432
+    DamageTaken: 10
+    Ai: 21
+    Class: Boss
+    Drops:
+      - Item: Scales_Shell
+        Rate: 1500
+      - Item: Etel_Dust
+        Rate: 200
+        StealProtected: true
+      - Item: Abyss_Jewel_Fragment
+        Rate: 350
+        StealProtected: true
+      - Item: Time_Dim_J_Fragment
+        Rate: 350
+        StealProtected: true
+      - Item: Abyss_Magic_Jewel
+        Rate: 75
+        StealProtected: true
+      - Item: Time_Dimension_Jewel
+        Rate: 75
+        StealProtected: true
+      - Item: Abyss_Rune_Ore
+        Rate: 25
+        StealProtected: true
+  - Id: 22254
+    AegisName: BIO_ANCIENT_TREE
+    Name: Abyss Ancient Tree
+    Level: 265
+    Hp: 164463460
+    BaseExp: 6498899
+    JobExp: 4526483
+    Attack: 45258
+    Attack2: 67500
+    Defense: 492
+    MagicDefense: 190
+    Resistance: 2066
+    MagicResistance: 2401
+    Str: 509
+    Agi: 335
+    Vit: 404
+    Int: 326
+    Dex: 448
+    Luk: 433
+    AttackRange: 1
+    SkillRange: 10
+    ChaseRange: 12
+    Size: Large
+    Race: Plant
+    Element: Earth
+    ElementLevel: 2
+    WalkSpeed: 200
+    AttackDelay: 504
+    AttackMotion: 480
+    ClientAttackMotion: 480
+    DamageMotion: 576
+    DamageTaken: 10
+    Ai: 21
+    Class: Boss
+    Drops:
+      - Item: Elder_Branch
+        Rate: 1500
+      - Item: Etel_Dust
+        Rate: 200
+        StealProtected: true
+      - Item: Abyss_Jewel_Fragment
+        Rate: 350
+        StealProtected: true
+      - Item: Time_Dim_J_Fragment
+        Rate: 350
+        StealProtected: true
+      - Item: Abyss_Magic_Jewel
+        Rate: 75
+        StealProtected: true
+      - Item: Time_Dimension_Jewel
+        Rate: 75
+        StealProtected: true
+      - Item: Abyss_Rune_Ore
+        Rate: 25
+        StealProtected: true
+  - Id: 22255
+    AegisName: BIO_DOLLOCARIS
+    Name: Abyss Dollocaris
+    Level: 265
+    Hp: 178600800
+    BaseExp: 6549636
+    JobExp: 4561821
+    Attack: 41198
+    Attack2: 61456
+    Defense: 444
+    MagicDefense: 172
+    Resistance: 1734
+    MagicResistance: 2019
+    Str: 417
+    Agi: 276
+    Vit: 331
+    Int: 267
+    Dex: 370
+    Luk: 354
+    AttackRange: 1
+    SkillRange: 10
+    ChaseRange: 12
+    Size: Medium
+    Race: Fish
+    Element: Earth
+    ElementLevel: 3
+    WalkSpeed: 200
+    AttackDelay: 448
+    AttackMotion: 512
+    ClientAttackMotion: 512
+    DamageMotion: 476
+    DamageTaken: 10
+    Ai: 21
+    Drops:
+      - Item: Scropion's_Nipper
+        Rate: 1500
+      - Item: Etel_Dust
+        Rate: 200
+        StealProtected: true
+      - Item: Abyss_Jewel_Fragment
+        Rate: 350
+        StealProtected: true
+      - Item: Time_Dim_J_Fragment
+        Rate: 350
+        StealProtected: true
+      - Item: Abyss_Magic_Jewel
+        Rate: 75
+        StealProtected: true
+      - Item: Time_Dimension_Jewel
+        Rate: 75
+        StealProtected: true
+      - Item: Abyss_Rune_Ore
+        Rate: 25
+        StealProtected: true
+  - Id: 22256
+    AegisName: BIO_ICE_GARGOYLE
+    Name: Abyss Ice Gargoyle
+    Level: 265
+    Hp: 162858710
+    BaseExp: 6595389
+    JobExp: 4605274
+    Attack: 35500
+    Attack2: 52941
+    Defense: 255
+    MagicDefense: 151
+    Resistance: 851
+    MagicResistance: 1915
+    Str: 354
+    Agi: 326
+    Vit: 224
+    Int: 298
+    Dex: 443
+    Luk: 364
+    AttackRange: 11
+    SkillRange: 10
+    ChaseRange: 12
+    Size: Medium
+    Race: Demon
+    Element: Water
+    ElementLevel: 3
+    WalkSpeed: 150
+    AttackDelay: 820
+    AttackMotion: 600
+    ClientAttackMotion: 600
+    DamageMotion: 284
+    DamageTaken: 10
+    Ai: 21
+    Drops:
+      - Item: Petite_DiablOfs_Wing
+        Rate: 1500
+      - Item: Etel_Dust
+        Rate: 200
+        StealProtected: true
+      - Item: Abyss_Jewel_Fragment
+        Rate: 350
+        StealProtected: true
+      - Item: Time_Dim_J_Fragment
+        Rate: 350
+        StealProtected: true
+      - Item: Abyss_Magic_Jewel
+        Rate: 75
+        StealProtected: true
+      - Item: Time_Dimension_Jewel
+        Rate: 75
+        StealProtected: true
+      - Item: Abyss_Rune_Ore
+        Rate: 25
+        StealProtected: true
+  - Id: 22257
+    AegisName: BIO_FLAME_GHOST
+    Name: Abyss Flame Ghost
+    Level: 265
+    Hp: 159779165
+    BaseExp: 6565544
+    JobExp: 4593592
+    Attack: 31327
+    Attack2: 46726
+    Defense: 280
+    MagicDefense: 314
+    Resistance: 1067
+    MagicResistance: 2177
+    Str: 264
+    Agi: 263
+    Vit: 298
+    Int: 402
+    Dex: 385
+    Luk: 402
+    AttackRange: 3
+    SkillRange: 10
+    ChaseRange: 12
+    Size: Medium
+    Race: Undead
+    Element: Fire
+    ElementLevel: 2
+    WalkSpeed: 100
+    AttackDelay: 1152
+    AttackMotion: 1920
+    ClientAttackMotion: 1920
+    DamageMotion: 672
+    DamageTaken: 10
+    Ai: 21
+    Drops:
+      - Item: Skull
+        Rate: 1500
+      - Item: Etel_Dust
+        Rate: 200
+        StealProtected: true
+      - Item: Abyss_Jewel_Fragment
+        Rate: 350
+        StealProtected: true
+      - Item: Time_Dim_J_Fragment
+        Rate: 350
+        StealProtected: true
+      - Item: Abyss_Magic_Jewel
+        Rate: 75
+        StealProtected: true
+      - Item: Time_Dimension_Jewel
+        Rate: 75
+        StealProtected: true
+      - Item: Abyss_Rune_Ore
+        Rate: 25
+        StealProtected: true
+  - Id: 22258
+    AegisName: BIO_ACIDUS_
+    Name: Abyss Acidus
+    Level: 265
+    Hp: 171678900
+    BaseExp: 6690545
+    JobExp: 4655421
+    Attack: 34336
+    Attack2: 51209
+    Defense: 592
+    MagicDefense: 259
+    Resistance: 2412
+    MagicResistance: 1768
+    Str: 325
+    Agi: 288
+    Vit: 442
+    Int: 382
+    Dex: 421
+    Luk: 383
+    AttackRange: 2
+    SkillRange: 10
+    ChaseRange: 12
+    Size: Large
+    Race: Dragon
+    Element: Wind
+    ElementLevel: 2
+    WalkSpeed: 200
+    AttackDelay: 568
+    AttackMotion: 528
+    ClientAttackMotion: 528
+    DamageMotion: 360
+    DamageTaken: 10
+    Ai: 21
+    Drops:
+      - Item: Dragon_Canine
+        Rate: 1500
+      - Item: Etel_Dust
+        Rate: 200
+        StealProtected: true
+      - Item: Abyss_Jewel_Fragment
+        Rate: 350
+        StealProtected: true
+      - Item: Time_Dim_J_Fragment
+        Rate: 350
+        StealProtected: true
+      - Item: Abyss_Magic_Jewel
+        Rate: 75
+        StealProtected: true
+      - Item: Time_Dimension_Jewel
+        Rate: 75
+        StealProtected: true
+      - Item: Abyss_Rune_Ore
+        Rate: 25
+        StealProtected: true
+  - Id: 22259
+    AegisName: BIO_MOROCC_1
+    Name: Abyss Incarnation
+    Level: 265
+    Hp: 155392230
+    BaseExp: 6652134
+    JobExp: 4633221
+    Attack: 49940
+    Attack2: 74569
+    Defense: 444
+    MagicDefense: 172
+    Resistance: 1734
+    MagicResistance: 2019
+    Str: 417
+    Agi: 276
+    Vit: 331
+    Int: 267
+    Dex: 370
+    Luk: 354
+    AttackRange: 2
+    SkillRange: 10
+    ChaseRange: 12
+    Size: Large
+    Race: Angel
+    Element: Dark
+    ElementLevel: 1
+    WalkSpeed: 150
+    AttackDelay: 576
+    AttackMotion: 480
+    ClientAttackMotion: 336
+    DamageMotion: 432
+    DamageTaken: 10
+    Ai: 21
+    Drops:
+      - Item: Dark_Debris
+        Rate: 1500
+      - Item: Etel_Dust
+        Rate: 200
+        StealProtected: true
+      - Item: Abyss_Jewel_Fragment
+        Rate: 350
+        StealProtected: true
+      - Item: Time_Dim_J_Fragment
+        Rate: 350
+        StealProtected: true
+      - Item: Abyss_Magic_Jewel
+        Rate: 75
+        StealProtected: true
+      - Item: Time_Dimension_Jewel
+        Rate: 75
+        StealProtected: true
+      - Item: Abyss_Rune_Ore
+        Rate: 25
+        StealProtected: true
+  - Id: 22260
+    AegisName: BIO_SALAMANDER
+    Name: Abyss Salamander
+    Level: 265
+    Hp: 155742230
+    BaseExp: 6575261
+    JobExp: 4579669
+    Attack: 50845
+    Attack2: 75905
+    Defense: 480
+    MagicDefense: 185
+    Resistance: 1987
+    MagicResistance: 2311
+    Str: 487
+    Agi: 321
+    Vit: 387
+    Int: 381
+    Dex: 429
+    Luk: 414
+    AttackRange: 2
+    SkillRange: 10
+    ChaseRange: 12
+    Size: Large
+    Race: Formless
+    Element: Fire
+    ElementLevel: 2
+    WalkSpeed: 130
+    AttackDelay: 140
+    AttackMotion: 384
+    ClientAttackMotion: 288
+    DamageMotion: 288
+    DamageTaken: 10
+    Ai: 21
+    Drops:
+      - Item: Burning_Heart
+        Rate: 1500
+      - Item: Etel_Dust
+        Rate: 200
+        StealProtected: true
+      - Item: Abyss_Jewel_Fragment
+        Rate: 350
+        StealProtected: true
+      - Item: Time_Dim_J_Fragment
+        Rate: 350
+        StealProtected: true
+      - Item: Abyss_Magic_Jewel
+        Rate: 75
+        StealProtected: true
+      - Item: Time_Dimension_Jewel
+        Rate: 75
+        StealProtected: true
+      - Item: Abyss_Rune_Ore
+        Rate: 25
+        StealProtected: true
+  - Id: 22261
+    AegisName: BIO_MOSKILLO
+    Name: Abyss Moskillo
+    Level: 265
+    Hp: 155812230
+    BaseExp: 6498387
+    JobExp: 4526126
+    Attack: 48782
+    Attack2: 72759
+    Defense: 519
+    MagicDefense: 200
+    Resistance: 2257
+    MagicResistance: 2632
+    Str: 563
+    Agi: 369
+    Vit: 447
+    Int: 361
+    Dex: 493
+    Luk: 478
+    AttackRange: 1
+    SkillRange: 10
+    ChaseRange: 12
+    Size: Large
+    Race: Formless
+    Element: Fire
+    ElementLevel: 2
+    WalkSpeed: 200
+    AttackDelay: 432
+    AttackMotion: 388
+    ClientAttackMotion: 475
+    DamageMotion: 475
+    DamageTaken: 10
+    Ai: 21
+    Drops:
+      - Item: Round_Shell
+        Rate: 1500
+      - Item: Etel_Dust
+        Rate: 200
+        StealProtected: true
+      - Item: Abyss_Jewel_Fragment
+        Rate: 350
+        StealProtected: true
+      - Item: Time_Dim_J_Fragment
+        Rate: 350
+        StealProtected: true
+      - Item: Abyss_Magic_Jewel
+        Rate: 75
+        StealProtected: true
+      - Item: Time_Dimension_Jewel
+        Rate: 75
+        StealProtected: true
+      - Item: Abyss_Rune_Ore
+        Rate: 25
+        StealProtected: true
 #  - Id: 22262
 #    AegisName: 2311_EV_BLACK_BEAR
 #  - Id: 22263

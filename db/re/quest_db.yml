@@ -9374,6 +9374,27 @@ Body:
   - Id: 12506
     Title: Let's try again to seal the crack
     TimeLimit: 4h
+  - Id: 12513
+    Title: Destroyed Tower
+  - Id: 12514
+    Title: Tower Aftermath
+    TimeLimit: 3d 4h
+  - Id: 12515
+    Title: New Owner Confrontation
+  - Id: 12516
+    Title: Fountain's Secret 1
+  - Id: 12517
+    Title: Fountain's Secret 2
+  - Id: 12518
+    Title: Exiled Being
+    Targets:
+      - Mob: MD_BETELGEUSE
+        Count: 1
+  - Id: 12519
+    Title: Original Owner's Whereabout
+    Targets:
+      - Mob: MD_NAGHT_SIEGER
+        Count: 1
   - Id: 12520
     Title: "[Normal] Villa of Deception"
   - Id: 12521

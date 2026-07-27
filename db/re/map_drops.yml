@@ -3658,3 +3658,119 @@ Body:
       - Index: 7
         Item: Ein_1HITEMbox
         Rate: 500
+  - Map: bl_depth2
+    GlobalDrops:
+      - Index: 0
+        Item: Dimen_ABC_Bow
+        Rate: 100
+      - Index: 1
+        Item: Dimen_ABC_Knife
+        Rate: 100
+      - Index: 2
+        Item: Dimen_AG_Rod
+        Rate: 100
+      - Index: 3
+        Item: Dimen_AG_Staff
+        Rate: 100
+      - Index: 4
+        Item: Dimen_BO_Hall
+        Rate: 100
+      - Index: 5
+        Item: Dimen_BO_Sword
+        Rate: 100
+      - Index: 6
+        Item: Dimen_DK_Lance
+        Rate: 100
+      - Index: 7
+        Item: Dimen_DK_T_Sword
+        Rate: 100
+      - Index: 8
+        Item: Dimen_EM_M_Book
+        Rate: 100
+      - Index: 9
+        Item: Dimen_EM_S_Book
+        Rate: 100
+      - Index: 10
+        Item: Dimen_SKE_M_Book
+        Rate: 100
+      - Index: 11
+        Item: Dimen_SKE_S_Book
+        Rate: 100
+      - Index: 12
+        Item: Dimen_HN_Rod
+        Rate: 100
+      - Index: 13
+        Item: Dimen_HN_Sword
+        Rate: 100
+      - Index: 14
+        Item: Dimen_IG_Spear
+        Rate: 100
+      - Index: 15
+        Item: Dimen_IG_Sword
+        Rate: 100
+      - Index: 16
+        Item: Dimen_IQ_Claw
+        Rate: 100
+      - Index: 17
+        Item: Dimen_IQ_Knuckle
+        Rate: 100
+      - Index: 18
+        Item: Dimen_MT_Axe
+        Rate: 100
+      - Index: 19
+        Item: Dimen_MT_Mace
+        Rate: 100
+      - Index: 20
+        Item: Dimen_SS_Humma
+        Rate: 100
+      - Index: 21
+        Item: Dimen_SS_Wheel
+        Rate: 100
+      - Index: 22
+        Item: Dimen_TR_Harp
+        Rate: 100
+      - Index: 23
+        Item: Dimen_TR_Ribbon
+        Rate: 100
+      - Index: 24
+        Item: Dimen_TR_Rope
+        Rate: 100
+      - Index: 25
+        Item: Dimen_TR_Vilolin
+        Rate: 100
+      - Index: 26
+        Item: Dimen_NW_Rifle
+        Rate: 100
+      - Index: 27
+        Item: Dimen_CD_Bible
+        Rate: 100
+      - Index: 28
+        Item: Dimen_CD_Rod
+        Rate: 100
+      - Index: 29
+        Item: Dimen_SHC_Cakram
+        Rate: 100
+      - Index: 30
+        Item: Dimen_SHC_Katar
+        Rate: 100
+      - Index: 31
+        Item: Dimen_SOA_Rod
+        Rate: 100
+      - Index: 32
+        Item: Dimen_SOA_Stick
+        Rate: 100
+      - Index: 33
+        Item: Dimen_SH_Foxtail
+        Rate: 100
+      - Index: 34
+        Item: Dimen_SH_F_Model
+        Rate: 100
+      - Index: 35
+        Item: Dimen_WH_Bow
+        Rate: 100
+      - Index: 36
+        Item: Dimen_WH_C_Bow
+        Rate: 100
+      - Index: 37
+        Item: Dimen_W_Refine
+        Rate: 1

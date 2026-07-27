@@ -606,6 +606,16 @@ Body:
       Y: 20
     AdditionalMaps:
       2@gl_k: true
+  - Id: 122
+    Name: Constellation Tower
+    TimeLimit: 3600
+    Enter:
+      Map: 1@ch_t
+      X: 48
+      Y: 183
+    AdditionalMaps:
+      2@ch_t: true
+      3@ch_t: true
   - Id: 130
     Name: Maze of Oz
     TimeLimit: 7200

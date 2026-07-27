@@ -18124,6 +18124,18 @@ Body:
     Range: 1
     Duration1: 15000
     Status: Deadly_Defeasance
+#  - Id: 778
+#    Name: NPC_STRIP_SHADOW
+#    Description: Strip Shadow Equipment
+#    MaxLevel: 10
+#    TargetType: Attack
+#    DamageFlags:
+#      NoDamage: true
+#    Flags:
+#      IsNpc: true
+#    Range: 10
+#    Duration1: 1000
+#    Status: Shadow_Strip
   - Id: 779
     Name: NPC_DEADLYCURSE2
     Description: Deadly Curse 2
