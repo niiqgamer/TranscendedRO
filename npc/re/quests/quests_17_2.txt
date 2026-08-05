@@ -9287,7 +9287,8 @@ ba_in01,28,255,5	script	Manager Beta Almond#ep172_amd01	4_EP17_BASIC_B,{
 		erasequest 18024;
 		setquest 18025;
 		delitem 1000226,10;
-		getitem 1000103,2;
+		getitem 9900009,rand(25,50);
+		getitem 1000103,20;
 		getexp2 206267,0;
 		close3;
 	case 2:
@@ -9495,7 +9496,9 @@ ba_in01,32,250,3	script	Sweety#ep172_swty	4_EP17_SWEETY,{
 		mes "Just take this and go away!";
 		erasequest 18022;
 		setquest 18023;
-		getitem 1000103,4;
+		getitem 9900009,rand(75,100);
+		getitem 102559,rand(1,10);
+		getitem 1000103,40;
 		getexp2 206267,0;
 		close3;
 	}

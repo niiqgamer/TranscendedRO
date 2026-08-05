@@ -323,5 +323,269 @@ OnTimer1000:
     end;
 }
 
+// Enchant GGT
+grademk,65,86,5	script	Enchant GGT#itroom	4_F_PREMI,{
+	switch(select(
+	
+	"~ Illusion Shield I / II",
+	"Cancel"
+	
+	)) {
+		case 1:
+			item_enchant(1002);
+			end;
+		case 2:
+			mes "Bye, guys!";
+			close2;
+			end;
+	}
+	close;
+
+OnInit:
+	initnpctimer;
+	end;
+
+OnTimer1000:
+    showscript(" ! Enchant GGT ! ");
+    setnpctimer 0;
+    end;
+}
+
+// Glacier - Dim Glacier
+grademk,74,86,4	script	Glacier Set#itroom	EP19_NPC_LEHAR,{
+	switch(select(
+	
+	"~ EP.19 Materials",
+	"~ Dim Glacier Ring of Resonance (GGT)",
+	"~ Enchant Dim Glacier Ring of Resonance (GGT)",
+	"Cancel"
+	
+	)) {
+		case 1:
+			callshop "EP19Materials";
+			end;
+		case 2:
+			callshop "DimRingTH";
+			end;
+		case 3:
+			item_enchant(349);
+			end;
+		case 4:
+			mes "Bye, guys!";
+			close2;
+			end;
+	}
+	close;
+
+OnInit:
+	initnpctimer;
+	end;
+
+OnTimer1000:
+    showscript(" ! EP. 19 ! ");
+    setnpctimer 0;
+    end;
+}
+
+// Nebula
+grademk,86,90,4	script	Nebula Equipments#itroom	4_ED_OSCAR,{
+	switch(select(
+	
+	"~ Nebula Exchange",
+	"~ Nebula Shop",
+	"~ Enchant ^FF0000Nebula Armor of Power^000000",
+	"~ Enchant ^DB9512Nebula Armor of Stamina^000000",
+	"~ Enchant ^0CC75ANebula Armor of Concentration^000000",
+	"~ Enchant ^12D8DBNebula Armor of Creative^000000",
+	"~ Enchant ^127DDBNebula Armor of Spell^000000",
+	"~ Enchant ^6912DBNebula Armor of Wisdom^000000",
+	"Cancel"
+	
+	)) {
+		case 1:
+			callshop "NebulaExchange";
+			end;
+		case 2:
+			callshop "NebulaShop";
+			end;
+		case 3:
+			item_enchant(7);
+			end;
+		case 4:
+			item_enchant(8);
+			end;
+		case 5:
+			item_enchant(9);
+			end;
+		case 6:
+			item_enchant(10);
+			end;
+		case 7:
+			item_enchant(11);
+			end;
+		case 8:
+			item_enchant(12);
+			end;
+		case 9:
+			mes "Bye, guys!";
+			close2;
+			end;
+	}
+	close;
+
+OnInit:
+	initnpctimer;
+	end;
+
+OnTimer1000:
+    showscript(" ! Nebula Equipments ! ");
+    setnpctimer 0;
+    end;
+}
+
+alberta,203,75,6	duplicate(Nebula Equipments#itroom)	Nebula Equipments#alberta	4_ED_OSCAR
+
+// Good and Evil
+grademk,87,101,4	script	Good & Evil Equipments#itroom	4_M_5THPRIN2,{
+	switch(select(
+	
+	"~ Good and Evil Headgears",
+	"~ ^F5AD27Good Weapons^000000",
+	"~ ^8027F5Evil Weapons^000000",
+	"~ Boots of Good and Evil",
+	"~ ^F5AD27Rings of Good^000000",
+	"~ ^8027F5Rings of Evil^000000",
+	"~ Enchant Good and Evil Headgears (All)",
+	"~ Enchant Boots of Good and Evil (Cardinal)",
+	"~ Enchant Boots of Good and Evil (Inquisitor)",
+	"~ Enchant Boots of Good and Evil (Soul Ascetic)",
+	"~ Enchant Boots of Good and Evil (Biolo)",
+	"~ Enchant Boots of Good and Evil (Dragon Knight)",
+	"~ Enchant Boots of Good and Evil (Spirit Handler)",
+	"~ Enchant Boots of Good and Evil (Elemental Master)",
+	"~ Enchant Boots of Good and Evil (Windhawk)",
+	"~ Enchant Boots of Good and Evil (Sky Emperor)",
+	"~ Enchant Boots of Good and Evil (Meister)",
+	"~ Enchant Boots of Good and Evil (Shadow Cross)",
+	"~ Enchant Boots of Good and Evil (Shinkiro & Shiranui)",
+	"~ Enchant Boots of Good and Evil (Abyss Chaser)",
+	"~ Enchant Boots of Good and Evil (Troubadour&Trouvere)",
+	"~ Enchant Boots of Good and Evil (Hyper Novice)",
+	"~ Enchant Boots of Good and Evil (Imperial Guard)",
+	"~ Enchant Boots of Good and Evil (Arch Mage)",
+	"~ Enchant Boots of Good and Evil (Night Watch)",
+	"Cancel"
+	
+	)) {
+		case 1:
+			callshop "GoodnEvilHeadgears";
+			end;
+		case 2:
+			callshop "GoodWeapons";
+			end;
+		case 3:
+			callshop "EvilWeapons";
+			end;
+		case 4:
+			callshop "BootsGoodnEvil";
+			end;
+		case 5:
+			callshop "RingsofGood";
+			end;
+		case 6:
+			callshop "RingsofEvil";
+			end;
+		case 7:
+			item_enchant(67);
+			end;
+		case 8:
+			// Cardinal
+			item_enchant(106);
+			end;
+		case 9:
+			// Inquisitor
+			item_enchant(107);
+			end;
+		case 10:
+			// Soul Ascetic
+			item_enchant(108);
+			end;
+		case 11:
+			// Biolo
+			item_enchant(109);
+			end;
+		case 12:
+			// Dragon Knight
+			item_enchant(110);
+			end;
+		case 13:
+			// Spirit Handler
+			item_enchant(111);
+			end;
+		case 14:
+			// Elemental Master
+			item_enchant(114);
+			end;
+		case 15:
+			// Windhawk
+			item_enchant(115);
+			end;
+		case 16:
+			// Sky Emperor
+			item_enchant(116);
+			end;
+		case 17:
+			// Meister
+			item_enchant(125);
+			end;
+		case 18:
+			// Shadow Cross
+			item_enchant(126);
+			end;
+		case 19:
+			// Shinkiro & Shiranui
+			item_enchant(127);
+			end;
+		case 20:
+			// Abyss Chaser
+			item_enchant(129);
+			end;
+		case 21:
+			// Troubadour&Trouvere
+			item_enchant(130);
+			end;
+		case 22:
+			// Hyper Novice
+			item_enchant(131);
+			end;
+		case 23:
+			// Imperial Guard
+			item_enchant(134);
+			end;
+		case 24:
+			// Arch Mage
+			item_enchant(135);
+			end;
+		case 25:
+			// Night Watch
+			item_enchant(136);
+			end;
+		case 26:
+			mes "Bye, guys!";
+			close2;
+			end;
+	}
+	close;
+
+OnInit:
+	initnpctimer;
+	end;
+
+OnTimer1000:
+    showscript(" ! Good & Evil Equipments ! ");
+    setnpctimer 0;
+    end;
+}
+
 grademk	mapflag	noteleport
 grademk	mapflag	novending

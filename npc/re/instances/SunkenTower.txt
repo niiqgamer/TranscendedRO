@@ -362,7 +362,7 @@ OnTimer1000:
 				getexp 'bonusExp, 'jobExp;
 				//if (rand(100) < 'dustChance) {
 					getitem 1000372, 5 * 'difficulty;
-					getitem 9900009, 2 * 'difficulty;
+					getitem 9900009, 3 * 'difficulty;
 					.@message$ += " Meteor Powders and Instance Emblems.";
 				//}
 

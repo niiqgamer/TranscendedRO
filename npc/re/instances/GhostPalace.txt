@@ -977,13 +977,13 @@ OnTouch_:
 	close2;
 	if (isbegin_quest(1263) == 2) {
 		getitem 6672,rand(10,20);// Gray Shard
-		getitem 9900009,rand(5,10);
+		getitem 9900009,rand(50,100);
 	} else {
 		setquest 1263;// Cursed Swordman
 		completequest 1263;
 		getexp 900000,500000;
 		getitem 6672,rand(30,50);// Gray Shard
-		getitem 9900009,rand(10,20);
+		getitem 9900009,rand(20,30);
 	}
 	warp "dali02",46,129;
 	end;

@@ -100,6 +100,7 @@ Body:
     ArmorLevel: 2
     EquipLevelMin: 200
     Refineable: true
+    Gradable: true
     View: 2659
     Script: |
       .@g = getenchantgrade();
@@ -126,6 +127,73 @@ Body:
             }
          }
       }
+  - Id: 401043
+    AegisName: Great_Kiel_US
+    Name: Kiel Successor Doll
+    Type: Armor
+    Weight: 200
+    Defense: 50
+    Slots: 1
+    Locations:
+      Head_Top: true
+    ArmorLevel: 2
+    EquipLevelMin: 100
+    Refineable: true
+    Gradable: true
+    View: 910
+    Script: |
+      .@g = getenchantgrade();
+      .@r = getrefine();
+      bonus bASPD,10;
+      bonus bMaxHPRate,15;
+      bonus bMaxSPRate,15;
+      bonus bLongAtkRate,20+7*(.@r/2);
+      bonus bPow,.@r/2;
+      bonus bAllStats,7*(.@r/3);
+      if (.@r>=10) {
+         bonus bLongAtkRate,15;
+         if (.@r>=11) {
+            bonus bAllStats,7;
+            bonus bBaseAtk,70;
+            bonus5 bAutoSpell,"ASC_BREAKER",10,70,BF_LONG|BF_WEAPON|BF_NORMAL,1;
+            if (.@r>=12) {
+               bonus bAllStats,7;
+               bonus bBaseAtk,70;
+               bonus5 bAutoSpell,"SN_SHARPSHOOTING",5,100,BF_LONG|BF_WEAPON|BF_NORMAL,1;
+               if (.@r>=13) {
+                  bonus bAllStats,20;
+                  bonus bBaseAtk,200;
+                  bonus5 bAutoSpell,"RA_ARROWSTORM",10,150,BF_LONG|BF_WEAPON|BF_NORMAL,1;
+                  if (.@r>=14) {
+                     bonus bBaseAtk,250;
+                     bonus bDelayRate,-25;
+                     bonus bFixedCast,-500;
+                  }
+               }
+            }
+         }
+      }
+      if (.@g>=ENCHANTGRADE_D) {
+         bonus bPAtk,15;
+         if (.@g>=ENCHANTGRADE_C) {
+            bonus bMaxHPRate,20;
+            bonus bMaxSPRate,20;
+            if (.@g>=ENCHANTGRADE_B) {
+               bonus2 bIgnoreDefRaceRate,RC_All,50;
+               if (.@g>=ENCHANTGRADE_A) {
+                  bonus bAllStats,8;
+                  bonus bAllTraitStats,8;
+               }
+            }
+         }
+      }
+      if (getpetinfo(PETINFO_EGGID) == 9118) {
+         if (getpetinfo(PETINFO_INTIMATE) >= PET_INTIMATE_LOYAL) {
+            bonus bAllStats,5;
+            bonus bAllTraitStats,5;
+            bonus bSpeedRate,25;
+         }
+      }
   - Id: 401237
     AegisName: Glacier_Helm_LT_TH
     Name: "Issgard Supreme Crown-LT"
@@ -138,6 +206,7 @@ Body:
     ArmorLevel: 2
     EquipLevelMin: 230
     Refineable: true
+    Gradable: true
     View: 1117
     Script: |
       .@g = getenchantgrade();
@@ -192,6 +261,7 @@ Body:
     ArmorLevel: 2
     EquipLevelMin: 230
     Refineable: true
+    Gradable: true
     View: 2662
     Script: |
       .@g = getenchantgrade();
@@ -886,6 +956,58 @@ Body:
                       bonus3 bAddMonsterIdDropItem,1000367,20893,3000;
                   }
              }
+         }
+      }
+  - Id: 450566
+    AegisName: November_Rain_US
+    Name: November Rain Robe
+    Type: Armor
+    Weight: 1000
+    Defense: 100
+    Slots: 1
+    Locations:
+      Armor: true
+    ArmorLevel: 2
+    EquipLevelMin: 100
+    Refineable: true
+    Gradable: true
+    Script: |
+      .@g = getenchantgrade();
+      .@r = getrefine();
+      bonus bUnbreakableArmor;
+      bonus bMdef,15;
+      bonus bMaxHP,20000;
+      bonus bAllStats,20;
+      bonus2 bSkillAtk,"AG_RAIN_OF_CRYSTAL",5*(BaseLevel/10);
+      bonus2 bMagicAddEle,Ele_Water,10*(.@r/2);
+      bonus bSpl,5*(.@r/3);
+      if (.@r>=11) {
+         bonus2 bMagicAtkEle,Ele_Water,20;
+         if (.@r>=12) {
+            bonus2 bSkillCooldown,"AG_RAIN_OF_CRYSTAL",-3000;
+            if (.@r>=13) {
+               bonus4 bAutoSpellOnSkill,"AG_RAIN_OF_CRYSTAL","AG_CRYSTAL_IMPACT",5,200;
+               if (.@r>=14) {
+                  bonus4 bAutoSpellOnSkill,"AG_FROZEN_SLASH","AG_CRYSTAL_IMPACT",5,200;
+                  if (.@r>=15) {
+                     bonus2 bSkillCooldown,"AG_FROZEN_SLASH",-300;
+                     bonus2 bSkillAtk,"AG_FROZEN_SLASH",100;
+                  }
+               }
+            }
+         }
+      }
+      if (.@g>=ENCHANTGRADE_D) {
+         bonus bDelayrate,-15;
+         if (.@g>=ENCHANTGRADE_C) {
+            bonus2 bMagicAtkEle,Ele_Water,20;
+            if (.@g>=ENCHANTGRADE_B) {
+               bonus2 bSkillCooldown,"AG_CRYSTAL_IMPACT",-1000;
+               if (.@g>=ENCHANTGRADE_A) {
+                  bonus2 bSkillAtk,"AG_CRYSTAL_IMPACT",50;
+                  bonus2 bSkillAtk,"AG_CRYSTAL_IMPACT_ATK",50;
+               }
+            }
          }
       }
   - Id: 460092
@@ -2515,6 +2637,28 @@ Body:
       bonus bPow,10;
       bonus bCritical,15;
       bonus2 bAddClass,Class_All,15;
+  - Id: 490808
+    AegisName: WH_Good_Ring_TH
+    Name: "Ring of Good (Windhawk)"
+    Type: Armor
+    Weight: 100
+    Defense: 0
+    Slots: 1
+    Jobs:
+      Hunter: true
+    Classes:
+      All_Third: true
+      Fourth: true
+    Locations:
+      Right_Accessory: true
+    ArmorLevel: 1
+    EquipLevelMin: 215
+    Script: |
+      bonus bBaseAtk,100;
+      bonus bDelayRate,-10;
+      bonus bCon,10;
+      bonus bFixedCast,-500;
+      bonus2 bAddClass,Class_All,15;
   - Id: 490809
     AegisName: Nebula_Nec_LT_TH
     Name: Nebula Pendant-LT
@@ -2551,6 +2695,28 @@ Body:
       bonus bDelayRate,-10;
       bonus bPow,10;
       bonus bCritical,15;
+      bonus2 bAddClass,Class_All,15;
+  - Id: 490813
+    AegisName: IG_Good_Ring_TH
+    Name: "Ring of Good (Imperial Guard)"
+    Type: Armor
+    Weight: 100
+    Defense: 0
+    Slots: 1
+    Jobs:
+      Crusader: true
+    Classes:
+      All_Third: true
+      Fourth: true
+    Locations:
+      Right_Accessory: true
+    ArmorLevel: 1
+    EquipLevelMin: 215
+    Script: |
+      bonus bBaseAtk,100;
+      bonus bDelayRate,-10;
+      bonus bPow,10;
+      bonus bAtkRate,6;
       bonus2 bAddClass,Class_All,15;
   - Id: 490814
     AegisName: TR_Evil_Ring_TH
@@ -2596,6 +2762,28 @@ Body:
       bonus bCon,10;
       bonus bFixedCast,-500;
       bonus2 bAddClass,Class_All,15;
+  - Id: 490816
+    AegisName: CA_Good_Ring_TH
+    Name: "Ring of Good (Cardinal)"
+    Type: Armor
+    Weight: 100
+    Defense: 0
+    Slots: 1
+    Jobs:
+      Priest: true
+    Classes:
+      All_Third: true
+      Fourth: true
+    Locations:
+      Right_Accessory: true
+    ArmorLevel: 1
+    EquipLevelMin: 215
+    Script: |
+      bonus bMatk,100;
+      bonus bDelayRate,-10;
+      bonus bSpl,10;
+      bonus bVariableCastRate,-15;
+      bonus2 bMagicAddClass,Class_All,15;
   - Id: 490817
     AegisName: Alnilam_Necklace_US
     Name: Necklace of Alnilam
@@ -2640,6 +2828,50 @@ Body:
       bonus bCon,10;
       bonus bCritical,15;
       bonus2 bAddClass,Class_All,15;
+  - Id: 490838
+    AegisName: SHC_Good_Ring_TH
+    Name: "Ring of Evil (Shadow Cross)"
+    Type: Armor
+    Weight: 100
+    Defense: 0
+    Slots: 1
+    Jobs:
+      Assassin: true
+    Classes:
+      All_Third: true
+      Fourth: true
+    Locations:
+      Right_Accessory: true
+    ArmorLevel: 1
+    EquipLevelMin: 215
+    Script: |
+      bonus bBaseAtk,100;
+      bonus bDelayRate,-10;
+      bonus bPow,10;
+      bonus bCritical,15;
+      bonus2 bAddClass,Class_All,15;
+  - Id: 490839
+    AegisName: MT_Good_Ring_TH
+    Name: "Ring of Good (Meister)"
+    Type: Armor
+    Weight: 100
+    Defense: 0
+    Slots: 1
+    Jobs:
+      Blacksmith: true
+    Classes:
+      All_Third: true
+      Fourth: true
+    Locations:
+      Right_Accessory: true
+    ArmorLevel: 1
+    EquipLevelMin: 215
+    Script: |
+      bonus bBaseAtk,100;
+      bonus bDelayRate,-10;
+      bonus bPow,10;
+      bonus bAtkRate,6;
+      bonus2 bAddClass,Class_All,15;
   - Id: 490840
     AegisName: IG_Evil_Ring_TH
     Name: "Ring of Evil (Imperial Guard)"
@@ -2662,6 +2894,50 @@ Body:
       bonus bSpl,10;
       bonus bFixedCast,-500;
       bonus2 bMagicAddClass,Class_All,15;
+  - Id: 490841
+    AegisName: TR_Good_Ring_TH
+    Name: "Ring of Good (Troubadour & Trouvere)"
+    Type: Armor
+    Weight: 100
+    Defense: 0
+    Slots: 1
+    Jobs:
+      BardDancer: true
+    Classes:
+      All_Third: true
+      Fourth: true
+    Locations:
+      Right_Accessory: true
+    ArmorLevel: 1
+    EquipLevelMin: 215
+    Script: |
+      bonus bBaseAtk,100;
+      bonus bDelayRate,-10;
+      bonus bCon,10;
+      bonus bAtkRate,6;
+      bonus2 bAddClass,Class_All,15;
+  - Id: 490843
+    AegisName: DK_Good_Ring_TH
+    Name: "Ring of Good (Dragon Knight)"
+    Type: Armor
+    Weight: 100
+    Defense: 0
+    Slots: 1
+    Jobs:
+      Knight: true
+    Classes:
+      All_Third: true
+      Fourth: true
+    Locations:
+      Right_Accessory: true
+    ArmorLevel: 1
+    EquipLevelMin: 215
+    Script: |
+      bonus bBaseAtk,100;
+      bonus bDelayRate,-10;
+      bonus bPow,10;
+      bonus bMaxHPRate,6;
+      bonus2 bAddClass,Class_All,15;
   - Id: 490844
     AegisName: EM_Evil_Ring_TH
     Name: "Ring of Evil (Elemental Master)"
@@ -2705,6 +2981,50 @@ Body:
       bonus bDelayRate,-10;
       bonus bPow,10;
       bonus bCritical,15;
+      bonus2 bAddClass,Class_All,15;
+  - Id: 490850
+    AegisName: SS_Good_Ring_TH
+    Name: "Ring of Good (Shinkiro&Shiranui)"
+    Type: Armor
+    Weight: 100
+    Defense: 0
+    Slots: 1
+    Jobs:
+      KagerouOboro: true
+    Classes:
+      All_Third: true
+      Fourth: true
+    Locations:
+      Right_Accessory: true
+    ArmorLevel: 1
+    EquipLevelMin: 215
+    Script: |
+      bonus bBaseAtk,100;
+      bonus bDelayRate,-10;
+      bonus bPow,10;
+      bonus bAtkRate,6;
+      bonus2 bAddClass,Class_All,15;
+  - Id: 490851
+    AegisName: AC_Good_Ring_TH
+    Name: "Ring of Good (Abyss Chaser)"
+    Type: Armor
+    Weight: 100
+    Defense: 0
+    Slots: 1
+    Jobs:
+      Rogue: true
+    Classes:
+      All_Third: true
+      Fourth: true
+    Locations:
+      Right_Accessory: true
+    ArmorLevel: 1
+    EquipLevelMin: 215
+    Script: |
+      bonus bBaseAtk,100;
+      bonus bDelayRate,-10;
+      bonus bPow,10;
+      bonus bAtkRate,6;
       bonus2 bAddClass,Class_All,15;
   - Id: 490852
     AegisName: SHC_Evil_Ring_TH
@@ -2792,6 +3112,48 @@ Body:
       bonus bPow,10;
       bonus bCritical,15;
       bonus2 bAddClass,Class_All,15;
+  - Id: 490858
+    AegisName: NW_Good_Ring_TH
+    Name: "Ring of Good (Night Watch)"
+    Type: Armor
+    Weight: 100
+    Defense: 0
+    Slots: 1
+    Jobs:
+      Rebellion: true
+    Classes:
+      Third: true
+    Locations:
+      Right_Accessory: true
+    ArmorLevel: 1
+    EquipLevelMin: 215
+    Script: |
+      bonus bBaseAtk,100;
+      bonus bDelayRate,-10;
+      bonus bCon,10;
+      bonus bCritical,15;
+      bonus2 bAddClass,Class_All,15;
+  - Id: 490859
+    AegisName: NW_Good_Ring_TH2
+    Name: "Ring of Good (Night Watch II)"
+    Type: Armor
+    Weight: 100
+    Defense: 0
+    Slots: 1
+    Jobs:
+      Rebellion: true
+    Classes:
+      Third: true
+    Locations:
+      Right_Accessory: true
+    ArmorLevel: 1
+    EquipLevelMin: 215
+    Script: |
+      bonus bBaseAtk,100;
+      bonus bDelayRate,-10;
+      bonus bCon,10;
+      bonus bAtkRate,6;
+      bonus2 bAddClass,Class_All,15;
   - Id: 490860
     AegisName: SS_Evil_Ring_TH
     Name: "Ring of Evil (Shinkiro&Shiranui)"
@@ -2812,6 +3174,72 @@ Body:
       bonus bMatk,100;
       bonus bDelayRate,-10;
       bonus bSpl,10;
+      bonus2 bMagicAddClass,Class_All,15;
+  - Id: 490861
+    AegisName: EM_Good_Ring_TH
+    Name: "Ring of Good (Elemental Master)"
+    Type: Armor
+    Weight: 100
+    Defense: 0
+    Slots: 1
+    Jobs:
+      Sage: true
+    Classes:
+      All_Third: true
+      Fourth: true
+    Locations:
+      Right_Accessory: true
+    ArmorLevel: 1
+    EquipLevelMin: 215
+    Script: |
+      bonus bMatk,100;
+      bonus bDelayRate,-10;
+      bonus bSpl,10;
+      bonus bFixedCast,-500;
+      bonus2 bMagicAddClass,Class_All,15;
+  - Id: 490862
+    AegisName: IQ_Good_Ring_TH
+    Name: "Ring of Good (Inquisitor)"
+    Type: Armor
+    Weight: 100
+    Defense: 0
+    Slots: 1
+    Jobs:
+      Monk: true
+    Classes:
+      All_Third: true
+      Fourth: true
+    Locations:
+      Right_Accessory: true
+    ArmorLevel: 1
+    EquipLevelMin: 215
+    Script: |
+      bonus bBaseAtk,100;
+      bonus bDelayRate,-10;
+      bonus bPow,10;
+      bonus bCritical,15;
+      bonus2 bAddClass,Class_All,15;
+  - Id: 490868
+    AegisName: SOA_Good_Ring_TH
+    Name: "Ring of Good (Soul Ascetic)"
+    Type: Armor
+    Weight: 100
+    Defense: 0
+    Slots: 1
+    Jobs:
+      SoulLinker: true
+    Classes:
+      All_Third: true
+      Fourth: true
+    Locations:
+      Right_Accessory: true
+    ArmorLevel: 1
+    EquipLevelMin: 215
+    Script: |
+      bonus bMatk,100;
+      bonus bDelayRate,-10;
+      bonus bSpl,10;
+      bonus bFixedCast,-500;
       bonus2 bMagicAddClass,Class_All,15;
   - Id: 490869
     AegisName: SKE_Evil_Ring_TH
@@ -2834,6 +3262,48 @@ Body:
       bonus bDelayRate,-10;
       bonus bPow,10;
       bonus bAtkRate,6;
+      bonus2 bAddClass,Class_All,15;
+  - Id: 490870
+    AegisName: BO_Good_Ring_TH
+    Name: "Ring of Good (Biolo)"
+    Type: Armor
+    Weight: 100
+    Defense: 0
+    Slots: 1
+    Jobs:
+      Alchemist: true
+    Classes:
+      All_Third: true
+      Fourth: true
+    Locations:
+      Right_Accessory: true
+    ArmorLevel: 1
+    EquipLevelMin: 215
+    Script: |
+      bonus bBaseAtk,100;
+      bonus bDelayRate,-10;
+      bonus bPow,10;
+      bonus bAtkRate,6;
+      bonus2 bAddClass,Class_All,15;
+  - Id: 490871
+    AegisName: SH_Good_Ring_TH
+    Name: "Ring of Good (Spirit Handler)"
+    Type: Armor
+    Weight: 100
+    Defense: 0
+    Slots: 1
+    Jobs:
+      Summoner: true
+      Spirit_Handler: true
+    Locations:
+      Right_Accessory: true
+    ArmorLevel: 1
+    EquipLevelMin: 215
+    Script: |
+      bonus bBaseAtk,100;
+      bonus bDelayRate,-10;
+      bonus bPow,10;
+      bonus bCritical,15;
       bonus2 bAddClass,Class_All,15;
   - Id: 490872
     AegisName: NW_Evil_Ring_TH
@@ -2921,6 +3391,71 @@ Body:
       bonus bSpl,10;
       bonus bFixedCast,-500;
       bonus2 bMagicAddClass,Class_All,15;
+  - Id: 490883
+    AegisName: SKE_Good_Ring_TH
+    Name: "Ring of Good (Sky Emperor)"
+    Type: Armor
+    Weight: 100
+    Defense: 0
+    Slots: 1
+    Jobs:
+      StarGladiator: true
+    Classes:
+      Fourth: true
+    Locations:
+      Right_Accessory: true
+    ArmorLevel: 1
+    EquipLevelMin: 215
+    Script: |
+      bonus bBaseAtk,100;
+      bonus bDelayRate,-10;
+      bonus bPow,10;
+      bonus bCritical,15;
+      bonus2 bAddClass,Class_All,15;
+  - Id: 490884
+    AegisName: ABC_Dim_Ring_TH
+    Name: "Dim Glacier Ring of Resonance (Abyss Chaser)"
+    Type: Armor
+    Weight: 100
+    Defense: 0
+    Slots: 1
+    Jobs:
+      Rogue: true
+    Classes:
+      All_Third: true
+      Fourth: true
+    Locations:
+      Right_Accessory: true
+    ArmorLevel: 1
+    EquipLevelMin: 230
+    Script: |
+      bonus bMatk,100;
+      bonus bDelayRate,-10;
+      bonus bSpl,10;
+      bonus bMatkRate,6;
+      bonus2 bMagicAddClass,Class_All,15;
+  - Id: 490885
+    AegisName: IQ_Dim_Ring_TH
+    Name: "Dim Glacier Ring of Resonance (Inquisitor)"
+    Type: Armor
+    Weight: 100
+    Defense: 0
+    Slots: 1
+    Jobs:
+      Monk: true
+    Classes:
+      All_Third: true
+      Fourth: true
+    Locations:
+      Right_Accessory: true
+    ArmorLevel: 1
+    EquipLevelMin: 230
+    Script: |
+      bonus bBaseAtk,100;
+      bonus bDelayRate,-10;
+      bonus bPow,10;
+      bonus bMaxHPRate,10;
+      bonus2 bAddClass,Class_All,15;
   - Id: 490886
     AegisName: HN_Evil_Ring_TH
     Name: "Ring of Evil (Hyper Novice)"
@@ -2942,6 +3477,27 @@ Body:
       bonus bSpl,10;
       bonus bFixedCast,-500;
       bonus2 bMagicAddClass,Class_All,15;
+  - Id: 490887
+    AegisName: HN_Good_Ring_TH
+    Name: "Ring of Good (Hyper Novice)"
+    Type: Armor
+    Weight: 100
+    Defense: 0
+    Slots: 1
+    Jobs:
+      SuperNovice: true
+    Classes:
+      Fourth: true
+    Locations:
+      Right_Accessory: true
+    ArmorLevel: 1
+    EquipLevelMin: 215
+    Script: |
+      bonus bBaseAtk,100;
+      bonus bDelayRate,-10;
+      bonus bPow,10;
+      bonus bAtkRate,6;
+      bonus2 bAddClass,Class_All,15;
   - Id: 490888
     AegisName: AM_Good_Ring_TH
     Name: "Ring of Good (Arch Mage)"
@@ -2964,6 +3520,94 @@ Body:
       bonus bSpl,10;
       bonus bFixedCast,-500;
       bonus2 bMagicAddClass,Class_All,15;
+  - Id: 490907
+    AegisName: WH_Dim_Ring_TH
+    Name: "Dim Glacier Ring of Resonance (Windhawk)"
+    Type: Armor
+    Weight: 100
+    Defense: 0
+    Slots: 1
+    Jobs:
+      Hunter: true
+    Classes:
+      All_Third: true
+      Fourth: true
+    Locations:
+      Right_Accessory: true
+    ArmorLevel: 1
+    EquipLevelMin: 230
+    Script: |
+      bonus bBaseAtk,100;
+      bonus bDelayRate,-10;
+      bonus bCon,10;
+      bonus bCritical,15;
+      bonus2 bAddClass,Class_All,15;
+  - Id: 490908
+    AegisName: CD_Dim_Ring_TH
+    Name: "Dim Glacier Ring of Resonance (Cardinal)"
+    Type: Armor
+    Weight: 100
+    Defense: 0
+    Slots: 1
+    Jobs:
+      Priest: true
+    Classes:
+      All_Third: true
+      Fourth: true
+    Locations:
+      Right_Accessory: true
+    ArmorLevel: 1
+    EquipLevelMin: 230
+    Script: |
+      bonus bBaseAtk,100;
+      bonus bDelayRate,-10;
+      bonus bPow,10;
+      bonus bCritical,15;
+      bonus2 bAddClass,Class_All,15;
+  - Id: 490909
+    AegisName: MT_Dim_Ring_TH
+    Name: "Dim Glacier Ring of Resonance (Meister)"
+    Type: Armor
+    Weight: 100
+    Defense: 0
+    Slots: 1
+    Jobs:
+      Blacksmith: true
+    Classes:
+      All_Third: true
+      Fourth: true
+    Locations:
+      Right_Accessory: true
+    ArmorLevel: 1
+    EquipLevelMin: 230
+    Script: |
+      bonus bBaseAtk,100;
+      bonus bDelayRate,-10;
+      bonus bPow,10;
+      bonus bAtkRate,6;
+      bonus2 bAddClass,Class_All,15;
+  - Id: 490910
+    AegisName: TR_Dim_Ring_TH
+    Name: "Dim Glacier Ring (Troubadour&Trouvere)"
+    Type: Armor
+    Weight: 100
+    Defense: 0
+    Slots: 1
+    Jobs:
+      BardDancer: true
+    Classes:
+      All_Third: true
+      Fourth: true
+    Locations:
+      Right_Accessory: true
+    ArmorLevel: 1
+    EquipLevelMin: 230
+    Script: |
+      bonus bBaseAtk,100;
+      bonus bDelayRate,-10;
+      bonus bCon,10;
+      bonus bAtkRate,6;
+      bonus2 bAddClass,Class_All,15;
   - Id: 490941
     AegisName: AG_Dim_Ring_TH
     Name: "Dim Glacier Ring of Resonance (Arch Mage)"
@@ -2986,6 +3630,71 @@ Body:
       bonus bSpl,10;
       bonus bMatkRate,6;
       bonus2 bMagicAddClass,Class_All,15;
+  - Id: 490942
+    AegisName: DK_Dim_Ring_TH
+    Name: "Dim Glacier Ring of Resonance (Dragon Knight)"
+    Type: Armor
+    Weight: 100
+    Defense: 0
+    Slots: 1
+    Jobs:
+      Knight: true
+    Classes:
+      All_Third: true
+      Fourth: true
+    Locations:
+      Right_Accessory: true
+    ArmorLevel: 1
+    EquipLevelMin: 230
+    Script: |
+      bonus bBaseAtk,100;
+      bonus bDelayRate,-10;
+      bonus bPow,10;
+      bonus bMaxHPRate,10;
+      bonus2 bAddClass,Class_All,15;
+  - Id: 490943
+    AegisName: SHC_Dim_Ring_TH
+    Name: "Dim Glacier Ring of Resonance (Shadow Cross)"
+    Type: Armor
+    Weight: 100
+    Defense: 0
+    Slots: 1
+    Jobs:
+      Assassin: true
+    Classes:
+      All_Third: true
+      Fourth: true
+    Locations:
+      Right_Accessory: true
+    ArmorLevel: 1
+    EquipLevelMin: 230
+    Script: |
+      bonus bBaseAtk,100;
+      bonus bDelayRate,-10;
+      bonus bPow,10;
+      bonus bCritical,15;
+      bonus2 bAddClass,Class_All,15;
+  - Id: 490944
+    AegisName: SS_Dim_Ring_TH
+    Name: "Dim Glacier Ring of Resonance (Shinkiro&Shiranui)"
+    Type: Armor
+    Weight: 100
+    Defense: 0
+    Slots: 1
+    Jobs:
+      KagerouOboro: true
+    Classes:
+      Third: true
+    Locations:
+      Right_Accessory: true
+    ArmorLevel: 1
+    EquipLevelMin: 230
+    Script: |
+      bonus bBaseAtk,100;
+      bonus bDelayRate,-10;
+      bonus bPow,10;
+      bonus bCritical,15;
+      bonus2 bAddClass,Class_All,15;
   - Id: 490966
     AegisName: 6th_Anni_Ring_TH
     Name: "6th Anniversary Ayothaya Ring"
@@ -3042,6 +3751,96 @@ Body:
             }
          }
       }
+  - Id: 490969
+    AegisName: IG_Dim_Ring_TH
+    Name: "Dim Glacier Ring of Resonance (Imperial Guard)"
+    Type: Armor
+    Weight: 100
+    Defense: 0
+    Slots: 1
+    Jobs:
+      Crusader: true
+    Classes:
+      All_Third: true
+      Fourth: true
+    Locations:
+      Right_Accessory: true
+    ArmorLevel: 1
+    EquipLevelMin: 230
+    Script: |
+      bonus bBaseAtk,100;
+      bonus bDelayRate,-10;
+      bonus bPow,10;
+      bonus bAtkRate,10;
+      bonus2 bAddClass,Class_All,15;
+  - Id: 490970
+    AegisName: HN_Dim_Ring_TH
+    Name: "Dim Glacier Ring of Resonance (Hyper Novice)"
+    Type: Armor
+    Weight: 100
+    Defense: 0
+    Slots: 1
+    Jobs:
+      SuperNovice: true
+    Classes:
+      Fourth: true
+    Locations:
+      Right_Accessory: true
+    ArmorLevel: 1
+    EquipLevelMin: 230
+    Script: |
+      bonus bBaseAtk,100;
+      bonus bMatk,100;
+      bonus bDelayRate,-10;
+      bonus bPow,10;
+      bonus bSpl,10;
+      bonus bCritical,15;
+      bonus bMatkRate,6;
+      bonus2 bAddClass,Class_All,15;
+      bonus2 bMagicAddClass,Class_All,15;
+  - Id: 490971
+    AegisName: SKE_Dim_Ring_TH
+    Name: "Dim Glacier Ring of Resonance (Sky Emperor)"
+    Type: Armor
+    Weight: 100
+    Defense: 0
+    Slots: 1
+    Jobs:
+      StarGladiator: true
+    Classes:
+      Fourth: true
+    Locations:
+      Right_Accessory: true
+    ArmorLevel: 1
+    EquipLevelMin: 230
+    Script: |
+      bonus bBaseAtk,100;
+      bonus bDelayRate,-10;
+      bonus bPow,10;
+      bonus bAtkRate,10;
+      bonus2 bAddClass,Class_All,15;
+  - Id: 490972
+    AegisName: EM_Dim_Ring_TH
+    Name: "Dim Glacier Ring of Resonance (Elemental Master)"
+    Type: Armor
+    Weight: 100
+    Defense: 0
+    Slots: 1
+    Jobs:
+      Sage: true
+    Classes:
+      All_Third: true
+      Fourth: true
+    Locations:
+      Right_Accessory: true
+    ArmorLevel: 1
+    EquipLevelMin: 230
+    Script: |
+      bonus bMatk,100;
+      bonus bDelayRate,-10;
+      bonus bSpl,10;
+      bonus bMatkRate,6;
+      bonus2 bMagicAddClass,Class_All,15;
   - Id: 491009
     AegisName: SH_Dim_Ring_TH
     Name: "Dim Glacier Ring of Resonance (Spirit Handler)"
@@ -3052,6 +3851,70 @@ Body:
     Jobs:
       Summoner: true
       Spirit_Handler: true
+    Locations:
+      Right_Accessory: true
+    ArmorLevel: 1
+    EquipLevelMin: 230
+    Script: |
+      bonus bMatk,100;
+      bonus bDelayRate,-10;
+      bonus bSpl,10;
+      bonus bFixedCast,-500;
+      bonus2 bMagicAddClass,Class_All,15;
+  - Id: 491010
+    AegisName: BO_Dim_Ring_TH
+    Name: "Dim Glacier Ring of Resonance (Biolo)"
+    Type: Armor
+    Weight: 100
+    Defense: 0
+    Slots: 1
+    Jobs:
+      Alchemist: true
+    Classes:
+      All_Third: true
+      Fourth: true
+    Locations:
+      Right_Accessory: true
+    ArmorLevel: 1
+    EquipLevelMin: 230
+    Script: |
+      bonus bBaseAtk,100;
+      bonus bDelayRate,-10;
+      bonus bPow,10;
+      bonus bCritical,15;
+      bonus2 bAddClass,Class_All,15;
+  - Id: 491011
+    AegisName: NW_Dim_Ring_TH
+    Name: "Dim Glacier Ring of Resonance (Night Watch)"
+    Type: Armor
+    Weight: 100
+    Defense: 0
+    Slots: 1
+    Jobs:
+      Rebellion: true
+    Classes:
+      Third: true
+    Locations:
+      Right_Accessory: true
+    ArmorLevel: 1
+    EquipLevelMin: 230
+    Script: |
+      bonus bBaseAtk,100;
+      bonus bDelayRate,-10;
+      bonus bCon,10;
+      bonus bAtkRate,10;
+      bonus2 bAddClass,Class_All,15;
+  - Id: 491012
+    AegisName: SA_Dim_Ring_TH
+    Name: "Dim Glacier Ring of Resonance (Soul Ascetic)"
+    Type: Armor
+    Weight: 100
+    Defense: 0
+    Slots: 1
+    Jobs:
+      SoulLinker: true
+    Classes:
+      Fourth: true
     Locations:
       Right_Accessory: true
     ArmorLevel: 1
@@ -3258,7 +4121,7 @@ Body:
       bonus bAspdRate,3*.@r;
       if (.@r>=11) {
          bonus bMaxHPRate,20;
-         bonus bSpeedRate,50;
+         bonus bSpeedRate,25;
          if (.@r>=12) {
             bonus bAllStats,20;
             bonus bMatk,200;

@@ -36511,6 +36511,815 @@ Body:
             Materials:
               - Material: Enchant_Ticket
                 Amount: 4
+  - Id: 349
+    TargetItems:
+      ABC_Dim_Ring_TH: true
+      IQ_Dim_Ring_TH: true
+      TR_Dim_Ring_TH: true
+      MT_Dim_Ring_TH: true
+      CD_Dim_Ring_TH: true
+      WH_Dim_Ring_TH: true
+      AG_Dim_Ring_TH: true
+      DK_Dim_Ring_TH: true
+      SHC_Dim_Ring_TH: true
+      SS_Dim_Ring_TH: true
+      EM_Dim_Ring_TH: true
+      SKE_Dim_Ring_TH: true
+      IG_Dim_Ring_TH: true
+      HN_Dim_Ring_TH: true
+      SH_Dim_Ring_TH: true
+      BO_Dim_Ring_TH: true
+      NW_Dim_Ring_TH: true
+      SA_Dim_Ring_TH: true
+    Reset:
+      Chance: 100000
+      Price: 0
+      Materials:
+          - Material: Silvervine
+            Amount: 5
+    Order:
+      - Slot: 3
+      - Slot: 2
+      - Slot: 1
+    Slots:
+      - Slot: 3
+        Price: 2000000
+        Materials:
+          - Material: Ep19_Snow_Flower
+            Amount: 20
+          - Material: Snow_F_Ore
+            Amount: 50
+        Enchants:
+          - Enchantgrade: 0
+            Items:
+              - Item: Spell3
+                Chance: 16000
+              - Item: Spell5
+                Chance: 4000
+              - Item: Attack_Delay_2
+                Chance: 16000
+              - Item: Attack_Delay_4
+                Chance: 4000
+              - Item: Expert_Archer3
+                Chance: 16000
+              - Item: Expert_Archer5
+                Chance: 4000
+              - Item: Expert_Fighter3
+                Chance: 16000
+              - Item: Expert_Fighter5
+                Chance: 4000
+              - Item: Expert_Magician3
+                Chance: 16000
+              - Item: Expert_Magician5
+                Chance: 4000
+          - Enchantgrade: 1
+            Items:
+              - Item: Spell3
+                Chance: 16000
+              - Item: Spell5
+                Chance: 4000
+              - Item: Attack_Delay_2
+                Chance: 16000
+              - Item: Attack_Delay_4
+                Chance: 4000
+              - Item: Expert_Archer3
+                Chance: 16000
+              - Item: Expert_Archer5
+                Chance: 4000
+              - Item: Expert_Fighter3
+                Chance: 16000
+              - Item: Expert_Fighter5
+                Chance: 4000
+              - Item: Expert_Magician3
+                Chance: 16000
+              - Item: Expert_Magician5
+                Chance: 4000
+          - Enchantgrade: 2
+            Items:
+              - Item: Spell3
+                Chance: 16000
+              - Item: Spell5
+                Chance: 4000
+              - Item: Attack_Delay_2
+                Chance: 16000
+              - Item: Attack_Delay_4
+                Chance: 4000
+              - Item: Expert_Archer3
+                Chance: 16000
+              - Item: Expert_Archer5
+                Chance: 4000
+              - Item: Expert_Fighter3
+                Chance: 16000
+              - Item: Expert_Fighter5
+                Chance: 4000
+              - Item: Expert_Magician3
+                Chance: 16000
+              - Item: Expert_Magician5
+                Chance: 4000
+          - Enchantgrade: 3
+            Items:
+              - Item: Spell3
+                Chance: 16000
+              - Item: Spell5
+                Chance: 4000
+              - Item: Attack_Delay_2
+                Chance: 16000
+              - Item: Attack_Delay_4
+                Chance: 4000
+              - Item: Expert_Archer3
+                Chance: 16000
+              - Item: Expert_Archer5
+                Chance: 4000
+              - Item: Expert_Fighter3
+                Chance: 16000
+              - Item: Expert_Fighter5
+                Chance: 4000
+              - Item: Expert_Magician3
+                Chance: 16000
+              - Item: Expert_Magician5
+                Chance: 4000
+          - Enchantgrade: 4
+            Items:
+              - Item: Spell3
+                Chance: 16000
+              - Item: Spell5
+                Chance: 4000
+              - Item: Attack_Delay_2
+                Chance: 16000
+              - Item: Attack_Delay_4
+                Chance: 4000
+              - Item: Expert_Archer3
+                Chance: 16000
+              - Item: Expert_Archer5
+                Chance: 4000
+              - Item: Expert_Fighter3
+                Chance: 16000
+              - Item: Expert_Fighter5
+                Chance: 4000
+              - Item: Expert_Magician3
+                Chance: 16000
+              - Item: Expert_Magician5
+                Chance: 4000
+      - Slot: 2
+        Price: 5000000
+        Materials:
+          - Material: Ep19_Snow_Flower
+            Amount: 50
+          - Material: Snow_F_Ore
+            Amount: 100
+        Enchants:
+          - Enchantgrade: 0
+            Items:
+              - Item: Star_Of_Spirit1
+                Chance: 17000
+              - Item: Star_Of_Vital1
+                Chance: 17000
+              - Item: Star_Of_Spell1
+                Chance: 16000
+              - Item: Star_Of_Speed1
+                Chance: 17000
+              - Item: Star_Of_Sharp1
+                Chance: 17000
+              - Item: Star_Of_MasterArcher1
+                Chance: 16000
+          - Enchantgrade: 1
+            Items:
+              - Item: Star_Of_Spirit1
+                Chance: 17000
+              - Item: Star_Of_Vital1
+                Chance: 17000
+              - Item: Star_Of_Spell1
+                Chance: 16000
+              - Item: Star_Of_Speed1
+                Chance: 17000
+              - Item: Star_Of_Sharp1
+                Chance: 17000
+              - Item: Star_Of_MasterArcher1
+                Chance: 16000
+          - Enchantgrade: 2
+            Items:
+              - Item: Star_Of_Spirit1
+                Chance: 17000
+              - Item: Star_Of_Vital1
+                Chance: 17000
+              - Item: Star_Of_Spell1
+                Chance: 16000
+              - Item: Star_Of_Speed1
+                Chance: 17000
+              - Item: Star_Of_Sharp1
+                Chance: 17000
+              - Item: Star_Of_MasterArcher1
+                Chance: 16000
+          - Enchantgrade: 3
+            Items:
+              - Item: Star_Of_Spirit1
+                Chance: 17000
+              - Item: Star_Of_Vital1
+                Chance: 17000
+              - Item: Star_Of_Spell1
+                Chance: 16000
+              - Item: Star_Of_Speed1
+                Chance: 17000
+              - Item: Star_Of_Sharp1
+                Chance: 17000
+              - Item: Star_Of_MasterArcher1
+                Chance: 16000
+          - Enchantgrade: 4
+            Items:
+              - Item: Star_Of_Spirit1
+                Chance: 17000
+              - Item: Star_Of_Vital1
+                Chance: 17000
+              - Item: Star_Of_Spell1
+                Chance: 16000
+              - Item: Star_Of_Speed1
+                Chance: 17000
+              - Item: Star_Of_Sharp1
+                Chance: 17000
+              - Item: Star_Of_MasterArcher1
+                Chance: 16000
+        Upgrades:
+          - Enchant: Star_Of_Spirit1
+            Upgrade: Star_Of_Spirit2
+            Price: 10000000
+            Materials:
+              - Material: Pow_Meteorite_Fragment
+                Amount: 30
+              - Material: Sta_Meteorite_Fragment
+                Amount: 30
+              - Material: Con_Meteorite_Fragment
+                Amount: 30
+              - Material: Crt_Meteorite_Fragment
+                Amount: 30
+              - Material: Spl_Meteorite_Fragment
+                Amount: 30
+              - Material: Wis_Meteorite_Fragment
+                Amount: 30
+          - Enchant: Star_Of_Spirit2
+            Upgrade: Star_Of_Spirit3
+            Price: 20000000
+            Materials:
+              - Material: Pow_Meteorite_Fragment
+                Amount: 70
+              - Material: Sta_Meteorite_Fragment
+                Amount: 70
+              - Material: Con_Meteorite_Fragment
+                Amount: 70
+              - Material: Crt_Meteorite_Fragment
+                Amount: 70
+              - Material: Spl_Meteorite_Fragment
+                Amount: 70
+              - Material: Wis_Meteorite_Fragment
+                Amount: 70
+          - Enchant: Star_Of_Spirit3
+            Upgrade: Star_Of_Spirit4
+            Price: 40000000
+            Materials:
+              - Material: Enchant_Ticket
+                Amount: 1
+              - Material: Pow_Meteorite_Fragment
+                Amount: 120
+              - Material: Sta_Meteorite_Fragment
+                Amount: 120
+              - Material: Con_Meteorite_Fragment
+                Amount: 120
+              - Material: Crt_Meteorite_Fragment
+                Amount: 120
+              - Material: Spl_Meteorite_Fragment
+                Amount: 120
+              - Material: Wis_Meteorite_Fragment
+                Amount: 120
+          - Enchant: Star_Of_Spirit4
+            Upgrade: Star_Of_Spirit5
+            Price: 80000000
+            Materials:
+              - Material: Enchant_Ticket
+                Amount: 2
+              - Material: Pow_Meteorite_Fragment
+                Amount: 250
+              - Material: Sta_Meteorite_Fragment
+                Amount: 250
+              - Material: Con_Meteorite_Fragment
+                Amount: 250
+              - Material: Crt_Meteorite_Fragment
+                Amount: 250
+              - Material: Spl_Meteorite_Fragment
+                Amount: 250
+              - Material: Wis_Meteorite_Fragment
+                Amount: 250
+          - Enchant: Star_Of_Vital1
+            Upgrade: Star_Of_Vital2
+            Price: 10000000
+            Materials:
+              - Material: Pow_Meteorite_Fragment
+                Amount: 30
+              - Material: Sta_Meteorite_Fragment
+                Amount: 30
+              - Material: Con_Meteorite_Fragment
+                Amount: 30
+              - Material: Crt_Meteorite_Fragment
+                Amount: 30
+              - Material: Spl_Meteorite_Fragment
+                Amount: 30
+              - Material: Wis_Meteorite_Fragment
+                Amount: 30
+          - Enchant: Star_Of_Vital2
+            Upgrade: Star_Of_Vital3
+            Price: 20000000
+            Materials:
+              - Material: Pow_Meteorite_Fragment
+                Amount: 70
+              - Material: Sta_Meteorite_Fragment
+                Amount: 70
+              - Material: Con_Meteorite_Fragment
+                Amount: 70
+              - Material: Crt_Meteorite_Fragment
+                Amount: 70
+              - Material: Spl_Meteorite_Fragment
+                Amount: 70
+              - Material: Wis_Meteorite_Fragment
+                Amount: 70
+          - Enchant: Star_Of_Vital3
+            Upgrade: Star_Of_Vital4
+            Price: 40000000
+            Materials:
+              - Material: Enchant_Ticket
+                Amount: 1
+              - Material: Pow_Meteorite_Fragment
+                Amount: 120
+              - Material: Sta_Meteorite_Fragment
+                Amount: 120
+              - Material: Con_Meteorite_Fragment
+                Amount: 120
+              - Material: Crt_Meteorite_Fragment
+                Amount: 120
+              - Material: Spl_Meteorite_Fragment
+                Amount: 120
+              - Material: Wis_Meteorite_Fragment
+                Amount: 120
+          - Enchant: Star_Of_Vital4
+            Upgrade: Star_Of_Vital5
+            Price: 80000000
+            Materials:
+              - Material: Enchant_Ticket
+                Amount: 2
+              - Material: Pow_Meteorite_Fragment
+                Amount: 250
+              - Material: Sta_Meteorite_Fragment
+                Amount: 250
+              - Material: Con_Meteorite_Fragment
+                Amount: 250
+              - Material: Crt_Meteorite_Fragment
+                Amount: 250
+              - Material: Spl_Meteorite_Fragment
+                Amount: 250
+              - Material: Wis_Meteorite_Fragment
+                Amount: 250
+          - Enchant: Star_Of_Spell1
+            Upgrade: Star_Of_Spell2
+            Price: 10000000
+            Materials:
+              - Material: Pow_Meteorite_Fragment
+                Amount: 30
+              - Material: Sta_Meteorite_Fragment
+                Amount: 30
+              - Material: Con_Meteorite_Fragment
+                Amount: 30
+              - Material: Crt_Meteorite_Fragment
+                Amount: 30
+              - Material: Spl_Meteorite_Fragment
+                Amount: 30
+              - Material: Wis_Meteorite_Fragment
+                Amount: 30
+          - Enchant: Star_Of_Spell2
+            Upgrade: Star_Of_Spell3
+            Price: 20000000
+            Materials:
+              - Material: Pow_Meteorite_Fragment
+                Amount: 70
+              - Material: Sta_Meteorite_Fragment
+                Amount: 70
+              - Material: Con_Meteorite_Fragment
+                Amount: 70
+              - Material: Crt_Meteorite_Fragment
+                Amount: 70
+              - Material: Spl_Meteorite_Fragment
+                Amount: 70
+              - Material: Wis_Meteorite_Fragment
+                Amount: 70
+          - Enchant: Star_Of_Spell3
+            Upgrade: Star_Of_Spell4
+            Price: 40000000
+            Materials:
+              - Material: Enchant_Ticket
+                Amount: 1
+              - Material: Pow_Meteorite_Fragment
+                Amount: 120
+              - Material: Sta_Meteorite_Fragment
+                Amount: 120
+              - Material: Con_Meteorite_Fragment
+                Amount: 120
+              - Material: Crt_Meteorite_Fragment
+                Amount: 120
+              - Material: Spl_Meteorite_Fragment
+                Amount: 120
+              - Material: Wis_Meteorite_Fragment
+                Amount: 120
+          - Enchant: Star_Of_Spell4
+            Upgrade: Star_Of_Spell5
+            Price: 80000000
+            Materials:
+              - Material: Enchant_Ticket
+                Amount: 2
+              - Material: Pow_Meteorite_Fragment
+                Amount: 250
+              - Material: Sta_Meteorite_Fragment
+                Amount: 250
+              - Material: Con_Meteorite_Fragment
+                Amount: 250
+              - Material: Crt_Meteorite_Fragment
+                Amount: 250
+              - Material: Spl_Meteorite_Fragment
+                Amount: 250
+              - Material: Wis_Meteorite_Fragment
+                Amount: 250
+          - Enchant: Star_Of_Speed1
+            Upgrade: Star_Of_Speed2
+            Price: 10000000
+            Materials:
+              - Material: Pow_Meteorite_Fragment
+                Amount: 30
+              - Material: Sta_Meteorite_Fragment
+                Amount: 30
+              - Material: Con_Meteorite_Fragment
+                Amount: 30
+              - Material: Crt_Meteorite_Fragment
+                Amount: 30
+              - Material: Spl_Meteorite_Fragment
+                Amount: 30
+              - Material: Wis_Meteorite_Fragment
+                Amount: 30
+          - Enchant: Star_Of_Speed2
+            Upgrade: Star_Of_Speed3
+            Price: 20000000
+            Materials:
+              - Material: Pow_Meteorite_Fragment
+                Amount: 70
+              - Material: Sta_Meteorite_Fragment
+                Amount: 70
+              - Material: Con_Meteorite_Fragment
+                Amount: 70
+              - Material: Crt_Meteorite_Fragment
+                Amount: 70
+              - Material: Spl_Meteorite_Fragment
+                Amount: 70
+              - Material: Wis_Meteorite_Fragment
+                Amount: 70
+          - Enchant: Star_Of_Speed3
+            Upgrade: Star_Of_Speed4
+            Price: 40000000
+            Materials:
+              - Material: Enchant_Ticket
+                Amount: 1
+              - Material: Pow_Meteorite_Fragment
+                Amount: 120
+              - Material: Sta_Meteorite_Fragment
+                Amount: 120
+              - Material: Con_Meteorite_Fragment
+                Amount: 120
+              - Material: Crt_Meteorite_Fragment
+                Amount: 120
+              - Material: Spl_Meteorite_Fragment
+                Amount: 120
+              - Material: Wis_Meteorite_Fragment
+                Amount: 120
+          - Enchant: Star_Of_Speed4
+            Upgrade: Star_Of_Speed5
+            Price: 80000000
+            Materials:
+              - Material: Enchant_Ticket
+                Amount: 2
+              - Material: Pow_Meteorite_Fragment
+                Amount: 250
+              - Material: Sta_Meteorite_Fragment
+                Amount: 250
+              - Material: Con_Meteorite_Fragment
+                Amount: 250
+              - Material: Crt_Meteorite_Fragment
+                Amount: 250
+              - Material: Spl_Meteorite_Fragment
+                Amount: 250
+              - Material: Wis_Meteorite_Fragment
+                Amount: 250
+          - Enchant: Star_Of_Sharp1
+            Upgrade: Star_Of_Sharp2
+            Price: 10000000
+            Materials:
+              - Material: Pow_Meteorite_Fragment
+                Amount: 30
+              - Material: Sta_Meteorite_Fragment
+                Amount: 30
+              - Material: Con_Meteorite_Fragment
+                Amount: 30
+              - Material: Crt_Meteorite_Fragment
+                Amount: 30
+              - Material: Spl_Meteorite_Fragment
+                Amount: 30
+              - Material: Wis_Meteorite_Fragment
+                Amount: 30
+          - Enchant: Star_Of_Sharp2
+            Upgrade: Star_Of_Sharp3
+            Price: 20000000
+            Materials:
+              - Material: Pow_Meteorite_Fragment
+                Amount: 70
+              - Material: Sta_Meteorite_Fragment
+                Amount: 70
+              - Material: Con_Meteorite_Fragment
+                Amount: 70
+              - Material: Crt_Meteorite_Fragment
+                Amount: 70
+              - Material: Spl_Meteorite_Fragment
+                Amount: 70
+              - Material: Wis_Meteorite_Fragment
+                Amount: 70
+          - Enchant: Star_Of_Sharp3
+            Upgrade: Star_Of_Sharp4
+            Price: 40000000
+            Materials:
+              - Material: Enchant_Ticket
+                Amount: 1
+              - Material: Pow_Meteorite_Fragment
+                Amount: 120
+              - Material: Sta_Meteorite_Fragment
+                Amount: 120
+              - Material: Con_Meteorite_Fragment
+                Amount: 120
+              - Material: Crt_Meteorite_Fragment
+                Amount: 120
+              - Material: Spl_Meteorite_Fragment
+                Amount: 120
+              - Material: Wis_Meteorite_Fragment
+                Amount: 120
+          - Enchant: Star_Of_Sharp4
+            Upgrade: Star_Of_Sharp5
+            Price: 80000000
+            Materials:
+              - Material: Enchant_Ticket
+                Amount: 2
+              - Material: Pow_Meteorite_Fragment
+                Amount: 250
+              - Material: Sta_Meteorite_Fragment
+                Amount: 250
+              - Material: Con_Meteorite_Fragment
+                Amount: 250
+              - Material: Crt_Meteorite_Fragment
+                Amount: 250
+              - Material: Spl_Meteorite_Fragment
+                Amount: 250
+              - Material: Wis_Meteorite_Fragment
+                Amount: 250
+          - Enchant: Star_Of_MasterArcher1
+            Upgrade: Star_Of_MasterArcher2
+            Price: 10000000
+            Materials:
+              - Material: Pow_Meteorite_Fragment
+                Amount: 30
+              - Material: Sta_Meteorite_Fragment
+                Amount: 30
+              - Material: Con_Meteorite_Fragment
+                Amount: 30
+              - Material: Crt_Meteorite_Fragment
+                Amount: 30
+              - Material: Spl_Meteorite_Fragment
+                Amount: 30
+              - Material: Wis_Meteorite_Fragment
+                Amount: 30
+          - Enchant: Star_Of_MasterArcher2
+            Upgrade: Star_Of_MasterArcher3
+            Price: 20000000
+            Materials:
+              - Material: Pow_Meteorite_Fragment
+                Amount: 70
+              - Material: Sta_Meteorite_Fragment
+                Amount: 70
+              - Material: Con_Meteorite_Fragment
+                Amount: 70
+              - Material: Crt_Meteorite_Fragment
+                Amount: 70
+              - Material: Spl_Meteorite_Fragment
+                Amount: 70
+              - Material: Wis_Meteorite_Fragment
+                Amount: 70
+          - Enchant: Star_Of_MasterArcher3
+            Upgrade: Star_Of_MasterArcher4
+            Price: 40000000
+            Materials:
+              - Material: Enchant_Ticket
+                Amount: 1
+              - Material: Pow_Meteorite_Fragment
+                Amount: 120
+              - Material: Sta_Meteorite_Fragment
+                Amount: 120
+              - Material: Con_Meteorite_Fragment
+                Amount: 120
+              - Material: Crt_Meteorite_Fragment
+                Amount: 120
+              - Material: Spl_Meteorite_Fragment
+                Amount: 120
+              - Material: Wis_Meteorite_Fragment
+                Amount: 120
+          - Enchant: Star_Of_MasterArcher4
+            Upgrade: Star_Of_MasterArcher5
+            Price: 80000000
+            Materials:
+              - Material: Enchant_Ticket
+                Amount: 2
+              - Material: Pow_Meteorite_Fragment
+                Amount: 250
+              - Material: Sta_Meteorite_Fragment
+                Amount: 250
+              - Material: Con_Meteorite_Fragment
+                Amount: 250
+              - Material: Crt_Meteorite_Fragment
+                Amount: 250
+              - Material: Spl_Meteorite_Fragment
+                Amount: 250
+              - Material: Wis_Meteorite_Fragment
+                Amount: 250
+      - Slot: 1
+        PerfectEnchants:
+          - Item: DimAcc_ABC
+            Price: 100000000
+            Materials:
+              - Material: Ep19_Snow_Flower
+                Amount: 500
+              - Material: Snow_F_Ore
+                Amount: 500
+              - Material: Enchant_Ticket
+                Amount: 4
+          - Item: DimAcc_IQ
+            Price: 100000000
+            Materials:
+              - Material: Ep19_Snow_Flower
+                Amount: 500
+              - Material: Snow_F_Ore
+                Amount: 500
+              - Material: Enchant_Ticket
+                Amount: 4
+          - Item: DimAcc_WH
+            Price: 100000000
+            Materials:
+              - Material: Ep19_Snow_Flower
+                Amount: 500
+              - Material: Snow_F_Ore
+                Amount: 500
+              - Material: Enchant_Ticket
+                Amount: 4
+          - Item: DimAcc_CD
+            Price: 100000000
+            Materials:
+              - Material: Ep19_Snow_Flower
+                Amount: 500
+              - Material: Snow_F_Ore
+                Amount: 500
+              - Material: Enchant_Ticket
+                Amount: 4
+          - Item: DimAcc_MT
+            Price: 100000000
+            Materials:
+              - Material: Ep19_Snow_Flower
+                Amount: 500
+              - Material: Snow_F_Ore
+                Amount: 500
+              - Material: Enchant_Ticket
+                Amount: 4
+          - Item: DimAcc_TR
+            Price: 100000000
+            Materials:
+              - Material: Ep19_Snow_Flower
+                Amount: 500
+              - Material: Snow_F_Ore
+                Amount: 500
+              - Material: Enchant_Ticket
+                Amount: 4
+          - Item: DimAcc_AG
+            Price: 100000000
+            Materials:
+              - Material: Ep19_Snow_Flower
+                Amount: 500
+              - Material: Snow_F_Ore
+                Amount: 500
+              - Material: Enchant_Ticket
+                Amount: 4
+          - Item: DimAcc_DK
+            Price: 100000000
+            Materials:
+              - Material: Ep19_Snow_Flower
+                Amount: 500
+              - Material: Snow_F_Ore
+                Amount: 500
+              - Material: Enchant_Ticket
+                Amount: 4
+          - Item: DimAcc_SHC
+            Price: 100000000
+            Materials:
+              - Material: Ep19_Snow_Flower
+                Amount: 500
+              - Material: Snow_F_Ore
+                Amount: 500
+              - Material: Enchant_Ticket
+                Amount: 4
+          - Item: DimAcc_SS
+            Price: 100000000
+            Materials:
+              - Material: Ep19_Snow_Flower
+                Amount: 500
+              - Material: Snow_F_Ore
+                Amount: 500
+              - Material: Enchant_Ticket
+                Amount: 4
+          - Item: DimAcc_IG
+            Price: 100000000
+            Materials:
+              - Material: Ep19_Snow_Flower
+                Amount: 500
+              - Material: Snow_F_Ore
+                Amount: 500
+              - Material: Enchant_Ticket
+                Amount: 4
+          - Item: DimAcc_HN
+            Price: 100000000
+            Materials:
+              - Material: Ep19_Snow_Flower
+                Amount: 500
+              - Material: Snow_F_Ore
+                Amount: 500
+              - Material: Enchant_Ticket
+                Amount: 4
+          - Item: DimAcc_SKE
+            Price: 100000000
+            Materials:
+              - Material: Ep19_Snow_Flower
+                Amount: 500
+              - Material: Snow_F_Ore
+                Amount: 500
+              - Material: Enchant_Ticket
+                Amount: 4
+          - Item: DimAcc_WH_GL
+            Price: 100000000
+            Materials:
+              - Material: Ep19_Snow_Flower
+                Amount: 500
+              - Material: Snow_F_Ore
+                Amount: 500
+              - Material: Enchant_Ticket
+                Amount: 4
+          - Item: DimAcc_EM
+            Price: 100000000
+            Materials:
+              - Material: Ep19_Snow_Flower
+                Amount: 500
+              - Material: Snow_F_Ore
+                Amount: 500
+              - Material: Enchant_Ticket
+                Amount: 4
+          - Item: DimAcc_SH
+            Price: 100000000
+            Materials:
+              - Material: Ep19_Snow_Flower
+                Amount: 500
+              - Material: Snow_F_Ore
+                Amount: 500
+              - Material: Enchant_Ticket
+                Amount: 4
+          - Item: DimAcc_SA
+            Price: 100000000
+            Materials:
+              - Material: Ep19_Snow_Flower
+                Amount: 500
+              - Material: Snow_F_Ore
+                Amount: 500
+              - Material: Enchant_Ticket
+                Amount: 4
+          - Item: DimAcc_NW
+            Price: 100000000
+            Materials:
+              - Material: Ep19_Snow_Flower
+                Amount: 500
+              - Material: Snow_F_Ore
+                Amount: 500
+              - Material: Enchant_Ticket
+                Amount: 4
+          - Item: DimAcc_BO
+            Price: 100000000
+            Materials:
+              - Material: Ep19_Snow_Flower
+                Amount: 500
+              - Material: Snow_F_Ore
+                Amount: 500
+              - Material: Enchant_Ticket
+                Amount: 4
   - Id: 1000
     TargetItems:
       Racing_C_Bishop: true
@@ -37323,3 +38132,273 @@ Body:
             Materials:
               - Material: Pieces_Of_Grudge
                 Amount: 10000
+  - Id: 1002
+    TargetItems:
+      Illusion_Shield_A: true
+      Illusion_Shield_B: true
+    MinimumRefine: 11
+    Reset:
+      Chance: 100000
+      Price: 1000000
+      Materials:
+        - Material: EP17_1_EVT39
+          Amount: 30
+    Order:
+      - Slot: 3
+      - Slot: 2
+      - Slot: 1
+    Slots:
+      - Slot: 3
+        PerfectEnchants:
+          - Item: Strength3
+            Price: 100000
+            Materials:
+              - Material: EP17_1_EVT07
+          - Item: Agility3
+            Price: 100000
+            Materials:
+              - Material: EP17_1_EVT08
+          - Item: Vitality3
+            Price: 100000
+            Materials:
+              - Material: EP17_1_EVT05
+          - Item: Inteligence3
+            Price: 100000
+            Materials:
+              - Material: EP17_1_EVT09
+          - Item: Dexterity3
+            Price: 100000
+            Materials:
+              - Material: EP17_1_EVT10
+          - Item: Luck3
+            Price: 100000
+            Materials:
+              - Material: EP17_1_EVT06
+          - Item: Improve_Orb_Def
+            Price: 100000
+            Materials:
+              - Material: EP17_1_EVT03
+          - Item: Improve_Orb_Mdef
+            Price: 100000
+            Materials:
+              - Material: EP17_1_EVT04
+          - Item: Improve_Orb_HealHP
+            Price: 100000
+            Materials:
+              - Material: EP17_1_EVT11
+          - Item: Improve_Orb_HealSP
+            Price: 100000
+            Materials:
+              - Material: EP17_1_EVT12
+          - Item: Spell5
+            Price: 100000
+            Materials:
+              - Material: EP17_1_EVT13
+          - Item: Attack_Delay_4
+            Price: 100000
+            Materials:
+              - Material: EP17_1_EVT14
+          - Item: Fatal4
+            Price: 100000
+            Materials:
+              - Material: EP17_1_EVT15
+          - Item: Expert_Archer5
+            Price: 100000
+            Materials:
+              - Material: EP17_1_EVT16
+          - Item: Improve_Orb_Health
+            Price: 100000
+            Materials:
+              - Material: EP17_1_EVT17
+          - Item: Improve_Orb_Spirit
+            Price: 100000
+            Materials:
+              - Material: EP17_1_EVT18
+          - Item: Improve_Orb_Atk
+            Price: 100000
+            Materials:
+              - Material: EP17_1_EVT20
+          - Item: Improve_Orb_Matk
+            Price: 100000
+            Materials:
+              - Material: EP17_1_EVT21
+          - Item: Improve_Orb_Archer
+            Price: 100000
+            Materials:
+              - Material: EP17_1_EVT22
+          - Item: Improve_Orb_Speed
+            Price: 100000
+            Materials:
+              - Material: EP17_1_EVT23
+          - Item: Improve_Orb_Cast
+            Price: 100000
+            Materials:
+              - Material: EP17_1_EVT24
+          - Item: Improve_Orb_Cri
+            Price: 100000
+            Materials:
+              - Material: EP17_1_EVT25
+          - Item: Improve_Orb_Heal
+            Price: 100000
+            Materials:
+              - Material: EP17_1_EVT19
+          - Item: Improve_Orb_Delay
+            Price: 100000
+            Materials:
+              - Material: EP17_1_EVT26
+          - Item: Improve_Orb_Life
+            Price: 100000
+            Materials:
+              - Material: EP17_1_EVT29
+          - Item: Improve_Orb_Soul
+            Price: 100000
+            Materials:
+              - Material: EP17_1_EVT30
+          - Item: Improve_Orb_M_Heal
+            Price: 100000
+            Materials:
+              - Material: EP17_1_EVT31
+          - Item: Improve_Orb_M_Soul
+            Price: 100000
+            Materials:
+              - Material: EP17_1_EVT32
+      - Slot: 2
+        PerfectEnchants:
+          - Item: Strength3
+            Price: 100000
+            Materials:
+              - Material: EP17_1_EVT07
+          - Item: Agility3
+            Price: 100000
+            Materials:
+              - Material: EP17_1_EVT08
+          - Item: Vitality3
+            Price: 100000
+            Materials:
+              - Material: EP17_1_EVT05
+          - Item: Inteligence3
+            Price: 100000
+            Materials:
+              - Material: EP17_1_EVT09
+          - Item: Dexterity3
+            Price: 100000
+            Materials:
+              - Material: EP17_1_EVT10
+          - Item: Luck3
+            Price: 100000
+            Materials:
+              - Material: EP17_1_EVT06
+          - Item: Improve_Orb_Def
+            Price: 100000
+            Materials:
+              - Material: EP17_1_EVT03
+          - Item: Improve_Orb_Mdef
+            Price: 100000
+            Materials:
+              - Material: EP17_1_EVT04
+          - Item: Improve_Orb_HealHP
+            Price: 100000
+            Materials:
+              - Material: EP17_1_EVT11
+          - Item: Improve_Orb_HealSP
+            Price: 100000
+            Materials:
+              - Material: EP17_1_EVT12
+          - Item: Spell5
+            Price: 100000
+            Materials:
+              - Material: EP17_1_EVT13
+          - Item: Attack_Delay_4
+            Price: 100000
+            Materials:
+              - Material: EP17_1_EVT14
+          - Item: Fatal4
+            Price: 100000
+            Materials:
+              - Material: EP17_1_EVT15
+          - Item: Expert_Archer5
+            Price: 100000
+            Materials:
+              - Material: EP17_1_EVT16
+          - Item: Improve_Orb_Health
+            Price: 100000
+            Materials:
+              - Material: EP17_1_EVT17
+          - Item: Improve_Orb_Spirit
+            Price: 100000
+            Materials:
+              - Material: EP17_1_EVT18
+          - Item: Improve_Orb_Atk
+            Price: 100000
+            Materials:
+              - Material: EP17_1_EVT20
+          - Item: Improve_Orb_Matk
+            Price: 100000
+            Materials:
+              - Material: EP17_1_EVT21
+          - Item: Improve_Orb_Archer
+            Price: 100000
+            Materials:
+              - Material: EP17_1_EVT22
+          - Item: Improve_Orb_Speed
+            Price: 100000
+            Materials:
+              - Material: EP17_1_EVT23
+          - Item: Improve_Orb_Cast
+            Price: 100000
+            Materials:
+              - Material: EP17_1_EVT24
+          - Item: Improve_Orb_Cri
+            Price: 100000
+            Materials:
+              - Material: EP17_1_EVT25
+          - Item: Improve_Orb_Heal
+            Price: 100000
+            Materials:
+              - Material: EP17_1_EVT19
+          - Item: Improve_Orb_Delay
+            Price: 100000
+            Materials:
+              - Material: EP17_1_EVT26
+          - Item: Improve_Orb_Life
+            Price: 100000
+            Materials:
+              - Material: EP17_1_EVT29
+          - Item: Improve_Orb_Soul
+            Price: 100000
+            Materials:
+              - Material: EP17_1_EVT30
+          - Item: Improve_Orb_M_Heal
+            Price: 100000
+            Materials:
+              - Material: EP17_1_EVT31
+          - Item: Improve_Orb_M_Soul
+            Price: 100000
+            Materials:
+              - Material: EP17_1_EVT32
+      - Slot: 1
+        PerfectEnchants:
+          - Item: Improve_Orb_L_Vit
+            Price: 100000
+            Materials:
+              - Material: EP17_1_EVT33
+          - Item: Improve_Orb_L_INT
+            Price: 100000
+            Materials:
+              - Material: EP17_1_EVT34
+          - Item: Improve_Orb_L_DEX
+            Price: 100000
+            Materials:
+              - Material: EP17_1_EVT35
+          - Item: Improve_Orb_L_STR
+            Price: 100000
+            Materials:
+              - Material: EP17_1_EVT36
+          - Item: Improve_Orb_L_AGI
+            Price: 100000
+            Materials:
+              - Material: EP17_1_EVT37
+          - Item: Improve_Orb_L_LUK
+            Price: 100000
+            Materials:
+              - Material: EP17_1_EVT38

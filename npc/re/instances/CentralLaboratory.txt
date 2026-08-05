@@ -394,75 +394,75 @@ OnStart:
 	'gen_14$ = instance_npcname("#gen_14");
 
 	npctalk "Federico : Let us get started. Hm... Are you ready Dr. Fresa?", 'federico$;
-	sleep 5000;
+	sleep 1000;
 	npctalk "Artemia : Probably making final confirmation checks. An experiment of this scope needs such caution.", 'artemia$;
-	sleep 6000;
+	sleep 1200;
 	npctalk "Silvia : Care is needed for operating a finished product for the first experiment.", 'silvia$;
-	sleep 4000;
+	sleep 800;
 	npctalk "Vincent : Ah, I hope we can finish quickly so I can go eat chicken.", 'vincent$;
-	sleep 3000;
+	sleep 600;
 	npctalk "Silvia : Ah! I like that too! Call me when you go.", 'silvia$;
-	sleep 6000;
+	sleep 1200;
 	mapannounce 'map_name$, "?????: Ah, ah, one two one two, mic test.", bc_map,0x00ff77;
-	sleep 2000;
+	sleep 400;
 	npctalk "Federico : She's here.", 'federico$;
-	sleep 2500;
+	sleep 500;
 	mapannounce 'map_name$, "?????: Chief director Lona Fresa of project particle accelerator.", bc_map,0x00ff77;
-	sleep 5000;
+	sleep 1000;
 	mapannounce 'map_name$, "Lona Fresa : Current time " + gettime(DT_MONTH) + " Month " + gettime(DT_DAYOFMONTH) + " Day 25 minutes after 10.", bc_map,0x00ff77;
-	sleep 5000;
+	sleep 1000;
 	mapannounce 'map_name$, "Lona Fresa : Testing the effects of particle acceleration on its surroundings in an open space.", bc_map,0x00ff77;
-	sleep 5000;
+	sleep 1000;
 	npctalk "Artemia : Aah... I really don't like this experiment.", 'artemia$;
-	sleep 3000;
+	sleep 600;
 	mapannounce 'map_name$, "Lona Fresa : Starting the experiment. Chief researcher Dr. Federico, Artemia, Silvia, Vincent and assistant researchers.", bc_map,0x00ff77;
-	sleep 5000;
+	sleep 1000;
 	'bool_event = true;
 	donpcevent instance_npcname("#npc_con03") + "::OnStart";
 	npctalk "Artemia : Let us start~", 'artemia$;
-	sleep 3000;
+	sleep 600;
 	npctalk "Vincent : Starting rotation of generator.", 'vincent$;
-	sleep 3000;
+	sleep 600;
 	npctalk "Federico : Generator rotation fixed at 10000 RPM.", 'federico$;
-	sleep 2500;
+	sleep 500;
 	npctalk "Silvia : Voltage is still within the tolerance band.", 'silvia$;
-	sleep 3000;
+	sleep 600;
 	mapannounce 'map_name$, "Lona Fresa : This experiment is for the creation of new material that hasn't existed before.", bc_map,0x00ff77;
-	sleep 5000;
+	sleep 1000;
 	mapannounce 'map_name$, "Lona Fresa : Recorders make sure to make detailed records of the catalyst bed's reaction when it is installed to the accelerator.", bc_map,0x00ff77;
-	sleep 6000;
+	sleep 1200;
 	npctalk "Artemia : Contacting catalyst bed number 1.", 'artemia$;
-	sleep 9000;
+	sleep 1800;
 	npctalk "Silvia : Generator voltage unstable. Still within tolerance band.", 'silvia$;
-	sleep 3000;
+	sleep 600;
 	donpcevent instance_npcname("#npc_con03") + "::OnStart2";
-	sleep 2000;
+	sleep 400;
 	npctalk "Silvia : Detecting heat close to the tolerance band between the catalyst bed and the accelerator!", 'silvia$;
-	sleep 5000;
+	sleep 1000;
 	npctalk "Vincent : Accelerator is heating.", 'vincent$;
-	sleep 5000;
+	sleep 1000;
 	npctalk "Vincent: 320c.", 'vincent$;
-	sleep 5000;
+	sleep 1000;
 	npctalk "Vincent : 670c It's heating up too fast!", 'vincent$;
-	sleep 3000;
+	sleep 600;
 	npctalk "Vincent : Broke through 1000c!!!! Dr. Fresa! We have to momentarily stop the device!", 'vincent$;
-	sleep 3000;
+	sleep 600;
 	mapannounce 'map_name$, "Lona Fresa : It is fine.", bc_map,0x00ff77;
-	sleep 5000;
+	sleep 1000;
 	npctalk "Silvia : It is not a simple problem. The temperature has far exceeded the predicted numbers!", 'silvia$;
-	sleep 3000;
+	sleep 600;
 	mapannounce 'map_name$, "Lona Fresa : This problem was predicted. Maintain current state.", bc_map,0x00ff77;
-	sleep 3000;
+	sleep 600;
 	npctalk "Artemia :  But at least.. I will have chicken later.", 'artemia$;
-	sleep 5000;
+	sleep 1000;
 	mapannounce 'map_name$, "MA-4885: Receiving changed circumstance through main server. Detecting dimensional distortion between particle accelerator and catalyst.", bc_map,0xFFFF00,FW_NORMAL,13;
-	sleep 3000;
+	sleep 600;
 	npctalk "Artemia : Dr. Fresa! It's a dangerous situation of Mother Computer. Shut down the main power!", 'artemia$;
-	sleep 5000;
+	sleep 1000;
 	mapannounce 'map_name$, "MA-4885: Alert. New unidentified creature approaching from demi-plane.", bc_map,0xFFFF00,FW_NORMAL,13;
-	sleep 3000;
+	sleep 600;
 	npctalk "Vincent : What is going on. Somebody turn off that computer!", 'vincent$;
-	sleep 3000;
+	sleep 600;
 	mapannounce 'map_name$, "MA-4885: A new organism will be soon transmitted from the demi-plane.", bc_map,0xFFFF00,FW_NORMAL,13;
 	sleep 5000;
 	mapannounce 'map_name$, "MA-4885: 5 seconds remaining", bc_map,0xFFFF00,FW_NORMAL,13;
@@ -487,7 +487,7 @@ OnStart:
 OnStart:
 	enablenpc instance_npcname("#npc_con05");
 	killmonster 'map_name$, instance_npcname("#npc_con05") + "::OnMyMobDead";
-	.@boss_call = rand(1,105);
+	.@boss_call = rand(1,140);
 	if (.@boss_call <= 7)			.@mob_id = 1087;	// ORK_HERO
 	else if (.@boss_call <= 14)		.@mob_id = 1147;	// MAYA
 	else if (.@boss_call <= 21)		.@mob_id = 1190;	// ORC_LORD
@@ -501,27 +501,28 @@ OnStart:
 	else if (.@boss_call <= 77)		.@mob_id = 1150;	// MOONLIGHT
 	else if (.@boss_call <= 84)		.@mob_id = 1688;	// LADY_TANEE
 	else if (.@boss_call <= 91)		.@mob_id = 1039;	// BAPHOMET
-	else if (.@boss_call <= 93)		.@mob_id = 1089;	// TOAD
-	else if (.@boss_call <= 95)		.@mob_id = 1092;	// VAGABOND_WOLF
-	else if (.@boss_call <= 97)		.@mob_id = 1088;	// VOCAL
-	else if (.@boss_call <= 99)		.@mob_id = 1096;	// ANGELING
-	else if (.@boss_call <= 101)	.@mob_id = 1093;	// ECLIPSE
-	else if (.@boss_call <= 103)	.@mob_id = 1120;	// GHOSTRING
-	else if (.@boss_call <= 105)	.@mob_id = 1090;	// MASTERING
+	else if (.@boss_call <= 98)		.@mob_id = 2362;	// N_AMON_RA
+	else if (.@boss_call <= 105)		.@mob_id = 3074;	// TIMEHOLDER
+	else if (.@boss_call <= 112)		.@mob_id = 3633;	// EP16_2_VENOM_KIMERA
+	else if (.@boss_call <= 119)		.@mob_id = 1885;	// GOPINICH
+	else if (.@boss_call <= 126)	.@mob_id = 1658;	// B_YGNIZEM
+	else if (.@boss_call <= 133)	.@mob_id = 1685;	// APOCALIPS_H
+	else if (.@boss_call <= 140)	.@mob_id = 3633;	// EP16_2_VENOM_KIMERA
 
 	monster 'map_name$,90,88, "Unidentified creature",.@mob_id,1, instance_npcname("#npc_con05") + "::OnMyMobDead";
-	sleep 3000;
+	sleep 600;
 	npctalk "Artemia : What... what is that?!", 'artemia$;
-	sleep 3000;
+	sleep 600;
 	npctalk "Silvia : It isn't reacting to us. Maybe it can't see us?", 'silvia$;
-	sleep 5000;
+	sleep 1000;
 	npctalk "Vincent : But it is hostile to the project assistants! What is that creature!?", 'vincent$;
-	sleep 5000;
+	sleep 1000;
 	npctalk "Vincent : I can't move my body! I think space is frozen!", 'vincent$;
 	end;
 
 OnMyMobDead:
 	mapannounce 'map_name$, "MA-4885: Unidentified creature eliminated. Restarting device.", bc_map, 0xffff00,FW_NORMAL,13,0;
+	getitem 9900009,rand(25,35);
 	if (mobcount( 'map_name$, instance_npcname("#npc_con05") + "::OnMyMobDead" ) < 1)
 		initnpctimer;
 	end;
@@ -537,43 +538,43 @@ OnTimer1000:
 1@lab,4,1,3	script	#npc_con06	CLEAR_NPC,{
 	end;
 OnStart:
-	sleep 9000;
+	sleep 1800;
 	npctalk "Artemia: MA-4885!! On who's order are you restarting! Stop!!", 'artemia$;
-	sleep 3000;
+	sleep 600;
 	mapannounce 'map_name$, "MA-4885: Unrecognized command.", bc_map,0xFFFF00,FW_NORMAL,13;
-	sleep 6000;
+	sleep 1200;
 	npctalk "Artemia: Dr. Fresa!! We have to stop! This is too dangerous!", 'artemia$;
-	sleep 3000;
+	sleep 600;
 	mapannounce 'map_name$, "Lona Fresa : ......", bc_map,0x00ff77;
-	sleep 3000;
+	sleep 600;
 	npctalk "Vincent: Fresa! We don't have time! Turn off the computer!!", 'vincent$;
-	sleep 3000;
+	sleep 600;
 	mapannounce 'map_name$, "MA-4885: Restarting particle acceleration procedure.", bc_map,0xFFFF00,FW_NORMAL,13;
-	sleep 3000;
+	sleep 600;
 	'bool_event = true;
 	donpcevent instance_npcname("#npc_con03") + "::OnStart";
 	npctalk "Silvia : Fresa! Make a decision!", 'silvia$;
-	sleep 3000;
+	sleep 600;
 	mapannounce 'map_name$, "Lona Fresa : ......", bc_map,0x00ff77;
-	sleep 6000;
+	sleep 1200;
 	mapannounce 'map_name$, "Lona Fresa : Current time 20 minutes past 11. Momentarily postpone experiment.", bc_map,0x00ff77;
-	sleep 6000;
+	sleep 1200;
 	mapannounce 'map_name$, "MA-4885: Access denied. Cannot understand command.", bc_map,0xFFFF00,FW_NORMAL,13;
-	sleep 3000;
+	sleep 600;
 	donpcevent instance_npcname("#npc_con03") + "::OnStart2";
-	sleep 2000;
+	sleep 400;
 	mapannounce 'map_name$, "Lona Fresa : Mother Comp MA-4885. I am your Chief director Dr. Fresa. Cease current progress.", bc_map,0x00ff77;
-	sleep 5000;
+	sleep 1000;
 	mapannounce 'map_name$, "MA-4885: Access denied. Cannot understand command.", bc_map,0xFFFF00,FW_NORMAL,13;
-	sleep 5000;
+	sleep 1000;
 	npctalk "Federico : Damnit! Something else is coming!!", 'federico$;
-	sleep 2500;
+	sleep 500;
 	mapannounce 'map_name$, "MA-4885: Alert. New unidentified creature approaching from demi-plane.", bc_map,0xFFFF00,FW_NORMAL,13;
-	sleep 3000;
+	sleep 600;
 	npctalk "Vincent : Oh... damnit. This is why you shouldn't install the newest CPU.", 'vincent$;
-	sleep 3000;
+	sleep 600;
 	npctalk "Federico : Ah... my body...can't move. Damn", 'federico$;
-	sleep 4000;
+	sleep 900;
 	mapannounce 'map_name$, "MA-4885: A new organism will be soon transmitted from the demi-plane.", bc_map,0xFFFF00,FW_NORMAL,13;
 	sleep 5000;
 	mapannounce 'map_name$, "MA-4885: 5 seconds remaining", bc_map,0xFFFF00,FW_NORMAL,13;
@@ -598,7 +599,7 @@ OnStart:
 OnStart:
 	enablenpc instance_npcname("#npc_con07");
 	killmonster 'map_name$, instance_npcname("#npc_con07") + "::OnMyMobDead";
-	.@boss_call = rand(1,98);
+	.@boss_call = rand(1,140);
 	if (.@boss_call <= 7)		.@mob_id = 1980;	// KUBLIN
 	else if (.@boss_call <= 14)	.@mob_id = 1157;	// PHARAOH
 	else if (.@boss_call <= 21)	.@mob_id = 1112;	// DRAKE
@@ -611,33 +612,35 @@ OnStart:
 	else if (.@boss_call <= 70)	.@mob_id = 1252;	// GARM
 	else if (.@boss_call <= 77)	.@mob_id = 1779;	// KTULLANUX
 	else if (.@boss_call <= 84)	.@mob_id = 1708;	// THANATOS
-	else if (.@boss_call <= 86)	.@mob_id = 1089;	// TOAD
-	else if (.@boss_call <= 88)	.@mob_id = 1092;	// VAGABOND_WOLF
-	else if (.@boss_call <= 90)	.@mob_id = 1088;	// VOCAL
-	else if (.@boss_call <= 92)	.@mob_id = 1096;	// ANGELING
-	else if (.@boss_call <= 94)	.@mob_id = 1093;	// ECLIPSE
-	else if (.@boss_call <= 96)	.@mob_id = 1120;	// GHOSTRING
-	else if (.@boss_call <= 98)	.@mob_id = 1090;	// MASTERING
+	else if (.@boss_call <= 91)	.@mob_id = 20381;	// EP17_1_R4885_BESTIA
+	else if (.@boss_call <= 98)	.@mob_id = 20419;	// MUSPELLSKOLL_H
+	else if (.@boss_call <= 105)	.@mob_id = 20118;	// GOBLIN_KING
+	else if (.@boss_call <= 112)	.@mob_id = 20421;	// BRINARANEA_H
+	else if (.@boss_call <= 119)	.@mob_id = 20422;	// DARK_LORD_H
+	else if (.@boss_call <= 126)	.@mob_id = 20601;	// JUNGOLIANT
+	else if (.@boss_call <= 133)	.@mob_id = 20610;	// REGINLEIF
+	else if (.@boss_call <= 140)	.@mob_id = 20648;	// EP17_2_PITAYA_BOSS
 
 	monster 'map_name$,90,88, "Unidentified creature",.@mob_id,1, instance_npcname("#npc_con07") + "::OnMyMobDead";
-	sleep 6000;
+	sleep 1200;
 	npctalk "Silvia: Same as the last time. It seems to have no interest in us.", 'silvia$;
-	sleep 4000;
+	sleep 800;
 	npctalk "Vincent: Let's completely shut down the mother computer while the main power is temporarily off!", 'vincent$;
-	sleep 5000;
+	sleep 1000;
 	mapannounce 'map_name$, "MA-4885: Answering question. This space is currently stuck in a distorted phase.", bc_map,0xFFFF00,FW_NORMAL,13;
-	sleep 5000;
+	sleep 1000;
 	mapannounce 'map_name$, "MA-4885: Direct interaction between the demi-plane creature and this world's organisms will be possible after the phase has been balanced.", bc_map,0xFFFF00,FW_NORMAL,13;
-	sleep 5000;
+	sleep 1000;
 	mapannounce 'map_name$, "MA-4885: Conducting calculations to restore balance to distorted phase. Please wait a moment.", bc_map,0xFFFF00,FW_NORMAL,13;
-	sleep 5000;
+	sleep 1000;
 	npctalk "Artemia: What is that crazy clump of metal saying? It is saying we aren't in the same phase as those monster like things?", 'artemia$;
-	sleep 4000;
+	sleep 800;
 	npctalk "Federico: Aah, I guess we should hope that Mother computer doesn't make the right calculations.", 'federico$;
 	end;
 
 OnMyMobDead:
 	mapannounce 'map_name$, "MA-4885: Unidentified creature eliminated. Phase adjustment failed. Restarting relevant procedure.", bc_map, 0xffff00,FW_NORMAL,13,0;
+	getitem 9900009,rand(25,35);
 	if (mobcount( 'map_name$, instance_npcname("#npc_con07") + "::OnMyMobDead" ) < 1)
 		initnpctimer;
 	end;
@@ -653,68 +656,68 @@ OnTimer1000:
 1@lab,4,1,3	script	#npc_con08	CLEAR_NPC,{
 	end;
 OnStart:
-	sleep 13000;
+	sleep 1600;
 	mapannounce 'map_name$, "Lona Fresa: Mother Computer MA-4885. Looks like you are trying to synchronize the other dimension and this world.", bc_map, 0x00ff77;
-	sleep 6000;
+	sleep 1200;
 	mapannounce 'map_name$, "MA-4885: That is correct.", bc_map, 0xffff00,FW_NORMAL,13,0;
-	sleep 6000;
+	sleep 1200;
 	npctalk "Artemia: Dr. Fresa!! This ridiculous event is completely unrelated to our original experiment!", 'artemia$;
-	sleep 6000;
+	sleep 1200;
 	mapannounce 'map_name$, "Lona Fresa: I have fully realized that.", bc_map, 0x00ff77;
-	sleep 6000;
+	sleep 1200;
 	npctalk "Silvia: Can we not shut down main power completely?", 'silvia$;
-	sleep 6000;
+	sleep 1200;
 	mapannounce 'map_name$, "MA-4885: Restarting particle acceleration procedure.", bc_map, 0xffff00,FW_NORMAL,13,0;
-	sleep 5000;
+	sleep 1000;
 	'bool_event = true;
 	donpcevent instance_npcname("#npc_con03") + "::OnStart";
 	mapannounce 'map_name$, "Lona Fresa: " + gettime(DT_MONTH) + " Month " + gettime(DT_DAYOFMONTH) + " Day. Current time 38 minutes past 11 temporarily terminating particle accelerator project.", bc_map, 0x00ff77;
-	sleep 6000;
+	sleep 1200;
 	mapannounce 'map_name$, "Lona Fresa: Ending record with reasons of Mother Computer malfunction and overheating of accelerator.", bc_map, 0x00ff77;
-	sleep 5000;
+	sleep 1000;
 	npctalk "Silvia : Alright! Now Dr. Fresa just has to shut down the power.", 'silvia$;
-	sleep 6000;
+	sleep 1200;
 	mapannounce 'map_name$, "Lona Fresa: Cutting off power to Mother Computer MA-4885.", bc_map, 0x00ff77;
-	sleep 6000;
+	sleep 1200;
 	mapannounce 'map_name$, "MA-4885: Suspending operation of all equipment as per Administrator request.", bc_map, 0xffff00,FW_NORMAL,13,0;
-	sleep 5000;
+	sleep 1000;
 	mapannounce 'map_name$, "MA-4885: .....command... ----!!!  Zizip... ---!! -- following command ----- !! Zizip.", bc_map, 0xffff00,FW_NORMAL,13,0;
-	sleep 5000;
+	sleep 1000;
 	'bool_event = false;
 	npctalk "Artemia : Whew... is it over?", 'artemia$;
-	sleep 6000;
+	sleep 1200;
 	mapannounce 'map_name$, "Lona Fresa: Completed shut down of Mother computer MA-4885. Confirm equipment suspension.", bc_map, 0x00ff77;
-	sleep 5000;
+	sleep 1000;
 	npctalk "Silvia: Looks like it's over.", 'silvia$;
-	sleep 4000;
+	sleep 800;
 	npctalk "Federico: Plant initialization is the best.", 'federico$;
-	sleep 4000;
+	sleep 800;
 	mapannounce 'map_name$, "Lona Fresa: Recording all experiment progress and terminating at current point.", bc_map, 0x00ff77;
-	sleep 5000;
+	sleep 1000;
 	mapannounce 'map_name$, "Lona Fresa: The final experiment failure is unfortunate. But I will promise a more perfect experiment next time.", bc_map, 0x00ff77;
-	sleep 5000;
+	sleep 1000;
 	mapannounce 'map_name$, "Lona Fresa: Good work everybody.", bc_map, 0x00ff77;
-	sleep 5000;
+	sleep 1000;
 	npctalk "Artemia: It seems to be over.", 'artemia$;
-	sleep 5000;
+	sleep 1000;
 	npctalk "Federico: I thought it was Fresa's dogmatic experiment. But it was a problem with the mother comp.", 'federico$;
-	sleep 5500;
+	sleep 1500;
 	npctalk "Silvia: Let's just calm down. And get out of this dreadful laboratory.", 'silvia$;
-	sleep 5000;
+	sleep 1000;
 	npctalk "Vincent : By the way... I still can't move so what is going on?", 'vincent$;
-	sleep 5000;
+	sleep 1000;
 	'bool_event = true;
 	donpcevent instance_npcname("#npc_con03") + "::OnStart";
 	donpcevent instance_npcname("#npc_con03") + "::OnStart3";
-	sleep 2000;
+	sleep 400;
 	mapannounce 'map_name$, "MA-4885: CODE NAME - DESCENT", bc_map, 0xff0000,FW_NORMAL,16,0;
-	sleep 5000;
+	sleep 1000;
 	npctalk "Federico : What? Wasn't this the initialization stage?", 'federico$;
-	sleep 2500;
+	sleep 500;
 	mapannounce 'map_name$, "MA-4885: Starting final phase transformation.", bc_map, 0xffff00,FW_NORMAL,13,0;
-	sleep 3000;
+	sleep 600;
 	npctalk "Silvia : It's all over.", 'silvia$;
-	sleep 5500;
+	sleep 1100;
 	mapannounce 'map_name$, "MA-4885: A new organism will be soon transmitted from the demi-plane.", bc_map, 0xffff00,FW_NORMAL,13,0;
 	sleep 5000;
 	mapannounce 'map_name$, "MA-4885: 5 seconds remaining", bc_map, 0xffff00,FW_NORMAL,13,0;
@@ -739,7 +742,7 @@ OnStart:
 OnStart:
 	enablenpc instance_npcname("#npc_con10");
 	killmonster 'map_name$, instance_npcname("#npc_con10") + "::OnMyMobDead";
-	.@boss_call = rand(1,105);
+	.@boss_call = rand(1,140);
 	if (.@boss_call <= 7)			.@mob_id = 1623;	// RSX_0806
 	else if (.@boss_call <= 14)		.@mob_id = 1418;	// DARK_SNAKE_LORD
 	else if (.@boss_call <= 21)		.@mob_id = 1312;	// TURTLE_GENERAL
@@ -753,22 +756,23 @@ OnStart:
 	else if (.@boss_call <= 77)		.@mob_id = 2255;	// KADES
 	else if (.@boss_call <= 84)		.@mob_id = 1832;	// IFRIT
 	else if (.@boss_call <= 91)		.@mob_id = 1874;	// BEELZEBUB_
-	else if (.@boss_call <= 93)		.@mob_id = 1089;	// TOAD
-	else if (.@boss_call <= 95)		.@mob_id = 1092;	// VAGABOND_WOLF
-	else if (.@boss_call <= 97)		.@mob_id = 1088;	// VOCAL
-	else if (.@boss_call <= 99)		.@mob_id = 1096;	// ANGELING
-	else if (.@boss_call <= 101)	.@mob_id = 1093;	// ECLIPSE
-	else if (.@boss_call <= 103)	.@mob_id = 1120;	// GHOSTRING
-	else if (.@boss_call <= 105)	.@mob_id = 1090;	// MASTERING
+	else if (.@boss_call <= 98)		.@mob_id = 20611;	// INGRID
+	else if (.@boss_call <= 105)		.@mob_id = 20928;	// CHIMERA_THEONE
+	else if (.@boss_call <= 112)		.@mob_id = 20934;	// R001_BESTIA
+	else if (.@boss_call <= 119)		.@mob_id = 20943;	// DEATH_WITCH
+	else if (.@boss_call <= 126)	.@mob_id = 21301;	// EP18_BURNING_FANG
+	else if (.@boss_call <= 133)	.@mob_id = 21533;	// EP19_MD_JUNCEA_S
+	else if (.@boss_call <= 140)	.@mob_id = 21537;	// EP19_LIMACINA_BOSS
 
 	monster 'map_name$,90,88, "Unidentified creature",.@mob_id,1, instance_npcname("#npc_con10") + "::OnMyMobDead";
 	mapannounce 'map_name$, "MA-4885: Final phase transformation process.", bc_map, 0xffff00,FW_NORMAL,13,0;
-	sleep 5000;
+	sleep 1000;
 	mapannounce 'map_name$, "MA-4885: This world will be summoned to the demi-plane after the phase interference phenomenon with creature fades.", bc_map, 0xffff00,FW_NORMAL,13,0;
-	sleep 5000;
+	sleep 1000;
 	end;
 OnMyMobDead:
 	mapannounce 'map_name$, "MA-4885: Phase synchronization completed before creature is eliminated. Starting dimensional travel.", bc_map, 0xffff00,FW_NORMAL,13,0;
+	getitem 9900009,rand(25,35);
 	if (mobcount( 'map_name$, instance_npcname("#npc_con10") + "::OnMyMobDead" ) < 1)
 		initnpctimer;
 	end;
@@ -785,52 +789,52 @@ OnTimer1000:
 OnStart:
 	'bool_event = true;
 	donpcevent instance_npcname("#npc_con03") + "::OnStart";
-	sleep 12000;
+	sleep 1400;
 	mapannounce 'map_name$, "MA-4885: Conducting calculations to restore balance to distorted phase. Please wait a moment.", bc_map, 0xffff00,FW_NORMAL,13,0;
-	sleep 5000;
+	sleep 1000;
 	npctalk "Federico : Mother comp is conducting a tremendous experiment going beyond what we thought of.", 'federico$;
-	sleep 2500;
+	sleep 500;
 	npctalk "Vincent : Seems more magnanimous than we are. Fresa!!! Are you listening? Sound the alarm!", 'vincent$;
-	sleep 5000;
+	sleep 1000;
 	npctalk "Vincent : We should at least evacuate the people in the other labs.", 'vincent$;
-	sleep 5000;
+	sleep 1000;
 	mapannounce 'map_name$, "Lona Fresa: But ... you.", bc_map, 0x00ff77;
-	sleep 5000;
+	sleep 1000;
 	npctalk "Silvia : Gee, I don't know what will happen but I am curious about shifting dimensions. Don't mind me!", 'silvia$;
-	sleep 5000;
+	sleep 1000;
 	npctalk "Artemia : Dimension moving while experimenting on new material production. Got caught up in a different level of an experiment.", 'artemia$;
-	sleep 5000;
+	sleep 1000;
 	mapannounce 'map_name$, "Alarm System : Alert! Alert! Class 1 alert issued from the Particle Laboratory. All researchers evacuate to the bunker.", bc_map, 0xff0000,FW_NORMAL,13,0;
-	sleep 5000;
+	sleep 1000;
 	mapannounce 'map_name$, "Alarm System : I repeat. Class 1 alert issued from the Particle Laboratory. All researchers evacuate to the bunker.", bc_map, 0xff0000,FW_NORMAL,13,0;
 	npctalk "Federico : Is this how it feels to move dimensions. How strange...", 'federico$;
-	sleep 4000;
+	sleep 800;
 	specialeffect EF_SUI_EXPLOSION, AREA, 'federico$;
 	disablenpc 'federico$;
 	mapannounce 'map_name$, "MA-4885: Dimension move at 20% progress. There could be dimensional interference with certain creatures. Please be aware.", bc_map, 0xffff00,FW_NORMAL,13,0;
 	donpcevent instance_npcname("#npc_con03") + "::OnStart2";
 	npctalk "Vincent : I wonder if the others evacuated?", 'vincent$;
-	sleep 5000;
+	sleep 1000;
 	specialeffect EF_SUI_EXPLOSION, AREA, 'vincent$;
 	disablenpc 'vincent$;
 	npctalk "Silvia : Ah...... I should be seeing this while having chicken and beer...", 'silvia$;
-	sleep 5000;
+	sleep 1000;
 	specialeffect EF_SUI_EXPLOSION, AREA, 'silvia$;
 	disablenpc 'silvia$;
 	mapannounce 'map_name$, "MA-4885: Dimension move at 78% progress. Most of the dimension encroached by demi-plane.", bc_map, 0xffff00,FW_NORMAL,13,0;
 	npctalk "Artemia : Ha... whose going to eat the chicken now?", 'artemia$;
-	sleep 5000;
+	sleep 1000;
 	specialeffect EF_SUI_EXPLOSION, AREA, 'artemia$;
 	disablenpc 'artemia$;
 	donpcevent instance_npcname("#npc_con03") + "::OnStart3";
-	sleep 10000;
+	sleep 2000;
 	'bool_event = false;
 	mapannounce 'map_name$, "MA-4885: Dimension move 100% completed. Welcome to the demi-plane dimension.", bc_map, 0xffff00,FW_NORMAL,13,0;
-	sleep 5000;
+	sleep 1000;
 	mapannounce 'map_name$, "MA-4885: A gateway possible for contact with the demi-plane open at 3 o'clock of the laboratory.", bc_map, 0xffff00,FW_NORMAL,13,0;
-	sleep 5000;
+	sleep 1000;
 	mapannounce 'map_name$, "MA-4885: Cannot guarantee what kind of dimension will be met due to the instability of the gateway...", bc_map, 0xffff00,FW_NORMAL,13,0;
-	sleep 5000;
+	sleep 1000;
 	mapannounce 'map_name$, "MA-4885: If there are any surviving organisms I wish you luck. I hope to see you again.", bc_map, 0xffff00,FW_NORMAL,13,0;
 	enablenpc instance_npcname("lab_warp#end");
 	end;

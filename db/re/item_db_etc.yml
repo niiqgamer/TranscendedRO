@@ -1143,8 +1143,8 @@ Body:
     AegisName: Gold
     Name: Gold
     Type: Etc
-    Buy: 150000
-    Weight: 200
+    Buy: 10
+    Weight: 0
     Flags:
       BuyingStore: true
   - Id: 970
@@ -21156,7 +21156,7 @@ Body:
     Name: Gray Shard
     Type: Etc
     Sell: 1
-    Weight: 1
+    Weight: 0
     Flags:
       BuyingStore: true
   - Id: 6673
@@ -36943,12 +36943,12 @@ Body:
     AegisName: EP17_1_EVT01
     Name: Damaged Weapon
     Type: Etc
-    Weight: 10
+    Weight: 0
   - Id: 25669
     AegisName: EP17_1_EVT02
     Name: Mysterious Component
     Type: Etc
-    Weight: 10
+    Weight: 0
   - Id: 25670
     AegisName: EP17_1_EVT03
     Name: Modification Module (Defense)
@@ -37194,7 +37194,7 @@ Body:
     Name: Cor Core
     Type: Etc
     Buy: 15000
-    Weight: 10
+    Weight: 0
   - Id: 25728
     AegisName: Shadowdecon_Ore
     Name: Shadowdecon Ore
@@ -37614,7 +37614,7 @@ Body:
     AegisName: Ein_DYNITE
     Name: Dynite
     Type: Etc
-    Weight: 10
+    Weight: 0
     Flags:
       BuyingStore: true
       DropEffect: CLIENT
@@ -92179,42 +92179,42 @@ Body:
     AegisName: Etel_Bradium
     Name: Etel Bradium
     Type: Etc
-    Weight: 10
+    Weight: 0
     Flags:
       BuyingStore: true
   - Id: 1000369
     AegisName: HD_Etel_Bradium
     Name: HE Etel Bradium
     Type: Etc
-    Weight: 10
+    Weight: 0
     Flags:
       BuyingStore: true
   - Id: 1000370
     AegisName: Etel_Carnium
     Name: Etel Carnium
     Type: Etc
-    Weight: 10
+    Weight: 0
     Flags:
       BuyingStore: true
   - Id: 1000371
     AegisName: HD_Etel_Carnium
     Name: HE Etel Carnium
     Type: Etc
-    Weight: 10
+    Weight: 0
     Flags:
       BuyingStore: true
   - Id: 1000372
     AegisName: Meteorite_Dust
     Name: Meteorite Powder
     Type: Etc
-    Weight: 1
+    Weight: 0
     Flags:
       BuyingStore: true
   - Id: 1000373
     AegisName: Meteorite_Fragment
     Name: Meteorite Fragment
     Type: Etc
-    Weight: 10
+    Weight: 0
     Flags:
       BuyingStore: true
   - Id: 1000374
@@ -92275,42 +92275,42 @@ Body:
     AegisName: Pow_Meteorite_Dust
     Name: Power Meteorite Powder
     Type: Etc
-    Weight: 1
+    Weight: 0
     Flags:
       BuyingStore: true
   - Id: 1000399
     AegisName: Sta_Meteorite_Dust
     Name: Stamina Meteorite Powder
     Type: Etc
-    Weight: 1
+    Weight: 0
     Flags:
       BuyingStore: true
   - Id: 1000400
     AegisName: Con_Meteorite_Dust
     Name: Agile Meteorite Powder
     Type: Etc
-    Weight: 1
+    Weight: 0
     Flags:
       BuyingStore: true
   - Id: 1000401
     AegisName: Crt_Meteorite_Dust
     Name: Lucky Meteorite Powder
     Type: Etc
-    Weight: 1
+    Weight: 0
     Flags:
       BuyingStore: true
   - Id: 1000402
     AegisName: Spl_Meteorite_Dust
     Name: Meteorite Powder of Spell
     Type: Etc
-    Weight: 1
+    Weight: 0
     Flags:
       BuyingStore: true
   - Id: 1000403
     AegisName: Wis_Meteorite_Dust
     Name: Meteorite Powder of Wisdom
     Type: Etc
-    Weight: 1
+    Weight: 0
     Flags:
       BuyingStore: true
   - Id: 1000405
@@ -95964,7 +95964,7 @@ Body:
     AegisName: EP20_D_P_Ore
     Name: Pure Magical Ore
     Type: Etc
-    Weight: 30
+    Weight: 0
     Flags:
       BuyingStore: true
       DropEffect: CLIENT
@@ -95972,7 +95972,7 @@ Body:
     AegisName: EP20_D_P_Crystal
     Name: Pure Magical Crystal
     Type: Etc
-    Weight: 50
+    Weight: 0
     Flags:
       BuyingStore: true
       DropEffect: CLIENT
@@ -95980,7 +95980,7 @@ Body:
     AegisName: EP20_D_P_Extract
     Name: Pure Magic Extract    # !todo check english name
     Type: Etc
-    Weight: 30
+    Weight: 0
     Flags:
       BuyingStore: true
       DropEffect: CLIENT
@@ -95988,7 +95988,7 @@ Body:
     AegisName: EP20_D_Scale
     Name: Scale of the Snake God
     Type: Etc
-    Weight: 50
+    Weight: 0
     Flags:
       BuyingStore: true
       DropEffect: CLIENT

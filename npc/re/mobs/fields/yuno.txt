@@ -108,7 +108,7 @@ yuno_fild07,0,0	monster	Yellow Plant	1081,10,180000,90000
 //==================================================
 // yuno_fild08 - Kiel Hyre's Academy
 //==================================================
-yuno_fild08,0,0	monster	Grand Peco	1369,157,5000
+yuno_fild08,0,0	monster	Grand Peco	1369,207,5000
 yuno_fild08,0,0	monster	Goat	1372,36,5000
 yuno_fild08,0,0	monster	Geographer	1368,36,5000
 yuno_fild08,0,0	monster	Red Plant	1078,10,180000,90000
@@ -119,7 +119,7 @@ yuno_fild08,0,0	monster	Yellow Plant	1081,10,180000,90000
 //==================================================
 // yuno_fild09 - Schwarzwald Guards Camp 
 //==================================================
-yuno_fild09,0,0	monster	Grand Peco	1369,182,5000
+yuno_fild09,0,0	monster	Grand Peco	1369,232,5000
 yuno_fild09,0,0	monster	Sleeper	1386,42,5000
 yuno_fild09,0,0	monster	Geographer	1368,42,5000
 yuno_fild09,0,0	monster	Red Plant	1078,10,180000,90000

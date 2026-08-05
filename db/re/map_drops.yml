@@ -53,24 +53,24 @@ Body:
     GlobalDrops:
       - Index: 0
         Item: Fate_Fragment
-        Rate: 2500
+        Rate: 1500
       - Index: 1
         Item: Sin_Fragment
-        Rate: 2500
+        Rate: 1500
       - Index: 2
         Item: Thanatos_Antiquity
-        Rate: 2000
+        Rate: 1000
   - Map: tha_t10
     GlobalDrops:
       - Index: 0
         Item: Fate_Fragment
-        Rate: 2500
+        Rate: 1500
       - Index: 1
         Item: Sin_Fragment
-        Rate: 2500
+        Rate: 1500
       - Index: 2
         Item: Thanatos_Antiquity
-        Rate: 2000
+        Rate: 1000
     SpecificDrops:
       - Monster: VOID_MIMIC
         Drops:
@@ -81,24 +81,24 @@ Body:
     GlobalDrops:
       - Index: 0
         Item: Fate_Fragment
-        Rate: 2500
+        Rate: 1700
       - Index: 1
         Item: Sin_Fragment
-        Rate: 2500
+        Rate: 1700
       - Index: 2
         Item: Thanatos_Antiquity
-        Rate: 2000
+        Rate: 1200
   - Map: tha_t12
     GlobalDrops:
       - Index: 0
         Item: Fate_Fragment
-        Rate: 2500
+        Rate: 1700
       - Index: 1
         Item: Sin_Fragment
-        Rate: 2500
+        Rate: 1700
       - Index: 2
         Item: Thanatos_Antiquity
-        Rate: 2000
+        Rate: 1200
   - Map: lhz_dun_n
     GlobalDrops:
       - Index: 0
@@ -2706,6 +2706,10 @@ Body:
             Item: S_Teddy_Bear_Box_IL
             Rate: 150
   - Map: prt_mz03_i
+    GlobalDrops:
+      - Index: 0
+        Item: Seed_Of_Yggdrasil
+        Rate: 2500
     SpecificDrops:
       - Monster: ILL_BAPHOMET
         Drops:
@@ -2843,366 +2847,78 @@ Body:
     GlobalDrops:
       - Index: 0
         Item: Ep19_Snow_Flower
-        Rate: 10000
+        Rate: 7500
       - Index: 1
         Item: Etel_Dust
-        Rate: 7500
+        Rate: 4000
+      - Index: 2
+        Item: Aquila_Antiquity2
+        Rate: 1000
   - Map: jor_back1
     GlobalDrops:
       - Index: 0
         Item: Ep19_Snow_Flower
-        Rate: 10000
+        Rate: 7500
       - Index: 1
         Item: Etel_Dust
-        Rate: 7500
+        Rate: 4000
+      - Index: 2
+        Item: Aquila_Antiquity2
+        Rate: 1000
   - Map: jor_back2
     GlobalDrops:
       - Index: 0
         Item: Ep19_Snow_Flower
-        Rate: 10000
+        Rate: 7500
       - Index: 1
         Item: Etel_Dust
-        Rate: 7500
+        Rate: 4000
+      - Index: 2
+        Item: Aquila_Antiquity2
+        Rate: 1000
   - Map: jor_back3
     GlobalDrops:
       - Index: 0
         Item: Ep19_Snow_Flower
-        Rate: 10000
+        Rate: 7500
       - Index: 1
         Item: Etel_Dust
-        Rate: 7500
+        Rate: 4000
+      - Index: 2
+        Item: Aquila_Antiquity2
+        Rate: 1000
   - Map: jor_dun01
     GlobalDrops:
       - Index: 0
         Item: Etel_Dust
-        Rate: 7500
+        Rate: 4000
       - Index: 1
-        Item: D_Glacier_T_Sword
-        Rate: 1000
-      - Index: 2
-        Item: D_Glacier_Lance
-        Rate: 1000
-      - Index: 3
-        Item: D_Glacier_Sword
-        Rate: 1000
-      - Index: 4
-        Item: D_Glacier_B_Sword
-        Rate: 1000
-      - Index: 5
-        Item: D_Glacier_Spear
-        Rate: 1000
-      - Index: 6
-        Item: D_Glacier_T_Axe
-        Rate: 1000
-      - Index: 7
-        Item: D_Glacier_Axe
-        Rate: 1000
-      - Index: 8
-        Item: D_Glacier_Mace
-        Rate: 1000
-      - Index: 9
-        Item: D_Glacier_M_Mace
-        Rate: 1000
-      - Index: 10
-        Item: D_Glacier_R_Knife
-        Rate: 1000
-      - Index: 11
-        Item: D_Glacier_B_Knife
-        Rate: 1000
-      - Index: 12
-        Item: D_Glacier_Bow
-        Rate: 1000
-      - Index: 13
-        Item: D_Glacier_Knuckle
-        Rate: 1000
-      - Index: 14
-        Item: D_Glacier_Book
-        Rate: 1000
-      - Index: 15
-        Item: D_Glacier_Katar
-        Rate: 1000
-      - Index: 16
-        Item: D_Glacier_Wand
-        Rate: 1000
-      - Index: 17
-        Item: D_Glacier_Staff
-        Rate: 1000
-      - Index: 18
-        Item: D_Glacier_Foxtail
-        Rate: 1000
-      - Index: 19
-        Item: D_Glacier_Violin
-        Rate: 1000
-      - Index: 20
-        Item: D_Glacier_Whip
-        Rate: 1000
-      - Index: 21
-        Item: D_Glacier_Humma
-        Rate: 1000
-      - Index: 22
-        Item: D_Glacier_Revolver
-        Rate: 1000
-      - Index: 23
-        Item: D_Glacier_Rifle
-        Rate: 1000
-      - Index: 24
-        Item: D_Glacier_Shotgun
-        Rate: 1000
-      - Index: 25
-        Item: D_Glacier_Gatling
-        Rate: 1000
-      - Index: 26
-        Item: D_Glacier_Launcher
-        Rate: 1000
+        Item: Aquila_Antiquity2
+        Rate: 1500
   - Map: jor_dun02
     GlobalDrops:
       - Index: 0
         Item: Etel_Dust
-        Rate: 7500
+        Rate: 4000
       - Index: 1
-        Item: D_Glacier_T_Sword
-        Rate: 1000
-      - Index: 2
-        Item: D_Glacier_Lance
-        Rate: 1000
-      - Index: 3
-        Item: D_Glacier_Sword
-        Rate: 1000
-      - Index: 4
-        Item: D_Glacier_B_Sword
-        Rate: 1000
-      - Index: 5
-        Item: D_Glacier_Spear
-        Rate: 1000
-      - Index: 6
-        Item: D_Glacier_T_Axe
-        Rate: 1000
-      - Index: 7
-        Item: D_Glacier_Axe
-        Rate: 1000
-      - Index: 8
-        Item: D_Glacier_Mace
-        Rate: 1000
-      - Index: 9
-        Item: D_Glacier_M_Mace
-        Rate: 1000
-      - Index: 10
-        Item: D_Glacier_R_Knife
-        Rate: 1000
-      - Index: 11
-        Item: D_Glacier_B_Knife
-        Rate: 1000
-      - Index: 12
-        Item: D_Glacier_Bow
-        Rate: 1000
-      - Index: 13
-        Item: D_Glacier_Knuckle
-        Rate: 1000
-      - Index: 14
-        Item: D_Glacier_Book
-        Rate: 1000
-      - Index: 15
-        Item: D_Glacier_Katar
-        Rate: 1000
-      - Index: 16
-        Item: D_Glacier_Wand
-        Rate: 1000
-      - Index: 17
-        Item: D_Glacier_Staff
-        Rate: 1000
-      - Index: 18
-        Item: D_Glacier_Foxtail
-        Rate: 1000
-      - Index: 19
-        Item: D_Glacier_Violin
-        Rate: 1000
-      - Index: 20
-        Item: D_Glacier_Whip
-        Rate: 1000
-      - Index: 21
-        Item: D_Glacier_Humma
-        Rate: 1000
-      - Index: 22
-        Item: D_Glacier_Revolver
-        Rate: 1000
-      - Index: 23
-        Item: D_Glacier_Rifle
-        Rate: 1000
-      - Index: 24
-        Item: D_Glacier_Shotgun
-        Rate: 1000
-      - Index: 25
-        Item: D_Glacier_Gatling
-        Rate: 1000
-      - Index: 26
-        Item: D_Glacier_Launcher
-        Rate: 1000
+        Item: Aquila_Antiquity2
+        Rate: 1500
   - Map: jor_ab01
     GlobalDrops:
       - Index: 0
         Item: Etel_Dust
-        Rate: 7500
+        Rate: 4000
       - Index: 1
-        Item: D_Glacier_T_Sword
-        Rate: 1000
-      - Index: 2
-        Item: D_Glacier_Lance
-        Rate: 1000
-      - Index: 3
-        Item: D_Glacier_Sword
-        Rate: 1000
-      - Index: 4
-        Item: D_Glacier_B_Sword
-        Rate: 1000
-      - Index: 5
-        Item: D_Glacier_Spear
-        Rate: 1000
-      - Index: 6
-        Item: D_Glacier_T_Axe
-        Rate: 1000
-      - Index: 7
-        Item: D_Glacier_Axe
-        Rate: 1000
-      - Index: 8
-        Item: D_Glacier_Mace
-        Rate: 1000
-      - Index: 9
-        Item: D_Glacier_M_Mace
-        Rate: 1000
-      - Index: 10
-        Item: D_Glacier_R_Knife
-        Rate: 1000
-      - Index: 11
-        Item: D_Glacier_B_Knife
-        Rate: 1000
-      - Index: 12
-        Item: D_Glacier_Bow
-        Rate: 1000
-      - Index: 13
-        Item: D_Glacier_Knuckle
-        Rate: 1000
-      - Index: 14
-        Item: D_Glacier_Book
-        Rate: 1000
-      - Index: 15
-        Item: D_Glacier_Katar
-        Rate: 1000
-      - Index: 16
-        Item: D_Glacier_Wand
-        Rate: 1000
-      - Index: 17
-        Item: D_Glacier_Staff
-        Rate: 1000
-      - Index: 18
-        Item: D_Glacier_Foxtail
-        Rate: 1000
-      - Index: 19
-        Item: D_Glacier_Violin
-        Rate: 1000
-      - Index: 20
-        Item: D_Glacier_Whip
-        Rate: 1000
-      - Index: 21
-        Item: D_Glacier_Humma
-        Rate: 1000
-      - Index: 22
-        Item: D_Glacier_Revolver
-        Rate: 1000
-      - Index: 23
-        Item: D_Glacier_Rifle
-        Rate: 1000
-      - Index: 24
-        Item: D_Glacier_Shotgun
-        Rate: 1000
-      - Index: 25
-        Item: D_Glacier_Gatling
-        Rate: 1000
-      - Index: 26
-        Item: D_Glacier_Launcher
-        Rate: 1000
+        Item: Aquila_Antiquity2
+        Rate: 1500
   - Map: jor_ab02
     GlobalDrops:
       - Index: 0
         Item: Etel_Dust
-        Rate: 7500
+        Rate: 4000
       - Index: 1
-        Item: D_Glacier_T_Sword
-        Rate: 1000
-      - Index: 2
-        Item: D_Glacier_Lance
-        Rate: 1000
-      - Index: 3
-        Item: D_Glacier_Sword
-        Rate: 1000
-      - Index: 4
-        Item: D_Glacier_B_Sword
-        Rate: 1000
-      - Index: 5
-        Item: D_Glacier_Spear
-        Rate: 1000
-      - Index: 6
-        Item: D_Glacier_T_Axe
-        Rate: 1000
-      - Index: 7
-        Item: D_Glacier_Axe
-        Rate: 1000
-      - Index: 8
-        Item: D_Glacier_Mace
-        Rate: 1000
-      - Index: 9
-        Item: D_Glacier_M_Mace
-        Rate: 1000
-      - Index: 10
-        Item: D_Glacier_R_Knife
-        Rate: 1000
-      - Index: 11
-        Item: D_Glacier_B_Knife
-        Rate: 1000
-      - Index: 12
-        Item: D_Glacier_Bow
-        Rate: 1000
-      - Index: 13
-        Item: D_Glacier_Knuckle
-        Rate: 1000
-      - Index: 14
-        Item: D_Glacier_Book
-        Rate: 1000
-      - Index: 15
-        Item: D_Glacier_Katar
-        Rate: 1000
-      - Index: 16
-        Item: D_Glacier_Wand
-        Rate: 1000
-      - Index: 17
-        Item: D_Glacier_Staff
-        Rate: 1000
-      - Index: 18
-        Item: D_Glacier_Foxtail
-        Rate: 1000
-      - Index: 19
-        Item: D_Glacier_Violin
-        Rate: 1000
-      - Index: 20
-        Item: D_Glacier_Whip
-        Rate: 1000
-      - Index: 21
-        Item: D_Glacier_Humma
-        Rate: 1000
-      - Index: 22
-        Item: D_Glacier_Revolver
-        Rate: 1000
-      - Index: 23
-        Item: D_Glacier_Rifle
-        Rate: 1000
-      - Index: 24
-        Item: D_Glacier_Shotgun
-        Rate: 1000
-      - Index: 25
-        Item: D_Glacier_Gatling
-        Rate: 1000
-      - Index: 26
-        Item: D_Glacier_Launcher
-        Rate: 1000
+        Item: Aquila_Antiquity2
+        Rate: 1500
   - Map: odin_past
     GlobalDrops:
       - Index: 0
@@ -3270,23 +2986,23 @@ Body:
         Rate: 2000
       - Index: 5
         Item: Ep18_Amethyst_Fragment
-        Rate: 10000
+        Rate: 5000
     SpecificDrops:
       - Monster: EP18_RAKEHAND
         Drops:
           - Index: 0
             Item: Ep18_Amethyst_Fragment
-            Rate: 10000
+            Rate: 5000
       - Monster: EP18_ASH_TOAD
         Drops:
           - Index: 0
             Item: Ep18_Amethyst_Fragment
-            Rate: 10000
+            Rate: 5000
       - Monster: EP18_SPARK
         Drops:
           - Index: 0
             Item: Ep18_Amethyst_Fragment
-            Rate: 10000
+            Rate: 5000
   - Map: oz_dun02
     GlobalDrops:
       - Index: 0
@@ -3306,28 +3022,28 @@ Body:
         Rate: 2500
       - Index: 5
         Item: Ep18_Amethyst_Fragment
-        Rate: 10000
+        Rate: 5000
     SpecificDrops:
       - Monster: EP18_VOLCARING
         Drops:
           - Index: 0
             Item: Ep18_Amethyst_Fragment
-            Rate: 10000
+            Rate: 5000
       - Monster: EP18_LAVA_TOAD
         Drops:
           - Index: 0
             Item: Ep18_Amethyst_Fragment
-            Rate: 10000
+            Rate: 5000
       - Monster: EP18_HOT_MOLAR
         Drops:
           - Index: 0
             Item: Ep18_Amethyst_Fragment
-            Rate: 10000
+            Rate: 5000
       - Monster: EP18_SPARK
         Drops:
           - Index: 0
             Item: Ep18_Amethyst_Fragment
-            Rate: 10000
+            Rate: 5000
       - Monster: EP18_BURNING_FANG
         Drops:
           - Index: 0
@@ -3343,7 +3059,7 @@ Body:
     GlobalDrops:
       - Index: 0
         Item: Etel_Dust
-        Rate: 2000
+        Rate: 5000
       - Index: 1
         Item: Weapon_Ore_1
         Rate: 1600
@@ -3375,7 +3091,7 @@ Body:
     GlobalDrops:
       - Index: 0
         Item: Etel_Dust
-        Rate: 2000
+        Rate: 5000
       - Index: 1
         Item: Weapon_Ore_1
         Rate: 1600
@@ -3407,7 +3123,7 @@ Body:
     GlobalDrops:
       - Index: 0
         Item: Etel_Dust
-        Rate: 2000
+        Rate: 5000
       - Index: 1
         Item: Weapon_Ore_1
         Rate: 1600
@@ -3439,7 +3155,7 @@ Body:
     GlobalDrops:
       - Index: 0
         Item: Etel_Dust
-        Rate: 2000
+        Rate: 5000
       - Index: 1
         Item: Weapon_Ore_1
         Rate: 1600
@@ -3575,6 +3291,9 @@ Body:
       - Index: 5
         Item: EP17_1_EVT01
         Rate: 5000
+      - Index: 6
+        Item: EP17_1_SPC04
+        Rate: 1000
   - Map: sp_rudus2
     GlobalDrops:
       - Index: 0
@@ -3595,6 +3314,9 @@ Body:
       - Index: 5
         Item: EP17_1_EVT01
         Rate: 6000
+      - Index: 6
+        Item: EP17_1_SPC04
+        Rate: 1500
   - Map: sp_rudus3
     GlobalDrops:
       - Index: 0
@@ -3615,11 +3337,14 @@ Body:
       - Index: 5
         Item: EP17_1_EVT01
         Rate: 6000
+      - Index: 6
+        Item: EP17_1_SPC04
+        Rate: 1500
   - Map: clock_01
     GlobalDrops:
       - Index: 0
         Item: Etel_Dust
-        Rate: 10000
+        Rate: 5000
       - Index: 1
         Item: Shadowdecon_Ore
         Rate: 6000
@@ -3774,3 +3499,35 @@ Body:
       - Index: 37
         Item: Dimen_W_Refine
         Rate: 1
+  - Map: 1@xm_d
+    GlobalDrops:
+      - Index: 0
+        Item: Celine_Kimi_Antiquity
+        Rate: 1000
+      - Index: 1
+        Item: Bloody_Coin
+        Rate: 2000
+  - Map: yuno_fild08
+    GlobalDrops:
+      - Index: 0
+        Item: Gold
+        Rate: 5000
+  - Map: yuno_fild09
+    GlobalDrops:
+      - Index: 0
+        Item: Gold
+        Rate: 5000
+  - Map: 1@gol1
+    GlobalDrops:
+      - Index: 0
+        Item: Seed_Of_Yggdrasil
+        Rate: 15000
+      - Index: 1
+        Item: Yggdrasilberry
+        Rate: 7500
+      - Index: 2
+        Item: Bio_Reseearch_Docu
+        Rate: 10000
+      - Index: 3
+        Item: Bio_Test_Fragment
+        Rate: 10000

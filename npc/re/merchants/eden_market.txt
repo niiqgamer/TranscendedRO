@@ -100,7 +100,7 @@ OnClock0000:
 	npcshopupdate "para_key10",7027,0,10;
 	npcshopupdate "para_wp00",1181,0,1;
 	npcshopupdate "para_arm10",5007,0,1;
-	npcshopupdate "para_ptn00",678,0,999;
+	npcshopupdate "para_ptn00",678,0,99999;
 	npcshopupdate "para_ptn00",12016,0,9999;
 	npcshopupdate "para_ptn00",525,0,1000;
 	npcshopupdate "para_ptn00",12422,0,100;
@@ -145,7 +145,7 @@ OnClock0000:
 	npcshopupdate "para_ref20",987,0,1;
 	npcshopupdate "para_ref20",988,0,1;
 	npcshopupdate "para_ref20",989,0,1;
-	npcshopupdate "para_jew10",969,0,20;
+	npcshopupdate "para_jew10",969,0,99999;
 	npcshopupdate "para_jew10",7289,0,20;
 	npcshopupdate "para_jew10",7290,0,20;
 	npcshopupdate "para_jew10",7291,0,20;

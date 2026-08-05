@@ -254,45 +254,45 @@ OnStart:
 	enablenpc instance_npcname("#bgm01");
 	enablenpc instance_npcname("Catherine Jet Johnson#01");
 	disablenpc instance_npcname("Catherine Jet Johnson#0");
-	sleep 3000;
+	sleep 1000;
 	npctalk "Catherine Jet Johnson: This area was Factory No.1. It used to be the place where the toys and dolls were stored before given as presents.";
-	sleep 5000;
+	sleep 1000;
 	npctalk "Catherine Jet Johnson: Ah, I remember several things. If someone wasn't in the employee's uniform, the guards used to come and scold them....";
-	sleep 5000;
+	sleep 1000;
 	npctalk "Catherine Jet Johnson: By the way...";
 	donpcevent instance_npcname("#fac1ct") + "::OnStart";
-	sleep 3000;
+	sleep 1000;
 	mapannounce 'xm_d_map$, "Factory announcement: Wake up, toy factory working time has come...", bc_map, "0x00ff44";
-	sleep 6000;
+	sleep 1000;
 	npctalk "Catherine Jet Johnson: Wh.. What happened? Toys and dolls are wandering instead of human workers. As if they are employees...";
-	sleep 5000;
+	sleep 1000;
 	npctalk "Catherine Jet Johnson: I think other spirits have inhabited the empty factory for too long.";
-	sleep 3000;
+	sleep 1000;
 	mapannounce 'xm_d_map$, "Factory announcement: Waste and other debris should be kept clear from work areas. This is to keep you safe at all times.", bc_map, "0x00ff44";
-	sleep 3000;
+	sleep 1000;
 	npctalk "Catherine Jet Johnson: It's just like when humans worked here.";
-	sleep 3000;
+	sleep 1000;
 	mapannounce 'xm_d_map$, "Factory announcement: Let's make presents for every child's dream today.", bc_map, "0x00ff44";
-	sleep 3000;
+	sleep 1000;
 	npctalk "Catherine Jet Johnson: But, it's not the time to be happy. Once we find the last factory area, we will need to halt all production lines.";
 	sleep 1000;
 	mapannounce 'xm_d_map$, "Factory announcement: Please start product line No.1. Don't forget to wear a safety helmet! This means you Bob!", bc_map, "0x00ff44";
-	sleep 3000;
+	sleep 1000;
 	npctalk "Catherine Jet Johnson: Ah, maybe we should restore those toys and gift boxes to their original condition.";
-	sleep 5000;
+	sleep 1000;
 	npctalk "Catherine Jet Johnson: Eh? I... I mean... To return them as they were.. Yes... We need to fight them? I don't know how exactly.";
-	sleep 2000;
+	sleep 1000;
 	mapannounce 'xm_d_map$, "Factory announcement: All employees must wear a proper uniform and identification. Please check with security if you do not have yours.", bc_map, "0x00ff44";
-	sleep 3000;
+	sleep 1000;
 	npctalk "Catherine Jet Johnson: Good heavens, I hope the guards are still human. There were boxes of uniforms near here in the past..";
 	enablenpc instance_npcname("Employees' Uniform Box#1");
 	enablenpc instance_npcname("Employees' Uniform Box#2");
 	enablenpc instance_npcname("Employees' Uniform Box#3");
-	sleep 5000;
+	sleep 1000;
 	npctalk "Catherine Jet Johnson: Ah, they are behind me. You'd better change into the uniform. Fortunately, I still have my employee card.";
-	sleep 5000;
+	sleep 1000;
 	npctalk "Catherine Jet Johnson: I will find my way around here. Let's meet near the second production line. Cheer up, it's a toy factory. It can't be all that bad!!";
-	sleep 6000;
+	sleep 1000;
 	disablenpc instance_npcname("Catherine Jet Johnson#01");
 	disablenpc instance_npcname("#bgm01");
 	end;
@@ -301,17 +301,17 @@ OnStart2:
 	enablenpc instance_npcname("#bgm01");
 	enablenpc instance_npcname("Catherine Jet Johnson#01");
 	disablenpc instance_npcname("Catherine Jet Johnson#0");
-	sleep 3000;
+	sleep 1000;
 	npctalk "Catherine Jet Johnson: Ah.. We have explored here before? Okay, let's meet at the same spot again.";
-	sleep 6000;
+	sleep 1000;
 	disablenpc instance_npcname("Catherine Jet Johnson#01");
 	enablenpc instance_npcname("Employees' Uniform Box#1");
 	enablenpc instance_npcname("Employees' Uniform Box#2");
 	enablenpc instance_npcname("Employees' Uniform Box#3");
 	mapannounce 'xm_d_map$, "Factory announcement: Wake up, toy factory working time has come...", bc_map, "0x00ff44";
-	sleep 6000;
+	sleep 1000;
 	mapannounce 'xm_d_map$, "Factory announcement: Waste and other debris should be kept clear from work areas. This is to keep you safe at all times.", bc_map, "0x00ff44";
-	sleep 6000;
+	sleep 1000;
 	mapannounce 'xm_d_map$, "Factory announcement: Let's make presents for every child's dream today.", bc_map, "0x00ff44";
 	donpcevent instance_npcname("#fac1ct") + "::OnStart";
 	disablenpc instance_npcname("#bgm01");
@@ -601,24 +601,24 @@ S_Skip:
 		npctalk "Catherine Jet Johnson: If you find all clues, search other places. I will look for the spot where I met the doll maker last time I was here.";
 	else {
 		npctalk "Catherine Jet Johnson: This place was Factory No.2.";
-		sleep 5000;
+		sleep 1000;
 		npctalk "Catherine Jet Johnson: It used to be filled with people, but now it isn't.";
-		sleep 5000;
+		sleep 1000;
 		npctalk "Catherine Jet Johnson: Ah, I realized something while coming here. Some...Children...";
-		sleep 5000;
+		sleep 1000;
 		npctalk "Catherine Jet Johnson: How can I say.. There were lots of very scary, but awfully sad, looking souls.";
-		sleep 5000;
+		sleep 1000;
 		npctalk "Catherine Jet Johnson: How pitiful they are, but please make them rest if they attack you. Fortunately, they won't come at me.";
-		sleep 5000;
+		sleep 1000;
 		npctalk "Catherine Jet Johnson: If you see a worker toy on duty while searching here, would you ask it about the doll maker?";
-		sleep 5000;
+		sleep 1000;
 		npctalk "Catherine Jet Johnson: He might be sent to Heaven if they recall the memory of doll maker. That's the best hope.";
-		sleep 5000;
+		sleep 1000;
 		npctalk "Catherine Jet Johnson: If you find all clues, search other places. I will look for the spot where I met the doll maker last time I was here.";
-		sleep 5000;
+		sleep 1000;
 		npctalk "Catherine Jet Johnson: Sorry that I can't be a big help to you. See you in a minute.";
 	}
-	sleep 6000;
+	sleep 2000;
 	disablenpc instance_npcname("Catherine Jet Johnson#21");
 	enablenpc instance_npcname("Employees' Uniform Box#4");
 	donpcevent instance_npcname("#fac2ct") + "::OnStart";
@@ -704,51 +704,51 @@ OnStart:
 		switch(.@num) {
 		case 1:
 			npctalk "Worker: Ah! Grandpa? He's a real good man. He oiled us everyday and cleaned the dust very often.";
-			sleep2 3000;
+			sleep2 1000;
 			npctalk "Worker: I wish he wouldn't pass away. Ah... Ahah... I feel better.";
 			break;
 		case 2:
 			npctalk "Worker: Did Kimi kill the craftsman grandpa? Who said that? That's not true. Kimi was going to save him!";
-			sleep2 3000;
+			sleep2 1000;
 			npctalk "Worker: Ah... B.. By the way, why my does my body become...";
 			break;
 		case 3:
 			npctalk "Worker: He had a chronic cardiac disease, but it was so sudden when it started and he died. Kimi found him and gave him first aid, but..";
-			sleep2 3000;
+			sleep2 1000;
 			npctalk "Worker: Ah.. Did you do something to me? I feel strange...";
 			break;
 		case 4:
 			npctalk "Worker: Kimi didn't move at all for sometime and sat down like ordinary dolls.";
-			sleep2 3000;
+			sleep2 1000;
 			npctalk "Worker: She was about to fly her soul forever... Like me now... Oh, my... What happened to me?";
 			break;
 		case 5:
 			npctalk "Worker: Oh, Kimi.. My dear.. She thought the doll maker passed away because she startled him.";
-			sleep2 3000;
+			sleep2 1000;
 			npctalk "Worker: Grandpa was just very pleased that Kimi was moving..";
 			break;
 		case 6:
 			npctalk "Worker: He could see a living doll for a while. That's what Kimi first did.";
-			sleep2 3000;
+			sleep2 1000;
 			npctalk "Worker: And what she first saw was his death. What a misery.";
 			break;
 		case 7:
 			npctalk "Worker: Kimi was able to hear the Grandpa's voice and feel before she was indwelled.";
-			sleep2 3000;
+			sleep2 1000;
 			npctalk "Worker: Perhaps Grandpa's affection made her move and become alive. Ahah.. I'm sleepy..";
 			break;
 		case 8:
 			npctalk "Worker: Grandpa was a good man! Pity on Kimi! Kimi loved Grandpa! But Grandpa died. I'm sad!";
-			sleep2 3000;
+			sleep2 1000;
 			break;
 		case 9:
 			npctalk "Worker: He was so amazed to see Kimi's opening eyes and his heart... It became like that.";
-			sleep2 3000;
+			sleep2 1000;
 			npctalk "Worker: Anyhow, why my is my body... It's likely to float in the air.... Something strange.";
 			break;
 		case 10:
 			npctalk "Worker: Kimi didn't hurt Grandpa! Kimi's wanted to save Grandpa! People are scared of Kimi, but Kimi is kind! Kimi is a good girl!";
-			sleep2 3000;
+			sleep2 1000;
 			npctalk "Worker: Grandpa... I miss him. Grandpa, Grandpa...";
 			break;
 		}
@@ -838,39 +838,39 @@ OnTouch_:
 OnStart:
 	.@antonio$ = instance_npcname("Antonio#1");
 	.@santa$ = instance_npcname("Captured Santa#3");
-	sleep 3000;
+	sleep 1000;
 	npctalk "Antonio: Listen to me, Santa~ I mean, I like this factory.", .@antonio$;
-	sleep 3000;
+	sleep 1000;
 	npctalk "Antonio: No one owns it~ And there are a number of things I can use.", .@antonio$;
-	sleep 3000;
+	sleep 1000;
 	npctalk "Captured Santa: You silly! Just to be sure, I followed you. Now you steal from everyones factory!", .@santa$;
-	sleep 4000;
+	sleep 1000;
 	npctalk "Antonio: Hey, is this a big deal if I have surplus presents? I don't know about that~", .@antonio$;
-	sleep 4000;
+	sleep 1000;
 	npctalk "Captured Santa: Whew... Okay, but think about that how children feel when they got them.", .@santa$;
-	sleep 4000;
+	sleep 1000;
 	npctalk "Captured Santa: How they feel if they know you distributed the masterless things to them?", .@santa$;
-	sleep 4000;
+	sleep 1000;
 	npctalk "Antonio: Hmm...", .@antonio$;
-	sleep 2000;
+	sleep 1000;
 	npctalk "Antonio: Maybe... I will be happy?! Anyway, that's a present, kekekeke.", .@antonio$;
-	sleep 5000;
+	sleep 1000;
 	npctalk "Captured Santa: Who said the present itself is the problem! You'd better stop this theft, Antonio!", .@santa$;
-	sleep 5000;
+	sleep 1000;
 	mapannounce 'xm_d_map$, "Factory announcement: The sending preparations have finished in Factory No.3.", bc_map, "0x00ff44";
-	sleep 5000;
+	sleep 1000;
 	mapannounce 'xm_d_map$, "Factory announcement: Delivery employees, please stand by.", bc_map, "0x00ff44";
-	sleep 3000;
+	sleep 1000;
 	npctalk "Antonio: Oh! Wohuhu! A bunch of presents are delayed. Let's have a party today?!", .@antonio$;
-	sleep 4000;
+	sleep 1000;
 	npctalk "Antonio: Hey, human. You can follow me if you'd like to help. I'm okay unless you disturb me!", .@antonio$;
-	sleep 4000;
+	sleep 1000;
 	disablenpc .@antonio$;
-	sleep 2000;
+	sleep 1000;
 	npctalk "Captured Santa: Tha.. That dude has no ethics!", .@santa$;
-	sleep 4000;
+	sleep 1000;
 	npctalk "Captured Santa: Hey, would you go kick that Antonio out? He might run away if you hit several times.", .@santa$;
-	sleep 5000;
+	sleep 1000;
 	npctalk "Captured Santa: Its not right to steal from the community!", .@santa$;
 
 	disablenpc instance_npcname("#bgm04");
@@ -879,7 +879,7 @@ OnStart:
 	donpcevent instance_npcname("#fac3ct") + "::OnStart";
 	donpcevent instance_npcname("#fac3ct2") + "::OnStart";
 	donpcevent instance_npcname("#fac3ct3") + "::OnStart";
-	sleep 3000;
+	sleep 1000;
 	enablenpc instance_npcname("#bgm05");
 	end;
 }
@@ -1008,53 +1008,53 @@ OnTouch:
 
 OnStart:
 	.@kimi$ = instance_npcname("Celine Kimi#0");
-	sleep 2000;
+	sleep 1000;
 	npctalk "Catherine Jet Johnson: Kimi! Listen to me. I didn't come here to blame you.";
-	sleep 3000;
+	sleep 1000;
 	npctalk "Celine Kimi: Everyone hates me!... You don't like me as well? This ugly and creepy doll likes me...", .@kimi$;
-	sleep 4000;
+	sleep 1000;
 	npctalk "Catherine Jet Johnson: Kimi, I heard about you from dolls here. The doll maker adored you so much!";
-	sleep 4000;
+	sleep 1000;
 	mapannounce 'xm_d_map$, "Phantom's yell: Lie!", bc_map, "0xff8800";
 	sleep 1000;
 	npctalk "Celine Kimi: Don't lie. If that's true, why didn't he see me with love in his eyes?", .@kimi$;
-	sleep 4000;
+	sleep 1000;
 	npctalk "Celine Kimi: Why didn't he say my name? [Kimi] [Kimi!] I was anxious to hear the Grandpa's voice.", .@kimi$;
-	sleep 4000;
+	sleep 1000;
 	mapannounce 'xm_d_map$, "Phantom's yell: Yes, Kimi~ Father was frightened! He was scared of you~", bc_map, "0xff8800";
-	sleep 3000;
+	sleep 1000;
 	npctalk "Catherine Jet Johnson: No, don't listen to it, Kimi! He really cherished you.";
-	sleep 3000;
+	sleep 1000;
 	npctalk "Celine Kimi: Did he... cherish me?", .@kimi$;
-	sleep 3000;
+	sleep 1000;
 	npctalk "Catherine Jet Johnson: Yes, when you start to move, he was so plea...";
 	sleep 1000;
 	mapannounce 'xm_d_map$, "Phantom's yell: He was scared of your appearance and his heart stopped, Kimi~ You killed him!", bc_map, "0xff8800";
-	sleep 3000;
+	sleep 1000;
 	npctalk "Celine Kimi: D.. Did I.. kill him?...", .@kimi$;
-	sleep 2000;
+	sleep 1000;
 	npctalk "Catherine Jet Johnson: No, Kimi! I've realized that. I misunderstood you. He was sick!";
-	sleep 3000;
+	sleep 1000;
 	npctalk "Celine Kimi: D.. Di.. Did I... kill... him?", .@kimi$;
-	sleep 2000;
+	sleep 1000;
 	mapannounce 'xm_d_map$, "Phantom's yell: See how you look, Kimi~ See the mirror~ How do yo feel? ", bc_map, "0xff8800";
-	sleep 3000;
+	sleep 1000;
 	npctalk "Celine Kimi: I... I...", .@kimi$;
 	sleep 1000;
 	mapannounce 'xm_d_map$, "Phantom's yell: Don't you agree you are frightening? No one loves you, Kimi~", bc_map, "0xff8800";
-	sleep 3000;
+	sleep 1000;
 	npctalk "Celine Kimi: Because of me, grandpa is dead...", .@kimi$;
 	specialeffect EF_MAPPILLAR2, AREA, .@kimi$;
-	sleep 3000;
+	sleep 1000;
 	npctalk "Catherine Jet Johnson: It has become serious. Kimi is suffering. It would be dangerous under this condition!";
 	specialeffect EF_MAPPILLAR2, AREA, .@kimi$;
 	sleep 1000;
 	mapannounce 'xm_d_map$, "Phantom's yell: Rage~ Sorrow~ No one cries for you, Kimi~", bc_map, "0xff8800";
-	sleep 3000;
+	sleep 1000;
 	npctalk "Catherine Jet Johnson: I will find the emergency exit to escape. Run away, adventurer!";
-	sleep 3000;
+	sleep 1000;
 	disablenpc instance_npcname("Catherine Jet Johnson#5");
-	sleep 2000;
+	sleep 1000;
 	disablenpc .@kimi$;
 	donpcevent instance_npcname("#finalbs2") + "::OnStart";
 	disablenpc instance_npcname("#bgm02");
@@ -1276,7 +1276,7 @@ OnTouch_:
 OnStart:
 	npctalk "Celine Kimi: You also... came here to kill me?";
 	specialeffect EF_MAPPILLAR2;
-	sleep 5000;
+	sleep 2000;
 	disablenpc instance_npcname("Celine Kimi#2");
 	donpcevent instance_npcname("#finalbs2") + "::OnStart";
 	end;
@@ -1328,19 +1328,19 @@ OnTouch_:
 OnStart:
 	sleep 1000;
 	npctalk "Catherine Jet Johnson: Unfortunately, I have failed to persuade Kimi.";
-	sleep 3000;
+	sleep 1000;
 	npctalk "Catherine Jet Johnson: What was the voice of that phantom? Why does it torment Kimi so harshly...";
-	sleep 4000;
+	sleep 1000;
 	npctalk "Catherine Jet Johnson: I guess that the curse of my face was from the unidentified voice.";
-	sleep 4000;
+	sleep 1000;
 	npctalk "Catherine Jet Johnson: Anyway, even Kimi hates everyone and has collected her recollections here a lot.";
-	sleep 6000;
+	sleep 1000;
 	npctalk "Catherine Jet Johnson: I will end this thing safely even if her soul will return and she won't be disappointed.";
-	sleep 5000;
+	sleep 1000;
 	npctalk "Catherine Jet Johnson: Thanks to you, everything that I have wondered is completely resolved. Please call me again if you are going to send her to Heaven next time.";
-	sleep 5000;
+	sleep 1000;
 	npctalk "Catherine Jet Johnson: I will open the exit way out. I will go outside first, so just follow me.";
-	sleep 3000;
+	sleep 1000;
 	disablenpc instance_npcname("Catherine Jet Johnson#6");
 	enablenpc instance_npcname("#exwp1");
 	end;
@@ -1369,110 +1369,120 @@ OnTimer1000:
 	case 1:
 		.@num = rand(4,8);
 		for ( .@i = 0; .@i < .@num; .@i++ )
-			makeitem 7642,1, 'xm_d_map$, rand(208,212), rand(139,143);// Bloody_Coin
+			makeitem 9900009,rand(2,5), 'xm_d_map$, rand(208,212), rand(139,143);
+			makeitem 7642,20, 'xm_d_map$, rand(208,212), rand(139,143);// Bloody_Coin
 		if (rand(1,1000) > 150)
-			makeitem 644,1, 'xm_d_map$,209,141;// Gift_Box;
+			makeitem 644,5, 'xm_d_map$,209,141;// Gift_Box;
 		if (rand(1,1000) > 600)
-			makeitem 617,1, 'xm_d_map$,210,141;// Old_Violet_Box;
+			makeitem 617,5, 'xm_d_map$,210,141;// Old_Violet_Box;
 		if (rand(1,1000) > 900)
 			makeitem 22534,1, 'xm_d_map$,211,141;// Closedmind_Box
 		break;
 	case 2:
 		.@num = rand(3,7);
 		for ( .@i = 0; .@i < .@num; .@i++ )
-			makeitem 7642,1, 'xm_d_map$, rand(212,216), rand(139,143);// Bloody_Coin
+			makeitem 9900009,rand(2,5), 'xm_d_map$, rand(212,216), rand(139,143);
+			makeitem 7642,20, 'xm_d_map$, rand(212,216), rand(139,143);// Bloody_Coin
 		if (rand(1,1000) > 400)
-			makeitem 603,1, 'xm_d_map$,213,141;// Old_Blue_Box
+			makeitem 603,5, 'xm_d_map$,213,141;// Old_Blue_Box
 		if (rand(1,1000) > 700)
-			makeitem 616,1, 'xm_d_map$,214,141;// Old_Card_Album
+			makeitem 616,5, 'xm_d_map$,214,141;// Old_Card_Album
 		if (rand(1,1000) > 950)
 			makeitem 13442,1, 'xm_d_map$,215,141;// Old_Parasol
 		break;
 	case 3:
 		.@num = rand(2,6);
 		for ( .@i = 0; .@i < .@num; .@i++ )
-			makeitem 7642,1, 'xm_d_map$, rand(216,220), rand(139,143);// Bloody_Coin
+			makeitem 9900009,rand(2,5), 'xm_d_map$, rand(216,220), rand(139,143);
+			makeitem 7642,20, 'xm_d_map$, rand(216,220), rand(139,143);// Bloody_Coin
 		if (rand(1,1000) > 850)
-			makeitem 7229,1, 'xm_d_map$,217,141;// Silver_Bullion
+			makeitem 7229,5, 'xm_d_map$,217,141;// Silver_Bullion
 		if (rand(1,1000) > 800)
-			makeitem 12246,1, 'xm_d_map$,218,141;// Magic_Card_Album
+			makeitem 12246,5, 'xm_d_map$,218,141;// Magic_Card_Album
 		if (rand(1,1000) > 950)
 			makeitem 2486,1, 'xm_d_map$,219,141;// Shadow_Walk_
 		break;
 	case 4:
 		.@num = rand(4,8);
 		for ( .@i = 0; .@i < .@num; .@i++ )
-			makeitem 7642,1, 'xm_d_map$, rand(220,224), rand(139,143);// Bloody_Coin
+			makeitem 9900009,rand(2,5), 'xm_d_map$, rand(220,224), rand(139,143);
+			makeitem 7642,20, 'xm_d_map$, rand(220,224), rand(139,143);// Bloody_Coin
 		if (rand(1,1000) > 700)
-			makeitem 7228,1, 'xm_d_map$,221,141;// Gold_Bullion
+			makeitem 7228,5, 'xm_d_map$,221,141;// Gold_Bullion
 		if (rand(1,1000) > 600)
-			makeitem 617,1, 'xm_d_map$,222,141;// Old_Violet_Box
+			makeitem 617,5, 'xm_d_map$,222,141;// Old_Violet_Box
 		if (rand(1,1000) > 900)
 			makeitem 22534,1, 'xm_d_map$,223,141;// Closedmind_Box
 		break;
 	case 5:
 		.@num = rand(3,7);
 		for ( .@i = 0; .@i < .@num; .@i++ )
-			makeitem 7642,1, 'xm_d_map$, rand(224,228), rand(139,143);// Bloody_Coin
+			makeitem 9900009,rand(2,5), 'xm_d_map$, rand(224,228), rand(139,143);
+			makeitem 7642,20, 'xm_d_map$, rand(224,228), rand(139,143);// Bloody_Coin
 		if (rand(1,1000) > 150)
-			makeitem 644,1, 'xm_d_map$,225,141;// Gift_Box
+			makeitem 644,5, 'xm_d_map$,225,141;// Gift_Box
 		if (rand(1,1000) > 700)
-			makeitem 616,1, 'xm_d_map$,226,141;// Old_Card_Album
+			makeitem 616,5, 'xm_d_map$,226,141;// Old_Card_Album
 		if (rand(1,1000) > 950)
 			makeitem 2976,1, 'xm_d_map$,227,141;// Red_Lantern
 		break;
 	case 6:
 		.@num = rand(2,6);
 		for ( .@i = 0; .@i < .@num; .@i++ )
-			makeitem 7642,1, 'xm_d_map$, rand(208,212), rand(134,138);// Bloody_Coin
+			makeitem 9900009,rand(2,5), 'xm_d_map$, rand(208,212), rand(134,138);
+			makeitem 7642,20, 'xm_d_map$, rand(208,212), rand(134,138);// Bloody_Coin
 		if (rand(1,1000) > 400)
-			makeitem 603,1, 'xm_d_map$,209,136;// Old_Blue_Box
+			makeitem 603,5, 'xm_d_map$,209,136;// Old_Blue_Box
 		if (rand(1,1000) > 800)
-			makeitem 12246,1, 'xm_d_map$,210,136;// Magic_Card_Album
+			makeitem 12246,5, 'xm_d_map$,210,136;// Magic_Card_Album
 		if (rand(1,1000) > 950)
 			makeitem 2977,1, 'xm_d_map$,211,136;// Hurt_Mind
 		break;
 	case 7:
 		.@num = rand(4,8);
 		for ( .@i = 0; .@i < .@num; .@i++ )
-			makeitem 7642,1, 'xm_d_map$, rand(212,216), rand(134,138);// Bloody_Coin
+			makeitem 9900009,rand(2,5), 'xm_d_map$, rand(212,216), rand(134,138);
+			makeitem 7642,20, 'xm_d_map$, rand(212,216), rand(134,138);// Bloody_Coin
 		if (rand(1,1000) > 850)
-			makeitem 7229,1, 'xm_d_map$,213,136;// Silver_Bullion
+			makeitem 7229,5, 'xm_d_map$,213,136;// Silver_Bullion
 		if (rand(1,1000) > 600)
-			makeitem 617,1, 'xm_d_map$,214,136;// Old_Violet_Box
+			makeitem 617,5, 'xm_d_map$,214,136;// Old_Violet_Box
 		if (rand(1,1000) > 900)
 			makeitem 22534,1, 'xm_d_map$,215,136;// Closedmind_Box
 		break;
 	case 8:
 		.@num = rand(3,7);
 		for ( .@i = 0; .@i < .@num; .@i++ )
-			makeitem 7642,1, 'xm_d_map$, rand(216,220), rand(134,138);// Bloody_Coin
+			makeitem 9900009,rand(2,5), 'xm_d_map$, rand(216,220), rand(134,138);
+			makeitem 7642,20, 'xm_d_map$, rand(216,220), rand(134,138);// Bloody_Coin
 		if (rand(1,1000) > 700)
-			makeitem 7228,1, 'xm_d_map$,217,136;// Gold_Bullion
+			makeitem 7228,5, 'xm_d_map$,217,136;// Gold_Bullion
 		if (rand(1,1000) > 700)
-			makeitem 616,1, 'xm_d_map$,218,136;// Old_Card_Album
+			makeitem 616,5, 'xm_d_map$,218,136;// Old_Card_Album
 		if (rand(1,1000) > 950)
 			makeitem 2978,1, 'xm_d_map$,219,136;// KindHeart
 		break;
 	case 9:
 		.@num = rand(2,6);
 		for ( .@i = 0; .@i < .@num; .@i++ )
-			makeitem 7642,1, 'xm_d_map$, rand(220,224), rand(134,138);// Bloody_Coin
+			makeitem 9900009,rand(2,5), 'xm_d_map$, rand(220,224), rand(134,138);
+			makeitem 7642,20, 'xm_d_map$, rand(220,224), rand(134,138);// Bloody_Coin
 		if (rand(1,1000) > 150)
-			makeitem 644,1, 'xm_d_map$,221,136;// Gift_Box
+			makeitem 644,5, 'xm_d_map$,221,136;// Gift_Box
 		if (rand(1,1000) > 800)
-			makeitem 12246,1, 'xm_d_map$,222,136;// Magic_Card_Album
+			makeitem 12246,5, 'xm_d_map$,222,136;// Magic_Card_Album
 		if (rand(1,1000) > 950)
 			makeitem 18848,1, 'xm_d_map$,223,136;// Lush_Rose
 		break;
 	case 10:
 		.@num = rand(4,8);
 		for ( .@i = 0; .@i < .@num; .@i++ )
-			makeitem 7642,1, 'xm_d_map$, rand(224,228), rand(134,138);// Bloody_Coin
+			makeitem 9900009,rand(2,5), 'xm_d_map$, rand(224,228), rand(134,138);
+			makeitem 7642,20, 'xm_d_map$, rand(224,228), rand(134,138);// Bloody_Coin
 		if (rand(1,1000) > 400)
-			makeitem 603,1, 'xm_d_map$,225,136;// Old_Blue_Box
+			makeitem 603,5, 'xm_d_map$,225,136;// Old_Blue_Box
 		if (rand(1,1000) > 600)
-			makeitem 617,1, 'xm_d_map$,226,136;// Old_Violet_Box
+			makeitem 617,5, 'xm_d_map$,226,136;// Old_Violet_Box
 		if (rand(1,1000) > 900)
 			makeitem 22534,1, 'xm_d_map$,227,136;// Closedmind_Box
 		break;

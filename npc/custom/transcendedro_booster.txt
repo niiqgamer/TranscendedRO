@@ -25,6 +25,12 @@ grademk,40,169,4	script	Booster Operator	4_M_VACATION_MARAM,{
 	" ~~~ ^00AA00[Enchant] Automatic Leg A-B^000000", 
 	" ~~~ ^00AA00[Enchant] Automatic (Accessory) R^000000", 
 	" ~~~ ^00AA00[Enchant] Automatic (Accessory) L^000000", 
+	" ~ ^0000AAGray Wolf Set 18 (Level 190+)^000000", 
+	" ~~~ ^0000AA[Enchant] Gray Wolf (Suit-Robe)^000000", 
+	" ~~~ ^0000AA[Enchant] Gray Wolf (Manteau-Muffler)^000000", 
+	" ~~~ ^0000AA[Enchant] Gray Wolf (Boots-Shoes)^000000", 
+	" ~~~ ^0000AA[Enchant] Gray Wolf (Pendant-Earring)^000000", 
+	" ~~~ ^0000AA[Enchant] Gray Wolf (Ring-Necklace)^000000", 
 	" ~ Nothing, bye." ) ) {
 	case 1:
 		mes "[" + strnpcinfo(1) + "]";
@@ -148,8 +154,8 @@ grademk,40,169,4	script	Booster Operator	4_M_VACATION_MARAM,{
 	case 17:
 		mes "[" + strnpcinfo(1) + "]";
 		mes " ";
-		mes "Finally, Automatic Set 17.2!";
-		mes "I believe this will be the final set I’ll be able to get for you.";
+		mes "OK, Automatic Set 17.2!";
+		mes "It might suits you.";
 		close2;
 		callshop "AutomaticSet172";
 		end;
@@ -194,6 +200,54 @@ grademk,40,169,4	script	Booster Operator	4_M_VACATION_MARAM,{
 		item_enchant(35);
 		end;
 	case 23:
+		mes "[" + strnpcinfo(1) + "]";
+		mes " ";
+		mes "Hah, Gray Wolf Set 18!";
+		mes "I believe this will be the final set I’ll be able to get for you.";
+		close2;
+		callshop "GrayWolfSet18";
+		end;
+	case 24:
+		mes "[" + strnpcinfo(1) + "]";
+		mes " ";
+		mes "[Enchant] Gray Wolf (Suit-Robe)";
+		mes "Let's go!!!";
+		close2;
+		item_enchant(137);
+		end;
+	case 25:
+		mes "[" + strnpcinfo(1) + "]";
+		mes " ";
+		mes "[Enchant] Gray Wolf (Manteau-Muffler)";
+		mes "Let's go!!!";
+		close2;
+		item_enchant(138);
+		end;
+	case 26:
+		mes "[" + strnpcinfo(1) + "]";
+		mes " ";
+		mes "[Enchant] Gray Wolf (Boots-Shoes)";
+		mes "Let's go!!!";
+		close2;
+		item_enchant(139);
+		end;
+	case 27:
+		mes "[" + strnpcinfo(1) + "]";
+		mes " ";
+		mes "[Enchant] Gray Wolf (Pendant-Earring)";
+		mes "Let's go!!!";
+		close2;
+		item_enchant(140);
+		end;
+	case 28:
+		mes "[" + strnpcinfo(1) + "]";
+		mes " ";
+		mes "[Enchant] Gray Wolf (Ring-Necklace)";
+		mes "Let's go!!!";
+		close2;
+		item_enchant(141);
+		end;
+	case 29:
 		mes "[" + strnpcinfo(1) + "]";
 		mes " ";
 		mes "See you next time. I'm around here too. Feel free to call me. Hello.";

@@ -1,0 +1,1602 @@
+//===== rAthena Script =======================================
+//= Episode 20 - The Immortal (Undying One)
+//===== Description: =========================================
+//= [Walkthrough Conversion]
+//--- NPCs for Episode 20 main quest
+//
+// Notes:
+// - The last value of ep20_main is 100
+// - Chapter quest log IDs: 20000, 20001, 20003-20008
+// - Official quest IDs: 17690, 16691-16704, 17691-17709, 23100-23118, 18220-18233
+// - Requires ep19_main == 100, BaseLevel >= 215
+//===== Changelogs: ==========================================
+//= 1.0 Initial release
+//============================================================
+
+function	script	F_ep20_checkTransform	{
+	if (getstatus(SC_MONSTER_TRANSFORM,1) != 21530) {
+		mes "[" + getarg(0) + "]";
+		mes "Human?! Go away.";
+		close2;
+		warp "jor_back3",65,321;
+		end;
+	}
+	return;
+}
+
+function	script	F_ep20_reward	{
+	.@whiskers = getarg(0);
+	.@rep = getarg(1);
+	if (.@whiskers > 0)
+		getitem 1001217, .@whiskers;	// Ep20_Cat_Whiskers
+	if (.@rep > 0)
+		add_reputation_points( REPUTATION_EP20, .@rep );
+	return;
+}
+
+function	script	F_ep20_setquest	{
+	if (isbegin_quest(getarg(0)) == 0)
+		setquest getarg(0);
+	return;
+}
+
+// Glacier equipment enchant service (Vellgunde).
+// Opens the client enchant window for the matching item_enchant group.
+// Glacier armor set uses groups 89-94; Dimensional Glacier (Snake God) armor
+// uses groups 95 (Armor/Robe), 96 (Manteau/Muffler) and 97 (Boots/Shoes).
+// (Glacier weapons are enchanted through the EP19 Vellgunde / episode_19 merchant.)
+function	script	F_ep20_glacierEnchant	{
+	cutin "ep19_vellgunde01.png",2;
+	mes "[Vellgunde]";
+	mes "The mana of Rgan and Jormungand can be woven into Glacier equipment.";
+	mes "Which piece would you like me to enchant?";
+	next;
+	switch( select( "Glacier Armor / Robe", "Glacier Manteau / Muffler", "Glacier Boots / Shoes", "Glacier Guard", "Glacier Pendant / Necklace", "Glacier Ring / Earring", "Dimensional Glacier Armor / Robe", "Dimensional Glacier Manteau / Muffler", "Dimensional Glacier Boots / Shoes", "Cancel" ) ) {
+	case 1:
+		mes "[Vellgunde]";
+		mes "Good, good. Let's weave some power into that armor.";
+		close2;
+		cutin "",255;
+		item_enchant(89);
+		end;
+	case 2:
+		mes "[Vellgunde]";
+		mes "A well-made cloak. Let's imbue it.";
+		close2;
+		cutin "",255;
+		item_enchant(90);
+		end;
+	case 3:
+		mes "[Vellgunde]";
+		mes "Sure footing matters in the ice. Come, let's work on it.";
+		close2;
+		cutin "",255;
+		item_enchant(91);
+		end;
+	case 4:
+		mes "[Vellgunde]";
+		mes "A sturdy guard. It should hold the mana well.";
+		close2;
+		cutin "",255;
+		item_enchant(92);
+		end;
+	case 5:
+		mes "[Vellgunde]";
+		mes "Accessories bond beautifully with mana.";
+		close2;
+		cutin "",255;
+		item_enchant(93);
+		end;
+	case 6:
+		mes "[Vellgunde]";
+		mes "Accessories bond beautifully with mana.";
+		close2;
+		cutin "",255;
+		item_enchant(94);
+		end;
+	case 7:
+		mes "[Vellgunde]";
+		mes "Dimensional-grade material... this calls on the Snake God's warmth. Worth it, though.";
+		close2;
+		cutin "",255;
+		item_enchant(95);
+		end;
+	case 8:
+		mes "[Vellgunde]";
+		mes "The Snake God's malice will cling to that cloak. Let's begin.";
+		close2;
+		cutin "",255;
+		item_enchant(96);
+		end;
+	case 9:
+		mes "[Vellgunde]";
+		mes "The Snake God's mystery, bound into your steps. Come.";
+		close2;
+		cutin "",255;
+		item_enchant(97);
+		end;
+	case 10:
+		close3;
+	}
+	end;
+}
+
+function	script	F_ep20_completequest	{
+	if (isbegin_quest(getarg(0)) == 1)
+		completequest getarg(0);
+	return;
+}
+
+function	script	F_ep20_aurelieHunt	{
+	if (ep20_main != 26)
+		return;
+	cutin "ep19_aurelie01.png",1;
+	if (checkquest(23109,HUNTING) == 2) {
+		mes "[Aurelie]";
+		mes "Well done. Miriam has more work for you in the maze.";
+		callfunc("F_ep20_completequest", 23109);
+		callfunc("F_ep20_setquest", 23117);
+		ep20_main = 27;
+		callfunc("F_ep20_reward", 20, 90);
+		next;
+		mes "[Aurelie]";
+		mes "Meet Miriam at ^0000CDjor_maze (198, 33)^000000.";
+		next;
+		if (select( "Warp to Snake Labyrinth.", "I'll go on my own." ) == 1) {
+			close2;
+			cutin "",255;
+			warp "jor_maze", 198, 33;
+			end;
+		}
+		close3;
+	}
+	if (isbegin_quest(23109) == 0) {
+		callfunc("F_ep20_setquest", 23109);
+		mes "[Aurelie]";
+		mes "Hunt ^0000CD5 Ancient Rgan Occultist^000000 in the drift ice zone around here.";
+		close3;
+	}
+	mes "[Aurelie]";
+	mes "Keep hunting Ancient Rgan Occultist in the drift ice zone.";
+	close3;
+}
+
+function	script	F_ep20_safetyMenu	{
+	mes "[Safety Zone Portal]";
+	mes "Select a destination.";
+	next;
+	switch( select( "Safety Zone 1 (64, 328)", "Safety Zone 2 (195, 327)", "Safety Zone 3 (330, 327)", "Southern Camp (195, 155)", "Deep Camp (328, 150)", "Ancient Ice Gorge East", "Cancel" ) ) {
+	case 1:
+		warp "jor_safty1", 64, 328;
+		end;
+	case 2:
+		warp "jor_safty1", 195, 327;
+		end;
+	case 3:
+		warp "jor_safty1", 330, 327;
+		end;
+	case 4:
+		warp "jor_safty1", 195, 155;
+		end;
+	case 5:
+		warp "jor_safty1", 328, 150;
+		end;
+	case 6:
+		warp "jor_back5", 353, 73;
+		end;
+	case 7:
+		close;
+	}
+	end;
+}
+
+function	script	F_ep20_canStart	{
+	return (ep19_main == 100 && BaseLevel >= 215 && isbegin_quest(17650) == 2);
+}
+
+// Returns true when the player has a solo party with at least one online member.
+function	script	F_ep20_instance_party_ok	{
+	.@party_id = getcharid(1);
+
+	if (!.@party_id)
+		return 0;
+	if (!instance_check_party(.@party_id, 1))
+		return 0;
+	getpartymember .@party_id, 2;
+	if ($@partymembercount != 1)
+		return 0;
+	return 1;
+}
+
+// getarg(0) = instance name, getarg(1) = 0 auto prepare+enter, 1 prepare only, 2 enter only
+function	script	F_ep20_instance_enter	{
+	.@name$ = getarg(0);
+	.@mode = getarg(1, 0);
+
+	if (!callfunc("F_ep20_instance_party_ok")) {
+		mes "- ^0000FFCreate a one-person party with ^4D4DFF/organize PARTY NAME^0000FF, then try again.^000000 -";
+		close3;
+	}
+
+	if (.@mode == 1 || .@mode == 0) {
+		.@create = instance_create(.@name$);
+		if (.@create == -3)
+			instance_warning(2, .@name$);
+		else if (.@create < 0) {
+			switch (.@create) {
+			case -1:
+				mes "This memorial dungeon is not registered on the server.";
+				mes "Ask a GM to reload the instance database.";
+				break;
+			case -2:
+				mes "Your party could not be found. Reform your solo party and try again.";
+				break;
+			case -4:
+				mes "The server has no free instance slots right now. Try again shortly.";
+				break;
+			default:
+				mes "Could not create the memorial dungeon. (Error: " + .@create + ")";
+				break;
+			}
+			close3;
+		}
+		if (.@mode == 1) {
+			mes "- ^0000FFEntry preparations have begun. Select Enter when ready.^000000 -";
+			close3;
+		}
+	}
+
+	if (instance_enter(.@name$) == IE_OK)
+		end;
+	if (.@mode == 2) {
+		mes "- ^0000FFThe memorial dungeon has not been created yet, or it is still loading. Prepare it first, wait a moment, then enter again.^000000 -";
+		close3;
+	}
+	mes "- ^0000FFThe memorial dungeon is still loading. Wait a moment and interact again.^000000 -";
+	close3;
+}
+
+function	script	F_ep20_startHoruru	{
+	if (checkweight(1001217,20) == 0) {
+		mes "You cannot proceed with the conversation due to the large number of items you have.";
+		mes "Please clean up your items and try again.";
+		close;
+	}
+	if (isbegin_quest(17690) >= 1 || isbegin_quest(16691) >= 1) {
+		if (ep20_main == 0)
+			ep20_main = 1;
+		callfunc("F_ep20_horuruProgress");
+		end;
+	}
+	if (!callfunc("F_ep20_canStart")) {
+		cutin "ep19_iwin06.png",2;
+		mes "[Horuru]";
+		if (ep19_main < 100) {
+			mes "We still have unfinished business regarding the Rgans' hideout.";
+			mes "Please finish the story in Issgard first.";
+		} else if (BaseLevel < 215) {
+			mes "The Ancient Ice Gorge is too harsh for you right now.";
+			mes "Come back when you reach Base Level 215.";
+		} else if (isbegin_quest(17650) == 1) {
+			mes "You accepted the surveillance request but haven't finished the briefing outside yet.";
+			mes "Meet me at ^0000CDIce Castle (27, 126)^000000 to continue.";
+		} else {
+			mes "Please help us with the surveillance around the snake's nest first.";
+			mes "Talk to me at the ^0000CDrestaurant in Ice Castle^000000 to begin.";
+		}
+		close3;
+	}
+	cutin "ep19_iwin06.png",2;
+	mes "[Horuru]";
+	mes "Adventurer, the Rgans sealed the Warmth of the Snake and vanished.";
+	mes "We can't find Lasgand or Bagot anywhere on the ice plains.";
+	next;
+	mes "[Horuru]";
+	mes "We've decided to enter the ^0000CDAncient Ice Gorge^000000, a place that was forbidden until now.";
+	mes "Will you come with us?";
+	next;
+	if (select( "I'll help.", "Not now." ) == 2) {
+		mes "[Horuru]";
+		mes "I understand. Come back when you're ready.";
+		close3;
+	}
+	mes "[Horuru]";
+	mes "Thank you. Leon is gathering everyone in the castle.";
+	mes "Meet us at the conference room.";
+	callfunc("F_ep20_setquest", 20000);
+	callfunc("F_ep20_setquest", 17690);
+	ep20_main = 1;
+	callfunc("F_ep20_reward", 20, 90);
+	close3;
+}
+
+function	script	F_ep20_horuruProgress	{
+	cutin "ep19_iwin06.png",2;
+	mes "[Horuru]";
+	if (ep20_main == 1)
+		mes "Let's go inside the castle. Leon is waiting for us at the conference room.";
+	else
+		mes "The Ancient Ice Gorge is a dangerous place. Be careful.";
+	close3;
+}
+
+// Main Quest: Step 2
+icas_in,262,202,3	script	Leon Petit#ep20ms01	4_EP19_LEON,{
+	if (ep20_main == 0) {
+		cutin "ep19_leon01.png",0;
+		mes "[Leon]";
+		mes "The barrier needs constant maintenance. I don't have time for anything else.";
+		close3;
+	}
+	if (ep20_main == 1) {
+		cutin "ep19_leon01.png",0;
+		mes "[Leon]";
+		mes "You're here. Horuru explained the situation, right?";
+		mes "Lasgand and Bagot must be hiding in the gorge.";
+		next;
+		mes "[Leon]";
+		mes "Lehar is already scouting the eastern route.";
+		mes "Meet him at ^0000CDAncient Ice Gorge East^000000.";
+		callfunc("F_ep20_completequest", 17690);
+		callfunc("F_ep20_setquest", 16691);
+		ep20_main = 2;
+		callfunc("F_ep20_reward", 20, 90);
+		close3;
+	}
+	if (ep20_main == 2) {
+		cutin "ep19_leon01.png",0;
+		mes "[Leon]";
+		mes "Lehar is waiting at the gorge. Follow the navigation.";
+		next;
+		if (select( "Warp to Ancient Ice Gorge East.", "I'll go on my own." ) == 1)
+			warp "jor_back5", 353, 73;
+		close3;
+	}
+	if (ep20_main == 6) {
+		cutin "ep19_leon01.png",0;
+		mes "[Leon]";
+		mes "Good work in the gorge. Let's examine the device you found.";
+		next;
+		mes "[Leon]";
+		mes "Horuru wants to discuss suspicious activity next.";
+		callfunc("F_ep20_completequest", 16694);
+		callfunc("F_ep20_completequest", 20000);
+		callfunc("F_ep20_setquest", 20001);
+		callfunc("F_ep20_setquest", 16695);
+		ep20_main = 7;
+		callfunc("F_ep20_reward", 20, 90);
+		close3;
+	}
+	cutin "ep19_leon01.png",0;
+	mes "[Leon]";
+	mes "We must stop Bagot's ambitions before it's too late.";
+	close3;
+
+OnInit:
+	questinfo( QTYPE_QUEST, QMARK_YELLOW, "ep20_main == 1" );
+	questinfo( QTYPE_QUEST2, QMARK_YELLOW, "ep20_main == 6" );
+	end;
+}
+
+// Main Quest: Steps 3-8 - Lehar in gorge / safety maps
+jor_safty1,60,325,0	script	Safety Zone Portal#ep20s1	GATE_SKYBLUE,2,2,{
+	if (ep20_main < 2)
+		end;
+	callfunc("F_ep20_safetyMenu");
+	end;
+}
+
+jor_safty1,192,325,0	duplicate(Safety Zone Portal#ep20s1)	Safety Zone Portal#ep20s2	GATE_SKYBLUE,2,2
+jor_safty1,327,325,0	duplicate(Safety Zone Portal#ep20s1)	Safety Zone Portal#ep20s3	GATE_SKYBLUE,2,2
+jor_safty1,192,152,0	duplicate(Safety Zone Portal#ep20s1)	Safety Zone Portal#ep20s4	GATE_SKYBLUE,2,2
+jor_safty1,325,148,0	duplicate(Safety Zone Portal#ep20s1)	Safety Zone Portal#ep20s5	GATE_SKYBLUE,2,2
+jor_back5,348,73,0	duplicate(Safety Zone Portal#ep20s1)	Safety Zone Portal#ep20s6	GATE_SKYBLUE,2,2
+jor_back5,350,354,0	duplicate(Safety Zone Portal#ep20s1)	Safety Zone Portal#ep20s7	GATE_SKYBLUE,2,2
+
+jor_back5,353,73,3	script	Lehar#ep20ms01	4_EP19_LEHAR,{
+	if (ep20_main < 2) end;
+	if (ep20_main == 2) {
+		cutin "ep19_lehar01.png",2;
+		mes "[Lehar]";
+		mes "You made it! This gorge has been forbidden for generations.";
+		mes "The Iwin elders said something terrible sleeps here.";
+		next;
+		mes "[Lehar]";
+		mes "Follow me to the safety zone. Stay close!";
+		callfunc("F_ep20_completequest", 16691);
+		callfunc("F_ep20_setquest", 16692);
+		ep20_main = 3;
+		next;
+		mes "[Lehar]";
+		mes "I'll send you to ^0000CDSafety Zone 1 (64, 328)^000000 now.";
+		mes "Use the blue portals later if you need to move between camps.";
+		close2;
+		cutin "",255;
+		warp "jor_safty1", 64, 328;
+		end;
+	}
+	if (ep20_main == 3) {
+		cutin "ep19_lehar01.png",2;
+		mes "[Lehar]";
+		mes "Keep going north to the safety zone at ^0000CD(64, 328)^000000.";
+		next;
+		if (select( "Warp to Safety Zone 1.", "I'll walk." ) == 1) {
+			close2;
+			cutin "",255;
+			warp "jor_safty1", 64, 328;
+			end;
+		}
+		close3;
+	}
+	if (ep20_main == 4) {
+		cutin "ep19_lehar01.png",2;
+		mes "[Lehar]";
+		mes "I'm waiting at ^0000CDSafety Zone 2 (195, 327)^000000.";
+		next;
+		if (select( "Warp to Safety Zone 2.", "I'll walk." ) == 1) {
+			close2;
+			cutin "",255;
+			warp "jor_safty1", 195, 327;
+			end;
+		}
+		close3;
+	}
+	if (ep20_main == 5) {
+		cutin "ep19_lehar01.png",2;
+		mes "[Lehar]";
+		mes "Miriam is scouting near the snake nest at ^0000CD(353, 357)^000000.";
+		next;
+		if (select( "Warp to Miriam.", "I'll walk." ) == 1) {
+			close2;
+			cutin "",255;
+			warp "jor_back5", 353, 357;
+			end;
+		}
+		close3;
+	}
+	cutin "ep19_lehar01.png",2;
+	mes "[Lehar]";
+	mes "Need to move between the safety zones? I can open a portal for you.";
+	next;
+	callfunc("F_ep20_safetyMenu");
+	end;
+
+OnInit:
+	questinfo( QTYPE_QUEST, QMARK_YELLOW, "ep20_main == 2" );
+	questinfo( QTYPE_QUEST2, QMARK_YELLOW, "ep20_main == 3" );
+	end;
+}
+
+jor_safty1,64,328,3	script	Lehar#ep20ms02	4_EP19_LEHAR,{
+	if (ep20_main == 2) {
+		cutin "ep19_lehar01.png",2;
+		mes "[Lehar]";
+		mes "You reached the safety zone early. I still need to meet you at the gorge entrance first.";
+		mes "Find me at ^0000CDjor_back5 (353, 73)^000000.";
+		next;
+		if (select( "Warp to the gorge entrance.", "I'll walk." ) == 1) {
+			close2;
+			cutin "",255;
+			warp "jor_back5", 353, 73;
+			end;
+		}
+		close3;
+	}
+	if (ep20_main < 3) end;
+	if (ep20_main == 3) {
+		cutin "ep19_lehar01.png",2;
+		mes "[Lehar]";
+		mes "Good, you found the path. The wind here is freezing.";
+		next;
+		mes "[Lehar]";
+		mes "Miriam should be scouting ahead. Let's regroup.";
+		callfunc("F_ep20_completequest", 16692);
+		callfunc("F_ep20_setquest", 16693);
+		ep20_main = 4;
+		next;
+		mes "[Lehar]";
+		mes "Meet me again at ^0000CD(195, 327)^000000 in this safety zone.";
+		next;
+		if (select( "Warp to Safety Zone 2.", "I'll walk." ) == 1) {
+			close2;
+			cutin "",255;
+			warp "jor_safty1", 195, 327;
+			end;
+		}
+		close3;
+	}
+	if (ep20_main == 4) {
+		cutin "ep19_lehar01.png",2;
+		mes "[Lehar]";
+		mes "Meet me again at ^0000CD(195, 327)^000000 in this safety zone.";
+		next;
+		if (select( "Warp to Safety Zone 2.", "I'll walk." ) == 1) {
+			close2;
+			cutin "",255;
+			warp "jor_safty1", 195, 327;
+			end;
+		}
+		close3;
+	}
+	if (ep20_main == 5) {
+		cutin "ep19_lehar01.png",2;
+		mes "[Lehar]";
+		mes "Miriam is at ^0000CDjor_back5 (353, 357)^000000.";
+		next;
+		if (select( "Warp to the gorge field.", "I'll walk." ) == 1) {
+			close2;
+			cutin "",255;
+			warp "jor_back5", 353, 357;
+			end;
+		}
+		close3;
+	}
+	end;
+
+OnInit:
+	questinfo( QTYPE_QUEST, QMARK_YELLOW, "ep20_main == 2" );
+	questinfo( QTYPE_QUEST2, QMARK_YELLOW, "ep20_main == 3" );
+	questinfo( QTYPE_QUEST2, QMARK_YELLOW, "ep20_main == 4" );
+	end;
+}
+
+jor_safty1,195,327,3	script	Lehar#ep20ms03	4_EP19_LEHAR,{
+	if (ep20_main == 2) {
+		cutin "ep19_lehar01.png",2;
+		mes "[Lehar]";
+		mes "You're ahead of me. Meet me at the gorge entrance first.";
+		mes "Find me at ^0000CDjor_back5 (353, 73)^000000.";
+		next;
+		if (select( "Warp to the gorge entrance.", "I'll walk." ) == 1) {
+			close2;
+			cutin "",255;
+			warp "jor_back5", 353, 73;
+			end;
+		}
+		close3;
+	}
+	if (ep20_main == 3) {
+		cutin "ep19_lehar01.png",2;
+		mes "[Lehar]";
+		mes "We need to regroup at the northern safety camp first.";
+		mes "Find me at ^0000CD(64, 328)^000000.";
+		next;
+		if (select( "Warp to Safety Zone 1.", "I'll walk." ) == 1) {
+			close2;
+			cutin "",255;
+			warp "jor_safty1", 64, 328;
+			end;
+		}
+		close3;
+	}
+	if (ep20_main < 4) end;
+	if (ep20_main == 4) {
+		cutin "ep19_lehar01.png",2;
+		mes "[Lehar]";
+		mes "I found traces of Rgan activity. They passed through recently.";
+		next;
+		mes "[Lehar]";
+		mes "We need to report to Miriam near the snake nest entrance.";
+		callfunc("F_ep20_completequest", 16693);
+		callfunc("F_ep20_setquest", 16694);
+		ep20_main = 5;
+		next;
+		mes "[Lehar]";
+		mes "Miriam is at ^0000CDjor_back5 (353, 357)^000000.";
+		next;
+		if (select( "Warp to the gorge field.", "I'll walk." ) == 1) {
+			close2;
+			cutin "",255;
+			warp "jor_back5", 353, 357;
+			end;
+		}
+		close3;
+	}
+	if (ep20_main == 5) {
+		cutin "ep19_lehar01.png",2;
+		mes "[Lehar]";
+		mes "Miriam is at ^0000CDjor_back5 (353, 357)^000000.";
+		next;
+		if (select( "Warp to the gorge field.", "I'll walk." ) == 1) {
+			close2;
+			cutin "",255;
+			warp "jor_back5", 353, 357;
+			end;
+		}
+		close3;
+	}
+	end;
+
+OnInit:
+	questinfo( QTYPE_QUEST, QMARK_YELLOW, "ep20_main == 3" );
+	questinfo( QTYPE_QUEST2, QMARK_YELLOW, "ep20_main == 4" );
+	questinfo( QTYPE_QUEST2, QMARK_YELLOW, "ep20_main == 5" );
+	end;
+}
+
+jor_back5,353,357,3	script	Miriam#ep20ms01	4_EP18_MIRIAM,{
+	if (ep20_main < 5) end;
+	if (ep20_main == 5) {
+		cutin "ep18_miriam_01.png",0;
+		mes "[Miriam]";
+		mes "Lehar told me everything. The Rgans are moving toward the nest again.";
+		next;
+		mes "[Miriam]";
+		mes "Return to ^0000CDLeon at Ice Castle (262, 202)^000000 with the device.";
+		callfunc("F_ep20_completequest", 16693);
+		callfunc("F_ep20_setquest", 16694);
+		ep20_main = 6;
+		next;
+		if (select( "Warp to Safety Zone 3.", "I'll walk." ) == 1) {
+			close2;
+			cutin "",255;
+			warp "jor_safty1", 330, 327;
+			end;
+		}
+		close3;
+	}
+	if (ep20_main == 6) {
+		cutin "ep18_miriam_01.png",0;
+		mes "[Miriam]";
+		mes "Leon is waiting in the conference room at ^0000CDicas_in (262, 202)^000000.";
+		close3;
+	}
+	end;
+
+OnInit:
+	questinfo( QTYPE_QUEST, QMARK_YELLOW, "ep20_main == 5" );
+	end;
+}
+
+jor_safty1,330,327,3	script	Miriam#ep20ms02	4_EP18_MIRIAM,{
+	if (ep20_main == 5) {
+		cutin "ep18_miriam_01.png",0;
+		mes "[Miriam]";
+		mes "I'm still scouting near the snake nest entrance.";
+		mes "Meet me at ^0000CDjor_back5 (353, 357)^000000 first.";
+		next;
+		if (select( "Warp to the gorge field.", "I'll walk." ) == 1) {
+			close2;
+			cutin "",255;
+			warp "jor_back5", 353, 357;
+			end;
+		}
+		close3;
+	}
+	if (ep20_main == 6) {
+		cutin "ep18_miriam_01.png",0;
+		mes "[Miriam]";
+		mes "Report to ^0000CDLeon at Ice Castle (262, 202)^000000.";
+		close3;
+	}
+	if (ep20_main < 7) end;
+	end;
+
+OnInit:
+	questinfo( QTYPE_QUEST, QMARK_YELLOW, "ep20_main == 5" );
+	questinfo( QTYPE_QUEST2, QMARK_YELLOW, "ep20_main == 6" );
+	end;
+}
+
+// Main Quest: Chapter 20001 - Era of Cold War and Espionage (Steps 9-16)
+icas_in,259,219,3	script	Horuru#ep20ms02	4_EP19_IWIN,{
+	if (ep20_main < 7) end;
+	if (ep20_main == 7) {
+		cutin "ep19_iwin06.png",2;
+		mes "[Horuru]";
+		mes "Welcome back. Your report confirms our worst fears.";
+		mes "Bagot is still manipulating the Rgans from the shadows.";
+		next;
+		mes "[Horuru]";
+		mes "We suspect spies inside the castle. Talk to ^0000CDToreru^000000 near the bird statue.";
+		callfunc("F_ep20_completequest", 16695);
+		callfunc("F_ep20_setquest", 16696);
+		ep20_main = 8;
+		callfunc("F_ep20_reward", 20, 90);
+		close3;
+	}
+	if (ep20_main == 11) {
+		cutin "ep19_iwin06.png",2;
+		mes "[Horuru]";
+		mes "So Bagot left a trap for us. We can't delay anymore.";
+		next;
+		mes "[Horuru]";
+		mes "Vellgunde analyzed the device. Meet her, then prepare at the fortress gate.";
+		callfunc("F_ep20_completequest", 16699);
+		callfunc("F_ep20_setquest", 16700);
+		ep20_main = 12;
+		close3;
+	}
+	end;
+
+OnInit:
+	questinfo( QTYPE_QUEST, QMARK_YELLOW, "ep20_main == 7" );
+	questinfo( QTYPE_QUEST2, QMARK_YELLOW, "ep20_main == 11" );
+	end;
+}
+
+icas_in,113,41,3	script	Toreru#ep20ms01	4_EP19_IWIN,{
+	if (ep20_main < 8) end;
+	if (ep20_main == 8) {
+		cutin "ep19_iwin06.png",2;
+		mes "[Toreru]";
+		mes "Hmm? You want to know about suspicious activity?";
+		mes "Charuru in the kitchen saw someone sneaking around at night.";
+		next;
+		mes "[Toreru]";
+		mes "Talk to ^0000CDCharuru^000000 at (92, 113).";
+		callfunc("F_ep20_completequest", 16696);
+		callfunc("F_ep20_setquest", 16697);
+		ep20_main = 9;
+		close3;
+	}
+	end;
+
+OnInit:
+	questinfo( QTYPE_QUEST, QMARK_YELLOW, "ep20_main == 8" );
+	end;
+}
+
+icas_in,92,113,3	script	Charuru#ep20ms01	4_EP19_IWIN,{
+	if (ep20_main < 9) end;
+	if (ep20_main == 9) {
+		cutin "ep19_iwin06.png",2;
+		mes "[Charuru]";
+		mes "I saw footprints near the dark alley outside.";
+		mes "Someone was carrying a strange device toward the gorge.";
+		next;
+		mes "[Charuru]";
+		mes "Check the ^0000CDdark alley^000000 at icecastle (209, 243).";
+		callfunc("F_ep20_completequest", 16697);
+		callfunc("F_ep20_setquest", 16698);
+		ep20_main = 10;
+		close3;
+	}
+	end;
+
+OnInit:
+	questinfo( QTYPE_QUEST, QMARK_YELLOW, "ep20_main == 9" );
+	end;
+}
+
+icecastle,209,243,3	script	Dark Alley#ep20ms01	4_BULLETIN_BOARD2,{
+	if (ep20_main < 10) end;
+	if (ep20_main == 10) {
+		mes "You find residue of a mana-absorbing device, similar to what Bagot used before.";
+		next;
+		mes "There is a note: ^777777'Tell Horuru the eastern gorge route is compromised.'^000000";
+		next;
+		mes "You should report this to Horuru inside the castle.";
+		callfunc("F_ep20_completequest", 16698);
+		callfunc("F_ep20_setquest", 16699);
+		ep20_main = 11;
+		close;
+	}
+	end;
+
+OnInit:
+	questinfo( QTYPE_QUEST, QMARK_YELLOW, "ep20_main == 10" );
+	end;
+}
+
+icas_in,141,216,3	script	Vellgunde#ep20ms01	4_EP19_VELLGUNDE,{
+	if (ep20_main < 12) end;
+	if (ep20_main == 12) {
+		cutin "ep19_vellgunde02.png",1;
+		mes "[Vellgunde]";
+		mes "This device collects and stores mana. Bagot must have built it.";
+		mes "Lasgand is likely using the collected power for his experiments.";
+		next;
+		mes "[Vellgunde]";
+		mes "Meet Lehar at the ^0000CDfortress gate^000000. The canyon exploration begins now.";
+		callfunc("F_ep20_completequest", 16700);
+		callfunc("F_ep20_completequest", 20001);
+		callfunc("F_ep20_setquest", 16701);
+		ep20_main = 13;
+		callfunc("F_ep20_reward", 20, 90);
+		close3;
+	}
+	// After the canyon briefing, Vellgunde offers Glacier equipment enchanting.
+	callfunc("F_ep20_glacierEnchant");
+	end;
+
+OnInit:
+	questinfo( QTYPE_QUEST, QMARK_YELLOW, "ep20_main == 12" );
+	end;
+}
+
+// Main Quest: Chapter 20003 - Canyon Exploration (Step 17)
+icecastle,201,171,3	script	Lehar#ep20ms04	4_EP19_LEHAR,{
+	if (ep20_main < 13) end;
+	if (ep20_main == 13) {
+		cutin "ep19_lehar01.png",2;
+		mes "[Lehar]";
+		mes "The exploration team is ready. This is a solo instance mission.";
+		mes "Create a one-person party, then prepare and enter ^0000CDCanyon Exploration^000000.";
+		next;
+		switch( select( "Prepare Canyon Exploration.", "Enter Canyon Exploration.", "I'm stuck / need help.", "Close." ) ) {
+		case 1:
+			if (!callfunc("F_ep20_instance_party_ok")) {
+				mes "[Lehar]";
+				mes "- ^0000FFOnly the leader of a one-person party can use the memorial dungeon.^000000 -";
+				mes "Use ^4D4DFF/organize PARTY NAME^000000 if you are not in a party yet.";
+				close3;
+			}
+			if (isbegin_quest(16701) == 1) {
+				callfunc("F_ep20_completequest", 16701);
+				callfunc("F_ep20_setquest", 16702);
+			}
+			close2;
+			cutin "",255;
+			callfunc("F_ep20_instance_enter", "Canyon Exploration", 1);
+			end;
+		case 2:
+			if (!callfunc("F_ep20_instance_party_ok")) {
+				mes "[Lehar]";
+				mes "- ^0000FFOnly the leader of a one-person party can use the memorial dungeon.^000000 -";
+				mes "Use ^4D4DFF/organize PARTY NAME^000000 if you are not in a party yet.";
+				close3;
+			}
+			if (isbegin_quest(16701) == 1) {
+				callfunc("F_ep20_completequest", 16701);
+				callfunc("F_ep20_setquest", 16702);
+			}
+			close2;
+			cutin "",255;
+			callfunc("F_ep20_instance_enter", "Canyon Exploration", 2);
+			end;
+		case 3:
+			close2;
+			cutin "",255;
+			callfunc("F_ep20_canyon_stuck_recover");
+			end;
+		case 4:
+			close3;
+		}
+	}
+	if (ep20_main == 14) {
+		cutin "ep19_lehar01.png",2;
+		mes "[Lehar]";
+		mes "Good work in the canyon. Report to Miriam inside the castle.";
+		next;
+		switch( select( "Warp me to Miriam.", "I'm stuck / need help.", "Close." ) ) {
+		case 1:
+			mes "[Lehar]";
+			mes "Miriam is in the castle meeting room.";
+			close2;
+			cutin "",255;
+			warp "icas_in",259,200;
+			end;
+		case 2:
+			close2;
+			cutin "",255;
+			callfunc("F_ep20_canyon_stuck_recover");
+			end;
+		case 3:
+			close3;
+		}
+	}
+	if (ep20_main >= 100) {
+		cutin "ep19_lehar01.png",2;
+		mes "[Lehar]";
+		mes "You can still enter the ^0000CDCanyon Exploration^000000 memorial dungeon from here.";
+		next;
+		if (select( "Enter Canyon Exploration.", "Cancel." ) == 2)
+			close3;
+		if (!callfunc("F_ep20_instance_party_ok")) {
+			mes "[Lehar]";
+			mes "Form a solo party first, then talk to me again.";
+			close3;
+		}
+		close2;
+		cutin "",255;
+		callfunc("F_ep20_instance_enter", "Canyon Exploration", 0);
+		end;
+	}
+	end;
+
+OnInit:
+	questinfo( QTYPE_QUEST, QMARK_YELLOW, "ep20_main == 13" );
+	questinfo( QTYPE_QUEST2, QMARK_YELLOW, "ep20_main == 14 && isbegin_quest(16702) == 1" );
+	questinfo( QTYPE_QUEST2, QMARK_YELLOW, "ep20_main == 14 && isbegin_quest(16702) == 2 && isbegin_quest(16703) <= 0" );
+	end;
+}
+
+icas_in,259,200,3	script	Miriam#ep20ms03	4_EP18_MIRIAM,{
+	if (ep20_main < 14) end;
+	if (ep20_main == 14) {
+		cutin "ep18_miriam_01.png",0;
+		mes "[Miriam]";
+		mes "Bagot appeared in the canyon? We must infiltrate the snake nest immediately.";
+		next;
+		mes "[Miriam]";
+		mes "Talk to ^0000CDRage^000000 at the adventurer's lodge, then meet Horuru at ^0000CDjor_nest (40, 274)^000000.";
+		callfunc("F_ep20_completequest", 16702);
+		callfunc("F_ep20_setquest", 16703);
+		ep20_main = 14;
+		callfunc("F_ep20_reward", 20, 90);
+		close3;
+	}
+	end;
+
+OnInit:
+	questinfo( QTYPE_QUEST, QMARK_YELLOW, "ep20_main == 14" );
+	end;
+}
+
+icas_in,263,200,3	script	Rage#ep20ms01	4_EP19_LEHAR,{
+	if (ep20_main < 14) end;
+	if (ep20_main == 14 && isbegin_quest(16703) == 1) {
+		mes "[Rage]";
+		mes "We saw Bagot in the canyon. Disguising as Rgans is risky, but we have no choice.";
+		next;
+		mes "[Rage]";
+		mes "Horuru is waiting at the ^0000CDfront of Snake's Nest (40, 274)^000000.";
+		callfunc("F_ep20_completequest", 16703);
+		callfunc("F_ep20_setquest", 16704);
+		ep20_main = 15;
+		callfunc("F_ep20_reward", 10, 60);
+		close3;
+	}
+	mes "[Rage]";
+	mes "The infiltration plan is in motion.";
+	close3;
+
+OnInit:
+	questinfo( QTYPE_QUEST, QMARK_YELLOW, "ep20_main == 14 && isbegin_quest(16703) == 1" );
+	end;
+}
+
+// Main Quest: Chapter 20004 - Infiltration begins at snake nest (Steps 20-22)
+jor_nest,40,274,3	script	Horuru#ep20ms04	4_EP19_IWIN,{
+	if (ep20_main < 15) end;
+	if (ep20_main == 15) {
+		cutin "ep19_iwin06.png",2;
+		mes "[Horuru]";
+		mes "Use this scroll to transform into a Rgan. Stay transformed inside their territory.";
+		next;
+		transform 21530,1800000;
+		mes "[Horuru]";
+		mes "Enter ^0000CDSnake God's Root^000000 and find the shaman at (32, 34).";
+		callfunc("F_ep20_completequest", 16704);
+		callfunc("F_ep20_setquest", 17691);
+		ep20_main = 16;
+		close3;
+	}
+	end;
+
+OnInit:
+	questinfo( QTYPE_QUEST, QMARK_YELLOW, "ep20_main == 15" );
+	end;
+}
+
+jor_root1,32,34,3	script	Rgan Shaman#ep20ms01	4_EP19_RGAN_SR2,{
+	callfunc("F_ep20_checkTransform","Rgan Shaman");
+	if (ep20_main < 16) end;
+	if (ep20_main == 16) {
+		mes "[Rgan Shaman]";
+		mes "An outsider?! Die!";
+		next;
+		mes "You defeat the shaman. Lazy arrives shortly after.";
+		callfunc("F_ep20_completequest", 17691);
+		callfunc("F_ep20_completequest", 17692);
+		callfunc("F_ep20_setquest", 17693);
+		ep20_main = 17;
+		navigateto("jor_root1", 277, 75);
+		close;
+	}
+	if (ep20_main == 17 && isbegin_quest(17693) == 1) {
+		if (checkquest(17693,HUNTING) == 2) {
+			mes "[Lazy]";
+			mes "Good hunting. Regroup with us at ^0000CDSafe Place 2^000000.";
+			callfunc("F_ep20_completequest", 17693);
+			callfunc("F_ep20_setquest", 17694);
+			ep20_main = 18;
+			close2;
+			navigateto("jor_safty2", 74, 363);
+			end;
+		}
+		mes "[Lazy]";
+		mes "Hunt ^0000CD5 Superior Rgan Warlock^000000 on root1 and ^0000CD5 Jormungand Church Warlock^000000 on root2.";
+		next;
+		switch( select( "Mark root1 warlocks.", "Mark root2 warlocks.", "Reset hunt quest (bug fix).", "Close." ) ) {
+		case 1:
+			close2;
+			navigateto("jor_root1", 277, 75);
+			end;
+		case 2:
+			mes "[Lazy]";
+			mes "Use the ^0000CDportal at the southwest^000000 of this floor to reach root2.";
+			next;
+			close2;
+			navigateto("jor_root1", 61, 289);
+			end;
+		case 3:
+			erasequest 17693;
+			setquest 17693;
+			mes "[Lazy]";
+			mes "I reset your hunt log with the corrected targets.";
+			mes "Superior Rgan Warlock on root1, Jormungand Church Warlock on root2.";
+			close2;
+			navigateto("jor_root1", 277, 75);
+			end;
+		case 4:
+			close3;
+		}
+	}
+	if (getgmlevel() >= 60 && ep20_main >= 16 && ep20_main <= 18) {
+		mes "[Lazy - GM Debug]";
+		mes "^777777ep20_main:^000000 " + ep20_main;
+		mes "^77777717691:^000000 " + isbegin_quest(17691);
+		mes "^77777717692:^000000 " + isbegin_quest(17692);
+		mes "^77777717693:^000000 " + isbegin_quest(17693);
+		if (isbegin_quest(17693) == 1)
+			mes "^77777717693 hunt:^000000 " + checkquest(17693,HUNTING);
+		next;
+		switch( select( "Reset hunt quest 17693.", "Set ep20_main = 17.", "Close." ) ) {
+		case 1:
+			if (isbegin_quest(17693) == 1)
+				erasequest 17693;
+			setquest 17693;
+			ep20_main = 17;
+			mes "[Lazy - GM Debug]";
+			mes "Quest 17693 re-assigned. Hunt targets: Warlock (root1), Church Warlock (root2).";
+			close2;
+			navigateto("jor_root1", 277, 75);
+			end;
+		case 2:
+			ep20_main = 17;
+			mes "[Lazy - GM Debug]";
+			mes "ep20_main set to 17.";
+			close3;
+		case 3:
+			close3;
+		}
+	}
+	end;
+
+OnInit:
+	questinfo( QTYPE_QUEST, QMARK_YELLOW, "ep20_main == 16" );
+	questinfo( QTYPE_QUEST2, QMARK_YELLOW, "ep20_main == 17 && isbegin_quest(17693) == 1" );
+	questinfo( QTYPE_QUEST2, QMARK_YELLOW, "ep20_main == 17 && isbegin_quest(17693) == 0" );
+	end;
+}
+
+// Main Quest: Chapter 20005 - Regroup at Safe Place 2 (after root hunt)
+jor_safty2,74,363,3	script	Lazy#ep20safty01	4_EP19_RGAN_SR3,{
+	callfunc("F_ep20_checkTransform","Lazy");
+	if (ep20_main < 17 || ep20_main > 19) {
+		mes "[Lazy]";
+		mes "This area is off limits for now.";
+		close;
+	}
+	if (ep20_main == 17 && isbegin_quest(17693) == 1 && checkquest(17693,HUNTING) == 2) {
+		mes "[Lazy]";
+		mes "Good hunting. Let's regroup here before the sanctuary.";
+		callfunc("F_ep20_completequest", 17693);
+		callfunc("F_ep20_setquest", 17694);
+		ep20_main = 18;
+		next;
+	}
+	if (ep20_main == 18 && isbegin_quest(17694) == 0) {
+		callfunc("F_ep20_setquest", 17694);
+	}
+	if (isbegin_quest(17694) == 1) {
+		mes "[Lazy]";
+		mes "Talk to Miriam and Horuru nearby before we enter Sacred Roots.";
+		next;
+		switch( select( "Mark Miriam.", "Mark Horuru.", "Close." ) ) {
+		case 1:
+			close2;
+			navigateto("jor_safty2", 76, 362);
+			end;
+		case 2:
+			close2;
+			navigateto("jor_safty2", 78, 361);
+			end;
+		case 3:
+			close;
+		}
+	}
+	if (isbegin_quest(17695) == 1) {
+		mes "[Lazy]";
+		mes "Speak to Horuru, then head to Sacred Roots.";
+		close2;
+		navigateto("jor_safty2", 78, 361);
+		end;
+	}
+	if (isbegin_quest(17696) == 1) {
+		mes "[Lazy]";
+		mes "Enter ^0000CDSacred Roots (jor_sanct)^000000 and meet me inside.";
+		close2;
+		navigateto("jor_sanct", 155, 85);
+		end;
+	}
+	mes "[Lazy]";
+	mes "Stay close. We move as a group from here.";
+	close;
+
+OnInit:
+	cloakoffnpc strnpcinfo(0);
+	questinfo( QTYPE_QUEST, QMARK_YELLOW, "ep20_main == 18 && isbegin_quest(17694) == 1" );
+	questinfo( QTYPE_QUEST2, QMARK_YELLOW, "ep20_main == 18 && isbegin_quest(17695) == 1" );
+	questinfo( QTYPE_QUEST2, QMARK_YELLOW, "ep20_main == 18 && isbegin_quest(17696) == 1" );
+	end;
+}
+
+jor_safty2,76,362,3	script	Miriam#ep20safty01	4_EP18_MIRIAM,{
+	if (ep20_main < 17 || ep20_main > 19) end;
+	if (ep20_main != 18 || isbegin_quest(17694) != 1) {
+		mes "[Miriam]";
+		mes "Talk to Lazy first if you just arrived.";
+		close;
+	}
+	cutin "ep18_miriam_01.png",0;
+	mes "[Miriam]";
+	mes "Good work on the hunt. We need to infiltrate Lasgand's sanctuary next.";
+	callfunc("F_ep20_completequest", 17694);
+	callfunc("F_ep20_setquest", 17695);
+	close2;
+	cutin "",255;
+	navigateto("jor_safty2", 78, 361);
+	end;
+
+OnInit:
+	cloakoffnpc strnpcinfo(0);
+	questinfo( QTYPE_QUEST, QMARK_YELLOW, "ep20_main == 18 && isbegin_quest(17694) == 1" );
+	end;
+}
+
+jor_safty2,78,361,3	script	Horuru#ep20safty01	4_EP19_IWIN,{
+	if (ep20_main < 17 || ep20_main > 19) end;
+	if (ep20_main != 18 || isbegin_quest(17695) != 1) {
+		mes "[Horuru]";
+		mes "Miriam has something to discuss first.";
+		close;
+	}
+	cutin "ep19_iwin06.png",2;
+	mes "[Horuru]";
+	mes "Stay in Rgan form. Enter ^0000CDSacred Roots^000000 through the northern route.";
+	callfunc("F_ep20_completequest", 17695);
+	callfunc("F_ep20_setquest", 17696);
+	close2;
+	cutin "",255;
+	navigateto("jor_sanct", 155, 85);
+	end;
+
+OnInit:
+	cloakoffnpc strnpcinfo(0);
+	questinfo( QTYPE_QUEST, QMARK_YELLOW, "ep20_main == 18 && isbegin_quest(17695) == 1" );
+	end;
+}
+
+// Main Quest: Chapter 20005 - jor_sanct infiltration (Steps 28+)
+jor_sanct,162,86,3	script	Rgan Guide#ep20ms01	4_EP19_RGAN_R3,{
+	callfunc("F_ep20_checkTransform","Rgan");
+	if (ep20_main < 18) end;
+	if (ep20_main == 18 && isbegin_quest(17696) == 1) {
+		mes "[Rgan]";
+		mes "Lasgand's sanctuary... only faithful Rgans may enter.";
+		next;
+		mes "[Lazy]";
+		mes "Leave this to me. I'll scout ahead.";
+		callfunc("F_ep20_completequest", 17696);
+		callfunc("F_ep20_setquest", 17697);
+		ep20_main = 19;
+		callfunc("F_ep20_reward", 20, 90);
+		close;
+	}
+	if (ep20_main == 18) {
+		mes "[Rgan]";
+		mes "Only faithful Rgans may enter. Regroup with the party at ^0000CDSafe Place 2^000000 first.";
+		close;
+	}
+	if (ep20_main == 19) {
+		mes "[Rgan]";
+		mes "Speak with ^0000CDLazy (155, 85)^000000 first.";
+		mes "Then help the bishops and faithful Rgans marked on your minimap.";
+		mes "Report to ^0000CDSerekgand (157, 171)^000000 when they all trust you.";
+		close;
+	}
+	end;
+
+OnInit:
+	questinfo( QTYPE_QUEST, QMARK_YELLOW, "ep20_main == 18 && isbegin_quest(17696) == 1" );
+	end;
+}
+
+jor_sanct,157,171,3	script	Serekgand#ep20ms01	4_EP19_RGAN_SR1,{
+	callfunc("F_ep20_checkTransform","Serekgand");
+	if (ep20_main < 19) end;
+	if (ep20_main == 19) {
+		if (isbegin_quest(17701) != 2) {
+			mes "[Serekgand]";
+			mes "Earn the trust of the bishops and marked Rgans in Sacred Roots first.";
+			close;
+		}
+		if (ep20_sanct_mark < 10) {
+			mes "[Serekgand]";
+			mes "The faithful are still watching you. Help every Rgan marked on your minimap.";
+			if (ep20_sanct_mark == 0)
+				navigateto("jor_sanct", 258, 117);
+			close;
+		}
+		mes "[Serekgand]";
+		mes "You seem useful. The supervisor at ^0000CD(22, 283)^000000 needs help in the maze.";
+		callfunc("F_ep20_setquest", 17702);
+		ep20_main = 20;
+		callfunc("F_ep20_reward", 10, 60);
+		close;
+	}
+	end;
+
+OnInit:
+	questinfo( QTYPE_QUEST, QMARK_YELLOW, "ep20_main == 19 && isbegin_quest(17701) == 2 && ep20_sanct_mark >= 10" );
+	end;
+}
+
+jor_sanct,22,283,3	script	Supervisor#ep20ms01	4_EP19_RGAN_SR2,{
+	callfunc("F_ep20_checkTransform","Supervisor");
+	if (ep20_main < 20) end;
+	if (ep20_main == 20) {
+		mes "[Supervisor]";
+		mes "The maze leads to their hideout. Enter and find the swaying wall at ^0000CDjor_maze (140, 72)^000000.";
+		callfunc("F_ep20_completequest", 17702);
+		callfunc("F_ep20_completequest", 20006);
+		callfunc("F_ep20_setquest", 17703);
+		ep20_main = 21;
+		callfunc("F_ep20_reward", 10, 60);
+		close;
+	}
+	end;
+
+OnInit:
+	questinfo( QTYPE_QUEST, QMARK_YELLOW, "ep20_main == 20" );
+	end;
+}
+
+// Main Quest: Chapter 20006 - Maze / Drift Ice instance
+jor_maze,140,72,3	script	Swaying Wall#ep20ms01	4_ROPEPILE,{
+	if (ep20_main < 21) end;
+	if (ep20_main == 21) {
+		mes "A hidden passage opens. You can enter the Drift Ice Zone instance.";
+		next;
+		if (select( "Enter Drift Ice Zone.", "Leave." ) == 2)
+			close;
+		if (getcharid(1) < 1) {
+			mes "Form a party first.";
+			close;
+		}
+		doevent "Drift Ice Zone#ep20::OnStart";
+		close;
+	}
+	if (ep20_main == 22) {
+		mes "The passage to the drift ice zone remains open.";
+		close;
+	}
+	if (ep20_main >= 100) {
+		mes "A hidden passage opens. You can enter the Drift Ice Zone instance.";
+		next;
+		if (select( "Enter Drift Ice Zone.", "Leave." ) == 2)
+			close;
+		if (getcharid(1) < 1) {
+			mes "Form a party first.";
+			close;
+		}
+		doevent "Drift Ice Zone#ep20::OnStart";
+		close;
+	}
+	end;
+
+OnInit:
+	questinfo( QTYPE_QUEST, QMARK_YELLOW, "ep20_main == 21" );
+	end;
+}
+
+jor_back1,365,226,3	script	Lehar#ep20ms05	4_EP19_LEHAR,{
+	if (ep20_main < 22) end;
+	if (ep20_main == 22) {
+		cutin "ep19_lehar01.png",2;
+		mes "[Lehar]";
+		mes "We survived the drift ice. Cororo can take us to the deep sea next.";
+		callfunc("F_ep20_completequest", 23100);
+		callfunc("F_ep20_setquest", 20007);
+		callfunc("F_ep20_setquest", 23101);
+		ep20_main = 23;
+		callfunc("F_ep20_reward", 20, 90);
+		close3;
+	}
+	end;
+
+OnInit:
+	questinfo( QTYPE_QUEST, QMARK_YELLOW, "ep20_main == 22" );
+	end;
+}
+
+// Main Quest: Chapter 20007 - Deep Ancient Sea
+icecastle,141,212,3	script	Cororo#ep20ms01	4_EP19_IWIN,{
+	if (ep20_main < 23) end;
+	if (ep20_main == 23) {
+		cutin "ep19_iwin06.png",2;
+		mes "[Cororo]";
+		mes "I need a special meal before diving. Hunt ^0000CD5 Ice Gangu^000000 and bring ^0000CD3 Frozen Insect Shell^000000.";
+		next;
+		if (select( "I have the materials.", "I'll hunt them." ) == 2) {
+			mes "[Cororo]";
+			mes "Come back when you're ready.";
+			close3;
+		}
+		if (countitem(1000832) < 3) {	// Frozen_Worm_Shell
+			mes "[Cororo]";
+			mes "You don't have enough Frozen Insect Shell.";
+			close3;
+		}
+		delitem 1000832,3;
+		mes "[Cororo]";
+		mes "Good. Now hunt ^0000CD5 Shining Seaweed^000000 and bring ^0000CD3 Shiny Seaweed Stem^000000.";
+		callfunc("F_ep20_completequest", 23101);
+		callfunc("F_ep20_setquest", 23102);
+		ep20_main = 24;
+		callfunc("F_ep20_reward", 15, 60);
+		close3;
+	}
+	if (ep20_main == 24) {
+		if (countitem(1000831) < 3) {	// Shiny_Seaweed_Stem
+			mes "[Cororo]";
+			mes "I still need Shiny Seaweed Stem.";
+			close3;
+		}
+		delitem 1000831,3;
+		mes "[Cororo]";
+		mes "I'll warp you to the drift ice zone. Meet Lehar there.";
+		callfunc("F_ep20_completequest", 23102);
+		callfunc("F_ep20_setquest", 23103);
+		ep20_main = 25;
+		callfunc("F_ep20_reward", 15, 60);
+		warp "jor_twice", 235, 111;
+		close;
+	}
+	if (ep20_main == 25) {
+		mes "[Cororo]";
+		mes "Lehar is waiting in the drift ice zone.";
+		close3;
+	}
+	end;
+
+OnInit:
+	questinfo( QTYPE_QUEST, QMARK_YELLOW, "ep20_main == 23" );
+	questinfo( QTYPE_QUEST2, QMARK_YELLOW, "ep20_main == 24" );
+	end;
+}
+
+jor_twice,164,244,3	script	Lehar#ep20ms06	4_EP19_LEHAR,{
+	if (ep20_main < 25) end;
+	if (ep20_main == 25) {
+		cutin "ep19_lehar01.png",2;
+		if (isbegin_quest(23106) != 1) {
+			mes "[Lehar]";
+			mes "Talk to ^0000CDKokoro^000000 at (235, 111) in the frozen zone first.";
+			close3;
+		}
+		mes "[Lehar]";
+		mes "Aurelie wants to destroy the maze entrance. Enter the ^0000CDNest of Twigs^000000 instance.";
+		next;
+		if (select( "Enter Nest of Twigs.", "Not yet." ) == 2)
+			close3;
+		if (getcharid(1) < 1) {
+			mes "Form a party first.";
+			close3;
+		}
+		doevent "Nest of Twigs#ep20::OnStart";
+		close3;
+	}
+	if (ep20_main == 26) {
+		mes "[Lehar]";
+		mes "Report to Aurelie at ^0000CD(328, 150)^000000. She will send you to the hunting ground.";
+		close3;
+	}
+	if (ep20_main >= 100) {
+		cutin "ep19_lehar01.png",2;
+		mes "[Lehar]";
+		mes "The ^0000CDNest of Twigs^000000 memorial dungeon entrance is still available.";
+		next;
+		if (select( "Enter Nest of Twigs.", "Not yet." ) == 2)
+			close3;
+		if (getcharid(1) < 1) {
+			mes "Form a party first.";
+			close3;
+		}
+		doevent "Nest of Twigs#ep20::OnStart";
+		close3;
+	}
+	end;
+
+OnInit:
+	questinfo( QTYPE_QUEST, QMARK_YELLOW, "ep20_main == 25" );
+	end;
+}
+
+jor_safty1,328,150,3	script	Aurelie#ep20ms01	4_EP19_AURELIE,{
+	if (ep20_main < 26) end;
+	if (ep20_main == 26) {
+		if (checkquest(23109,HUNTING) == 2) {
+			callfunc("F_ep20_aurelieHunt");
+			end;
+		}
+		cutin "ep19_aurelie01.png",1;
+		mes "[Aurelie]";
+		mes "The entrance is sealed. Ancient Rgan Occultists are roaming the drift ice zone.";
+		next;
+		mes "[Aurelie]";
+		mes "I'll send you there. Hunt ^0000CD5 Ancient Rgan Occultist^000000, then report to me on that field.";
+		if (isbegin_quest(23109) == 0)
+			callfunc("F_ep20_setquest", 23109);
+		close2;
+		cutin "",255;
+		warp "jor_twice", 161, 243;
+		end;
+	}
+	end;
+
+OnInit:
+	questinfo( QTYPE_QUEST, QMARK_YELLOW, "ep20_main == 26" );
+	end;
+}
+
+jor_twice,161,243,3	script	Aurelie#ep20ms01b	4_EP19_AURELIE,{
+	if (ep20_main != 26) end;
+	callfunc("F_ep20_aurelieHunt");
+	end;
+
+OnInit:
+	questinfo( QTYPE_QUEST, QMARK_YELLOW, "ep20_main == 26" );
+	end;
+}
+
+jor_twice,235,111,3	script	Kokoro#ep20ms01	4_EP19_IWIN,{
+	if (ep20_main < 25 || isbegin_quest(23103) != 1) end;
+	cutin "ep19_iwin06.png",2;
+	mes "[Kokoro]";
+	mes "This frozen zone feels different from where you met the white cat...";
+	callfunc("F_ep20_completequest", 23103);
+	callfunc("F_ep20_setquest", 23106);
+	close3;
+OnInit:
+	questinfo( QTYPE_QUEST, QMARK_YELLOW, "ep20_main == 25 && isbegin_quest(23103) == 1" );
+	end;
+}
+
+icas_in,111,228,3	script	Leon Petit#ep20fin	4_EP19_LEON,{
+	if (ep20_main < 28 || isbegin_quest(18220) != 1) end;
+	cutin "ep19_leon01.png",0;
+	mes "[Leon]";
+	mes "Nyar's call is urgent. Find the white cat on the scaled hill.";
+	callfunc("F_ep20_completequest", 18220);
+	callfunc("F_ep20_setquest", 18228);
+	close3;
+OnInit:
+	questinfo( QTYPE_QUEST, QMARK_YELLOW, "ep20_main == 28 && isbegin_quest(18220) == 1" );
+	end;
+}
+
+// Main Quest: Chapter 20008 - The Undying One (final)
+jor_maze,198,33,3	script	Miriam#ep20ms04	4_EP18_MIRIAM,{
+	if (ep20_main < 27) end;
+	if (ep20_main == 27) {
+		cutin "ep18_miriam_01.png",0;
+		mes "[Miriam]";
+		mes "We found Lasgand's trail. Gather maze rumors, then meet the white cat at ^0000CDjor_back1 (364, 222)^000000.";
+		if (isbegin_quest(23112) == 0)
+			callfunc("F_ep20_setquest", 23112);
+		callfunc("F_ep20_completequest", 23116);
+		callfunc("F_ep20_completequest", 23117);
+		callfunc("F_ep20_completequest", 20007);
+		callfunc("F_ep20_setquest", 18220);
+		ep20_main = 28;
+		callfunc("F_ep20_reward", 10, 40);
+		close3;
+	}
+	end;
+
+OnInit:
+	questinfo( QTYPE_QUEST, QMARK_YELLOW, "ep20_main == 27" );
+	end;
+}
+
+jor_back1,364,222,3	script	Nyar#ep20ms01	4_EP20_NYAR,{
+	if (ep20_main < 28) end;
+	if (ep20_main == 28) {
+		mes "[Nyar]";
+		mes "Mrr... Lasgand reached the twig nest. He absorbs Ymir's heart fragment.";
+		next;
+		mes "[Lazy]";
+		mes "Then we stop him in the ^0000CDIsolated Sanctuary^000000 before he becomes a god.";
+		callfunc("F_ep20_completequest", 18228);
+		callfunc("F_ep20_setquest", 18232);
+		ep20_main = 29;
+		close;
+	}
+	if (ep20_main == 29) {
+		mes "[Nyar]";
+		mes "Enter the Immortal instance at ^0000CDjor_twig (140, 153)^000000 when ready.";
+		close;
+	}
+	end;
+
+OnInit:
+	questinfo( QTYPE_QUEST, QMARK_YELLOW, "ep20_main == 28" );
+	end;
+}
+
+jor_twig,140,153,3	script	Aurelie#ep20ms02	4_EP19_AURELIE,{
+	if (ep20_main < 29) end;
+	if (ep20_main == 29) {
+		cutin "ep19_aurelie01.png",1;
+		mes "[Aurelie]";
+		mes "This is the final battle. Stop Lasgand before the absorption completes.";
+		next;
+		if (select( "Enter The Immortal.", "Prepare." ) == 2)
+			close3;
+		if (getcharid(1) < 1) {
+			mes "Form a party first.";
+			close3;
+		}
+		doevent "The Immortal#ep20::OnStart";
+		close3;
+	}
+	if (ep20_main >= 100) {
+		cutin "ep19_aurelie01.png",1;
+		mes "[Aurelie]";
+		mes "You can still challenge ^0000CDThe Immortal^000000 memorial dungeon.";
+		next;
+		if (select( "Enter The Immortal.", "Prepare." ) == 2)
+			close3;
+		if (getcharid(1) < 1) {
+			mes "Form a party first.";
+			close3;
+		}
+		doevent "The Immortal#ep20::OnStart";
+		close3;
+	}
+	if (ep20_main >= 30) {
+		mes "[Aurelie]";
+		mes "Lasgand is suppressed for now. Talk to Voglinde in the castle.";
+		close3;
+	}
+	end;
+
+OnInit:
+	questinfo( QTYPE_QUEST, QMARK_YELLOW, "ep20_main == 29" );
+	end;
+}
+
+icas_in,248,112,3	script	Voglinde#ep20ms01	4_EP19_VOGLINDE,{
+	if (ep20_main < 30) end;
+	if (ep20_main == 30) {
+		cutin "ep19_voglinde01.png",0;
+		mes "[Voglinde]";
+		mes "Lasgand cannot be killed while the Geoborg family exists.";
+		mes "Nyar suppresses his power for now, but the fight continues.";
+		next;
+		mes "[Leon]";
+		mes "Bagot will be taken to Schwarzwald. We must remain vigilant.";
+		next;
+		mes "[Aurelie]";
+		mes "Episode 20 ends here, for now. Thank you, adventurer.";
+		callfunc("F_ep20_completequest", 18233);
+		callfunc("F_ep20_completequest", 20008);
+		ep20_main = 100;
+		callfunc("F_ep20_reward", 100, 100);
+		getexp2 150000000,0;
+		getexp 0,50000000;
+		close3;
+	}
+	cutin "ep19_voglinde01.png",0;
+	mes "[Voglinde]";
+	mes "The Immortal instance is now available from the warper.";
+	close3;
+
+OnInit:
+	questinfo( QTYPE_QUEST, QMARK_YELLOW, "ep20_main == 30" );
+	end;
+}

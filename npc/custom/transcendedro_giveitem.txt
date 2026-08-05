@@ -13,6 +13,7 @@ OnGiveItem:
 	"Etel Stone [1000323]",
 	"Amethys Fragment [1000405]",
 	"Brilliant Snow Flower Magic Stone Extract [1001036]",
+	"Battle Manual X3 [14545]",
 	"Cancle"
 	
 	)) {
@@ -35,6 +36,9 @@ OnGiveItem:
 			$@item = 1001036;
 			break;
 		case 7:
+			$@item = 14545;
+			break;
+		case 8:
 			mes "Bye!";
 			end;
 	}

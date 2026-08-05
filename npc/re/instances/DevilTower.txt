@@ -2019,6 +2019,7 @@ OnBossDead:
 		end;
 	specialeffect EF_COIN;
 	disablenpc instance_npcname("box#tnmbosang");
+	makeitem 9900009,rand(50,100), 'map_tnm3$, (69 + rand(-5,5)), (70 + rand(-5,5));
 	makeitem 7293,1, 'map_tnm3$, (69 + rand(-5,5)), (70 + rand(-5,5));	// Rose Quartz
 	makeitem 749,1, 'map_tnm3$, (69 + rand(-5,5)), (70 + rand(-5,5));	// Frozen Rose
 	makeitem 7511,1, 'map_tnm3$, (69 + rand(-5,5)), (70 + rand(-5,5));	// Rune of Darkness

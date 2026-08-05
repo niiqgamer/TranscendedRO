@@ -210,38 +210,38 @@ OnInstanceInit:
 		removespecialeffect EF_MARKING_USE_CHANGEMONSTER;
 		setpcblock PCBLOCK_NPC, true;
 		npctalk "I'm an automatic doll that was designed to work only if your mana synchronizes with Varmundt's mana over a certain level.";
-		sleep2 5000;
+		sleep2 1000;
 		npctalk "[" + 'admin$ + "]" + " has a 73.6% mana similarity to that of Varmundt. Who exactly are you [" + 'admin$ + "]?";
-		sleep2 5000;
+		sleep2 1000;
 		setpcblock PCBLOCK_NPC, false;
 		select("An adventurer who stumbled upon this place");
 		setpcblock PCBLOCK_NPC, true;
 		npctalk "It's strange. I've never seen an outsider with a mana pattern that matches more than 70% to that of Varmundt's.";
-		sleep2 5000;
+		sleep2 1000;
 		setpcblock PCBLOCK_NPC, false;
 		.@s = select( "I had the opportunity to meet Varmundt before.", "I don't know why." );
 		setpcblock PCBLOCK_NPC, true;
 		sleep2 1000;
 		if (.@s == 1) {
 			npctalk "There is a possibility that you have a similar mana pattern due to frequent contact with him in any form.";
-			sleep2 5000;
+			sleep2 1000;
 		}
 		while(1) {
 			npctalk "Okay. From now on, I will set [" + 'admin$ + "] as our temporary administrator and take action accordingly. Do you agree?";
-			sleep2 5000;
+			sleep2 1000;
 			setpcblock PCBLOCK_NPC, false;
 			switch( select( "I'm a temporary administrator? Why should I?", "Refuse!", "Sure" ) ) {
 			case 1:
 				setpcblock PCBLOCK_NPC, true;
 				sleep2 1000;
 				npctalk "The automatic dolls maintain the flower garden and perform their given duties individually.";
-				sleep2 5000;
+				sleep2 1000;
 				npctalk "While Master Varmundt was still present, the progress of duties was checked in the form of individual reports and weekly on-site evaluations.";
-				sleep2 5000;
+				sleep2 1000;
 				npctalk "Currently, Master Varmundt has been away for over 1 million hours.";
-				sleep2 5000;
+				sleep2 1000;
 				npctalk "Although you are not Master Varmundt, as someone who has more than 70% similarity to his mana pattern, I would like to ask you to evaluate our duties.";
-				sleep2 5000;
+				sleep2 1000;
 				npctalk "Please understand that it's a necessary management to prevent our duties from falling into the wrong path.";
 				continue;
 			case 2:
@@ -258,7 +258,7 @@ OnInstanceInit:
 		setpcblock PCBLOCK_NPC, true;
 		sleep2 1000;
 		npctalk "Thank you for your permission. From now on, I'll treat [" + 'admin$ + "] as a temporary administrator.";
-		sleep2 5000;
+		sleep2 1000;
 		npctalk "First select a code name that will be used to control this automatic doll. Some of the names that were preferred in the past are randomly selected.";
 
 		setarray .@names$[0],"Lisa","Barbara","Jennifer","Dorothy","Jun","Yeongchun","Susan","Martha","Hannah","Helen","Chunja","Karen","How do I stop this?";
@@ -277,11 +277,11 @@ OnInstanceInit:
 		.@guide_id = getnpcid(0, instance_npcname("#BMD000001"));
 
 		npctalk "Order has been received.";
-		sleep2 3000;
+		sleep2 1000;
 		npctalk "The code name of the automatic doll BMD000001 is [" + .@guide_name$ + "].";
-		sleep2 5000;
+		sleep2 1000;
 		npctalk "We will start the on-site inspection of the garden based on the temporary administrator response protocol.";
-		sleep2 5000;
+		sleep2 1000;
 		if ('hidden_garden == 1) {
 			'guide_id = .@guide_id;
 			'guide_name$ = .@guide_name$;
@@ -313,7 +313,7 @@ OnInstanceInit:
 				break;
 			case 4:
 				npctalk "Because this is a water garden, the area is surrounded by water.";
-				sleep2 5000;
+				sleep2 1000;
 				npctalk "Changing to a non-water garden can not be accepted, as it is an area beyond Varmundt's taste.";
 				break;
 			}
@@ -328,15 +328,15 @@ OnInstanceInit:
 OnTalk01:
 	'npc_is_talking = true;
 	npctalk "This product is an automatic doll that serves as a guide for the flower garden with a serial number BMD000001.";
-	sleep 5000;
+	sleep 1000;
 	npctalk "The similarity check to Varmundt's mana pattern is at 73.6%. Switching to flower garden guide mode.";
-	sleep 5000;
+	sleep 1000;
 	npctalk "Operation will begin in 3 seconds.";
 	progressbar_npc "3131FF",3;
 	setnpcdisplay instance_npcname("#BMD000001"),20622;	// MD_ASSISTANT
 	specialeffect EF_FLOWERCAST;
 	npctalk "Sleep mode release protocol has been completed. I will check if the master, Varmundt is nearby in addition to the recognized target.";
-	sleep 5000;
+	sleep 1000;
 	npctalk "Searching......";
 	progressbar_npc "3131FF",3;
 	sleep 1000;
@@ -349,32 +349,32 @@ OnTalk01:
 
 OnEvent01:
 	npctalk "You can start the evaluation from the entrance of this garden.";
-	sleep 3000;
+	sleep 1000;
 	npctalk "Objective evaluation reduces the working errors of the automatic dolls that manage this place and helps them perform their duties close to perfection.";
-	sleep 6000;
+	sleep 1000;
 	npctalk "[" + 'admin$ + "]. Please use the authority of the temporary administrator to determine whether the garden duties is being faithfully carried out.";
-	sleep 6000;
+	sleep 1000;
 	'hidden_garden = 3;
 	specialeffect EF_MARKING_USE_CHANGEMONSTER;
 	end;
 
 OnEvent02:
 	if (!'trees) {
-		sleep 5000;
+		sleep 1000;
 		npctalk "We have satisfied the criteria of the temporary administrator [" + 'admin$ + "] and will maintain the current management routine as it is.";
 	}
-	sleep 5000;
+	sleep 1000;
 	npctalk "[" + 'admin$ + "], I'd like to request for you to continue the on-site inspection for the remaining sections.";
 	unitwalk 'guide_id,82,300, instance_npcname("#BMD000001") + "::OnEvent03";
 	end;
 
 OnEvent03:
 	npctalk "There is no bridge that connects the sections here.";
-	sleep 6000;
+	sleep 1000;
 	npctalk "Since Varmundt was a person who can move regardless of the terrain, we did not install a separate structure for normal people during the creation of the flower garden.";
-	sleep 6000;
+	sleep 1000;
 	npctalk "However, considering the temporary administrator's insufficient ability, I will support the space leap services.";
-	sleep 6000;
+	sleep 1000;
 	enablenpc instance_npcname("#BMD000002");
 	enablenpc instance_npcname("#carota");
 	instance_warpall 'map_herbs$,111,275,instance_id();
@@ -393,9 +393,9 @@ OnEvent03:
 		removespecialeffect EF_MARKING_USE_CHANGEMONSTER;
 		'hidden_garden = 5;
 		npctalk "Master Varmundt gave each of the automatic dolls a research project.";
-		sleep 5000;
+		sleep 1000;
 		npctalk "However, the purpose of the research is not available to us dolls, we have to decide on our own what to do with it in the future.";
-		sleep 5000;
+		sleep 1000;
 		npctalk "The flower garden is divided into several research sectors and each sector has a different subject as a project.";
 		npcspeed 200;
 		'guide_id = getnpcid(0, instance_npcname("#BMD000002"));
@@ -422,13 +422,13 @@ OnEvent03:
 	end;
 
 OnEvent04:
-	sleep 3000;
+	sleep 1000;
 	npctalk "Let me introduce the automatic doll model CAROTA-88.";
-	sleep 4000;
+	sleep 1000;
 	npctalk "......";
-	sleep 2000;
+	sleep 1000;
 	npctalk "[Error: CAROTA-88 is out of control range. Need to track corresponding object coordinates.]";
-	sleep 5000;
+	sleep 1000;
 	npctalk "[Tracking coordinates...]";
 	progressbar_npc "3131FF",4;
 	npctalk "CAROTA-88. Please return to your original location as soon as possible. Don't forget that I can use force when needed.";
@@ -439,7 +439,7 @@ OnEvent04:
 OnEvent05:
 	npctalk "Let's move on to the next section.", instance_npcname("#BMD000002");
 	'hidden_garden = 7;
-	sleep 2000;
+	sleep 1000;
 	enablenpc instance_npcname("#BMD000003");
 	enablenpc instance_npcname("#pimp25");
 	donpcevent instance_npcname("#pimp25") + "::OnWalk";
@@ -467,19 +467,19 @@ OnTouch:
 		setpcblock PCBLOCK_NPC, true;
 		sleep2 1000;
 		npctalk "Master Varmundt. No further instructions after entering Turnip's biological data . This automatic doll unattended.";
-		sleep2 5000;
+		sleep2 1000;
 		npctalk "No further indications for 5076 hours. This automatic doll's AI collects network information about turnips.";
-		sleep2 5000;
+		sleep2 1000;
 		npctalk "Obtaining information of edible plants. Finding ancient record of turnip cultivation.";
-		sleep2 5000;
+		sleep2 1000;
 		npctalk "Optimized germination, growth and sowing of turnips for about 18816 hours compared and recorded.";
-		sleep2 5000;
+		sleep2 1000;
 		npctalk "Over million hours passed. Collect data on cultivation and harvest of Turnips. a collection of information on breeding method.";
-		sleep2 5000;
+		sleep2 1000;
 		npctalk "2 ton yield per year. 99.9% success pest control prevention. 0.2% loss due to physical work errors.";
-		sleep2 5000;
+		sleep2 1000;
 		npctalk "Turnips from flower garden. Sold at an excellent price in a nearby big city. Contributing to maintenance costs for flower gardens and mansions.";
-		sleep2 5000;
+		sleep2 1000;
 		setpcblock PCBLOCK_NPC, false;
 		npctalk "Whether the research mission direction of this automatic doll should be improved, continued, or discarded. Waiting for the administrator's decision.";
 		mes "^0000AAEvaluate CAROTA-88's work to date.^000000";
@@ -498,24 +498,24 @@ OnTalk01:
 	'npc_is_talking = true;
 	sleep 1000;
 	npctalk "Evaluation received...";
-	sleep 5000;
+	sleep 1000;
 	if ('talk_bool) {
 		npctalk "CAROTA-88 received confirmation from administrator that Varmundt instructions were performed perfectly.";
-		sleep 3000;
+		sleep 1000;
 		emotion ET_DELIGHT;
-		sleep 2000;
+		sleep 1000;
 		npctalk "Existing work routine will be repeated until further orders are issued.";
 	}
 	else {
 		npctalk "Learning more breeding method.";
-		sleep 3000;
+		sleep 1000;
 		emotion ET_DELIGHT;
-		sleep 2000;
+		sleep 1000;
 		npctalk "I will actively increase the portion of experiments on improved product seeds that were to be discarded.";
 	}
-	sleep 5000;
+	sleep 1000;
 	npctalk "Thank you, [" + 'admin$ + "] for responding to the evaluation.";
-	sleep 5000;
+	sleep 1000;
 	if ('talk_bool)
 		npctalk "Automatic doll entering control mode to eradicate underground moles. Goodbye.";
 	else
@@ -523,7 +523,7 @@ OnTalk01:
 	progressbar_npc "3131FF",4;
 	disablenpc();
 	npctalk "CAROTA-88 shows a non-logical response to this evaluation. We will arrange for an inspection soon.", instance_npcname("#BMD000002");
-	sleep 3000;
+	sleep 1000;
 	if ('hidden_garden == 6)
 		unitwalk 'guide_id,147,278, instance_npcname("#BMD000002") + "::OnEvent05";
 	'npc_is_talking = false;
@@ -536,38 +536,38 @@ OnEvent00:
 
 OnEvent01:
 	.@doll$ = instance_npcname("#BMD000002");
-	sleep 5000;
+	sleep 1000;
 	emotion ET_FRET;
-	sleep 3000;
+	sleep 1000;
 	npctalk "Currently, a human administrator is present here. I recommend changing the language code to the official language of humans.", .@doll$;
-	sleep 3000;
+	sleep 1000;
 	emotion ET_FRET;
-	sleep 2000;
+	sleep 1000;
 	progressbar_npc "3131FF",2;
 	sleep 1000;
 	specialeffect EF_FLOWERCAST;
-	sleep 3000;
+	sleep 1000;
 	npctalk "Management automatic doll irreasonable!! Very!! Forced recall during pursuit of 5 moles!!! The Turnips is ruined!!!";
-	sleep 5000;
+	sleep 1000;
 	npctalk "Haven't you updated your language pack yet? Regular updates are not mandatory, but its essential.", .@doll$;
-	sleep 5000;
+	sleep 1000;
 	npctalk "CAROTA-88 data storage capacity. Language expansion pack burden. If not important, I will return to original work.";
-	sleep 5000;
+	sleep 1000;
 	npctalk "Please wait CAROTA-88. Here is a administrator who can perform the on-site inspection.", .@doll$;
-	sleep 5000;
+	sleep 1000;
 	npctalk "Hasn't it been a long time since CAROTA-88 was last evaluated?", .@doll$;
-	sleep 5000;
+	sleep 1000;
 	npctalk "CAROTA-88 More than a million hours since last research evaluation. Failed to save more logs.";
-	sleep 5000;
+	sleep 1000;
 	npctalk "CAROTA-88. Don't you want a project evaluation? If we miss this administrator now, we don't know when we can get another project evaluation.", .@doll$;
-	sleep 5000;
+	sleep 1000;
 	npctalk "Agree with automatic doll [" + 'guide_name$ + "]. I want an immediate project assessment.";
-	sleep 6000;
+	sleep 1000;
 	npctalk "Then, open your control panel to [" + 'admin$ + "]. CAROTA-88.", .@doll$;
 	progressbar_npc "3131FF",2;
 	sleep 1000;
 	specialeffect EF_FLOWERCAST;
-	sleep 2000;
+	sleep 1000;
 	npctalk "Automatic doll CAROTA-88 control panel opened. Waiting for input...";
 	'hidden_garden = 6;
 	specialeffect EF_MARKING_USE_CHANGEMONSTER;
@@ -654,7 +654,7 @@ OnEvent07:
 		enablenpc instance_npcname("#swat_" + .@i);
 		hideonnpc instance_npcname("#swat_" + .@i);
 	}
-	sleep 5000;
+	sleep 1000;
 	instance_warpall 'map_herbs$,206,288,instance_id();
 	sleep 1000;
 	removespecialeffect EF_MARKING_USE_CHANGEMONSTER, AREA, instance_npcname("#BMD000004");
@@ -690,11 +690,11 @@ OnTouch:
 		}
 		setpcblock PCBLOCK_NPC, true;
 		npctalk "How long has it been since I got the orders of Varmundt?!";
-		sleep2 5000;
+		sleep2 1000;
 		npctalk "Probably... about... More than a million hours have passed. Subsequent facility management was determined by self-made decision.";
-		sleep2 5000;
+		sleep2 1000;
 		npctalk "Pimp. When you are reporting to the administrator, you must report the exact recorded time.", instance_npcname("#BMD000003");
-		sleep2 3000;
+		sleep2 1000;
 		npctalk "Is that so? But Pimp can't afford to record more than a million hours. That's a waste of memory resources! Varmundt is angry!";
 		sleep2 1000;
 		setpcblock PCBLOCK_NPC, false;
@@ -702,7 +702,7 @@ OnTouch:
 		setpcblock PCBLOCK_NPC, true;
 		sleep2 1000;
 		npctalk "Plants currently growing. Pumpkin has showed significant results in controlling sodium in human blood vessels.";
-		sleep2 5000;
+		sleep2 1000;
 		npctalk "Pumpkin produced here is high in sugar and sufficient calories. It's very delicious according to humans. Nearby dogs and cats also eat it...";
 		sleep2 1000;
 		setpcblock PCBLOCK_NPC, false;
@@ -710,7 +710,7 @@ OnTouch:
 		setpcblock PCBLOCK_NPC, true;
 		sleep2 1000;
 		npctalk "I judged it to be a valued highly for various organisms. It's been continously produced, processed, and stored.";
-		sleep2 5000;
+		sleep2 1000;
 		npctalk "The current annual output is about three tons. For long-term preservation, it's being stored in warehouses in 2~6 form of dried food .";
 		sleep2 1000;
 		setpcblock PCBLOCK_NPC, false;
@@ -724,7 +724,7 @@ OnTouch:
 		setpcblock PCBLOCK_NPC, true;
 		sleep2 1000;
 		npctalk "I asked Varmundt what to do several times, but there was no answer.";
-		sleep2 5000;
+		sleep2 1000;
 		npctalk "As there was no orders from the master, Pimp started looking for a place where research could be useful.";
 		sleep2 1000;
 		setpcblock PCBLOCK_NPC, false;
@@ -732,9 +732,9 @@ OnTouch:
 		setpcblock PCBLOCK_NPC, true;
 		sleep2 1000;
 		npctalk "The maintenance of this mansion costs money. It costs a lot!";
-		sleep2 3000;
+		sleep2 1000;
 		npctalk "The dried pumpkins in the warehouses are preserve food for the adventurers and are sold around the continent. Sales becomes money source.";
-		sleep2 5000;
+		sleep2 1000;
 		npctalk "Money can protect the mansion. Pimp will protect this place! That's I'm working hard to raise pumpkins!";
 		sleep2 1000;
 		setpcblock PCBLOCK_NPC, false;
@@ -742,15 +742,15 @@ OnTouch:
 		setpcblock PCBLOCK_NPC, true;
 		sleep2 1000;
 		npctalk "I made a decision? I've never had such inference.";
-		sleep2 3000;
+		sleep2 1000;
 		npctalk "......";
-		sleep2 2000;
+		sleep2 1000;
 		npctalk "[Calculating]";
 		progressbar_npc "3131FF",3;
 		'hidden_garden = 10;
 		setpcblock PCBLOCK_NPC, false;
 		npctalk "You confused me! Pimp shall perform the only given task. Don't talk to me anymore administrator.";
-		sleep 5000;
+		sleep 1000;
 		npctalk "Are you done talking? The conversation here is recorded as evaluation data. Let's head to the next section.", instance_npcname("#BMD000003");
 		unitwalk 'guide_id,254,261, instance_npcname("#BMD000003") + "::OnEvent04";
 		end;
@@ -769,7 +769,7 @@ OnWalk:
 			case 3: .@x = 240; .@y = 268; 'walk = 0; break;
 		}
 		npcwalkto .@x,.@y;
-		sleep 1500;
+		sleep 1000;
 	}
 	end;
 
@@ -833,18 +833,18 @@ OnTouch:
 				setpcblock PCBLOCK_NPC, true;
 				sleep2 1000;
 				npctalk "The flower garden is the border between the security area and the general area.";
-				sleep2 5000;
+				sleep2 1000;
 				npctalk "It is classified as a security zone to those who have enough authority.";
-				sleep2 3000;
+				sleep2 1000;
 				.@talk = 1;
 				break;
 			case 2:
 				setpcblock PCBLOCK_NPC, true;
 				sleep2 1000;
 				npctalk "Please understand that this is a buffer zone designed to protect areas that should not be seen by outsiders.";
-				sleep2 5000;
+				sleep2 1000;
 				npctalk "Access to any additional information beyond this is prohibited at my authority level.";
-				sleep2 3000;
+				sleep2 1000;
 				.@talk2 = 1;
 				break;
 			case 3:
@@ -853,9 +853,9 @@ OnTouch:
 				npctalk "--- Operating ---";
 				progressbar_npc "3131FF",3;
 				npctalk "[Warning] This information is close to the limit of the current authority.";
-				sleep2 5000;
+				sleep2 1000;
 				npctalk "Security zones is very close to the current coordinates.";
-				sleep2 3000;
+				sleep2 1000;
 				.@teleport$ = "^FF11FFGuide me to the security area.^000000";
 				break;
 			case 4:
@@ -863,24 +863,24 @@ OnTouch:
 				npctalk "--- Operating ---";
 				progressbar_npc "3131FF",3;
 				npctalk "[Warning] This is a request is exceeds my authority level.";
-				sleep2 5000;
+				sleep2 1000;
 				npctalk "Your request has been rejected due to a low authority level for the administrator [" + 'admin$ + "].";
 				setpcblock PCBLOCK_NPC, false;
-				sleep 5000;
+				sleep 1000;
 				mapannounce 'map_herbs$, "??? : The automatic dolls' response to you is very fresh. Strange visitor.", bc_map, 0xF6D6B6;
-				sleep 5000;
+				sleep 1000;
 				mapannounce 'map_herbs$, "??? : Will you escort him to the secure area? BMD000001. No, I mean automatic doll, [" + 'guide_name$ + "].", bc_map, 0xF6D6B6;
-				sleep 5000;
+				sleep 1000;
 				npctalk "The biological wavelength of this voice...";
-				sleep 3000;
+				sleep 1000;
 				mapannounce 'map_herbs$, "It's convenient that I don't have to tell me who I am. Anyway, are you sure you're going to be able to tell me what happened earlier?", bc_map, 0xF6D6B6;
-				sleep 5000;
+				sleep 1000;
 				npctalk "You mean the security area? But it's not possible with my authority level.";
-				sleep 3000;
+				sleep 1000;
 				mapannounce 'map_herbs$, "That's already been taken care of. [" + 'guide_name$ + "], Guide the visitor to this place.", bc_map, 0xF6D6B6;
-				sleep 5000;
+				sleep 1000;
 				npctalk "This is the first time since I was created. That an exception has occurred, we will modify some of the procedures in regards to that.";
-				sleep 5000;
+				sleep 1000;
 				if ('hidden_garden == 12) {
 					'hidden_garden = 13;
 					npctalk "I'll take you to the security area.";
@@ -897,9 +897,9 @@ OnEvent:
 	npctalk "[Searching the coordinates of the automatic doll in the area.]";
 	progressbar_npc "3131FF",2;
 	mapannounce 'map_herbs$, "??? : Unauthorized outsider intrusion detection. Code Category 063. Entering the identification process.", bc_map, 0xFF44FF;
-	sleep 5000;
+	sleep 1000;
 	npctalk "It looks like the automatic dolls are back. I don't think it's friendly to the administrator.";
-	sleep 5000;
+	sleep 1000;
 	specialeffect EF_FIREPILLARON2, AREA, instance_npcname("#swat_1");
 	sleep 500;
 	specialeffect EF_FIREPILLARON2, AREA, instance_npcname("#swat_2");
@@ -911,15 +911,15 @@ OnEvent:
 	setnpcdisplay instance_npcname("#swat_1"),1739;	// G_ALICEL
 	setnpcdisplay instance_npcname("#swat_2"),1739;
 	setnpcdisplay instance_npcname("#swat_3"),1739;
-	sleep 2000;
+	sleep 1000;
 	npctalk "Facial biometrics. Comparing to list of administrators registered in database.", instance_npcname("#swat_3");
-	sleep 2000;
+	sleep 1000;
 	npctalk "---- No match ----", instance_npcname("#swat_1");
 	sleep 500;
 	npctalk "---- No match ----", instance_npcname("#swat_2");
 	sleep 500;
 	npctalk "---- No match ----", instance_npcname("#swat_3");
-	sleep 2000;
+	sleep 1000;
 	npctalk "Suppress unauthorized outsider.", instance_npcname("#swat_1");
 	sleep 500;
 	npctalk "---- Combat Mode ----", instance_npcname("#swat_2");
@@ -945,7 +945,7 @@ OnEvent2:
 		enablenpc instance_npcname("#eff_npc" + .@i);
 		hideonnpc instance_npcname("#eff_npc" + .@i);
 	}
-	sleep 5000;
+	sleep 1000;
 	instance_warpall 'map_herbs$,85,106,instance_id();
 	sleep 1000;
 	removespecialeffect EF_MARKING_USE_CHANGEMONSTER, AREA, instance_npcname("#BMD000005");
@@ -976,7 +976,7 @@ OnEvent05:
 	end;
 
 OnEvent06:
-	sleep 5000;
+	sleep 1000;
 	npctalk "That's weird. The automatic dolls here would be dormant when nothing special happening, but they're not visible.";
 	unitwalk 'guide_id,196,265, instance_npcname("#BMD000004") + "::OnEvent07";
 	end;
@@ -1011,9 +1011,9 @@ OnTouch:
 OnGuardKill:
 	'guard_count = 'guard_count + 1;
 	if ('guard_count == 3) {
-		sleep2 2000;
+		sleep2 1000;
 		npctalk "Are you not a human but a combat unit, [" + strcharinfo(0) + "]?";
-		sleep2 3000;
+		sleep2 1000;
 		npctalk "[" + strcharinfo(0) + "], You're strong. It takes a lot of combat power to subdue three class 4 combat-type automatic dolls at the same time.";
 		'hidden_garden = 12;
 		specialeffect EF_MARKING_USE_CHANGEMONSTER;
@@ -1075,13 +1075,13 @@ OnEvent02:
 
 OnEvent03:
 	npctalk "Sigma. I have brought [" + 'admin$ + "].";
-	sleep 3000;
+	sleep 1000;
 	npctalk "Well done. You may go now.", instance_npcname("#sigma");
-	sleep 3000;
+	sleep 1000;
 	npctalk "I'm not finished with my guide. Is it okay if I return like this?";
-	sleep 3000;
+	sleep 1000;
 	npctalk "Oh, I'll record the subsequent information for the next guide. You can go back at ease.", instance_npcname("#sigma");
-	sleep 3000;
+	sleep 1000;
 	npctalk "Okay. I will follow the instructions.";
 	unitwalk 'guide_id,85,72, instance_npcname("#BMD000005") + "::OnEvent04";
 	end;
@@ -1118,9 +1118,9 @@ OnTouch:
 		setpcblock PCBLOCK_NPC, true;
 		sleep2 1000;
 		npctalk "Of course. You know the master Varmundt well. [" + strcharinfo(0) + "].";
-		sleep2 5000;
+		sleep2 1000;
 		npctalk "Unfortunately, I'm not Varmundt. This appearance is something that I created because there is something that I want to check on you.";
-		sleep2 3000;
+		sleep2 1000;
 		setpcblock PCBLOCK_NPC, false;
 		select("Then, who are you?");
 		setpcblock PCBLOCK_NPC, false;
@@ -1131,7 +1131,7 @@ OnTouch:
 		removespecialeffect EF_MARKING_USE_CHANGEMONSTER;
 		npctalk "Can you answer me? Have you met Varmundt before?";
 		setpcblock PCBLOCK_NPC, true;
-		sleep2 3000;
+		sleep2 1000;
 		setpcblock PCBLOCK_NPC, false;
 		switch( select( "I don't really remember.", "We've met at Glastheim.", "I met him trying to save the world." ) ) {
 		case 1:
@@ -1151,24 +1151,24 @@ OnTouch:
 		removespecialeffect EF_MARKING_USE_CHANGEMONSTER;
 		npctalk "Can you go tell them that Varmundt is alive?";
 		setpcblock PCBLOCK_NPC, true;
-		sleep2 2000;
+		sleep2 1000;
 		setpcblock PCBLOCK_NPC, false;
 		select("What difference would it make?");
 		setpcblock PCBLOCK_NPC, true;
 		sleep2 1000;
 		npctalk "They're trying to close this research area. I'm still against it, but the resource is starting to hit the limit.";
-		sleep2 5000;
+		sleep2 1000;
 		npctalk "But once they find out Varmundt is alive, they won't be able to shut this place down.";
-		sleep2 5000;
+		sleep2 1000;
 		specialeffect EF_WHITEBODY;
 		specialeffect EF_MOONSTAR;
 		npctalk "This all happened because Kappa and Lambda were on different task.";
-		sleep2 2000;
+		sleep2 1000;
 		setpcblock PCBLOCK_NPC, false;
 		select("What's the difference between your tasks?");
 		if ('hidden_garden == 18) {
 			'hidden_garden = 19;
-			sleep2 2000;
+			sleep2 1000;
 			npctalk "It will be better to show you that personally.";
 			unitwalk 'guide_id,83,113, instance_npcname("#sigma") + "::OnEvent08";
 		}
@@ -1197,41 +1197,41 @@ OnTouch:
 			specialeffect EF_WHITEBODY;
 			specialeffect EF_MOONSTAR;
 			setpcblock PCBLOCK_NPC, true;
-			sleep2 2000;
+			sleep2 1000;
 			setpcblock PCBLOCK_NPC, false;
 			switch( select( "Why does the flower garden exist?", .@menu$[0], .@menu$[1], .@menu$[2] ) ) {
 			case 1:
 				setpcblock PCBLOCK_NPC, true;
 				npctalk "This security area was not supposed to be revealed to the world. So I planned a number of ways to cover it up.";
-				sleep2 5000;
+				sleep2 1000;
 				npctalk "In order to hide and conceal this place, we decided to disguise it as an extremely normal and peaceful place.";
-				sleep2 5000;
+				sleep2 1000;
 				npctalk "So it became the garden around the security area. Doesn't it look like a normal garden?";
-				sleep2 3000;
+				sleep2 1000;
 				.@menu$[0] = "Why are the automatic dolls farming?";
 				break;
 			case 2:
 				setpcblock PCBLOCK_NPC, true;
 				npctalk "I've never asked them to farm. We just threw things away and watched how AI reacted.";
-				sleep2 5000;
+				sleep2 1000;
 				npctalk "Only the ones who started farming stood out in the garden.";
-				sleep2 5000;
+				sleep2 1000;
 				npctalk "I wish I could show Varmundt the process of self-learning automatic doll that can be left unattended without instructions...";
-				sleep2 3000;
+				sleep2 1000;
 				.@menu$[1] = "What's your relationship with Alpha?";
 				break;
 			case 3:
 				setpcblock PCBLOCK_NPC, true;
 				npctalk "She has evolved from an early version of the Varmundt's management doll.";
-				sleep2 5000;
+				sleep2 1000;
 				npctalk "Master Varmundt valued her emotional aesthetic so highly that he gave her the task to manage the mansion, not the research facility here.";
-				sleep2 5000;
+				sleep2 1000;
 				npctalk "With the aesthetic sensibility that we don't have, she upgraded the appearance of every automatic doll that managed the mansion to look like herself.";
-				sleep2 5000;
+				sleep2 1000;
 				npctalk "However, she recognizes that this security area was created according to Varmundt's personal taste.";
-				sleep2 5000;
+				sleep2 1000;
 				npctalk "So she doesn't approach this place. Maybe they're taking it as some sort of sanctuary...";
-				sleep2 3000;
+				sleep2 1000;
 				.@menu$[2] = "How were you born?";
 				break;
 			case 4:
@@ -1262,7 +1262,7 @@ OnTouch:
 			close2;
 			setquest 12497;
 			completequest 12497;
-			getitem 1000103,20;
+			getitem 1000103,50;
 			specialeffect EF_MARKING_USE_CHANGEMONSTER;
 			end;
 		}
@@ -1284,14 +1284,14 @@ OnTalk01:
 	'npc_is_talking = true;
 	sleep 1000;
 	npctalk "I am one of the holographic device type AI that is designed to learn Varmundt's personality.";
-	sleep 5000;
+	sleep 1000;
 	npctalk "Please understand if my tone is not like a machine. Varmundt was the only one who talked to me...";
-	sleep 6000;
+	sleep 1000;
 	setnpcdisplay instance_npcname("#sigma"),20621;	// MD_REDPEPPER_H
 	npctalk "Now I'm going back to my original self. It's easier to maintain the original form.";
-	sleep 4000;
+	sleep 1000;
 	npctalk "Oh. This is an early form that was called Red Pepper by Varmundt. I'm optimized for auxiliary work.";
-	sleep 2000;
+	sleep 1000;
 	if ('hidden_garden == 15) {
 		'hidden_garden = 16;
 		'guide_id = getnpcid(0, instance_npcname("#sigma"));
@@ -1303,17 +1303,17 @@ OnTalk01:
 
 OnTalk02:
 	'npc_is_talking = true;
-	sleep 3000;
+	sleep 1000;
 	npctalk "Anyway, it's important that the automatic dolls here reacted to you.";
-	sleep 6000;
+	sleep 1000;
 	specialeffect EF_WHITEBODY;
 	specialeffect EF_MOONSTAR;
 	npctalk "Now, let's get down to business. I need your help.";
-	sleep 6000;
+	sleep 1000;
 	npctalk "There are two more red peppers in this security area besides me, Kappa and Lambda.";
-	sleep 6000;
+	sleep 1000;
 	npctalk "In the absence of master Varmundt for a long time, this security area is subject to the cancellation and closure of research records under the agreement of three Red Peppers.";
-	sleep 2000;
+	sleep 1000;
 	if ('hidden_garden == 17)
 		'hidden_garden = 18;
 	specialeffect EF_MARKING_USE_CHANGEMONSTER;
@@ -1323,13 +1323,13 @@ OnTalk02:
 OnTalk03:
 	'npc_is_talking = true;
 	npctalk "Oh, it's true that Master Varmundt made the prototypes of the automatons. But they were just like me, with simple functions.";
-	sleep 3000;
+	sleep 1000;
 	npctalk "We overlaid our memories and remodeled them into humanoids in Master Varmundt's image";
-	sleep 2000;
+	sleep 1000;
 	npctalk "Occasionally some of them were remodeled into peculiar shapes for functional testing purposes.";
-	sleep 2000;
+	sleep 1000;
 	npctalk "Didn't the automatons from the garden ask you to evaluate the mission?";
-	sleep 1500;
+	sleep 1000;
 	specialeffect EF_MARKING_USE_CHANGEMONSTER;
 	if ('hidden_garden == 20)
 		'hidden_garden = 21;
@@ -1339,17 +1339,17 @@ OnTalk03:
 OnTalk04:
 	'npc_is_talking = true;
 	npctalk "So it was.";
-	sleep 3000;
+	sleep 1000;
 	npctalk "In the first place, most of the automatons in this security area have never seen Master Varmundt before.";
-	sleep 2000;
+	sleep 1000;
 	npctalk "The memories they have of Master Varmundt are fabricated from my memories of my time as his assistant.";
-	sleep 3000;
+	sleep 1000;
 	npctalk "An entity heavily influenced by Kappa's intellect, who focuses on managing the mansion's running funds, is very calculating and obsessed with making money.";
 	sleep 2500;
 	npctalk "Children affected by Lambda's memories tend to be warlike towards outsiders. They trust no one but Master Varmundt.";
 	sleep 2500;
 	npctalk "This is how they tend to be, so I'd like you to refer to them before you meet them.";
-	sleep 1500;
+	sleep 1000;
 	specialeffect EF_MARKING_USE_CHANGEMONSTER;
 	if ('hidden_garden == 21)
 		'hidden_garden = 22;
@@ -1360,11 +1360,11 @@ OnEvent:
 	specialeffect EF_WHITEBODY;
 	specialeffect EF_MOONSTAR;
 	mapannounce 'map_herbs$, "??? : You're a good talker, Sigma. Do you want to be initialized right now?", bc_map, 0xFF4444;
-	sleep 5000;
+	sleep 1000;
 	npctalk "Oh... she must have been observing you too.";
-	sleep 5000;
+	sleep 1000;
 	mapannounce 'map_herbs$, "??? : It's not enough to have outsiders in the garden, but to even leak information. I can't overlook it.", bc_map, 0xFF4444;
-	sleep 5000;
+	sleep 1000;
 	mapannounce 'map_herbs$, "??? : With the authority of the Red Pepper, we will warp the whole research area. I'll take responsibility after that.", bc_map, 0xFF4444;
 	'hidden_garden = 24;
 	specialeffect EF_MARKING_USE_CHANGEMONSTER;
@@ -1387,15 +1387,15 @@ OnEvent03:
 OnEvent04:
 	specialeffect EF_WHITEBODY;
 	specialeffect EF_MOONSTAR;
-	sleep 1500;
+	sleep 1000;
 	donpcevent instance_npcname("#sigma") + "::OnEffect";
 	sleep 500;
 	npctalk "Let's touch this for a moment and talk. I need to be fussed a little...";
-	sleep 5000;
+	sleep 1000;
 	npctalk "You're face is new to me. Then I realized, maybe this person met with Varmundt in some place before.";
 	sleep 7000;
 	npctalk "It's not just once or twice, but if you've met Varmundt over and over for quite some time, it's understandable that the automatic dolls gets mistaken.";
-	sleep 6000;
+	sleep 1000;
 	npctalk "So I kept watching you.";
 	unitwalk 'guide_id,65,98, instance_npcname("#sigma") + "::OnEvent05";
 	end;
@@ -1410,7 +1410,7 @@ OnEvent06:
 	end;
 
 OnEvent07:
-	sleep 5000;
+	sleep 1000;
 	npctalk "It seemed like you knew him for long time already, at least in my eyes.";
 	'hidden_garden = 17;
 	specialeffect EF_MARKING_USE_CHANGEMONSTER;
@@ -1420,64 +1420,64 @@ OnEvent08:
 	specialeffect EF_WHITEBODY;
 	specialeffect EF_MOONSTAR;
 	npctalk "We were originally holographic device-based research support AI. I can't even exert any physical force.";
-	sleep 5000;
+	sleep 1000;
 	npctalk "We've been working on organizing and recording the process alongside with Varmundt's research.";
-	sleep 5000;
+	sleep 1000;
 	npctalk "As data accumulates up over time, the simple electronic signal developed into what you humans often call intelligence.";
-	sleep 5000;
+	sleep 1000;
 	npctalk "At some point we began to understand his research and we were able to predict what decisions he would make.";
-	sleep 5000;
+	sleep 1000;
 	npctalk "We felt something about the fact that improving our skills was helpful to him. It must have been a feeling of joy.";
-	sleep 5000;
+	sleep 1000;
 	npctalk "And one day he gave us orders.";
-	sleep 3000;
+	sleep 1000;
 	hideoffnpc instance_npcname("#omega");
 	hideoffnpc instance_npcname("#kappa");
 	hideoffnpc instance_npcname("#barmund");
 	specialeffect EF_WHITEBODY, AREA, instance_npcname("#barmund");
 	sleep 1000;
 	npctalk "[Lambda, starting today, make sure you manage all security rights for the results of this secret lab.]", instance_npcname("#barmund");
-	sleep 4000;
+	sleep 1000;
 	npctalk "[Affirmative.]", instance_npcname("#omega");
-	sleep 4000;
+	sleep 1000;
 	npctalk "[Kappa, make sure you get sufficient support on your research. As long as finances are not at risk.]", instance_npcname("#barmund");
-	sleep 4000;
+	sleep 1000;
 	npctalk "[I'll perform the instruction.]", instance_npcname("#kappa");
-	sleep 4000;
+	sleep 1000;
 	npctalk "[And Sigma, starting today, you're going to continue my research on artificial intelligence.]", instance_npcname("#barmund");
-	sleep 4000;
+	sleep 1000;
 	npctalk "[I don't have that ability.]";
-	sleep 4000;
+	sleep 1000;
 	specialeffect EF_WHITEBODY;
 	specialeffect EF_MOONSTAR;
 	specialeffect EF_WHITEBODY, AREA, instance_npcname("#barmund");
 	npctalk "[You'll have to do it, Sigma. I have to go on a long journey from now on.]", instance_npcname("#barmund");
-	sleep 4000;
+	sleep 1000;
 	npctalk "[Are you coming back?]";
-	sleep 4000;
+	sleep 1000;
 	npctalk "[I don't know.]", instance_npcname("#barmund");
-	sleep 4000;
+	sleep 1000;
 	npctalk "[I am a simple research assistant machine. Why are you entrusting me with such a task.]";
-	sleep 4000;
+	sleep 1000;
 	npctalk "[This is because among the three of you, you were the fastest to resemble me.]", instance_npcname("#barmund");
-	sleep 4000;
+	sleep 1000;
 	npctalk "[My calculations shows that the probability of success is less than 2%. This is an impossible mission.]";
-	sleep 4000;
+	sleep 1000;
 	specialeffect EF_WHITEBODY;
 	specialeffect EF_MOONSTAR;
 	specialeffect EF_WHITEBODY, AREA, instance_npcname("#barmund");
 	npctalk "[Well, you don't know that until you try, right?]", instance_npcname("#barmund");
-	sleep 4000;
+	sleep 1000;
 	npctalk "[I'm looking forward to your research while I'm away. I wish I could see again you someday.]", instance_npcname("#barmund");
-	sleep 4000;
+	sleep 1000;
 	npctalk "[Kappa and Lambda, assist Sigma on the research.]", instance_npcname("#barmund");
-	sleep 4000;
+	sleep 1000;
 	npctalk "[Affirmative.]", instance_npcname("#omega");
 	npctalk "[I'll perform the instruction.]", instance_npcname("#kappa");
 	specialeffect EF_BIG_PORTAL2, AREA, instance_npcname("#barmund");
 	sleep 1000;
 	disablenpc instance_npcname("#barmund");
-	sleep 3000;
+	sleep 1000;
 	npctalk "Since then, we've started using the facilities here to make automatic dolls that can learn human traits.";
 	unitwalk 'guide_id,90,113, instance_npcname("#sigma") + "::OnEvent09";
 	end;
@@ -1592,21 +1592,21 @@ OnEvent01:
 	end;
 OnStart:
 	npctalk "[" + 'admin$ + "]! Sigma asked me to deliver a message.";
-	sleep 3000;
+	sleep 1000;
 	npctalk "The current situation isn't good, I think it's better for you to go back...";
-	sleep 3000;
+	sleep 1000;
 	mapannounce 'map_herbs$, "Lambda : It's up to me to decide whether those outsiders go back or not.", bc_map, 0xFFFF44;
-	sleep 3000;
+	sleep 1000;
 	mapannounce 'map_herbs$, "Lambda : You've created a fatal threat to the security in this area. I will dispose of it in accordance with the automatic doll management policy.", bc_map, 0xFFFF44;
 	specialeffect EF_THUNDERSTORM2;
 	sleep 1000;
 	specialeffect EF_M03;
 	disablenpc();
-	sleep 2000;
+	sleep 1000;
 	mapannounce 'map_herbs$, "Lambda : Just in time, I want to get a confirmation from you.", bc_map, 0xFFFF44;
-	sleep 5000;
+	sleep 1000;
 	mapannounce 'map_herbs$, "Lambda : It's been a while since an outsider came into this security area, so I'd better say what the other automatic dolls told me.", bc_map, 0xFFFF44;
-	sleep 5000;
+	sleep 1000;
 	mapannounce 'map_herbs$, "Lambda : We need to use you to 'evaluate' our security system.", bc_map, 0xFFFF44;
 	donpcevent instance_npcname("#172_sec_mob") + "::OnSummon";
 	end;
@@ -1927,43 +1927,43 @@ OnEvent:
 	switch( 'room ) {
 	case 0:
 		mapannounce 'map_herbs$, "Lambda : I know for sure that our security is not very good.", bc_map, 0xFFFF44;
-		sleep 3000;
+		sleep 1000;
 		mapannounce 'map_herbs$, "Lambda : [" + 'admin$ + "], I want you to [check] the next area as well.", bc_map, 0xFFFF44;
 		break;
 	case 1:
 		mapannounce 'map_herbs$, "Lambda : Your movements helped me a lot. [" + 'admin$ + "]", bc_map, 0xFFFF44;
-		sleep 3000;
+		sleep 1000;
 		mapannounce 'map_herbs$, "Lambda : Then, let us move on.", bc_map, 0xFFFF44;
 		break;
 	case 2:
 		mapannounce 'map_herbs$, "Lambda : Sigma might be correct.", bc_map, 0xFFFF44;
-		sleep 3000;
+		sleep 1000;
 		mapannounce 'map_herbs$, "Lambda : [" + 'admin$ + "], and your party may have really met Varmundt before.", bc_map, 0xFFFF44;
-		sleep 3000;
+		sleep 1000;
 		mapannounce 'map_herbs$, "Lambda : But. Before I meet you, I need to test you one last time.", bc_map, 0xFFFF44;
 		break;
 	case 3:
 		'room = 4;
 		if ('mode == 0) {
 			mapannounce 'map_herbs$, "Kappa : Well, you're just as strong as Lambda said. [" + 'admin$ + "]", bc_map, 0xFF55FF;
-			sleep 3000;
+			sleep 1000;
 			mapannounce 'map_herbs$, "Kappa : But I don't think you're not strong enough to meet Lambda yet, so I'll show you to my room.", bc_map, 0xFF55FF;
 			enablenpc instance_npcname("#kappa_1");
 		}
 		else {
 			mapannounce 'map_herbs$, "Lambda : Great. If you're this strong, you're worth talking to.", bc_map, 0xFFFF44;
-			sleep 3000;
+			sleep 1000;
 			mapannounce 'map_herbs$, "Lambda : I'll take you to my room.", bc_map, 0xFFFF44;
 			enablenpc instance_npcname("#ramda_1");
 		}
-		sleep 3000;
+		sleep 1000;
 		mapannounce 'map_herbs$, "The warp connecting the flower garden and the security area has activated.", bc_map, 0x33FF33;
 		enablenpc instance_npcname("#wp_4");
 		end;
 	default:
 		end;
 	}
-	sleep 3000;
+	sleep 1000;
 	mapannounce 'map_herbs$, "The warp connecting the flower garden has activated.", bc_map, 0x33FF33;
 	'room += 1;
 	enablenpc instance_npcname("#wp_" + 'room);
@@ -2025,11 +2025,11 @@ OnTouch:
 		end;
 	'room = 5;
 	npctalk "Your party ruined 30% of the garden, it's going to cost a lot to repair it.";
-	sleep 5000;
+	sleep 1000;
 	npctalk "We'd like to believe that Master Varmundt is still alive, but that's not possible with the human life span.";
-	sleep 5000;
+	sleep 1000;
 	npctalk "Nevertheless, you have to defeat me and obtain administrative authority, if you want to prevent the closure of the research area.";
-	sleep 5000;
+	sleep 1000;
 	disablenpc();
 	donpcevent instance_npcname("#172_sec_boss") + "::OnSummon";
 	end;
@@ -2043,11 +2043,11 @@ OnTouch:
 		end;
 	'room = 5;
 	npctalk "We clearly checked which part of the flower garden should be improved. Now what's left is to negotiate.";
-	sleep 5000;
+	sleep 1000;
 	npctalk "We'd like to believe that Master Varmundt is still alive, but that's not possible with the human life span.";
-	sleep 5000;
+	sleep 1000;
 	npctalk "Nevertheless, you have to defeat me and obtain administrative authority, if you want to prevent the closure of the research area.";
-	sleep 5000;
+	sleep 1000;
 	disablenpc();
 	donpcevent instance_npcname("#172_sec_boss") + "::OnSummonHard";
 	end;
@@ -2079,12 +2079,14 @@ OnTouch:	// unknown effect
 		mes "I brought some old items from the past. It might help you, so take it.";
 		close2;
 		erasequest .@qid;
-		getitem 1000103,6;
+		getitem 9900009,rand(100,200);
+		getitem 102560,rand(1,5);
+		getitem 1000103,rand(10,30);
 		if (.@qid == 12500) {
 			if (rand(1,100) < 95)
-				getitem 1000104,rand(1,5);
+				getitem 1000104,rand(5,20);
 			else
-				getitem 100161,1;
+				getitem 100161,5;
 		}
 		end;
 	}

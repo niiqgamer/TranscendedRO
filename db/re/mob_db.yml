@@ -104160,7 +104160,7 @@ Body:
     Hp: 48530254
     BaseExp: 9706050
     JobExp: 6794235
-#   MvpExp:
+    MvpExp: 9706050
     Attack: 5146
     Attack2: 2356
     Defense: 791
@@ -104272,7 +104272,7 @@ Body:
     Hp: 74623473
     BaseExp: 14924695
     JobExp: 10447286
-#   MvpExp:
+    MvpExp: 14924695
     Attack: 6069
     Attack2: 1469
     Defense: 285
@@ -104331,7 +104331,7 @@ Body:
     Hp: 74476822
     BaseExp: 14895364
     JobExp: 10426755
-#   MvpExp:
+    MvpExp: 14895364
     Attack: 6693
     Attack2: 3841
     Defense: 503
@@ -105381,9 +105381,9 @@ Body:
     Drops:
       - Item: Lab_Staff_Record
         Rate: 500
-      - Item: Silent_Energy_Particle
+      - Item: Particles_Of_Energy1
         Rate: 1000
-      - Item: Weak_Energy_Particle
+      - Item: Particles_Of_Energy2
         Rate: 250
       - Item: Goast_Chill
         Rate: 1
@@ -105423,7 +105423,7 @@ Body:
         Rate: 500
       - Item: Particles_Of_Energy
         Rate: 1000
-      - Item: Silent_Energy_Particle
+      - Item: Particles_Of_Energy1
         Rate: 2500
       - Item: Goast_Chill
         Rate: 1
@@ -105461,9 +105461,9 @@ Body:
     Drops:
       - Item: Lab_Staff_Record
         Rate: 500
-      - Item: Weak_Energy_Particle
+      - Item: Particles_Of_Energy2
         Rate: 250
-      - Item: Silent_Energy_Particle
+      - Item: Particles_Of_Energy1
         Rate: 1000
       - Item: Goast_Chill
         Rate: 1
@@ -106764,7 +106764,7 @@ Body:
     Hp: 37847096
     BaseExp: 2703364
     JobExp: 1892355
-#   MvpExp:
+    MvpExp: 2703364
     Attack: 7264
     Attack2: 3782
     Defense: 345
@@ -114093,7 +114093,7 @@ Body:
     Hp: 275042400
     BaseExp: 7599887
     JobExp: 5319921
-#   MvpExp:
+    MvpExp: 7599887
     Attack: 14541
     Attack2: 2756
     Defense: 654
@@ -114403,7 +114403,7 @@ Body:
     Hp: 134179630
     BaseExp: 6578140
     JobExp: 4604698
-#   MvpExp:
+    MvpExp: 6578140
     Attack: 12871
     Attack2: 2187
     Defense: 540
@@ -124505,11 +124505,16 @@ Body:
 #    AegisName: SEASON_MOB_158
   - Id: 21853
     AegisName: EP19_MD_BOX1
-    Name: Suspicious Storage Stone
-#    Level: 230
-    Level: 1
-    Attack: 0
-    Attack2: 0
+    Name: Suspicious Keeper Stone
+    Hp: 1
+    BaseExp: 0
+    JobExp: 0
+    Attack: 220
+    Attack2: 220
+    Defense: 0
+    MagicDefense: 0
+    Resistance: 0
+    MagicResistance: 0
     Str: 0
     Agi: 0
     Vit: 0
@@ -124517,13 +124522,41 @@ Body:
     Dex: 0
     Luk: 0
     AttackRange: 1
-    SkillRange: 0
-    ChaseRange: 0
+    SkillRange: 1
+    ChaseRange: 1
     Size: Small
     Race: Formless
     Element: Neutral
     ElementLevel: 1
-#    Class: Boss
+    WalkSpeed: 1000
+    AttackDelay: 1001
+    AttackMotion: 1
+    ClientAttackMotion: 768
+    DamageMotion: 1
+    Class: Boss
+    Ai: 06
+    Modes:
+      Detector: true
+    Drops:
+      - Item: EP19_D_P_Stone
+        Rate: 500
+      - Item: EP19_S_F_1_Extract
+        Rate: 2000
+      - Item: EP19_S_F_2_Extract
+        Rate: 3000
+      - Item: EP19_S_F_3_Extract
+        Rate: 1500
+      - Item: EP19_Gla_Extract
+        Rate: 1200
+      - Item: Snow_F_Ore
+        Rate: 2000
+      - Item: Snow_F_Stone1
+        Rate: 1500
+      - Item: Snow_F_Stone2
+        Rate: 1000
+      - Item: Snow_F_Stone3
+        Rate: 800
+        StealProtected: true
   - Id: 21854
     AegisName: EP19_MD_BOX2
     Name: Suspicious Storage Stone
@@ -127414,10 +127447,111 @@ Body:
 #    AegisName: G_EP20_JORGAN_HEALER
 #  - Id: 22003
 #    AegisName: G_EP20_JORGAN_GUARDIAN
-#  - Id: 22004
-#    AegisName: EP20_MD_BOX1
-#  - Id: 22005
-#    AegisName: EP20_MD_BOX2
+  - Id: 22004
+    AegisName: EP20_MD_BOX1
+    Name: Lasgand's Keeper Stone
+    Level: 220
+    Hp: 1
+    BaseExp: 0
+    JobExp: 0
+    Attack: 220
+    Attack2: 220
+    Defense: 0
+    MagicDefense: 0
+    Resistance: 0
+    MagicResistance: 0
+    Str: 0
+    Agi: 0
+    Vit: 0
+    Int: 0
+    Dex: 0
+    Luk: 0
+    AttackRange: 1
+    SkillRange: 1
+    ChaseRange: 1
+    Size: Small
+    Race: Formless
+    Element: Neutral
+    ElementLevel: 1
+    WalkSpeed: 1000
+    AttackDelay: 1001
+    AttackMotion: 1
+    ClientAttackMotion: 768
+    DamageMotion: 1
+    Class: Boss
+    Ai: 06
+    Modes:
+      Detector: true
+    Drops:
+      - Item: EP19_D_P_Ore
+        Rate: 2000
+      - Item: EP19_N_P_Ore
+        Rate: 2000
+      - Item: EP20_D_P_Ore
+        Rate: 3000
+      - Item: EP19_D_P_Crystal
+        Rate: 1500
+      - Item: EP19_N_P_Crystal
+        Rate: 1500
+      - Item: EP20_D_P_Crystal
+        Rate: 2000
+      - Item: EP20_D_P_Extract
+        Rate: 1500
+      - Item: EP20_D_Scale
+        Rate: 100
+        StealProtected: true
+  - Id: 22005
+    AegisName: EP20_MD_BOX2
+    Name: Lasgand's Storage Stone
+    Level: 220
+    Hp: 1
+    BaseExp: 0
+    JobExp: 0
+    Attack: 220
+    Attack2: 220
+    Defense: 0
+    MagicDefense: 0
+    Resistance: 0
+    MagicResistance: 0
+    Str: 0
+    Agi: 0
+    Vit: 0
+    Int: 0
+    Dex: 0
+    Luk: 0
+    AttackRange: 1
+    SkillRange: 1
+    ChaseRange: 1
+    Size: Small
+    Race: Formless
+    Element: Neutral
+    ElementLevel: 1
+    WalkSpeed: 1000
+    AttackDelay: 1001
+    AttackMotion: 1
+    ClientAttackMotion: 768
+    DamageMotion: 1
+    Ai: 06
+    Modes:
+      Detector: true
+    Drops:
+      - Item: EP19_D_P_Ore
+        Rate: 2000
+      - Item: EP19_N_P_Ore
+        Rate: 2000
+      - Item: EP20_D_P_Ore
+        Rate: 3000
+      - Item: EP19_D_P_Crystal
+        Rate: 1500
+      - Item: EP19_N_P_Crystal
+        Rate: 1500
+      - Item: EP20_D_P_Crystal
+        Rate: 2000
+      - Item: EP20_D_P_Extract
+        Rate: 1500
+      - Item: EP20_D_Scale
+        Rate: 100
+        StealProtected: true
 #  - Id: 22006
 #    AegisName: EP20_NPC_NYAR
 #  - Id: 22007

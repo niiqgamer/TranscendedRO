@@ -7,6 +7,49 @@
 //= 1.0 First Version [heim]
 //============================================================
 
+glast_01,147,283,4	script	Oscar Re Instance#gh	4_RED_FLOWER,{
+	
+	if (checkquest(12493,PLAYTIME) != 0){
+		mes "You don't want to do anything with me, go away!";
+		end;
+	}
+	
+	mes "If you have 5x Silvervine Fruits. ^i[6417]";
+	mes "I can ^FF0000RESET^000000 Old Glastheim Challenge Mode Instance for you.";
+	mes "Do you interest?";
+	next;
+	switch(select("Please wait.:Yes, I'm in.")) {
+	case 1:
+		mes "All right, don't forget we don't have much time.";
+		end;
+	case 2:
+		.@itemNeeded = 6417;
+		.@itemCount = 5;
+		if (countitem(.@itemNeeded) < .@itemCount) {
+			mes "["+strnpcinfo(1)+"]", "What gives? You don't have enough " + mesitemlink(.@itemNeeded) + ".";
+			end;
+		}
+		if (checkquest(12493,PLAYTIME) != -1){
+			erasequest 12493;
+		}
+		delitem .@itemNeeded, .@itemCount;
+		specialeffect2 300;
+		dispbottom "The Old Glastheim Challenge Mode is now RESET!!!";
+		mes "Successful Reset Instance!";
+		close3;
+		end;
+	}
+
+OnInit:
+	initnpctimer;
+	end;
+
+OnTimer1000:
+    showscript(" ! Reset Instance ! ");
+    setnpctimer 0;
+    end;
+}
+
 glast_01,143,287,4	script	Oscar#oghcm_main	4_ED_OSCAR,{
 	cutin "oscar02",2;
 
@@ -792,6 +835,10 @@ OnStart:
 	initnpctimer;
 	end;
 OnTimer9000:
+	if (!unitexists('bossId)) {
+		stopnpctimer;
+		end;
+	}
 	getunitdata 'bossId, .@data;
 	'Boss_MaxHP = .@data[UMOB_MAXHP];
 	'Boss_HP = .@data[UMOB_HP];
@@ -866,6 +913,10 @@ OnStart:
 	initnpctimer;
 	end;
 OnTimer1000:
+	if (!unitexists('bossId)) {
+		stopnpctimer;
+		end;
+	}
 	getunitdata 'bossId, .@data;
 	'Boss_MaxHP = .@data[UMOB_MAXHP];
 	'Boss_HP    = .@data[UMOB_HP];
@@ -1525,8 +1576,8 @@ function	script	F_KillDarkCross	{
 				achievementcomplete(.@id, .@cid);
 		}
 
-		getitem 25864, 10*('isContaminationLevel);
-		getitem 9900009, 100*('isContaminationLevel);
+		getitem 25864, 10*('isContaminationLevel + 2);
+		getitem 9900009, 100*('isContaminationLevel + 5);
 		warp "glast_01",140,288;
 		cutin "",255;
 		end;

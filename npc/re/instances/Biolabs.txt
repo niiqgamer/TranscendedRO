@@ -1067,7 +1067,7 @@ function	script	F_CheckSpawnsCleared	{
 			getitem 23992,rand(1,5); //Bio_W_Box
 			getitem 25786,rand(10,25); //Documents
 			getitem 25787,rand(10,25); //Fragments
-			getitem 9900009,rand(20,50); // Instance Emblem
+			getitem 9900009,rand(50,120); // Instance Emblem
 			cutin "",255;
 			warp "yuno",216,343;
 			end;

@@ -183056,8 +183056,8 @@ Body:
     ArmorLevel: 1
     View: 2293
     Script: |
-      if (BaseLevel<=100) {
-         bonus bMaxSP,2000;
+      if (BaseLevel<=200) {
+         bonus bMaxSP,5000;
          skill "WL_COMET",5;
          bonus2 bFixedCastRate,"WL_COMET",-100;
          bonus2 bVariableCastRate,"WL_COMET",-100;
@@ -183066,9 +183066,7 @@ Body:
          bonus2 bFixedCastRate,"RK_IGNITIONBREAK",-100;
          bonus2 bVariableCastRate,"RK_IGNITIONBREAK",-100;
          bonus2 bSkillCooldown,"RK_IGNITIONBREAK",-2000;
-      }
-      if (BaseLevel>=1 && BaseLevel<=150) {
-         bonus2 bExpAddRace,RC_All,20;
+         bonus2 bExpAddRace,RC_All,50;
       }
   - Id: 410194
     AegisName: C_Fox_Hat_J_V

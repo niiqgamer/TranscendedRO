@@ -2025,7 +2025,7 @@ OnInstanceInit:
 	mes "Your time is finished here. You may look arround or go leave. What do you want to do?";
 	next;
 	if (select("Stop:Return to Dimensional Gap") == 2) {
-		getitem 9900009,rand(20,30);
+		getitem 9900009,rand(50,100);
 		warp "dali",85,62;
 		end;
 	}

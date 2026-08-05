@@ -23,6 +23,16 @@ Body:
          bonus2 bAtkEle,Ele_All,.@r;
          bonus2 bIgnoreResRaceRate,RC_All,.@r;
       }
+  - Id: 300784
+    AegisName: DimAcc_SHC
+    Name: Shadow Cross Dim Crystal
+    Type: Card
+    SubType: Enchant
+  - Id: 300785
+    AegisName: DimAcc_SS
+    Name: "Shinkiro&Shiranui Dim Crystal"
+    Type: Card
+    SubType: Enchant
   - Id: 312438
     AegisName: Spirit_Of_Star_01_CN
     Name: Spirit of Knight Lv.1
@@ -345,7 +355,7 @@ Body:
     Type: Card
     SubType: Enchant
   - Id: 315113
-    AegisName: DimAcc_WH_Gl
+    AegisName: DimAcc_WH_GL
     Name: Windhawk Dim Gale Crystal
     Type: Card
     SubType: Enchant
@@ -518,9 +528,3 @@ Body:
     Name: "Weight Token"
     Type: Etc
     Weight: 0
-    Trade:
-      NoDrop: true
-      NoSell: true
-      NoAuction: true
-    Script: |
-      bonus bAddMaxWeight,900000;

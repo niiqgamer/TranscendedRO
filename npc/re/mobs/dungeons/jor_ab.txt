@@ -11,9 +11,13 @@ jor_ab01	monster	Cave Calmaring	21540,65
 jor_ab01	monster	Cave Flower	21541,35
 jor_ab01	monster	Hallucigenia Baby	21543,35
 jor_ab01	monster	Renovated Superior Rgan	21600,40
+jor_ab01	monster	--ja--	21853,15
+jor_ab01	monster	--ja--	22005,15
 
 jor_ab02	monster	Discarded Intermediate Rgan	21539,55
 jor_ab02	monster	Hallucigenia	21542,55
 jor_ab02	monster	One Eye Dollocaris	21544,40
 jor_ab02	monster	Two Eyes Dollocaris	21545,40
 jor_ab02	monster	Entangled Intermediate Rgan	21601,40
+jor_ab02	monster	--ja--	21853,15
+jor_ab02	monster	--ja--	22005,15

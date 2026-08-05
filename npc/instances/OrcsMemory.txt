@@ -861,7 +861,7 @@ OnEnable:
 	end;
 
 OnTouch_:
-	getitem 9900009, 10;
+	getitem 9900009,rand(50,100);
 	warp "gef_fild10",240,197;
 	end;
 }
