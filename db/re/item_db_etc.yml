@@ -17653,7 +17653,7 @@ Body:
     Name: Carnium
     Type: Etc
     Buy: 2000
-    Weight: 150
+    Weight: 0
     Flags:
       BuyingStore: true
       DropEffect: CLIENT
@@ -17662,7 +17662,7 @@ Body:
     Name: Bradium
     Type: Etc
     Buy: 2000
-    Weight: 150
+    Weight: 0
     Flags:
       BuyingStore: true
       DropEffect: CLIENT
@@ -54476,11 +54476,7 @@ Body:
     Trade:
       NoSell: true
     Script: |
-      .@max_lvl = min(200,BaseLevel);
-      bonus bDef,80+5*(.@max_lvl/10);
-      bonus bMaxHP,150*(.@max_lvl/10);
-      bonus2 bAddRace,RC_Insect,10;
-      bonus2 bMagicAddRace,RC_Insect,10;
+      bonus2 bAddSize,Size_All,10;
   - Id: 300549
     AegisName: aegis_300549
     Name: Summer Vacation Pope Card
@@ -54508,8 +54504,7 @@ Body:
     Trade:
       NoSell: true
     Script: |
-      .@max_lvl = min(200,BaseLevel);
-      bonus bBaseAtk,35+5*(.@max_lvl/10);
+      bonus2 bMagicAddSize,Size_All,10;
   - Id: 300551
     AegisName: CLB_SS_LL_Card
     Name: A-Ji and Geffen Card
@@ -54523,26 +54518,31 @@ Body:
     Trade:
       NoSell: true
     Script: |
-      .@max_lvl = min(200,BaseLevel);
-      bonus bMdef,35+2*(.@max_lvl/10);
-      bonus bMaxSP,50*(.@max_lvl/10);
-      bonus2 bAddRace,RC_Plant,10;
-      bonus2 bMagicAddRace,RC_Plant,10;
+      .@a = readparam(bLuk);
+      bonus bCritical,3*(.@a/20);
+      if (.@a>=125) {
+         bonus bShortAtkRate,30;
+         bonus bLongAtkRate,30;
+      }
   - Id: 300552
     AegisName: CLB_SS_LT_Card
     Name: Tai-Zi and Niflheim Card
     Type: Card
     Weight: 10
     Locations:
-      Right_Hand: true
+      Garment: true
     Flags:
       BuyingStore: true
       DropEffect: CLIENT
     Trade:
       NoSell: true
     Script: |
-      .@max_lvl = min(200,BaseLevel);
-      bonus bMatk,35+5*(.@max_lvl/10);
+      .@a = readparam(bInt);
+      bonus bDelayrate,-1*(.@a/20);
+      if (.@a>=125) {
+         bonus2 bMagicAtkEle,Ele_All,30;
+         bonus bHealPower,30;
+      }
   - Id: 300555
     AegisName: aegis_300555
     Name: Violen Card
@@ -92961,43 +92961,43 @@ Body:
     AegisName: Soa_Charm
     Name: Soa Charm
     Type: Etc
-    Weight: 1
+    Weight: 0
   - Id: 1000564
     AegisName: Nw_Grenade
     Name: Nw Grenade
     Buy: 30
     Type: Etc
-    Weight: 1
+    Weight: 0
   - Id: 1000565
     AegisName: SS_Charm
     Buy: 30
     Name: SS Charm
     Type: Etc
-    Weight: 1
+    Weight: 0
   - Id: 1000566
     AegisName: SS_Charm_F
     Name: SS Charm F
     Buy: 30
     Type: Etc
-    Weight: 1
+    Weight: 0
   - Id: 1000567
     AegisName: SS_Charm_W
     Name: SS Charm W
     Buy: 30
     Type: Etc
-    Weight: 1
+    Weight: 0
   - Id: 1000568
     AegisName: SS_Charm_G
     Name: SS Charm G
     Buy: 30
     Type: Etc
-    Weight: 1
+    Weight: 0
   - Id: 1000569
     AegisName: SS_Charm_L
     Name: SS Charm L
     Buy: 30
     Type: Etc
-    Weight: 1
+    Weight: 0
   - Id: 1000570
     AegisName: Noodle_Fes_Ticket
     Name: Noodle Festival Development Fund Certificate

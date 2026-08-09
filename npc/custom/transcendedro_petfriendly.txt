@@ -1,0 +1,47 @@
+izlude,99,150,5	script	Pet Friendly	555,{
+	if (getpetinfo(2) == "null") {
+		mes "You didn't have any pet.";
+		mes "Go and catch some.";
+		mes "Bye.";
+		close;
+	} else if (getpetinfo(3) >= 1000) {
+		mes "Your pet is already in Loyal state.";
+		mes "No need to do anything.";
+		mes "Bye.";
+		close;
+	} else {
+		mes "Hi, adventurer!";
+		mes "I know ways to help your pet";
+		mes "friendly with you even more.";
+		mes "It's only 5,000,000 Zeny, interested?";
+		next;
+		switch( select( "Yep, I'd love to.", "Nope." ) ) {
+		case 1:
+			if (Zeny < 5000000) {
+				mes "Hmmmm...";
+				mes "Everything is not free,";
+				mes "Go away!!!";
+				close;
+			}
+			atcommand "@petfriendly 1000";
+			specialeffect2 EF_ANGEL2;
+			Zeny -= 5000000;
+			mes "It's done!";
+			mes "Good take care of them.";
+			mes "Bye! Adventurer!";
+			end;
+		case 2:
+			mes "Come back whenever you want it.";
+			close;
+		}
+	}
+	end;
+
+OnInit:
+	initnpctimer;
+
+OnTimer1000:
+    showscript(" Make a Pet friendly ");
+    setnpctimer 0;
+    end;
+}

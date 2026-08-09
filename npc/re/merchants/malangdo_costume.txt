@@ -12,7 +12,117 @@
 //= 1.4 Added Gregio Grumani 4th slot visual effect enchanter and missing costumes.
 //============================================================
 
-// 4th slot visual effect enchanter (Enchant Stone Box 4-21 effect stones)
+grademk,117,177,4	script	Special Gregio#grademk	4_CAT_ADV1,{
+	disable_items;
+	if (checkweight(1119,3) == 0) {
+		mes "[Special Gregio]";
+		mes "You are carrying too many items.";
+		mes "Please free up some inventory space and come back.";
+		close;
+	}
+
+	mes "[Special Gregio]";
+	mes "I can apply a special enchant to the 3rd slot on your garment costume.";
+	mes "Bring the costume you are wearing and a special stone.";
+	next;
+
+	switch(select("Apply a special stone.", "End conversation.")) {
+		case 1: break;
+		case 2:
+			mes "[Special Gregio]";
+			mes "Come back whenever you want a new look.";
+			close;
+	}
+
+	.@part = EQI_COSTUME_GARMENT;
+	.@equip_id = getequipid(.@part);
+
+	if (.@equip_id == -1) {
+		mes "[Special Gregio]";
+		mes "You must wear the garment costume you want to enchant.";
+		close;
+	}
+
+	setarray .@stone_id[0],
+		25940, 27433, 				// Loft Stone Garment(Ultimate)
+		1001957, 313744; 			// Purified Stone Garment(Ultimate)
+
+	.@size = getarraysize(.@stone_id);
+	.@menu$ = "";
+	.@idx = 0;
+	for (.@i = 0; .@i < .@size; .@i += 2) {
+		if (countitem(.@stone_id[.@i]) < 1)
+			continue;
+		.@menu$ += getitemname(.@stone_id[.@i]) + ":";
+		.@list[.@idx] = .@i;
+		.@idx++;
+	}
+
+	if (.@idx == 0) {
+		mes "[Special Gregio]";
+		mes "You do not have any visual effect stone for your garment costume.";
+		close;
+	}
+
+	.@menu$ += "Cancel";
+	.@pick = select(.@menu$) - 1;
+	if (.@pick == .@idx) {
+		mes "[Special Gregio]";
+		mes "Come back when you are ready.";
+		close;
+	}
+
+	.@s = .@list[.@pick];
+	.@stone = .@stone_id[.@s];
+	.@enchant = .@stone_id[.@s+1];
+
+	.@equip_refine = getequiprefinerycnt(.@part);
+	setarray .@card[0], getequipcardid(.@part,0), getequipcardid(.@part,1), getequipcardid(.@part,2), getequipcardid(.@part,3);
+
+	if (getequipid(.@part) < 0 || countitem(.@stone) < 1) {
+		mes "[Special Gregio]";
+		mes "You are missing the costume or the effect stone.";
+		close;
+	}
+
+	mes "[Special Gregio]";
+	mes "I will apply ^3131FF" + getitemname(.@stone) + "^000000 to the 3rd slot of ^0000FF" + getitemname(.@equip_id) + "^000000.";
+	mes "^0000FFVisual effect enchants always succeed.^000000";
+	if (.@card[2] > 0) // ตรวจสอบ 3rd slot (index 2)
+		mes "^FF0000The existing 3rd slot effect will be replaced.^000000";
+	next;
+
+	if (select("Cancel", "Apply effect") == 1) {
+		mes "[Special Gregio]";
+		mes "Come back if you change your mind.";
+		close;
+	}
+
+	// ตรวจสอบการแฮ็คหรือสลับไอเทมระหว่างคุย
+	if (callfunc("F_IsEquipIDHack", .@part, .@equip_id) || callfunc("F_IsEquipCardHack", .@part, .@card[0], .@card[1], .@card[2], .@card[3]) || callfunc("F_IsEquipRefineHack", .@part, .@equip_refine)) {
+		mes "[Special Gregio]";
+		mes "Your costume changed while we were talking. Please try again.";
+		close;
+	}
+
+	delitem .@stone, 1;
+	delequip .@part;
+	.@card[2] = .@enchant; // บันทึก Effect ลงใน 3rd slot (index 2)
+	getitem2 .@equip_id,1,1,.@equip_refine,0,.@card[0],.@card[1],.@card[2],.@card[3];
+
+	mes "[Special Gregio]";
+	mes "Done! Enjoy your new visual effect.";
+	close;
+
+OnInit:
+	initnpctimer;
+
+OnTimer1000:
+    showscript(" Special Garment Enchant ");
+    setnpctimer 0;
+    end;
+}
+
 mal_in01,24,121,6	script	Gregio Grumani#eventhat	4_CAT_SAILOR5,{
 	disable_items;
 	if (checkweight(1119,3) == 0) {
@@ -1765,6 +1875,7 @@ mal_in01,20,107,3	script	Lace La Zard#cos_ect	4_FROG,{
 	case 20599:		// C_Sakura_Wing
 	case 20514:		// C_Thanatos_Sword
 	case 480247:	// C_Giant_Angeling
+	case 480058:	// C_Wing_Of_Angel_Move_GD
 		break;
 	default:
 		mes "[Lace La Zard]";
@@ -1882,7 +1993,7 @@ OnTimer1000:
 
 grademk,107,177,4	duplicate(Lace La Zard#cos_ect)	Lace La Zard#grademk	4_FROG
 
-grademk,117,177,4	script	Enchant Stone Shop	4_M_BARYO_MAN,{
+grademk,122,177,4	script	Enchant Stone Shop	4_M_BARYO_MAN,{
 
 	mes "Lots of Enchant Stone here,";
 	mes "Take a look!";

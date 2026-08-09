@@ -42290,7 +42290,7 @@ Body:
           Amount: 118
       ItemCost:
         - Item: Soa_Charm
-          Amount: 1
+          Amount: 0
     Status: T_Second_God
   - Id: 5428
     Name: SOA_TALISMAN_OF_RED_PHOENIX

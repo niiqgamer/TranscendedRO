@@ -327,7 +327,7 @@ OnTimer1000:
 grademk,65,86,5	script	Enchant GGT#itroom	4_F_PREMI,{
 	switch(select(
 	
-	"~ Illusion Shield I / II",
+	"~ ^FF0000+11^000000 Illusion Shield I / II",
 	"Cancel"
 	
 	)) {
@@ -356,6 +356,7 @@ grademk,74,86,4	script	Glacier Set#itroom	EP19_NPC_LEHAR,{
 	switch(select(
 	
 	"~ EP.19 Materials",
+	"~ Issgard Headgears",
 	"~ Dim Glacier Ring of Resonance (GGT)",
 	"~ Enchant Dim Glacier Ring of Resonance (GGT)",
 	"Cancel"
@@ -365,12 +366,15 @@ grademk,74,86,4	script	Glacier Set#itroom	EP19_NPC_LEHAR,{
 			callshop "EP19Materials";
 			end;
 		case 2:
-			callshop "DimRingTH";
+			callshop "EP19Headgears";
 			end;
 		case 3:
-			item_enchant(349);
+			callshop "DimRingTH";
 			end;
 		case 4:
+			item_enchant(349);
+			end;
+		case 5:
 			mes "Bye, guys!";
 			close2;
 			end;
@@ -583,6 +587,66 @@ OnInit:
 
 OnTimer1000:
     showscript(" ! Good & Evil Equipments ! ");
+    setnpctimer 0;
+    end;
+}
+
+// Combination Items
+grademk,145,104,4	script	All Combinations#itroom	HEADSTONE1,{
+	switch(select(
+	
+	"~ Headgears Upper",
+	"~ Headgears Middle",
+	"~ Headgears Lower",
+	"~ Armors",
+	"~ Weapons",
+	"~ Shields",
+	"~ Garments",
+	"~ Shoes",
+	"~ Accessories",
+	"Cancel"
+	
+	)) {
+		case 1:
+			callshop "HeadUp";
+			end;
+		case 2:
+			callshop "HeadMid";
+			end;
+		case 3:
+			callshop "HeadLow";
+			end;
+		case 4:
+			callshop "Armors";
+			end;
+		case 5:
+			callshop "Weapons";
+			end;
+		case 6:
+			callshop "Shields";
+			end;
+		case 7:
+			callshop "Garments";
+			end;
+		case 8:
+			callshop "Shoes";
+			end;
+		case 9:
+			callshop "Accessories";
+			end;
+		case 10:
+			mes "Bye, guys!";
+			close2;
+			end;
+	}
+	close;
+
+OnInit:
+	initnpctimer;
+	end;
+
+OnTimer1000:
+    showscript(" ! All Combinations ! ");
     setnpctimer 0;
     end;
 }

@@ -118,6 +118,7 @@ gef_fild06,0,0	monster	Petite	1155,158,5000
 gef_fild06,0,0	monster	Mantis	1139,36,5000
 gef_fild06,0,0	monster	Side Winder	1037,36,5000
 gef_fild06,0,0	monster	Shining Plant	1083,4,1800000,900000
+gef_fild06,0,0	monster	--ja--	22381,25,10000
 
 //==================================================
 // gef_fild07 - Geffen Field
@@ -145,6 +146,7 @@ gef_fild08,144,140	monster	Blue Plant	1079,1,900000,450000
 gef_fild08,344,78	monster	Blue Plant	1079,1,900000,450000
 gef_fild08,325,311	monster	Blue Plant	1079,1,900000,450000
 gef_fild08,162,247	monster	Blue Plant	1079,1,900000,450000
+gef_fild08,0,0	monster	--ja--	22381,25,10000
 
 //==================================================
 // gef_fild09 - Geffen Field

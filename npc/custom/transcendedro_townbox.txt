@@ -44,9 +44,10 @@ OnClock2300:
 OnBox:
 	set $@PB_Count,$@PB_Count+1;
 	set .@raterditem,rand(1,151);
-	if (.@raterditem < 83) {
-		getitem 6635,1;
-		announce "[Event]: Oh! ["+strcharinfo(0)+"] just found [1x Blacksmith Blessing] on Suspicious Stones ["+$@PB_Count+"/30]. Congrats!!!",0,0xFF3399;
+	set .@getamout,rand(1,3);
+	if (.@raterditem < 101) {
+		getitem 6635,.@getamout;
+		announce "[Event]: Oh! ["+strcharinfo(0)+"] just found ["+.@getamout+"x Blacksmith Blessing(s)] on Suspicious Stones ["+$@PB_Count+"/30]. Congrats!!!",0,0xFF3399;
 	} else {
 		announce "[Event]: Suspicious Stones ["+$@PB_Count+"/30] has been destroyed by ["+strcharinfo(0)+"] ! Nothing found!",0;
 	}

@@ -6,23 +6,23 @@
 //= 1.0 First version. [Atemo]
 //============================================================
 
-jor_back1	monster	--ja--	21524,60
-jor_back1	monster	--ja--	21525,60
-jor_back1	monster	--ja--	21523,80
+jor_back1	monster	--ja--	21524,70
+jor_back1	monster	--ja--	21525,70
+jor_back1	monster	--ja--	21523,90
 
-jor_back2	monster	--ja--	21521,70
-jor_back2	monster	--ja--	21525,25
-jor_back2	monster	--ja--	21523,35
-jor_back2	monster	--ja--	21520,70
+jor_back2	monster	--ja--	21521,80
+jor_back2	monster	--ja--	21525,35
+jor_back2	monster	--ja--	21523,45
+jor_back2	monster	--ja--	21520,80
 
-jor_back3	monster	--ja--	21526,30
-jor_back3	monster	--ja--	21527,15
-jor_back3	monster	--ja--	21525,20
-jor_back3	monster	--ja--	21522,70
-jor_back3	monster	--ja--	21520,70
+jor_back3	monster	--ja--	21526,40
+jor_back3	monster	--ja--	21527,25
+jor_back3	monster	--ja--	21525,30
+jor_back3	monster	--ja--	21522,80
+jor_back3	monster	--ja--	21520,80
 // unknown delay
 jor_back3	boss_monster	--ja--	21537,1,7200000,600000,1
 
 // jor_tail - Frozen Tail (EP19)
-jor_tail	monster	--ja--	21524,80
-jor_tail	monster	--ja--	21525,90
+jor_tail	monster	--ja--	21524,100
+jor_tail	monster	--ja--	21525,110

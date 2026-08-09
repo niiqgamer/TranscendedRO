@@ -143,8 +143,8 @@ L_Roll:
 		set .@roll, rand(10000);
 		set .@got_item, 0;
 
-		// Pool 1 - Ultimate Rare (0.01% = 1/10000)
-		if (.@roll < 1 && getarraysize($hotspin_pool1) > 0) {
+		// Pool 1 - Ultimate Rare (0.05% = 5/10000)
+		if (.@roll < 5 && getarraysize($hotspin_pool1) > 0) {
 			set .@item, $hotspin_pool1[rand(getarraysize($hotspin_pool1))];
 			getitem .@item, 1;
 			set .@hotspin_hits, .@hotspin_hits + 1;
@@ -154,8 +154,8 @@ L_Roll:
 			specialeffect2 EF_MVP;
 			announce "[ H O T S P I N ! ] " + strcharinfo(0) + " received [ UR ] " + getitemname(.@item) + "!!!", bc_all;
 		}
-		// Pool 2 - New Items (0.60% = 60/10000)
-		else if (.@roll < 61 && getarraysize($hotspin_pool2) > 0) {
+		// Pool 2 - New Items (0.75% = 75/10000)
+		else if (.@roll < 80 && getarraysize($hotspin_pool2) > 0) {
 			set .@item, $hotspin_pool2[rand(getarraysize($hotspin_pool2))];
 			getitem .@item, 1;
 			set .@hotspin_hits, .@hotspin_hits + 1;
@@ -166,7 +166,7 @@ L_Roll:
 			announce "[ H O T S P I N ! ] " + strcharinfo(0) + " received [ NEW ] " + getitemname(.@item) + "!!", bc_all;
 		}
 		// Pool 3 - Rerun Items (2.00% = 200/10000)
-		else if (.@roll < 261 && getarraysize($hotspin_pool3) > 0) {
+		else if (.@roll < 280 && getarraysize($hotspin_pool3) > 0) {
 			set .@item, $hotspin_pool3[rand(getarraysize($hotspin_pool3))];
 			getitem .@item, 1;
 			set .@hotspin_hits, .@hotspin_hits + 1;
@@ -445,12 +445,15 @@ OnBuyItem:
 		dispbottom "The deal was unsuccessful.", 0xFF0000;
 		close;
 	}
+	
+	freeloop(1);
 	for (set .@i, 0; .@i < .@size; set .@i, .@i + 1) {
 		getitem @bought_nameid[.@i], @bought_quantity[.@i];
 		.@item_price = callfunc("GetItemPrice", @bought_nameid[.@i]);
 		.@item_total = @bought_quantity[.@i] * .@item_price;
 		dispbottom "Redeemed " + @bought_quantity[.@i] + "x " + getitemname(@bought_nameid[.@i]) + " (-" + callfunc("F_InsertComma",.@item_total) + " Guarantee Points.)";
 	}
+	freeloop(0);
 	set #GUARANTEE_POINT, #GUARANTEE_POINT - .@need;
 
 	mes "[ H O T S P I N ! ]";
@@ -462,16 +465,32 @@ OnSellItem:
 	mes "Items to recycle:";
 	mes "==================";
 
-	deletearray .@valid_items[0], 200;
-	deletearray .@valid_amounts[0], 200;
+	deletearray @valid_items[0], getarraysize(@valid_items);
+	deletearray @valid_amounts[0], getarraysize(@valid_amounts);
 	set .@total_points, 0;
 	set .@valid_count, 0;
-	
-	for (set .@i, 0; .@i < getarraysize(@sold_nameid); set .@i, .@i + 1) {
+
+	// เก็บขนาดของ traded arrays ไว้ (เรียกครั้งเดียว)
+	set .@sold_size, getarraysize(@sold_nameid);
+	if (.@sold_size <= 0) {
+		mes "No items in trade.";
+		close;
+	}
+
+	// safety cap เผื่อ getarraysize ให้ค่าผิดพลาด
+	if (.@sold_size > 200) set .@sold_size, 200;
+
+	// flag ถ้าเจอ unrecyclable ให้ยกเลิกหลังจากเคลียร์ arrays
+	set .@found_unrecyclable, 0;
+
+	freeloop(1);
+	for (set .@i, 0; .@i < .@sold_size; set .@i, .@i + 1) {
 		set .@item_id, @sold_nameid[.@i];
+		set .@amount, @sold_quantity[.@i];
+		if (.@item_id <= 0 || .@amount <= 0) continue;
+
+		// ตรวจสอบว่าไอเท็มอยู่ใน pool ใด ๆ หรือไม่
 		set .@is_recyclable, 0;
-		
-		// Check if item is in any pool
 		for (set .@j, 0; .@j < getarraysize($hotspin_pool1) && !.@is_recyclable; set .@j, .@j + 1) {
 			if ($hotspin_pool1[.@j] == .@item_id) set .@is_recyclable, 1;
 		}
@@ -481,34 +500,43 @@ OnSellItem:
 		for (set .@j, 0; .@j < getarraysize($hotspin_pool3) && !.@is_recyclable; set .@j, .@j + 1) {
 			if ($hotspin_pool3[.@j] == .@item_id) set .@is_recyclable, 1;
 		}
-		
+
 		if (.@is_recyclable) {
-			set .@valid_items[.@valid_count], .@item_id;
-			set .@valid_amounts[.@valid_count], @sold_quantity[.@i];
+			set @valid_items[.@valid_count], .@item_id;
+			set @valid_amounts[.@valid_count], .@amount;
 			set .@valid_count, .@valid_count + 1;
-			set .@total_points, .@total_points + @sold_quantity[.@i];
-			mes "  ^00AA00" + @sold_quantity[.@i] + "x " + getitemname(.@item_id) + "^000000";
-		} else {
-			mes "  ^FF0000" + @sold_quantity[.@i] + "x " + getitemname(.@item_id) + " (Unrecyclable)^000000";
-			end;
+			set .@total_points, .@total_points + .@amount;
+			mes "  ^00AA00" + .@amount + "x " + getitemname(.@item_id) + "^000000";
+		}
+		else {
+			mes "  ^FF0000" + .@amount + "x " + getitemname(.@item_id) + " (Unrecyclable)^000000";
+			set .@found_unrecyclable, 1;
+			break;
 		}
 	}
-	
+	freeloop(0);
+
 	deletearray @sold_nameid[0], getarraysize(@sold_nameid);
 	deletearray @sold_quantity[0], getarraysize(@sold_quantity);
-	
+
+	if (.@found_unrecyclable) {
+		mes "==================";
+		mes "^FF0000Only Hotspin items can be recycled.^000000";
+		close;
+	}
+
 	if (.@valid_count == 0) {
 		mes "==================";
 		mes "^FF0000No valid items to recycle!^000000";
 		mes "Only Hotspin items can be recycled.";
 		close;
 	}
-	
+
 	mes "==================";
 	mes "Total: ^0066FF" + .@total_points + " Guarantee Points^000000";
 	mes "Proceed with recycling?";
 	next;
-	
+
 	if (select(" ~ ^AA0000Recycle Now!^000000: ~ ^777777Cancel^000000") == 2) {
 		mes "[Hotspin Recycle]";
 		mes "     ";
@@ -517,11 +545,11 @@ OnSellItem:
 	}
 
 	for (set .@i, 0; .@i < .@valid_count; set .@i, .@i + 1) {
-		delitem .@valid_items[.@i], .@valid_amounts[.@i];
+		delitem @valid_items[.@i], @valid_amounts[.@i];
 	}
-	
+
 	set #GUARANTEE_POINT, #GUARANTEE_POINT + .@total_points;
-	
+
 	mes "[Hotspin Recycle]";
 	mes "^00AA00Recycling successful!^000000";
 	mes "     ";
@@ -539,27 +567,61 @@ OnInit:
 	1270049,				// Clear_Shield_Shadow3_TW
 	1270146,				// S_BP8_Magic_W
 	1270147,				// S_BP8_Magic_S
+	1001957,				// Purified Stone Garment(Ultimate)
+	25940,					// Loft_StoneUltimate
+	480681,					// Juncea_Follower_US
+	540124,					// Polluted_Follower_US
+	550169,					// Fenrir_Staff_US
+	560077,					// Coatneis_Knuckle_US
 	9910000,				// T_A1_Refining
 	9910001,				// T_A2_Refining
 	9910002,				// T_W1_Refining
 	9910003;				// T_W2_Refining
 
 	setarray $hotspin_pool2, 
+	480640,					// WK_Mantle_All_TH_LT
+	460084,					// Alice_Pillow_US
+	480540,					// Royal_Alberta_US
+	480520,					// Royal_Geffen_US
+	480597,					// Royal_Morroc_US
+	480504,					// Royal_Payon_US
+	480479,					// Royal_Prontera_US
+	480539,					// Royal_Nightwatch_US
+	450481,					// Cocytus_Armor_US
+	450516,					// Thorn_Armor_US
+	450526,					// Tiara_Follower_US
+	450566,					// November_Rain_US
+	460092,					// Ancient_Prontera_US
+	460093,					// Ninja_Sheild
+	460095,					// Aegis_Illusive_TH_LT
+	420605,					// True_Gangster_US
+	460096,					// Hightech_Shield_US
+	460097,					// Forbidden_Grimoire2_LT
+	460111,					// Apostate_Shield_US
+	460138,					// Trap_Follower_US
+	460151,					// Rose_Quartz_Shield_LT
+	470343,					// Corruption_Boots_US
+	470345,					// Dragon_Shoes_US
+	480536,					// Will_Karasu_US
+	480621,					// Comet_Cavalry_US
+	480823,					// Abysmal_Follower_US
+	490809,					// Nebula_Nec_LT_TH
+	491070,					// 6th_Anni_Ring_LT_TH
+	25940,					// Loft_StoneUltimate
 	27421,					// Shard_Jewelry_Str
 	27422,					// Shard_Jewelry_Agi
 	27423,					// Shard_Jewelry_Dex
 	27424,					// Shard_Jewelry_Luk
 	27425,					// Shard_Jewelry_Vit
-	27426,					// Shard_Jewelry_Int
-	490605,					// Document_Swordsman_TH
-	490606,					// Document_Thief_TH
-	490607,					// Document_Merchant_TH
-	490608,					// Document_Mage_TH
-	490609,					// Document_Archer_TH
-	490610,					// Document_Acolyte_TH
-	480640;				// WK_Mantle_All_TH_LT
+	27426;					// Shard_Jewelry_Int
 
 	setarray $hotspin_pool3, 
+	490310,					// Secret_Illusion_Ring_TH
+	490552,					// Nebula_Nec
+	470424,					// Aladdin_Shoes
+	470442,					// Ayothaya_Boots_TH
+	490966,					// 6th_Anni_Ring_TH
+	460094,					// Aegis_Illusive_TH
 	28394,					// King_of_Spirit_Ring
 	19102,					// Pale_Moon_Hat
 	20799,					// Elemental_Towel
@@ -702,11 +764,11 @@ OnInit:
 	npcshopdelitem "HOTSPIN_POINTSHOP", 512;
 		for (set .@i, 0; .@i < getarraysize($hotspin_pool1); set .@i, .@i + 1) {
 			npcshopdelitem "HOTSPIN_POINTSHOP", $hotspin_pool1[.@i];
-			npcshopadditem "HOTSPIN_POINTSHOP", $hotspin_pool1[.@i], 2000;
+			npcshopadditem "HOTSPIN_POINTSHOP", $hotspin_pool1[.@i], 1000;
 		}
 		for (set .@i, 0; .@i < getarraysize($hotspin_pool2); set .@i, .@i + 1) {
 			npcshopdelitem "HOTSPIN_POINTSHOP", $hotspin_pool2[.@i];
-			npcshopadditem "HOTSPIN_POINTSHOP", $hotspin_pool2[.@i], 200;
+			npcshopadditem "HOTSPIN_POINTSHOP", $hotspin_pool2[.@i], 250;
 		}
 		for (set .@i, 0; .@i < getarraysize($hotspin_pool3); set .@i, .@i + 1) {
 			npcshopdelitem "HOTSPIN_POINTSHOP", $hotspin_pool3[.@i];
@@ -726,6 +788,13 @@ OnInit:
 			npcshopdelitem "HOTSPIN_VIEWSHOP", $hotspin_pool3[.@i];
 			npcshopadditem "HOTSPIN_VIEWSHOP", $hotspin_pool3[.@i], 1;
 		}
+	
+	for (set .@i, 0; .@i < getarraysize($hotspin_pool1); set .@i, .@i + 1)
+		npcshopadditem "hotspin_recycle_shop", $hotspin_pool1[.@i], 0;
+	for (set .@i, 0; .@i < getarraysize($hotspin_pool2); set .@i, .@i + 1)
+		npcshopadditem "hotspin_recycle_shop", $hotspin_pool2[.@i], 0;
+	for (set .@i, 0; .@i < getarraysize($hotspin_pool3); set .@i, .@i + 1)
+		npcshopadditem "hotspin_recycle_shop", $hotspin_pool3[.@i], 0;
 	end;
 }
 
@@ -752,7 +821,7 @@ function	script	GiveRankReward	{
 
 	if (getarraysize(.@cid) == 0) {
 		announce "[ H O T S P I N ! ] Sorry, there is no weekly TOP3 this week.", bc_all;
-		end;
+		return;
 	}
 
 	for (set .@i, 0; .@i < getarraysize(.@cid) && .@i < 3; set .@i, .@i + 1) {

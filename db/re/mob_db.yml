@@ -127971,14 +127971,102 @@ Body:
 #    AegisName: VR_MD_TILBY2
 #  - Id: 22164
 #    AegisName: VR_MD_RAINBOW
-#  - Id: 22166
-#    AegisName: HEADSTONE1
-#  - Id: 22167
-#    AegisName: HEADSTONE2
-#  - Id: 22168
-#    AegisName: HEADSTONE3
-#  - Id: 22169
-#    AegisName: HEADSTONE4
+  - Id: 22166
+    AegisName: HEADSTONE1
+    Name: Challenger Monument I
+    Level: 200
+    Hp: 100
+    Attack: 1220
+    Attack2: 1220
+    Defense: 20
+    MagicDefense: 20
+    Resistance: 20
+    MagicResistance: 20
+    Str: 20
+    Agi: 20
+    Vit: 20
+    Int: 20
+    Dex: 20
+    Luk: 20
+    AttackRange: 1
+    SkillRange: 10
+    ChaseRange: 12
+    Size: Small
+    Race: Formless
+    Element: Neutral
+    ElementLevel: 1
+  - Id: 22167
+    AegisName: HEADSTONE2
+    Name: Challenger Monument II
+    Level: 200
+    Hp: 100
+    Attack: 1220
+    Attack2: 1220
+    Defense: 20
+    MagicDefense: 20
+    Resistance: 20
+    MagicResistance: 20
+    Str: 20
+    Agi: 20
+    Vit: 20
+    Int: 20
+    Dex: 20
+    Luk: 20
+    AttackRange: 1
+    SkillRange: 10
+    ChaseRange: 12
+    Size: Small
+    Race: Formless
+    Element: Neutral
+    ElementLevel: 1
+  - Id: 22168
+    AegisName: HEADSTONE3
+    Name: Challenger Monument III
+    Level: 200
+    Hp: 100
+    Attack: 1220
+    Attack2: 1220
+    Defense: 20
+    MagicDefense: 20
+    Resistance: 20
+    MagicResistance: 20
+    Str: 20
+    Agi: 20
+    Vit: 20
+    Int: 20
+    Dex: 20
+    Luk: 20
+    AttackRange: 1
+    SkillRange: 10
+    ChaseRange: 12
+    Size: Small
+    Race: Formless
+    Element: Neutral
+    ElementLevel: 1
+  - Id: 22169
+    AegisName: HEADSTONE4
+    Name: Challenger Monument IV
+    Level: 200
+    Hp: 100
+    Attack: 1220
+    Attack2: 1220
+    Defense: 20
+    MagicDefense: 20
+    Resistance: 20
+    MagicResistance: 20
+    Str: 20
+    Agi: 20
+    Vit: 20
+    Int: 20
+    Dex: 20
+    Luk: 20
+    AttackRange: 1
+    SkillRange: 10
+    ChaseRange: 12
+    Size: Small
+    Race: Formless
+    Element: Neutral
+    ElementLevel: 1
   - Id: 22170
     AegisName: HEADSTONE0
     Name: Broken Tombstone
@@ -128012,7 +128100,7 @@ Body:
   - Id: 22174
     AegisName: MD_PRI_RIGEL
     Name: Rigel
-    JapaneseName: Dimensional Criminal Rigel
+    JapaneseName: Dim Criminal Rigel
     Level: 275
     Hp: 800000000
     Attack: 24998
@@ -128046,7 +128134,7 @@ Body:
   - Id: 22175
     AegisName: MD_PRI_RIGEL_AC
     Name: Rigel
-    JapaneseName: Dimensional Criminal Rigel
+    JapaneseName: Dim Criminal Rigel
     Level: 275
     Hp: 100000000
     Attack: 24998
@@ -128077,7 +128165,7 @@ Body:
   - Id: 22176
     AegisName: MD_PRI_RIGEL_ACS
     Name: Rigel
-    JapaneseName: Dimensional Criminal Rigel
+    JapaneseName: Dim Criminal Rigel
     Level: 275
     Hp: 100000000
     Attack: 24998
@@ -131339,10 +131427,84 @@ Body:
 #    AegisName: EV_NPC_VACATION_POPE
 #  - Id: 22380
 #    AegisName: E_WATER_M_RING
-#  - Id: 22381
-#    AegisName: CLB_SS_FC
-#  - Id: 22382
-#    AegisName: CLB_SS_TZ
+  - Id: 22381
+    AegisName: CLB_SS_FC
+    Name: "A-Ji The Shiba Says"
+    Level: 200
+    Hp: 100000
+    Defense: 99
+    MagicDefense: 160
+    Resistance: 257
+    MagicResistance: 632
+    Dex: 999
+    SkillRange: 0
+    ChaseRange: 0
+    Size: Small
+    Race: Formless
+    Element: Neutral
+    ElementLevel: 1
+    WalkSpeed: 100
+    AttackDelay: 564
+    AttackMotion: 864
+    ClientAttackMotion: 960
+    DamageMotion: 288
+    Ai: 21
+    Class: Boss
+    Modes:
+#      IgnoreMagic: true
+#      IgnoreMelee: true
+#      IgnoreMisc: true
+#      IgnoreRanged: true
+#      SkillImmune: true
+      KnockBackImmune: true
+    Drops:
+      - Item: Carrot
+        Rate: 3000
+      - Item: CLB_SS_DF_Card
+        Rate: 5
+        StealProtected: true
+      - Item: CLB_SS_LL_Card
+        Rate: 1
+        StealProtected: true
+  - Id: 22382
+    AegisName: CLB_SS_TZ
+    Name: "Tai-Zi The Shiba Says"
+    Level: 200
+    Hp: 100000
+    Defense: 99
+    MagicDefense: 160
+    Resistance: 257
+    MagicResistance: 632
+    Dex: 999
+    SkillRange: 0
+    ChaseRange: 0
+    Size: Small
+    Race: Formless
+    Element: Neutral
+    ElementLevel: 1
+    WalkSpeed: 100
+    AttackDelay: 564
+    AttackMotion: 864
+    ClientAttackMotion: 960
+    DamageMotion: 288
+    Ai: 21
+    Class: Boss
+    Modes:
+#      IgnoreMagic: true
+#      IgnoreMelee: true
+#      IgnoreMisc: true
+#      IgnoreRanged: true
+#      SkillImmune: true
+      KnockBackImmune: true
+    Drops:
+      - Item: Pumpkin
+        Rate: 3000
+      - Item: CLB_SS_EA_Card
+        Rate: 5
+        StealProtected: true
+      - Item: CLB_SS_LT_Card
+        Rate: 1
+        StealProtected: true
 #  - Id: 22383
 #    AegisName: VIOLEN
 #  - Id: 22384

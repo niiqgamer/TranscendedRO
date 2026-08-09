@@ -55779,6 +55779,50 @@ Body:
       bonus2 bSkillAtk,"RL_FIREDANCE",30;
   - Combos:
       - Combo:
+          - Phreeoni_Card    # 4121
+          - Royal_Morroc_US    # 480597
+    Script: |
+      .@r = getequiprefinerycnt(EQI_GARMENT);
+      bonus2 bAddClass,Class_All,40;
+      if (.@r>=14) {
+         autobonus "{ bonus bStr,250; bonus bDex,250; bonus bLuk,250; }",50,10000,BF_WEAPON;
+      }
+  - Combos:
+      - Combo:
+          - Grave_Mummy_Card    # 4656
+          - Royal_Morroc_US    # 480597
+    Script: |
+      bonus bMaxHPrate,20;
+      bonus bCritAtkRate,20;
+  - Combos:
+      - Combo:
+          - Royal_Dragon_US    # 480698
+          - Detale_Card            # 4386
+      - Combo:
+          - Royal_Dragon_US    # 480698
+          - Bone_Detale_Card    # 300021
+    Script: |
+      .@r = getequiprefinerycnt(EQI_GARMENT);
+      bonus2 bAddClass,Class_All,40;
+      if (.@r>=14) {
+         autobonus "{ bonus bStr,250; bonus bDex,250; bonus bVit,250; }",50,10000,BF_WEAPON;
+      }
+  - Combos:
+      - Combo:
+          - Royal_Dragon_US    # 480698
+          - Acidus__Card            # 4379
+    Script: |
+      bonus bMaxHPrate,15;
+      bonus2 bMagicAtkEle,Ele_Fire,15;
+  - Combos:
+      - Combo:
+          - Royal_Dragon_US    # 480698
+          - Ferus_P_Card            # 300015
+    Script: |
+      bonus bMaxHPrate,15;
+      bonus bLongAtkRate,15;
+  - Combos:
+      - Combo:
           - Emerald_Ring_LT    # 490526
           - Emerald_Earring_LT_TW    # 490527
     Script: |
@@ -60914,7 +60958,7 @@ Body:
           - Justice_Power    # 312014
     Script: |
       bonus2 bMagicAddEle,Ele_All,15;
-      bonus4 bAutoSpellOnSkill,"CD_ARBITRIUM","CD_FRAMEN",5,300;
+      bonus4 bAutoSpellOnSkill,"CD_ARBITRIUM","CD_FRAMEN",5,400;
   - Combos:
       - Combo:
           - DK_Good_Ring_TH    # 490843
@@ -61259,7 +61303,7 @@ Body:
           - SOA_Good_Ring_TH    # 490868
           - Justice_Power    # 312014
     Script: |
-      bonus4 bAutoSpellOnSkill,"SOA_TALISMAN_OF_FOUR_BEARING_GOD","SOA_TALISMAN_OF_RED_PHOENIX",5,300;
+      bonus4 bAutoSpellOnSkill,"SOA_TALISMAN_OF_FOUR_BEARING_GOD","SOA_TALISMAN_OF_RED_PHOENIX",5,400;
   - Combos:
       - Combo:
           - SH_Good_Ring_TH    # 490871
@@ -61286,8 +61330,8 @@ Body:
           - Justice_Power    # 312014
     Script: |
       autobonus "{ bonus bPow,50; bonus bPAtk,10; bonus2 bHPLossRate,500,1000; }",40,10000,BF_NORMAL|BF_WEAPON;
+      bonus4 bAutoSpellOnSkill,"SH_CHUL_HO_SONIC_CLAW","SH_HOWLING_OF_CHUL_HO",7,400;
       bonus4 bAutoSpellOnSkill,"SH_HOWLING_OF_CHUL_HO","SH_HOGOGONG_STRIKE",7,1000;
-      bonus4 bAutoSpellOnSkill,"SH_CHUL_HO_SONIC_CLAW","SH_HOWLING_OF_CHUL_HO",5,300;
   - Combos:
       - Combo:
           - TR_Good_Ring_TH    # 490841
@@ -61317,7 +61361,7 @@ Body:
           - Justice_Power    # 312014
     Script: |
       skill "RA_UNLIMIT",3;
-      bonus4 bAutoSpellOnSkill,"TR_RHYTHMSHOOTING","TR_ROSEBLOSSOM",5,1000;
+      bonus4 bAutoSpellOnSkill,"TR_RHYTHMSHOOTING","TR_ROSEBLOSSOM",5,400;
   - Combos:
       - Combo:
           - WH_Good_Ring_TH    # 490808
@@ -62268,7 +62312,7 @@ Body:
          bonus2 bSkillCooldown,"SHC_SAVAGE_IMPACT",-600;
          if (.@r >= 12) {
             bonus4 bAutoSpellOnSkill,"SHC_SAVAGE_IMPACT","SHC_ETERNAL_SLASH",5,400;
-            bonus5 bAutoSpellOnSkill,SHC_SAVAGE_IMPACT,GC_WEAPONBLOCKING,5,100,1;
+            bonus5 bAutoSpellOnSkill,"SHC_SAVAGE_IMPACT","GC_WEAPONBLOCKING",5,100,1;
             bonus2 bSkillAtk,"SHC_SAVAGE_IMPACT",20;
             bonus2 bSkillAtk,"SHC_ETERNAL_SLASH",20;
          }
@@ -63150,3 +63194,102 @@ Body:
     Script: |
       bonus bMatk,250;
       bonus2 bMagicAtkEle,Ele_Water,50;
+  - Combos:
+      - Combo:
+          - Snow_Aura_LT_TH            # 420930
+          - Glacier_Armor                   # 450264
+    Script: |
+      bonus bBaseAtk,150;
+  - Combos:
+      - Combo:
+          - Snow_Aura_LT_TH            # 420930
+          - Glacier_Robe                    # 450265
+    Script: |
+      bonus bMatk,150;
+  - Combos:
+      - Combo:
+          - Snow_Aura_LT_TH            # 420930
+          - Glacier_Boots                   # 470196
+    Script: |
+      bonus2 bAddSize,Size_All,12;
+      bonus bDelayRate,-7;
+      bonus bAspdRate,15;
+  - Combos:
+      - Combo:
+          - Snow_Aura_LT_TH            # 420930
+          - Glacier_Shoes                    # 450268
+    Script: |
+      bonus2 bMagicAddSize,Size_All,12;
+      bonus bDelayRate,-7;
+      bonus bVariableCastRate,-15;
+  - Combos:
+      - Combo:
+          - Snow_Aura_LT_TH            # 420930
+          - Glacier_Manteau                   # 450266
+    Script: |
+      bonus bShortAtkRate,12;
+      bonus bLongAtkRate,12;
+  - Combos:
+      - Combo:
+          - Snow_Aura_LT_TH            # 420930
+          - Glacier_Muffler                    # 450267
+    Script: |
+      bonus2 bMagicAtkEle,Ele_All,15;
+  - Combos:
+      - Combo:
+          - Snow_Aura_LT_TH            # 420930
+          - D_Glacier_Armor                   # 450270
+    Script: |
+      bonus bBaseAtk,160;
+  - Combos:
+      - Combo:
+          - Snow_Aura_LT_TH            # 420930
+          - D_Glacier_Robe                    # 450271
+    Script: |
+      bonus bMatk,160;
+  - Combos:
+      - Combo:
+          - Snow_Aura_LT_TH            # 420930
+          - D_Glacier_Boots                   # 470197
+    Script: |
+      bonus2 bAddSize,Size_All,15;
+      bonus bDelayRate,-7;
+      bonus bAspdRate,20;
+  - Combos:
+      - Combo:
+          - Snow_Aura_LT_TH            # 420930
+          - D_Glacier_Shoes                    # 470198
+    Script: |
+      bonus2 bMagicAddSize,Size_All,15;
+      bonus bDelayRate,-7;
+      bonus bVariableCastRate,-20;
+  - Combos:
+      - Combo:
+          - Snow_Aura_LT_TH            # 420930
+          - D_Glacier_Manteau                   # 480283
+    Script: |
+      bonus bShortAtkRate,15;
+      bonus bLongAtkRate,15;
+  - Combos:
+      - Combo:
+          - Snow_Aura_LT_TH            # 420930
+          - D_Glacier_Muffler                    # 480284
+    Script: |
+      bonus2 bMagicAtkEle,Ele_All,18;
+  - Combos:
+      - Combo:
+          - Snow_Aura_LT_TH            # 420930
+          - Snow_Fox_TH_LT                    # 410561
+    Script: |
+      bonus2 bAddRace,RC_All,15;
+      bonus2 bAddRace,RC_Player_Human,-15;
+      bonus2 bAddRace,RC_Player_Doram,-15;
+      bonus2 bMagicAddRace,RC_All,15;
+      bonus2 bMagicAddRace,RC_Player_Human,-15;
+      bonus2 bMagicAddRace,RC_Player_Doram,-15;
+      bonus2 bIgnoreDefRaceRate,RC_All,10;
+      bonus2 bIgnoreDefRaceRate,RC_Player_Human,-10;
+      bonus2 bIgnoreDefRaceRate,RC_Player_Doram,-10;
+      bonus2 bIgnoreMdefRaceRate,RC_All,10;
+      bonus2 bIgnoreMdefRaceRate,RC_Player_Human,-10;
+      bonus2 bIgnoreMdefRaceRate,RC_Player_Doram,-10;

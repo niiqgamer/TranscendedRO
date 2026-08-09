@@ -2895,6 +2895,27 @@ Body:
       - Index: 1
         Item: Aquila_Antiquity2
         Rate: 1500
+    SpecificDrops:
+      - Monster: EP19_RGAN_A
+        Drops:
+          - Index: 0
+            Item: Etel_Dust
+            Rate: 4000
+      - Monster: EP19_HEARTHUNTER_AT
+        Drops:
+          - Index: 0
+            Item: Etel_Dust
+            Rate: 4000
+      - Monster: EP19_RGAN_B
+        Drops:
+          - Index: 0
+            Item: Etel_Dust
+            Rate: 4000
+      - Monster: EP19_RGAN_C
+        Drops:
+          - Index: 0
+            Item: Etel_Dust
+            Rate: 4000
   - Map: jor_dun02
     GlobalDrops:
       - Index: 0
@@ -2903,6 +2924,27 @@ Body:
       - Index: 1
         Item: Aquila_Antiquity2
         Rate: 1500
+    SpecificDrops:
+      - Monster: EP19_HEARTHUNTER_AT
+        Drops:
+          - Index: 0
+            Item: Etel_Dust
+            Rate: 4000
+      - Monster: EP19_RGAN_B
+        Drops:
+          - Index: 0
+            Item: Etel_Dust
+            Rate: 4000
+      - Monster: EP19_RGAN_C
+        Drops:
+          - Index: 0
+            Item: Etel_Dust
+            Rate: 4000
+      - Monster: EP19_RGAN_D
+        Drops:
+          - Index: 0
+            Item: Etel_Dust
+            Rate: 4000
   - Map: jor_ab01
     GlobalDrops:
       - Index: 0

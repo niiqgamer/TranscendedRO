@@ -6,16 +6,16 @@
 //= 1.0 First version. [Atemo]
 //============================================================
 
-jor_dun01	monster	Primitive Rgan	21526,80
-jor_dun01	monster	Lowest Rgan	21527,50
+jor_dun01	monster	Primitive Rgan	21526,120
+jor_dun01	monster	Lowest Rgan	21527,70
 jor_dun01	monster	Junior Rgan	21528,20
 jor_dun01	monster	Heart Hunter AT	21599,10
 jor_dun01	monster	--ja--	21853,10
 jor_dun01	monster	--ja--	22005,10
 
-jor_dun02	monster	Lowest Rgan	21527,60
-jor_dun02	monster	Junior Rgan	21528,50
-jor_dun02	monster	Intermediate Rgan	21529,15
+jor_dun02	monster	Lowest Rgan	21527,110
+jor_dun02	monster	Junior Rgan	21528,90
+jor_dun02	monster	Intermediate Rgan	21529,20
 jor_dun02	monster	Heart Hunter AT	21599,10
 jor_dun02	monster	--ja--	21853,10
 jor_dun02	monster	--ja--	22005,10

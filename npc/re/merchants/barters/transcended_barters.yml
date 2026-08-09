@@ -55,7 +55,7 @@ Body:
         RequiredItems:
           - Index: 0
             Item: Instance_Emblem
-            Amount: 2
+            Amount: 10
       - Index: 1
         Item: Blacksmith_Blessing
         Zeny: 100000
@@ -72,21 +72,21 @@ Body:
         RequiredItems:
           - Index: 0
             Item: Instance_Emblem
-            Amount: 10
+            Amount: 100
       - Index: 3
         Item: Enchant_Ticket
         Zeny: 100000
         RequiredItems:
           - Index: 0
             Item: Instance_Emblem
-            Amount: 5
+            Amount: 50
       - Index: 4
         Item: Mightysoul_Essence
         Zeny: 50000
         RequiredItems:
           - Index: 0
             Item: Instance_Emblem
-            Amount: 2
+            Amount: 5
       - Index: 5
         Item: M_Dimension_Essence
         Zeny: 100000
@@ -100,6 +100,16 @@ Body:
       - Index: 7
         Item: GH_Cursed_Crystal
         Zeny: 10000
+      - Index: 8
+        Item: Instance_Emblem
+        Zeny: 10000
+      - Index: 9
+        Item: High_Class_Pet_food
+        Zeny: 10000
+        RequiredItems:
+          - Index: 0
+            Item: Instance_Emblem
+            Amount: 2
   - Name: InstanceShopHeads
     Items:
       - Index: 0
@@ -307,17 +317,23 @@ Body:
             Item: Instance_Emblem
             Amount: 250
       - Index: 34
-        Item: Floating_Ball_LT
-        RequiredItems:
-          - Index: 0
-            Item: Instance_Emblem
-            Amount: 250
-      - Index: 35
         Item: Nebula_Orb_US
         RequiredItems:
           - Index: 0
             Item: Instance_Emblem
             Amount: 250
+      - Index: 35
+        Item: Galaxy_Circlet
+        RequiredItems:
+          - Index: 0
+            Item: Instance_Emblem
+            Amount: 100
+      - Index: 36
+        Item: Old_Moroc_Acc
+        RequiredItems:
+          - Index: 0
+            Item: Instance_Emblem
+            Amount: 200
   - Name: InstanceShopArmors
     Items:
       - Index: 0
@@ -347,11 +363,11 @@ Body:
             Item: Instance_Emblem
             Amount: 200
       - Index: 3
-        Item: Illusion_Shield_B
+        Item: Doram_Shield
         RequiredItems:
           - Index: 0
             Item: Instance_Emblem
-            Amount: 250
+            Amount: 200
   - Name: InstanceShopGarments
     Items:
       - Index: 0
@@ -584,6 +600,12 @@ Body:
             Amount: 500
       - Index: 38
         Item: Mystical_Wing
+        RequiredItems:
+          - Index: 0
+            Item: Instance_Emblem
+            Amount: 500
+      - Index: 39
+        Item: Moonlight_Bell_TH
         RequiredItems:
           - Index: 0
             Item: Instance_Emblem
@@ -5133,6 +5155,45 @@ Body:
           - Index: 1
             Item: Gray_Shard
             Amount: 1000
+  - Name: EP19Headgears
+    Items:
+      - Index: 0
+        Item: Glacier_Helm_1
+        Zeny: 20000000
+        RequiredItems:
+          - Index: 0
+            Item: Ep19_Snow_Flower
+            Amount: 2000
+      - Index: 1
+        Item: Glacier_Helm_2
+        Zeny: 20000000
+        RequiredItems:
+          - Index: 0
+            Item: Ep19_Snow_Flower
+            Amount: 2000
+      - Index: 2
+        Item: Glacier_Helm_3
+        Zeny: 20000000
+        RequiredItems:
+          - Index: 0
+            Item: Ep19_Snow_Flower
+            Amount: 2000
+      - Index: 3
+        Item: Glacier_Helm_LT_TH
+        Zeny: 100000000
+        RequiredItems:
+          - Index: 0
+            Item: Ep19_Snow_Flower
+            Amount: 5000
+          - Index: 1
+            Item: Glacier_Helm_1
+            Refine: 9
+          - Index: 2
+            Item: Glacier_Helm_2
+            Refine: 9
+          - Index: 3
+            Item: Glacier_Helm_3
+            Refine: 9
   - Name: EP19Materials
     Items:
       - Index: 0
@@ -7041,3 +7102,379 @@ Body:
           - Index: 0
             Item: Instance_Emblem
             Amount: 10000
+  - Name: HeadUp
+    Items:
+      - Index: 0
+        Item: Boitata_Hat_K
+        RequiredItems:
+          - Index: 0
+            Item: EP20_D_Scale
+            Amount: 30
+          - Index: 1
+            Item: Zelunium
+            Amount: 250
+  - Name: HeadMid
+    Items:
+      - Index: 0
+        Item: Ear_Of_Flame_TH
+        Zeny: 1000000
+        RequiredItems:
+          - Index: 0
+            Item: Elven_Ears
+            Amount: 1
+          - Index: 1
+            Item: Burning_Heart
+            Amount: 1000
+      - Index: 1
+        Item: Ear_Of_Soul_TH
+        Zeny: 1000000
+        RequiredItems:
+          - Index: 0
+            Item: Elven_Ears
+            Amount: 1
+          - Index: 1
+            Item: NasariansSoulstone
+            Amount: 1000
+      - Index: 2
+        Item: Ear_Of_Abyss_TH
+        Zeny: 1000000
+        RequiredItems:
+          - Index: 0
+            Item: Elven_Ears
+            Amount: 1
+          - Index: 1
+            Item: E_Abyss1
+            Amount: 1000
+      - Index: 3
+        Item: Old_Moroc_Acc_LT
+        Zeny: 1000000
+        RequiredItems:
+          - Index: 0
+            Item: Old_Moroc_Acc
+            Amount: 1
+          - Index: 1
+            Item: Suspicious_Hat
+            Amount: 1000
+      - Index: 4
+        Item: Floating_Ball
+        RequiredItems:
+          - Index: 0
+            Item: Zelunium
+            Amount: 200
+          - Index: 1
+            Item: Shadowdecon
+            Amount: 200
+          - Index: 2
+            Item: Dark_Red_Scale
+            Amount: 30
+      - Index: 5
+        Item: Floating_Ball_LT
+        Zeny: 1000000
+        RequiredItems:
+          - Index: 0
+            Item: Floating_Ball
+            Amount: 1
+          - Index: 1
+            Item: Reform_Stone_TH
+            Amount: 4
+      - Index: 6
+        Item: Raven_Of_Tomb
+        RequiredItems:
+          - Index: 0
+            Item: Zelunium
+            Amount: 100
+          - Index: 1
+            Item: Shadowdecon
+            Amount: 100
+          - Index: 2
+            Item: Boroken_Shiled_Piece
+            Amount: 30
+      - Index: 7
+        Item: Raven_Of_Tomb_LT
+        RequiredItems:
+          - Index: 0
+            Item: Zelunium
+            Amount: 350
+          - Index: 1
+            Item: Particles_Of_Energy5
+            Amount: 3000
+          - Index: 2
+            Item: Reform_Stone_TH
+            Amount: 4
+  - Name: HeadLow
+    Items:
+      - Index: 0
+        Item: AAT_Magic_TH
+        Zeny: 1000000
+        RequiredItems:
+          - Index: 0
+            Item: Polluted_Spell
+            Amount: 100
+          - Index: 1
+            Item: Needle_Of_Alarm
+            Amount: 500
+      - Index: 1
+        Item: AAT_Range_TH
+        Zeny: 1000000
+        RequiredItems:
+          - Index: 0
+            Item: Polluted_Spell
+            Amount: 100
+          - Index: 1
+            Item: Needle_Of_Alarm
+            Amount: 500
+      - Index: 2
+        Item: AAT_Melee_TH
+        Zeny: 1000000
+        RequiredItems:
+          - Index: 0
+            Item: Polluted_Spell
+            Amount: 100
+          - Index: 1
+            Item: Needle_Of_Alarm
+            Amount: 500
+      - Index: 3
+        Item: AAT_Supreme_LT
+        Zeny: 50000000
+        RequiredItems:
+          - Index: 0
+            Item: AAT_Magic_TH
+          - Index: 1
+            Item: AAT_Range_TH
+          - Index: 2
+            Item: AAT_Melee_TH
+      - Index: 4
+        Item: Model_Khon_TH
+        Zeny: 1000000
+        RequiredItems:
+          - Index: 0
+            Item: Mould_Powder
+            Amount: 500
+          - Index: 1
+            Item: Screw
+            Amount: 500
+      - Index: 5
+        Item: Model_Kankrai_TH
+        Zeny: 1000000
+        RequiredItems:
+          - Index: 0
+            Item: Mould_Powder
+            Amount: 500
+          - Index: 1
+            Item: Sharp_Leaf
+            Amount: 500
+      - Index: 6
+        Item: Model_Kradat_TH
+        Zeny: 1000000
+        RequiredItems:
+          - Index: 0
+            Item: Mould_Powder
+            Amount: 500
+          - Index: 1
+            Item: Smooth_Paper
+            Amount: 500
+      - Index: 7
+        Item: Snow_Aura_LT_TH
+        Zeny: 1000000
+        RequiredItems:
+          - Index: 0
+            Item: Ep19_Snow_Flower
+            Amount: 1000
+  - Name: Armors
+    Items:
+      - Index: 0
+        Item: Kafra_Suit_LT
+        RequiredItems:
+          - Index: 0
+            Item: Zelunium
+            Amount: 1000
+          - Index: 1
+            Item: Alice's_Apron
+            Amount: 300
+          - Index: 2
+            Item: Armor_Stone_2
+            Amount: 100
+          - Index: 3
+            Item: Reform_Stone_TH
+            Amount: 2
+          - Index: 4
+            Item: Kafra_Suit
+            Amount: 1
+            Refine: 9
+  - Name: Weapons
+    Items:
+      - Index: 0
+        Item: Kafra_Suit_LT
+        RequiredItems:
+          - Index: 0
+            Item: Zelunium
+            Amount: 1000
+  - Name: Shields
+    Items:
+      - Index: 0
+        Item: Illusion_Shield_B
+        RequiredItems:
+          - Index: 0
+            Item: EP17_1_EVT02
+            Amount: 1000
+          - Index: 1
+            Item: Illusion_Shield_A
+            Refine: 9
+      - Index: 1
+        Item: Doram_Shield_LT
+        RequiredItems:
+          - Index: 0
+            Item: DoramToken
+            Amount: 500
+          - Index: 1
+            Item: Doram_Shield
+            Refine: 9
+      - Index: 2
+        Item: Kitten_Shield_US
+        RequiredItems:
+          - Index: 0
+            Item: Union_Token
+            Amount: 1000
+          - Index: 1
+            Item: DoramToken
+            Amount: 2000
+          - Index: 2
+            Item: Doram_Shield
+            Refine: 9
+      - Index: 3
+        Item: Kitten_Shield2_US
+        RequiredItems:
+          - Index: 0
+            Item: Union_Token
+            Amount: 2000
+          - Index: 1
+            Item: DoramToken
+            Amount: 2000
+          - Index: 2
+            Item: Kitten_Shield_US
+            Refine: 9
+      - Index: 4
+        Item: Kitten_Shield2_US
+        RequiredItems:
+          - Index: 0
+            Item: Union_Token
+            Amount: 2000
+          - Index: 1
+            Item: DoramToken
+            Amount: 2000
+          - Index: 2
+            Item: Kitten_Shield_US
+            Refine: 9
+  - Name: Garments
+    Items:
+      - Index: 0
+        Item: Fallen_Angel_Wing_LT
+        Zeny: 20000000
+        RequiredItems:
+          - Index: 0
+            Item: Zelunium
+            Amount: 200
+          - Index: 1
+            Item: Shadowdecon
+            Amount: 200
+          - Index: 2
+            Item: Piece_Of_Bone_Armor
+            Amount: 30
+          - Index: 3
+            Item: Fallen_Angel_Wing
+            Refine: 9
+          - Index: 4
+            Item: Reform_Stone_TH
+            Amount: 4
+      - Index: 1
+        Item: Temporal_Cape_TW
+        Zeny: 1000000
+        RequiredItems:
+          - Index: 0
+            Item: Temporal_M_Str
+            Refine: 9
+          - Index: 1
+            Item: Temporal_M_Agi
+            Refine: 9
+          - Index: 2
+            Item: Temporal_M_Vit
+            Refine: 9
+          - Index: 3
+            Item: Temporal_M_Int
+            Refine: 9
+          - Index: 4
+            Item: Temporal_M_Dex
+            Refine: 9
+          - Index: 5
+            Item: Temporal_M_Luk
+            Refine: 9
+      - Index: 2
+        Item: Temporal_Cape_TW_LT
+        Zeny: 50000000
+        RequiredItems:
+          - Index: 0
+            Item: Temporal_Crystal
+            Amount: 200
+          - Index: 1
+            Item: Fragment_Of_Time
+            Amount: 300
+          - Index: 2
+            Item: Jewel_Of_Time_Ore
+            Amount: 400
+          - Index: 3
+            Item: Spell_Of_Time
+            Amount: 500
+          - Index: 4
+            Item: Reform_Stone_TH
+            Amount: 4
+          - Index: 5
+            Item: Temporal_Cape_TW
+            Refine: 12
+  - Name: Shoes
+    Items:
+      - Index: 0
+        Item: Destroy_World_Boots
+        Zeny: 1000000
+        RequiredItems:
+          - Index: 0
+            Item: Zelunium
+            Amount: 200
+          - Index: 1
+            Item: Shadowdecon
+            Amount: 200
+          - Index: 2
+            Item: Pocket_Watch_
+            Amount: 30
+  - Name: Accessories
+    Items:
+      - Index: 0
+        Item: Temporal_Ring_TW
+        Zeny: 1000000
+        RequiredItems:
+          - Index: 0
+            Item: Instance_Emblem
+            Amount: 200
+          - Index: 1
+            Item: Temporal_Crystal
+            Amount: 200
+      - Index: 1
+        Item: Temporal_Ring_TW_LT
+        Zeny: 20000000
+        RequiredItems:
+          - Index: 0
+            Item: Temporal_Crystal
+            Amount: 100
+          - Index: 1
+            Item: Fragment_Of_Time
+            Amount: 200
+          - Index: 2
+            Item: Jewel_Of_Time_Ore
+            Amount: 300
+          - Index: 3
+            Item: Spell_Of_Time
+            Amount: 400
+          - Index: 4
+            Item: Reform_Stone_TH
+            Amount: 4
+          - Index: 5
+            Item: Temporal_Ring_TW

@@ -72921,7 +72921,7 @@ Body:
     AegisName: Cannon_Box_Ice
     Name: Ice Cannon Ball Box
     Type: Usable
-    Weight: 250
+    Weight: 0
     Flags:
       Container: true
     Script: |
@@ -72930,7 +72930,7 @@ Body:
     AegisName: Cannon_Box_Lightning
     Name: Lightning Cannon Ball Box
     Type: Usable
-    Weight: 250
+    Weight: 0
     Flags:
       Container: true
     Script: |
@@ -72939,7 +72939,7 @@ Body:
     AegisName: Cannon_Box_Stone
     Name: Stone Cannon Ball Box
     Type: Usable
-    Weight: 250
+    Weight: 0
     Flags:
       Container: true
     Script: |
@@ -72948,7 +72948,7 @@ Body:
     AegisName: Cannon_Box_Flare
     Name: Flare Cannon Ball Box
     Type: Usable
-    Weight: 250
+    Weight: 0
     Flags:
       Container: true
     Script: |
@@ -72957,7 +72957,7 @@ Body:
     AegisName: Cannon_Box_Poisoning
     Name: Poisoning Cannon Ball Box
     Type: Usable
-    Weight: 250
+    Weight: 0
     Flags:
       Container: true
     Script: |
@@ -72966,7 +72966,7 @@ Body:
     AegisName: Kunai_Scroll
     Name: Kunai Summon Scroll
     Type: Usable
-    Weight: 250
+    Weight: 0
     Flags:
       Container: true
     Script: |
@@ -72975,7 +72975,7 @@ Body:
     AegisName: Kunai_Scroll_Nothing
     Name: Formless Kunai Summon Scroll
     Type: Usable
-    Weight: 250
+    Weight: 0
     Flags:
       Container: true
     Script: |
@@ -72984,7 +72984,7 @@ Body:
     AegisName: Kunai_Scroll_Shadow
     Name: Shadow Kunai Summon Scroll
     Type: Usable
-    Weight: 250
+    Weight: 0
     Flags:
       Container: true
     Script: |
@@ -72993,7 +72993,7 @@ Body:
     AegisName: Kunai_Scroll_Hamaya
     Name: Hamaya Kunai Summon Scroll
     Type: Usable
-    Weight: 250
+    Weight: 0
     Flags:
       Container: true
     Script: |
@@ -73002,7 +73002,7 @@ Body:
     AegisName: Nw_Grenade_Box
     Name: Throwing Grenade Box
     Type: Usable
-    Weight: 250
+    Weight: 0
     Flags:
       Container: true
     Script: |
@@ -73011,7 +73011,7 @@ Body:
     AegisName: Soa_Charm_Bundle
     Name: Soul Talisman Bundle
     Type: Usable
-    Weight: 250
+    Weight: 0
     Flags:
       Container: true
     Script: |
@@ -73020,7 +73020,7 @@ Body:
     AegisName: SS_Charm_Box
     Name: Haze of Pitch Darkness Box
     Type: Usable
-    Weight: 250
+    Weight: 0
     Flags:
       Container: true
     Script: |
@@ -73029,7 +73029,7 @@ Body:
     AegisName: SS_Charm_F_Box
     Name: Haze of Prominence Box
     Type: Usable
-    Weight: 250
+    Weight: 0
     Flags:
       Container: true
     Script: |
@@ -73038,7 +73038,7 @@ Body:
     AegisName: SS_Charm_W_Box
     Name: Haze of Icy Snow Box
     Type: Usable
-    Weight: 250
+    Weight: 0
     Flags:
       Container: true
     Script: |
@@ -73047,7 +73047,7 @@ Body:
     AegisName: SS_Charm_G_Box
     Name: Haze of Mother Earth Box
     Type: Usable
-    Weight: 250
+    Weight: 0
     Flags:
       Container: true
     Script: |
@@ -73056,7 +73056,7 @@ Body:
     AegisName: SS_Charm_L_Box
     Name: Haze of North Wind Box
     Type: Usable
-    Weight: 250
+    Weight: 0
     Flags:
       Container: true
     Script: |

@@ -3,6 +3,28 @@ Header:
   Version: 3
 
 Body:
+  - Id: 25940
+    AegisName: Loft_StoneUltimate
+    Name: "Loft Stone Garment(Ultimate)"
+    Type: Etc
+    Weight: 0
+    Flags:
+      BuyingStore: true
+  - Id: 27433
+    AegisName: Loft_C_EncUltimate
+    Name: "Loft Stone Garment(Ultimate)"
+    Type: Card
+    SubType: Enchant
+    Script: |
+      bonus bDelayRate,-10;
+      bonus2 bAddClass,Class_All,10;
+      bonus2 bMagicAddClass,Class_All,10;
+      bonus bBaseAtk,50;
+      bonus bMatk,50;
+      bonus bHit,30;
+      bonus bLongAtkRate,5;
+      bonus bMaxHPrate,10;
+      bonus bCritAtkRate,10;
   - Id: 300754
     AegisName: aegis_300754
     Name: Upgrade Memory of Thanatos Card
@@ -97,6 +119,21 @@ Body:
       bonus bMatk,100;
       bonus2 bAddRace,RC_All,15;
       bonus2 bMagicAddRace,RC_All,15;
+  - Id: 313744
+    AegisName: Purify_Garment_Ult
+    Name: "Purified Stone Garment(Ultimate)"
+    Type: Card
+    SubType: Enchant
+    Script: |
+      bonus bDelayRate,-20;
+      bonus2 bAddClass,Class_All,20;
+      bonus2 bMagicAddClass,Class_All,20;
+      bonus bBaseAtk,100;
+      bonus bMatk,100;
+      bonus bHit,60;
+      bonus bLongAtkRate,10;
+      bonus bMaxHPrate,20;
+      bonus bCritAtkRate,20;
   - Id: 313786
     AegisName: HeroAcc_AG1
     Name: Arch Mage Spirit
@@ -416,6 +453,13 @@ Body:
     Weight: 0
     Flags:
       BuyingStore: true
+  - Id: 1001957
+    AegisName: Purify_Garment_Ult_s
+    Name: "Purified Stone Garment(Ultimate)"
+    Type: Etc
+    Weight: 0
+    Flags:
+      BuyingStore: true
   - Id: 1002427
     AegisName: BP2_Mat_Melee_US
     Name: "[S2] Crystallized Shard (Melee)"
@@ -486,6 +530,16 @@ Body:
     Trade:
       NoDrop: true
       NoSell: true
+      NoAuction: true
+  - Id: 9900010
+    AegisName: VIP_Coin
+    Name: VIP Coin
+    Type: Etc
+    Trade:
+      NoDrop: true
+      NoSell: true
+      NoCart: true
+      NoGuildStorage: true
       NoAuction: true
   - Id: 9910000
     AegisName: T_A1_Refining

@@ -359,6 +359,68 @@ Body:
          bonus bPAtk,10;
          bonus bSMatk,10;
       }
+  - Id: 410389
+    AegisName: Ear_Of_Flame_TH
+    Name: Ear of Flame
+    Type: Armor
+    Weight: 10
+    Defense: 10
+    Locations:
+      Head_Mid: true
+    ArmorLevel: 1
+    EquipLevelMin: 190
+    View: 2318
+    Script: |
+      .@a = (readparam(bStr) + readparam(bLuk));
+      bonus bDelayRate,-8;
+      bonus bPow,.@a/15;
+      bonus bShortAtkRate,.@a/30;
+      bonus bLongAtkRate,.@a/30;
+      if (.@a >= 240) {
+         bonus2 bAddClass,Class_All,15;
+      }
+  - Id: 410390
+    AegisName: Ear_Of_Soul_TH
+    Name: Ear of Soul
+    Type: Armor
+    Weight: 10
+    Defense: 10
+    Locations:
+      Head_Mid: true
+    ArmorLevel: 1
+    EquipLevelMin: 190
+    View: 2212
+    Script: |
+      .@a = (readparam(bInt) + readparam(bDex));
+      bonus bDelayRate,-8;
+      bonus bSpl,.@a/15;
+      bonus bMatkRate,.@a/30;
+      if (.@a >= 240) {
+         bonus2 bMagicAddClass,Class_All,15;
+      }
+  - Id: 410391
+    AegisName: Ear_Of_Abyss_TH
+    Name: Ear of Abyss
+    Type: Armor
+    Weight: 10
+    Defense: 10
+    Locations:
+      Head_Mid: true
+    ArmorLevel: 1
+    EquipLevelMin: 190
+    View: 2212
+    Script: |
+      .@a = (readparam(bVit) + readparam(bAgi));
+      bonus bDelayRate,-8;
+      bonus bPow,.@a/15;
+      bonus bSpl,.@a/15;
+      bonus bShortAtkRate,.@a/30;
+      bonus bLongAtkRate,.@a/30;
+      bonus bMatkRate,.@a/30;
+      if (.@a >= 180) {
+         bonus2 bAddClass,Class_All,15;
+         bonus2 bMagicAddClass,Class_All,15;
+      }
   - Id: 410493
     AegisName: BP2_Middle_US
     Name: "[S2] Authority of Issgard"
@@ -580,6 +642,21 @@ Body:
       bonus bShortAtkRate,10;
       bonus bLongAtkRate,10;
       bonus2 bMagicAddEle,Ele_All,10;
+  - Id: 420930
+    AegisName: Snow_Aura_LT_TH
+    Name: "Snow Aura-LT"
+    Type: Armor
+    Weight: 100
+    Defense: 0
+    Slots: 0
+    Locations:
+      Head_Low: true
+    ArmorLevel: 2
+    EquipLevelMin: 200
+    View: 1309
+    Script: |
+      bonus bAllStats,5;
+      bonus2 bDropAddClass,Class_All,10;
   - Id: 450355
     AegisName: Violent_D_S_Armor
     Name: Violent Dragon Shadow Armor
@@ -1332,7 +1409,10 @@ Body:
       bonus bMaxSP,3000;
       bonus bBaseAtk,100;
       bonus bMatk,100;
-      if (BaseLevel<=250) {
+      if (BaseLevel>=250) {
+         bonus2 bDropAddRace,RC_All,25;
+         bonus2 bExpAddRace,RC_All,25;
+      } else {
          bonus2 bDropAddRace,RC_All,BaseLevel/10;
          bonus2 bExpAddRace,RC_All,BaseLevel/10;
       }
@@ -1587,6 +1667,66 @@ Body:
                if (.@g>=ENCHANTGRADE_A) {
                   bonus2 bMagicAddSize,Size_All,20;
                   bonus bMaxHP,5000;
+               }
+            }
+         }
+      }
+  - Id: 460177
+    AegisName: Kitten_Shield2_US
+    Name: Focused Kitten Shield
+    Type: Armor
+    Weight: 100
+    Defense: 20
+    Slots: 1
+    Locations:
+      Left_Hand: true
+    ArmorLevel: 2
+    EquipLevelMin: 1
+    Refineable: true
+    Gradable: true
+    View: 4
+    Script: |
+      .@r = getrefine();
+      .@g = getenchantgrade();
+      bonus bMaxHP,15000;
+      bonus bMaxSP,3000;
+      bonus bBaseAtk,250;
+      bonus bMatk,250;
+      bonus bDelayRate,-20;
+      bonus2 bAddSize,Size_All,25;
+      bonus2 bMagicAddSize,Size_All,25;
+      bonus bAllStats,.@r;
+      if (BaseLevel>=250) {
+         bonus2 bDropAddRace,RC_All,50;
+         bonus2 bExpAddRace,RC_All,50;
+      } else {
+         bonus2 bDropAddRace,RC_All,2*(BaseLevel/10);
+         bonus2 bExpAddRace,RC_All,2*(BaseLevel/10);
+      }
+      if (.@r>=10) {
+         bonus bAllStats,7;
+         if (.@r>=11) {
+            bonus bFixedCast,-500;
+            if (.@r>=12) {
+               bonus bFixedCastrate,-50;
+               if (.@r>=13) {
+                  bonus2 bDropAddRace,RC_All,15;
+                  bonus2 bExpAddRace,RC_All,15;
+               }
+            }
+         }
+      }
+      if (.@g>=ENCHANTGRADE_D) {
+         bonus bMaxHPRate,15;
+         bonus bMaxSPRate,15;
+         if (.@g>=ENCHANTGRADE_C) {
+            bonus bDelayRate,-15;
+            if (.@g>=ENCHANTGRADE_B) {
+               bonus bPow,15;
+               bonus bSpl,15;
+               if (.@g>=ENCHANTGRADE_A) {
+                  bonus2 bDropAddRace,RC_All,20;
+                  bonus2 bExpAddRace,RC_All,20;
                }
             }
          }
@@ -2087,6 +2227,71 @@ Body:
              bonus2 bSkillAtk,"NC_ARMSCANNON",70;
          }
       }
+  - Id: 480597
+    AegisName: Royal_Morroc_US
+    Name: Royal Morroc Cape
+    Type: Armor
+    Weight: 100
+    Slots: 1
+    Locations:
+      Garment: true
+    ArmorLevel: 2
+    EquipLevelMin: 100
+    Refineable: true
+    Gradable: true
+    Script: |
+      .@r = getrefine();
+      .@g = getenchantgrade();
+      bonus bNoKnockback;
+      bonus bAtkRate,20;
+      bonus bBaseAtk,30*(.@r/2);
+      bonus bPow,30*(.@r/2);
+      bonus bShortAtkRate,10*(.@r/3);
+      bonus bCritAtkRate,10*(.@r/3);
+      if (.@r>=7) {
+         bonus bAspdRate,20;
+         bonus bAtkRate,15;
+         if (.@r>=9) {
+            bonus2 bAddEle,Ele_All,20;
+            if (.@r>=10) {
+               bonus bCritical,30;
+               bonus bCritAtkRate,15;
+               if (.@r>=11) {
+                  bonus bAllStats,15;
+                  if (.@r>=12) {
+                     bonus bShortAtkRate,15;
+                     bonus bCritAtkRate,15;
+                     bonus bCRate,10;
+                     if (.@r>=13) {
+                        bonus2 bSkillAtk,"GC_CROSSIMPACT",50;
+                        bonus2 bSkillAtk,"SC_FATALMENACE",50;
+                        skill "SHC_DANCING_KNIFE",5;
+                        if (.@r>=14) {
+                           skill "LG_SHIELDSPELL",3;
+                           bonus3 bAutoSpellWhenHit,"SHC_DANCING_KNIFE",5,50;
+                           bonus2 bSkillAtk,"SHC_DANCING_KNIFE",50;
+                        }
+                     }
+                  }
+               }
+            }
+         }
+      }
+      if (.@g>=ENCHANTGRADE_D) {
+         bonus bBaseAtk,100;
+         if (.@g>=ENCHANTGRADE_C) {
+            bonus bDelayrate,-15;
+            if (.@g>=ENCHANTGRADE_B) {
+               bonus bPAtk,20;
+               if (.@g>=ENCHANTGRADE_A) {
+                  if (.@r>=14) {
+                     bonus2 bSkillAtk,"GC_CROSSIMPACT",70;
+                     bonus2 bSkillAtk,"SC_FATALMENACE",70;
+                  }
+               }
+            }
+         }
+      }
   - Id: 480608
     AegisName: C_S_Beelzebub_Wing
     Name: "Costume Beelzebub's Wings of Gluttony"
@@ -2267,6 +2472,82 @@ Body:
                if (.@g>=ENCHANTGRADE_A) {
                   bonus2 bAddRace,RC_All,30;
                   bonus2 bMagicAddRace,RC_All,30;
+               }
+            }
+         }
+      }
+  - Id: 480698
+    AegisName: Royal_Dragon_US
+    Name: Royal Dragon Cape
+    Type: Armor
+    Weight: 700
+    Defense: 100
+    Slots: 1
+    Locations:
+      Garment: true
+    ArmorLevel: 2
+    EquipLevelMin: 100
+    Refineable: true
+    Gradable: true
+    Script: |
+      .@g = getenchantgrade();
+      .@r = getrefine();
+      bonus bUnbreakableGarment;
+      bonus bNoKnockback;
+      bonus bLongAtkRate,20+15*(.@r/3);
+      if (BaseJob == Job_Swordman) {
+         skill "WL_HELLINFERNO",5;
+      }
+      if (getskilllv("RK_DRAGONTRAINING") == 5) {
+         bonus bLongAtkRate,20;
+      }
+      bonus bPow,2*(.@r/2);
+      bonus bCon,2*(.@r/2);
+      bonus bBaseAtk,20*(.@r/2);
+      bonus2 bMagicAddEle,Ele_Fire,15*(.@r/3);
+      if (.@r>=9) {
+         bonus2 bAddSize,Size_All,15;
+         if (.@r>=10) {
+            bonus2 bAddEle,Ele_All,20;
+            bonus2 bSkillAtk,"DK_DRAGONIC_BREATH",70;
+            bonus2 bSkillAtk,"RK_DRAGONBREATH_WATER",70;
+            if (.@r>=11) {
+               bonus bAllStats,15;
+               bonus bSpeedRate,15;
+               if (.@r>=12) {
+                  bonus bPow,15;
+                  bonus bCon,15;
+                  if (BaseJob == Job_Swordman) {
+                     bonus bPow,10;
+                     bonus bCon,10;
+                     if (.@r>=13) {
+                        bonus2 bSkillAtk,"DK_DRAGONIC_BREATH",30;
+                        bonus2 bSkillAtk,"RK_DRAGONBREATH_WATER",30;
+                        if (.@r>=14) {
+                           skill "LG_SHIELDSPELL",3;
+                           bonus2 bSkillAtk,"DK_DRAGONIC_BREATH",70;
+                           bonus2 bSkillAtk,"RK_DRAGONBREATH_WATER",70;
+                           bonus5 bAutoSpellWhenHit,"DK_DRAGONIC_BREATH",10,50,BF_SHORT,1;
+                           bonus5 bAutoSpellWhenHit,"RK_DRAGONBREATH_WATER",10,50,BF_SHORT,1;
+                        }
+                     }
+                  }
+               }
+            }
+         }
+      }
+      if (.@g>=ENCHANTGRADE_D) {
+         bonus bBaseAtk,75;
+         bonus bMatk,75;
+         if (.@g>=ENCHANTGRADE_C) {
+            bonus bDelayRate,-15;
+            if (.@g>=ENCHANTGRADE_B) {
+               bonus bFixedCast,-300;
+               if (.@g>=ENCHANTGRADE_A) {
+                  if (.@r>=15) {
+                     bonus2 bSkillAtk,"DK_DRAGONIC_BREATH",100;
+                     bonus2 bSkillAtk,"RK_DRAGONBREATH_WATER",100;
+                  }
                }
             }
          }

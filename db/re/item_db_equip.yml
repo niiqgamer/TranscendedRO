@@ -98645,8 +98645,8 @@ Body:
     Locations:
       Head_Low: true
     ArmorLevel: 1
-    Script: |
-      bonus2 bDropAddRace,RC_All,10000;
+#    Script: |
+#      bonus2 bDropAddRace,RC_All,10000;
   - Id: 19433
     AegisName: ResonateTaego_TW
     Name: Ancient Resonance
@@ -152001,8 +152001,16 @@ Body:
     Refineable: true
     View: 1
     Script: |
-      bonus bMdef,5;
-      bonus2 bSubSize,Size_All,(getrefine() >= 8 ? 25 : 15);
+      .@r = getrefine();
+      bonus bBaseAtk,50;
+      bonus bMatk,50;
+      bonus2 bVariableCastRate,"SU_PICKYPECK",15;
+      bonus2 bVariableCastRate,"SU_SV_STEMSPEAR",15;
+      bonus2 bHPRegenRate,200,5000;
+      if (.@r>=5) {
+         bonus bBaseAtk,10*(.@r-5);
+         bonus bMatk,10*(.@r-5);
+      }
   - Id: 28949
     AegisName: Jewel_Shield
     Name: Jewel Shield
