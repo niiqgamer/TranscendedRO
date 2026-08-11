@@ -3573,3 +3573,89 @@ Body:
       - Index: 3
         Item: Bio_Test_Fragment
         Rate: 10000
+  - Map: 1@ch_t
+    GlobalDrops:
+      - Index: 0
+        Item: Meteorite_Dust
+        Rate: 25000
+      - Index: 1
+        Item: Meteorite_Fragment
+        Rate: 17000
+      - Index: 2
+        Item: Pow_Meteorite_Dust
+        Rate: 10000
+      - Index: 3
+        Item: Sta_Meteorite_Dust
+        Rate: 10000
+      - Index: 4
+        Item: Con_Meteorite_Dust
+        Rate: 10000
+      - Index: 5
+        Item: Crt_Meteorite_Dust
+        Rate: 10000
+      - Index: 6
+        Item: Spl_Meteorite_Dust
+        Rate: 10000
+      - Index: 7
+        Item: Wis_Meteorite_Dust
+        Rate: 10000
+  - Map: 2@ch_t
+    GlobalDrops:
+      - Index: 0
+        Item: Meteorite_Dust
+        Rate: 25000
+      - Index: 1
+        Item: Meteorite_Fragment
+        Rate: 17000
+      - Index: 2
+        Item: Pow_Meteorite_Dust
+        Rate: 10000
+      - Index: 3
+        Item: Sta_Meteorite_Dust
+        Rate: 10000
+      - Index: 4
+        Item: Con_Meteorite_Dust
+        Rate: 10000
+      - Index: 5
+        Item: Crt_Meteorite_Dust
+        Rate: 10000
+      - Index: 6
+        Item: Spl_Meteorite_Dust
+        Rate: 10000
+      - Index: 7
+        Item: Wis_Meteorite_Dust
+        Rate: 10000
+  - Map: 3@ch_t
+    GlobalDrops:
+      - Index: 0
+        Item: Meteorite_Dust
+        Rate: 25000
+      - Index: 1
+        Item: Meteorite_Fragment
+        Rate: 17000
+      - Index: 2
+        Item: Pow_Meteorite_Dust
+        Rate: 10000
+      - Index: 3
+        Item: Sta_Meteorite_Dust
+        Rate: 10000
+      - Index: 4
+        Item: Con_Meteorite_Dust
+        Rate: 10000
+      - Index: 5
+        Item: Crt_Meteorite_Dust
+        Rate: 10000
+      - Index: 6
+        Item: Spl_Meteorite_Dust
+        Rate: 10000
+      - Index: 7
+        Item: Wis_Meteorite_Dust
+        Rate: 10000
+  - Map: 1@spa2
+    GlobalDrops:
+      - Index: 0
+        Item: Mine_As
+        Rate: 35000
+      - Index: 1
+        Item: Sakray_Antiquity
+        Rate: 5000

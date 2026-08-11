@@ -313,6 +313,18 @@ function	script	pcblock	{
 	return;
 }
 
+function	script	Q_STATUS	{
+	return isbegin_quest( getarg(0) );
+}
+
+function	script	Q_HUNTING	{
+	return checkquest( getarg(0), HUNTING );
+}
+
+function	script	Q_PLAYTIME	{
+	return checkquest( getarg(0), PLAYTIME );
+}
+
 //* Search the index of a value in from another NPC Variable
 //** npc_resize(<SIZE>);
 //Sizes :
@@ -356,6 +368,10 @@ function	script	getday	{
 	return .@d$;
 }
 
+function	script	word_capitalize	{
+	return setchar(getarg(0), strtoupper(charat(getarg(0),0)), 0);
+}
+
 function	script	safe_rand	{
 	if ( !getargcount() ) 
 		return;
@@ -391,10 +407,22 @@ function	script	validate_itemid	{
 }
 
 //= DUMMY NPC's
--	script(CLOAKED)	dummynpc	-1,{
+-	script	dummynpc	-1,{
 	end;
+	
+OnInit:
+	cloakonnpc;
+end;
 }
 
 -	script	dummynpc2	-1,{ 
 	end; 
+}
+
+-	script	instancedummynpc	-1,{ 
+	end;
+	
+OnInstanceInit: 
+	instance_enable(strnpcinfo(0),false); 
+end; 
 }

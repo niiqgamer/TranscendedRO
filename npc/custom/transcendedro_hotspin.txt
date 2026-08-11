@@ -165,8 +165,8 @@ L_Roll:
 			specialeffect2 EF_MVP;
 			announce "[ H O T S P I N ! ] " + strcharinfo(0) + " received [ NEW ] " + getitemname(.@item) + "!!", bc_all;
 		}
-		// Pool 3 - Rerun Items (2.00% = 200/10000)
-		else if (.@roll < 280 && getarraysize($hotspin_pool3) > 0) {
+		// Pool 3 - Rerun Items (2.20% = 220/10000)
+		else if (.@roll < 300 && getarraysize($hotspin_pool3) > 0) {
 			set .@item, $hotspin_pool3[rand(getarraysize($hotspin_pool3))];
 			getitem .@item, 1;
 			set .@hotspin_hits, .@hotspin_hits + 1;
@@ -592,6 +592,7 @@ OnInit:
 	450526,					// Tiara_Follower_US
 	450566,					// November_Rain_US
 	460092,					// Ancient_Prontera_US
+	480698,					// Royal_Dragon_US
 	460093,					// Ninja_Sheild
 	460095,					// Aegis_Illusive_TH_LT
 	420605,					// True_Gangster_US
@@ -626,6 +627,7 @@ OnInit:
 	19102,					// Pale_Moon_Hat
 	20799,					// Elemental_Towel
 	18813,					// New_Wave_Sunglasses
+	
 	19112,					// Tengu_Scroll
 	5933,					// Crow_Tengu_Mask
 	19125,					// Cylinder_Hairband
@@ -636,6 +638,7 @@ OnInit:
 	15145,					// EvilDragon_Armor
 	16051,					// Valkyrie_Hammer
 	28377,					// Magical_Ring
+	
 	2576,					// Bravery_Bag
 	2589,					// Fallen_Angel_Wing
 	28717,					// Valkyrie_Knife
@@ -646,6 +649,7 @@ OnInit:
 	28503,					// Keraunos
 	19024,					// Protect_Feathers
 	15204,					// Abyss_Dress
+	
 	19020,					// Survive_Circlet
 	19139,					// SurviveOrb
 	20813,					// Clack_Of_Servival_
@@ -656,6 +660,7 @@ OnInit:
 	19269,					// Angel_Of_Happiness_J
 	28521,					// Giant_Protection
 	28372,					// Imperial_Ring
+	
 	18823,					// Imperial_Feather
 	5978,					// Toy_Syringe
 	20859,					// Phreeoni_Wing
@@ -666,17 +671,18 @@ OnInit:
 	19082,					// Bio_Protector
 	22134,					// Enforcer_Shoes
 	19246,					// Royalguard_Necklace
+	
 	19306,					// Heart_Card_In_Mouth
 	28941,					// Excelion_Shield
 	28484,					// Scarf_Of_Rebellion
 	28506,					// StormStone
 	28929,					// HappyShield
-	
 	28394,					// King_of_Spirit_Ring
 	19102,					// Pale_Moon_Hat
 	20799,					// Elemental_Towel
 	18813,					// New_Wave_Sunglasses
 	19112,					// Tengu_Scroll
+	
 	5933,					// Crow_Tengu_Mask
 	19125,					// Cylinder_Hairband
 	20783,					// Hero_Cape
@@ -687,6 +693,7 @@ OnInit:
 	16051,					// Valkyrie_Hammer
 	28377,					// Magical_Ring
 	2576,					// Bravery_Bag
+	
 	2589,					// Fallen_Angel_Wing
 	28717,					// Valkyrie_Knife
 	28372,					// Imperial_Ring
@@ -697,6 +704,7 @@ OnInit:
 	19024,					// Protect_Feathers
 	15204,					// Abyss_Dress
 	19020,					// Survive_Circlet
+	
 	19139,					// SurviveOrb
 	20813,					// Clack_Of_Servival_
 	22170,					// Shoes_Of_Servival
@@ -707,6 +715,7 @@ OnInit:
 	28521,					// Giant_Protection
 	28372,					// Imperial_Ring
 	18823,					// Imperial_Feather
+	
 	5978,					// Toy_Syringe
 	20859,					// Phreeoni_Wing
 	28531,					// Glove_Of_Smith
@@ -717,10 +726,16 @@ OnInit:
 	22134,					// Enforcer_Shoes
 	19246,					// Royalguard_Necklace
 	19306,					// Heart_Card_In_Mouth
+	
 	28941,					// Excelion_Shield
 	28484,					// Scarf_Of_Rebellion
 	28506,					// StormStone
 	28929,					// HappyShield
+	5966,					// KarduiEar
+	2198,					// Lapine_Shield
+	1649,					// Rafini_Staff
+	410136,					// Raven_Of_Tomb
+	420368,					// Reaper_Of_Tomb
 	
 	28502;					// Mob_Scarf
 

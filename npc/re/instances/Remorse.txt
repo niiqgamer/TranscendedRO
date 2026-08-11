@@ -177,8 +177,14 @@ dali02,78,116,3	script	Princess of Remorse#remorse3	20893,{
 	end;
 	
 OnInit:
+	initnpctimer;
 	cloaknpc(strnpcinfo(0),true);
-end;
+	end;
+
+OnTimer1000:
+    showscript(" ! Tomb of Remorse ! ");
+    setnpctimer 0;
+    end;
 }
 
 dali02,78,112,3	script	Marquis of Remorse#remorse	20899,{
@@ -1243,7 +1249,8 @@ end;
 				mes "[ Marquis of Remorse ]";
 				mes "It's a small reward, but it's all that I can give you right now. It's a decision of that the princess of remorse has made.";
 				erasequest .@qid;
-				getitem 1000367,10;
+				getitem 1000367,rand(200,300);
+				getitem 9900009,rand(200,300);
 			}
 			close;
 		
@@ -1266,7 +1273,8 @@ end;
 				mes "[ Marquis of Remorse ]";
 				mes "It's a small reward, but it's all that I can give you right now. It's a decision of that the princess of remorse has made.";
 				erasequest .@qid;
-				getitem 1000367,8;
+				getitem 1000367,rand(150,180);
+				getitem 9900009,rand(150,180);
 			}
 			close;
 		
@@ -1298,7 +1306,8 @@ end;
 					mes "[ Marquis of Remorse ]";
 					mes "It's a small reward, but it's all that I can give you right now. It's a decision of that the princess of remorse has made.";
 					erasequest .@qid;
-					getitem 1000367,1;
+					getitem 1000367,rand(100,150);
+					getitem 9900009,rand(100,150);
 				}
 			}
 			close;	
@@ -1337,7 +1346,8 @@ end;
 				erasequest .@qid;
 				for(.@i = 16473; .@i < 16483; .@i++)
 					erasequest .@i;
-				getitem 1000367,1;
+				getitem 1000367,rand(100,150);
+				getitem 9900009,rand(100,150);
 			}
 			close;
 	}

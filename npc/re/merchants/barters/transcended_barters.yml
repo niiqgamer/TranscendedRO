@@ -105,7 +105,7 @@ Body:
         Zeny: 10000
       - Index: 9
         Item: High_Class_Pet_food
-        Zeny: 10000
+        Zeny: 100000
         RequiredItems:
           - Index: 0
             Item: Instance_Emblem
@@ -7096,12 +7096,38 @@ Body:
   - Name: CraftCollections
     Items:
       - Index: 0
-        Item: Apple
-        Zeny: 10000000
+        Item: Weight_Token
+        Zeny: 50000000
         RequiredItems:
           - Index: 0
             Item: Instance_Emblem
             Amount: 10000
+      - Index: 1
+        Item: SP_Ga01_Token
+        Zeny: 1000000
+        RequiredItems:
+          - Index: 0
+            Item: Cendrawasih_F
+            Amount: 200
+          - Index: 1
+            Item: Transparent_Cloth
+            Amount: 200
+          - Index: 2
+            Item: Glitter_Shell
+            Amount: 200
+      - Index: 2
+        Item: SP_Ga02_Token
+        Zeny: 2000000
+        RequiredItems:
+          - Index: 0
+            Item: Chilli
+            Amount: 200
+          - Index: 1
+            Item: Hanging_Doll
+            Amount: 200
+          - Index: 2
+            Item: Germinating_Sprout
+            Amount: 200
   - Name: HeadUp
     Items:
       - Index: 0
@@ -7113,6 +7139,18 @@ Body:
           - Index: 1
             Item: Zelunium
             Amount: 250
+      - Index: 1
+        Item: Vesper_H_Gear_K
+        RequiredItems:
+          - Index: 0
+            Item: Zelunium
+            Amount: 250
+          - Index: 1
+            Item: Broken_Steel_Piece
+            Amount: 200
+          - Index: 2
+            Item: Wheel
+            Amount: 100
   - Name: HeadMid
     Items:
       - Index: 0
@@ -7178,18 +7216,6 @@ Body:
             Item: Reform_Stone_TH
             Amount: 4
       - Index: 6
-        Item: Raven_Of_Tomb
-        RequiredItems:
-          - Index: 0
-            Item: Zelunium
-            Amount: 100
-          - Index: 1
-            Item: Shadowdecon
-            Amount: 100
-          - Index: 2
-            Item: Boroken_Shiled_Piece
-            Amount: 30
-      - Index: 7
         Item: Raven_Of_Tomb_LT
         RequiredItems:
           - Index: 0
@@ -7197,7 +7223,7 @@ Body:
             Amount: 350
           - Index: 1
             Item: Particles_Of_Energy5
-            Amount: 3000
+            Amount: 500
           - Index: 2
             Item: Reform_Stone_TH
             Amount: 4
@@ -7280,6 +7306,22 @@ Body:
           - Index: 0
             Item: Ep19_Snow_Flower
             Amount: 1000
+          - Index: 1
+            Item: Reform_Stone_TH
+            Amount: 4
+      - Index: 8
+        Item: Reaper_Of_Tomb_LT
+        Zeny: 1000000
+        RequiredItems:
+          - Index: 0
+            Item: Zelunium
+            Amount: 350
+          - Index: 1
+            Item: Pieces_Of_Grudge
+            Amount: 500
+          - Index: 2
+            Item: Reform_Stone_TH
+            Amount: 4
   - Name: Armors
     Items:
       - Index: 0
@@ -7301,6 +7343,18 @@ Body:
             Item: Kafra_Suit
             Amount: 1
             Refine: 9
+      - Index: 1
+        Item: Pirate_Captain_Coat
+        RequiredItems:
+          - Index: 0
+            Item: Zelunium
+            Amount: 200
+          - Index: 1
+            Item: Will_Of_Darkness
+            Amount: 300
+          - Index: 2
+            Item: Will_Of_Warrior
+            Amount: 50
   - Name: Weapons
     Items:
       - Index: 0
@@ -7478,3 +7532,424 @@ Body:
             Amount: 4
           - Index: 5
             Item: Temporal_Ring_TW
+  - Name: ctower_basic
+    Items:
+      - Index: 0
+        Item: Meteorite_Fragment
+        RequiredItems:
+          - Index: 0
+            Item: Meteorite_Dust
+            Amount: 50
+      - Index: 1
+        Item: Vague_Star_Robe
+        RequiredItems:
+          - Index: 0
+            Item: Meteorite_Fragment
+            Amount: 50
+          - Index: 1
+            Item: Naght_Sieger_Soul
+            Amount: 5
+      - Index: 2
+        Item: Vague_Star_Suit
+        RequiredItems:
+          - Index: 0
+            Item: Meteorite_Fragment
+            Amount: 50
+          - Index: 1
+            Item: Naght_Sieger_Soul
+            Amount: 5
+      - Index: 3
+        Item: Vague_Star_Armor
+        RequiredItems:
+          - Index: 0
+            Item: Meteorite_Fragment
+            Amount: 50
+          - Index: 1
+            Item: Naght_Sieger_Soul
+            Amount: 5
+        RequiredItems:
+          - Index: 0
+            Item: Meteorite_Fragment
+            Amount: 50
+          - Index: 1
+            Item: Naght_Sieger_Soul
+            Amount: 5
+      - Index: 4
+        Item: Signet_Of_Star
+        RequiredItems:
+          - Index: 0
+            Item: Meteorite_Fragment
+            Amount: 100
+          - Index: 1
+            Item: Naght_Sieger_Soul
+            Amount: 10
+  - Name: ctower_advanced
+    Items:
+      - Index: 0
+        Item: Star_Armor_Of_Pow
+        RequiredItems:
+          - Index: 0
+            Item: Meteorite_Fragment
+            Amount: 50
+          - Index: 1
+            Item: Pow_Meteorite_Dust
+            Amount: 30
+          - Index: 2
+            Item: Betelgeuse_Soul
+            Amount: 10
+          - Index: 3
+            Item: Vague_Star_Armor
+            Amount: 1
+      - Index: 1
+        Item: Star_Armor_Of_Sta
+        RequiredItems:
+          - Index: 0
+            Item: Meteorite_Fragment
+            Amount: 50
+          - Index: 1
+            Item: Sta_Meteorite_Dust
+            Amount: 30
+          - Index: 2
+            Item: Betelgeuse_Soul
+            Amount: 10
+          - Index: 3
+            Item: Vague_Star_Armor
+            Amount: 1
+      - Index: 2
+        Item: Star_Suit_Of_Con
+        RequiredItems:
+          - Index: 0
+            Item: Meteorite_Fragment
+            Amount: 50
+          - Index: 1
+            Item: Con_Meteorite_Dust
+            Amount: 30
+          - Index: 2
+            Item: Betelgeuse_Soul
+            Amount: 10
+          - Index: 3
+            Item: Vague_Star_Suit
+            Amount: 1
+      - Index: 3
+        Item: Star_Suit_Of_Crt
+        RequiredItems:
+          - Index: 0
+            Item: Meteorite_Fragment
+            Amount: 50
+          - Index: 1
+            Item: Crt_Meteorite_Dust
+            Amount: 30
+          - Index: 2
+            Item: Betelgeuse_Soul
+            Amount: 10
+          - Index: 3
+            Item: Vague_Star_Suit
+            Amount: 1
+      - Index: 4
+        Item: Star_Robe_Of_Spl
+        RequiredItems:
+          - Index: 0
+            Item: Meteorite_Fragment
+            Amount: 50
+          - Index: 1
+            Item: Spl_Meteorite_Dust
+            Amount: 30
+          - Index: 2
+            Item: Betelgeuse_Soul
+            Amount: 10
+          - Index: 3
+            Item: Vague_Star_Robe
+            Amount: 1
+      - Index: 5
+        Item: Star_Robe_Of_Wis
+        RequiredItems:
+          - Index: 0
+            Item: Meteorite_Fragment
+            Amount: 50
+          - Index: 1
+            Item: Wis_Meteorite_Dust
+            Amount: 30
+          - Index: 2
+            Item: Betelgeuse_Soul
+            Amount: 10
+          - Index: 3
+            Item: Vague_Star_Robe
+            Amount: 1
+      - Index: 6
+        Item: Signet_Of_Pow_Star
+        RequiredItems:
+          - Index: 0
+            Item: Meteorite_Fragment
+            Amount: 250
+          - Index: 1
+            Item: Pow_Meteorite_Dust
+            Amount: 50
+          - Index: 2
+            Item: Betelgeuse_Soul
+            Amount: 20
+          - Index: 3
+            Item: Signet_Of_Star
+            Amount: 1
+      - Index: 7
+        Item: Signet_Of_Sta_Star
+        RequiredItems:
+          - Index: 0
+            Item: Meteorite_Fragment
+            Amount: 250
+          - Index: 1
+            Item: Sta_Meteorite_Dust
+            Amount: 50
+          - Index: 2
+            Item: Betelgeuse_Soul
+            Amount: 20
+          - Index: 3
+            Item: Signet_Of_Star
+            Amount: 1
+      - Index: 8
+        Item: Signet_Of_Con_Star
+        RequiredItems:
+          - Index: 0
+            Item: Meteorite_Fragment
+            Amount: 250
+          - Index: 1
+            Item: Con_Meteorite_Dust
+            Amount: 50
+          - Index: 2
+            Item: Betelgeuse_Soul
+            Amount: 20
+          - Index: 3
+            Item: Signet_Of_Star
+            Amount: 1
+      - Index: 9
+        Item: Signet_Of_Crt_Star
+        RequiredItems:
+          - Index: 0
+            Item: Meteorite_Fragment
+            Amount: 250
+          - Index: 1
+            Item: Crt_Meteorite_Dust
+            Amount: 50
+          - Index: 2
+            Item: Betelgeuse_Soul
+            Amount: 20
+          - Index: 3
+            Item: Signet_Of_Star
+            Amount: 1
+      - Index: 10
+        Item: Signet_Of_Spl_Star
+        RequiredItems:
+          - Index: 0
+            Item: Meteorite_Fragment
+            Amount: 250
+          - Index: 1
+            Item: Spl_Meteorite_Dust
+            Amount: 50
+          - Index: 2
+            Item: Betelgeuse_Soul
+            Amount: 20
+          - Index: 3
+            Item: Signet_Of_Star
+            Amount: 1
+      - Index: 11
+        Item: Signet_Of_Wis_Star
+        RequiredItems:
+          - Index: 0
+            Item: Meteorite_Fragment
+            Amount: 250
+          - Index: 1
+            Item: Wis_Meteorite_Dust
+            Amount: 50
+          - Index: 2
+            Item: Betelgeuse_Soul
+            Amount: 20
+          - Index: 3
+            Item: Signet_Of_Star
+            Amount: 1
+  - Name: remorse_item
+    Items:
+      - Index: 0
+        Item: Sakray_Fury
+        Zeny: 100000
+        RequiredItems:
+          - Index: 0
+            Item: Mine_As
+            Amount: 50
+      - Index: 1
+        Item: Sakray_Regret
+        Zeny: 100000
+        RequiredItems:
+          - Index: 0
+            Item: Mine_As
+            Amount: 50
+      - Index: 1
+        Item: Sakray_Fury2
+        Zeny: 150000
+        RequiredItems:
+          - Index: 0
+            Item: Mine_As
+            Amount: 250
+      - Index: 2
+        Item: Sakray_Regret2
+        Zeny: 150000
+        RequiredItems:
+          - Index: 0
+            Item: Mine_As
+            Amount: 250
+  - Name: remorse_weapon
+    Items:
+      - Index: 0
+        Item: Poenitentia_Ensis
+        RequiredItems:
+          - Index: 0
+            Item: Mine_As
+            Amount: 700
+      - Index: 1
+        Item: Poenitentia_Catapulta
+        RequiredItems:
+          - Index: 0
+            Item: Mine_As
+            Amount: 700
+      - Index: 2
+        Item: Poenetentia_Box1
+        RequiredItems:
+          - Index: 0
+            Item: Mine_As
+            Amount: 700
+      - Index: 3
+        Item: Poenetentia_Box2
+        RequiredItems:
+          - Index: 0
+            Item: Mine_As
+            Amount: 700
+      - Index: 4
+        Item: Poenitentia_Catapulta
+        RequiredItems:
+          - Index: 0
+            Item: Mine_As
+            Amount: 700
+      - Index: 5
+        Item: Poenitentia_Ascia
+        RequiredItems:
+          - Index: 0
+            Item: Mine_As
+            Amount: 700
+      - Index: 6
+        Item: Poenitentia_Clava
+        RequiredItems:
+          - Index: 0
+            Item: Mine_As
+            Amount: 700
+      - Index: 7
+        Item: Poenitentia_Pendulus
+        RequiredItems:
+          - Index: 0
+            Item: Mine_As
+            Amount: 700
+      - Index: 8
+        Item: Poenitentia_Ligula
+        RequiredItems:
+          - Index: 0
+            Item: Mine_As
+            Amount: 700
+      - Index: 9
+        Item: Poenitentia_Termes
+        RequiredItems:
+          - Index: 0
+            Item: Mine_As
+            Amount: 700
+      - Index: 10
+        Item: Poenitentia_Virga
+        RequiredItems:
+          - Index: 0
+            Item: Mine_As
+            Amount: 700
+      - Index: 11
+        Item: Poenitentia_Scipio
+        RequiredItems:
+          - Index: 0
+            Item: Mine_As
+            Amount: 700
+      - Index: 12
+        Item: Poenitentia_Codex
+        RequiredItems:
+          - Index: 0
+            Item: Mine_As
+            Amount: 700
+      - Index: 13
+        Item: Poenitentia_Liber
+        RequiredItems:
+          - Index: 0
+            Item: Mine_As
+            Amount: 700
+      - Index: 14
+        Item: Poenitentia_Crystallum
+        RequiredItems:
+          - Index: 0
+            Item: Mine_As
+            Amount: 700
+      - Index: 15
+        Item: Poenitentia_Caestus
+        RequiredItems:
+          - Index: 0
+            Item: Mine_As
+            Amount: 700
+      - Index: 16
+        Item: Poenitentia_Ungula
+        RequiredItems:
+          - Index: 0
+            Item: Mine_As
+            Amount: 700
+      - Index: 17
+        Item: Poenitentia_Manus
+        RequiredItems:
+          - Index: 0
+            Item: Mine_As
+            Amount: 700
+      - Index: 18
+        Item: Poenitentia_Mucro
+        RequiredItems:
+          - Index: 0
+            Item: Mine_As
+            Amount: 700
+      - Index: 19
+        Item: Poenitentia_Tenon
+        RequiredItems:
+          - Index: 0
+            Item: Mine_As
+            Amount: 700
+      - Index: 20
+        Item: Poenetentia_Dilacero
+        RequiredItems:
+          - Index: 0
+            Item: Mine_As
+            Amount: 700
+      - Index: 21
+        Item: Poenitentia_Nervus
+        RequiredItems:
+          - Index: 0
+            Item: Mine_As
+            Amount: 700
+      - Index: 22
+        Item: Poenetentia_Attendo
+        RequiredItems:
+          - Index: 0
+            Item: Mine_As
+            Amount: 700
+      - Index: 23
+        Item: Poenitentia_Chorda
+        RequiredItems:
+          - Index: 0
+            Item: Mine_As
+            Amount: 700
+      - Index: 24
+        Item: Poenitentia_Flagellum
+        RequiredItems:
+          - Index: 0
+            Item: Mine_As
+            Amount: 700
+      - Index: 25
+        Item: Poenetentia_Vatia
+        RequiredItems:
+          - Index: 0
+            Item: Mine_As
+            Amount: 700

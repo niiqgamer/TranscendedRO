@@ -63293,3 +63293,33 @@ Body:
       bonus2 bIgnoreMdefRaceRate,RC_All,10;
       bonus2 bIgnoreMdefRaceRate,RC_Player_Human,-10;
       bonus2 bIgnoreMdefRaceRate,RC_Player_Doram,-10;
+  - Combos:
+      - Combo:
+          - LittleGarden_LT             # 410615
+          - Orc_Hero_Card              # 4143
+    Script: |
+      bonus bDelayRate,-15;
+      bonus bPAtk,15;
+      bonus2 bAddEle,Ele_All,20;
+  - Combos:
+      - Combo:
+          - Tomb_Club_US                           # 590093
+          - P_Archer_Skeleton_Card              # 4633
+    Script: |
+      bonus bMaxHPrate,15;
+      bonus bMaxSPrate,15;
+      bonus bLongAtkRate,20;
+  - Combos:
+      - Combo:
+          - Tomb_Club_US            # 590093
+          - Osiris_Card                 # 4144
+    Script: |
+      .@r = getequiprefinerycnt(EQI_HAND_R);
+      skill "AB_RENOVATIO",4;
+      bonus bLongAtkRate,30;
+      bonus bPow,30;
+      bonus bCon,30;
+      if (.@r>=14) {
+         bonus2 bSkillAtk,"DK_DRAGONIC_BREATH",70;
+         bonus2 bSkillAtk,"BO_ACIDIFIED_ZONE_FIRE",70;
+      }

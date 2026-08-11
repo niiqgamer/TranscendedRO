@@ -44,29 +44,29 @@ bl_lava	monster	Inferno Hydro	21561,15	//  ECO_HYDRO
 bl_lava	monster	Inferno Acidus	21562,35	//  ECO_ACIDUS
 bl_lava	boss_monster	Inferno Detardeurus	21563,1,21600000,600000,0
 
-bl_temple	monster	Temple Rudo	21920,35	//  ECO_RUDO
-bl_temple	monster	Temple Arc Angeling	21921,40	//  ECO_ARCHANGELING
-bl_temple	monster	Temple False Angel	21922,40	//  ECO_FAKE_ANGEL
-bl_temple	monster	Temple Plasma	21923,25	//  ECO_PLASMA_P
-bl_temple	monster	Temple Solace	21924,40	//  ECO_SOLACE
-bl_temple	monster	Temple Anopheles	21925,20	//  ECO_ANOPHELES
-bl_temple	monster	Temple Gryphon	21926,20	//  ECO_GRYPHON
+bl_temple	monster	Temple Rudo	21920,55	//  ECO_RUDO
+bl_temple	monster	Temple Arc Angeling	21921,60	//  ECO_ARCHANGELING
+bl_temple	monster	Temple False Angel	21922,60	//  ECO_FAKE_ANGEL
+bl_temple	monster	Temple Plasma	21923,45	//  ECO_PLASMA_P
+bl_temple	monster	Temple Solace	21924,60	//  ECO_SOLACE
+bl_temple	monster	Temple Anopheles	21925,40	//  ECO_ANOPHELES
+bl_temple	monster	Temple Gryphon	21926,40	//  ECO_GRYPHON
 bl_temple	boss_monster	Temple Valkyrie Randgris	21927,1,21600000,600000,0
 
-bl_venom	monster	Venom Comodo	21928,30	//  ECO_COMODO
-bl_venom	monster	Venom Poison Toad	21929,30	//  ECO_POISON_TOAD
-bl_venom	monster	Venom Side Winder	21930,20	//  ECO_SIDE_WINDER
-bl_venom	monster	Venom Cramp	21931,30	//  ECO_CRAMP
-bl_venom	monster	Venom Kukre	21932,30	//  ECO_KUKRE
-bl_venom	monster	Venom Nephentes	21933,40	//  ECO_NEPENTHES
-bl_venom	monster	Venom Angra Mantis	21934,30	//  ECO_ANGRA_MANTIS
+bl_venom	monster	Venom Comodo	21928,50	//  ECO_COMODO
+bl_venom	monster	Venom Poison Toad	21929,50	//  ECO_POISON_TOAD
+bl_venom	monster	Venom Side Winder	21930,40	//  ECO_SIDE_WINDER
+bl_venom	monster	Venom Cramp	21931,50	//  ECO_CRAMP
+bl_venom	monster	Venom Kukre	21932,50	//  ECO_KUKRE
+bl_venom	monster	Venom Nephentes	21933,60	//  ECO_NEPENTHES
+bl_venom	monster	Venom Angra Mantis	21934,50	//  ECO_ANGRA_MANTIS
 bl_venom	boss_monster	Venomous Chimera	21935,1,21600000,600000,0
 
-bl_soul	monster	Soul Nightmare	21936,30	//  ECO_NIGHTMARE
-bl_soul	monster	Soul Whisper	21937,30	//  ECO_WHISPER
-bl_soul	monster	Soul Marionette	21938,30	//  ECO_MARIONETTE
+bl_soul	monster	Soul Nightmare	21936,55	//  ECO_NIGHTMARE
+bl_soul	monster	Soul Whisper	21937,55	//  ECO_WHISPER
+bl_soul	monster	Soul Marionette	21938,55	//  ECO_MARIONETTE
 bl_soul	monster	Soul Noxious	21939,30	//  ECO_NOXIOUS
-bl_soul	monster	Soul The Paper	21940,30	//  ECO_THE_PAPER
-bl_soul	monster	Soul Gajomart	21941,30	//  ECO_GAJOMART
-bl_soul	monster	Soul Odium of Thanatos	21942,30	//  ECO_ODIUM
+bl_soul	monster	Soul The Paper	21940,45	//  ECO_THE_PAPER
+bl_soul	monster	Soul Gajomart	21941,55	//  ECO_GAJOMART
+bl_soul	monster	Soul Odium of Thanatos	21942,55	//  ECO_ODIUM
 bl_soul	boss_monster	Soul Gloom Under Night	21943,1,21600000,600000,0

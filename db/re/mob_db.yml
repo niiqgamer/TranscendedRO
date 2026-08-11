@@ -186,7 +186,7 @@ Body:
         Rate: 20
       - Item: Poring_Card
         Index: 7
-        Rate: 20
+        Rate: 1
         StealProtected: true
 #  - Id: 1003
 #    AegisName: THIEF_BUG_AGG
@@ -256,7 +256,7 @@ Body:
       - Item: Wing_Of_Fly
         Rate: 500
       - Item: Hornet_Card
-        Rate: 20
+        Rate: 1
         StealProtected: true
   - Id: 1005
     AegisName: FARMILIAR
@@ -369,7 +369,7 @@ Body:
         Rate: 200
 #       RandomOptionGroup: 30L
       - Item: Fabre_Card
-        Rate: 20
+        Rate: 1
         StealProtected: true
   - Id: 1008
     AegisName: PUPA
@@ -514,7 +514,7 @@ Body:
       - Item: Tree_Of_Archer_1
         Rate: 1000
       - Item: Wilow_Card
-        Rate: 10
+        Rate: 1
         StealProtected: true
   - Id: 1011
     AegisName: CHONCHON
@@ -564,7 +564,7 @@ Body:
       - Item: Iron_Ore
         Rate: 200
       - Item: Chonchon_Card
-        Rate: 20
+        Rate: 1
         StealProtected: true
   - Id: 1012
     AegisName: RODA_FROG
@@ -704,7 +704,7 @@ Body:
       - Item: Strawberry
         Rate: 600
       - Item: Spore_Card
-        Rate: 10
+        Rate: 1
         StealProtected: true
   - Id: 1015
     AegisName: ZOMBIE
@@ -750,7 +750,7 @@ Body:
       - Item: Wing_Of_Fly
         Rate: 500
       - Item: Zombie_Card
-        Rate: 10
+        Rate: 1
         StealProtected: true
   - Id: 1016
     AegisName: ARCHER_SKELETON
@@ -1239,7 +1239,7 @@ Body:
       - Item: Strawberry
         Rate: 3000
       - Item: Snake_Card
-        Rate: 10
+        Rate: 1
         StealProtected: true
   - Id: 1026
     AegisName: MUNAK
@@ -1514,7 +1514,7 @@ Body:
       - Item: Apple
         Rate: 125
       - Item: Poporing_Card
-        Rate: 10
+        Rate: 1
         StealProtected: true
   - Id: 1032
     AegisName: VERIT
@@ -2398,7 +2398,7 @@ Body:
       - Item: Wing_Of_Fly
         Rate: 500
       - Item: Picky_Card
-        Rate: 20
+        Rate: 1
         StealProtected: true
   - Id: 1050
     AegisName: PICKY_
@@ -2446,7 +2446,7 @@ Body:
       - Item: Tiny_Egg_Shell
         Rate: 20
       - Item: Picky__Card
-        Rate: 20
+        Rate: 1
         StealProtected: true
   - Id: 1051
     AegisName: THIEF_BUG
@@ -2498,7 +2498,7 @@ Body:
       - Item: Wing_Of_Fly
         Rate: 500
       - Item: Thief_Bug_Card
-        Rate: 20
+        Rate: 1
         StealProtected: true
   - Id: 1052
     AegisName: ROCKER
@@ -3096,7 +3096,7 @@ Body:
       - Item: Rainbow_Carrot
         Rate: 20
       - Item: Lunatic_Card
-        Rate: 20
+        Rate: 1
         StealProtected: true
   - Id: 1064
     AegisName: MEGALODON
@@ -3694,7 +3694,7 @@ Body:
       - Item: Wing_Of_Fly
         Rate: 500
       - Item: Skeleton_Card
-        Rate: 10
+        Rate: 1
         StealProtected: true
   - Id: 1077
     AegisName: POISON_SPORE
@@ -100411,8 +100411,43 @@ Body:
 #    AegisName: TW_KNIGHT_OF_WINDSTORM
 #  - Id: 20111
 #    AegisName: MD_TRE_DRAKE
-#  - Id: 20112
-#    AegisName: MD_MANHOLE
+  - Id: 20112
+    AegisName: MD_MANHOLE
+    Name: Manhole
+    Hp: 1000
+    BaseExp: 0
+    JobExp: 0
+    Attack: 2
+    Attack2: 3
+    Defense: 0
+    MagicDefense: 0
+    Resistance: 0
+    MagicResistance: 0
+    Str: 0
+    Agi: 0
+    Vit: 0
+    Int: 0
+    Dex: 0
+    Luk: 0
+    AttackRange: 2
+    SkillRange: 2
+    ChaseRange: 1
+    Size: Small
+    Race: Formless
+    Element: Neutral
+    ElementLevel: 1
+    WalkSpeed: 1000
+    AttackDelay: 1001
+    AttackMotion: 1
+    ClientAttackMotion: 768
+    DamageMotion: 1
+    Modes:
+      IgnoreMagic: true
+      IgnoreMelee: true
+      IgnoreMisc: true
+      IgnoreRanged: true
+      KnockBackImmune: true
+      TeleportBlock: true
 #  - Id: 20113
 #    AegisName: MD_TRE_MIMIC
 #  - Id: 20114
@@ -115024,11 +115059,11 @@ Body:
 #    AegisName: JP_E_MONSTER_200
   - Id: 20994
     AegisName: MD_BETELGEUSE
-    Name: Betelgeuse
+    Name: Betelguese
     Level: 250
-    Hp: 200000000
-    Attack: 5000
-    Attack2: 8000
+    Hp: 500000000
+    Attack: 8259
+    Attack2: 12518
     Defense: 346
     MagicDefense: 102
     Resistance: 500
@@ -115040,18 +115075,17 @@ Body:
     Dex: 279
     Luk: 108
     AttackRange: 3
-    SkillRange: 12
+    SkillRange: 10
     ChaseRange: 12
     Size: Large
     Race: Dragon
     Element: Neutral
     ElementLevel: 2
-    WalkSpeed: 200
-    AttackDelay: 300
-    AttackMotion: 280
-    DamageMotion: 380
-    DamageTaken: 10
-    Ai: 05
+    WalkSpeed: 150
+    AttackDelay: 1390
+    AttackMotion: 384
+    DamageMotion: 288
+    Ai: 21
     Class: Boss
     Modes:
       CastSensorChase: true
@@ -115060,20 +115094,39 @@ Body:
       KnockBackImmune: true
       StatusImmune: true
       Mvp: true
+    MvpDrops:
+      - Item: Naght_Sieger_Soul
+        Rate: 2000
+      - Item: Betelgeuse_Soul
+        Rate: 3000
     Drops:
-      - Item: Helm_Of_Faith_Hammer
+      - Item: Naght_Sieger_Soul
+        Rate: 100
+        StealProtected: true
+      - Item: Naght_Sieger_Soul
+        Rate: 50
+        StealProtected: true
+      - Item: Naght_Sieger_Soul
+        Rate: 10
+        StealProtected: true
+      - Item: Betelgeuse_Soul
+        Rate: 100
+        StealProtected: true
+      - Item: Betelgeuse_Soul
+        Rate: 50
+        StealProtected: true
+      - Item: Betelgeuse_Soul
         Rate: 10
         StealProtected: true
   - Id: 20995
     AegisName: MD_G_DEADSOUL
-    Name: DEADSOUL
+    Name: Soul of Betelguese
     Level: 250
     Hp: 10000
-    MvpExp: 10
-    Attack: 1000
-    Attack2: 1000
-    Defense: 10
-    MagicDefense: 10
+    Attack: 8510
+    Attack2: 6280
+    Defense: 100
+    MagicDefense: 100
     Str: 100
     Agi: 178
     Vit: 50
@@ -115094,17 +115147,22 @@ Body:
     Ai: 25
     Modes:
       Aggressive: true
+      IgnoreMagic: true
+      IgnoreMelee: true
+      IgnoreMisc: true
+      IgnoreRanged: true
+      KnockBackImmune: true
   - Id: 20996
     AegisName: MD_NAGHT_SIEGER
     Name: Naght Sieger
     Level: 250
     Hp: 200000000
-    Attack: 1500
-    Attack2: 1800
-    Defense: 410
+    Attack: 10764
+    Attack2: 8700
+    Defense: 160
     MagicDefense: 80
-    Resistance: 500
-    MagicResistance: 500
+    Resistance: 30
+    MagicResistance: 20
     Str: 250
     Agi: 188
     Vit: 90
@@ -115117,24 +115175,43 @@ Body:
     Size: Large
     Race: Demon
     Element: Ghost
-    ElementLevel: 3
-    WalkSpeed: 100
-    AttackDelay: 80
+    ElementLevel: 1
+    WalkSpeed: 150
+    AttackDelay: 1390
     AttackMotion: 300
     DamageMotion: 504
-    Ai: 10
+    Ai: 21
     Class: Boss
     Modes:
-      CanMove: true
-      Angry: true
       TeleportBlock: true
-      Detector: true
-      KnockBackImmune: true
-      StatusImmune: true
       Mvp: true
+    MvpDrops:
+      - Item: Naght_Sieger_Soul
+        Rate: 2000
+      - Item: Betelgeuse_Soul
+        Rate: 500
     Drops:
       - Item: Naght_Sieger_Soul
-        Rate: 500
+        Rate: 100
+        StealProtected: true
+      - Item: Naght_Sieger_Soul
+        Rate: 50
+        StealProtected: true
+      - Item: Naght_Sieger_Soul
+        Rate: 10
+        StealProtected: true
+      - Item: Betelgeuse_Soul
+        Rate: 50
+        StealProtected: true
+      - Item: Betelgeuse_Soul
+        Rate: 25
+        StealProtected: true
+      - Item: Betelgeuse_Soul
+        Rate: 5
+        StealProtected: true
+      - Item: Nahtzigger_Card
+        Rate: 1
+        StealProtected: true
   - Id: 20997
     AegisName: MD_G_ENTWEIHEN_M
     Name: Entweihen Crothen
@@ -115169,9 +115246,9 @@ Body:
     AegisName: MD_T_JAKK
     Name: Jakk
     Level: 245
-    Hp: 5000
-    Attack: 1489
-    Attack2: 1814
+    Hp: 40000000
+    Attack: 6445
+    Attack2: 4245
     Defense: 90
     MagicDefense: 25
     Resistance: 200
@@ -115196,14 +115273,16 @@ Body:
     Ai: 21
     Drops:
       - Item: Meteorite_Dust
+        Rate: 500
+      - Item: Meteorite_Dust
         Rate: 67
   - Id: 20999
     AegisName: MD_T_STONE_SHOOTER
     Name: Stone Shooter
     Level: 245
-    Hp: 5000
-    Attack: 1489
-    Attack2: 1814
+    Hp: 40000000
+    Attack: 6445
+    Attack2: 4245
     Defense: 88
     MagicDefense: 15
     Resistance: 200
@@ -115228,14 +115307,16 @@ Body:
     Ai: 04
     Drops:
       - Item: Meteorite_Dust
+        Rate: 500
+      - Item: Meteorite_Dust
         Rate: 67
   - Id: 21000
     AegisName: MD_T_GRIZZLY
     Name: Grizzly
     Level: 245
-    Hp: 5000
-    Attack: 1489
-    Attack2: 1814
+    Hp: 40000000
+    Attack: 6445
+    Attack2: 4245
     Defense: 109
     MagicDefense: 2
     Resistance: 200
@@ -115260,14 +115341,16 @@ Body:
     Ai: 04
     Drops:
       - Item: Meteorite_Dust
+        Rate: 500
+      - Item: Meteorite_Dust
         Rate: 67
   - Id: 21001
     AegisName: MD_T_STALACTIC_GOLEM
     Name: Stalactic Golem
     Level: 245
-    Hp: 5000
-    Attack: 1489
-    Attack2: 1814
+    Hp: 40000000
+    Attack: 6445
+    Attack2: 4245
     Defense: 230
     MagicDefense: 5
     Resistance: 200
@@ -115292,14 +115375,16 @@ Body:
     Ai: 17
     Drops:
       - Item: Meteorite_Dust
+        Rate: 500
+      - Item: Meteorite_Dust
         Rate: 67
   - Id: 21002
     AegisName: MD_T_CHIMERA
     Name: Chimera
     Level: 245
-    Hp: 5000
-    Attack: 1489
-    Attack2: 1814
+    Hp: 40000000
+    Attack: 6445
+    Attack2: 4245
     Defense: 159
     MagicDefense: 10
     Resistance: 200
@@ -115325,14 +115410,16 @@ Body:
     Class: Boss
     Drops:
       - Item: Meteorite_Dust
+        Rate: 500
+      - Item: Meteorite_Dust
         Rate: 67
   - Id: 21003
     AegisName: MD_T_KARAKASA
     Name: Karakasa
     Level: 245
-    Hp: 5000
-    Attack: 1489
-    Attack2: 1814
+    Hp: 40000000
+    Attack: 6445
+    Attack2: 4245
     Defense: 93
     MagicDefense: 29
     Resistance: 200
@@ -115357,14 +115444,16 @@ Body:
     Ai: 01
     Drops:
       - Item: Meteorite_Dust
+        Rate: 500
+      - Item: Meteorite_Dust
         Rate: 67
   - Id: 21004
     AegisName: MD_T_RIDEWORD
     Name: Rideword
     Level: 245
-    Hp: 5000
-    Attack: 1489
-    Attack2: 1814
+    Hp: 40000000
+    Attack: 6445
+    Attack2: 4245
     Defense: 61
     MagicDefense: 38
     Resistance: 200
@@ -115389,14 +115478,16 @@ Body:
     Ai: 21
     Drops:
       - Item: Meteorite_Dust
+        Rate: 500
+      - Item: Meteorite_Dust
         Rate: 67
   - Id: 21005
     AegisName: MD_T_PARASITE
     Name: Parasite
     Level: 245
-    Hp: 5000
-    Attack: 1489
-    Attack2: 1814
+    Hp: 40000000
+    Attack: 6445
+    Attack2: 4245
     Defense: 63
     MagicDefense: 30
     Resistance: 200
@@ -115421,14 +115512,16 @@ Body:
     Ai: 10
     Drops:
       - Item: Meteorite_Dust
+        Rate: 500
+      - Item: Meteorite_Dust
         Rate: 67
   - Id: 21006
     AegisName: MD_T_WRAITH
     Name: Wraith
     Level: 245
-    Hp: 5000
-    Attack: 1489
-    Attack2: 1814
+    Hp: 40000000
+    Attack: 6445
+    Attack2: 4245
     Defense: 80
     MagicDefense: 40
     Resistance: 200
@@ -115453,14 +115546,16 @@ Body:
     Ai: 21
     Drops:
       - Item: Meteorite_Dust
+        Rate: 500
+      - Item: Meteorite_Dust
         Rate: 67
   - Id: 21007
     AegisName: MD_T_PETIT_
     Name: Petite
     Level: 245
-    Hp: 5000
-    Attack: 1489
-    Attack2: 1814
+    Hp: 40000000
+    Attack: 6445
+    Attack2: 4245
     Defense: 86
     MagicDefense: 42
     Resistance: 200
@@ -115485,14 +115580,16 @@ Body:
     Ai: 09
     Drops:
       - Item: Meteorite_Dust
+        Rate: 500
+      - Item: Meteorite_Dust
         Rate: 67
   - Id: 21008
     AegisName: MD_T_WIND_GHOST
     Name: Wind Ghost
     Level: 245
-    Hp: 5000
-    Attack: 1489
-    Attack2: 1814
+    Hp: 40000000
+    Attack: 6445
+    Attack2: 4245
     Defense: 64
     MagicDefense: 51
     Resistance: 200
@@ -115519,14 +115616,16 @@ Body:
       Detector: true
     Drops:
       - Item: Meteorite_Dust
+        Rate: 500
+      - Item: Meteorite_Dust
         Rate: 67
   - Id: 21009
     AegisName: MD_T_CLOCK
     Name: Clock
     Level: 245
-    Hp: 5000
-    Attack: 1489
-    Attack2: 1814
+    Hp: 40000000
+    Attack: 6445
+    Attack2: 4245
     Defense: 91
     MagicDefense: 43
     Resistance: 200
@@ -115551,16 +115650,16 @@ Body:
     Ai: 17
     Drops:
       - Item: Meteorite_Dust
+        Rate: 500
+      - Item: Meteorite_Dust
         Rate: 67
   - Id: 21010
     AegisName: MD_T_RAYDRIC_ARCHER
     Name: Raydric Archer
     Level: 245
-    Hp: 5000
-    BaseExp: 1783981798
-    JobExp: 16057156
-    Attack: 1489
-    Attack2: 1814
+    Hp: 40000000
+    Attack: 6445
+    Attack2: 4245
     Defense: 63
     MagicDefense: 40
     Resistance: 200
@@ -115587,16 +115686,16 @@ Body:
       Detector: true
     Drops:
       - Item: Meteorite_Dust
+        Rate: 500
+      - Item: Meteorite_Dust
         Rate: 67
   - Id: 21011
     AegisName: MD_T_INCREASE_SOIL
     Name: Mi Gao
     Level: 245
-    Hp: 5000
-    BaseExp: 1783981798
-    JobExp: 16057156
-    Attack: 1489
-    Attack2: 1814
+    Hp: 40000000
+    Attack: 6445
+    Attack2: 4245
     Defense: 112
     MagicDefense: 39
     Resistance: 200
@@ -115621,14 +115720,16 @@ Body:
     Ai: 17
     Drops:
       - Item: Meteorite_Dust
+        Rate: 500
+      - Item: Meteorite_Dust
         Rate: 67
   - Id: 21012
     AegisName: MD_T_PENOMENA
     Name: Penomena
     Level: 245
-    Hp: 5000
-    Attack: 1489
-    Attack2: 1814
+    Hp: 40000000
+    Attack: 6445
+    Attack2: 4245
     Defense: 85
     MagicDefense: 32
     Resistance: 200
@@ -115653,14 +115754,16 @@ Body:
     Ai: 21
     Drops:
       - Item: Meteorite_Dust
+        Rate: 500
+      - Item: Meteorite_Dust
         Rate: 67
   - Id: 21013
     AegisName: MD_T_PETIT
     Name: Petite
     Level: 245
-    Hp: 5000
-    Attack: 1489
-    Attack2: 1814
+    Hp: 40000000
+    Attack: 6445
+    Attack2: 4245
     Defense: 99
     MagicDefense: 49
     Resistance: 200
@@ -115685,16 +115788,16 @@ Body:
     Ai: 09
     Drops:
       - Item: Meteorite_Dust
+        Rate: 500
+      - Item: Meteorite_Dust
         Rate: 67
   - Id: 21014
     AegisName: MD_T_ALARM
     Name: Alarm
     Level: 245
-    Hp: 5000
-    BaseExp: 1783981798
-    JobExp: 16057156
-    Attack: 1489
-    Attack2: 1814
+    Hp: 40000000
+    Attack: 6445
+    Attack2: 4245
     Defense: 106
     MagicDefense: 53
     Resistance: 200
@@ -115719,14 +115822,16 @@ Body:
     Ai: 21
     Drops:
       - Item: Meteorite_Dust
+        Rate: 500
+      - Item: Meteorite_Dust
         Rate: 67
   - Id: 21015
     AegisName: MD_T_ZOMBIE_PRISONER
     Name: Zombie Prisoner
     Level: 245
-    Hp: 5000
-    Attack: 1489
-    Attack2: 1814
+    Hp: 40000000
+    Attack: 6445
+    Attack2: 4245
     Defense: 89
     MagicDefense: 28
     Resistance: 200
@@ -115751,14 +115856,16 @@ Body:
     Ai: 13
     Drops:
       - Item: Meteorite_Dust
+        Rate: 500
+      - Item: Meteorite_Dust
         Rate: 67
   - Id: 21016
     AegisName: MD_T_MARIONETTE
     Name: Marionette
     Level: 245
-    Hp: 5000
-    Attack: 1489
-    Attack2: 1814
+    Hp: 40000000
+    Attack: 6445
+    Attack2: 4245
     Defense: 35
     MagicDefense: 24
     Resistance: 200
@@ -115785,14 +115892,16 @@ Body:
       Detector: true
     Drops:
       - Item: Meteorite_Dust
+        Rate: 500
+      - Item: Meteorite_Dust
         Rate: 67
   - Id: 21017
     AegisName: MD_T_PERMETER
     Name: Permeter
     Level: 245
-    Hp: 5000
-    Attack: 1489
-    Attack2: 1814
+    Hp: 40000000
+    Attack: 6445
+    Attack2: 4245
     Defense: 144
     MagicDefense: 50
     Resistance: 200
@@ -115817,16 +115926,16 @@ Body:
     Ai: 17
     Drops:
       - Item: Meteorite_Dust
+        Rate: 500
+      - Item: Meteorite_Dust
         Rate: 67
   - Id: 21018
     AegisName: MD_T_SKEL_PRISONER
     Name: Skeleton Prisoner
     Level: 245
-    Hp: 5000
-    BaseExp: 1783981798
-    JobExp: 16057156
-    Attack: 1489
-    Attack2: 1814
+    Hp: 40000000
+    Attack: 6445
+    Attack2: 4245
     Defense: 95
     MagicDefense: 41
     Resistance: 200
@@ -115851,14 +115960,16 @@ Body:
     Ai: 13
     Drops:
       - Item: Meteorite_Dust
+        Rate: 500
+      - Item: Meteorite_Dust
         Rate: 67
   - Id: 21019
     AegisName: MD_T_OWL_DUKE
     Name: Owl Duke
     Level: 245
-    Hp: 5000
-    Attack: 1489
-    Attack2: 1814
+    Hp: 40000000
+    Attack: 6445
+    Attack2: 4245
     Defense: 80
     MagicDefense: 45
     Resistance: 200
@@ -115884,14 +115995,16 @@ Body:
     Class: Boss
     Drops:
       - Item: Meteorite_Dust
+        Rate: 500
+      - Item: Meteorite_Dust
         Rate: 67
   - Id: 21020
     AegisName: MD_T_DEVIRUCHI
     Name: Deviruchi
     Level: 245
-    Hp: 5000
-    Attack: 1489
-    Attack2: 1814
+    Hp: 40000000
+    Attack: 6445
+    Attack2: 4245
     Defense: 72
     MagicDefense: 16
     Resistance: 200
@@ -115918,14 +116031,16 @@ Body:
       Detector: true
     Drops:
       - Item: Meteorite_Dust
+        Rate: 500
+      - Item: Meteorite_Dust
         Rate: 67
   - Id: 21021
     AegisName: MD_T_BLOOD_BUTTERFLY
     Name: Bloody Butterfly
     Level: 245
-    Hp: 5000
-    Attack: 1489
-    Attack2: 1814
+    Hp: 40000000
+    Attack: 6445
+    Attack2: 4245
     Defense: 79
     MagicDefense: 50
     Resistance: 200
@@ -115952,14 +116067,16 @@ Body:
       Detector: true
     Drops:
       - Item: Meteorite_Dust
+        Rate: 500
+      - Item: Meteorite_Dust
         Rate: 67
   - Id: 21022
     AegisName: MD_T_STAPO
     Name: Stapo
     Level: 245
-    Hp: 5000
-    Attack: 1489
-    Attack2: 1814
+    Hp: 40000000
+    Attack: 6445
+    Attack2: 4245
     Defense: 129
     MagicDefense: 36
     Resistance: 200
@@ -115984,14 +116101,16 @@ Body:
     Ai: 02
     Drops:
       - Item: Meteorite_Dust
+        Rate: 500
+      - Item: Meteorite_Dust
         Rate: 67
   - Id: 21023
     AegisName: MD_T_EVIL_CLOUD_HERMIT
     Name: Taoist Hermit
     Level: 245
-    Hp: 5000
-    Attack: 1489
-    Attack2: 1814
+    Hp: 40000000
+    Attack: 6445
+    Attack2: 4245
     Defense: 66
     MagicDefense: 46
     Resistance: 200
@@ -116016,14 +116135,16 @@ Body:
     Ai: 05
     Drops:
       - Item: Meteorite_Dust
+        Rate: 500
+      - Item: Meteorite_Dust
         Rate: 67
   - Id: 21024
     AegisName: MD_T_THE_PAPER
     Name: The Paper
     Level: 245
-    Hp: 5000
-    Attack: 1489
-    Attack2: 1814
+    Hp: 40000000
+    Attack: 6445
+    Attack2: 4245
     Defense: 32
     MagicDefense: 39
     Resistance: 200
@@ -116048,14 +116169,16 @@ Body:
     Ai: 04
     Drops:
       - Item: Meteorite_Dust
+        Rate: 500
+      - Item: Meteorite_Dust
         Rate: 67
   - Id: 21025
     AegisName: MD_T_TENGU
     Name: Tengu
     Level: 245
-    Hp: 5000
-    Attack: 1489
-    Attack2: 1814
+    Hp: 40000000
+    Attack: 6445
+    Attack2: 4245
     Defense: 134
     MagicDefense: 46
     Resistance: 200
@@ -116082,14 +116205,16 @@ Body:
       Detector: true
     Drops:
       - Item: Meteorite_Dust
+        Rate: 500
+      - Item: Meteorite_Dust
         Rate: 67
   - Id: 21026
     AegisName: MD_T_ALICE
     Name: Alice
     Level: 245
-    Hp: 5000
-    Attack: 1489
-    Attack2: 1814
+    Hp: 40000000
+    Attack: 6445
+    Attack2: 4245
     Defense: 93
     MagicDefense: 73
     Resistance: 200
@@ -116114,14 +116239,16 @@ Body:
     Ai: 17
     Drops:
       - Item: Meteorite_Dust
+        Rate: 500
+      - Item: Meteorite_Dust
         Rate: 67
   - Id: 21027
     AegisName: MD_T_ANACONDAQ
     Name: Anacondaq
     Level: 245
-    Hp: 5000
-    Attack: 1489
-    Attack2: 1814
+    Hp: 40000000
+    Attack: 6445
+    Attack2: 4245
     Defense: 92
     MagicDefense: 30
     Resistance: 200
@@ -116146,14 +116273,16 @@ Body:
     Ai: 17
     Drops:
       - Item: Meteorite_Dust
+        Rate: 500
+      - Item: Meteorite_Dust
         Rate: 67
   - Id: 21028
     AegisName: MD_T_GARGOYLE
     Name: Gargoyle
     Level: 245
-    Hp: 5000
-    Attack: 1489
-    Attack2: 1814
+    Hp: 40000000
+    Attack: 6445
+    Attack2: 4245
     Defense: 98
     MagicDefense: 43
     Resistance: 200
@@ -116180,14 +116309,16 @@ Body:
       Detector: true
     Drops:
       - Item: Meteorite_Dust
+        Rate: 500
+      - Item: Meteorite_Dust
         Rate: 67
   - Id: 21029
     AegisName: MD_T_CARAT
     Name: Carat
     Level: 245
-    Hp: 5000
-    Attack: 1489
-    Attack2: 1814
+    Hp: 40000000
+    Attack: 6445
+    Attack2: 4245
     Defense: 111
     MagicDefense: 67
     Resistance: 200
@@ -116214,14 +116345,16 @@ Body:
       Detector: true
     Drops:
       - Item: Meteorite_Dust
+        Rate: 500
+      - Item: Meteorite_Dust
         Rate: 67
   - Id: 21030
     AegisName: MD_T_STING
     Name: Sting
     Level: 245
-    Hp: 5000
-    Attack: 1489
-    Attack2: 1814
+    Hp: 40000000
+    Attack: 6445
+    Attack2: 4245
     Defense: 146
     MagicDefense: 134
     Resistance: 200
@@ -116246,14 +116379,16 @@ Body:
     Ai: 21
     Drops:
       - Item: Meteorite_Dust
+        Rate: 500
+      - Item: Meteorite_Dust
         Rate: 67
   - Id: 21031
     AegisName: MD_T_GRYPHON
     Name: Gryphon
     Level: 245
-    Hp: 5000
-    Attack: 1489
-    Attack2: 1814
+    Hp: 40000000
+    Attack: 6445
+    Attack2: 4245
     Defense: 113
     MagicDefense: 72
     Resistance: 200
@@ -116279,14 +116414,16 @@ Body:
     Class: Boss
     Drops:
       - Item: Meteorite_Dust
+        Rate: 500
+      - Item: Meteorite_Dust
         Rate: 67
   - Id: 21032
     AegisName: MD_T_GIBBET
     Name: Gibbet
     Level: 245
-    Hp: 5000
-    Attack: 1489
-    Attack2: 1814
+    Hp: 40000000
+    Attack: 6445
+    Attack2: 4245
     Defense: 116
     MagicDefense: 45
     Resistance: 200
@@ -116313,14 +116450,16 @@ Body:
       Detector: true
     Drops:
       - Item: Meteorite_Dust
+        Rate: 500
+      - Item: Meteorite_Dust
         Rate: 67
   - Id: 21033
     AegisName: MD_T_NIGHTMARE_TERROR
     Name: Nightmare Terror
     Level: 245
-    Hp: 5000
-    Attack: 1489
-    Attack2: 1814
+    Hp: 40000000
+    Attack: 6445
+    Attack2: 4245
     Defense: 78
     MagicDefense: 37
     Resistance: 200
@@ -116347,14 +116486,16 @@ Body:
       Detector: true
     Drops:
       - Item: Meteorite_Dust
+        Rate: 500
+      - Item: Meteorite_Dust
         Rate: 67
   - Id: 21034
     AegisName: MD_T_ANOLIAN
     Name: Anolian
     Level: 245
-    Hp: 5000
-    Attack: 1489
-    Attack2: 1814
+    Hp: 40000000
+    Attack: 6445
+    Attack2: 4245
     Defense: 61
     MagicDefense: 11
     Resistance: 200
@@ -116379,14 +116520,16 @@ Body:
     Ai: 21
     Drops:
       - Item: Meteorite_Dust
+        Rate: 500
+      - Item: Meteorite_Dust
         Rate: 67
   - Id: 21035
     AegisName: MD_T_BLOODY_MURDERER
     Name: Bloody Murderer
     Level: 245
-    Hp: 5000
-    Attack: 1489
-    Attack2: 1814
+    Hp: 40000000
+    Attack: 6445
+    Attack2: 4245
     Defense: 84
     MagicDefense: 41
     Resistance: 200
@@ -116411,16 +116554,16 @@ Body:
     Ai: 04
     Drops:
       - Item: Meteorite_Dust
+        Rate: 500
+      - Item: Meteorite_Dust
         Rate: 67
   - Id: 21036
     AegisName: MD_T_ALIOT
     Name: Aliot
     Level: 245
-    Hp: 5000
-    BaseExp: 1783981798
-    JobExp: 16057156
-    Attack: 1489
-    Attack2: 1814
+    Hp: 40000000
+    Attack: 6445
+    Attack2: 4245
     Defense: 106
     MagicDefense: 15
     Resistance: 200
@@ -116447,14 +116590,16 @@ Body:
       Detector: true
     Drops:
       - Item: Meteorite_Dust
+        Rate: 500
+      - Item: Meteorite_Dust
         Rate: 67
   - Id: 21037
     AegisName: MD_T_VENATU
     Name: Venatu
     Level: 245
-    Hp: 5000
-    Attack: 1489
-    Attack2: 1814
+    Hp: 40000000
+    Attack: 6445
+    Attack2: 4245
     Defense: 96
     MagicDefense: 20
     Resistance: 200
@@ -116479,14 +116624,16 @@ Body:
     Ai: 04
     Drops:
       - Item: Meteorite_Dust
+        Rate: 500
+      - Item: Meteorite_Dust
         Rate: 67
   - Id: 21038
     AegisName: MD_T_DEATHWORD
     Name: Death Word
     Level: 245
-    Hp: 5000
-    Attack: 1489
-    Attack2: 1814
+    Hp: 40000000
+    Attack: 6445
+    Attack2: 4245
     Defense: 68
     MagicDefense: 40
     Resistance: 200
@@ -116511,14 +116658,16 @@ Body:
     Ai: 21
     Drops:
       - Item: Meteorite_Dust
+        Rate: 500
+      - Item: Meteorite_Dust
         Rate: 67
   - Id: 21039
     AegisName: MD_T_PLASMA_B
     Name: Plasma
     Level: 245
-    Hp: 5000
-    Attack: 1489
-    Attack2: 1814
+    Hp: 40000000
+    Attack: 6445
+    Attack2: 4245
     Defense: 51
     MagicDefense: 18
     Resistance: 200
@@ -116543,14 +116692,16 @@ Body:
     Ai: 04
     Drops:
       - Item: Meteorite_Dust
+        Rate: 500
+      - Item: Meteorite_Dust
         Rate: 67
   - Id: 21040
     AegisName: MD_T_DIMIK
     Name: Dimik
     Level: 245
-    Hp: 5000
-    Attack: 1489
-    Attack2: 1814
+    Hp: 40000000
+    Attack: 6445
+    Attack2: 4245
     Defense: 45
     MagicDefense: 28
     Resistance: 200
@@ -116575,14 +116726,16 @@ Body:
     Ai: 04
     Drops:
       - Item: Meteorite_Dust
+        Rate: 500
+      - Item: Meteorite_Dust
         Rate: 67
   - Id: 21041
     AegisName: MD_T_MINI_DEMON
     Name: Mini Demon
     Level: 245
-    Hp: 5000
-    Attack: 1489
-    Attack2: 1814
+    Hp: 40000000
+    Attack: 6445
+    Attack2: 4245
     Defense: 80
     MagicDefense: 25
     Resistance: 200
@@ -116609,14 +116762,16 @@ Body:
       Detector: true
     Drops:
       - Item: Meteorite_Dust
+        Rate: 500
+      - Item: Meteorite_Dust
         Rate: 67
   - Id: 21042
     AegisName: MD_T_LEIB_OLMAI
     Name: Leib Olmai
     Level: 245
-    Hp: 5000
-    Attack: 1489
-    Attack2: 1814
+    Hp: 40000000
+    Attack: 6445
+    Attack2: 4245
     Defense: 502
     MagicDefense: 88
     Resistance: 200
@@ -116641,14 +116796,16 @@ Body:
     Ai: 21
     Drops:
       - Item: Meteorite_Dust
+        Rate: 500
+      - Item: Meteorite_Dust
         Rate: 67
   - Id: 21043
     AegisName: MD_T_WANDER_MAN
     Name: Wanderer
     Level: 245
-    Hp: 5000
-    Attack: 1489
-    Attack2: 1814
+    Hp: 40000000
+    Attack: 6445
+    Attack2: 4245
     Defense: 502
     MagicDefense: 88
     Resistance: 200
@@ -116675,14 +116832,16 @@ Body:
       Detector: true
     Drops:
       - Item: Meteorite_Dust
+        Rate: 500
+      - Item: Meteorite_Dust
         Rate: 67
   - Id: 21044
     AegisName: MD_T_RETRIBUTION
     Name: Baroness of Retribution
     Level: 245
-    Hp: 5000
-    Attack: 1489
-    Attack2: 1814
+    Hp: 40000000
+    Attack: 6445
+    Attack2: 4245
     Defense: 61
     MagicDefense: 35
     Resistance: 200
@@ -116708,14 +116867,16 @@ Body:
     Class: Boss
     Drops:
       - Item: Meteorite_Dust
+        Rate: 500
+      - Item: Meteorite_Dust
         Rate: 67
   - Id: 21045
     AegisName: MD_T_FLAME_SKULL
     Name: Flame Skull
     Level: 245
-    Hp: 5000
-    Attack: 1489
-    Attack2: 1814
+    Hp: 40000000
+    Attack: 6445
+    Attack2: 4245
     Defense: 93
     MagicDefense: 40
     Resistance: 200
@@ -116742,14 +116903,16 @@ Body:
       Detector: true
     Drops:
       - Item: Meteorite_Dust
+        Rate: 500
+      - Item: Meteorite_Dust
         Rate: 67
   - Id: 21046
     AegisName: MD_T_KNIGHT_OF_ABYSS
     Name: Abysmal Knight
     Level: 245
-    Hp: 5000
-    Attack: 1489
-    Attack2: 1814
+    Hp: 40000000
+    Attack: 6445
+    Attack2: 4245
     Defense: 102
     MagicDefense: 50
     Resistance: 200
@@ -116774,14 +116937,16 @@ Body:
     Ai: 21
     Drops:
       - Item: Meteorite_Dust
+        Rate: 500
+      - Item: Meteorite_Dust
         Rate: 67
   - Id: 21047
     AegisName: MD_T_BANSHEE
     Name: Banshee
     Level: 245
-    Hp: 5000
-    Attack: 1489
-    Attack2: 1814
+    Hp: 40000000
+    Attack: 6445
+    Attack2: 4245
     Defense: 73
     MagicDefense: 96
     Resistance: 200
@@ -116807,6 +116972,8 @@ Body:
     Modes:
       Detector: true
     Drops:
+      - Item: Meteorite_Dust
+        Rate: 500
       - Item: Meteorite_Dust
         Rate: 67
 #  - Id: 21048
@@ -127847,10 +128014,6 @@ Body:
     WalkSpeed: 160
     AttackDelay: 1100
     DamageMotion: 250
-    Modes:
-    Aggressive: true
-    CanMove: true
-    CanAttack: true
     AttackRange: 5
     SkillRange: 12
     ChaseRange: 12
@@ -127873,10 +128036,98 @@ Body:
         Rate: 30
       - Item: Bar_D_Ic_Specimen
         Rate: 2500
-#  - Id: 22141
-#    AegisName: BIO_SKEL_ARCHER
-#  - Id: 22142
-#    AegisName: BIO_DRAGON_TAIL
+  - Id: 22141
+    AegisName: BIO_SKEL_ARCHER
+    Name: Deep Skeleton Archer
+    Level: 264
+    Hp: 98579600
+    BaseExp: 5522166
+    JobExp: 3855867
+    Attack: 22801
+    Attack2: 11295
+    Defense: 172
+    MagicDefense: 100
+    Str: 302
+    Agi: 290
+    Vit: 191
+    Int: 253
+    Dex: 441
+    Luk: 319
+    AttackRange: 10
+    SkillRange: 10
+    ChaseRange: 12
+    Size: Medium
+    Race: Insect
+    Element: Earth
+    ElementLevel: 3
+    WalkSpeed: 160
+    AttackDelay: 1100
+    DamageMotion: 250
+    DamageTaken: 1000
+    Ai: 04
+    Modes:
+      Detector: true
+    Drops:
+      - Item: Bar_D_Co_Energy
+        Rate: 500
+      - Item: Bar_D_Co_Crystal
+        Rate: 50
+      - Item: Etel_Dust
+        Rate: 150
+      - Item: Death_Barmund_Rune
+        Rate: 80
+      - Item: Death_Barmund_Rune2
+        Rate: 20
+      - Item: Barmund_Death_Essence
+        Rate: 30
+      - Item: Bar_D_Co_Specimen
+        Rate: 2500
+  - Id: 22142
+    AegisName: BIO_DRAGON_TAIL
+    Name: Deep Dragon Tail
+    Level: 264
+    Hp: 98579600
+    BaseExp: 5522166
+    JobExp: 3855867
+    Attack: 22801
+    Attack2: 11295
+    Defense: 172
+    MagicDefense: 100
+    Str: 302
+    Agi: 290
+    Vit: 191
+    Int: 253
+    Dex: 441
+    Luk: 319
+    AttackRange: 10
+    SkillRange: 10
+    ChaseRange: 12
+    Size: Medium
+    Race: Insect
+    Element: Earth
+    ElementLevel: 3
+    WalkSpeed: 160
+    AttackDelay: 1100
+    DamageMotion: 250
+    DamageTaken: 1000
+    Ai: 04
+    Modes:
+      Detector: true
+    Drops:
+      - Item: Bar_D_Co_Energy
+        Rate: 500
+      - Item: Bar_D_Co_Crystal
+        Rate: 50
+      - Item: Etel_Dust
+        Rate: 150
+      - Item: Death_Barmund_Rune
+        Rate: 80
+      - Item: Death_Barmund_Rune2
+        Rate: 20
+      - Item: Barmund_Death_Essence
+        Rate: 30
+      - Item: Bar_D_Co_Specimen
+        Rate: 2500
 #  - Id: 22143
 #    AegisName: BIO_LAVA_TOAD
 #  - Id: 22144
@@ -127920,10 +128171,6 @@ Body:
     WalkSpeed: 140
     AttackDelay: 1160
     DamageMotion: 250
-    Modes:
-    Aggressive: true
-    CanMove: true
-    CanAttack: true
     DamageTaken: 1000
     Ai: 04
     Modes:

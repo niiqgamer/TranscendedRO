@@ -582,3 +582,53 @@ Body:
     Name: "Weight Token"
     Type: Etc
     Weight: 0
+  - Id: 9990001
+    AegisName: SP_Ga01_Token
+    Name: "SP Gain Token [1]"
+    Type: Etc
+    Weight: 0
+  - Id: 9990002
+    AegisName: SP_Ga02_Token
+    Name: "SP Gain Token [2]"
+    Type: Etc
+    Weight: 0
+  - Id: 9990003
+    AegisName: SP_Ga03_Token
+    Name: "SP Gain Token [3]"
+    Type: Etc
+    Weight: 0
+  - Id: 9990004
+    AegisName: SP_Ga04_Token
+    Name: "SP Gain Token [4]"
+    Type: Etc
+    Weight: 0
+  - Id: 9990005
+    AegisName: SP_Ga05_Token
+    Name: "SP Gain Token [5]"
+    Type: Etc
+    Weight: 0
+  - Id: 9990006
+    AegisName: SP_Ga06_Token
+    Name: "SP Gain Token [6]"
+    Type: Etc
+    Weight: 0
+  - Id: 9990007
+    AegisName: SP_Ga07_Token
+    Name: "SP Gain Token [7]"
+    Type: Etc
+    Weight: 0
+  - Id: 9990008
+    AegisName: SP_Ga08_Token
+    Name: "SP Gain Token [8]"
+    Type: Etc
+    Weight: 0
+  - Id: 9990009
+    AegisName: SP_Ga09_Token
+    Name: "SP Gain Token [9]"
+    Type: Etc
+    Weight: 0
+  - Id: 9990010
+    AegisName: SP_Ga10_Token
+    Name: "SP Gain Token [10]"
+    Type: Etc
+    Weight: 0

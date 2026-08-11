@@ -287,6 +287,7 @@ Body:
                 DowngradeAmount: 1
           - Level: 15
             Bonus: 3600
+            BlacksmithBlessingAmount: 30
             BroadcastSuccess: true
             BroadcastFailure: true
             Chances:
@@ -596,6 +597,7 @@ Body:
                 BreakingRate: 10000
           - Level: 15
             Bonus: 4320
+            BlacksmithBlessingAmount: 30
             BroadcastSuccess: true
             BroadcastFailure: true
             Chances:
@@ -948,6 +950,7 @@ Body:
           - Level: 15
             Bonus: 3000
             RandomBonus: 2400
+            BlacksmithBlessingAmount: 30
             BroadcastSuccess: true
             BroadcastFailure: true
             Chances:
@@ -1313,6 +1316,7 @@ Body:
           - Level: 15
             Bonus: 4500
             RandomBonus: 4500
+            BlacksmithBlessingAmount: 30
             BroadcastSuccess: true
             BroadcastFailure: true
             Chances:
@@ -1682,6 +1686,7 @@ Body:
           - Level: 15
             Bonus: 7500
             RandomBonus: 8000
+            BlacksmithBlessingAmount: 30
             BroadcastSuccess: true
             BroadcastFailure: true
             Chances:
@@ -2055,6 +2060,7 @@ Body:
           - Level: 15
             Bonus: 10500
             RandomBonus: 15400
+            BlacksmithBlessingAmount: 30
             BroadcastSuccess: true
             BroadcastFailure: true
             Chances:
@@ -2369,6 +2375,7 @@ Body:
                 BreakingRate: 10000
           - Level: 15
             Bonus: 12000
+            BlacksmithBlessingAmount: 30
             BroadcastSuccess: true
             BroadcastFailure: true
             Chances:
@@ -2717,6 +2724,7 @@ Body:
                 Material: HD_Carnium
                 DowngradeAmount: 1
           - Level: 15
+            BlacksmithBlessingAmount: 30
             BroadcastSuccess: true
             BroadcastFailure: true
             Chances:
@@ -3066,6 +3074,7 @@ Body:
                 Material: HD_Bradium
                 DowngradeAmount: 1
           - Level: 15
+            BlacksmithBlessingAmount: 30
             BroadcastSuccess: true
             BroadcastFailure: true
             Chances:

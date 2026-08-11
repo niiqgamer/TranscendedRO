@@ -521,6 +521,32 @@ Body:
     EquipLevelMin: 200
     Script: |
       bonus bAllTraitStats,5;
+  - Id: 410615
+    AegisName: LittleGarden_LT
+    Name: Little Garden-LT
+    Type: Armor
+    Buy: 10
+    Weight: 100
+    Slots: 1
+    Locations:
+      Head_Mid: true
+    ArmorLevel: 1
+    EquipLevelMin: 100
+    View: 1830
+    Script: |
+      bonus bBaseAtk,80;
+      bonus bCritAtkRate,20;
+      bonus bCritical,15;
+      if (readparam(bLuk)>=90) {
+         bonus bBaseAtk,120;
+         bonus bCritAtkRate,20;
+         bonus bAspdRate,7;
+      }
+      if (readparam(bLuk)>=120) {
+         bonus bBaseAtk,160;
+         bonus bCritAtkRate,30;
+         bonus bCRate,15;
+      }
   - Id: 410644
     AegisName: Floating_Ball_LT
     Name: Floating Ball-LT
@@ -1430,6 +1456,37 @@ Body:
              }
          }
       }
+  - Id: 460107
+    AegisName: Giant_Shield_TH
+    Name: Giant Shield
+    Type: Armor
+    Weight: 500
+    Defense: 40
+    Slots: 1
+    Jobs:
+      Monk: true
+    Classes:
+      Fourth: true
+    Locations:
+      Left_Hand: true
+    ArmorLevel: 1
+    EquipLevelMin: 200
+    Refineable: true
+    View: 1
+    Script: |
+      .@r = getrefine();
+      bonus bCritical,5;
+      bonus2 bSubClass,Class_Normal,10;
+      if (.@r>=7) {
+         bonus bASPD,2;
+         if (.@r>=9) {
+            bonus2 bSkillCooldown,"IQ_EXPOSION_BLASTER",-100;
+            if (.@r>=11) {
+               bonus bDelayRate,-5;
+               bonus bCritAtkRate,10;
+            }
+         }
+      }
   - Id: 460108
     AegisName: Doram_Shield_LT
     Name: Doram Shield-LT
@@ -1481,6 +1538,58 @@ Body:
                   bonus2 bAddSize,Size_All,20;
                   bonus2 bMagicAddSize,Size_All,20;
                   bonus bMaxHP,5000;
+               }
+            }
+         }
+      }
+  - Id: 460109
+    AegisName: Giant_Shield_TH_LT
+    Name: Giant Shield-LT
+    Type: Armor
+    Weight: 500
+    Defense: 40
+    Slots: 1
+    Jobs:
+      Monk: true
+    Classes:
+      Fourth: true
+    Locations:
+      Left_Hand: true
+    ArmorLevel: 2
+    EquipLevelMin: 200
+    Refineable: true
+    Gradable: true
+    View: 1
+    Script: |
+      .@r = getrefine();
+      .@g = getenchantgrade();
+      bonus bCritical,15;
+      bonus2 bSubClass,Class_All,15;
+      if (.@r>=7) {
+         bonus bASPD,2;
+         bonus bMaxHPRate,5;
+         if (.@r>=9) {
+            bonus2 bSkillCooldown,"IQ_EXPOSION_BLASTER",-150;
+            if (.@r>=11) {
+               bonus bDelayRate,-10;
+               bonus bCritAtkRate,20;
+               if (.@r>=12) {
+                  bonus bLongAtkRate,10;
+               }
+            }
+         }
+      }
+      if (.@g>=ENCHANTGRADE_D) {
+         bonus bMaxHPRate,10;
+         if (.@g>=ENCHANTGRADE_C) {
+            bonus bCritical,15;
+            bonus bPAtk,4;
+            if (.@g>=ENCHANTGRADE_B) {
+               bonus bMaxHP,5000;
+               bonus bPAtk,6;
+               if (.@g>=ENCHANTGRADE_A) {
+                  bonus2 bAddSize,Size_All,20;
+                  bonus bUseSPrate,-20;
                }
             }
          }
@@ -1547,6 +1656,88 @@ Body:
             }
           }
         }
+  - Id: 460126
+    AegisName: Abyss_Shield_TH
+    Name: Abyssal Snake Shield
+    Type: Armor
+    Weight: 200
+    Defense: 25
+    Slots: 1
+    Jobs:
+      Rogue: true
+    Classes:
+      Fourth: true
+    Locations:
+      Left_Hand: true
+    ArmorLevel: 1
+    EquipLevelMin: 200
+    Refineable: true
+    View: 1
+    Script: |
+      .@r = getrefine();
+      bonus bAspdRate,10;
+      bonus bMaxHP,100*.@r;
+      bonus2 bMagicAtkEle,Ele_All,4*(.@r/3);
+      if (.@r>=7) {
+         bonus bASPD,2;
+         if (.@r>=9) {
+            bonus3 bAutoSpell,"ABC_ABYSS_SQUARE",5,100;
+            if (.@r>=11) {
+               autobonus "{ bonus bInt,150; bonus2 bHPLossRate,100,1000; bonus2 bSPLossRate,100,1000; }",40,10000,BF_MAGIC;
+               if (.@r>=12) {
+                  bonus2 bSkillAtk,"ABC_ABYSS_SQUARE",15;
+               }
+            }
+         }
+      }
+  - Id: 460127
+    AegisName: Abyss_Shield_TH_LT
+    Name: Abyssal Snake Shield-LT
+    Type: Armor
+    Weight: 200
+    Defense: 25
+    Slots: 1
+    Jobs:
+      Rogue: true
+    Classes:
+      Fourth: true
+    Locations:
+      Left_Hand: true
+    ArmorLevel: 2
+    EquipLevelMin: 200
+    Refineable: true
+    Gradable: true
+    View: 1
+    Script: |
+      .@r = getrefine();
+      .@g = getenchantgrade();
+      bonus bASPD,3;
+      bonus bMagicHPGainValue,500;
+      bonus bMaxHP,500*.@r;
+      bonus2 bMagicAtkEle,Ele_All,8*(.@r/3);
+      if (.@r>=9) {
+         bonus3 bAutoSpell,"ABC_ABYSS_SQUARE",5,150;
+         if (.@r>=11) {
+            if (.@g>=ENCHANTGRADE_B) {
+               autobonus "{ bonus bSpl,100; bonus bSMatk,20; bonus2 bHPLossRate,500,1000; }",40,10000,BF_MAGIC;
+            } else {
+               autobonus "{ bonus bSpl,50; bonus bSMatk,10; bonus2 bHPLossRate,500,1000; }",40,10000,BF_MAGIC;
+            }
+            if (.@r>=12) {
+               bonus2 bSkillAtk,"ABC_ABYSS_SQUARE",20;
+            }
+         }
+      }
+      if (.@g>=ENCHANTGRADE_D) {
+         bonus3 bAutoSpell,"WL_EARTHSTRAIN",5,100;
+         if (.@g>=ENCHANTGRADE_C) {
+            bonus bFixedCast,-500;
+            if (.@g>=ENCHANTGRADE_A) {
+               bonus2 bMagicAddSize,Size_All,30;
+               bonus bPerfectHitAddRate,100;
+            }
+         }
+      }
   - Id: 460138
     AegisName: Trap_Follower_US
     Name: Trap Follower Shield
@@ -1619,6 +1810,40 @@ Body:
             }
          }
       }
+  - Id: 460150
+    AegisName: Sylvan_Guard_TH
+    Name: Sylvan Thorn Guard
+    Type: Armor
+    Weight: 600
+    Defense: 25
+    Slots: 1
+    Jobs:
+      Alchemist: true
+    Classes:
+      Fourth: true
+    Locations:
+      Left_Hand: true
+    ArmorLevel: 1
+    EquipLevelMin: 200
+    Refineable: true
+    View: 1
+    Script: |
+      .@r = getrefine();
+      bonus bCritical,5;
+      bonus2 bSubClass,Class_Normal,10;
+      if (.@r>=7) {
+         bonus bASPD,2;
+         if (.@r>=9) {
+            bonus2 bSkillCooldown,"BO_MAYHEMIC_THORNS",-100;
+            if (.@r>=11) {
+               bonus bDelayRate,-5;
+               bonus bCritAtkRate,10;
+               if (.@r>=12) {
+                  bonus2 bSkillAtk,"BO_MAYHEMIC_THORNS",15;
+               }
+            }
+         }
+      }
   - Id: 460151
     AegisName: Rose_Quartz_Shield_LT
     Name: Rose Quartz Shield-LT
@@ -1667,6 +1892,113 @@ Body:
                if (.@g>=ENCHANTGRADE_A) {
                   bonus2 bMagicAddSize,Size_All,20;
                   bonus bMaxHP,5000;
+               }
+            }
+         }
+      }
+  - Id: 460152
+    AegisName: Sylvan_Guard_TH_LT
+    Name: Sylvan Thorn Guard-LT
+    Type: Armor
+    Weight: 1600
+    Defense: 50
+    Slots: 1
+    Jobs:
+      Alchemist: true
+    Classes:
+      Fourth: true
+    Locations:
+      Left_Hand: true
+    ArmorLevel: 2
+    EquipLevelMin: 200
+    Refineable: true
+    Gradable: true
+    View: 1
+    Script: |
+      .@r = getrefine();
+      .@g = getenchantgrade();
+      bonus bCritical,15;
+      bonus2 bSubClass,Class_All,15;
+      if (.@r>=7) {
+         bonus bASPD,2;
+         bonus bMaxHPRate,5;
+         if (.@r>=9) {
+            bonus2 bSkillCooldown,"BO_MAYHEMIC_THORNS",-200;
+            if (.@r>=11) {
+               bonus bDelayRate,-10;
+               bonus bCritAtkRate,20;
+               if (.@r>=12) {
+                  bonus2 bSkillAtk,"BO_MAYHEMIC_THORNS",20;
+               }
+            }
+         }
+      }
+      if (.@g>=ENCHANTGRADE_D) {
+         bonus bMaxHPRate,10;
+         if (.@g>=ENCHANTGRADE_C) {
+            bonus bCritical,15;
+            bonus bPAtk,4;
+            if (.@g>=ENCHANTGRADE_B) {
+               bonus bDelayRate,-10;
+               bonus bPAtk,6;
+               if (.@g>=ENCHANTGRADE_A) {
+                  bonus bMaxHP,5000;
+                  bonus2 bAddSize,Size_All,20;
+               }
+            }
+         }
+      }
+  - Id: 460176
+    AegisName: Feather_Shield_LT_TH
+    Name: Feather Shield-LT
+    Type: Armor
+    Weight: 400
+    Defense: 150
+    Slots: 1
+    Locations:
+      Left_Hand: true
+    ArmorLevel: 2
+    EquipLevelMin: 90
+    Refineable: true
+    Gradable: true
+    View: 4
+    Script: |
+      .@r = getrefine();
+      .@g = getenchantgrade();
+      bonus bAspdRate,3;
+      bonus bDelayrate,-5;
+      bonus bMdef,8;
+      bonus bBaseAtk,10*(.@r/2);
+      bonus bMatk,10*(.@r/2);
+      if (.@r>=7) {
+         bonus bDelayrate,-5;
+         bonus bAspdRate,3;
+         if (.@r>=9) {
+            bonus2 bAddRace,RC_All,10;
+            bonus bMatkRate,10;
+            if (.@r>=12) {
+               skill "LG_SHIELDSPELL",3;
+               bonus bDelayrate,-5;
+               bonus bASPD,2;
+            }
+         }
+      }
+      if (.@g>=ENCHANTGRADE_D) {
+         bonus bAllTraitStats,2;
+         if (.@g>=ENCHANTGRADE_C) {
+            bonus bPAtk,10;
+            bonus bSMatk,10;
+            if (.@g>=ENCHANTGRADE_B) {
+               bonus2 bAddSize,Size_All,4*(.@r/3);
+               bonus2 bMagicAddSize,Size_All,4*(.@r/3);
+               if (.@g>=ENCHANTGRADE_A) {
+                  if (.@r>=12) {
+                     skill "ALL_ODINS_POWER",2;
+                     bonus2 bResEff,Eff_Freeze,10000;
+                     bonus2 bResEff,Eff_Sleep,10000;
+                     bonus2 bResEff,Eff_Stone,10000;
+                     bonus2 bResEff,Eff_Stun,10000;
+                  }
                }
             }
          }
@@ -1728,6 +2060,99 @@ Body:
                   bonus2 bDropAddRace,RC_All,20;
                   bonus2 bExpAddRace,RC_All,20;
                }
+            }
+         }
+      }
+  - Id: 460178
+    AegisName: Ignis_Guard_TH
+    Name: Ignis Flame Guard
+    Type: Armor
+    Weight: 200
+    Defense: 25
+    Slots: 1
+    Jobs:
+      Wizard: true
+    Classes:
+      Fourth: true
+    Locations:
+      Left_Hand: true
+    ArmorLevel: 1
+    EquipLevelMin: 200
+    Refineable: true
+    View: 1
+    Script: |
+      .@r = getrefine();
+      bonus bAspdRate,10;
+      bonus bMaxHP,100*.@r;
+      bonus2 bMagicAtkEle,Ele_All,4*(.@r/3);
+      if (.@r>=7) {
+         bonus bASPD,2;
+         if (.@r>=9) {
+            bonus2 bSkillCooldown,"AG_FLORAL_FLARE_ROAD",-300;
+            bonus2 bSkillCooldown,"AG_ALL_BLOOM",-300;
+            if (.@r>=11) {
+               autobonus "{ bonus bInt,150; bonus2 bHPLossRate,100,1000; bonus2 bSPLossRate,100,1000; }",40,10000,BF_MAGIC;
+               if (.@r>=12) {
+                  bonus2 bSkillAtk,"AG_FLORAL_FLARE_ROAD",15;
+                  bonus2 bSkillAtk,"AG_CRIMSON_ARROW",15;
+                  bonus2 bSkillAtk,"AG_CRIMSON_ARROW_ATK",15;
+                  bonus2 bSkillAtk,"AG_ALL_BLOOM",15;
+                  bonus2 bSkillAtk,"AG_ALL_BLOOM_ATK",15;
+                  bonus2 bSkillAtk,"AG_ALL_BLOOM_ATK2",15;
+               }
+            }
+         }
+      }
+  - Id: 460179
+    AegisName: Ignis_Guard_LT_TH
+    Name: Ignis Flame Guard-LT
+    Type: Armor
+    Weight: 200
+    Defense: 25
+    Slots: 1
+    Jobs:
+      Wizard: true
+    Classes:
+      Fourth: true
+    Locations:
+      Left_Hand: true
+    ArmorLevel: 2
+    EquipLevelMin: 200
+    Refineable: true
+    Gradable: true
+    View: 1
+    Script: |
+      .@r = getrefine();
+      .@g = getenchantgrade();
+      bonus bASPD,3;
+      bonus bMagicHPGainValue,500;
+      bonus bMaxHP,500*.@r;
+      bonus2 bMagicAtkEle,Ele_All,8*(.@r/3);
+      if (.@r>=9) {
+         bonus2 bSkillCooldown,"AG_FLORAL_FLARE_ROAD",-600;
+         bonus2 bSkillCooldown,"AG_ALL_BLOOM",-600;
+         if (.@r>=11) {
+            if (.@g>=ENCHANTGRADE_B) {
+               autobonus "{ bonus bSpl,100; bonus bSMatk,20; bonus2 bHPLossRate,500,1000; }",40,10000,BF_MAGIC;
+            } else {
+               autobonus "{ bonus bSpl,50; bonus bSMatk,10; bonus2 bHPLossRate,500,1000; }",40,10000,BF_MAGIC;
+            }
+            if (.@r>=12) {
+               bonus2 bSkillAtk,"AG_FLORAL_FLARE_ROAD",20;
+               bonus2 bSkillAtk,"AG_CRIMSON_ARROW",20;
+               bonus2 bSkillAtk,"AG_CRIMSON_ARROW_ATK",20;
+               bonus2 bSkillAtk,"AG_ALL_BLOOM",20;
+               bonus2 bSkillAtk,"AG_ALL_BLOOM_ATK",20;
+               bonus2 bSkillAtk,"AG_ALL_BLOOM_ATK2",20;
+            }
+         }
+      }
+      if (.@g>=ENCHANTGRADE_D) {
+         bonus bDelayRate,-10;
+         if (.@g>=ENCHANTGRADE_C) {
+            bonus bFixedCast,-500;
+            if (.@g>=ENCHANTGRADE_A) {
+               bonus2 bMagicAddSize,Size_All,20;
             }
          }
       }
@@ -4541,6 +4966,54 @@ Body:
                if (.@g >= ENCHANTGRADE_A) {
                   bonus bAllStats,7;
                   bonus bAllTraitStats,7;
+               }
+            }
+         }
+      }
+  - Id: 560077
+    AegisName: Tomb_Club_US
+    Name: Abydos Morning Star
+    Type: Weapon
+    SubType: Mace
+    Weight: 100
+    Attack: 300
+    Range: 1
+    Slots: 2
+    Locations:
+      Right_Hand: true
+    WeaponLevel: 5
+    EquipLevelMin: 100
+    Refineable: true
+    Gradable: true
+    Script: |
+      .@g = getenchantgrade();
+      .@r = getrefine();
+      bonus2 bSubClass,Class_All,30;
+      bonus bLongAtkRate,30+(10*.@r);
+      bonus2 bHPDrainRate,1000,2;
+      bonus bDelayRate,-1*.@r;
+      if (.@r>=11) {
+         bonus bMaxHPRate,15;
+         bonus bSpeedRate,25;
+         if (.@r>=12) {
+            bonus bAllStats,15;
+            bonus bBaseAtk,50;
+            bonus bMatk,50;
+            if (.@r>=13) {
+               bonus2 bSkillAtk,"DK_DRAGONIC_BREATH",30;
+               bonus2 bSkillAtk,"BO_ACIDIFIED_ZONE_FIRE",30;
+            }
+         }
+      }
+      if (.@g >= ENCHANTGRADE_D) {
+         bonus bLongAtkRate,15;
+         if (.@g >= ENCHANTGRADE_C) {
+            bonus bPow,7;
+            bonus bCon,7;
+            if (.@g >= ENCHANTGRADE_B) {
+               bonus bPAtk,20;
+               if (.@g >= ENCHANTGRADE_A) {
+                  bonus bLongAtkRate,20;
                }
             }
          }
