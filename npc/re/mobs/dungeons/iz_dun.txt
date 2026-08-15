@@ -176,7 +176,7 @@ OnMobDead:
 			.boss_spawn = true;
 			.count = 0;
 			killmonster "iz_d05_i", "iz_d05_i_boss::OnBossDeath";
-			// mapannounce "iz_d05_i", "", bc_map;	// todo
+			mapannounce "iz_d05_i", "Abysmal Witch is here!!!", bc_map;
 			getunitdata( killedgid, .@data );
 			monster "iz_d05_i", .@data[UMOB_X], .@data[UMOB_Y], "--ja--", 20843,1, "iz_d05_i_boss::OnBossDeath";	// ILL_ABYSMAL_WITCH
 			end;

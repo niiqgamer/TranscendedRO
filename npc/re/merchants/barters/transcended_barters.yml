@@ -2908,7 +2908,7 @@ Body:
             Amount: 1
             Refine: 9
       - Index: 5
-        Item: Star_Armor_Of_Sta
+        Item: Star_Suit_Of_Con
         Zeny: 50000000
         RequiredItems:
           - Index: 0
@@ -3707,53 +3707,17 @@ Body:
   - Name: balheele
     Items:
       - Index: 0
-        Item: EpisodClear13
-        RequiredItems:
-          - Index: 0
-            Item: Silvervine
-            Amount: 20
-      - Index: 1
-        Item: EpisodClear14
-        RequiredItems:
-          - Index: 0
-            Item: Silvervine
-            Amount: 20
-      - Index: 2
-        Item: EpisodClear15
-        RequiredItems:
-          - Index: 0
-            Item: Silvervine
-            Amount: 20
-      - Index: 3
         Item: EpisodClear16
         RequiredItems:
           - Index: 0
             Item: Silvervine
             Amount: 42
-      - Index: 4
+      - Index: 1
         Item: EpisodClear17
         RequiredItems:
           - Index: 0
             Item: Silvervine
             Amount: 28
-      - Index: 5
-        Item: EpisodClear18
-        RequiredItems:
-          - Index: 0
-            Item: Silvervine
-            Amount: 80
-      - Index: 6
-        Item: EpisodClear19
-        RequiredItems:
-          - Index: 0
-            Item: Silvervine
-            Amount: 100
-      - Index: 7
-        Item: EpisodClear20
-        RequiredItems:
-          - Index: 0
-            Item: Silvervine
-            Amount: 120
   - Name: balheele_20
     Items:
       - Index: 0
@@ -5432,8 +5396,8 @@ Body:
         Zeny: 2000000
         RequiredItems:
           - Index: 0
-            Item: Instance_Emblem
-            Amount: 1000
+            Item: Ep19_Snow_Flower
+            Amount: 1919
           - Index: 1
             Item: Snowflower_Ring
             Amount: 1
@@ -5442,8 +5406,8 @@ Body:
         Zeny: 2000000
         RequiredItems:
           - Index: 0
-            Item: Instance_Emblem
-            Amount: 1000
+            Item: Ep19_Snow_Flower
+            Amount: 1919
           - Index: 1
             Item: Snowflower_Ring
             Amount: 1
@@ -5452,8 +5416,8 @@ Body:
         Zeny: 2000000
         RequiredItems:
           - Index: 0
-            Item: Instance_Emblem
-            Amount: 1000
+            Item: Ep19_Snow_Flower
+            Amount: 1919
           - Index: 1
             Item: Snowflower_Ring
             Amount: 1
@@ -5462,8 +5426,8 @@ Body:
         Zeny: 2000000
         RequiredItems:
           - Index: 0
-            Item: Instance_Emblem
-            Amount: 1000
+            Item: Ep19_Snow_Flower
+            Amount: 1919
           - Index: 1
             Item: Snowflower_Ring
             Amount: 1
@@ -5472,8 +5436,8 @@ Body:
         Zeny: 2000000
         RequiredItems:
           - Index: 0
-            Item: Instance_Emblem
-            Amount: 1000
+            Item: Ep19_Snow_Flower
+            Amount: 1919
           - Index: 1
             Item: Snowflower_Ring
             Amount: 1
@@ -5482,8 +5446,8 @@ Body:
         Zeny: 2000000
         RequiredItems:
           - Index: 0
-            Item: Instance_Emblem
-            Amount: 1000
+            Item: Ep19_Snow_Flower
+            Amount: 1919
           - Index: 1
             Item: Snowflower_Ring
             Amount: 1
@@ -5492,8 +5456,8 @@ Body:
         Zeny: 2000000
         RequiredItems:
           - Index: 0
-            Item: Instance_Emblem
-            Amount: 1000
+            Item: Ep19_Snow_Flower
+            Amount: 1919
           - Index: 1
             Item: Snowflower_Ring
             Amount: 1
@@ -5502,8 +5466,8 @@ Body:
         Zeny: 2000000
         RequiredItems:
           - Index: 0
-            Item: Instance_Emblem
-            Amount: 1000
+            Item: Ep19_Snow_Flower
+            Amount: 1919
           - Index: 1
             Item: Snowflower_Ring
             Amount: 1
@@ -5512,8 +5476,8 @@ Body:
         Zeny: 2000000
         RequiredItems:
           - Index: 0
-            Item: Instance_Emblem
-            Amount: 1000
+            Item: Ep19_Snow_Flower
+            Amount: 1919
           - Index: 1
             Item: Snowflower_Ring
             Amount: 1
@@ -5522,8 +5486,8 @@ Body:
         Zeny: 2000000
         RequiredItems:
           - Index: 0
-            Item: Instance_Emblem
-            Amount: 1000
+            Item: Ep19_Snow_Flower
+            Amount: 1919
           - Index: 1
             Item: Snowflower_Ring
             Amount: 1
@@ -5532,8 +5496,8 @@ Body:
         Zeny: 2000000
         RequiredItems:
           - Index: 0
-            Item: Instance_Emblem
-            Amount: 1000
+            Item: Ep19_Snow_Flower
+            Amount: 1919
           - Index: 1
             Item: Snowflower_Ring
             Amount: 1
@@ -5542,8 +5506,8 @@ Body:
         Zeny: 2000000
         RequiredItems:
           - Index: 0
-            Item: Instance_Emblem
-            Amount: 1000
+            Item: Ep19_Snow_Flower
+            Amount: 1919
           - Index: 1
             Item: Snowflower_Ring
             Amount: 1
@@ -5552,8 +5516,8 @@ Body:
         Zeny: 2000000
         RequiredItems:
           - Index: 0
-            Item: Instance_Emblem
-            Amount: 1000
+            Item: Ep19_Snow_Flower
+            Amount: 1919
           - Index: 1
             Item: Snowflower_Ring
             Amount: 1
@@ -5562,8 +5526,8 @@ Body:
         Zeny: 2000000
         RequiredItems:
           - Index: 0
-            Item: Instance_Emblem
-            Amount: 1000
+            Item: Ep19_Snow_Flower
+            Amount: 1919
           - Index: 1
             Item: Snowflower_Ring
             Amount: 1
@@ -5572,8 +5536,8 @@ Body:
         Zeny: 2000000
         RequiredItems:
           - Index: 0
-            Item: Instance_Emblem
-            Amount: 1000
+            Item: Ep19_Snow_Flower
+            Amount: 1919
           - Index: 1
             Item: Snowflower_Ring
             Amount: 1
@@ -5582,8 +5546,8 @@ Body:
         Zeny: 2000000
         RequiredItems:
           - Index: 0
-            Item: Instance_Emblem
-            Amount: 1000
+            Item: Ep19_Snow_Flower
+            Amount: 1919
           - Index: 1
             Item: Snowflower_Ring
             Amount: 1
@@ -5592,8 +5556,8 @@ Body:
         Zeny: 2000000
         RequiredItems:
           - Index: 0
-            Item: Instance_Emblem
-            Amount: 1000
+            Item: Ep19_Snow_Flower
+            Amount: 1919
           - Index: 1
             Item: Snowflower_Ring
             Amount: 1
@@ -5602,8 +5566,8 @@ Body:
         Zeny: 2000000
         RequiredItems:
           - Index: 0
-            Item: Instance_Emblem
-            Amount: 1000
+            Item: Ep19_Snow_Flower
+            Amount: 1919
           - Index: 1
             Item: Snowflower_Ring
             Amount: 1
@@ -7322,6 +7286,28 @@ Body:
           - Index: 2
             Item: Reform_Stone_TH
             Amount: 4
+      - Index: 3
+        Item: Temporal_Sprout_TW
+        Zeny: 50000000
+        RequiredItems:
+          - Index: 0
+            Item: Temporal_Crystal
+            Amount: 100
+          - Index: 1
+            Item: Fragment_Of_Time
+            Amount: 150
+          - Index: 2
+            Item: Jewel_Of_Time_Ore
+            Amount: 200
+          - Index: 3
+            Item: Spell_Of_Time
+            Amount: 250
+          - Index: 4
+            Item: Reform_Stone_TH
+            Amount: 4
+          - Index: 5
+            Item: Tree_Of_Sprout_JP
+            Amount: 1
   - Name: Armors
     Items:
       - Index: 0
@@ -7329,17 +7315,14 @@ Body:
         RequiredItems:
           - Index: 0
             Item: Zelunium
-            Amount: 1000
+            Amount: 100
           - Index: 1
             Item: Alice's_Apron
             Amount: 300
           - Index: 2
-            Item: Armor_Stone_2
-            Amount: 100
-          - Index: 3
             Item: Reform_Stone_TH
             Amount: 2
-          - Index: 4
+          - Index: 3
             Item: Kafra_Suit
             Amount: 1
             Refine: 9
@@ -7355,6 +7338,52 @@ Body:
           - Index: 2
             Item: Will_Of_Warrior
             Amount: 50
+      - Index: 1
+        Item: Abbys_L_H_Armor_LT
+        RequiredItems:
+          - Index: 0
+            Item: Abbys_L_H_Armor
+            Refine: 9
+          - Index: 1
+            Item: Tri_Headed_Dragon_Head
+            Amount: 1000
+          - Index: 2
+            Item: Reform_Stone_TH
+            Amount: 4
+      - Index: 2
+        Item: Violent_D_S_Armor_LT
+        RequiredItems:
+          - Index: 0
+            Item: Violent_D_S_Armor
+            Refine: 9
+          - Index: 1
+            Item: Tri_Headed_Dragon_Head
+            Amount: 1000
+          - Index: 2
+            Item: Reform_Stone_TH
+            Amount: 4
+      - Index: 3
+        Item: Temporal_Armor_TW_LT
+        Zeny: 50000000
+        RequiredItems:
+          - Index: 0
+            Item: Temporal_Crystal
+            Amount: 200
+          - Index: 1
+            Item: Fragment_Of_Time
+            Amount: 300
+          - Index: 2
+            Item: Jewel_Of_Time_Ore
+            Amount: 400
+          - Index: 3
+            Item: Spell_Of_Time
+            Amount: 500
+          - Index: 4
+            Item: Reform_Stone_TH
+            Amount: 4
+          - Index: 5
+            Item: Temporal_Armor_TW
+            Refine: 12
   - Name: Weapons
     Items:
       - Index: 0
@@ -7499,6 +7528,28 @@ Body:
           - Index: 2
             Item: Pocket_Watch_
             Amount: 30
+      - Index: 1
+        Item: Temporal_Boots_LT_TW
+        Zeny: 50000000
+        RequiredItems:
+          - Index: 0
+            Item: Temporal_Crystal
+            Amount: 100
+          - Index: 1
+            Item: Fragment_Of_Time
+            Amount: 150
+          - Index: 2
+            Item: Jewel_Of_Time_Ore
+            Amount: 200
+          - Index: 3
+            Item: Spell_Of_Time
+            Amount: 250
+          - Index: 4
+            Item: Reform_Stone_TH
+            Amount: 4
+          - Index: 5
+            Item: Temporal_Boots_TW
+            Refine: 12
   - Name: Accessories
     Items:
       - Index: 0
@@ -7517,16 +7568,37 @@ Body:
         RequiredItems:
           - Index: 0
             Item: Temporal_Crystal
-            Amount: 100
+            Amount: 50
           - Index: 1
             Item: Fragment_Of_Time
-            Amount: 200
+            Amount: 50
           - Index: 2
             Item: Jewel_Of_Time_Ore
-            Amount: 300
+            Amount: 50
           - Index: 3
             Item: Spell_Of_Time
-            Amount: 400
+            Amount: 50
+          - Index: 4
+            Item: Reform_Stone_TH
+            Amount: 4
+          - Index: 5
+            Item: Temporal_Ring_TW
+      - Index: 2
+        Item: TimeOverloadRing_TW
+        Zeny: 20000000
+        RequiredItems:
+          - Index: 0
+            Item: Temporal_Crystal
+            Amount: 50
+          - Index: 1
+            Item: Fragment_Of_Time
+            Amount: 50
+          - Index: 2
+            Item: Jewel_Of_Time_Ore
+            Amount: 50
+          - Index: 3
+            Item: Spell_Of_Time
+            Amount: 50
           - Index: 4
             Item: Reform_Stone_TH
             Amount: 4

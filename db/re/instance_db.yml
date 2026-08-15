@@ -375,6 +375,12 @@ Body:
       Map: 1@begi
       X: 100
       Y: 22
+  - Id: 48
+    Name: Glastheim Fall
+    Enter:
+      Map: 1@gl_prq
+      X: 299
+      Y: 18
   - Id: 49
     Name: Old Glast Heim (Challenge Mode)
     Enter:
@@ -388,13 +394,13 @@ Body:
       X: 150
       Y: 20
   - Id: 51
-    Name: Fall of Glast Heim (Normal)
+    Name: Glastheim Purification
     Enter:
       Map: 1@gl_prq
       X: 299
       Y: 19
   - Id: 52
-    Name: Fall of Glast Heim (Advanced)
+    Name: Glastheim Purification Hard
     Enter:
       Map: 1@gl_prq
       X: 79

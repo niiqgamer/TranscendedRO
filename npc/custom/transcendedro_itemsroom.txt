@@ -403,6 +403,7 @@ grademk,86,90,4	script	Nebula Equipments#itroom	4_ED_OSCAR,{
 	"~ Enchant ^12D8DBNebula Armor of Creative^000000",
 	"~ Enchant ^127DDBNebula Armor of Spell^000000",
 	"~ Enchant ^6912DBNebula Armor of Wisdom^000000",
+	"~ ^F52727Other Armor with Nebula Enchant^000000",
 	"Cancel"
 	
 	)) {
@@ -431,6 +432,9 @@ grademk,86,90,4	script	Nebula Equipments#itroom	4_ED_OSCAR,{
 			item_enchant(12);
 			end;
 		case 9:
+			item_enchant(1003);
+			end;
+		case 10:
 			mes "Bye, guys!";
 			close2;
 			end;

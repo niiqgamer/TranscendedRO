@@ -162,6 +162,7 @@ OnInit:
 	set .Points$,"#Card_Points";		// Variable to store points.
 	setarray .Shop[0],						// Card Shop items: <ID>,<point cost>
 	  9955500,1,
+	  103657,50,
 	  9955501,100,
 	  9955502,1000,
 	  9955503,10000,

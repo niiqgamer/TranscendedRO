@@ -59758,6 +59758,59 @@ Body:
       bonus bSpl,3*(.@r/3);
   - Combos:
       - Combo:
+          - Abbys_L_H_Armor    # 450356
+          - Detale_Card    # 4386
+    Script: |
+      bonus bPAtk,15;
+      bonus2 bAddClass,Class_All,30;
+  - Combos:
+      - Combo:
+          - Abbys_L_H_Armor    # 450356
+          - Drag_Manteau    # 20946
+    Script: |
+      .@r = getequiprefinerycnt(EQI_GARMENT)/2;
+      .@a = (getequiprefinerycnt(EQI_GARMENT) + getequiprefinerycnt(EQI_ARMOR))/6;
+      bonus2 bAddEle,Ele_All,.@r+(6*.@a);
+  - Combos:
+      - Combo:
+          - Abbys_L_H_Armor_LT    # 450358
+          - Detale_Card    # 4386
+    Script: |
+      bonus bPAtk,15;
+      bonus2 bAddClass,Class_All,30;
+      bonus2 bIgnoreDefClassRate,Class_All,50;
+      bonus2 bSubClass,Class_All,-20;
+  - Combos:
+      - Combo:
+          - Abbys_L_H_Armor_LT    # 450358
+          - Drag_Manteau    # 20946
+    Script: |
+      .@a = getequiprefinerycnt(EQI_ARMOR)/2;
+      .@r = (getequiprefinerycnt(EQI_ARMOR)+getequiprefinerycnt(EQI_GARMENT))/6;
+      bonus2 bAddRace,RC_All,12;
+      bonus2 bAddRace,RC_Player_Doram,-12;
+      bonus2 bAddRace,RC_Player_Human,-12;
+      bonus2 bAddEle,Ele_All,(2*.@a)+(7*.@r);
+  - Combos:
+      - Combo:
+          - Violent_D_S_Armor    # 450355
+          - Nidhogg_Shadow_Card    # 4456
+    Script: |
+      bonus bSMatk,15;
+      bonus2 bMagicAddClass,Class_All,30;
+  - Combos:
+      - Combo:
+          - Violent_D_S_Armor    # 450355
+          - Piece_Of_Angent_Skin    # 2554
+    Script: |
+      .@a = getequiprefinerycnt(EQI_ARMOR)/2;
+      .@r = (getequiprefinerycnt(EQI_ARMOR)+getequiprefinerycnt(EQI_GARMENT))/6;
+      bonus2 bMagicAddRace,RC_All,12;
+      bonus2 bMagicAddRace,RC_Player_Doram,-12;
+      bonus2 bMagicAddRace,RC_Player_Human,-12;
+      bonus2 bMagicAddEle,Ele_All,.@a+(6*.@r);
+  - Combos:
+      - Combo:
           - Violent_D_S_Armor_LT    # 450357
           - Nidhogg_Shadow_Card    # 4456
     Script: |
@@ -59768,7 +59821,7 @@ Body:
   - Combos:
       - Combo:
           - Violent_D_S_Armor_LT    # 450357
-          - Piece_Of_Angent_Skin    # 4456
+          - Piece_Of_Angent_Skin    # 2554
     Script: |
       .@a = getequiprefinerycnt(EQI_ARMOR)/2;
       .@r = (getequiprefinerycnt(EQI_ARMOR)+getequiprefinerycnt(EQI_GARMENT))/6;
@@ -59776,6 +59829,54 @@ Body:
       bonus2 bMagicAddRace,RC_Player_Doram,-12;
       bonus2 bMagicAddRace,RC_Player_Human,-12;
       bonus2 bMagicAddEle,Ele_All,(2*.@a)+(7*.@r);
+  - Combos:
+      - Combo:
+          - Dragon_Shoes_US    # 470345
+          - Abbys_L_H_Armor_LT    # 450358
+      - Combo:
+          - Dragon_Shoes_US    # 470345
+          - Battle_Aura_Manteau_LT    # 480454
+    Script: |
+      .@r = getequiprefinerycnt(EQI_SHOES);
+      bonus bBaseAtk,200;
+      bonus2 bAddEle,Ele_All,20;
+      if (.@r>=13) {
+         bonus2 bAddClass,Class_All,25;
+         autobonus "{ bonus bStr,150; bonus bDex,150; bonus bLuk,150; }",50,20000,BF_SHORT|BF_LONG,"{ showscript \"I'm Legendary\"; }";
+      }
+  - Combos:
+      - Combo:
+          - Dragon_Shoes_US    # 470345
+          - Violent_D_S_Armor_LT    # 450357
+    Script: |
+      .@r = getequiprefinerycnt(EQI_SHOES);
+      bonus bMatk,200;
+      bonus2 bMagicAddEle,Ele_All,20;
+      if (.@r>=13) {
+         bonus2 bMagicAddClass,Class_All,25;
+         autobonus "{ bonus bInt,150; bonus bDex,150; bonus bLuk,150; }",50,20000,BF_MAGIC,"{ showscript \"I'm Legendary\"; }";
+      }
+  - Combos:
+      - Combo:
+          - D_God_Boots_TW    # 470440
+          - Little_Abyss_Dragon_    # 410211
+    Script: |
+      bonus bPow,15;
+      bonus bCon,15;
+      bonus2 bAddSize,Size_All,40;
+  - Combos:
+      - Combo:
+          - D_God_Boots_TW    # 470440
+          - Detale_Card    # 4386
+    Script: |
+      bonus2 bAddClass,Class_All,40;
+  - Combos:
+      - Combo:
+          - D_God_Boots_TW    # 470440
+          - Abbys_L_H_Armor    # 450356
+    Script: |
+      bonus bShortAtkRate,20;
+      bonus bLongAtkRate,20;
   - Combos:
       - Combo:
           - Star_Cosmic_US    # 420569
@@ -61727,18 +61828,6 @@ Body:
       bonus bMatk,120*(.@r/3);
   - Combos:
       - Combo:
-          - Dragon_Shoes_US    # 470345
-          - Violent_D_S_Armor_LT    # 450357
-    Script: |
-      .@r = getequiprefinerycnt(EQI_SHOES);
-      bonus bMatk,200;
-      bonus2 bMagicAddEle,Ele_All,20;
-      if (.@r>=13) {
-         bonus2 bMagicAddClass,Class_All,25;
-         autobonus "{ bonus bInt,150; bonus bDex,150; bonus bLuk,150; }",50,2000,BF_MAGIC;
-      }
-  - Combos:
-      - Combo:
           - Old_Moroc_Acc_LT    # 410553
           - Marduk_Card    #  4112
     Script: |
@@ -63323,3 +63412,65 @@ Body:
          bonus2 bSkillAtk,"DK_DRAGONIC_BREATH",70;
          bonus2 bSkillAtk,"BO_ACIDIFIED_ZONE_FIRE",70;
       }
+  - Combos:
+      - Combo:
+          - BP11_Antares_Armor         # 450589
+          - Porcellio_Card                   # 4337
+    Script: |
+      bonus bBaseAtk,50;
+      bonus2 bAddSize,Size_All,10;
+  - Combos:
+      - Combo:
+          - BP11_Antares_Armor         # 450589
+          - Amdarais_Card                  # 4601
+    Script: |
+      bonus bBaseAtk,100;
+      bonus2 bAddSize,Size_All,30;
+  - Combos:
+      - Combo:
+          - BP11_Sirius_Armor         # 450590
+          - AngerNineTail_Card        # 27082
+    Script: |
+      bonus bBaseAtk,50;
+      bonus bCritAtkRate,10;
+  - Combos:
+      - Combo:
+          - BP11_Sirius_Armor         # 450590
+          - Reginleif_Card               # 300013
+    Script: |
+      bonus bBaseAtk,100;
+      bonus bCritAtkRate,40;
+      bonus bMaxHPrate,15;
+  - Combos:
+      - Combo:
+          - BP11_Vega_Armor         # 450591
+          - Agav_Card                    # 4409
+    Script: |
+      bonus bMatk,50;
+      bonus2 bMagicAddRace,RC_All,10;
+  - Combos:
+      - Combo:
+          - BP11_Vega_Armor                 # 450591
+          - Demigod_Lasgand_Card         # 300472
+    Script: |
+      bonus bMatk,100;
+      bonus2 bMagicAddRace,RC_All,30;
+      bonus bMaxHPrate,15;
+  - Combos:
+      - Combo:
+          - BP11_Regulus_Armor         # 450592
+          - Amitera_Card                    # 300254
+    Script: |
+      bonus bBaseAtk,30;
+      bonus bMaxHPrate,10;
+      bonus bShortAtkRate,15;
+      bonus bLongAtkRate,15;
+  - Combos:
+      - Combo:
+          - BP11_Regulus_Armor        # 450592
+          - Tao_Gunka_Card              # 4302
+    Script: |
+      bonus bBaseAtk,70;
+      bonus bMaxHPrate,20;
+      bonus bShortAtkRate,30;
+      bonus bLongAtkRate,30;

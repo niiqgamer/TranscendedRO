@@ -55,7 +55,7 @@ sec_in02,156,184,4	script	H O T S P I N !	OBJ_A2,{
 // 	query_sql(" SELECT char_id, name, spins FROM hotspin_rank WHERE spins > 0 ORDER BY spins DESC LIMIT 3", .@cid, .@name$, .@score);
 // 
 // 	if (getarraysize(.@cid) == 0) {
-// 		announce "[ H O T S P I N ! ] Sorry, there is no weekly TOP3 this week.", bc_all;
+// 		announce "[ HOTSPIN! ] Sorry, there is no weekly TOP3 this week.", bc_all;
 // 		end;
 // 	}
 // 
@@ -106,7 +106,7 @@ L_Roll:
 
 	for (set .@i, 0; .@i < getarraysize($hotspin_trash1); set .@i, .@i + 1) {
 		if (countitem($hotspin_trash1[.@i]) >= 15000) {
-			mes "[ H O T S P I N ! ]";
+			mes "[ HOTSPIN! ]";
 			mes "Sorry, you have " + getitemname($hotspin_trash1[.@i]) + " more than ^FF0000 15,000 ^000000 ea.";
 			mes "Please manage your items before continuing spin.";
 			close;
@@ -114,7 +114,7 @@ L_Roll:
 	}
 	for (set .@i, 0; .@i < getarraysize($hotspin_trash2); set .@i, .@i + 1) {
 		if (countitem($hotspin_trash2[.@i]) >= 15000) {
-			mes "[ H O T S P I N ! ]";
+			mes "[ HOTSPIN! ]";
 			mes "Sorry, you have " + getitemname($hotspin_trash2[.@i]) + " more than ^FF0000 15,000 ^000000 ea.";
 			mes "Please manage your items before continuing spin.";
 			close;
@@ -122,7 +122,7 @@ L_Roll:
 	}
 	for (set .@i, 0; .@i < getarraysize($hotspin_trash3); set .@i, .@i + 1) {
 		if (countitem($hotspin_trash3[.@i]) >= 15000) {
-			mes "[ H O T S P I N ! ]";
+			mes "[ HOTSPIN! ]";
 			mes "Sorry, you have " + getitemname($hotspin_trash3[.@i]) + " more than ^FF0000 15,000 ^000000 ea.";
 			mes "Please manage your items before continuing spin.";
 			close;
@@ -152,7 +152,7 @@ L_Roll:
 			set #GUARANTEE_POINT, #GUARANTEE_POINT + 35;
 			set .@guarantee_gained, .@guarantee_gained + 35;
 			specialeffect2 EF_MVP;
-			announce "[ H O T S P I N ! ] " + strcharinfo(0) + " received [ UR ] " + getitemname(.@item) + "!!!", bc_all;
+			announce "[ HOTSPIN! ] " + strcharinfo(0) + " received [ UR ] " + getitemname(.@item) + "!!!", bc_all;
 		}
 		// Pool 2 - New Items (0.75% = 75/10000)
 		else if (.@roll < 80 && getarraysize($hotspin_pool2) > 0) {
@@ -163,7 +163,7 @@ L_Roll:
 			set #GUARANTEE_POINT, #GUARANTEE_POINT + 2;
 			set .@guarantee_gained, .@guarantee_gained + 2;
 			specialeffect2 EF_MVP;
-			announce "[ H O T S P I N ! ] " + strcharinfo(0) + " received [ NEW ] " + getitemname(.@item) + "!!", bc_all;
+			announce "[ HOTSPIN! ] " + strcharinfo(0) + " received [ NEW ] " + getitemname(.@item) + "!!", bc_all;
 		}
 		// Pool 3 - Rerun Items (2.20% = 220/10000)
 		else if (.@roll < 300 && getarraysize($hotspin_pool3) > 0) {
@@ -174,7 +174,7 @@ L_Roll:
 			set #GUARANTEE_POINT, #GUARANTEE_POINT + 1;
 			set .@guarantee_gained, .@guarantee_gained + 1;
 			specialeffect2 EF_MVP;
-			announce "[ H O T S P I N ! ] " + strcharinfo(0) + " received [ Rerun ] " + getitemname(.@item) + "!", bc_all;
+			announce "[ HOTSPIN! ] " + strcharinfo(0) + " received [ Rerun ] " + getitemname(.@item) + "!", bc_all;
 		}
 
 		if (.@got_item == 0) {
@@ -196,7 +196,7 @@ L_Roll:
 
 	query_sql("INSERT INTO hotspin_rank (account_id, char_id, name, spins) VALUES ("+.@aid+","+.@cid+",'"+escape_sql(.@name$)+"',"+.@count+") ON DUPLICATE KEY UPDATE spins = spins + "+.@count+", name = '"+escape_sql(.@name$)+"'");
 
-	mes "[ H O T S P I N ! ]";
+	mes "[ HOTSPIN! ]";
 	mes "Done. Are you feel lucky?";
 	mes "     ";
 	mes "<font size = 16><b>Jackpot: ^AA0000" + .@hotspin_hits + "^000000 time(s).</b></font>";
@@ -438,7 +438,7 @@ OnBuyItem:
 	}
 
 	if (#GUARANTEE_POINT < .@need) {
-		mes "[ H O T S P I N ! ]";
+		mes "[ HOTSPIN! ]";
 		mes "You don't have enough Guarantee Points!";
 		mes "Required: ^FF0000" + callfunc("F_InsertComma",.@need) + "^000000 Guarantee Points.";
 		mes "You have: ^00AA00" + callfunc("F_InsertComma",#GUARANTEE_POINT) + "^000000 Guarantee Points.";
@@ -456,7 +456,7 @@ OnBuyItem:
 	freeloop(0);
 	set #GUARANTEE_POINT, #GUARANTEE_POINT - .@need;
 
-	mes "[ H O T S P I N ! ]";
+	mes "[ HOTSPIN! ]";
 	mes "Successfully redeemed! Your Hotspin Points have been deducted.";
 	mes "Remaining Guarantee Points: " + callfunc("F_InsertComma",#GUARANTEE_POINT);
 	close;
@@ -573,6 +573,14 @@ OnInit:
 	540124,					// Polluted_Follower_US
 	550169,					// Fenrir_Staff_US
 	560077,					// Coatneis_Knuckle_US
+	401043,					// Great_Kiel_US
+	450589,					// BP11_Antares_Armor
+	450590,					// BP11_Sirius_Armor
+	450591,					// BP11_Vega_Armor
+	450592,					// BP11_Regulus_Armor
+	450357,					// Violent_D_S_Armor_LT
+	450358,					// Abbys_L_H_Armor_LT
+	450299,					// Temporal_Armor_TW_LT
 	9910000,				// T_A1_Refining
 	9910001,				// T_A2_Refining
 	9910002,				// T_W1_Refining
@@ -606,8 +614,11 @@ OnInit:
 	480536,					// Will_Karasu_US
 	480621,					// Comet_Cavalry_US
 	480823,					// Abysmal_Follower_US
-	490809,					// Nebula_Nec_LT_TH
-	491070,					// 6th_Anni_Ring_LT_TH
+	480759,					// C_M_Cape_UPD
+	470440,					// D_God_Boots_TW
+	450355,					// Violent_D_S_Armor
+	450356,					// Abbys_L_H_Armor
+	410211,					// Little_Abyss_Dragon_
 	25940,					// Loft_StoneUltimate
 	27421,					// Shard_Jewelry_Str
 	27422,					// Shard_Jewelry_Agi
@@ -835,7 +846,7 @@ function	script	GiveRankReward	{
 	query_sql(" SELECT char_id, name, spins FROM hotspin_rank WHERE spins > 0 ORDER BY spins DESC LIMIT 3", .@cid, .@name$, .@score);
 
 	if (getarraysize(.@cid) == 0) {
-		announce "[ H O T S P I N ! ] Sorry, there is no weekly TOP3 this week.", bc_all;
+		announce "[ HOTSPIN! ] Sorry, there is no weekly TOP3 this week.", bc_all;
 		return;
 	}
 
@@ -846,13 +857,13 @@ function	script	GiveRankReward	{
 
 		mail .@cid[.@i], .@sender$, .@title$, .@body$, .@zeny, .@reward, .@amount;
 	}
-	announce "[ H O T S P I N ! ] The weekly TOP3 rewards have been sent via Rodex!!", bc_all;
+	announce "[ HOTSPIN! ] The weekly TOP3 rewards have been sent via Rodex!!", bc_all;
 	return;
 }
 
 function	script	S_ResetHotspin	{
 	query_sql("UPDATE hotspin_rank SET spins = 0");
-	announce "[ H O T S P I N ! ] The weekly ranking has been reset!", bc_all;
+	announce "[ HOTSPIN! ] The weekly ranking has been reset!", bc_all;
 	return;
 }
 
@@ -914,7 +925,7 @@ function	script	ReloadHotspinPool	{
 izlude,102,134,4	duplicate(H O T S P I N !)	H O T S P I N !#iz	CLEAR_NPC
 
 izlude,106,130,6	script	HOTSPIN ! INFO	4_BULLETIN_BOARD2,{
-	mes "^i[12828] <font size = 18><b>^0000AA[ H O T S P I N ! ]^000000</b></font> ^i[12828]";
+	mes "^i[12828] <font size = 18><b>^0000AA[ HOTSPIN! ]^000000</b></font> ^i[12828]";
 	mes "==============================";
 	mes "<font size = 16><b>Spin every day!</b></font>";
 	//mes "<font size = 16><b>Reset spins every week!</b></font>";

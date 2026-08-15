@@ -563,7 +563,8 @@ G8: Restrict("RE");
 // --------------------------------------------------
 	Instances:
 // --------------------------------------------------
-menu	"Bakonawa Lake",I1, "Bangungot Hospital 2F",I2, "Buwaya Cave",I3,
+menu	"Airship Destruction ^FF0000***^000000",I30, "Bagot Laboratory ^FF0000***^000000",I29, 
+		"Bakonawa Lake",I1, "Bangungot Hospital 2F",I2, "Buwaya Cave",I3,
 		"Central Laboratory ^FF0000*^000000",I24, "Constellation Tower ^FF0000*****^000000",I27,
 		"Devil Tower",I4, "Eclage Interior",I5, "EDDA Biolabs ^FF0000**^000000",I23, "Endless Tower",I6,
 		"Faceworms Nest ^FF0000*^000000",I7, "Geffen Magic Tournament ^FF0000*^000000",I8,
@@ -628,6 +629,11 @@ I27: Restrict("RE");
 	Go("e_tower",74,111);
 I28: Restrict("RE");
 	Go("dali02",72,114);
+I29: Restrict("RE");
+	Go("jor_nest",62,256);
+I30: Restrict("RE");
+	Go("jor_nest",26,249);
+
 // --------------------------------------------------
 	Special:
 // --------------------------------------------------

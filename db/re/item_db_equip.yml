@@ -58936,6 +58936,10 @@ Body:
     AegisName: aegis_9193
     Name: Mistress Egg
     Type: PetEgg
+  - Id: 9195
+    AegisName: Celine_Kimi_Egg
+    Name: Celine Kimi Egg
+    Type: PetEgg
   - Id: 10001
     AegisName: Skull_Helm
     Name: Skull Helm

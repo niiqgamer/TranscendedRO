@@ -2890,6 +2890,9 @@ Body:
   - Map: jor_dun01
     GlobalDrops:
       - Index: 0
+        Item: Ep19_Snow_Flower
+        Rate: 7500
+      - Index: 1
         Item: Etel_Dust
         Rate: 4000
       - Index: 1
@@ -2901,24 +2904,39 @@ Body:
           - Index: 0
             Item: Etel_Dust
             Rate: 4000
+          - Index: 1
+            Item: Ep19_Snow_Flower
+            Rate: 7500
       - Monster: EP19_HEARTHUNTER_AT
         Drops:
           - Index: 0
             Item: Etel_Dust
             Rate: 4000
+          - Index: 1
+            Item: Ep19_Snow_Flower
+            Rate: 7500
       - Monster: EP19_RGAN_B
         Drops:
           - Index: 0
             Item: Etel_Dust
             Rate: 4000
+          - Index: 1
+            Item: Ep19_Snow_Flower
+            Rate: 7500
       - Monster: EP19_RGAN_C
         Drops:
           - Index: 0
             Item: Etel_Dust
             Rate: 4000
+          - Index: 1
+            Item: Ep19_Snow_Flower
+            Rate: 7500
   - Map: jor_dun02
     GlobalDrops:
       - Index: 0
+        Item: Ep19_Snow_Flower
+        Rate: 7500
+      - Index: 1
         Item: Etel_Dust
         Rate: 4000
       - Index: 1
@@ -2930,37 +2948,137 @@ Body:
           - Index: 0
             Item: Etel_Dust
             Rate: 4000
+          - Index: 1
+            Item: Ep19_Snow_Flower
+            Rate: 7500
       - Monster: EP19_RGAN_B
         Drops:
           - Index: 0
             Item: Etel_Dust
             Rate: 4000
+          - Index: 1
+            Item: Ep19_Snow_Flower
+            Rate: 7500
       - Monster: EP19_RGAN_C
         Drops:
           - Index: 0
             Item: Etel_Dust
             Rate: 4000
+          - Index: 1
+            Item: Ep19_Snow_Flower
+            Rate: 7500
       - Monster: EP19_RGAN_D
         Drops:
           - Index: 0
             Item: Etel_Dust
             Rate: 4000
+          - Index: 1
+            Item: Ep19_Snow_Flower
+            Rate: 7500
   - Map: jor_ab01
     GlobalDrops:
       - Index: 0
+        Item: Ep19_Snow_Flower
+        Rate: 7500
+      - Index: 1
         Item: Etel_Dust
         Rate: 4000
       - Index: 1
         Item: Aquila_Antiquity2
         Rate: 1500
+    SpecificDrops:
+      - Monster: EP19_CAVE_CALMARING
+        Drops:
+          - Index: 0
+            Item: Etel_Dust
+            Rate: 4000
+          - Index: 1
+            Item: Ep19_Snow_Flower
+            Rate: 7500
+      - Monster: EP19_CAVE_FLOWER
+        Drops:
+          - Index: 0
+            Item: Etel_Dust
+            Rate: 4000
+          - Index: 1
+            Item: Ep19_Snow_Flower
+            Rate: 7500
+      - Monster: EP19_WASTED_RGAN_A
+        Drops:
+          - Index: 0
+            Item: Etel_Dust
+            Rate: 4000
+          - Index: 1
+            Item: Ep19_Snow_Flower
+            Rate: 7500
+      - Monster: EP19_HALLUCIGENIA_BABY
+        Drops:
+          - Index: 0
+            Item: Etel_Dust
+            Rate: 4000
+          - Index: 1
+            Item: Ep19_Snow_Flower
+            Rate: 7500
+      - Monster: EP19_RE_RGAN_E
+        Drops:
+          - Index: 0
+            Item: Etel_Dust
+            Rate: 4000
+          - Index: 1
+            Item: Ep19_Snow_Flower
+            Rate: 7500
   - Map: jor_ab02
     GlobalDrops:
       - Index: 0
+        Item: Ep19_Snow_Flower
+        Rate: 7500
+      - Index: 1
         Item: Etel_Dust
         Rate: 4000
       - Index: 1
         Item: Aquila_Antiquity2
         Rate: 1500
+    SpecificDrops:
+      - Monster: EP19_ONE_EYE_DOLLOCARIS
+        Drops:
+          - Index: 0
+            Item: Etel_Dust
+            Rate: 4000
+          - Index: 1
+            Item: Ep19_Snow_Flower
+            Rate: 7500
+      - Monster: EP19_HALLUCIGENIA
+        Drops:
+          - Index: 0
+            Item: Etel_Dust
+            Rate: 4000
+          - Index: 1
+            Item: Ep19_Snow_Flower
+            Rate: 7500
+      - Monster: EP19_ET_RGAN_D
+        Drops:
+          - Index: 0
+            Item: Etel_Dust
+            Rate: 4000
+          - Index: 1
+            Item: Ep19_Snow_Flower
+            Rate: 7500
+      - Monster: EP19_WASTED_RGAN_C
+        Drops:
+          - Index: 0
+            Item: Etel_Dust
+            Rate: 4000
+          - Index: 1
+            Item: Ep19_Snow_Flower
+            Rate: 7500
+      - Monster: EP19_DOLLOCARIS
+        Drops:
+          - Index: 0
+            Item: Etel_Dust
+            Rate: 4000
+          - Index: 1
+            Item: Ep19_Snow_Flower
+            Rate: 7500
   - Map: odin_past
     GlobalDrops:
       - Index: 0
@@ -3659,3 +3777,84 @@ Body:
       - Index: 1
         Item: Sakray_Antiquity
         Rate: 5000
+  - Map: 1@gl_he
+    GlobalDrops:
+      - Index: 0
+        Item: S_Circlet_Of_Time
+        Rate: 15000
+      - Index: 1
+        Item: Jewel_Of_Time_Ore
+        Rate: 35000
+      - Index: 2
+        Item: Spell_Of_Time
+        Rate: 25000
+      - Index: 3
+        Item: Fragment_Of_Time
+        Rate: 45000
+    SpecificDrops:
+      - Monster: MD_C_RAYDRIC
+        Drops:
+          - Index: 0
+            Item: Jewel_Of_Time_Ore
+            Rate: 35000
+          - Index: 1
+            Item: Spell_Of_Time
+            Rate: 25000
+          - Index: 2
+            Item: Fragment_Of_Time
+            Rate: 45000
+      - Monster: MD_C_RAYDRIC_ARCHER
+        Drops:
+          - Index: 0
+            Item: Jewel_Of_Time_Ore
+            Rate: 35000
+          - Index: 1
+            Item: Spell_Of_Time
+            Rate: 25000
+          - Index: 2
+            Item: Fragment_Of_Time
+            Rate: 45000
+      - Monster: MD_C_WHITEKNIGHT
+        Drops:
+          - Index: 0
+            Item: Jewel_Of_Time_Ore
+            Rate: 35000
+          - Index: 1
+            Item: Spell_Of_Time
+            Rate: 25000
+          - Index: 2
+            Item: Fragment_Of_Time
+            Rate: 45000
+      - Monster: MD_C_KHALITZBURG
+        Drops:
+          - Index: 0
+            Item: Jewel_Of_Time_Ore
+            Rate: 35000
+          - Index: 1
+            Item: Spell_Of_Time
+            Rate: 25000
+          - Index: 2
+            Item: Fragment_Of_Time
+            Rate: 45000
+      - Monster: MD_C_ZOMBIE
+        Drops:
+          - Index: 0
+            Item: Jewel_Of_Time_Ore
+            Rate: 35000
+          - Index: 1
+            Item: Spell_Of_Time
+            Rate: 25000
+          - Index: 2
+            Item: Fragment_Of_Time
+            Rate: 45000
+      - Monster: MD_C_GHOUL
+        Drops:
+          - Index: 0
+            Item: Jewel_Of_Time_Ore
+            Rate: 35000
+          - Index: 1
+            Item: Spell_Of_Time
+            Rate: 25000
+          - Index: 2
+            Item: Fragment_Of_Time
+            Rate: 45000

@@ -1,0 +1,73 @@
+function	script	CheckMap	{
+	if (getmapflag(strcharinfo(3), mf_town)) return 0;
+	if (getmapflag(strcharinfo(3), mf_pvp)) return 0;
+	if (getmapflag(strcharinfo(3), mf_gvg)) return 0;
+	return 1;
+}
+
+-	script	autohunt	-1,{
+
+	OnInit:
+		bindatcmd "autohunt", strnpcinfo(0)+"::OnStart", 0;
+		end;
+
+	OnStart:
+		dispbottom "Auto Hunt started";
+		addtimer 100, strnpcinfo(0)+"::OnCheck";
+		end;
+
+	OnCheck:
+		// toggle system
+		if (@autohunt) {
+			@autohunt = 0;
+			dispbottom "Auto Hunt stopped";
+			end;
+		}
+
+		// เงื่อนไข VIP
+		if (!(vip_status(VIP_STATUS_ACTIVE) == 1 || getgroupid() == 99)) {
+			dispbottom "You must be a VIP to use Auto Hunt";
+			end;
+		}
+
+		// เงื่อนไข ticket
+		if (countitem(9950001) <= 0) {
+			dispbottom "You do not have an Auto Hunt Ticket";
+			end;
+		}
+
+		// เงื่อนไขแผนที่
+		if (!callfunc("CheckMap")) {
+			dispbottom "Auto Hunt is not allowed on this map";
+			end;
+		}
+
+		// start auto hunt
+		@autohunt = 1;
+		addtimer 500, strnpcinfo(0)+"::OnLoopSkill";
+		end;
+
+	OnLoopSkill:
+		// หยุด loop ถ้า autohunt ถูกปิด
+		if (!@autohunt) end;
+
+		// ใช้สกิล
+		itemskill "AG_FROZEN_SLASH", 5;
+
+		// วน loop ทุก 3 วิ
+		addtimer 2000, strnpcinfo(0)+"::OnLoopWing";
+		end;
+
+	OnLoopWing:
+		// หยุด loop ถ้า autohunt ถูกปิด
+		if (!@autohunt) end;
+
+		// วาร์ป
+		warp strcharinfo(3), 0, 0;
+
+		@autohunt = 0;
+
+		// วน loop ทุก 3 วิ
+		addtimer 1000, strnpcinfo(0)+"::OnCheck";
+		end;
+}

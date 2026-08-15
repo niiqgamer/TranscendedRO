@@ -715,6 +715,40 @@ Body:
             }
          }
       }
+  - Id: 450356
+    AegisName: Abbys_L_H_Armor
+    Name: Abyss Lake Roaring Armor
+    Type: Armor
+    Weight: 1000
+    Defense: 50
+    Slots: 1
+    Locations:
+      Armor: true
+    ArmorLevel: 1
+    EquipLevelMin: 130
+    Refineable: true
+    Script: |
+      .@g = getenchantgrade();
+      .@r = getrefine();
+      bonus bMdef,10;
+      bonus bAllStats,10;
+      bonus bMaxHPRate,15;
+      bonus bMaxSPRate,15;
+      bonus bBaseAtk,10*(BaseLevel/10);
+      bonus bAtkRate,2*(.@r/2);
+      bonus bPow,.@r/3;
+      bonus bCon,.@r/3;
+      if (.@r>=9) {
+         bonus bShortAtkRate,15;
+         bonus bLongAtkRate,15;
+         if (.@r>=11) {
+            bonus2 bAddSize,Size_Medium,25;
+            bonus2 bAddSize,Size_Large,25;
+            if (.@r>=13) {
+               bonus bDelayRate,-15;
+            }
+         }
+      }
   - Id: 450357
     AegisName: Violent_D_S_Armor_LT
     Name: Violent Dragon Shadow Armor-LT
@@ -759,6 +793,55 @@ Body:
                   bonus2 bMagicAddRace,RC_All,15;
                   bonus2 bMagicAddRace,RC_Player_Doram,-15;
                   bonus2 bMagicAddRace,RC_Player_Human,-15;
+               }
+            }
+         }
+      }
+  - Id: 450358
+    AegisName: Abbys_L_H_Armor_LT
+    Name: Abyss Lake Roaring Armor-LT
+    Type: Armor
+    Weight: 1000
+    Defense: 50
+    Slots: 1
+    Locations:
+      Armor: true
+    ArmorLevel: 2
+    EquipLevelMin: 200
+    Refineable: true
+    Gradable: true
+    Script: |
+      .@g = getenchantgrade();
+      .@r = getrefine();
+      bonus bMdef,10;
+      bonus bAllStats,12;
+      bonus bMaxHPRate,15;
+      bonus bMaxSPRate,15;
+      bonus bBaseAtk,12*(BaseLevel/10);
+      bonus bAtkRate,4*(.@r/2);
+      bonus bPow,2*(.@r/3);
+      bonus bCon,2*(.@r/3);
+      if (.@r>=9) {
+         bonus bShortAtkRate,20;
+         bonus bLongAtkRate,20;
+         if (.@r>=11) {
+            bonus2 bAddSize,Size_Medium,30;
+            bonus2 bAddSize,Size_Large,30;
+            if (.@r>=13) {
+               bonus bDelayRate,-15;
+            }
+         }
+      }
+      if (.@g>=ENCHANTGRADE_D) {
+         bonus bAtkRate,12;
+         if (.@g>=ENCHANTGRADE_C) {
+            bonus2 bAddEle,Ele_All,12;
+            if (.@g>=ENCHANTGRADE_B) {
+               bonus bFixedCast,-300;
+               if (.@g>=ENCHANTGRADE_A) {
+                  bonus2 bAddRace,RC_All,15;
+                  bonus2 bAddRace,RC_Player_Doram,-15;
+                  bonus2 bAddRace,RC_Player_Human,-15;
                }
             }
          }
@@ -1109,6 +1192,189 @@ Body:
                if (.@g>=ENCHANTGRADE_A) {
                   bonus2 bSkillAtk,"AG_CRYSTAL_IMPACT",50;
                   bonus2 bSkillAtk,"AG_CRYSTAL_IMPACT_ATK",50;
+               }
+            }
+         }
+      }
+  - Id: 450589
+    AegisName: BP11_Antares_Armor
+    Name: "Re-Dim Glacier Armor of Antares"
+    Type: Armor
+    Weight: 2400
+    Defense: 200
+    Slots: 1
+    Locations:
+      Armor: true
+    ArmorLevel: 2
+    EquipLevelMin: 230
+    Refineable: true
+    Gradable: true
+    Script: |
+      .@g = getenchantgrade();
+      .@r = getrefine();
+      bonus bBaseAtk,150+10*(.@r/2);
+      bonus bDelayRate,-4*(.@r/3);
+      if (.@r>=9) {
+         bonus bAtkRate,5;
+         bonus bPAtk,2;
+         if (.@r>=11) {
+            bonus bShortAtkRate,10;
+            bonus bLongAtkRate,10;
+            if (.@r>=13) {
+               bonus bNonCritAtkRate,10;
+            }
+         }
+      }
+      if (.@g>=ENCHANTGRADE_D) {
+         bonus bAspdRate,10;
+         bonus bPAtk,5;
+         if (.@g>=ENCHANTGRADE_C) {
+            bonus bShortAtkRate,10;
+            bonus bLongAtkRate,10;
+            if (.@g>=ENCHANTGRADE_B) {
+               bonus bPow,.@r/2;
+               bonus bCon,.@r/2;
+               bonus bAtkRate,10;
+               if (.@g>=ENCHANTGRADE_A) {
+                  bonus bNonCritAtkRate,4*(.@r/2);
+               }
+            }
+         }
+      }
+  - Id: 450590
+    AegisName: BP11_Sirius_Armor
+    Name: "Re-Dim Glacier Robe of Sirius"
+    Type: Armor
+    Weight: 2050
+    Defense: 190
+    Slots: 1
+    Locations:
+      Armor: true
+    ArmorLevel: 2
+    EquipLevelMin: 230
+    Refineable: true
+    Gradable: true
+    Script: |
+      .@g = getenchantgrade();
+      .@r = getrefine();
+      bonus bCritical,20+2*(.@r/2);
+      bonus bBaseAtk,130+5*(.@r/2);
+      bonus bDelayRate,-4*(.@r/3);
+      if (.@r>=9) {
+         bonus bAtkRate,5;
+         bonus bPAtk,2;
+         if (.@r>=11) {
+            bonus bShortAtkRate,10;
+            bonus bLongAtkRate,10;
+            if (.@r>=13) {
+               bonus bCritAtkRate,20;
+            }
+         }
+      }
+      if (.@g>=ENCHANTGRADE_D) {
+         bonus bAspdRate,10;
+         bonus bPAtk,5;
+         if (.@g>=ENCHANTGRADE_C) {
+            bonus bShortAtkRate,10;
+            bonus bLongAtkRate,10;
+            if (.@g>=ENCHANTGRADE_B) {
+               bonus bPow,.@r/2;
+               bonus bCon,.@r/2;
+               bonus bAtkRate,10;
+               if (.@g>=ENCHANTGRADE_A) {
+                  bonus bCritAtkRate,4*(.@r/2);
+               }
+            }
+         }
+      }
+  - Id: 450591
+    AegisName: BP11_Vega_Armor
+    Name: "Re-Dim Glacier Robe of Vega"
+    Type: Armor
+    Weight: 1400
+    Defense: 180
+    Slots: 1
+    Locations:
+      Armor: true
+    ArmorLevel: 2
+    EquipLevelMin: 230
+    Refineable: true
+    Gradable: true
+    Script: |
+      .@g = getenchantgrade();
+      .@r = getrefine();
+      bonus bMatk,150+10*(.@r/2);
+      bonus bDelayRate,-4*(.@r/3);
+      if (.@r>=9) {
+         bonus bMatkRate,5;
+         bonus bSMatk,2;
+         if (.@r>=11) {
+            bonus2 bMagicAtkEle,Ele_All,10;
+            if (.@r>=13) {
+               bonus bVariableCastRate,-20;
+               bonus bMatkRate,15;
+            }
+         }
+      }
+      if (.@g>=ENCHANTGRADE_D) {
+         bonus bAspdRate,10;
+         bonus bSMatk,5;
+         if (.@g>=ENCHANTGRADE_C) {
+            bonus2 bMagicAtkEle,Ele_All,10;
+            if (.@g>=ENCHANTGRADE_B) {
+               bonus bSpl,.@r/2;
+               bonus bCon,.@r/2;
+               bonus bMatkRate,5;
+               if (.@g>=ENCHANTGRADE_A) {
+                  bonus2 bMagicAddSize,Size_All,4*(.@r/2);
+               }
+            }
+         }
+      }
+  - Id: 450592
+    AegisName: BP11_Regulus_Armor
+    Name: "Re-Dim Glacier Armor of Regulus"
+    Type: Armor
+    Weight: 2400
+    Defense: 220
+    Slots: 1
+    Locations:
+      Armor: true
+    ArmorLevel: 2
+    EquipLevelMin: 230
+    Refineable: true
+    Gradable: true
+    Script: |
+      .@g = getenchantgrade();
+      .@r = getrefine();
+      bonus bMaxHPRate,10+2*(.@r/2);
+      bonus bMaxSPRate,10;
+      bonus bBaseAtk,100+5*(.@r/2);
+      bonus bDelayRate,-4*(.@r/3);
+      if (.@r>=9) {
+         bonus bAtkRate,5;
+         bonus bPAtk,2;
+         if (.@r>=11) {
+            bonus bShortAtkRate,10;
+            bonus bLongAtkRate,10;
+            if (.@r>=13) {
+               bonus bMaxHPRate,10;
+               bonus bMaxSPRate,5;
+            }
+         }
+      }
+      if (.@g>=ENCHANTGRADE_D) {
+         bonus bAspdRate,10;
+         bonus bPAtk,5;
+         if (.@g>=ENCHANTGRADE_C) {
+            bonus bShortAtkRate,10;
+            bonus bLongAtkRate,10;
+            if (.@g>=ENCHANTGRADE_B) {
+               bonus bPow,.@r/2;
+               bonus bCon,.@r/2;
+               bonus bAtkRate,10;
+               if (.@g>=ENCHANTGRADE_A) {
+                  bonus2 bAddSize,Size_All,4*(.@r/2);
                }
             }
          }
@@ -2314,6 +2580,39 @@ Body:
             }
          }
       }
+  - Id: 470440
+    AegisName: D_God_Boots_TW
+    Name: Dragon God Boots
+    Type: Armor
+    Weight: 500
+    Defense: 50
+    Slots: 1
+    Locations:
+      Shoes: true
+    ArmorLevel: 1
+    EquipLevelMin: 100
+    Refineable: true
+    Script: |
+      .@r = getrefine();
+      .@g = getenchantgrade();
+      bonus bMdef,10;
+      bonus bBaseAtk,10*(.@r/2);
+      bonus bMaxHPRate,4*(.@r/3);
+      bonus bDelayRate,-2*(.@r/3);
+      if (.@r>=7) {
+         bonus bPerfectHitAddRate,10;
+         bonus bCritical,15;
+         if (.@r>=9) {
+             bonus bShortAtkRate,10;
+             bonus bLongAtkRate,10;
+             if (.@r>=11) {
+                 bonus2 bAddEle,Ele_All,10;
+                 if (.@r>=13) {
+                    autobonus "{ bonus bShortAtkRate,15; bonus bLongAtkRate,15; }",30,10000,BF_SHORT|BF_LONG;
+                 }
+             }
+         }
+      }
   - Id: 470442
     AegisName: Ayothaya_Boots_TH
     Name: "Ayothaya Adventurer's Boots"
@@ -2424,6 +2723,58 @@ Body:
       Costume_Garment: true
     ArmorLevel: 1
     View: 74
+  - Id: 480454
+    AegisName: Battle_Aura_Manteau_LT
+    Name: Battle Aura Manteau-LT
+    Type: Armor
+    Weight: 100
+    Defense: 20
+    Slots: 1
+    Locations:
+      Garment: true
+    ArmorLevel: 2
+    EquipLevelMin: 190
+    Refineable: true
+    Gradable: true
+    Script: |
+      .@g = getenchantgrade();
+      .@r = getrefine();
+      bonus bNoKnockback;
+      skill "MO_CALLSPIRITS",5;
+      bonus bBaseAtk,.@r/2;
+      bonus bPow,.@r/2;
+      bonus bCon,.@r/2;
+      bonus bShortAtkRate,8*(.@r/2);
+      bonus bLongAtkRate,8*(.@r/2);
+      if (.@r>=7) {
+         bonus bAtkRate,15;
+         bonus bAspdRate,10;
+         if (.@r>=9) {
+            bonus2 bAddEle,Ele_All,12;
+            if (.@r>=11) {
+               bonus bPerfectHitAddRate,25;
+               if (.@r>=13) {
+                  bonus bShortAtkRate,10;
+                  bonus bLongAtkRate,10;
+               }
+            }
+         }
+      }
+      if (.@g>=ENCHANTGRADE_D) {
+         bonus bBaseAtk,80;
+         if (.@g>=ENCHANTGRADE_C) {
+            bonus bPerfectHitAddRate,10;
+            if (.@g>=ENCHANTGRADE_B) {
+               bonus2 bAddSize,Size_All,12;
+               if (.@g>=ENCHANTGRADE_A) {
+                  bonus bDelayRate,-7;
+                  if (.@r>=13) {
+                     bonus2 bAddRace,RC_All,12;
+                  }
+               }
+            }
+         }
+      }
   - Id: 480533
     AegisName: Hero_Courage_TH
     Name: Hero Courage Cape
@@ -2725,6 +3076,10 @@ Body:
       Costume_Garment: true
     ArmorLevel: 1
     View: 271
+    Script: |
+      hateffect(HAT_EF_S_BEELZEBUB_WING,true);
+    UnEquipScript: |
+      hateffect(HAT_EF_S_BEELZEBUB_WING,false);
   - Id: 480621
     AegisName: Comet_Cavalry_US
     Name: Comet Cavalry
@@ -3068,6 +3423,57 @@ Body:
                bonus2 bMagicAddEle,Ele_All,12;
                if (.@g>=ENCHANTGRADE_A) {
                   bonus bNoKnockback;
+               }
+            }
+         }
+      }
+  - Id: 480759
+    AegisName: C_M_Cape_UPD
+    Name: Enhanced Reforming Magic Cloak
+    Type: Armor
+    Weight: 100
+    Defense: 0
+    Slots: 1
+    Locations:
+      Garment: true
+    ArmorLevel: 2
+    EquipLevelMin: 150
+    Refineable: true
+    Gradable: true
+    Script: |
+      .@g = getenchantgrade();
+      .@r = getrefine();
+      bonus bMatk,10*(.@r/2);
+      bonus bSpl,.@r/2;
+      bonus2 bMagicAddEle,Ele_All,5*(.@r/2);
+      if (.@r>=7) {
+         bonus bMatkRate,10;
+         if (.@r>=9) {
+            bonus5 bAutoSpell,"AB_JUDEX",7,200,BF_WEAPON|BF_NORMAL,1;
+            bonus5 bAutoSpell,"LG_RAYOFGENESIS",5,200,BF_WEAPON|BF_NORMAL,1;
+            if (.@r>=11) {
+               bonus2 bMagicAddSize,Size_All,12;
+               if (.@r>=13) {
+                  if (BaseJob == Job_Rogue) {
+                     bonus bMatk,100;
+                     bonus2 bMagicAddRace,RC_All,12;
+                     bonus5 bAutoSpell,"AG_CRIMSON_ARROW",4,120,BF_WEAPON|BF_NORMAL,1;
+                     bonus5 bAutoSpell,"HN_HELLS_DRIVE",8,120,BF_WEAPON|BF_NORMAL,1;
+                     bonus5 bAutoSpell,"HN_JACK_FROST_NOVA",8,30,BF_WEAPON|BF_NORMAL,1;
+                     bonus5 bAutoSpell,"EM_LIGHTNING_LAND",4,30,BF_WEAPON|BF_NORMAL,1;
+                  }
+               }
+            }
+         }
+      }
+      if (.@g>=ENCHANTGRADE_D) {
+         bonus2 bIgnoreMdefRaceRate,RC_All,20;
+         if (.@g>=ENCHANTGRADE_C) {
+            bonus2 bMagicAddEle,Ele_All,10;
+            if (.@g>=ENCHANTGRADE_B) {
+               bonus2 bMagicAtkEle,Ele_All,10;
+               if (.@g>=ENCHANTGRADE_A) {
+                  skill "WL_RECOGNIZEDSPELL",1;
                }
             }
          }
@@ -4970,7 +5376,7 @@ Body:
             }
          }
       }
-  - Id: 560077
+  - Id: 590093
     AegisName: Tomb_Club_US
     Name: Abydos Morning Star
     Type: Weapon
@@ -5214,6 +5620,10 @@ Body:
          skill "MO_BODYRELOCATION",1;
          skill "SR_RAISINGDRAGON",10;
          skill "SH_KI_SUL_WATER_SPRAYING",7;
+         skill "AM_BIOETHICS",1;
+         skill "AM_REST",1;
+         skill "AM_CALLHOMUN",1;
+         skill "AM_RESURRECTHOMUN",5;
          bonus2 bSkillCooldown,"WL_COMET",-20000;
          bonus2 bSkillCooldown,"SH_KI_SUL_WATER_SPRAYING",-3000;
          bonus bFixedCast,-5000;
@@ -5226,6 +5636,9 @@ Body:
          bonus2 bMagicAtkEle,Ele_All,200;
          bonus2 bSubClass,Class_All,100;
          bonus bAddMaxWeight,200000;
+         bonus bAllStats,1000;
+         bonus bAllTraitStats,1000;
+         bonus bASPD,50;
       }
   - Id: 7000001
     AegisName: Glittering_Cat_Choker_TH
