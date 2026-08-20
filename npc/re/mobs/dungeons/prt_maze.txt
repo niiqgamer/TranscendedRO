@@ -136,7 +136,7 @@ OnMobDead:
 		.count[20523] = 0;
 		.count[20524] = 0;
 		killmonster "prt_mz03_i", "prt_mz03_i_boss::OnBossDeath";
-		mapannounce "prt_mz03_i", "A terrible presence has descended from beyond the chaos of the deep abyss.", bc_map, 0x70dbdb;
+		mapannounce "prt_mz03_i", "A terrible presence has descended from beyond the chaos of the deep abyss.", bc_map, 0x70DBDB, FW_BOLD, 20, 0, 0;
 		getunitdata( killedgid, .@data );
 		monster "prt_mz03_i", .@data[UMOB_X], .@data[UMOB_Y], "--ja--", 20520,1, "prt_mz03_i_boss::OnBossDeath";	// ILL_BAPHOMET
 		end;

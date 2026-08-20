@@ -7437,16 +7437,16 @@ Body:
             Item: Kitten_Shield_US
             Refine: 9
       - Index: 4
-        Item: Kitten_Shield2_US
+        Item: Ignis_Guard_LT_TH
         RequiredItems:
           - Index: 0
-            Item: Union_Token
+            Item: Burning_Horse_Shoe
             Amount: 2000
           - Index: 1
-            Item: DoramToken
-            Amount: 2000
+            Item: Reform_Stone_TH
+            Amount: 4
           - Index: 2
-            Item: Kitten_Shield_US
+            Item: Ignis_Guard_TH
             Refine: 9
   - Name: Garments
     Items:
@@ -8025,3 +8025,186 @@ Body:
           - Index: 0
             Item: Mine_As
             Amount: 700
+  - Name: bossnia
+    Items:
+      - Index: 0
+        Item: Flower_A
+        RequiredItems:
+          - Index: 0
+            Item: Flower_V
+            Amount: 100
+      - Index: 1
+        Item: Phantom_Fragment
+        RequiredItems:
+          - Index: 0
+            Item: Flower_A
+            Amount: 10
+      - Index: 2
+        Item: Upd_RuneKnight_Card
+        Zeny: 100000000
+        RequiredItems:
+          - Index: 0
+            Item: RuneKnight_Card
+            Amount: 2
+          - Index: 1
+            Item: Flower_V
+            Amount: 30000
+          - Index: 2
+            Item: Flower_A
+            Amount: 5000
+      - Index: 3
+        Item: Upd_RoyalGuard_Card
+        Zeny: 100000000
+        RequiredItems:
+          - Index: 0
+            Item: RoyalGuard_Card
+            Amount: 2
+          - Index: 1
+            Item: Flower_V
+            Amount: 30000
+          - Index: 2
+            Item: Flower_A
+            Amount: 5000
+      - Index: 4
+        Item: Upd_Archbishop_Card
+        Zeny: 100000000
+        RequiredItems:
+          - Index: 0
+            Item: Archbishop_Card
+            Amount: 2
+          - Index: 1
+            Item: Flower_V
+            Amount: 30000
+          - Index: 2
+            Item: Flower_A
+            Amount: 5000
+      - Index: 5
+        Item: Upd_Sura_Card
+        Zeny: 100000000
+        RequiredItems:
+          - Index: 0
+            Item: Sura_Card
+            Amount: 2
+          - Index: 1
+            Item: Flower_V
+            Amount: 30000
+          - Index: 2
+            Item: Flower_A
+            Amount: 5000
+      - Index: 6
+        Item: Upd_Warlock_Card
+        Zeny: 100000000
+        RequiredItems:
+          - Index: 0
+            Item: Warlock_Card
+            Amount: 2
+          - Index: 1
+            Item: Flower_V
+            Amount: 30000
+          - Index: 2
+            Item: Flower_A
+            Amount: 5000
+      - Index: 7
+        Item: Upd_Sorcerer_Card
+        Zeny: 100000000
+        RequiredItems:
+          - Index: 0
+            Item: Sorcerer_Card
+            Amount: 2
+          - Index: 1
+            Item: Flower_V
+            Amount: 30000
+          - Index: 2
+            Item: Flower_A
+            Amount: 5000
+      - Index: 8
+        Item: Upd_Mechanic_Card
+        Zeny: 100000000
+        RequiredItems:
+          - Index: 0
+            Item: Mechanic_Card
+            Amount: 2
+          - Index: 1
+            Item: Flower_V
+            Amount: 30000
+          - Index: 2
+            Item: Flower_A
+            Amount: 5000
+      - Index: 9
+        Item: Upd_Genetic_Card
+        Zeny: 100000000
+        RequiredItems:
+          - Index: 0
+            Item: Genetic_Card
+            Amount: 2
+          - Index: 1
+            Item: Flower_V
+            Amount: 30000
+          - Index: 2
+            Item: Flower_A
+            Amount: 5000
+      - Index: 10
+        Item: Upd_GCross_Card
+        Zeny: 100000000
+        RequiredItems:
+          - Index: 0
+            Item: GuillotineCross_Card
+            Amount: 2
+          - Index: 1
+            Item: Flower_V
+            Amount: 30000
+          - Index: 2
+            Item: Flower_A
+            Amount: 5000
+      - Index: 11
+        Item: Upd_ShadowChaser_Card
+        Zeny: 100000000
+        RequiredItems:
+          - Index: 0
+            Item: ShadowChaser_Card
+            Amount: 2
+          - Index: 1
+            Item: Flower_V
+            Amount: 30000
+          - Index: 2
+            Item: Flower_A
+            Amount: 5000
+      - Index: 12
+        Item: Upd_Ranger_Card
+        Zeny: 100000000
+        RequiredItems:
+          - Index: 0
+            Item: Ranger_Card
+            Amount: 2
+          - Index: 1
+            Item: Flower_V
+            Amount: 30000
+          - Index: 2
+            Item: Flower_A
+            Amount: 5000
+      - Index: 13
+        Item: Upd_Minstrel_Card
+        Zeny: 100000000
+        RequiredItems:
+          - Index: 0
+            Item: Minstrel_Card
+            Amount: 2
+          - Index: 1
+            Item: Flower_V
+            Amount: 30000
+          - Index: 2
+            Item: Flower_A
+            Amount: 5000
+      - Index: 14
+        Item: Upd_Wanderer_Card
+        Zeny: 100000000
+        RequiredItems:
+          - Index: 0
+            Item: Wanderer_Card
+            Amount: 2
+          - Index: 1
+            Item: Flower_V
+            Amount: 30000
+          - Index: 2
+            Item: Flower_A
+            Amount: 5000

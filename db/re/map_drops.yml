@@ -3858,3 +3858,47 @@ Body:
           - Index: 2
             Item: Fragment_Of_Time
             Rate: 45000
+  - Map: bossnia_01
+    GlobalDrops:
+      - Index: 0
+        Item: Flower_V
+        Rate: 15000
+      - Index: 1
+        Item: Flower_V
+        Rate: 16000
+      - Index: 2
+        Item: Flower_V
+        Rate: 17000
+  - Map: bossnia_02
+    GlobalDrops:
+      - Index: 0
+        Item: Flower_V
+        Rate: 20000
+      - Index: 1
+        Item: Flower_V
+        Rate: 21000
+      - Index: 2
+        Item: Flower_V
+        Rate: 22000
+  - Map: bossnia_03
+    GlobalDrops:
+      - Index: 0
+        Item: Flower_V
+        Rate: 25000
+      - Index: 1
+        Item: Flower_V
+        Rate: 26000
+      - Index: 2
+        Item: Flower_V
+        Rate: 27000
+  - Map: bossnia_04
+    GlobalDrops:
+      - Index: 0
+        Item: Flower_V
+        Rate: 30000
+      - Index: 1
+        Item: Flower_V
+        Rate: 32000
+      - Index: 2
+        Item: Flower_V
+        Rate: 34000

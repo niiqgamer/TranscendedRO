@@ -189,7 +189,7 @@ OnBossSpawn:
 	.mvp_spawn = 1;
 	.kill_count = 0;
 	monster "pay_d03_i",0,0,"Angry Moonlight Flower",3758,1,"illusion_mob#moonlight::OnBossKill";
-	mapannounce "pay_d03_i", "Angry Moonlight Flower: Who dares bully us again? They're in a lot of trouble!", bc_map, "0x70dbdb";
+	mapannounce "pay_d03_i", "Angry Moonlight Flower: Who dares bully us again? They're in a lot of trouble!", bc_map, 0x70DBDB, FW_BOLD, 20, 0, 0;
 	end;
 
 OnBossKill:

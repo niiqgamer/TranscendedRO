@@ -3077,9 +3077,11 @@ Body:
     ArmorLevel: 1
     View: 271
     Script: |
-      hateffect(HAT_EF_S_BEELZEBUB_WING,true);
+      hateffect HAT_EF_C_S_Beelzebub_Wing,true;
+      hateffect HAT_EF_S_Beelzebub_Wing,true;
     UnEquipScript: |
-      hateffect(HAT_EF_S_BEELZEBUB_WING,false);
+      hateffect HAT_EF_C_S_Beelzebub_Wing,false;
+      hateffect HAT_EF_S_Beelzebub_Wing,false;
   - Id: 480621
     AegisName: Comet_Cavalry_US
     Name: Comet Cavalry

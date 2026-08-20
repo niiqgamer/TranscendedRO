@@ -619,6 +619,7 @@ OnInit:
 	450355,					// Violent_D_S_Armor
 	450356,					// Abbys_L_H_Armor
 	410211,					// Little_Abyss_Dragon_
+	460178,					// Ignis_Guard_TH
 	25940,					// Loft_StoneUltimate
 	27421,					// Shard_Jewelry_Str
 	27422,					// Shard_Jewelry_Agi

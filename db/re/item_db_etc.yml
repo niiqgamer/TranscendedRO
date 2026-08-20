@@ -36642,7 +36642,8 @@ Body:
     AegisName: Flower_V
     Name: Flower Left by Phantom
     Type: Etc
-    Weight: 10
+    Flags:
+      BuyingStore: true
   - Id: 25504
     AegisName: Visionary_Ticket
     Name: Phantom's Seal

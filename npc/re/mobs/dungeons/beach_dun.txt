@@ -75,9 +75,9 @@ S_Boss:
 	.boss_spawn = true;
 	monster "com_d02_i",getarg(1),getarg(2),"--ja--",getarg(0),1,"illusion_luanda::OnBossDeath";
 	if (.swap == 0)	// ILL_TAO_GUNKA
-		mapannounce "com_d02_i", "Ancient Tao Gunka: Is it time to show off your megalithic power?", bc_map, 0x70DBDB;
+		mapannounce "com_d02_i", "Ancient Tao Gunka: Is it time to show off your megalithic power?", bc_map, 0x70DBDB, FW_BOLD, 20, 0, 0;
 	else	// ILL_WOOTAN_DEFENDER
-		mapannounce "com_d02_i", "Ancient Wootan Defender: I guess I'll have to step in after all these useless guys.", bc_map, 0x70DBDB;
+		mapannounce "com_d02_i", "Ancient Wootan Defender: I guess I'll have to step in after all these useless guys.", bc_map, 0x70DBDB, FW_BOLD, 20, 0, 0;
 	end;
 
 OnBossDeath:

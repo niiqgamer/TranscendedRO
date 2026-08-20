@@ -1,0 +1,450 @@
+izlude,163,152,4	script	Stylist#izstylist	122,{
+	.cost = 1000000;
+
+	if (BaseLevel < 200) {
+		mes "Hi";
+		mes "Sorry, you must be base level 200 or higher to use this service.";
+		close;
+	}
+
+	.@look = getlook(LOOK_BODY2);
+	if (.@look <= 0) .@look = Class; // fallback ถ้ายังไม่เคย setlook
+	.@baby = (Upper == 2);
+
+	switch (BaseClass) {
+		case JOB_NOVICE:
+			if (.@baby) {
+				setarray .@ids[0],4023,4045,4191;
+				setarray .@names$[0],"Baby","Super Baby","Super Baby E";
+			} else {
+				setarray .@ids[0],0,4001,23,4190,4307;
+				setarray .@names$[0],"Novice","High Novice","Super Novice","Super Novice E","Hyper Novice";
+			}
+			break;
+
+		case JOB_SWORDMAN:
+			if (.@baby) {
+				if (.@look == 4024) {
+					mes "Which baby line do you want?";
+					if (select("Knight line:Crusader line") == 1) {
+						setarray .@ids[0],4024,4030,4096;
+						setarray .@names$[0],"Baby Swordman","Baby Knight","Baby Rune Knight";
+					} else {
+						setarray .@ids[0],4024,4037,4102;
+						setarray .@names$[0],"Baby Swordman","Baby Crusader","Baby Royal Guard";
+					}
+				} else if (.@look == 4030 || .@look == 4096) {
+					setarray .@ids[0],4024,4030,4096;
+					setarray .@names$[0],"Baby Swordman","Baby Knight","Baby Rune Knight";
+				} else if (.@look == 4037 || .@look == 4102) {
+					setarray .@ids[0],4024,4037,4102;
+					setarray .@names$[0],"Baby Swordman","Baby Crusader","Baby Royal Guard";
+				}
+			} else {
+				if (.@look == 1) {
+					mes "Which line do you want?";
+					if (select("Knight line:Crusader line") == 1) {
+						setarray .@ids[0],1,7,4008,4054,4252;
+						setarray .@names$[0],"Swordman","Knight","Lord Knight","Rune Knight","Dragon Knight";
+					} else {
+						setarray .@ids[0],1,14,4015,4066,4258;
+						setarray .@names$[0],"Swordman","Crusader","Paladin","Royal Guard","Imperial Guard";
+					}
+				} else if (.@look == 7 || .@look == 4008 || .@look == 4054 || .@look == 4252) {
+					setarray .@ids[0],1,7,4008,4054,4252;
+					setarray .@names$[0],"Swordman","Knight","Lord Knight","Rune Knight","Dragon Knight";
+				} else if (.@look == 14 || .@look == 4015 || .@look == 4066 || .@look == 4258) {
+					setarray .@ids[0],1,14,4015,4066,4258;
+					setarray .@names$[0],"Swordman","Crusader","Paladin","Royal Guard","Imperial Guard";
+				}
+			}
+			break;
+
+		case JOB_MAGE:
+			if (.@baby) {
+				if (.@look == 4025) {
+					mes "Which baby line do you want?";
+					if (select("Wizard line:Sage line") == 1) {
+						setarray .@ids[0],4025,4032,4097;
+						setarray .@names$[0],"Baby Mage","Baby Wizard","Baby Warlock";
+					} else {
+						setarray .@ids[0],4025,4039,4103;
+						setarray .@names$[0],"Baby Mage","Baby Sage","Baby Sorcerer";
+					}
+				} else if (.@look == 4032 || .@look == 4097) {
+					setarray .@ids[0],4025,4032,4097;
+					setarray .@names$[0],"Baby Mage","Baby Wizard","Baby Warlock";
+				} else if (.@look == 4039 || .@look == 4103) {
+					setarray .@ids[0],4025,4039,4103;
+					setarray .@names$[0],"Baby Mage","Baby Sage","Baby Sorcerer";
+				}
+			} else {
+				if (.@look == 2) {
+					mes "Which line do you want?";
+					if (select("Wizard line:Sage line") == 1) {
+						setarray .@ids[0],2,9,4010,4055,4255;
+						setarray .@names$[0],"Mage","Wizard","High Wizard","Warlock","Arch Mage";
+					} else {
+						setarray .@ids[0],2,16,4017,4067,4261;
+						setarray .@names$[0],"Mage","Sage","Professor","Sorcerer","Elemental Master";
+					}
+				} else if (.@look == 9 || .@look == 4010 || .@look == 4055 || .@look == 4255) {
+					setarray .@ids[0],2,9,4010,4055,4255;
+					setarray .@names$[0],"Mage","Wizard","High Wizard","Warlock","Arch Mage";
+				} else if (.@look == 16 || .@look == 4017 || .@look == 4067 || .@look == 4261) {
+					setarray .@ids[0],2,16,4017,4067,4261;
+					setarray .@names$[0],"Mage","Sage","Professor","Sorcerer","Elemental Master";
+				}
+			}
+			break;
+
+		case JOB_ARCHER:
+			if (.@baby) {
+				if (.@look == 4026) {
+					if (Sex == 0) {
+						mes "Which baby line do you want?";
+						if (select("Hunter line:Dancer line") == 1) {
+							setarray .@ids[0],4026,4034,4098;
+							setarray .@names$[0],"Baby Archer","Baby Hunter","Baby Ranger";
+						} else {
+							setarray .@ids[0],4026,4043,4105;
+							setarray .@names$[0],"Baby Archer","Baby Dancer","Baby Wanderer";
+						}
+					} else {
+						mes "Which baby line do you want?";
+						if (select("Hunter line:Bard line") == 1) {
+							setarray .@ids[0],4026,4034,4098;
+							setarray .@names$[0],"Baby Archer","Baby Hunter","Baby Ranger";
+						} else {
+							setarray .@ids[0],4026,4042,4104;
+							setarray .@names$[0],"Baby Archer","Baby Bard","Baby Minstrel";
+						}
+					}
+				} else if (.@look == 4034 || .@look == 4098) {
+					setarray .@ids[0],4026,4034,4098;
+					setarray .@names$[0],"Baby Archer","Baby Hunter","Baby Ranger";
+				} else if (.@look == 4042 || .@look == 4104) {
+					setarray .@ids[0],4026,4042,4104;
+					setarray .@names$[0],"Baby Archer","Baby Bard","Baby Minstrel";
+				} else if (.@look == 4043 || .@look == 4105) {
+					setarray .@ids[0],4026,4043,4105;
+					setarray .@names$[0],"Baby Archer","Baby Dancer","Baby Wanderer";
+				}
+			} else {
+				if (.@look == 3) {
+					if (Sex == 0) {
+						mes "Which line do you want?";
+						if (select("Hunter line:Dancer line") == 1) {
+							setarray .@ids[0],3,11,4012,4056,4257;
+							setarray .@names$[0],"Archer","Hunter","Sniper","Ranger","Wind Hawk";
+						} else {
+							setarray .@ids[0],3,20,4021,4069,4264;
+							setarray .@names$[0],"Archer","Dancer","Gypsy","Wanderer","Trouvere";
+						}
+					} else {
+						mes "Which line do you want?";
+						if (select("Hunter line:Bard line") == 1) {
+							setarray .@ids[0],3,11,4012,4056,4257;
+							setarray .@names$[0],"Archer","Hunter","Sniper","Ranger","Wind Hawk";
+						} else {
+							setarray .@ids[0],3,19,4020,4068,4263;
+							setarray .@names$[0],"Archer","Bard","Clown","Minstrel","Troubadour";
+						}
+					}
+				} else if (.@look == 11 || .@look == 4012 || .@look == 4056 || .@look == 4257) {
+					setarray .@ids[0],3,11,4012,4056,4257;
+					setarray .@names$[0],"Archer","Hunter","Sniper","Ranger","Wind Hawk";
+				} else if (.@look == 19 || .@look == 4020 || .@look == 4068 || .@look == 4263) {
+					setarray .@ids[0],3,19,4020,4068,4263;
+					setarray .@names$[0],"Archer","Bard","Clown","Minstrel","Troubadour";
+				} else if (.@look == 20 || .@look == 4021 || .@look == 4069 || .@look == 4264) {
+					setarray .@ids[0],3,20,4021,4069,4264;
+					setarray .@names$[0],"Archer","Dancer","Gypsy","Wanderer","Trouvere";
+				}
+			}
+			break;
+
+		case JOB_ACOLYTE:
+			if (.@baby) {
+				if (.@look == 4027) {
+					mes "Which baby line do you want?";
+					if (select("Priest line:Monk line") == 1) {
+						setarray .@ids[0],4027,4031,4099;
+						setarray .@names$[0],"Baby Acolyte","Baby Priest","Baby Arch Bishop";
+					} else {
+						setarray .@ids[0],4027,4038,4106;
+						setarray .@names$[0],"Baby Acolyte","Baby Monk","Baby Sura";
+					}
+				} else if (.@look == 4031 || .@look == 4099) {
+					setarray .@ids[0],4027,4031,4099;
+					setarray .@names$[0],"Baby Acolyte","Baby Priest","Baby Arch Bishop";
+				} else if (.@look == 4038 || .@look == 4106) {
+					setarray .@ids[0],4027,4038,4106;
+					setarray .@names$[0],"Baby Acolyte","Baby Monk","Baby Sura";
+				}
+			} else {
+				if (.@look == 4) {
+					mes "Which line do you want?";
+					if (select("Priest line:Monk line") == 1) {
+						setarray .@ids[0],4,8,4009,4057,4256;
+						setarray .@names$[0],"Acolyte","Priest","High Priest","Arch Bishop","Cardinal";
+					} else {
+						setarray .@ids[0],4,15,4016,4070,4262;
+						setarray .@names$[0],"Acolyte","Monk","Champion","Sura","Inquisitor";
+					}
+				} else if (.@look == 8 || .@look == 4009 || .@look == 4057 || .@look == 4256) {
+					setarray .@ids[0],4,8,4009,4057,4256;
+					setarray .@names$[0],"Acolyte","Priest","High Priest","Arch Bishop","Cardinal";
+				} else if (.@look == 15 || .@look == 4016 || .@look == 4070 || .@look == 4262) {
+					setarray .@ids[0],4,15,4016,4070,4262;
+					setarray .@names$[0],"Acolyte","Monk","Champion","Sura","Inquisitor";
+				}
+			}
+			break;
+
+		case JOB_MERCHANT:
+			if (.@baby) {
+				if (.@look == 4028) {
+					mes "Which baby line do you want?";
+					if (select("Blacksmith line:Alchemist line") == 1) {
+						setarray .@ids[0],4028,4033,4100;
+						setarray .@names$[0],"Baby Merchant","Baby Blacksmith","Baby Mechanic";
+					} else {
+						setarray .@ids[0],4028,4041,4107;
+						setarray .@names$[0],"Baby Merchant","Baby Alchemist","Baby Genetic";
+					}
+				} else if (.@look == 4033 || .@look == 4100) {
+					setarray .@ids[0],4028,4033,4100;
+					setarray .@names$[0],"Baby Merchant","Baby Blacksmith","Baby Mechanic";
+				} else if (.@look == 4041 || .@look == 4107) {
+					setarray .@ids[0],4028,4041,4107;
+					setarray .@names$[0],"Baby Merchant","Baby Alchemist","Baby Genetic";
+				}
+			} else {
+				if (.@look == 5) {
+					mes "Which line do you want?";
+					if (select("Blacksmith line:Alchemist line") == 1) {
+						setarray .@ids[0],5,10,4011,4058,4253;
+						setarray .@names$[0],"Merchant","Blacksmith","Whitesmith","Mechanic","Meister";
+					} else {
+						setarray .@ids[0],5,18,4019,4071,4259;
+						setarray .@names$[0],"Merchant","Alchemist","Creator","Genetic","Biolo";
+					}
+				} else if (.@look == 10 || .@look == 4011 || .@look == 4058 || .@look == 4253) {
+					setarray .@ids[0],5,10,4011,4058,4253;
+					setarray .@names$[0],"Merchant","Blacksmith","Whitesmith","Mechanic","Meister";
+				} else if (.@look == 18 || .@look == 4019 || .@look == 4071 || .@look == 4259) {
+					setarray .@ids[0],5,18,4019,4071,4259;
+					setarray .@names$[0],"Merchant","Alchemist","Creator","Genetic","Biolo";
+				}
+			}
+			break;
+
+		case JOB_THIEF:
+			if (.@baby) {
+				if (.@look == 4029) {
+					mes "Which baby line do you want?";
+					if (select("Assassin line:Rogue line") == 1) {
+						setarray .@ids[0],4029,4035,4101;
+						setarray .@names$[0],"Baby Thief","Baby Assassin","Baby Guillotine Cross";
+					} else {
+						setarray .@ids[0],4029,4040,4108;
+						setarray .@names$[0],"Baby Thief","Baby Rogue","Baby Shadow Chaser";
+					}
+				} else if (.@look == 4035 || .@look == 4101) {
+					setarray .@ids[0],4029,4035,4101;
+					setarray .@names$[0],"Baby Thief","Baby Assassin","Baby Guillotine Cross";
+				} else if (.@look == 4040 || .@look == 4108) {
+					setarray .@ids[0],4029,4040,4108;
+					setarray .@names$[0],"Baby Thief","Baby Rogue","Baby Shadow Chaser";
+				}
+			} else {
+				if (.@look == 6) {
+					mes "Which line do you want?";
+					if (select("Assassin line:Rogue line") == 1) {
+						setarray .@ids[0],6,12,4013,4059,4254;
+						setarray .@names$[0],"Thief","Assassin","Assassin Cross","Guillotine Cross","Shadow Cross";
+					} else {
+						setarray .@ids[0],6,17,4018,4072,4260;
+						setarray .@names$[0],"Thief","Rogue","Stalker","Shadow Chaser","Abyss Chaser";
+					}
+				} else if (.@look == 12 || .@look == 4013 || .@look == 4059 || .@look == 4254) {
+					setarray .@ids[0],6,12,4013,4059,4254;
+					setarray .@names$[0],"Thief","Assassin","Assassin Cross","Guillotine Cross","Shadow Cross";
+				} else if (.@look == 17 || .@look == 4018 || .@look == 4072 || .@look == 4260) {
+					setarray .@ids[0],6,17,4018,4072,4260;
+					setarray .@names$[0],"Thief","Rogue","Stalker","Shadow Chaser","Abyss Chaser";
+				}
+			}
+			break;
+
+		case JOB_TAEKWON:
+			if (.@baby) {
+				if (.@look == 4225) {
+					mes "Which baby line do you want?";
+					if (select("Star Gladiator line:Soul Linker line") == 1) {
+						setarray .@ids[0],4225,4226,4241;
+						setarray .@names$[0],"Baby Taekwon","Baby Star Gladiator","Baby Star Emperor";
+					} else {
+						setarray .@ids[0],4225,4227,4242;
+						setarray .@names$[0],"Baby Taekwon","Baby Soul Linker","Baby Soul Reaper";
+					}
+				} else if (.@look == 4226 || .@look == 4241) {
+					setarray .@ids[0],4225,4226,4241;
+					setarray .@names$[0],"Baby Taekwon","Baby Star Gladiator","Baby Star Emperor";
+				} else if (.@look == 4227 || .@look == 4242) {
+					setarray .@ids[0],4225,4227,4242;
+					setarray .@names$[0],"Baby Taekwon","Baby Soul Linker","Baby Soul Reaper";
+				}
+			} else {
+				if (.@look == 4046) {
+					mes "Which line do you want?";
+					if (select("Star Gladiator line:Soul Linker line") == 1) {
+						setarray .@ids[0],4046,4047,4239,4302;
+						setarray .@names$[0],"Taekwon","Star Gladiator","Star Emperor","Sky Emperor";
+					} else {
+						setarray .@ids[0],4046,4049,4240,4303;
+						setarray .@names$[0],"Taekwon","Soul Linker","Soul Reaper","Soul Ascetic";
+					}
+				} else if (.@look == 4047 || .@look == 4239 || .@look == 4302) {
+					setarray .@ids[0],4046,4047,4239,4302;
+					setarray .@names$[0],"Taekwon","Star Gladiator","Star Emperor","Sky Emperor";
+				} else if (.@look == 4049 || .@look == 4240 || .@look == 4303) {
+					setarray .@ids[0],4046,4049,4240,4303;
+					setarray .@names$[0],"Taekwon","Soul Linker","Soul Reaper","Soul Ascetic";
+				}
+			}
+			break;
+
+		case JOB_GUNSLINGER:
+			if (.@baby) {
+				setarray .@ids[0],4228,4229;
+				setarray .@names$[0],"Baby Gunslinger","Baby Rebellion";
+			} else {
+				setarray .@ids[0],24,4215,4306;
+				setarray .@names$[0],"Gunslinger","Rebellion","Night Watch";
+			}
+			break;
+
+		case JOB_NINJA:
+			if (.@baby) {
+				if (.@look == 4222) {
+					mes "Which baby line do you want?";
+					if (select("Kagerou line:Oboro line") == 1) {
+						setarray .@ids[0],4222,4223;
+						setarray .@names$[0],"Baby Ninja","Baby Kagerou";
+					} else {
+						setarray .@ids[0],4222,4224;
+						setarray .@names$[0],"Baby Ninja","Baby Oboro";
+					}
+				} else if (.@look == 4223) {
+					setarray .@ids[0],4222,4223;
+					setarray .@names$[0],"Baby Ninja","Baby Kagerou";
+				} else if (.@look == 4224) {
+					setarray .@ids[0],4222,4224;
+					setarray .@names$[0],"Baby Ninja","Baby Oboro";
+				}
+			} else {
+				if (.@look == 25) {
+					if (Sex == 0) {
+						mes "Which line do you want?";
+						if (select("Kagerou line:Oboro line") == 1) {
+							setarray .@ids[0],25,4211,4304;
+							setarray .@names$[0],"Ninja","Kagerou","Shinkiro";
+						} else {
+							setarray .@ids[0],25,4212,4305;
+							setarray .@names$[0],"Ninja","Oboro","Shiranui";
+						}
+					} else {
+						mes "Which line do you want?";
+						if (select("Kagerou line:Oboro line") == 1) {
+							setarray .@ids[0],25,4211,4304;
+							setarray .@names$[0],"Ninja","Kagerou","Shinkiro";
+						} else {
+							setarray .@ids[0],25,4212,4305;
+							setarray .@names$[0],"Ninja","Oboro","Shiranui";
+						}
+					}
+				} else if (.@look == 4211 || .@look == 4304) {
+					setarray .@ids[0],25,4211,4304;
+					setarray .@names$[0],"Ninja","Kagerou","Shinkiro";
+				} else if (.@look == 4212 || .@look == 4305) {
+					setarray .@ids[0],25,4212,4305;
+					setarray .@names$[0],"Ninja","Oboro","Shiranui";
+				}
+			}
+			break;
+
+		case JOB_SUMMONER:
+			if (.@baby) {
+				setarray .@ids[0],4220;
+				setarray .@names$[0],"Baby Summoner";
+			} else {
+				setarray .@ids[0],4218,4308;
+				setarray .@names$[0],"Summoner","Spirit Handler";
+			}
+			break;
+
+		case JOB_GANGSI:
+			if (.@baby) {
+				mes "Hi";
+				mes "Your current look is not supported.";
+				close;
+			}
+			setarray .@ids[0],4050,4051,4052;
+			setarray .@names$[0],"Gangsi","Death Knight","Dark Collector";
+			break;
+
+		default:
+			mes "Hi";
+			mes "Your class is not supported.";
+			close;
+	}
+
+	.@size = getarraysize(.@ids);
+	if (.@size == 0) {
+		mes "Hi";
+		mes "Your current look is not recognized.";
+		close;
+	}
+
+	.@menu$ = "";
+	for (.@i = 0; .@i < .@size; .@i++) {
+		if (.@i) .@menu$ += ":";
+		.@menu$ += .@names$[.@i];
+		if (.@ids[.@i] == .@look)
+			.@cur$ = .@names$[.@i];
+	}
+	if (.@cur$ == "") .@cur$ = "Unknown";
+
+	mes "Hi! Currently you have a '" + .@cur$ + "' look.";
+	mes "I can change your outfit within your job line only.";
+	mes "It costs " + .cost + " zeny. Choose your new look:";
+	next;
+	.@c = select(.@menu$) - 1;
+
+	if (.@ids[.@c] == .@look) {
+		mes "You already have that look.";
+		close;
+	}
+	if (Zeny < .cost) {
+		mes "You don't have enough zeny.";
+		close;
+	}
+
+	Zeny -= .cost;
+	setlook LOOK_BODY2, .@ids[.@c];
+	specialeffect2 EF_PETRIFYATTACK;
+	specialeffect2 EF_KYRIE;
+	mes "Done! You are now in '" + .@names$[.@c] + "' look.";
+	close;
+
+OnInit:
+	initnpctimer;
+	end;
+
+OnTimer1000:
+    showscript(" ! Change Job Cloths ! ");
+    setnpctimer 0;
+    end;
+}

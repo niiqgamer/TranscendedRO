@@ -446,6 +446,12 @@ Body:
     Name: "Orrivane Orb (Imperial Guard)"
     Type: Card
     SubType: Enchant
+  - Id: 1001652
+    AegisName: Flower_A
+    Name: Ancient Flower Left by Phantom
+    Type: Etc
+    Flags:
+      BuyingStore: true
   - Id: 1001902
     AegisName: Reform_Stone_TH
     Name: Reform Stone
@@ -495,6 +501,12 @@ Body:
     Weight: 0
     Flags:
       BuyingStore: true
+  - Id: 1002741
+    AegisName: Phantom_Fragment
+    Name: Phantom Fragment
+    Type: Etc
+    Flags:
+      BuyingStore: true
   - Id: 9900000
     AegisName: Ceremonial_Matcha
     Name: Ceremonial Matcha
@@ -540,6 +552,58 @@ Body:
       NoSell: true
       NoCart: true
       NoGuildStorage: true
+      NoAuction: true
+  - Id: 9900011
+    AegisName: Bossnia_Ticket_1F1h
+    Name: Bossnia Ticket 1F (1 Hour)
+    Type: Etc
+    Trade:
+      NoDrop: true
+      NoTrade: true
+      NoSell: true
+      NoCart: true
+      NoStorage: true
+      NoGuildStorage: true
+      NoMail: true
+      NoAuction: true
+  - Id: 9900012
+    AegisName: Bossnia_Ticket_2F1h
+    Name: Bossnia Ticket 2F (1 Hour)
+    Type: Etc
+    Trade:
+      NoDrop: true
+      NoTrade: true
+      NoSell: true
+      NoCart: true
+      NoStorage: true
+      NoGuildStorage: true
+      NoMail: true
+      NoAuction: true
+  - Id: 9900013
+    AegisName: Bossnia_Ticket_3F1h
+    Name: Bossnia Ticket 3F (1 Hour)
+    Type: Etc
+    Trade:
+      NoDrop: true
+      NoTrade: true
+      NoSell: true
+      NoCart: true
+      NoStorage: true
+      NoGuildStorage: true
+      NoMail: true
+      NoAuction: true
+  - Id: 9900014
+    AegisName: Bossnia_Ticket_4F1h
+    Name: Bossnia Ticket 4F (1 Hour)
+    Type: Etc
+    Trade:
+      NoDrop: true
+      NoTrade: true
+      NoSell: true
+      NoCart: true
+      NoStorage: true
+      NoGuildStorage: true
+      NoMail: true
       NoAuction: true
   - Id: 9910000
     AegisName: T_A1_Refining

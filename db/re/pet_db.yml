@@ -2911,39 +2911,39 @@ Body:
 #      else if (.@i >= PET_INTIMATE_AWKWARD || .@i >= PET_INTIMATE_SHY) {
 #         bonus bMatkRate,2;
 #      }
-#
-#  - Mob: BAPHOMET2
-#    EggItem: Baphomet_Egg
-#    FoodItem: High_Class_Pet_food
-#    Fullness: 1   # unknown
-#    HungryDelay: 86400   # unknown
-#    IntimacyFed: 15   # unknown
-#    CaptureRate: 0   # unknown
-#    SpecialPerformance: false   # unknown
-#    AllowAutoFeed: true
-#    Script: >
-#      .@i = getpetinfo(PETINFO_INTIMATE);
-#
-#      if (.@i >= PET_INTIMATE_LOYAL) {
-#         bonus bLongAtkRate,5;
-#         bonus bMaxSPrate,7;
-#         bonus bFlee,20;
-#      }
-#      else if (.@i >= PET_INTIMATE_CORDIAL) {
-#         bonus bLongAtkRate,3;
-#         bonus bMaxSPrate,5;
-#         bonus bFlee,16;
-#      }
-#      else if (.@i >= PET_INTIMATE_NEUTRAL) {
-#         bonus bLongAtkRate,1;
-#         bonus bMaxSPrate,3;
-#         bonus bFlee,12;
-#      }
-#      else if (.@i >= PET_INTIMATE_AWKWARD || .@i >= PET_INTIMATE_SHY) {
-#         bonus bMaxSPrate,1;
-#         bonus bFlee,8;
-#      }
-#
+
+  - Mob: BAPHOMET
+    EggItem: Baphomet_Egg
+    FoodItem: High_Class_Pet_food
+    Fullness: 1
+    HungryDelay: 86400
+    IntimacyFed: 15
+    CaptureRate: 0
+    SpecialPerformance: false
+    AllowAutoFeed: true
+    Script: >
+      .@i = getpetinfo(PETINFO_INTIMATE);
+
+      if (.@i >= PET_INTIMATE_LOYAL) {
+         bonus bLongAtkRate,5;
+         bonus bMaxSPrate,7;
+         bonus bFlee,20;
+      }
+      else if (.@i >= PET_INTIMATE_CORDIAL) {
+         bonus bLongAtkRate,3;
+         bonus bMaxSPrate,5;
+         bonus bFlee,16;
+      }
+      else if (.@i >= PET_INTIMATE_NEUTRAL) {
+         bonus bLongAtkRate,1;
+         bonus bMaxSPrate,3;
+         bonus bFlee,12;
+      }
+      else if (.@i >= PET_INTIMATE_AWKWARD || .@i >= PET_INTIMATE_SHY) {
+         bonus bMaxSPrate,1;
+         bonus bFlee,8;
+      }
+
   - Mob: FARMILIAR
     TameItem: Fruits_Set_Trap
     EggItem: Farmiliar_Egg

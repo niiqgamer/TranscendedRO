@@ -1,0 +1,160 @@
+izlude,163,152,4	script	Stylist#izstylist	122,{
+	.cost = 1000000;
+
+	if (BaseLevel < 200) {
+		mes "Hi";
+		mes "Sorry, you must be base level 200 or higher to use this service.";
+		close;
+	}
+
+	.@look = getlook(LOOK_BODY2);
+	.@baby = (Upper == 2);
+
+	switch (BaseClass) {
+		case JOB_NOVICE:
+			if (.@baby) {
+				setarray .@ids[0],4023,4045,4191;
+				setarray .@names$[0],"Baby","Super Baby","Super Baby E";
+			} else {
+				setarray .@ids[0],0,4001,23,4190,4307;
+				setarray .@names$[0],"Novice","High Novice","Super Novice","Super Novice E","Hyper Novice";
+			}
+			break;
+		case JOB_SWORDMAN:
+			if (.@baby) {
+				setarray .@ids[0],4024,4030,4037,4096,4102;
+				setarray .@names$[0],"Baby Swordman","Baby Knight","Baby Crusader","Baby Rune Knight","Baby Royal Guard";
+			} else {
+				setarray .@ids[0],1,4002,7,4008,4054,4060,4252,14,4015,4066,4073,4258;
+				setarray .@names$[0],"Swordman","High Swordman","Knight","Lord Knight","Rune Knight","Rune Knight T","Dragon Knight","Crusader","Paladin","Royal Guard","Royal Guard T","Imperial Guard";
+			}
+			break;
+		case JOB_MAGE:
+			if (.@baby) {
+				setarray .@ids[0],4025,4032,4039,4097,4103;
+				setarray .@names$[0],"Baby Mage","Baby Wizard","Baby Sage","Baby Warlock","Baby Sorcerer";
+			} else {
+				setarray .@ids[0],2,4003,9,4010,4055,4061,4255,16,4017,4067,4074,4261;
+				setarray .@names$[0],"Mage","High Mage","Wizard","High Wizard","Warlock","Warlock T","Arch Mage","Sage","Professor","Sorcerer","Sorcerer T","Elemental Master";
+			}
+			break;
+		case JOB_ARCHER:
+			if (.@baby) {
+				setarray .@ids[0],4026,4034,4042,4043,4098,4104,4105;
+				setarray .@names$[0],"Baby Archer","Baby Hunter","Baby Bard","Baby Dancer","Baby Ranger","Baby Minstrel","Baby Wanderer";
+			} else {
+				setarray .@ids[0],3,4004,11,4012,4056,4062,4257,19,4020,4068,4075,4263,20,4021,4069,4076,4264;
+				setarray .@names$[0],"Archer","High Archer","Hunter","Sniper","Ranger","Ranger T","Wind Hawk","Bard","Clown","Minstrel","Minstrel T","Troubadour","Dancer","Gypsy","Wanderer","Wanderer T","Trouvere";
+			}
+			break;
+		case JOB_ACOLYTE:
+			if (.@baby) {
+				setarray .@ids[0],4027,4031,4038,4099,4106;
+				setarray .@names$[0],"Baby Acolyte","Baby Priest","Baby Monk","Baby Arch Bishop","Baby Sura";
+			} else {
+				setarray .@ids[0],4,4005,8,4009,4057,4063,4256,15,4016,4070,4077,4262;
+				setarray .@names$[0],"Acolyte","High Acolyte","Priest","High Priest","Arch Bishop","Arch Bishop T","Cardinal","Monk","Champion","Sura","Sura T","Inquisitor";
+			}
+			break;
+		case JOB_MERCHANT:
+			if (.@baby) {
+				setarray .@ids[0],4028,4033,4041,4100,4107;
+				setarray .@names$[0],"Baby Merchant","Baby Blacksmith","Baby Alchemist","Baby Mechanic","Baby Genetic";
+			} else {
+				setarray .@ids[0],5,4006,10,4011,4058,4064,4253,18,4019,4071,4078,4259;
+				setarray .@names$[0],"Merchant","High Merchant","Blacksmith","Whitesmith","Mechanic","Mechanic T","Meister","Alchemist","Creator","Genetic","Genetic T","Biolo";
+			}
+			break;
+		case JOB_THIEF:
+			if (.@baby) {
+				setarray .@ids[0],4029,4035,4040,4101,4108;
+				setarray .@names$[0],"Baby Thief","Baby Assassin","Baby Rogue","Baby Guillotine Cross","Baby Shadow Chaser";
+			} else {
+				setarray .@ids[0],6,4007,12,4013,4059,4065,4254,17,4018,4072,4079,4260;
+				setarray .@names$[0],"Thief","High Thief","Assassin","Assassin Cross","Guillotine Cross","Guillotine Cross T","Shadow Cross","Rogue","Stalker","Shadow Chaser","Shadow Chaser T","Abyss Chaser";
+			}
+			break;
+		case JOB_TAEKWON:
+			if (.@baby) {
+				setarray .@ids[0],4225,4226,4227,4241,4242;
+				setarray .@names$[0],"Baby Taekwon","Baby Star Gladiator","Baby Soul Linker","Baby Star Emperor","Baby Soul Reaper";
+			} else {
+				setarray .@ids[0],4046,4047,4049,4239,4240,4302,4303;
+				setarray .@names$[0],"Taekwon","Star Gladiator","Soul Linker","Star Emperor","Soul Reaper","Sky Emperor","Soul Ascetic";
+			}
+			break;
+		case JOB_GUNSLINGER:
+			if (.@baby) {
+				setarray .@ids[0],4228,4229;
+				setarray .@names$[0],"Baby Gunslinger","Baby Rebellion";
+			} else {
+				setarray .@ids[0],24,4215,4306;
+				setarray .@names$[0],"Gunslinger","Rebellion","Night Watch";
+			}
+			break;
+		case JOB_NINJA:
+			if (.@baby) {
+				setarray .@ids[0],4222,4223,4224;
+				setarray .@names$[0],"Baby Ninja","Baby Kagerou","Baby Oboro";
+			} else {
+				setarray .@ids[0],25,4211,4212,4304,4305;
+				setarray .@names$[0],"Ninja","Kagerou","Oboro","Shinkiro","Shiranui";
+			}
+			break;
+		case JOB_SUMMONER:
+			if (.@baby) {
+				setarray .@ids[0],4220;
+				setarray .@names$[0],"Baby Summoner";
+			} else {
+				setarray .@ids[0],4218,4308;
+				setarray .@names$[0],"Summoner","Spirit Handler";
+			}
+			break;
+		case JOB_GANGSI:
+			if (.@baby) {
+				mes "Hi";
+				mes "Your current look is not supported.";
+				close;
+			}
+			setarray .@ids[0],4050,4051,4052;
+			setarray .@names$[0],"Gangsi","Death Knight","Dark Collector";
+			break;
+		default:
+			mes "Hi";
+			mes "Your class is not supported.";
+			close;
+	}
+
+	// สร้างเมนูจาก list ด้านบน
+	.@size = getarraysize(.@ids);
+	.@menu$ = "";
+	for (.@i = 0; .@i < .@size; .@i++) {
+		if (.@i) .@menu$ += ":";
+		.@menu$ += .@names$[.@i];
+		if (.@ids[.@i] == .@look)
+			.@cur$ = .@names$[.@i];
+	}
+	if (.@cur$ == "") .@cur$ = "Unknown";
+
+	mes "Hi! Currently you have a '" + .@cur$ + "' look.";
+	mes "I can change your outfit to any look in your job line.";
+	mes "It costs " + .cost + " zeny. Choose your new look:";
+	next;
+	.@c = select(.@menu$) - 1;
+
+	if (.@ids[.@c] == .@look) {
+		mes "You already have that look.";
+		close;
+	}
+	if (Zeny < .cost) {
+		mes "You don't have enough zeny.";
+		close;
+	}
+
+	Zeny -= .cost;
+	setlook LOOK_BODY2, .@ids[.@c];
+	specialeffect2 EF_PETRIFYATTACK;
+	specialeffect2 EF_KYRIE;
+	mes "Done! You are now in '" + .@names$[.@c] + "' look.";
+	close;
+}

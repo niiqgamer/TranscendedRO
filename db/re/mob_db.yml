@@ -60961,8 +60961,43 @@ Body:
 #    AegisName: GM_SMOKIE
 #  - Id: 2492
 #    AegisName: GM_PHOENIX
-#  - Id: 2493
-#    AegisName: GM_MEN
+  - Id: 2493
+    AegisName: GM_MEN
+    Name: GM Transcended RO
+    Level: 275
+    Hp: 2000000000
+    BaseExp: 123456789
+    JobExp: 123456789
+    MvpExp: 123456789
+    Attack: 2501
+    Attack2: 2701
+    Defense: 100
+    MagicDefense: 50
+    Resistance: 1000
+    MagicResistance: 1000
+    Str: 90
+    Agi: 78
+    Vit: 100
+    Int: 125
+    Dex: 100
+    Luk: 100
+    AttackRange: 2
+    SkillRange: 10
+    ChaseRange: 12
+    Size: Medium
+    Race: Player_Doram
+    Element: Neutral
+    ElementLevel: 4
+    WalkSpeed: 50
+    AttackDelay: 777
+    AttackMotion: 672
+    ClientAttackMotion: 384
+    DamageMotion: 360
+    DamageTaken: 100
+    Ai: 26
+    Class: Boss
+    Modes:
+      Mvp: true
 #  - Id: 2494
 #    AegisName: GM_HINALLE
   - Id: 2495
@@ -126954,7 +126989,7 @@ Body:
 #    AegisName: 2301_EV_RICE_FLOUR
 #  - Id: 21965
 #    AegisName: EP20_COPO
-  - Id: 21966
+  - Id: 21965
     AegisName: EP20_COPO
     Name: Copo
     Level: 235
@@ -126983,7 +127018,7 @@ Body:
     AttackMotion: 600
     DamageMotion: 300
     Ai: 01
-  - Id: 21967
+  - Id: 21966
     AegisName: EP20_ICEWIND1
     Name: Grey Icewind
     Level: 240
@@ -127012,7 +127047,7 @@ Body:
     AttackMotion: 500
     DamageMotion: 250
     Class: Boss
-  - Id: 21968
+  - Id: 21967
     AegisName: EP20_ICEWIND2
     Name: Ancient Icewind
     Level: 241
@@ -127041,7 +127076,7 @@ Body:
     AttackMotion: 500
     DamageMotion: 250
     Class: Boss
-  - Id: 21969
+  - Id: 21968
     AegisName: EP20_EGGCOPO
     Name: Copo Egg
     Level: 230
@@ -127070,7 +127105,7 @@ Body:
     AttackMotion: 1000
     DamageMotion: 500
     Ai: 06
-  - Id: 21970
+  - Id: 21969
     AegisName: EP20_RABBIT_ICESLUG
     Name: Frost Ice Slug
     Level: 236
@@ -127110,7 +127145,7 @@ Body:
         Rate: 550
       - Item: Rabbit_Iceslug_card
         Rate: 1
-  - Id: 21971
+  - Id: 21970
     AegisName: EP20_MELIBE_ICESLUG
     Name: Melibe Ice Slug
     Level: 236
@@ -127139,7 +127174,7 @@ Body:
     AttackMotion: 650
     DamageMotion: 320
     Ai: 01
-  - Id: 21972
+  - Id: 21971
     AegisName: EP20_ICEBEAR
     Name: Glacial Ice Bear
     Level: 243
@@ -127179,7 +127214,7 @@ Body:
         Rate: 550
       - Item: Icebear_Card
         Rate: 10
-  - Id: 21973
+  - Id: 21972
     AegisName: EP20_JORMUNGARD1
     Name: Jormungandr Guardian-Y
     Level: 222
@@ -127219,7 +127254,7 @@ Body:
         Rate: 2500
       - Item: Jormun_Guardian_Card
         Rate: 10
-  - Id: 21974
+  - Id: 21973
     AegisName: EP20_JORMUNGARD2
     Name: Jormungandr Guardian-Y
     Level: 222
@@ -127248,7 +127283,7 @@ Body:
     AttackMotion: 450
     DamageMotion: 200
     Class: Boss
-  - Id: 21975
+  - Id: 21974
     AegisName: EP20_FAKE_IWIN_SN
     Name: Disguised Iwin Scout
     Level: 237
@@ -127277,7 +127312,7 @@ Body:
     AttackMotion: 500
     DamageMotion: 300
     Ai: 01
-  - Id: 21976
+  - Id: 21975
     AegisName: EP20_FAKE_IWIN_SY
     Name: Disguised Iwin Sorcerer
     Level: 237
@@ -127306,7 +127341,7 @@ Body:
     AttackMotion: 700
     DamageMotion: 350
     Ai: 01
-  - Id: 21977
+  - Id: 21976
     AegisName: EP20_FAKE_IWIN_SB
     Name: Disguised Iwin Bowyer
     Level: 237
@@ -127335,7 +127370,7 @@ Body:
     AttackMotion: 450
     DamageMotion: 280
     Ai: 05
-  - Id: 21978
+  - Id: 21977
     AegisName: EP20_FAKE_IWIN_SG
     Name: Disguised Iwin Guard
     Level: 238
@@ -127364,7 +127399,7 @@ Body:
     AttackMotion: 800
     DamageMotion: 400
     Ai: 04
-  - Id: 21979
+  - Id: 21978
     AegisName: EP20_FAKE_IWIN_SR
     Name: Disguised Iwin Commander
     Level: 239
@@ -127393,7 +127428,7 @@ Body:
     AttackMotion: 600
     DamageMotion: 350
     Ai: 04
-  - Id: 21980
+  - Id: 21979
     AegisName: EP20_DEMIGOD_LASGAND
     Name: Demigod Lasgand
     Level: 250
@@ -127422,7 +127457,7 @@ Body:
     AttackMotion: 350
     DamageMotion: 150
     Class: Boss
-  - Id: 21981
+  - Id: 21980
     AegisName: EP20_BOSS_CLANER
     Name: Commander Claner
     Level: 243
@@ -127451,11 +127486,11 @@ Body:
     AttackMotion: 500
     DamageMotion: 250
     Class: Boss
-  - Id: 21982
+  - Id: 21981
     AegisName: MD_EP20_BOSS_LASGAND
     Name: Phantom Lasgand
     Level: 250
-    Hp: 650000000
+    Hp: 1000000000
     BaseExp: 1200000000
     JobExp: 900000000
     Attack: 22000
@@ -127473,14 +127508,15 @@ Body:
     ChaseRange: 16
     Size: Large
     Race: Demihuman
-    Element: Ghost
+    Element: Poison
     ElementLevel: 4
     WalkSpeed: 100
     AttackDelay: 600
     AttackMotion: 300
     DamageMotion: 120
     Class: Boss
-  - Id: 21983
+    Ai: 04
+  - Id: 21982
     AegisName: MD_EP20_FALLENANGEL
     Name: Corrupted Iwin Angel
     Level: 242
@@ -127509,7 +127545,7 @@ Body:
     AttackMotion: 450
     DamageMotion: 220
     Class: Boss
-  - Id: 21984
+  - Id: 21983
     AegisName: EP20_ANGEL_ICESLUG
     Name: Seraphic Ice Slug
     Level: 236
@@ -127538,7 +127574,7 @@ Body:
     AttackMotion: 650
     DamageMotion: 320
     Ai: 01
-  - Id: 21985
+  - Id: 21984
     AegisName: EP20_ICEEGG
     Name: Icewind Egg
     Level: 215
@@ -127581,7 +127617,7 @@ Body:
         Rate: 2500
       - Item: Icewind_Egg_Card
         Rate: 10
-  - Id: 21986
+  - Id: 21985
     AegisName: EP20_RGAN_WARLOCK
     Name: Superior Rgan Warlock
     Level: 239
@@ -127621,7 +127657,7 @@ Body:
         Rate: 1000
       - Item: S_Rgan_Warlock_Card
         Rate: 10
-  - Id: 21987
+  - Id: 21986
     AegisName: EP20_RGAN_HEALER
     Name: Rgan High Priest
     Level: 239
@@ -127650,7 +127686,7 @@ Body:
     AttackMotion: 600
     DamageMotion: 330
     Ai: 01
-  - Id: 21988
+  - Id: 21987
     AegisName: EP20_JORGAN_WARLOCK
     Name: Ancient Rgan Occultist
     Level: 242
@@ -127679,7 +127715,7 @@ Body:
     AttackMotion: 550
     DamageMotion: 300
     Ai: 01
-  - Id: 21989
+  - Id: 21988
     AegisName: EP20_JORGAN_HEALER
     Name: Ancient Rgan Restorer
     Level: 242
@@ -127708,7 +127744,7 @@ Body:
     AttackMotion: 550
     DamageMotion: 300
     Ai: 01
-  - Id: 21990
+  - Id: 21989
     AegisName: EP20_JORGAN_GUARDIAN
     Name: Ancient Rgan Bulwark
     Level: 243
@@ -127737,7 +127773,7 @@ Body:
     AttackMotion: 850
     DamageMotion: 420
     Ai: 04
-  - Id: 21991
+  - Id: 21990
     AegisName: EP20_JORGAN_CLEANER
     Name: Ancient Rgan Executioner
     Level: 243
@@ -127766,7 +127802,7 @@ Body:
     AttackMotion: 700
     DamageMotion: 380
     Ai: 04
-  - Id: 21992
+  - Id: 21991
     AegisName: MD_EP20_JOR_G_P
     Name: Phantasm Rgan Guard P
     Level: 245
@@ -127795,7 +127831,7 @@ Body:
     AttackMotion: 600
     DamageMotion: 300
     Class: Boss
-  - Id: 21993
+  - Id: 21992
     AegisName: MD_EP20_JOR_G_Y
     Name: Phantasm Rgan Guard Y
     Level: 245
@@ -127824,7 +127860,7 @@ Body:
     AttackMotion: 600
     DamageMotion: 300
     Class: Boss
-  - Id: 21994
+  - Id: 21993
     AegisName: MD_EP20_JOR_WARLOCK
     Name: Superior Rgan Warlock
     Level: 246
@@ -127853,8 +127889,13 @@ Body:
     AttackMotion: 500
     DamageMotion: 250
     Class: Boss
-#  - Id: 21995
-#    AegisName: EP20_NPC_COCOPO
+  - Id: 21994
+    AegisName: EP20_MD_HEARTHUNTER1
+    Name: Iceberg Heart Hunter
+    Level: 246
+  - Id: 21995
+    AegisName: EP20_NPC_COCOPO
+    Name: Cocopo
   - Id: 21996
     AegisName: EP20_SNOW_ANGEL
     Name: Snowstorm Angel

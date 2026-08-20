@@ -43,7 +43,6 @@ OnBuyItem:
 	close;
 
 OnInit:
-//	waitingroom "MVP Shop",0;
 	setarray .Shop[0],
 		9955505,1,
 		25377,1,
@@ -56,10 +55,14 @@ OnInit:
 		npcshopadditem "mvp_shop", .Shop[.@i], .Shop[.@i+1];
 	end;
 }
+
 -	shop	mvp_shop	-1,512:-1
 
 -	script	MonsterKill#MVP	-1,{
+
 OnNPCKillEvent:
+	.@map$ = strcharinfo(3);
+	if (.@map$ == "bossnia_01" || .@map$ == "bossnia_02" || .@map$ == "bossnia_03" || .@map$ == "bossnia_04")end;
 	if (getmonsterinfo(killedrid,MOB_MVPEXP) != 0) {
 		set #MVPPoint,#MVPPoint+1;
 		dispbottom "You recieved 1 MVP Point. Now you have [ "+ callfunc("F_InsertComma",#MVPPoint) +" ] MVP Points.";
@@ -67,5 +70,3 @@ OnNPCKillEvent:
 	}
 	end;
 }
-
-//izlude,168,168,4	duplicate(MVP Shop)	MVP Shop#para	4_F_FENRIR

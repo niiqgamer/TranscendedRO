@@ -4,47 +4,57 @@ Header:
 
 Body:
   - Id: 9950000
-    AegisName: AutobotBox_1D
-    Name: "Autobot Box 1 Day"
+    AegisName: Bossnia_Ticket_Box_1F1h
+    Name: "Bossnia Ticket Box 1F (1 Hour)"
     Type: Usable
-    Weight: 0
-    Script: |
-      rentitem 9950003,86400;
-      dispbottom "'AUTOBOT' activated for 1 Day. Enjoy!!!";
-  - Id: 9950001
-    AegisName: AutobotBox_7D
-    Name: "Autobot Box 7 Days"
-    Type: Usable
-    Weight: 0
-    Script: |
-      rentitem 9950003,604800;
-      dispbottom "'AUTOBOT' activated for 7 Days. Enjoy!!!";
-  - Id: 9950002
-    AegisName: AutobotBox_30D
-    Name: "Autobot Box 30 Days"
-    Type: Usable
-    Weight: 0
-    Script: |
-      rentitem 9950003,2592000;
-      dispbottom "'AUTOBOT' activated for 30 Days. Enjoy!!!";
-  - Id: 9950003
-    AegisName: Autobot_System
-    Name: "Autobot System"
-    Type: DelayConsume
     Weight: 0
     Flags:
-      NoConsume: true
+      BuyingStore: true
+      DropEffect: CLIENT
     Trade:
-      NoDrop: true
-      NoTrade: true
-      NoCart: true
-      NoGuildStorage: true
-      NoMail: true
-      NoAuction: true
       NoSell: true
     Script: |
-      doevent "Autobot_System_NPC::OnShowMenu";
-#      callfunc "EasyBot_Toggle", 2;
+      specialeffect2 18;
+      rentitem  9900011,3600;
+  - Id: 9950001
+    AegisName: Bossnia_Ticket_Box_2F1h
+    Name: "Bossnia Ticket Box 2F (1 Hour)"
+    Type: Usable
+    Weight: 0
+    Flags:
+      BuyingStore: true
+      DropEffect: CLIENT
+    Trade:
+      NoSell: true
+    Script: |
+      specialeffect2 18;
+      rentitem  9900012,3600;
+  - Id: 9950002
+    AegisName: Bossnia_Ticket_Box_3F1h
+    Name: "Bossnia Ticket Box 3F (1 Hour)"
+    Type: Usable
+    Weight: 0
+    Flags:
+      BuyingStore: true
+      DropEffect: CLIENT
+    Trade:
+      NoSell: true
+    Script: |
+      specialeffect2 18;
+      rentitem  9900013,3600;
+  - Id: 9950003
+    AegisName: Bossnia_Ticket_Box_4F1h
+    Name: "Bossnia Ticket Box 4F (1 Hour)"
+    Type: Usable
+    Weight: 0
+    Flags:
+      BuyingStore: true
+      DropEffect: CLIENT
+    Trade:
+      NoSell: true
+    Script: |
+      specialeffect2 18;
+      rentitem  9900014,3600;
   - Id: 9955500
     AegisName: Transcended_Coin
     Name: Transcended Coin

@@ -1,0 +1,372 @@
+izlude,134,138,4	script	Compensation_Reward	864,{
+OnScripts:
+	if ( getgmlevel() == .Access )
+	{
+		switch(prompt("~ Configure Compensation Reward:~ Player Menu:~ Cancel"))
+		{
+			case 1:
+				mes "[ Server Admin ]";
+				mes "Please enter the Item ID";
+				mes "^FF0000Example ItemID = 501 ^000000";
+				mes "^FF0000So the reward will be a Red Potion ^000000";
+				next;
+				input .@Reward;
+				mes "[ Server Admin ]";
+				if ( getitemname(.@Reward) == "" || getitemname(.@Reward) == "null" )
+				{
+					mes "I'm sorry.";
+					mes "This Item ID does not exist in the database.";
+					end;
+				}
+				set .Itemid,.@Reward;
+				mes "Please specify the quantity of the item";
+				mes "to be given to the players.";
+				next;
+				input .@RAmount;
+				mes "[ Server Admin ]";
+				if ( .@RAmount <= 0 || .@RAmount >= 32000 )
+				{
+					mes "^FF0000You entered an invalid quantity.^000000";
+					mes "^FF0000Minimum is 1 and maximum is 32K.^000000";
+					set .@RAmount,1;
+				}
+				set .Amount,.@RAmount;
+				mes "Reward configuration completed.";
+				mes "The current reward is "+ getitemname(.Itemid) +" with a quantity of "+ .Amount +"";
+				set Accept,0;
+				end;
+
+			case 2:
+				goto PLAYMAIN;
+				end;
+				
+			default:
+				end;
+		}
+		end;
+	}
+	PLAYMAIN:
+		mes "[ Server Admin ]";
+		mes "Hello! How are you?";
+		mes "I am a representative of the ^FF0000Game^000000 ^0000FFMaster^000000";
+		mes "My duty is to distribute compensation rewards.";
+		mes "Would you like to claim your compensation reward?";
+		next;
+		switch(prompt("~ Sure, I love free stuff!:~ No, I'm just passing by."))
+		{
+			case 1:
+				if ( getitemname(.Itemid) == "" || getitemname(.Itemid) == "null" )
+				{
+					mes "[ Server Admin ]";
+					mes "The GM hasn't configured the compensation reward yet.";
+					mes "Please stay tuned for announcements from the staff.";
+					end;
+				}
+				else if ( Accept == 1 )
+				{
+					mes "[ Server Admin ]";
+					mes "You have already claimed the reward.";
+					mes "^0000FF1 character can only claim it once.^000000";
+					mes "Goodbye! Bye bye!!";
+					end;
+				}
+				else
+				{
+					getitem .Itemid,.Amount;
+					set Accept,1;
+					end;
+				}
+				
+			default: 
+			end;
+		}
+		end;
+
+OnInit:
+	.Access = 99;
+	initnpctimer;
+
+OnTimer1000:
+    showscript(" ! Compensation Reward ! ");
+    setnpctimer 0;
+    end;
+}
+
+-	script	core_main	FAKE_NPC,{
+	
+OnCore:
+		mes "[ Server Admin ]";
+		mes "Hello GM Master ^FF0000"+ strcharinfo(0) +"^000000";
+		mes "How are you doing?";
+		mes "How can I help you today?";
+		next;
+		switch(prompt("~ Enable Compensation Reward NPC:~ Disable Compensation Reward NPC"))
+		{
+			case 1:
+				enablenpc "Compensation_Reward";
+				end;
+				
+			case 2:
+				disablenpc "Compensation_Reward";
+				end;
+		}
+		end;
+		
+OnInit:
+	bindatcmd "rewardconfig", strnpcinfo(3) +"::OnCore",99,99;
+	end;
+}
+
+alberta,117,189,3	script	MailBox	888,{
+	if ( getgmlevel() == 99 )
+	{
+		mes "[ MailBox ]";
+		mes "Hello GM Master ^FF0000"+ strcharinfo(0) +"^000000";
+		mes "How are you doing?";
+		mes "Is there anything I can help you with?";
+		next;
+		switch(prompt("~ Menu ^FF0000for System Admins^000000 :~ Menu for Player Rewards"))
+		{	
+			case 1:
+
+				switch(select("~ Send Event Reward","~ Check Reward List","~ Cancel"))
+				{
+					case 1:
+						mes "[ MailBox ]";
+						mes "Please enter the player's User ID";
+						mes "0 = Cancel";
+						set .@userid$,"";
+						input .@userid$;
+						if(.@userid$ != "0")
+						{
+
+							query_sql "SELECT `account_id` FROM `login` WHERE `userid` LIKE '"+escape_sql(.@userid$)+"'",.@aid;
+							if(getarraysize(.@aid) > 1)
+							{
+								mes "^FF0000ERROR: Found more than 1 player User ID.^000000";
+							}
+							else if(getarraysize(.@aid) == 0)
+							{
+								mes "USER ID: "+.@userid$;
+								mes "^FF0000ERROR: Player User ID not found in the database.^000000";
+							}
+							else
+							{
+
+								set .@account_id,.@aid;
+								set .@aid,0;
+								mes " ";
+								mes "USER ID: ^000088"+.@userid$+"^000000";
+								mes "Account ID: ^000088"+.@account_id+"^000000";
+								next;
+								mes "[ MailBox ]";
+								mes "USER ID: ^000088"+.@userid$+"^000000";
+								mes "Account ID: ^000088"+.@account_id+"^000000";
+								mes " ";
+								mes "Please enter the ITEM ID you want to send.";
+								input .@item;
+								if(.@item)
+								{
+									mes "Please enter the ITEM quantity you want to send.";
+									input .@amount,0,30000;
+									if(.@amount)
+									{
+										next;
+										mes "[ MailBox ]";
+										mes "USER ID: ^000088"+.@userid$+"^000000";
+										mes "Account ID: ^000088"+.@account_id+"^000000";
+										mes "Item > ^000088"+getitemname(.@item)+"^000000";
+										mes "Quantity > ^000088"+.@amount+" pieces^000000";
+										if(select("~ Confirm","~ Cancel")==1)
+										{
+											query_sql "INSERT INTO `reward_npc` VALUES ('','"+escape_sql(.@userid$)+"','"+.@account_id+"','"+.@item+"','"+.@amount+"','0',NULL)";
+											next;
+											mes "[ MailBox ]";
+											mes "^009900Successfully saved to the database.^000000";
+											set .@account_id,0;
+											set .@item,0;
+											set .@amount,0;
+										}
+									}
+								}
+							}
+							deletearray .@aid[0],getarraysize(.@aid);
+						}
+						break;
+						
+					case 2:
+					
+						set .@choice,select("~ Check all players with unclaimed rewards","~ Check a specific player's rewards");
+						if(.@choice == 2)
+						{
+							mes "[ MailBox ]";
+							mes "Please enter the User ID you want to check.";
+							mes "0 = Cancel";
+							set .@userid$,"";
+							input .@userid$;
+							if(.@userid$ != "0")
+							{
+								query_sql "SELECT `account_id` FROM `login` WHERE `userid` LIKE '"+escape_sql(.@userid$)+"'",.@aid;
+								if(getarraysize(.@aid) > 1)
+								{
+									mes "^FF0000ERROR: Found more than 1 player User ID.^000000";
+								}
+								else if(getarraysize(.@aid) == 0)
+								{
+									mes "^FF0000ERROR: Player User ID not found in the database.^000000";
+								}
+								else
+								{
+									if(select("~ Unclaimed rewards","~ Claimed rewards")==1)
+									{
+										set .@status,0;
+									}
+									else
+									{
+										set .@status,1;
+									}
+									
+									next;
+									query_sql "SELECT `item_id`,`rew_amount` FROM `reward_npc` WHERE `account_id` = '"+.@aid+"' AND `rew_status` = '"+.@status+"' ORDER BY `id` DESC LIMIT "+.query_limit,.@rewlist,.@amtlist;
+									mes "[ MailBox ]";
+									mes "^009900USERID: "+.@userid$+"^000000";
+									mes "=======================";
+									if(getarraysize(.@rewlist))
+									{
+										for(set .@i,0 ; .@i < getarraysize(.@rewlist) ; set .@i,.@i+1)
+										{
+											mes "^000088"+getitemname(.@rewlist[.@i])+"^000000 Quantity: "+.@amtlist[.@i]+" pieces";
+										}
+										mes "=======================";
+										deletearray .@rewlist[0],getarraysize(.@rewlist);
+										deletearray .@amtlist[0],getarraysize(.@amtlist);
+									}
+									else
+									{
+										mes "^FF0000No records found in the database.^000000";
+									}
+								}
+								deletearray .@aid[0],getarraysize(.@aid);
+							}
+						}
+						else
+						{
+						VIEW_AGAIN:
+							query_sql "SELECT DISTINCT(`userid`) FROM `reward_npc` WHERE `rew_status` = '0' LIMIT "+.query_limit,.@userlist$;
+							if(getarraysize(.@userlist$))
+							{
+								set .@menu$,"";
+								for(set .@i,0 ; .@i < getarraysize(.@userlist$) ; set .@i,.@i+1)
+								{
+									set .@menu$,.@menu$+""+.@userlist$[.@i]+":";
+								}
+								set .@choice,select(.@menu$+"^FF8800Return to Main Menu^000000");
+								
+								if(.@choice <= getarraysize(.@userlist$))
+								{
+									set .@user$,.@userlist$[.@choice-1];
+									query_sql "SELECT `item_id`,`rew_amount` FROM `reward_npc` WHERE `userid` LIKE '"+.@user$+"' AND `rew_status` = 0   ORDER BY `id` DESC LIMIT "+.query_limit,.@item,.@amount;
+									
+									if(getarraysize(.@item) && getarraysize(.@item) == getarraysize(.@amount))
+									{
+										mes "[ MailBox ]";
+										mes "USERID: ^000088"+.@user$+"^000000";
+										mes "=======================";
+										for(set .@i,0 ; .@i < getarraysize(.@item) ; set .@i,.@i+1)
+										{
+											mes getitemname(.@item[.@i])+" Quantity: "+.@amount[.@i]+" pieces";
+										}
+										mes "=======================";
+										deletearray .@item[0],getarraysize(.@item);
+										deletearray .@amount[0],getarraysize(.@amount);
+										next;
+										goto VIEW_AGAIN;
+									}
+								}
+							}
+							else
+							{
+								mes "[ MailBox ]";
+								mes "^FF0000No records found in the database.^000000";
+							}	
+						}
+						break;
+						
+					default:
+						mes "[ MailBox ]";
+						mes "See you again.";
+						close;
+						break;
+				}
+				end;
+			
+			case 2:
+				goto PLAYER;
+				end;
+		}
+		end;
+	}
+	else
+	{
+PLAYER:
+		mes "[ MailBox ]";
+		mes "Hello ^0000FF"+ strcharinfo(0) +"^000000";
+		mes "How are you doing?";
+		mes "Is there anything I can help you with?";
+		next;
+		switch(prompt("~ Yes.. I'm just here to claim my reward..!"))
+		{	
+			case 1:
+				deletearray .@id[.@j],getarraysize(.@id);
+				query_sql "SELECT `id`,`item_id`,`rew_amount` FROM `reward_npc` WHERE `account_id` = '"+getcharid(3)+"' AND `rew_status` = '0' LIMIT "+.query_limit+"",.@id,.@item,.@amount;
+				if(.@id && getarraysize(.@id))
+				{
+				RECEIVE_REWARD:
+					mes "[ MailBox ]";
+					mes "Congratulations!";
+					mes "You ^0000FF"+ strcharinfo(0) +"^000000 have items waiting for you.";
+					mes "Sent by the Game Master. Good luck!";
+					set .@menu$,"";
+					for( set .@i,0 ; .@i < getarraysize(.@id) ; set .@i,.@i+1 )
+					{
+						set .@menu$,.@menu$+"^ff0000"+getitemname(.@item[.@i])+"^000000 Quantity: "+.@amount[.@i]+" ea:";
+					}
+					set .@menu,select(.@menu$+"Not now.");
+					if(.@menu <= getarraysize(.@id))
+					{
+						set .@j,.@menu-1;
+						next;
+						query_sql "UPDATE `reward_npc` SET `rew_status` = '1', `received` = '"+gettimestr("%Y-%m-%d %H:%M:%S",21)+"' WHERE `id` = '"+.@id[.@j]+"' AND `item_id` = "+.@item[.@j]+" AND `rew_amount` = "+.@amount[.@j]+" LIMIT 1";
+						getitem .@item[.@j],.@amount[.@j];
+						mes "[ MailBox ]";
+						mes "Received "+getitemname(.@item[.@j]);
+						mes "Quantity: "+.@amount[.@j]+" pieces";
+						//query_sql ("DELETE FROM `reward_npc` WHERE `id` = "+.@id[.@j]+"");
+						deletearray .@id[.@j],1;
+						deletearray .@item[.@j],1;
+						deletearray .@amount[.@j],1;
+						if(getarraysize(.@id))
+						{
+							next;
+							goto RECEIVE_REWARD;
+						}
+					}
+				}
+				else
+				{
+					mes "[ MailBox ]";
+					mes "I'm sorry...!";
+					mes "You ^0000FF"+ strcharinfo(0) +"^000000 have no items waiting for you.";
+				}
+				close2;
+				end;
+		}
+	}
+	end;
+
+OnInit:
+	waitingroom "~Claim CBT Reward", 0;
+	query_sql "CREATE TABLE IF NOT EXISTS `reward_npc` ( `id` INT( 5 ) UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY ,`userid` VARCHAR( 23 ) NOT NULL, `account_id` INT( 11 ) UNSIGNED NOT NULL , `item_id` INT( 5 ) UNSIGNED NOT NULL , `rew_amount` INT( 5 ) UNSIGNED NOT NULL , `rew_status` BOOL NOT NULL , `received` DATETIME default NULL) ENGINE = MYISAM";	
+	set .query_limit,128;
+	end;
+}
