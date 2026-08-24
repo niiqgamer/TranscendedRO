@@ -417,8 +417,8 @@ D23: menu	"Illusion of Abyss",SubD1, "Illusion of Frozen",SubD2, "Illusion of La
 	SubD9: Restrict("RE");
 		   Go("gef_d01_i",114,216);
 D24: Restrict("RE");
-	 setarray @c[2],112,15,280,87,112,12,274,85;
-	 Disp("Abandoned Pit Floor 1:Abandoned Pit Floor 2:Snake God's Warmth 1st Floor:Snake God's Warmth 2nd Floor"); Pick("","jor_ab01","jor_ab02","jor_dun01","jor_dun02");
+	 setarray @c[2],112,15,280,87,112,12,274,85,32,19,23,15,363,130;
+	 Disp("Abandoned Pit Floor 1:Abandoned Pit Floor 2:Snake God's Warmth 1st Floor:Snake God's Warmth 2nd Floor:Snake God's Root 1F:Snake God's Root 2F:Deep Root Cave"); Pick("","jor_ab01","jor_ab02","jor_dun01","jor_dun02","jor_root1","jor_root2","jor_root3");
 D25: Restrict("RE",5);
 	 setarray @c[2],140,51,53,247,37,63,150,285,146,215;
 	 Disp("Entrance:Juperos 1:Juperos 2:Core:Eastern Ruins of Juperos");

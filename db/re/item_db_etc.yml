@@ -95776,6 +95776,7 @@ Body:
     Type: Etc
     Flags:
       BuyingStore: true
+      DropEffect: CLIENT
   - Id: 1001218
     AegisName: Ep20_Jor_Device
     Name: Horsepower Recovery Device    # !todo check english name
@@ -98167,7 +98168,6 @@ Body:
     AegisName: Unknown_Meteorite_F
     Name: Unknown Meteorite Fragment
     Type: Etc
-    Weight: 10
     Flags:
       BuyingStore: true
   - Id: 1001600
@@ -100667,72 +100667,62 @@ Body:
       NoGuildStorage: true
   - Id: 1002137
     AegisName: Pow_Meteor_Extract
-    Name: Power Meteorite Extract    # !todo check english name
+    Name: Power Meteor Extract
     Type: Etc
-    Weight: 10
     Flags:
       BuyingStore: true
   - Id: 1002138
     AegisName: Wis_Meteor_Extract
-    Name: Spirit Meteorite Extract    # !todo check english name
+    Name: Wisdom Meteor Extract
     Type: Etc
-    Weight: 10
     Flags:
       BuyingStore: true
   - Id: 1002139
     AegisName: Spl_Meteor_Extract
-    Name: Wisdom Meteorite Extract    # !todo check english name
+    Name: Spell Meteor Extract
     Type: Etc
-    Weight: 10
     Flags:
       BuyingStore: true
   - Id: 1002140
     AegisName: Sta_Meteor_Extract
-    Name: Stamina Meteorite Extract    # !todo check english name
+    Name: Stamina Meteor Extract
     Type: Etc
-    Weight: 10
     Flags:
       BuyingStore: true
   - Id: 1002141
     AegisName: Con_Meteor_Extract
-    Name: Agility Meteorite Extract    # !todo check english name
+    Name: Concentration Meteor Extract
     Type: Etc
-    Weight: 10
     Flags:
       BuyingStore: true
   - Id: 1002142
     AegisName: Crt_Meteor_Extract
-    Name: Luck Meteorite Extract    # !todo check english name
+    Name: Creative Meteor Extract
     Type: Etc
-    Weight: 10
     Flags:
       BuyingStore: true
   - Id: 1002143
     AegisName: Frontier_Extract_BL
-    Name: Azure Light Boundary Magic Extract    # !todo check english name
+    Name: Blue Frontier Magic Extract
     Type: Etc
-    Weight: 10
     Flags:
       BuyingStore: true
   - Id: 1002144
     AegisName: Frontier_Extract_YL
-    Name: Sunset Light Boundary Magic Extract    # !todo check english name
+    Name: Yellow Frontier Magic Extract
     Type: Etc
-    Weight: 10
     Flags:
       BuyingStore: true
   - Id: 1002145
     AegisName: Frontier_Extract_GR
-    Name: Turquoise Light Boundary Magic Extract    # !todo check english name
+    Name: Green Frontier Magic Extract
     Type: Etc
-    Weight: 10
     Flags:
       BuyingStore: true
   - Id: 1002146
     AegisName: Frontier_Extract_BK
-    Name: Pitch Black Light Boundary Magic Extract    # !todo check english name
+    Name: Black Frontier Magic Extract
     Type: Etc
-    Weight: 10
     Flags:
       BuyingStore: true
   - Id: 1002185

@@ -19,16 +19,16 @@ jor_back4	boss_monster	--ja--	21996,1,21600000,600000,0
 
 // jor_back5 - Ancient Ice Canyon East
 jor_back5	monster	--ja--	21524,10
-jor_back5	monster	--ja--	21985,10
-jor_back5	monster	--ja--	21966,40
-jor_back5	monster	--ja--	21967,60
+jor_back5	monster	--ja--	21984,10
+jor_back5	monster	--ja--	21965,40
+jor_back5	monster	--ja--	21966,60
+jor_back5	monster	--ja--	21974,20
 jor_back5	monster	--ja--	21975,20
-jor_back5	monster	--ja--	21976,20
-jor_back5	monster	--ja--	21969,40
+jor_back5	monster	--ja--	21968,40
 
 // jor_back6 - Ancient Ice Canyon West
 jor_back6	monster	--ja--	21524,10
-jor_back6	monster	--ja--	21979,20
-jor_back6	monster	--ja--	21972,75
+jor_back6	monster	--ja--	21978,20
+jor_back6	monster	--ja--	21971,75
 jor_back6	monster	--ja--	23060,55
-jor_back6	monster	--ja--	21968,100
+jor_back6	monster	--ja--	21967,100

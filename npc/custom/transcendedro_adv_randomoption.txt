@@ -454,7 +454,7 @@ OnInit:
 	AddGroupReRollCost(1,1000000,100,0,0,0,0,0);
 	
 	//Group id 1 Chances.
-	AddGroupChance(1,100,85,65,40,15);
+	AddGroupChance(1,100,85,70,50,30);
 	//AddGroupChance(1,100,100,100,100,100);
 	
 	//Group id 1 Random Option List. location 0 mean all the slot locations
@@ -892,7 +892,7 @@ OnInit:
 	AddGroupReRollCost(1,1000000,100,0,0,0,0,0);
 	
 	//Group id 1 Chances.
-	AddGroupChance(1,100,85,65,40,15);
+	AddGroupChance(1,100,85,70,50,30);
 	//AddGroupChance(1,100,100,100,100,100);
 	
 	//Group id 1 Random Option List. location 0 mean all the slot locations

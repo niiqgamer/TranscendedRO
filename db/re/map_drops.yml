@@ -2895,7 +2895,7 @@ Body:
       - Index: 1
         Item: Etel_Dust
         Rate: 4000
-      - Index: 1
+      - Index: 2
         Item: Aquila_Antiquity2
         Rate: 1500
     SpecificDrops:
@@ -2939,7 +2939,7 @@ Body:
       - Index: 1
         Item: Etel_Dust
         Rate: 4000
-      - Index: 1
+      - Index: 2
         Item: Aquila_Antiquity2
         Rate: 1500
     SpecificDrops:
@@ -2983,7 +2983,7 @@ Body:
       - Index: 1
         Item: Etel_Dust
         Rate: 4000
-      - Index: 1
+      - Index: 2
         Item: Aquila_Antiquity2
         Rate: 1500
     SpecificDrops:
@@ -3035,7 +3035,7 @@ Body:
       - Index: 1
         Item: Etel_Dust
         Rate: 4000
-      - Index: 1
+      - Index: 2
         Item: Aquila_Antiquity2
         Rate: 1500
     SpecificDrops:
@@ -3079,6 +3079,196 @@ Body:
           - Index: 1
             Item: Ep19_Snow_Flower
             Rate: 7500
+  - Map: jor_root1
+    GlobalDrops:
+      - Index: 0
+        Item: Ep20_Cat_Whiskers
+        Rate: 7500
+      - Index: 1
+        Item: Etel_Dust
+        Rate: 4000
+      - Index: 2
+        Item: F_Iceslug_Antiquiy
+        Rate: 1500
+    SpecificDrops:
+      - Monster: EP20_JORMUNGUARD1
+        Drops:
+          - Index: 0
+            Item: Etel_Dust
+            Rate: 4000
+          - Index: 1
+            Item: Ep20_Cat_Whiskers
+            Rate: 7500
+          - Index: 2
+            Item: F_Iceslug_Antiquiy
+            Rate: 1500
+      - Monster: EP20_JORMUNGUARD2
+        Drops:
+          - Index: 0
+            Item: Etel_Dust
+            Rate: 4000
+          - Index: 1
+            Item: Ep20_Cat_Whiskers
+            Rate: 7500
+          - Index: 2
+            Item: F_Iceslug_Antiquiy
+            Rate: 1500
+      - Monster: EP20_RGAN_HEALER
+        Drops:
+          - Index: 0
+            Item: Etel_Dust
+            Rate: 4000
+          - Index: 1
+            Item: Ep20_Cat_Whiskers
+            Rate: 7500
+          - Index: 2
+            Item: F_Iceslug_Antiquiy
+            Rate: 1500
+      - Monster: EP20_RGAN_WARLOCK
+        Drops:
+          - Index: 0
+            Item: Etel_Dust
+            Rate: 4000
+          - Index: 1
+            Item: Ep20_Cat_Whiskers
+            Rate: 7500
+          - Index: 2
+            Item: F_Iceslug_Antiquiy
+            Rate: 1500
+      - Monster: EP20_JORGAN_GUARDIAN
+        Drops:
+          - Index: 0
+            Item: Etel_Dust
+            Rate: 4000
+          - Index: 1
+            Item: Ep20_Cat_Whiskers
+            Rate: 7500
+          - Index: 2
+            Item: F_Iceslug_Antiquiy
+            Rate: 1500
+  - Map: jor_root2
+    GlobalDrops:
+      - Index: 0
+        Item: Ep20_Cat_Whiskers
+        Rate: 7500
+      - Index: 1
+        Item: Etel_Dust
+        Rate: 4000
+      - Index: 2
+        Item: F_Iceslug_Antiquiy
+        Rate: 1500
+    SpecificDrops:
+      - Monster: EP20_JORMUNGUARD1
+        Drops:
+          - Index: 0
+            Item: Etel_Dust
+            Rate: 4000
+          - Index: 1
+            Item: Ep20_Cat_Whiskers
+            Rate: 7500
+          - Index: 2
+            Item: F_Iceslug_Antiquiy
+            Rate: 1500
+      - Monster: EP20_JORMUNGUARD2
+        Drops:
+          - Index: 0
+            Item: Etel_Dust
+            Rate: 4000
+          - Index: 1
+            Item: Ep20_Cat_Whiskers
+            Rate: 7500
+          - Index: 2
+            Item: F_Iceslug_Antiquiy
+            Rate: 1500
+      - Monster: EP20_JORGAN_HEALER
+        Drops:
+          - Index: 0
+            Item: Etel_Dust
+            Rate: 4000
+          - Index: 1
+            Item: Ep20_Cat_Whiskers
+            Rate: 7500
+          - Index: 2
+            Item: F_Iceslug_Antiquiy
+            Rate: 1500
+      - Monster: EP20_JORGAN_WARLOCK
+        Drops:
+          - Index: 0
+            Item: Etel_Dust
+            Rate: 4000
+          - Index: 1
+            Item: Ep20_Cat_Whiskers
+            Rate: 7500
+          - Index: 2
+            Item: F_Iceslug_Antiquiy
+            Rate: 1500
+      - Monster: EP20_JORGAN_GUARDIAN
+        Drops:
+          - Index: 0
+            Item: Etel_Dust
+            Rate: 4000
+          - Index: 1
+            Item: Ep20_Cat_Whiskers
+            Rate: 7500
+          - Index: 2
+            Item: F_Iceslug_Antiquiy
+            Rate: 1500
+  - Map: jor_root3
+    GlobalDrops:
+      - Index: 0
+        Item: Ep20_Cat_Whiskers
+        Rate: 7500
+      - Index: 1
+        Item: Etel_Dust
+        Rate: 4000
+      - Index: 2
+        Item: F_Iceslug_Antiquiy
+        Rate: 1500
+    SpecificDrops:
+      - Monster: EP20_ICEBEAR
+        Drops:
+          - Index: 0
+            Item: Etel_Dust
+            Rate: 4000
+          - Index: 1
+            Item: Ep20_Cat_Whiskers
+            Rate: 7500
+          - Index: 2
+            Item: F_Iceslug_Antiquiy
+            Rate: 1500
+      - Monster: EP20_JORGAN_CLEANER
+        Drops:
+          - Index: 0
+            Item: Etel_Dust
+            Rate: 4000
+          - Index: 1
+            Item: Ep20_Cat_Whiskers
+            Rate: 7500
+          - Index: 2
+            Item: F_Iceslug_Antiquiy
+            Rate: 1500
+      - Monster: EP20_MELIBE_ICESLUG
+        Drops:
+          - Index: 0
+            Item: Etel_Dust
+            Rate: 4000
+          - Index: 1
+            Item: Ep20_Cat_Whiskers
+            Rate: 7500
+          - Index: 2
+            Item: F_Iceslug_Antiquiy
+            Rate: 1500
+      - Monster: EP20_BOSS_CLANER
+        Drops:
+          - Index: 0
+            Item: Etel_Dust
+            Rate: 4000
+          - Index: 1
+            Item: Ep20_Cat_Whiskers
+            Rate: 7500
+          - Index: 2
+            Item: F_Iceslug_Antiquiy
+            Rate: 1500
   - Map: odin_past
     GlobalDrops:
       - Index: 0
@@ -3717,6 +3907,9 @@ Body:
       - Index: 7
         Item: Wis_Meteorite_Dust
         Rate: 10000
+      - Index: 8
+        Item: Unknown_Meteorite_F
+        Rate: 5000
   - Map: 2@ch_t
     GlobalDrops:
       - Index: 0
@@ -3743,6 +3936,9 @@ Body:
       - Index: 7
         Item: Wis_Meteorite_Dust
         Rate: 10000
+      - Index: 8
+        Item: Unknown_Meteorite_F
+        Rate: 5000
   - Map: 3@ch_t
     GlobalDrops:
       - Index: 0
@@ -3769,6 +3965,9 @@ Body:
       - Index: 7
         Item: Wis_Meteorite_Dust
         Rate: 10000
+      - Index: 8
+        Item: Unknown_Meteorite_F
+        Rate: 5000
   - Map: 1@spa2
     GlobalDrops:
       - Index: 0

@@ -328,6 +328,7 @@ grademk,65,86,5	script	Enchant GGT#itroom	4_F_PREMI,{
 	switch(select(
 	
 	"~ ^FF0000+11^000000 Illusion Shield I / II",
+	"~ 6th Anniversary Ayothaya Ring Normal / LT",
 	"Cancel"
 	
 	)) {
@@ -335,6 +336,9 @@ grademk,65,86,5	script	Enchant GGT#itroom	4_F_PREMI,{
 			item_enchant(1002);
 			end;
 		case 2:
+			item_enchant(1004);
+			end;
+		case 3:
 			mes "Bye, guys!";
 			close2;
 			end;

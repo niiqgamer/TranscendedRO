@@ -3199,6 +3199,84 @@ Body:
             Item: Signet_Of_Spl_Star
           - Index: 5
             Item: Signet_Of_Wis_Star
+      - Index: 29
+        Item: Pow_Meteor_Extract
+        Zeny: 20000
+        RequiredItems:
+          - Index: 0
+            Item: Unknown_Meteorite_F
+            Amount: 40
+          - Index: 1
+            Item: Pow_Meteorite_Fragment
+            Amount: 20
+          - Index: 2
+            Item: Pow_Meteorite_Dust
+            Amount: 35
+      - Index: 30
+        Item: Sta_Meteor_Extract
+        Zeny: 20000
+        RequiredItems:
+          - Index: 0
+            Item: Unknown_Meteorite_F
+            Amount: 40
+          - Index: 1
+            Item: Sta_Meteorite_Fragment
+            Amount: 20
+          - Index: 2
+            Item: Sta_Meteorite_Dust
+            Amount: 35
+      - Index: 31
+        Item: Con_Meteor_Extract
+        Zeny: 20000
+        RequiredItems:
+          - Index: 0
+            Item: Unknown_Meteorite_F
+            Amount: 40
+          - Index: 1
+            Item: Con_Meteorite_Fragment
+            Amount: 20
+          - Index: 2
+            Item: Con_Meteorite_Dust
+            Amount: 35
+      - Index: 32
+        Item: Crt_Meteor_Extract
+        Zeny: 20000
+        RequiredItems:
+          - Index: 0
+            Item: Unknown_Meteorite_F
+            Amount: 40
+          - Index: 1
+            Item: Crt_Meteorite_Fragment
+            Amount: 20
+          - Index: 2
+            Item: Crt_Meteorite_Dust
+            Amount: 35
+      - Index: 33
+        Item: Spl_Meteor_Extract
+        Zeny: 20000
+        RequiredItems:
+          - Index: 0
+            Item: Unknown_Meteorite_F
+            Amount: 40
+          - Index: 1
+            Item: Spl_Meteorite_Fragment
+            Amount: 20
+          - Index: 2
+            Item: Spl_Meteorite_Dust
+            Amount: 35
+      - Index: 34
+        Item: Wis_Meteor_Extract
+        Zeny: 20000
+        RequiredItems:
+          - Index: 0
+            Item: Unknown_Meteorite_F
+            Amount: 40
+          - Index: 1
+            Item: Wis_Meteorite_Fragment
+            Amount: 20
+          - Index: 2
+            Item: Wis_Meteorite_Dust
+            Amount: 35
   - Name: NebulaShop
     Items:
       - Index: 0
@@ -8048,10 +8126,10 @@ Body:
             Amount: 2
           - Index: 1
             Item: Flower_V
-            Amount: 30000
+            Amount: 10000
           - Index: 2
             Item: Flower_A
-            Amount: 5000
+            Amount: 2000
       - Index: 3
         Item: Upd_RoyalGuard_Card
         Zeny: 100000000
@@ -8061,10 +8139,10 @@ Body:
             Amount: 2
           - Index: 1
             Item: Flower_V
-            Amount: 30000
+            Amount: 10000
           - Index: 2
             Item: Flower_A
-            Amount: 5000
+            Amount: 2000
       - Index: 4
         Item: Upd_Archbishop_Card
         Zeny: 100000000
@@ -8074,10 +8152,10 @@ Body:
             Amount: 2
           - Index: 1
             Item: Flower_V
-            Amount: 30000
+            Amount: 10000
           - Index: 2
             Item: Flower_A
-            Amount: 5000
+            Amount: 2000
       - Index: 5
         Item: Upd_Sura_Card
         Zeny: 100000000
@@ -8087,10 +8165,10 @@ Body:
             Amount: 2
           - Index: 1
             Item: Flower_V
-            Amount: 30000
+            Amount: 10000
           - Index: 2
             Item: Flower_A
-            Amount: 5000
+            Amount: 2000
       - Index: 6
         Item: Upd_Warlock_Card
         Zeny: 100000000
@@ -8100,10 +8178,10 @@ Body:
             Amount: 2
           - Index: 1
             Item: Flower_V
-            Amount: 30000
+            Amount: 10000
           - Index: 2
             Item: Flower_A
-            Amount: 5000
+            Amount: 2000
       - Index: 7
         Item: Upd_Sorcerer_Card
         Zeny: 100000000
@@ -8113,10 +8191,10 @@ Body:
             Amount: 2
           - Index: 1
             Item: Flower_V
-            Amount: 30000
+            Amount: 10000
           - Index: 2
             Item: Flower_A
-            Amount: 5000
+            Amount: 2000
       - Index: 8
         Item: Upd_Mechanic_Card
         Zeny: 100000000
@@ -8126,10 +8204,10 @@ Body:
             Amount: 2
           - Index: 1
             Item: Flower_V
-            Amount: 30000
+            Amount: 10000
           - Index: 2
             Item: Flower_A
-            Amount: 5000
+            Amount: 2000
       - Index: 9
         Item: Upd_Genetic_Card
         Zeny: 100000000
@@ -8139,10 +8217,10 @@ Body:
             Amount: 2
           - Index: 1
             Item: Flower_V
-            Amount: 30000
+            Amount: 10000
           - Index: 2
             Item: Flower_A
-            Amount: 5000
+            Amount: 2000
       - Index: 10
         Item: Upd_GCross_Card
         Zeny: 100000000
@@ -8152,10 +8230,10 @@ Body:
             Amount: 2
           - Index: 1
             Item: Flower_V
-            Amount: 30000
+            Amount: 10000
           - Index: 2
             Item: Flower_A
-            Amount: 5000
+            Amount: 2000
       - Index: 11
         Item: Upd_ShadowChaser_Card
         Zeny: 100000000
@@ -8165,10 +8243,10 @@ Body:
             Amount: 2
           - Index: 1
             Item: Flower_V
-            Amount: 30000
+            Amount: 10000
           - Index: 2
             Item: Flower_A
-            Amount: 5000
+            Amount: 2000
       - Index: 12
         Item: Upd_Ranger_Card
         Zeny: 100000000
@@ -8178,10 +8256,10 @@ Body:
             Amount: 2
           - Index: 1
             Item: Flower_V
-            Amount: 30000
+            Amount: 10000
           - Index: 2
             Item: Flower_A
-            Amount: 5000
+            Amount: 2000
       - Index: 13
         Item: Upd_Minstrel_Card
         Zeny: 100000000
@@ -8191,10 +8269,10 @@ Body:
             Amount: 2
           - Index: 1
             Item: Flower_V
-            Amount: 30000
+            Amount: 10000
           - Index: 2
             Item: Flower_A
-            Amount: 5000
+            Amount: 2000
       - Index: 14
         Item: Upd_Wanderer_Card
         Zeny: 100000000
@@ -8204,7 +8282,348 @@ Body:
             Amount: 2
           - Index: 1
             Item: Flower_V
-            Amount: 30000
+            Amount: 10000
           - Index: 2
             Item: Flower_A
-            Amount: 5000
+            Amount: 2000
+      - Index: 15
+        Item: Upd_Sup_No_Card
+        Zeny: 100000000
+        RequiredItems:
+          - Index: 0
+            Item: Phreeoni_Card
+            Amount: 1
+          - Index: 1
+            Item: Baphomet_Card
+            Amount: 1
+          - Index: 2
+            Item: Amon_Ra_Card
+            Amount: 1
+          - Index: 3
+            Item: Flower_V
+            Amount: 10000
+          - Index: 4
+            Item: Flower_A
+            Amount: 2000
+      - Index: 16
+        Item: Upd_Summoner_Card
+        Zeny: 100000000
+        RequiredItems:
+          - Index: 0
+            Item: Eddga_Card
+            Amount: 1
+          - Index: 1
+            Item: Moonlight_Flower_Card
+            Amount: 1
+          - Index: 2
+            Item: Big_Eggring_Card
+            Amount: 1
+          - Index: 3
+            Item: Flower_V
+            Amount: 10000
+          - Index: 4
+            Item: Flower_A
+            Amount: 2000
+      - Index: 17
+        Item: Upd_Rebellion_Card
+        Zeny: 100000000
+        RequiredItems:
+          - Index: 0
+            Item: B_Shecil_Card
+            Amount: 1
+          - Index: 1
+            Item: Drake_Card
+            Amount: 1
+          - Index: 2
+            Item: Detale_Card
+            Amount: 1
+          - Index: 3
+            Item: Flower_V
+            Amount: 10000
+          - Index: 4
+            Item: Flower_A
+            Amount: 2000
+      - Index: 18
+        Item: Upd_Kagerou_Card
+        Zeny: 100000000
+        RequiredItems:
+          - Index: 0
+            Item: Incant_Samurai_Card
+            Amount: 1
+          - Index: 1
+            Item: Atroce_Card
+            Amount: 1
+          - Index: 2
+            Item: Nahtzigger_Card
+            Amount: 1
+          - Index: 3
+            Item: Flower_V
+            Amount: 10000
+          - Index: 4
+            Item: Flower_A
+            Amount: 2000
+      - Index: 19
+        Item: Upd_Oboro_Card
+        Zeny: 100000000
+        RequiredItems:
+          - Index: 0
+            Item: Maya_Card
+            Amount: 1
+          - Index: 1
+            Item: B_Eremes_Card
+            Amount: 1
+          - Index: 2
+            Item: Randgris_Card
+            Amount: 1
+          - Index: 3
+            Item: Flower_V
+            Amount: 10000
+          - Index: 4
+            Item: Flower_A
+            Amount: 2000
+      - Index: 20
+        Item: Upd_Emperor_Card
+        Zeny: 100000000
+        RequiredItems:
+          - Index: 0
+            Item: Garm_Card
+            Amount: 1
+          - Index: 1
+            Item: Orc_Load_Card
+            Amount: 1
+          - Index: 2
+            Item: Q_Scaraba_Card
+            Amount: 1
+          - Index: 3
+            Item: Flower_V
+            Amount: 10000
+          - Index: 4
+            Item: Flower_A
+            Amount: 2000
+      - Index: 21
+        Item: Upd_Reaper_Card
+        Zeny: 100000000
+        RequiredItems:
+          - Index: 0
+            Item: Lord_Of_Death_Card
+            Amount: 1
+          - Index: 1
+            Item: Mistress_Card
+            Amount: 1
+          - Index: 2
+            Item: Knight_Windstorm_Card
+            Amount: 1
+          - Index: 3
+            Item: Flower_V
+            Amount: 10000
+          - Index: 4
+            Item: Flower_A
+            Amount: 2000
+      - Index: 22
+        Item: aegis_300757
+        Zeny: 100000000
+        RequiredItems:
+          - Index: 0
+            Item: Upd_RuneKnight_Card
+            Amount: 2
+          - Index: 1
+            Item: Flower_V
+            Amount: 10000
+          - Index: 2
+            Item: Flower_A
+            Amount: 2000
+          - Index: 3
+            Item: Phantom_Fragment
+            Amount: 10
+      - Index: 23
+        Item: aegis_300759
+        Zeny: 100000000
+        RequiredItems:
+          - Index: 0
+            Item: Upd_RoyalGuard_Card
+            Amount: 2
+          - Index: 1
+            Item: Flower_V
+            Amount: 10000
+          - Index: 2
+            Item: Flower_A
+            Amount: 2000
+          - Index: 3
+            Item: Phantom_Fragment
+            Amount: 10
+      - Index: 24
+        Item: aegis_300918
+        Zeny: 100000000
+        RequiredItems:
+          - Index: 0
+            Item: Upd_Archbishop_Card
+            Amount: 2
+          - Index: 1
+            Item: Flower_V
+            Amount: 10000
+          - Index: 2
+            Item: Flower_A
+            Amount: 2000
+          - Index: 3
+            Item: Phantom_Fragment
+            Amount: 10
+      - Index: 25
+        Item: aegis_300919
+        Zeny: 100000000
+        RequiredItems:
+          - Index: 0
+            Item: Upd_Sura_Card
+            Amount: 2
+          - Index: 1
+            Item: Flower_V
+            Amount: 10000
+          - Index: 2
+            Item: Flower_A
+            Amount: 2000
+          - Index: 3
+            Item: Phantom_Fragment
+            Amount: 10
+      - Index: 26
+        Item: aegis_300912
+        Zeny: 100000000
+        RequiredItems:
+          - Index: 0
+            Item: Upd_Warlock_Card
+            Amount: 2
+          - Index: 1
+            Item: Flower_V
+            Amount: 10000
+          - Index: 2
+            Item: Flower_A
+            Amount: 2000
+          - Index: 3
+            Item: Phantom_Fragment
+            Amount: 10
+      - Index: 27
+        Item: aegis_300913
+        Zeny: 100000000
+        RequiredItems:
+          - Index: 0
+            Item: Upd_Sorcerer_Card
+            Amount: 2
+          - Index: 1
+            Item: Flower_V
+            Amount: 10000
+          - Index: 2
+            Item: Flower_A
+            Amount: 2000
+          - Index: 3
+            Item: Phantom_Fragment
+            Amount: 10
+      - Index: 28
+        Item: aegis_300914
+        Zeny: 100000000
+        RequiredItems:
+          - Index: 0
+            Item: Upd_Mechanic_Card
+            Amount: 2
+          - Index: 1
+            Item: Flower_V
+            Amount: 10000
+          - Index: 2
+            Item: Flower_A
+            Amount: 2000
+          - Index: 3
+            Item: Phantom_Fragment
+            Amount: 10
+      - Index: 29
+        Item: aegis_300917
+        Zeny: 100000000
+        RequiredItems:
+          - Index: 0
+            Item: Upd_Genetic_Card
+            Amount: 2
+          - Index: 1
+            Item: Flower_V
+            Amount: 10000
+          - Index: 2
+            Item: Flower_A
+            Amount: 2000
+          - Index: 3
+            Item: Phantom_Fragment
+            Amount: 10
+      - Index: 30
+        Item: aegis_300920
+        Zeny: 100000000
+        RequiredItems:
+          - Index: 0
+            Item: Upd_GCross_Card
+            Amount: 2
+          - Index: 1
+            Item: Flower_V
+            Amount: 10000
+          - Index: 2
+            Item: Flower_A
+            Amount: 2000
+          - Index: 3
+            Item: Phantom_Fragment
+            Amount: 10
+      - Index: 31
+        Item: aegis_300921
+        Zeny: 100000000
+        RequiredItems:
+          - Index: 0
+            Item: Upd_ShadowChaser_Card
+            Amount: 2
+          - Index: 1
+            Item: Flower_V
+            Amount: 10000
+          - Index: 2
+            Item: Flower_A
+            Amount: 2000
+          - Index: 3
+            Item: Phantom_Fragment
+            Amount: 10
+      - Index: 32
+        Item: aegis_300922
+        Zeny: 100000000
+        RequiredItems:
+          - Index: 0
+            Item: Upd_Ranger_Card
+            Amount: 2
+          - Index: 1
+            Item: Flower_V
+            Amount: 10000
+          - Index: 2
+            Item: Flower_A
+            Amount: 2000
+          - Index: 3
+            Item: Phantom_Fragment
+            Amount: 10
+      - Index: 33
+        Item: aegis_300758
+        Zeny: 100000000
+        RequiredItems:
+          - Index: 0
+            Item: Upd_Minstrel_Card
+            Amount: 2
+          - Index: 1
+            Item: Flower_V
+            Amount: 10000
+          - Index: 2
+            Item: Flower_A
+            Amount: 2000
+          - Index: 3
+            Item: Phantom_Fragment
+            Amount: 10
+      - Index: 34
+        Item: aegis_300923
+        Zeny: 100000000
+        RequiredItems:
+          - Index: 0
+            Item: Upd_Wanderer_Card
+            Amount: 2
+          - Index: 1
+            Item: Flower_V
+            Amount: 10000
+          - Index: 2
+            Item: Flower_A
+            Amount: 2000
+          - Index: 3
+            Item: Phantom_Fragment
+            Amount: 10

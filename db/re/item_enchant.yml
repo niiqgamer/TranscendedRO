@@ -27618,9 +27618,9 @@ Body:
       Chance: 90000
       Price: 1500000
       Materials:
-        - Material: GH_Cursed_Crystal
+        - Material: Fate_Fragment
           Amount: 30
-        - Material: GH_Cursed_Gemstone
+        - Material: Sin_Fragment
           Amount: 30
     Order:
       - Slot: 3
@@ -27631,112 +27631,122 @@ Body:
           - Item: Attack_Delay_2
             Price: 1000000
             Materials:
-              - Material: GH_Cursed_Gemstone
+              - Material: Fate_Fragment
+                Amount: 50
+              - Material: Sin_Fragment
                 Amount: 50
               - Material: M_Dimension_Essence
           - Item: Spell5
             Price: 1000000
             Materials:
-              - Material: GH_Cursed_Gemstone
+              - Material: Fate_Fragment
+                Amount: 50
+              - Material: Sin_Fragment
                 Amount: 50
               - Material: M_Dimension_Essence
           - Item: Expert_Archer3
             Price: 1000000
             Materials:
-              - Material: GH_Cursed_Gemstone
+              - Material: Fate_Fragment
+                Amount: 50
+              - Material: Sin_Fragment
                 Amount: 50
               - Material: M_Dimension_Essence
           - Item: Expert_Magician3
             Price: 1000000
             Materials:
-              - Material: GH_Cursed_Gemstone
+              - Material: Fate_Fragment
+                Amount: 50
+              - Material: Sin_Fragment
                 Amount: 50
               - Material: M_Dimension_Essence
           - Item: Expert_Fighter3
             Price: 1000000
             Materials:
-              - Material: GH_Cursed_Gemstone
+              - Material: Fate_Fragment
+                Amount: 50
+              - Material: Sin_Fragment
                 Amount: 50
               - Material: M_Dimension_Essence
         Upgrades:
           - Enchant: Attack_Delay_2
             Upgrade: Attack_Delay_3
             Materials:
-              - Material: GH_Cursed_Crystal
+              - Material: Fate_Fragment
                 Amount: 100
-              - Material: GH_Cursed_Gemstone
+              - Material: Sin_Fragment
                 Amount: 100
               - Material: M_Dimension_Essence
           - Enchant: Spell5
             Upgrade: Spell6
             Materials:
-              - Material: GH_Cursed_Crystal
+              - Material: Fate_Fragment
                 Amount: 100
-              - Material: GH_Cursed_Gemstone
+              - Material: Sin_Fragment
                 Amount: 100
               - Material: M_Dimension_Essence
           - Enchant: Expert_Archer3
             Upgrade: Expert_Archer4
             Materials:
-              - Material: GH_Cursed_Crystal
+              - Material: Fate_Fragment
                 Amount: 100
-              - Material: GH_Cursed_Gemstone
+              - Material: Sin_Fragment
                 Amount: 100
               - Material: M_Dimension_Essence
           - Enchant: Expert_Magician3
             Upgrade: Expert_Magician4
             Materials:
-              - Material: GH_Cursed_Crystal
+              - Material: Fate_Fragment
                 Amount: 100
-              - Material: GH_Cursed_Gemstone
+              - Material: Sin_Fragment
                 Amount: 100
               - Material: M_Dimension_Essence
           - Enchant: Expert_Fighter3
             Upgrade: Expert_Fighter4
             Materials:
-              - Material: GH_Cursed_Crystal
+              - Material: Fate_Fragment
                 Amount: 100
-              - Material: GH_Cursed_Gemstone
+              - Material: Sin_Fragment
                 Amount: 100
               - Material: M_Dimension_Essence
           - Enchant: Attack_Delay_3
             Upgrade: Attack_Delay_4
             Materials:
-              - Material: GH_Cursed_Crystal
+              - Material: Fate_Fragment
                 Amount: 250
-              - Material: GH_Cursed_Gemstone
+              - Material: Sin_Fragment
                 Amount: 250
               - Material: M_Dimension_Essence
           - Enchant: Spell6
             Upgrade: Spell7
             Materials:
-              - Material: GH_Cursed_Crystal
+              - Material: Fate_Fragment
                 Amount: 250
-              - Material: GH_Cursed_Gemstone
+              - Material: Sin_Fragment
                 Amount: 250
               - Material: M_Dimension_Essence
           - Enchant: Expert_Archer4
             Upgrade: Expert_Archer5
             Materials:
-              - Material: GH_Cursed_Crystal
+              - Material: Fate_Fragment
                 Amount: 250
-              - Material: GH_Cursed_Gemstone
+              - Material: Sin_Fragment
                 Amount: 250
               - Material: M_Dimension_Essence
           - Enchant: Expert_Magician4
             Upgrade: Expert_Magician5
             Materials:
-              - Material: GH_Cursed_Crystal
+              - Material: Fate_Fragment
                 Amount: 250
-              - Material: GH_Cursed_Gemstone
+              - Material: Sin_Fragment
                 Amount: 250
               - Material: M_Dimension_Essence
           - Enchant: Expert_Fighter4
             Upgrade: Expert_Fighter5
             Materials:
-              - Material: GH_Cursed_Crystal
+              - Material: Fate_Fragment
                 Amount: 250
-              - Material: GH_Cursed_Gemstone
+              - Material: Sin_Fragment
                 Amount: 250
               - Material: M_Dimension_Essence
       - Slot: 2
@@ -27744,13 +27754,17 @@ Body:
           - Item: Justice_Vigor_CD
             Price: 5000000
             Materials:
-              - Material: GH_Cursed_Crystal
+              - Material: Fate_Fragment
+                Amount: 50
+              - Material: Sin_Fragment
                 Amount: 50
               - Material: Enchant_Ticket
           - Item: Injustice_Vigor_CD
             Price: 5000000
             Materials:
-              - Material: GH_Cursed_Crystal
+              - Material: Fate_Fragment
+                Amount: 50
+              - Material: Sin_Fragment
                 Amount: 50
               - Material: Enchant_Ticket
   - Id: 107
@@ -27760,9 +27774,9 @@ Body:
       Chance: 90000
       Price: 1500000
       Materials:
-        - Material: GH_Cursed_Crystal
+        - Material: Fate_Fragment
           Amount: 30
-        - Material: GH_Cursed_Gemstone
+        - Material: Sin_Fragment
           Amount: 30
     Order:
       - Slot: 3
@@ -27773,112 +27787,122 @@ Body:
           - Item: Attack_Delay_2
             Price: 1000000
             Materials:
-              - Material: GH_Cursed_Gemstone
+              - Material: Fate_Fragment
+                Amount: 50
+              - Material: Sin_Fragment
                 Amount: 50
               - Material: M_Dimension_Essence
           - Item: Spell5
             Price: 1000000
             Materials:
-              - Material: GH_Cursed_Gemstone
+              - Material: Fate_Fragment
+                Amount: 50
+              - Material: Sin_Fragment
                 Amount: 50
               - Material: M_Dimension_Essence
           - Item: Expert_Archer3
             Price: 1000000
             Materials:
-              - Material: GH_Cursed_Gemstone
+              - Material: Fate_Fragment
+                Amount: 50
+              - Material: Sin_Fragment
                 Amount: 50
               - Material: M_Dimension_Essence
           - Item: Expert_Magician3
             Price: 1000000
             Materials:
-              - Material: GH_Cursed_Gemstone
+              - Material: Fate_Fragment
+                Amount: 50
+              - Material: Sin_Fragment
                 Amount: 50
               - Material: M_Dimension_Essence
           - Item: Expert_Fighter3
             Price: 1000000
             Materials:
-              - Material: GH_Cursed_Gemstone
+              - Material: Fate_Fragment
+                Amount: 50
+              - Material: Sin_Fragment
                 Amount: 50
               - Material: M_Dimension_Essence
         Upgrades:
           - Enchant: Attack_Delay_2
             Upgrade: Attack_Delay_3
             Materials:
-              - Material: GH_Cursed_Crystal
+              - Material: Fate_Fragment
                 Amount: 100
-              - Material: GH_Cursed_Gemstone
+              - Material: Sin_Fragment
                 Amount: 100
               - Material: M_Dimension_Essence
           - Enchant: Spell5
             Upgrade: Spell6
             Materials:
-              - Material: GH_Cursed_Crystal
+              - Material: Fate_Fragment
                 Amount: 100
-              - Material: GH_Cursed_Gemstone
+              - Material: Sin_Fragment
                 Amount: 100
               - Material: M_Dimension_Essence
           - Enchant: Expert_Archer3
             Upgrade: Expert_Archer4
             Materials:
-              - Material: GH_Cursed_Crystal
+              - Material: Fate_Fragment
                 Amount: 100
-              - Material: GH_Cursed_Gemstone
+              - Material: Sin_Fragment
                 Amount: 100
               - Material: M_Dimension_Essence
           - Enchant: Expert_Magician3
             Upgrade: Expert_Magician4
             Materials:
-              - Material: GH_Cursed_Crystal
+              - Material: Fate_Fragment
                 Amount: 100
-              - Material: GH_Cursed_Gemstone
+              - Material: Sin_Fragment
                 Amount: 100
               - Material: M_Dimension_Essence
           - Enchant: Expert_Fighter3
             Upgrade: Expert_Fighter4
             Materials:
-              - Material: GH_Cursed_Crystal
+              - Material: Fate_Fragment
                 Amount: 100
-              - Material: GH_Cursed_Gemstone
+              - Material: Sin_Fragment
                 Amount: 100
               - Material: M_Dimension_Essence
           - Enchant: Attack_Delay_3
             Upgrade: Attack_Delay_4
             Materials:
-              - Material: GH_Cursed_Crystal
+              - Material: Fate_Fragment
                 Amount: 250
-              - Material: GH_Cursed_Gemstone
+              - Material: Sin_Fragment
                 Amount: 250
               - Material: M_Dimension_Essence
           - Enchant: Spell6
             Upgrade: Spell7
             Materials:
-              - Material: GH_Cursed_Crystal
+              - Material: Fate_Fragment
                 Amount: 250
-              - Material: GH_Cursed_Gemstone
+              - Material: Sin_Fragment
                 Amount: 250
               - Material: M_Dimension_Essence
           - Enchant: Expert_Archer4
             Upgrade: Expert_Archer5
             Materials:
-              - Material: GH_Cursed_Crystal
+              - Material: Fate_Fragment
                 Amount: 250
-              - Material: GH_Cursed_Gemstone
+              - Material: Sin_Fragment
                 Amount: 250
               - Material: M_Dimension_Essence
           - Enchant: Expert_Magician4
             Upgrade: Expert_Magician5
             Materials:
-              - Material: GH_Cursed_Crystal
+              - Material: Fate_Fragment
                 Amount: 250
-              - Material: GH_Cursed_Gemstone
+              - Material: Sin_Fragment
                 Amount: 250
               - Material: M_Dimension_Essence
           - Enchant: Expert_Fighter4
             Upgrade: Expert_Fighter5
             Materials:
-              - Material: GH_Cursed_Crystal
+              - Material: Fate_Fragment
                 Amount: 250
-              - Material: GH_Cursed_Gemstone
+              - Material: Sin_Fragment
                 Amount: 250
               - Material: M_Dimension_Essence
       - Slot: 2
@@ -27886,13 +27910,17 @@ Body:
           - Item: Justice_Vigor_IQ
             Price: 5000000
             Materials:
-              - Material: GH_Cursed_Crystal
+              - Material: Fate_Fragment
+                Amount: 50
+              - Material: Sin_Fragment
                 Amount: 50
               - Material: Enchant_Ticket
           - Item: Injustice_Vigor_IQ
             Price: 5000000
             Materials:
-              - Material: GH_Cursed_Crystal
+              - Material: Fate_Fragment
+                Amount: 50
+              - Material: Sin_Fragment
                 Amount: 50
               - Material: Enchant_Ticket
   - Id: 108
@@ -27902,9 +27930,9 @@ Body:
       Chance: 90000
       Price: 1500000
       Materials:
-        - Material: GH_Cursed_Crystal
+        - Material: Fate_Fragment
           Amount: 30
-        - Material: GH_Cursed_Gemstone
+        - Material: Sin_Fragment
           Amount: 30
     Order:
       - Slot: 3
@@ -27915,112 +27943,122 @@ Body:
           - Item: Attack_Delay_2
             Price: 1000000
             Materials:
-              - Material: GH_Cursed_Gemstone
+              - Material: Fate_Fragment
+                Amount: 50
+              - Material: Sin_Fragment
                 Amount: 50
               - Material: M_Dimension_Essence
           - Item: Spell5
             Price: 1000000
             Materials:
-              - Material: GH_Cursed_Gemstone
+              - Material: Fate_Fragment
+                Amount: 50
+              - Material: Sin_Fragment
                 Amount: 50
               - Material: M_Dimension_Essence
           - Item: Expert_Archer3
             Price: 1000000
             Materials:
-              - Material: GH_Cursed_Gemstone
+              - Material: Fate_Fragment
+                Amount: 50
+              - Material: Sin_Fragment
                 Amount: 50
               - Material: M_Dimension_Essence
           - Item: Expert_Magician3
             Price: 1000000
             Materials:
-              - Material: GH_Cursed_Gemstone
+              - Material: Fate_Fragment
+                Amount: 50
+              - Material: Sin_Fragment
                 Amount: 50
               - Material: M_Dimension_Essence
           - Item: Expert_Fighter3
             Price: 1000000
             Materials:
-              - Material: GH_Cursed_Gemstone
+              - Material: Fate_Fragment
+                Amount: 50
+              - Material: Sin_Fragment
                 Amount: 50
               - Material: M_Dimension_Essence
         Upgrades:
           - Enchant: Attack_Delay_2
             Upgrade: Attack_Delay_3
             Materials:
-              - Material: GH_Cursed_Crystal
+              - Material: Fate_Fragment
                 Amount: 100
-              - Material: GH_Cursed_Gemstone
+              - Material: Sin_Fragment
                 Amount: 100
               - Material: M_Dimension_Essence
           - Enchant: Spell5
             Upgrade: Spell6
             Materials:
-              - Material: GH_Cursed_Crystal
+              - Material: Fate_Fragment
                 Amount: 100
-              - Material: GH_Cursed_Gemstone
+              - Material: Sin_Fragment
                 Amount: 100
               - Material: M_Dimension_Essence
           - Enchant: Expert_Archer3
             Upgrade: Expert_Archer4
             Materials:
-              - Material: GH_Cursed_Crystal
+              - Material: Fate_Fragment
                 Amount: 100
-              - Material: GH_Cursed_Gemstone
+              - Material: Sin_Fragment
                 Amount: 100
               - Material: M_Dimension_Essence
           - Enchant: Expert_Magician3
             Upgrade: Expert_Magician4
             Materials:
-              - Material: GH_Cursed_Crystal
+              - Material: Fate_Fragment
                 Amount: 100
-              - Material: GH_Cursed_Gemstone
+              - Material: Sin_Fragment
                 Amount: 100
               - Material: M_Dimension_Essence
           - Enchant: Expert_Fighter3
             Upgrade: Expert_Fighter4
             Materials:
-              - Material: GH_Cursed_Crystal
+              - Material: Fate_Fragment
                 Amount: 100
-              - Material: GH_Cursed_Gemstone
+              - Material: Sin_Fragment
                 Amount: 100
               - Material: M_Dimension_Essence
           - Enchant: Attack_Delay_3
             Upgrade: Attack_Delay_4
             Materials:
-              - Material: GH_Cursed_Crystal
+              - Material: Fate_Fragment
                 Amount: 250
-              - Material: GH_Cursed_Gemstone
+              - Material: Sin_Fragment
                 Amount: 250
               - Material: M_Dimension_Essence
           - Enchant: Spell6
             Upgrade: Spell7
             Materials:
-              - Material: GH_Cursed_Crystal
+              - Material: Fate_Fragment
                 Amount: 250
-              - Material: GH_Cursed_Gemstone
+              - Material: Sin_Fragment
                 Amount: 250
               - Material: M_Dimension_Essence
           - Enchant: Expert_Archer4
             Upgrade: Expert_Archer5
             Materials:
-              - Material: GH_Cursed_Crystal
+              - Material: Fate_Fragment
                 Amount: 250
-              - Material: GH_Cursed_Gemstone
+              - Material: Sin_Fragment
                 Amount: 250
               - Material: M_Dimension_Essence
           - Enchant: Expert_Magician4
             Upgrade: Expert_Magician5
             Materials:
-              - Material: GH_Cursed_Crystal
+              - Material: Fate_Fragment
                 Amount: 250
-              - Material: GH_Cursed_Gemstone
+              - Material: Sin_Fragment
                 Amount: 250
               - Material: M_Dimension_Essence
           - Enchant: Expert_Fighter4
             Upgrade: Expert_Fighter5
             Materials:
-              - Material: GH_Cursed_Crystal
+              - Material: Fate_Fragment
                 Amount: 250
-              - Material: GH_Cursed_Gemstone
+              - Material: Sin_Fragment
                 Amount: 250
               - Material: M_Dimension_Essence
       - Slot: 2
@@ -28028,13 +28066,17 @@ Body:
           - Item: Justice_Vigor_SOA
             Price: 5000000
             Materials:
-              - Material: GH_Cursed_Crystal
+              - Material: Fate_Fragment
+                Amount: 50
+              - Material: Sin_Fragment
                 Amount: 50
               - Material: Enchant_Ticket
           - Item: Injustice_Vigor_SOA
             Price: 5000000
             Materials:
-              - Material: GH_Cursed_Crystal
+              - Material: Fate_Fragment
+                Amount: 50
+              - Material: Sin_Fragment
                 Amount: 50
               - Material: Enchant_Ticket
   - Id: 109
@@ -28044,9 +28086,9 @@ Body:
       Chance: 90000
       Price: 1500000
       Materials:
-        - Material: GH_Cursed_Crystal
+        - Material: Fate_Fragment
           Amount: 30
-        - Material: GH_Cursed_Gemstone
+        - Material: Sin_Fragment
           Amount: 30
     Order:
       - Slot: 3
@@ -28057,112 +28099,122 @@ Body:
           - Item: Attack_Delay_2
             Price: 1000000
             Materials:
-              - Material: GH_Cursed_Gemstone
+              - Material: Fate_Fragment
+                Amount: 50
+              - Material: Sin_Fragment
                 Amount: 50
               - Material: M_Dimension_Essence
           - Item: Spell5
             Price: 1000000
             Materials:
-              - Material: GH_Cursed_Gemstone
+              - Material: Fate_Fragment
+                Amount: 50
+              - Material: Sin_Fragment
                 Amount: 50
               - Material: M_Dimension_Essence
           - Item: Expert_Archer3
             Price: 1000000
             Materials:
-              - Material: GH_Cursed_Gemstone
+              - Material: Fate_Fragment
+                Amount: 50
+              - Material: Sin_Fragment
                 Amount: 50
               - Material: M_Dimension_Essence
           - Item: Expert_Magician3
             Price: 1000000
             Materials:
-              - Material: GH_Cursed_Gemstone
+              - Material: Fate_Fragment
+                Amount: 50
+              - Material: Sin_Fragment
                 Amount: 50
               - Material: M_Dimension_Essence
           - Item: Expert_Fighter3
             Price: 1000000
             Materials:
-              - Material: GH_Cursed_Gemstone
+              - Material: Fate_Fragment
+                Amount: 50
+              - Material: Sin_Fragment
                 Amount: 50
               - Material: M_Dimension_Essence
         Upgrades:
           - Enchant: Attack_Delay_2
             Upgrade: Attack_Delay_3
             Materials:
-              - Material: GH_Cursed_Crystal
+              - Material: Fate_Fragment
                 Amount: 100
-              - Material: GH_Cursed_Gemstone
+              - Material: Sin_Fragment
                 Amount: 100
               - Material: M_Dimension_Essence
           - Enchant: Spell5
             Upgrade: Spell6
             Materials:
-              - Material: GH_Cursed_Crystal
+              - Material: Fate_Fragment
                 Amount: 100
-              - Material: GH_Cursed_Gemstone
+              - Material: Sin_Fragment
                 Amount: 100
               - Material: M_Dimension_Essence
           - Enchant: Expert_Archer3
             Upgrade: Expert_Archer4
             Materials:
-              - Material: GH_Cursed_Crystal
+              - Material: Fate_Fragment
                 Amount: 100
-              - Material: GH_Cursed_Gemstone
+              - Material: Sin_Fragment
                 Amount: 100
               - Material: M_Dimension_Essence
           - Enchant: Expert_Magician3
             Upgrade: Expert_Magician4
             Materials:
-              - Material: GH_Cursed_Crystal
+              - Material: Fate_Fragment
                 Amount: 100
-              - Material: GH_Cursed_Gemstone
+              - Material: Sin_Fragment
                 Amount: 100
               - Material: M_Dimension_Essence
           - Enchant: Expert_Fighter3
             Upgrade: Expert_Fighter4
             Materials:
-              - Material: GH_Cursed_Crystal
+              - Material: Fate_Fragment
                 Amount: 100
-              - Material: GH_Cursed_Gemstone
+              - Material: Sin_Fragment
                 Amount: 100
               - Material: M_Dimension_Essence
           - Enchant: Attack_Delay_3
             Upgrade: Attack_Delay_4
             Materials:
-              - Material: GH_Cursed_Crystal
+              - Material: Fate_Fragment
                 Amount: 250
-              - Material: GH_Cursed_Gemstone
+              - Material: Sin_Fragment
                 Amount: 250
               - Material: M_Dimension_Essence
           - Enchant: Spell6
             Upgrade: Spell7
             Materials:
-              - Material: GH_Cursed_Crystal
+              - Material: Fate_Fragment
                 Amount: 250
-              - Material: GH_Cursed_Gemstone
+              - Material: Sin_Fragment
                 Amount: 250
               - Material: M_Dimension_Essence
           - Enchant: Expert_Archer4
             Upgrade: Expert_Archer5
             Materials:
-              - Material: GH_Cursed_Crystal
+              - Material: Fate_Fragment
                 Amount: 250
-              - Material: GH_Cursed_Gemstone
+              - Material: Sin_Fragment
                 Amount: 250
               - Material: M_Dimension_Essence
           - Enchant: Expert_Magician4
             Upgrade: Expert_Magician5
             Materials:
-              - Material: GH_Cursed_Crystal
+              - Material: Fate_Fragment
                 Amount: 250
-              - Material: GH_Cursed_Gemstone
+              - Material: Sin_Fragment
                 Amount: 250
               - Material: M_Dimension_Essence
           - Enchant: Expert_Fighter4
             Upgrade: Expert_Fighter5
             Materials:
-              - Material: GH_Cursed_Crystal
+              - Material: Fate_Fragment
                 Amount: 250
-              - Material: GH_Cursed_Gemstone
+              - Material: Sin_Fragment
                 Amount: 250
               - Material: M_Dimension_Essence
       - Slot: 2
@@ -28170,13 +28222,17 @@ Body:
           - Item: Justice_Vigor_BO
             Price: 5000000
             Materials:
-              - Material: GH_Cursed_Crystal
+              - Material: Fate_Fragment
+                Amount: 50
+              - Material: Sin_Fragment
                 Amount: 50
               - Material: Enchant_Ticket
           - Item: Injustice_Vigor_BO
             Price: 5000000
             Materials:
-              - Material: GH_Cursed_Crystal
+              - Material: Fate_Fragment
+                Amount: 50
+              - Material: Sin_Fragment
                 Amount: 50
               - Material: Enchant_Ticket
   - Id: 110
@@ -28186,9 +28242,9 @@ Body:
       Chance: 90000
       Price: 1500000
       Materials:
-        - Material: GH_Cursed_Crystal
+        - Material: Fate_Fragment
           Amount: 30
-        - Material: GH_Cursed_Gemstone
+        - Material: Sin_Fragment
           Amount: 30
     Order:
       - Slot: 3
@@ -28199,112 +28255,122 @@ Body:
           - Item: Attack_Delay_2
             Price: 1000000
             Materials:
-              - Material: GH_Cursed_Gemstone
+              - Material: Fate_Fragment
+                Amount: 50
+              - Material: Sin_Fragment
                 Amount: 50
               - Material: M_Dimension_Essence
           - Item: Spell5
             Price: 1000000
             Materials:
-              - Material: GH_Cursed_Gemstone
+              - Material: Fate_Fragment
+                Amount: 50
+              - Material: Sin_Fragment
                 Amount: 50
               - Material: M_Dimension_Essence
           - Item: Expert_Archer3
             Price: 1000000
             Materials:
-              - Material: GH_Cursed_Gemstone
+              - Material: Fate_Fragment
+                Amount: 50
+              - Material: Sin_Fragment
                 Amount: 50
               - Material: M_Dimension_Essence
           - Item: Expert_Magician3
             Price: 1000000
             Materials:
-              - Material: GH_Cursed_Gemstone
+              - Material: Fate_Fragment
+                Amount: 50
+              - Material: Sin_Fragment
                 Amount: 50
               - Material: M_Dimension_Essence
           - Item: Expert_Fighter3
             Price: 1000000
             Materials:
-              - Material: GH_Cursed_Gemstone
+              - Material: Fate_Fragment
+                Amount: 50
+              - Material: Sin_Fragment
                 Amount: 50
               - Material: M_Dimension_Essence
         Upgrades:
           - Enchant: Attack_Delay_2
             Upgrade: Attack_Delay_3
             Materials:
-              - Material: GH_Cursed_Crystal
+              - Material: Fate_Fragment
                 Amount: 100
-              - Material: GH_Cursed_Gemstone
+              - Material: Sin_Fragment
                 Amount: 100
               - Material: M_Dimension_Essence
           - Enchant: Spell5
             Upgrade: Spell6
             Materials:
-              - Material: GH_Cursed_Crystal
+              - Material: Fate_Fragment
                 Amount: 100
-              - Material: GH_Cursed_Gemstone
+              - Material: Sin_Fragment
                 Amount: 100
               - Material: M_Dimension_Essence
           - Enchant: Expert_Archer3
             Upgrade: Expert_Archer4
             Materials:
-              - Material: GH_Cursed_Crystal
+              - Material: Fate_Fragment
                 Amount: 100
-              - Material: GH_Cursed_Gemstone
+              - Material: Sin_Fragment
                 Amount: 100
               - Material: M_Dimension_Essence
           - Enchant: Expert_Magician3
             Upgrade: Expert_Magician4
             Materials:
-              - Material: GH_Cursed_Crystal
+              - Material: Fate_Fragment
                 Amount: 100
-              - Material: GH_Cursed_Gemstone
+              - Material: Sin_Fragment
                 Amount: 100
               - Material: M_Dimension_Essence
           - Enchant: Expert_Fighter3
             Upgrade: Expert_Fighter4
             Materials:
-              - Material: GH_Cursed_Crystal
+              - Material: Fate_Fragment
                 Amount: 100
-              - Material: GH_Cursed_Gemstone
+              - Material: Sin_Fragment
                 Amount: 100
               - Material: M_Dimension_Essence
           - Enchant: Attack_Delay_3
             Upgrade: Attack_Delay_4
             Materials:
-              - Material: GH_Cursed_Crystal
+              - Material: Fate_Fragment
                 Amount: 250
-              - Material: GH_Cursed_Gemstone
+              - Material: Sin_Fragment
                 Amount: 250
               - Material: M_Dimension_Essence
           - Enchant: Spell6
             Upgrade: Spell7
             Materials:
-              - Material: GH_Cursed_Crystal
+              - Material: Fate_Fragment
                 Amount: 250
-              - Material: GH_Cursed_Gemstone
+              - Material: Sin_Fragment
                 Amount: 250
               - Material: M_Dimension_Essence
           - Enchant: Expert_Archer4
             Upgrade: Expert_Archer5
             Materials:
-              - Material: GH_Cursed_Crystal
+              - Material: Fate_Fragment
                 Amount: 250
-              - Material: GH_Cursed_Gemstone
+              - Material: Sin_Fragment
                 Amount: 250
               - Material: M_Dimension_Essence
           - Enchant: Expert_Magician4
             Upgrade: Expert_Magician5
             Materials:
-              - Material: GH_Cursed_Crystal
+              - Material: Fate_Fragment
                 Amount: 250
-              - Material: GH_Cursed_Gemstone
+              - Material: Sin_Fragment
                 Amount: 250
               - Material: M_Dimension_Essence
           - Enchant: Expert_Fighter4
             Upgrade: Expert_Fighter5
             Materials:
-              - Material: GH_Cursed_Crystal
+              - Material: Fate_Fragment
                 Amount: 250
-              - Material: GH_Cursed_Gemstone
+              - Material: Sin_Fragment
                 Amount: 250
               - Material: M_Dimension_Essence
       - Slot: 2
@@ -28312,13 +28378,17 @@ Body:
           - Item: Justice_Vigor_DK
             Price: 5000000
             Materials:
-              - Material: GH_Cursed_Crystal
+              - Material: Fate_Fragment
+                Amount: 50
+              - Material: Sin_Fragment
                 Amount: 50
               - Material: Enchant_Ticket
           - Item: Injustice_Vigor_DK
             Price: 5000000
             Materials:
-              - Material: GH_Cursed_Crystal
+              - Material: Fate_Fragment
+                Amount: 50
+              - Material: Sin_Fragment
                 Amount: 50
               - Material: Enchant_Ticket
   - Id: 111
@@ -28328,9 +28398,9 @@ Body:
       Chance: 90000
       Price: 1500000
       Materials:
-        - Material: GH_Cursed_Crystal
+        - Material: Fate_Fragment
           Amount: 30
-        - Material: GH_Cursed_Gemstone
+        - Material: Sin_Fragment
           Amount: 30
     Order:
       - Slot: 3
@@ -28341,112 +28411,122 @@ Body:
           - Item: Attack_Delay_2
             Price: 1000000
             Materials:
-              - Material: GH_Cursed_Gemstone
+              - Material: Fate_Fragment
+                Amount: 50
+              - Material: Sin_Fragment
                 Amount: 50
               - Material: M_Dimension_Essence
           - Item: Spell5
             Price: 1000000
             Materials:
-              - Material: GH_Cursed_Gemstone
+              - Material: Fate_Fragment
+                Amount: 50
+              - Material: Sin_Fragment
                 Amount: 50
               - Material: M_Dimension_Essence
           - Item: Expert_Archer3
             Price: 1000000
             Materials:
-              - Material: GH_Cursed_Gemstone
+              - Material: Fate_Fragment
+                Amount: 50
+              - Material: Sin_Fragment
                 Amount: 50
               - Material: M_Dimension_Essence
           - Item: Expert_Magician3
             Price: 1000000
             Materials:
-              - Material: GH_Cursed_Gemstone
+              - Material: Fate_Fragment
+                Amount: 50
+              - Material: Sin_Fragment
                 Amount: 50
               - Material: M_Dimension_Essence
           - Item: Expert_Fighter3
             Price: 1000000
             Materials:
-              - Material: GH_Cursed_Gemstone
+              - Material: Fate_Fragment
+                Amount: 50
+              - Material: Sin_Fragment
                 Amount: 50
               - Material: M_Dimension_Essence
         Upgrades:
           - Enchant: Attack_Delay_2
             Upgrade: Attack_Delay_3
             Materials:
-              - Material: GH_Cursed_Crystal
+              - Material: Fate_Fragment
                 Amount: 100
-              - Material: GH_Cursed_Gemstone
+              - Material: Sin_Fragment
                 Amount: 100
               - Material: M_Dimension_Essence
           - Enchant: Spell5
             Upgrade: Spell6
             Materials:
-              - Material: GH_Cursed_Crystal
+              - Material: Fate_Fragment
                 Amount: 100
-              - Material: GH_Cursed_Gemstone
+              - Material: Sin_Fragment
                 Amount: 100
               - Material: M_Dimension_Essence
           - Enchant: Expert_Archer3
             Upgrade: Expert_Archer4
             Materials:
-              - Material: GH_Cursed_Crystal
+              - Material: Fate_Fragment
                 Amount: 100
-              - Material: GH_Cursed_Gemstone
+              - Material: Sin_Fragment
                 Amount: 100
               - Material: M_Dimension_Essence
           - Enchant: Expert_Magician3
             Upgrade: Expert_Magician4
             Materials:
-              - Material: GH_Cursed_Crystal
+              - Material: Fate_Fragment
                 Amount: 100
-              - Material: GH_Cursed_Gemstone
+              - Material: Sin_Fragment
                 Amount: 100
               - Material: M_Dimension_Essence
           - Enchant: Expert_Fighter3
             Upgrade: Expert_Fighter4
             Materials:
-              - Material: GH_Cursed_Crystal
+              - Material: Fate_Fragment
                 Amount: 100
-              - Material: GH_Cursed_Gemstone
+              - Material: Sin_Fragment
                 Amount: 100
               - Material: M_Dimension_Essence
           - Enchant: Attack_Delay_3
             Upgrade: Attack_Delay_4
             Materials:
-              - Material: GH_Cursed_Crystal
+              - Material: Fate_Fragment
                 Amount: 250
-              - Material: GH_Cursed_Gemstone
+              - Material: Sin_Fragment
                 Amount: 250
               - Material: M_Dimension_Essence
           - Enchant: Spell6
             Upgrade: Spell7
             Materials:
-              - Material: GH_Cursed_Crystal
+              - Material: Fate_Fragment
                 Amount: 250
-              - Material: GH_Cursed_Gemstone
+              - Material: Sin_Fragment
                 Amount: 250
               - Material: M_Dimension_Essence
           - Enchant: Expert_Archer4
             Upgrade: Expert_Archer5
             Materials:
-              - Material: GH_Cursed_Crystal
+              - Material: Fate_Fragment
                 Amount: 250
-              - Material: GH_Cursed_Gemstone
+              - Material: Sin_Fragment
                 Amount: 250
               - Material: M_Dimension_Essence
           - Enchant: Expert_Magician4
             Upgrade: Expert_Magician5
             Materials:
-              - Material: GH_Cursed_Crystal
+              - Material: Fate_Fragment
                 Amount: 250
-              - Material: GH_Cursed_Gemstone
+              - Material: Sin_Fragment
                 Amount: 250
               - Material: M_Dimension_Essence
           - Enchant: Expert_Fighter4
             Upgrade: Expert_Fighter5
             Materials:
-              - Material: GH_Cursed_Crystal
+              - Material: Fate_Fragment
                 Amount: 250
-              - Material: GH_Cursed_Gemstone
+              - Material: Sin_Fragment
                 Amount: 250
               - Material: M_Dimension_Essence
       - Slot: 2
@@ -28454,13 +28534,17 @@ Body:
           - Item: Justice_Vigor_SH
             Price: 5000000
             Materials:
-              - Material: GH_Cursed_Crystal
+              - Material: Fate_Fragment
+                Amount: 50
+              - Material: Sin_Fragment
                 Amount: 50
               - Material: Enchant_Ticket
           - Item: Injustice_Vigor_SH
             Price: 5000000
             Materials:
-              - Material: GH_Cursed_Crystal
+              - Material: Fate_Fragment
+                Amount: 50
+              - Material: Sin_Fragment
                 Amount: 50
               - Material: Enchant_Ticket
   - Id: 114
@@ -28470,9 +28554,9 @@ Body:
       Chance: 90000
       Price: 1500000
       Materials:
-        - Material: GH_Cursed_Crystal
+        - Material: Fate_Fragment
           Amount: 30
-        - Material: GH_Cursed_Gemstone
+        - Material: Sin_Fragment
           Amount: 30
     Order:
       - Slot: 3
@@ -28483,112 +28567,122 @@ Body:
           - Item: Attack_Delay_2
             Price: 1000000
             Materials:
-              - Material: GH_Cursed_Gemstone
+              - Material: Fate_Fragment
+                Amount: 50
+              - Material: Sin_Fragment
                 Amount: 50
               - Material: M_Dimension_Essence
           - Item: Spell5
             Price: 1000000
             Materials:
-              - Material: GH_Cursed_Gemstone
+              - Material: Fate_Fragment
+                Amount: 50
+              - Material: Sin_Fragment
                 Amount: 50
               - Material: M_Dimension_Essence
           - Item: Expert_Archer3
             Price: 1000000
             Materials:
-              - Material: GH_Cursed_Gemstone
+              - Material: Fate_Fragment
+                Amount: 50
+              - Material: Sin_Fragment
                 Amount: 50
               - Material: M_Dimension_Essence
           - Item: Expert_Magician3
             Price: 1000000
             Materials:
-              - Material: GH_Cursed_Gemstone
+              - Material: Fate_Fragment
+                Amount: 50
+              - Material: Sin_Fragment
                 Amount: 50
               - Material: M_Dimension_Essence
           - Item: Expert_Fighter3
             Price: 1000000
             Materials:
-              - Material: GH_Cursed_Gemstone
+              - Material: Fate_Fragment
+                Amount: 50
+              - Material: Sin_Fragment
                 Amount: 50
               - Material: M_Dimension_Essence
         Upgrades:
           - Enchant: Attack_Delay_2
             Upgrade: Attack_Delay_3
             Materials:
-              - Material: GH_Cursed_Crystal
+              - Material: Fate_Fragment
                 Amount: 100
-              - Material: GH_Cursed_Gemstone
+              - Material: Sin_Fragment
                 Amount: 100
               - Material: M_Dimension_Essence
           - Enchant: Spell5
             Upgrade: Spell6
             Materials:
-              - Material: GH_Cursed_Crystal
+              - Material: Fate_Fragment
                 Amount: 100
-              - Material: GH_Cursed_Gemstone
+              - Material: Sin_Fragment
                 Amount: 100
               - Material: M_Dimension_Essence
           - Enchant: Expert_Archer3
             Upgrade: Expert_Archer4
             Materials:
-              - Material: GH_Cursed_Crystal
+              - Material: Fate_Fragment
                 Amount: 100
-              - Material: GH_Cursed_Gemstone
+              - Material: Sin_Fragment
                 Amount: 100
               - Material: M_Dimension_Essence
           - Enchant: Expert_Magician3
             Upgrade: Expert_Magician4
             Materials:
-              - Material: GH_Cursed_Crystal
+              - Material: Fate_Fragment
                 Amount: 100
-              - Material: GH_Cursed_Gemstone
+              - Material: Sin_Fragment
                 Amount: 100
               - Material: M_Dimension_Essence
           - Enchant: Expert_Fighter3
             Upgrade: Expert_Fighter4
             Materials:
-              - Material: GH_Cursed_Crystal
+              - Material: Fate_Fragment
                 Amount: 100
-              - Material: GH_Cursed_Gemstone
+              - Material: Sin_Fragment
                 Amount: 100
               - Material: M_Dimension_Essence
           - Enchant: Attack_Delay_3
             Upgrade: Attack_Delay_4
             Materials:
-              - Material: GH_Cursed_Crystal
+              - Material: Fate_Fragment
                 Amount: 250
-              - Material: GH_Cursed_Gemstone
+              - Material: Sin_Fragment
                 Amount: 250
               - Material: M_Dimension_Essence
           - Enchant: Spell6
             Upgrade: Spell7
             Materials:
-              - Material: GH_Cursed_Crystal
+              - Material: Fate_Fragment
                 Amount: 250
-              - Material: GH_Cursed_Gemstone
+              - Material: Sin_Fragment
                 Amount: 250
               - Material: M_Dimension_Essence
           - Enchant: Expert_Archer4
             Upgrade: Expert_Archer5
             Materials:
-              - Material: GH_Cursed_Crystal
+              - Material: Fate_Fragment
                 Amount: 250
-              - Material: GH_Cursed_Gemstone
+              - Material: Sin_Fragment
                 Amount: 250
               - Material: M_Dimension_Essence
           - Enchant: Expert_Magician4
             Upgrade: Expert_Magician5
             Materials:
-              - Material: GH_Cursed_Crystal
+              - Material: Fate_Fragment
                 Amount: 250
-              - Material: GH_Cursed_Gemstone
+              - Material: Sin_Fragment
                 Amount: 250
               - Material: M_Dimension_Essence
           - Enchant: Expert_Fighter4
             Upgrade: Expert_Fighter5
             Materials:
-              - Material: GH_Cursed_Crystal
+              - Material: Fate_Fragment
                 Amount: 250
-              - Material: GH_Cursed_Gemstone
+              - Material: Sin_Fragment
                 Amount: 250
               - Material: M_Dimension_Essence
       - Slot: 2
@@ -28596,13 +28690,17 @@ Body:
           - Item: Justice_Vigor_EM
             Price: 5000000
             Materials:
-              - Material: GH_Cursed_Crystal
+              - Material: Fate_Fragment
+                Amount: 50
+              - Material: Sin_Fragment
                 Amount: 50
               - Material: Enchant_Ticket
           - Item: Injustice_Vigor_EM
             Price: 5000000
             Materials:
-              - Material: GH_Cursed_Crystal
+              - Material: Fate_Fragment
+                Amount: 50
+              - Material: Sin_Fragment
                 Amount: 50
               - Material: Enchant_Ticket
   - Id: 115
@@ -28612,9 +28710,9 @@ Body:
       Chance: 90000
       Price: 1500000
       Materials:
-        - Material: GH_Cursed_Crystal
+        - Material: Fate_Fragment
           Amount: 30
-        - Material: GH_Cursed_Gemstone
+        - Material: Sin_Fragment
           Amount: 30
     Order:
       - Slot: 3
@@ -28625,112 +28723,122 @@ Body:
           - Item: Attack_Delay_2
             Price: 1000000
             Materials:
-              - Material: GH_Cursed_Gemstone
+              - Material: Fate_Fragment
+                Amount: 50
+              - Material: Sin_Fragment
                 Amount: 50
               - Material: M_Dimension_Essence
           - Item: Spell5
             Price: 1000000
             Materials:
-              - Material: GH_Cursed_Gemstone
+              - Material: Fate_Fragment
+                Amount: 50
+              - Material: Sin_Fragment
                 Amount: 50
               - Material: M_Dimension_Essence
           - Item: Expert_Archer3
             Price: 1000000
             Materials:
-              - Material: GH_Cursed_Gemstone
+              - Material: Fate_Fragment
+                Amount: 50
+              - Material: Sin_Fragment
                 Amount: 50
               - Material: M_Dimension_Essence
           - Item: Expert_Magician3
             Price: 1000000
             Materials:
-              - Material: GH_Cursed_Gemstone
+              - Material: Fate_Fragment
+                Amount: 50
+              - Material: Sin_Fragment
                 Amount: 50
               - Material: M_Dimension_Essence
           - Item: Expert_Fighter3
             Price: 1000000
             Materials:
-              - Material: GH_Cursed_Gemstone
+              - Material: Fate_Fragment
+                Amount: 50
+              - Material: Sin_Fragment
                 Amount: 50
               - Material: M_Dimension_Essence
         Upgrades:
           - Enchant: Attack_Delay_2
             Upgrade: Attack_Delay_3
             Materials:
-              - Material: GH_Cursed_Crystal
+              - Material: Fate_Fragment
                 Amount: 100
-              - Material: GH_Cursed_Gemstone
+              - Material: Sin_Fragment
                 Amount: 100
               - Material: M_Dimension_Essence
           - Enchant: Spell5
             Upgrade: Spell6
             Materials:
-              - Material: GH_Cursed_Crystal
+              - Material: Fate_Fragment
                 Amount: 100
-              - Material: GH_Cursed_Gemstone
+              - Material: Sin_Fragment
                 Amount: 100
               - Material: M_Dimension_Essence
           - Enchant: Expert_Archer3
             Upgrade: Expert_Archer4
             Materials:
-              - Material: GH_Cursed_Crystal
+              - Material: Fate_Fragment
                 Amount: 100
-              - Material: GH_Cursed_Gemstone
+              - Material: Sin_Fragment
                 Amount: 100
               - Material: M_Dimension_Essence
           - Enchant: Expert_Magician3
             Upgrade: Expert_Magician4
             Materials:
-              - Material: GH_Cursed_Crystal
+              - Material: Fate_Fragment
                 Amount: 100
-              - Material: GH_Cursed_Gemstone
+              - Material: Sin_Fragment
                 Amount: 100
               - Material: M_Dimension_Essence
           - Enchant: Expert_Fighter3
             Upgrade: Expert_Fighter4
             Materials:
-              - Material: GH_Cursed_Crystal
+              - Material: Fate_Fragment
                 Amount: 100
-              - Material: GH_Cursed_Gemstone
+              - Material: Sin_Fragment
                 Amount: 100
               - Material: M_Dimension_Essence
           - Enchant: Attack_Delay_3
             Upgrade: Attack_Delay_4
             Materials:
-              - Material: GH_Cursed_Crystal
+              - Material: Fate_Fragment
                 Amount: 250
-              - Material: GH_Cursed_Gemstone
+              - Material: Sin_Fragment
                 Amount: 250
               - Material: M_Dimension_Essence
           - Enchant: Spell6
             Upgrade: Spell7
             Materials:
-              - Material: GH_Cursed_Crystal
+              - Material: Fate_Fragment
                 Amount: 250
-              - Material: GH_Cursed_Gemstone
+              - Material: Sin_Fragment
                 Amount: 250
               - Material: M_Dimension_Essence
           - Enchant: Expert_Archer4
             Upgrade: Expert_Archer5
             Materials:
-              - Material: GH_Cursed_Crystal
+              - Material: Fate_Fragment
                 Amount: 250
-              - Material: GH_Cursed_Gemstone
+              - Material: Sin_Fragment
                 Amount: 250
               - Material: M_Dimension_Essence
           - Enchant: Expert_Magician4
             Upgrade: Expert_Magician5
             Materials:
-              - Material: GH_Cursed_Crystal
+              - Material: Fate_Fragment
                 Amount: 250
-              - Material: GH_Cursed_Gemstone
+              - Material: Sin_Fragment
                 Amount: 250
               - Material: M_Dimension_Essence
           - Enchant: Expert_Fighter4
             Upgrade: Expert_Fighter5
             Materials:
-              - Material: GH_Cursed_Crystal
+              - Material: Fate_Fragment
                 Amount: 250
-              - Material: GH_Cursed_Gemstone
+              - Material: Sin_Fragment
                 Amount: 250
               - Material: M_Dimension_Essence
       - Slot: 2
@@ -28738,13 +28846,17 @@ Body:
           - Item: Justice_Vigor_WH
             Price: 5000000
             Materials:
-              - Material: GH_Cursed_Crystal
+              - Material: Fate_Fragment
+                Amount: 50
+              - Material: Sin_Fragment
                 Amount: 50
               - Material: Enchant_Ticket
           - Item: Injustice_Vigor_WH
             Price: 5000000
             Materials:
-              - Material: GH_Cursed_Crystal
+              - Material: Fate_Fragment
+                Amount: 50
+              - Material: Sin_Fragment
                 Amount: 50
               - Material: Enchant_Ticket
   - Id: 116
@@ -28754,9 +28866,9 @@ Body:
       Chance: 90000
       Price: 1500000
       Materials:
-        - Material: GH_Cursed_Crystal
+        - Material: Fate_Fragment
           Amount: 30
-        - Material: GH_Cursed_Gemstone
+        - Material: Sin_Fragment
           Amount: 30
     Order:
       - Slot: 3
@@ -28767,112 +28879,122 @@ Body:
           - Item: Attack_Delay_2
             Price: 1000000
             Materials:
-              - Material: GH_Cursed_Gemstone
+              - Material: Fate_Fragment
+                Amount: 50
+              - Material: Sin_Fragment
                 Amount: 50
               - Material: M_Dimension_Essence
           - Item: Spell5
             Price: 1000000
             Materials:
-              - Material: GH_Cursed_Gemstone
+              - Material: Fate_Fragment
+                Amount: 50
+              - Material: Sin_Fragment
                 Amount: 50
               - Material: M_Dimension_Essence
           - Item: Expert_Archer3
             Price: 1000000
             Materials:
-              - Material: GH_Cursed_Gemstone
+              - Material: Fate_Fragment
+                Amount: 50
+              - Material: Sin_Fragment
                 Amount: 50
               - Material: M_Dimension_Essence
           - Item: Expert_Magician3
             Price: 1000000
             Materials:
-              - Material: GH_Cursed_Gemstone
+              - Material: Fate_Fragment
+                Amount: 50
+              - Material: Sin_Fragment
                 Amount: 50
               - Material: M_Dimension_Essence
           - Item: Expert_Fighter3
             Price: 1000000
             Materials:
-              - Material: GH_Cursed_Gemstone
+              - Material: Fate_Fragment
+                Amount: 50
+              - Material: Sin_Fragment
                 Amount: 50
               - Material: M_Dimension_Essence
         Upgrades:
           - Enchant: Attack_Delay_2
             Upgrade: Attack_Delay_3
             Materials:
-              - Material: GH_Cursed_Crystal
+              - Material: Fate_Fragment
                 Amount: 100
-              - Material: GH_Cursed_Gemstone
+              - Material: Sin_Fragment
                 Amount: 100
               - Material: M_Dimension_Essence
           - Enchant: Spell5
             Upgrade: Spell6
             Materials:
-              - Material: GH_Cursed_Crystal
+              - Material: Fate_Fragment
                 Amount: 100
-              - Material: GH_Cursed_Gemstone
+              - Material: Sin_Fragment
                 Amount: 100
               - Material: M_Dimension_Essence
           - Enchant: Expert_Archer3
             Upgrade: Expert_Archer4
             Materials:
-              - Material: GH_Cursed_Crystal
+              - Material: Fate_Fragment
                 Amount: 100
-              - Material: GH_Cursed_Gemstone
+              - Material: Sin_Fragment
                 Amount: 100
               - Material: M_Dimension_Essence
           - Enchant: Expert_Magician3
             Upgrade: Expert_Magician4
             Materials:
-              - Material: GH_Cursed_Crystal
+              - Material: Fate_Fragment
                 Amount: 100
-              - Material: GH_Cursed_Gemstone
+              - Material: Sin_Fragment
                 Amount: 100
               - Material: M_Dimension_Essence
           - Enchant: Expert_Fighter3
             Upgrade: Expert_Fighter4
             Materials:
-              - Material: GH_Cursed_Crystal
+              - Material: Fate_Fragment
                 Amount: 100
-              - Material: GH_Cursed_Gemstone
+              - Material: Sin_Fragment
                 Amount: 100
               - Material: M_Dimension_Essence
           - Enchant: Attack_Delay_3
             Upgrade: Attack_Delay_4
             Materials:
-              - Material: GH_Cursed_Crystal
+              - Material: Fate_Fragment
                 Amount: 250
-              - Material: GH_Cursed_Gemstone
+              - Material: Sin_Fragment
                 Amount: 250
               - Material: M_Dimension_Essence
           - Enchant: Spell6
             Upgrade: Spell7
             Materials:
-              - Material: GH_Cursed_Crystal
+              - Material: Fate_Fragment
                 Amount: 250
-              - Material: GH_Cursed_Gemstone
+              - Material: Sin_Fragment
                 Amount: 250
               - Material: M_Dimension_Essence
           - Enchant: Expert_Archer4
             Upgrade: Expert_Archer5
             Materials:
-              - Material: GH_Cursed_Crystal
+              - Material: Fate_Fragment
                 Amount: 250
-              - Material: GH_Cursed_Gemstone
+              - Material: Sin_Fragment
                 Amount: 250
               - Material: M_Dimension_Essence
           - Enchant: Expert_Magician4
             Upgrade: Expert_Magician5
             Materials:
-              - Material: GH_Cursed_Crystal
+              - Material: Fate_Fragment
                 Amount: 250
-              - Material: GH_Cursed_Gemstone
+              - Material: Sin_Fragment
                 Amount: 250
               - Material: M_Dimension_Essence
           - Enchant: Expert_Fighter4
             Upgrade: Expert_Fighter5
             Materials:
-              - Material: GH_Cursed_Crystal
+              - Material: Fate_Fragment
                 Amount: 250
-              - Material: GH_Cursed_Gemstone
+              - Material: Sin_Fragment
                 Amount: 250
               - Material: M_Dimension_Essence
       - Slot: 2
@@ -28880,13 +29002,17 @@ Body:
           - Item: Justice_Vigor_SKE
             Price: 5000000
             Materials:
-              - Material: GH_Cursed_Crystal
+              - Material: Fate_Fragment
+                Amount: 50
+              - Material: Sin_Fragment
                 Amount: 50
               - Material: Enchant_Ticket
           - Item: Injustice_Vigor_SKE
             Price: 5000000
             Materials:
-              - Material: GH_Cursed_Crystal
+              - Material: Fate_Fragment
+                Amount: 50
+              - Material: Sin_Fragment
                 Amount: 50
               - Material: Enchant_Ticket
 #  - Id: 117  # Skipped (some fields are not supported on rAthena for now)
@@ -29248,9 +29374,9 @@ Body:
       Chance: 90000
       Price: 1500000
       Materials:
-        - Material: GH_Cursed_Crystal
+        - Material: Fate_Fragment
           Amount: 30
-        - Material: GH_Cursed_Gemstone
+        - Material: Sin_Fragment
           Amount: 30
     Order:
       - Slot: 3
@@ -29261,112 +29387,122 @@ Body:
           - Item: Attack_Delay_2
             Price: 1000000
             Materials:
-              - Material: GH_Cursed_Gemstone
+              - Material: Fate_Fragment
+                Amount: 50
+              - Material: Sin_Fragment
                 Amount: 50
               - Material: M_Dimension_Essence
           - Item: Spell5
             Price: 1000000
             Materials:
-              - Material: GH_Cursed_Gemstone
+              - Material: Fate_Fragment
+                Amount: 50
+              - Material: Sin_Fragment
                 Amount: 50
               - Material: M_Dimension_Essence
           - Item: Expert_Archer3
             Price: 1000000
             Materials:
-              - Material: GH_Cursed_Gemstone
+              - Material: Fate_Fragment
+                Amount: 50
+              - Material: Sin_Fragment
                 Amount: 50
               - Material: M_Dimension_Essence
           - Item: Expert_Magician3
             Price: 1000000
             Materials:
-              - Material: GH_Cursed_Gemstone
+              - Material: Fate_Fragment
+                Amount: 50
+              - Material: Sin_Fragment
                 Amount: 50
               - Material: M_Dimension_Essence
           - Item: Expert_Fighter3
             Price: 1000000
             Materials:
-              - Material: GH_Cursed_Gemstone
+              - Material: Fate_Fragment
+                Amount: 50
+              - Material: Sin_Fragment
                 Amount: 50
               - Material: M_Dimension_Essence
         Upgrades:
           - Enchant: Attack_Delay_2
             Upgrade: Attack_Delay_3
             Materials:
-              - Material: GH_Cursed_Crystal
+              - Material: Fate_Fragment
                 Amount: 100
-              - Material: GH_Cursed_Gemstone
+              - Material: Sin_Fragment
                 Amount: 100
               - Material: M_Dimension_Essence
           - Enchant: Spell5
             Upgrade: Spell6
             Materials:
-              - Material: GH_Cursed_Crystal
+              - Material: Fate_Fragment
                 Amount: 100
-              - Material: GH_Cursed_Gemstone
+              - Material: Sin_Fragment
                 Amount: 100
               - Material: M_Dimension_Essence
           - Enchant: Expert_Archer3
             Upgrade: Expert_Archer4
             Materials:
-              - Material: GH_Cursed_Crystal
+              - Material: Fate_Fragment
                 Amount: 100
-              - Material: GH_Cursed_Gemstone
+              - Material: Sin_Fragment
                 Amount: 100
               - Material: M_Dimension_Essence
           - Enchant: Expert_Magician3
             Upgrade: Expert_Magician4
             Materials:
-              - Material: GH_Cursed_Crystal
+              - Material: Fate_Fragment
                 Amount: 100
-              - Material: GH_Cursed_Gemstone
+              - Material: Sin_Fragment
                 Amount: 100
               - Material: M_Dimension_Essence
           - Enchant: Expert_Fighter3
             Upgrade: Expert_Fighter4
             Materials:
-              - Material: GH_Cursed_Crystal
+              - Material: Fate_Fragment
                 Amount: 100
-              - Material: GH_Cursed_Gemstone
+              - Material: Sin_Fragment
                 Amount: 100
               - Material: M_Dimension_Essence
           - Enchant: Attack_Delay_3
             Upgrade: Attack_Delay_4
             Materials:
-              - Material: GH_Cursed_Crystal
+              - Material: Fate_Fragment
                 Amount: 250
-              - Material: GH_Cursed_Gemstone
+              - Material: Sin_Fragment
                 Amount: 250
               - Material: M_Dimension_Essence
           - Enchant: Spell6
             Upgrade: Spell7
             Materials:
-              - Material: GH_Cursed_Crystal
+              - Material: Fate_Fragment
                 Amount: 250
-              - Material: GH_Cursed_Gemstone
+              - Material: Sin_Fragment
                 Amount: 250
               - Material: M_Dimension_Essence
           - Enchant: Expert_Archer4
             Upgrade: Expert_Archer5
             Materials:
-              - Material: GH_Cursed_Crystal
+              - Material: Fate_Fragment
                 Amount: 250
-              - Material: GH_Cursed_Gemstone
+              - Material: Sin_Fragment
                 Amount: 250
               - Material: M_Dimension_Essence
           - Enchant: Expert_Magician4
             Upgrade: Expert_Magician5
             Materials:
-              - Material: GH_Cursed_Crystal
+              - Material: Fate_Fragment
                 Amount: 250
-              - Material: GH_Cursed_Gemstone
+              - Material: Sin_Fragment
                 Amount: 250
               - Material: M_Dimension_Essence
           - Enchant: Expert_Fighter4
             Upgrade: Expert_Fighter5
             Materials:
-              - Material: GH_Cursed_Crystal
+              - Material: Fate_Fragment
                 Amount: 250
-              - Material: GH_Cursed_Gemstone
+              - Material: Sin_Fragment
                 Amount: 250
               - Material: M_Dimension_Essence
       - Slot: 2
@@ -29374,13 +29510,17 @@ Body:
           - Item: Justice_Vigor_MT
             Price: 5000000
             Materials:
-              - Material: GH_Cursed_Crystal
+              - Material: Fate_Fragment
+                Amount: 50
+              - Material: Sin_Fragment
                 Amount: 50
               - Material: Enchant_Ticket
           - Item: Injustice_Vigor_MT
             Price: 5000000
             Materials:
-              - Material: GH_Cursed_Crystal
+              - Material: Fate_Fragment
+                Amount: 50
+              - Material: Sin_Fragment
                 Amount: 50
               - Material: Enchant_Ticket
   - Id: 126
@@ -29390,9 +29530,9 @@ Body:
       Chance: 90000
       Price: 1500000
       Materials:
-        - Material: GH_Cursed_Crystal
+        - Material: Fate_Fragment
           Amount: 30
-        - Material: GH_Cursed_Gemstone
+        - Material: Sin_Fragment
           Amount: 30
     Order:
       - Slot: 3
@@ -29403,112 +29543,122 @@ Body:
           - Item: Attack_Delay_2
             Price: 1000000
             Materials:
-              - Material: GH_Cursed_Gemstone
+              - Material: Fate_Fragment
+                Amount: 50
+              - Material: Sin_Fragment
                 Amount: 50
               - Material: M_Dimension_Essence
           - Item: Spell5
             Price: 1000000
             Materials:
-              - Material: GH_Cursed_Gemstone
+              - Material: Fate_Fragment
+                Amount: 50
+              - Material: Sin_Fragment
                 Amount: 50
               - Material: M_Dimension_Essence
           - Item: Expert_Archer3
             Price: 1000000
             Materials:
-              - Material: GH_Cursed_Gemstone
+              - Material: Fate_Fragment
+                Amount: 50
+              - Material: Sin_Fragment
                 Amount: 50
               - Material: M_Dimension_Essence
           - Item: Expert_Magician3
             Price: 1000000
             Materials:
-              - Material: GH_Cursed_Gemstone
+              - Material: Fate_Fragment
+                Amount: 50
+              - Material: Sin_Fragment
                 Amount: 50
               - Material: M_Dimension_Essence
           - Item: Expert_Fighter3
             Price: 1000000
             Materials:
-              - Material: GH_Cursed_Gemstone
+              - Material: Fate_Fragment
+                Amount: 50
+              - Material: Sin_Fragment
                 Amount: 50
               - Material: M_Dimension_Essence
         Upgrades:
           - Enchant: Attack_Delay_2
             Upgrade: Attack_Delay_3
             Materials:
-              - Material: GH_Cursed_Crystal
+              - Material: Fate_Fragment
                 Amount: 100
-              - Material: GH_Cursed_Gemstone
+              - Material: Sin_Fragment
                 Amount: 100
               - Material: M_Dimension_Essence
           - Enchant: Spell5
             Upgrade: Spell6
             Materials:
-              - Material: GH_Cursed_Crystal
+              - Material: Fate_Fragment
                 Amount: 100
-              - Material: GH_Cursed_Gemstone
+              - Material: Sin_Fragment
                 Amount: 100
               - Material: M_Dimension_Essence
           - Enchant: Expert_Archer3
             Upgrade: Expert_Archer4
             Materials:
-              - Material: GH_Cursed_Crystal
+              - Material: Fate_Fragment
                 Amount: 100
-              - Material: GH_Cursed_Gemstone
+              - Material: Sin_Fragment
                 Amount: 100
               - Material: M_Dimension_Essence
           - Enchant: Expert_Magician3
             Upgrade: Expert_Magician4
             Materials:
-              - Material: GH_Cursed_Crystal
+              - Material: Fate_Fragment
                 Amount: 100
-              - Material: GH_Cursed_Gemstone
+              - Material: Sin_Fragment
                 Amount: 100
               - Material: M_Dimension_Essence
           - Enchant: Expert_Fighter3
             Upgrade: Expert_Fighter4
             Materials:
-              - Material: GH_Cursed_Crystal
+              - Material: Fate_Fragment
                 Amount: 100
-              - Material: GH_Cursed_Gemstone
+              - Material: Sin_Fragment
                 Amount: 100
               - Material: M_Dimension_Essence
           - Enchant: Attack_Delay_3
             Upgrade: Attack_Delay_4
             Materials:
-              - Material: GH_Cursed_Crystal
+              - Material: Fate_Fragment
                 Amount: 250
-              - Material: GH_Cursed_Gemstone
+              - Material: Sin_Fragment
                 Amount: 250
               - Material: M_Dimension_Essence
           - Enchant: Spell6
             Upgrade: Spell7
             Materials:
-              - Material: GH_Cursed_Crystal
+              - Material: Fate_Fragment
                 Amount: 250
-              - Material: GH_Cursed_Gemstone
+              - Material: Sin_Fragment
                 Amount: 250
               - Material: M_Dimension_Essence
           - Enchant: Expert_Archer4
             Upgrade: Expert_Archer5
             Materials:
-              - Material: GH_Cursed_Crystal
+              - Material: Fate_Fragment
                 Amount: 250
-              - Material: GH_Cursed_Gemstone
+              - Material: Sin_Fragment
                 Amount: 250
               - Material: M_Dimension_Essence
           - Enchant: Expert_Magician4
             Upgrade: Expert_Magician5
             Materials:
-              - Material: GH_Cursed_Crystal
+              - Material: Fate_Fragment
                 Amount: 250
-              - Material: GH_Cursed_Gemstone
+              - Material: Sin_Fragment
                 Amount: 250
               - Material: M_Dimension_Essence
           - Enchant: Expert_Fighter4
             Upgrade: Expert_Fighter5
             Materials:
-              - Material: GH_Cursed_Crystal
+              - Material: Fate_Fragment
                 Amount: 250
-              - Material: GH_Cursed_Gemstone
+              - Material: Sin_Fragment
                 Amount: 250
               - Material: M_Dimension_Essence
       - Slot: 2
@@ -29516,13 +29666,17 @@ Body:
           - Item: Justice_Vigor_SHC
             Price: 5000000
             Materials:
-              - Material: GH_Cursed_Crystal
+              - Material: Fate_Fragment
+                Amount: 50
+              - Material: Sin_Fragment
                 Amount: 50
               - Material: Enchant_Ticket
           - Item: Injustice_Vigor_SHC
             Price: 5000000
             Materials:
-              - Material: GH_Cursed_Crystal
+              - Material: Fate_Fragment
+                Amount: 50
+              - Material: Sin_Fragment
                 Amount: 50
               - Material: Enchant_Ticket
   - Id: 127
@@ -29532,9 +29686,9 @@ Body:
       Chance: 90000
       Price: 1500000
       Materials:
-        - Material: GH_Cursed_Crystal
+        - Material: Fate_Fragment
           Amount: 30
-        - Material: GH_Cursed_Gemstone
+        - Material: Sin_Fragment
           Amount: 30
     Order:
       - Slot: 3
@@ -29545,112 +29699,122 @@ Body:
           - Item: Attack_Delay_2
             Price: 1000000
             Materials:
-              - Material: GH_Cursed_Gemstone
+              - Material: Fate_Fragment
+                Amount: 50
+              - Material: Sin_Fragment
                 Amount: 50
               - Material: M_Dimension_Essence
           - Item: Spell5
             Price: 1000000
             Materials:
-              - Material: GH_Cursed_Gemstone
+              - Material: Fate_Fragment
+                Amount: 50
+              - Material: Sin_Fragment
                 Amount: 50
               - Material: M_Dimension_Essence
           - Item: Expert_Archer3
             Price: 1000000
             Materials:
-              - Material: GH_Cursed_Gemstone
+              - Material: Fate_Fragment
+                Amount: 50
+              - Material: Sin_Fragment
                 Amount: 50
               - Material: M_Dimension_Essence
           - Item: Expert_Magician3
             Price: 1000000
             Materials:
-              - Material: GH_Cursed_Gemstone
+              - Material: Fate_Fragment
+                Amount: 50
+              - Material: Sin_Fragment
                 Amount: 50
               - Material: M_Dimension_Essence
           - Item: Expert_Fighter3
             Price: 1000000
             Materials:
-              - Material: GH_Cursed_Gemstone
+              - Material: Fate_Fragment
+                Amount: 50
+              - Material: Sin_Fragment
                 Amount: 50
               - Material: M_Dimension_Essence
         Upgrades:
           - Enchant: Attack_Delay_2
             Upgrade: Attack_Delay_3
             Materials:
-              - Material: GH_Cursed_Crystal
+              - Material: Fate_Fragment
                 Amount: 100
-              - Material: GH_Cursed_Gemstone
+              - Material: Sin_Fragment
                 Amount: 100
               - Material: M_Dimension_Essence
           - Enchant: Spell5
             Upgrade: Spell6
             Materials:
-              - Material: GH_Cursed_Crystal
+              - Material: Fate_Fragment
                 Amount: 100
-              - Material: GH_Cursed_Gemstone
+              - Material: Sin_Fragment
                 Amount: 100
               - Material: M_Dimension_Essence
           - Enchant: Expert_Archer3
             Upgrade: Expert_Archer4
             Materials:
-              - Material: GH_Cursed_Crystal
+              - Material: Fate_Fragment
                 Amount: 100
-              - Material: GH_Cursed_Gemstone
+              - Material: Sin_Fragment
                 Amount: 100
               - Material: M_Dimension_Essence
           - Enchant: Expert_Magician3
             Upgrade: Expert_Magician4
             Materials:
-              - Material: GH_Cursed_Crystal
+              - Material: Fate_Fragment
                 Amount: 100
-              - Material: GH_Cursed_Gemstone
+              - Material: Sin_Fragment
                 Amount: 100
               - Material: M_Dimension_Essence
           - Enchant: Expert_Fighter3
             Upgrade: Expert_Fighter4
             Materials:
-              - Material: GH_Cursed_Crystal
+              - Material: Fate_Fragment
                 Amount: 100
-              - Material: GH_Cursed_Gemstone
+              - Material: Sin_Fragment
                 Amount: 100
               - Material: M_Dimension_Essence
           - Enchant: Attack_Delay_3
             Upgrade: Attack_Delay_4
             Materials:
-              - Material: GH_Cursed_Crystal
+              - Material: Fate_Fragment
                 Amount: 250
-              - Material: GH_Cursed_Gemstone
+              - Material: Sin_Fragment
                 Amount: 250
               - Material: M_Dimension_Essence
           - Enchant: Spell6
             Upgrade: Spell7
             Materials:
-              - Material: GH_Cursed_Crystal
+              - Material: Fate_Fragment
                 Amount: 250
-              - Material: GH_Cursed_Gemstone
+              - Material: Sin_Fragment
                 Amount: 250
               - Material: M_Dimension_Essence
           - Enchant: Expert_Archer4
             Upgrade: Expert_Archer5
             Materials:
-              - Material: GH_Cursed_Crystal
+              - Material: Fate_Fragment
                 Amount: 250
-              - Material: GH_Cursed_Gemstone
+              - Material: Sin_Fragment
                 Amount: 250
               - Material: M_Dimension_Essence
           - Enchant: Expert_Magician4
             Upgrade: Expert_Magician5
             Materials:
-              - Material: GH_Cursed_Crystal
+              - Material: Fate_Fragment
                 Amount: 250
-              - Material: GH_Cursed_Gemstone
+              - Material: Sin_Fragment
                 Amount: 250
               - Material: M_Dimension_Essence
           - Enchant: Expert_Fighter4
             Upgrade: Expert_Fighter5
             Materials:
-              - Material: GH_Cursed_Crystal
+              - Material: Fate_Fragment
                 Amount: 250
-              - Material: GH_Cursed_Gemstone
+              - Material: Sin_Fragment
                 Amount: 250
               - Material: M_Dimension_Essence
       - Slot: 2
@@ -29658,13 +29822,17 @@ Body:
           - Item: Justice_Vigor_SS
             Price: 5000000
             Materials:
-              - Material: GH_Cursed_Crystal
+              - Material: Fate_Fragment
+                Amount: 50
+              - Material: Sin_Fragment
                 Amount: 50
               - Material: Enchant_Ticket
           - Item: Injustice_Vigor_SS
             Price: 5000000
             Materials:
-              - Material: GH_Cursed_Crystal
+              - Material: Fate_Fragment
+                Amount: 50
+              - Material: Sin_Fragment
                 Amount: 50
               - Material: Enchant_Ticket
 #  - Id: 128  # Skipped (some fields are not supported on rAthena for now)
@@ -29746,9 +29914,9 @@ Body:
       Chance: 90000
       Price: 1500000
       Materials:
-        - Material: GH_Cursed_Crystal
+        - Material: Fate_Fragment
           Amount: 30
-        - Material: GH_Cursed_Gemstone
+        - Material: Sin_Fragment
           Amount: 30
     Order:
       - Slot: 3
@@ -29759,112 +29927,122 @@ Body:
           - Item: Attack_Delay_2
             Price: 1000000
             Materials:
-              - Material: GH_Cursed_Gemstone
+              - Material: Fate_Fragment
+                Amount: 50
+              - Material: Sin_Fragment
                 Amount: 50
               - Material: M_Dimension_Essence
           - Item: Spell5
             Price: 1000000
             Materials:
-              - Material: GH_Cursed_Gemstone
+              - Material: Fate_Fragment
+                Amount: 50
+              - Material: Sin_Fragment
                 Amount: 50
               - Material: M_Dimension_Essence
           - Item: Expert_Archer3
             Price: 1000000
             Materials:
-              - Material: GH_Cursed_Gemstone
+              - Material: Fate_Fragment
+                Amount: 50
+              - Material: Sin_Fragment
                 Amount: 50
               - Material: M_Dimension_Essence
           - Item: Expert_Magician3
             Price: 1000000
             Materials:
-              - Material: GH_Cursed_Gemstone
+              - Material: Fate_Fragment
+                Amount: 50
+              - Material: Sin_Fragment
                 Amount: 50
               - Material: M_Dimension_Essence
           - Item: Expert_Fighter3
             Price: 1000000
             Materials:
-              - Material: GH_Cursed_Gemstone
+              - Material: Fate_Fragment
+                Amount: 50
+              - Material: Sin_Fragment
                 Amount: 50
               - Material: M_Dimension_Essence
         Upgrades:
           - Enchant: Attack_Delay_2
             Upgrade: Attack_Delay_3
             Materials:
-              - Material: GH_Cursed_Crystal
+              - Material: Fate_Fragment
                 Amount: 100
-              - Material: GH_Cursed_Gemstone
+              - Material: Sin_Fragment
                 Amount: 100
               - Material: M_Dimension_Essence
           - Enchant: Spell5
             Upgrade: Spell6
             Materials:
-              - Material: GH_Cursed_Crystal
+              - Material: Fate_Fragment
                 Amount: 100
-              - Material: GH_Cursed_Gemstone
+              - Material: Sin_Fragment
                 Amount: 100
               - Material: M_Dimension_Essence
           - Enchant: Expert_Archer3
             Upgrade: Expert_Archer4
             Materials:
-              - Material: GH_Cursed_Crystal
+              - Material: Fate_Fragment
                 Amount: 100
-              - Material: GH_Cursed_Gemstone
+              - Material: Sin_Fragment
                 Amount: 100
               - Material: M_Dimension_Essence
           - Enchant: Expert_Magician3
             Upgrade: Expert_Magician4
             Materials:
-              - Material: GH_Cursed_Crystal
+              - Material: Fate_Fragment
                 Amount: 100
-              - Material: GH_Cursed_Gemstone
+              - Material: Sin_Fragment
                 Amount: 100
               - Material: M_Dimension_Essence
           - Enchant: Expert_Fighter3
             Upgrade: Expert_Fighter4
             Materials:
-              - Material: GH_Cursed_Crystal
+              - Material: Fate_Fragment
                 Amount: 100
-              - Material: GH_Cursed_Gemstone
+              - Material: Sin_Fragment
                 Amount: 100
               - Material: M_Dimension_Essence
           - Enchant: Attack_Delay_3
             Upgrade: Attack_Delay_4
             Materials:
-              - Material: GH_Cursed_Crystal
+              - Material: Fate_Fragment
                 Amount: 250
-              - Material: GH_Cursed_Gemstone
+              - Material: Sin_Fragment
                 Amount: 250
               - Material: M_Dimension_Essence
           - Enchant: Spell6
             Upgrade: Spell7
             Materials:
-              - Material: GH_Cursed_Crystal
+              - Material: Fate_Fragment
                 Amount: 250
-              - Material: GH_Cursed_Gemstone
+              - Material: Sin_Fragment
                 Amount: 250
               - Material: M_Dimension_Essence
           - Enchant: Expert_Archer4
             Upgrade: Expert_Archer5
             Materials:
-              - Material: GH_Cursed_Crystal
+              - Material: Fate_Fragment
                 Amount: 250
-              - Material: GH_Cursed_Gemstone
+              - Material: Sin_Fragment
                 Amount: 250
               - Material: M_Dimension_Essence
           - Enchant: Expert_Magician4
             Upgrade: Expert_Magician5
             Materials:
-              - Material: GH_Cursed_Crystal
+              - Material: Fate_Fragment
                 Amount: 250
-              - Material: GH_Cursed_Gemstone
+              - Material: Sin_Fragment
                 Amount: 250
               - Material: M_Dimension_Essence
           - Enchant: Expert_Fighter4
             Upgrade: Expert_Fighter5
             Materials:
-              - Material: GH_Cursed_Crystal
+              - Material: Fate_Fragment
                 Amount: 250
-              - Material: GH_Cursed_Gemstone
+              - Material: Sin_Fragment
                 Amount: 250
               - Material: M_Dimension_Essence
       - Slot: 2
@@ -29872,13 +30050,17 @@ Body:
           - Item: Justice_Vigor_ABC
             Price: 5000000
             Materials:
-              - Material: GH_Cursed_Crystal
+              - Material: Fate_Fragment
+                Amount: 50
+              - Material: Sin_Fragment
                 Amount: 50
               - Material: Enchant_Ticket
           - Item: Injustice_Vigor_ABC
             Price: 5000000
             Materials:
-              - Material: GH_Cursed_Crystal
+              - Material: Fate_Fragment
+                Amount: 50
+              - Material: Sin_Fragment
                 Amount: 50
               - Material: Enchant_Ticket
   - Id: 130
@@ -29888,9 +30070,9 @@ Body:
       Chance: 90000
       Price: 1500000
       Materials:
-        - Material: GH_Cursed_Crystal
+        - Material: Fate_Fragment
           Amount: 30
-        - Material: GH_Cursed_Gemstone
+        - Material: Sin_Fragment
           Amount: 30
     Order:
       - Slot: 3
@@ -29901,112 +30083,122 @@ Body:
           - Item: Attack_Delay_2
             Price: 1000000
             Materials:
-              - Material: GH_Cursed_Gemstone
+              - Material: Fate_Fragment
+                Amount: 50
+              - Material: Sin_Fragment
                 Amount: 50
               - Material: M_Dimension_Essence
           - Item: Spell5
             Price: 1000000
             Materials:
-              - Material: GH_Cursed_Gemstone
+              - Material: Fate_Fragment
+                Amount: 50
+              - Material: Sin_Fragment
                 Amount: 50
               - Material: M_Dimension_Essence
           - Item: Expert_Archer3
             Price: 1000000
             Materials:
-              - Material: GH_Cursed_Gemstone
+              - Material: Fate_Fragment
+                Amount: 50
+              - Material: Sin_Fragment
                 Amount: 50
               - Material: M_Dimension_Essence
           - Item: Expert_Magician3
             Price: 1000000
             Materials:
-              - Material: GH_Cursed_Gemstone
+              - Material: Fate_Fragment
+                Amount: 50
+              - Material: Sin_Fragment
                 Amount: 50
               - Material: M_Dimension_Essence
           - Item: Expert_Fighter3
             Price: 1000000
             Materials:
-              - Material: GH_Cursed_Gemstone
+              - Material: Fate_Fragment
+                Amount: 50
+              - Material: Sin_Fragment
                 Amount: 50
               - Material: M_Dimension_Essence
         Upgrades:
           - Enchant: Attack_Delay_2
             Upgrade: Attack_Delay_3
             Materials:
-              - Material: GH_Cursed_Crystal
+              - Material: Fate_Fragment
                 Amount: 100
-              - Material: GH_Cursed_Gemstone
+              - Material: Sin_Fragment
                 Amount: 100
               - Material: M_Dimension_Essence
           - Enchant: Spell5
             Upgrade: Spell6
             Materials:
-              - Material: GH_Cursed_Crystal
+              - Material: Fate_Fragment
                 Amount: 100
-              - Material: GH_Cursed_Gemstone
+              - Material: Sin_Fragment
                 Amount: 100
               - Material: M_Dimension_Essence
           - Enchant: Expert_Archer3
             Upgrade: Expert_Archer4
             Materials:
-              - Material: GH_Cursed_Crystal
+              - Material: Fate_Fragment
                 Amount: 100
-              - Material: GH_Cursed_Gemstone
+              - Material: Sin_Fragment
                 Amount: 100
               - Material: M_Dimension_Essence
           - Enchant: Expert_Magician3
             Upgrade: Expert_Magician4
             Materials:
-              - Material: GH_Cursed_Crystal
+              - Material: Fate_Fragment
                 Amount: 100
-              - Material: GH_Cursed_Gemstone
+              - Material: Sin_Fragment
                 Amount: 100
               - Material: M_Dimension_Essence
           - Enchant: Expert_Fighter3
             Upgrade: Expert_Fighter4
             Materials:
-              - Material: GH_Cursed_Crystal
+              - Material: Fate_Fragment
                 Amount: 100
-              - Material: GH_Cursed_Gemstone
+              - Material: Sin_Fragment
                 Amount: 100
               - Material: M_Dimension_Essence
           - Enchant: Attack_Delay_3
             Upgrade: Attack_Delay_4
             Materials:
-              - Material: GH_Cursed_Crystal
+              - Material: Fate_Fragment
                 Amount: 250
-              - Material: GH_Cursed_Gemstone
+              - Material: Sin_Fragment
                 Amount: 250
               - Material: M_Dimension_Essence
           - Enchant: Spell6
             Upgrade: Spell7
             Materials:
-              - Material: GH_Cursed_Crystal
+              - Material: Fate_Fragment
                 Amount: 250
-              - Material: GH_Cursed_Gemstone
+              - Material: Sin_Fragment
                 Amount: 250
               - Material: M_Dimension_Essence
           - Enchant: Expert_Archer4
             Upgrade: Expert_Archer5
             Materials:
-              - Material: GH_Cursed_Crystal
+              - Material: Fate_Fragment
                 Amount: 250
-              - Material: GH_Cursed_Gemstone
+              - Material: Sin_Fragment
                 Amount: 250
               - Material: M_Dimension_Essence
           - Enchant: Expert_Magician4
             Upgrade: Expert_Magician5
             Materials:
-              - Material: GH_Cursed_Crystal
+              - Material: Fate_Fragment
                 Amount: 250
-              - Material: GH_Cursed_Gemstone
+              - Material: Sin_Fragment
                 Amount: 250
               - Material: M_Dimension_Essence
           - Enchant: Expert_Fighter4
             Upgrade: Expert_Fighter5
             Materials:
-              - Material: GH_Cursed_Crystal
+              - Material: Fate_Fragment
                 Amount: 250
-              - Material: GH_Cursed_Gemstone
+              - Material: Sin_Fragment
                 Amount: 250
               - Material: M_Dimension_Essence
       - Slot: 2
@@ -30014,13 +30206,17 @@ Body:
           - Item: Justice_Vigor_TR
             Price: 5000000
             Materials:
-              - Material: GH_Cursed_Crystal
+              - Material: Fate_Fragment
+                Amount: 50
+              - Material: Sin_Fragment
                 Amount: 50
               - Material: Enchant_Ticket
           - Item: Injustice_Vigor_TR
             Price: 5000000
             Materials:
-              - Material: GH_Cursed_Crystal
+              - Material: Fate_Fragment
+                Amount: 50
+              - Material: Sin_Fragment
                 Amount: 50
               - Material: Enchant_Ticket
   - Id: 131
@@ -30030,9 +30226,9 @@ Body:
       Chance: 90000
       Price: 1500000
       Materials:
-        - Material: GH_Cursed_Crystal
+        - Material: Fate_Fragment
           Amount: 30
-        - Material: GH_Cursed_Gemstone
+        - Material: Sin_Fragment
           Amount: 30
     Order:
       - Slot: 3
@@ -30043,112 +30239,122 @@ Body:
           - Item: Attack_Delay_2
             Price: 1000000
             Materials:
-              - Material: GH_Cursed_Gemstone
+              - Material: Fate_Fragment
+                Amount: 50
+              - Material: Sin_Fragment
                 Amount: 50
               - Material: M_Dimension_Essence
           - Item: Spell5
             Price: 1000000
             Materials:
-              - Material: GH_Cursed_Gemstone
+              - Material: Fate_Fragment
+                Amount: 50
+              - Material: Sin_Fragment
                 Amount: 50
               - Material: M_Dimension_Essence
           - Item: Expert_Archer3
             Price: 1000000
             Materials:
-              - Material: GH_Cursed_Gemstone
+              - Material: Fate_Fragment
+                Amount: 50
+              - Material: Sin_Fragment
                 Amount: 50
               - Material: M_Dimension_Essence
           - Item: Expert_Magician3
             Price: 1000000
             Materials:
-              - Material: GH_Cursed_Gemstone
+              - Material: Fate_Fragment
+                Amount: 50
+              - Material: Sin_Fragment
                 Amount: 50
               - Material: M_Dimension_Essence
           - Item: Expert_Fighter3
             Price: 1000000
             Materials:
-              - Material: GH_Cursed_Gemstone
+              - Material: Fate_Fragment
+                Amount: 50
+              - Material: Sin_Fragment
                 Amount: 50
               - Material: M_Dimension_Essence
         Upgrades:
           - Enchant: Attack_Delay_2
             Upgrade: Attack_Delay_3
             Materials:
-              - Material: GH_Cursed_Crystal
+              - Material: Fate_Fragment
                 Amount: 100
-              - Material: GH_Cursed_Gemstone
+              - Material: Sin_Fragment
                 Amount: 100
               - Material: M_Dimension_Essence
           - Enchant: Spell5
             Upgrade: Spell6
             Materials:
-              - Material: GH_Cursed_Crystal
+              - Material: Fate_Fragment
                 Amount: 100
-              - Material: GH_Cursed_Gemstone
+              - Material: Sin_Fragment
                 Amount: 100
               - Material: M_Dimension_Essence
           - Enchant: Expert_Archer3
             Upgrade: Expert_Archer4
             Materials:
-              - Material: GH_Cursed_Crystal
+              - Material: Fate_Fragment
                 Amount: 100
-              - Material: GH_Cursed_Gemstone
+              - Material: Sin_Fragment
                 Amount: 100
               - Material: M_Dimension_Essence
           - Enchant: Expert_Magician3
             Upgrade: Expert_Magician4
             Materials:
-              - Material: GH_Cursed_Crystal
+              - Material: Fate_Fragment
                 Amount: 100
-              - Material: GH_Cursed_Gemstone
+              - Material: Sin_Fragment
                 Amount: 100
               - Material: M_Dimension_Essence
           - Enchant: Expert_Fighter3
             Upgrade: Expert_Fighter4
             Materials:
-              - Material: GH_Cursed_Crystal
+              - Material: Fate_Fragment
                 Amount: 100
-              - Material: GH_Cursed_Gemstone
+              - Material: Sin_Fragment
                 Amount: 100
               - Material: M_Dimension_Essence
           - Enchant: Attack_Delay_3
             Upgrade: Attack_Delay_4
             Materials:
-              - Material: GH_Cursed_Crystal
+              - Material: Fate_Fragment
                 Amount: 250
-              - Material: GH_Cursed_Gemstone
+              - Material: Sin_Fragment
                 Amount: 250
               - Material: M_Dimension_Essence
           - Enchant: Spell6
             Upgrade: Spell7
             Materials:
-              - Material: GH_Cursed_Crystal
+              - Material: Fate_Fragment
                 Amount: 250
-              - Material: GH_Cursed_Gemstone
+              - Material: Sin_Fragment
                 Amount: 250
               - Material: M_Dimension_Essence
           - Enchant: Expert_Archer4
             Upgrade: Expert_Archer5
             Materials:
-              - Material: GH_Cursed_Crystal
+              - Material: Fate_Fragment
                 Amount: 250
-              - Material: GH_Cursed_Gemstone
+              - Material: Sin_Fragment
                 Amount: 250
               - Material: M_Dimension_Essence
           - Enchant: Expert_Magician4
             Upgrade: Expert_Magician5
             Materials:
-              - Material: GH_Cursed_Crystal
+              - Material: Fate_Fragment
                 Amount: 250
-              - Material: GH_Cursed_Gemstone
+              - Material: Sin_Fragment
                 Amount: 250
               - Material: M_Dimension_Essence
           - Enchant: Expert_Fighter4
             Upgrade: Expert_Fighter5
             Materials:
-              - Material: GH_Cursed_Crystal
+              - Material: Fate_Fragment
                 Amount: 250
-              - Material: GH_Cursed_Gemstone
+              - Material: Sin_Fragment
                 Amount: 250
               - Material: M_Dimension_Essence
       - Slot: 2
@@ -30156,13 +30362,17 @@ Body:
           - Item: Justice_Vigor_HN
             Price: 5000000
             Materials:
-              - Material: GH_Cursed_Crystal
+              - Material: Fate_Fragment
+                Amount: 50
+              - Material: Sin_Fragment
                 Amount: 50
               - Material: Enchant_Ticket
           - Item: Injustice_Vigor_HN
             Price: 5000000
             Materials:
-              - Material: GH_Cursed_Crystal
+              - Material: Fate_Fragment
+                Amount: 50
+              - Material: Sin_Fragment
                 Amount: 50
               - Material: Enchant_Ticket
 #  - Id: 132  # Skipped (some fields are not supported on rAthena for now)
@@ -31092,9 +31302,9 @@ Body:
       Chance: 90000
       Price: 1500000
       Materials:
-        - Material: GH_Cursed_Crystal
+        - Material: Fate_Fragment
           Amount: 30
-        - Material: GH_Cursed_Gemstone
+        - Material: Sin_Fragment
           Amount: 30
     Order:
       - Slot: 3
@@ -31105,112 +31315,122 @@ Body:
           - Item: Attack_Delay_2
             Price: 1000000
             Materials:
-              - Material: GH_Cursed_Gemstone
+              - Material: Fate_Fragment
+                Amount: 50
+              - Material: Sin_Fragment
                 Amount: 50
               - Material: M_Dimension_Essence
           - Item: Spell5
             Price: 1000000
             Materials:
-              - Material: GH_Cursed_Gemstone
+              - Material: Fate_Fragment
+                Amount: 50
+              - Material: Sin_Fragment
                 Amount: 50
               - Material: M_Dimension_Essence
           - Item: Expert_Archer3
             Price: 1000000
             Materials:
-              - Material: GH_Cursed_Gemstone
+              - Material: Fate_Fragment
+                Amount: 50
+              - Material: Sin_Fragment
                 Amount: 50
               - Material: M_Dimension_Essence
           - Item: Expert_Magician3
             Price: 1000000
             Materials:
-              - Material: GH_Cursed_Gemstone
+              - Material: Fate_Fragment
+                Amount: 50
+              - Material: Sin_Fragment
                 Amount: 50
               - Material: M_Dimension_Essence
           - Item: Expert_Fighter3
             Price: 1000000
             Materials:
-              - Material: GH_Cursed_Gemstone
+              - Material: Fate_Fragment
+                Amount: 50
+              - Material: Sin_Fragment
                 Amount: 50
               - Material: M_Dimension_Essence
         Upgrades:
           - Enchant: Attack_Delay_2
             Upgrade: Attack_Delay_3
             Materials:
-              - Material: GH_Cursed_Crystal
+              - Material: Fate_Fragment
                 Amount: 100
-              - Material: GH_Cursed_Gemstone
+              - Material: Sin_Fragment
                 Amount: 100
               - Material: M_Dimension_Essence
           - Enchant: Spell5
             Upgrade: Spell6
             Materials:
-              - Material: GH_Cursed_Crystal
+              - Material: Fate_Fragment
                 Amount: 100
-              - Material: GH_Cursed_Gemstone
+              - Material: Sin_Fragment
                 Amount: 100
               - Material: M_Dimension_Essence
           - Enchant: Expert_Archer3
             Upgrade: Expert_Archer4
             Materials:
-              - Material: GH_Cursed_Crystal
+              - Material: Fate_Fragment
                 Amount: 100
-              - Material: GH_Cursed_Gemstone
+              - Material: Sin_Fragment
                 Amount: 100
               - Material: M_Dimension_Essence
           - Enchant: Expert_Magician3
             Upgrade: Expert_Magician4
             Materials:
-              - Material: GH_Cursed_Crystal
+              - Material: Fate_Fragment
                 Amount: 100
-              - Material: GH_Cursed_Gemstone
+              - Material: Sin_Fragment
                 Amount: 100
               - Material: M_Dimension_Essence
           - Enchant: Expert_Fighter3
             Upgrade: Expert_Fighter4
             Materials:
-              - Material: GH_Cursed_Crystal
+              - Material: Fate_Fragment
                 Amount: 100
-              - Material: GH_Cursed_Gemstone
+              - Material: Sin_Fragment
                 Amount: 100
               - Material: M_Dimension_Essence
           - Enchant: Attack_Delay_3
             Upgrade: Attack_Delay_4
             Materials:
-              - Material: GH_Cursed_Crystal
+              - Material: Fate_Fragment
                 Amount: 250
-              - Material: GH_Cursed_Gemstone
+              - Material: Sin_Fragment
                 Amount: 250
               - Material: M_Dimension_Essence
           - Enchant: Spell6
             Upgrade: Spell7
             Materials:
-              - Material: GH_Cursed_Crystal
+              - Material: Fate_Fragment
                 Amount: 250
-              - Material: GH_Cursed_Gemstone
+              - Material: Sin_Fragment
                 Amount: 250
               - Material: M_Dimension_Essence
           - Enchant: Expert_Archer4
             Upgrade: Expert_Archer5
             Materials:
-              - Material: GH_Cursed_Crystal
+              - Material: Fate_Fragment
                 Amount: 250
-              - Material: GH_Cursed_Gemstone
+              - Material: Sin_Fragment
                 Amount: 250
               - Material: M_Dimension_Essence
           - Enchant: Expert_Magician4
             Upgrade: Expert_Magician5
             Materials:
-              - Material: GH_Cursed_Crystal
+              - Material: Fate_Fragment
                 Amount: 250
-              - Material: GH_Cursed_Gemstone
+              - Material: Sin_Fragment
                 Amount: 250
               - Material: M_Dimension_Essence
           - Enchant: Expert_Fighter4
             Upgrade: Expert_Fighter5
             Materials:
-              - Material: GH_Cursed_Crystal
+              - Material: Fate_Fragment
                 Amount: 250
-              - Material: GH_Cursed_Gemstone
+              - Material: Sin_Fragment
                 Amount: 250
               - Material: M_Dimension_Essence
       - Slot: 2
@@ -31218,13 +31438,17 @@ Body:
           - Item: Justice_Vigor_IG
             Price: 5000000
             Materials:
-              - Material: GH_Cursed_Crystal
+              - Material: Fate_Fragment
+                Amount: 50
+              - Material: Sin_Fragment
                 Amount: 50
               - Material: Enchant_Ticket
           - Item: Injustice_Vigor_IG
             Price: 5000000
             Materials:
-              - Material: GH_Cursed_Crystal
+              - Material: Fate_Fragment
+                Amount: 50
+              - Material: Sin_Fragment
                 Amount: 50
               - Material: Enchant_Ticket
   - Id: 135
@@ -31234,9 +31458,9 @@ Body:
       Chance: 90000
       Price: 1500000
       Materials:
-        - Material: GH_Cursed_Crystal
+        - Material: Fate_Fragment
           Amount: 30
-        - Material: GH_Cursed_Gemstone
+        - Material: Sin_Fragment
           Amount: 30
     Order:
       - Slot: 3
@@ -31247,112 +31471,122 @@ Body:
           - Item: Attack_Delay_2
             Price: 1000000
             Materials:
-              - Material: GH_Cursed_Gemstone
+              - Material: Fate_Fragment
+                Amount: 50
+              - Material: Sin_Fragment
                 Amount: 50
               - Material: M_Dimension_Essence
           - Item: Spell5
             Price: 1000000
             Materials:
-              - Material: GH_Cursed_Gemstone
+              - Material: Fate_Fragment
+                Amount: 50
+              - Material: Sin_Fragment
                 Amount: 50
               - Material: M_Dimension_Essence
           - Item: Expert_Archer3
             Price: 1000000
             Materials:
-              - Material: GH_Cursed_Gemstone
+              - Material: Fate_Fragment
+                Amount: 50
+              - Material: Sin_Fragment
                 Amount: 50
               - Material: M_Dimension_Essence
           - Item: Expert_Magician3
             Price: 1000000
             Materials:
-              - Material: GH_Cursed_Gemstone
+              - Material: Fate_Fragment
+                Amount: 50
+              - Material: Sin_Fragment
                 Amount: 50
               - Material: M_Dimension_Essence
           - Item: Expert_Fighter3
             Price: 1000000
             Materials:
-              - Material: GH_Cursed_Gemstone
+              - Material: Fate_Fragment
+                Amount: 50
+              - Material: Sin_Fragment
                 Amount: 50
               - Material: M_Dimension_Essence
         Upgrades:
           - Enchant: Attack_Delay_2
             Upgrade: Attack_Delay_3
             Materials:
-              - Material: GH_Cursed_Crystal
+              - Material: Fate_Fragment
                 Amount: 100
-              - Material: GH_Cursed_Gemstone
+              - Material: Sin_Fragment
                 Amount: 100
               - Material: M_Dimension_Essence
           - Enchant: Spell5
             Upgrade: Spell6
             Materials:
-              - Material: GH_Cursed_Crystal
+              - Material: Fate_Fragment
                 Amount: 100
-              - Material: GH_Cursed_Gemstone
+              - Material: Sin_Fragment
                 Amount: 100
               - Material: M_Dimension_Essence
           - Enchant: Expert_Archer3
             Upgrade: Expert_Archer4
             Materials:
-              - Material: GH_Cursed_Crystal
+              - Material: Fate_Fragment
                 Amount: 100
-              - Material: GH_Cursed_Gemstone
+              - Material: Sin_Fragment
                 Amount: 100
               - Material: M_Dimension_Essence
           - Enchant: Expert_Magician3
             Upgrade: Expert_Magician4
             Materials:
-              - Material: GH_Cursed_Crystal
+              - Material: Fate_Fragment
                 Amount: 100
-              - Material: GH_Cursed_Gemstone
+              - Material: Sin_Fragment
                 Amount: 100
               - Material: M_Dimension_Essence
           - Enchant: Expert_Fighter3
             Upgrade: Expert_Fighter4
             Materials:
-              - Material: GH_Cursed_Crystal
+              - Material: Fate_Fragment
                 Amount: 100
-              - Material: GH_Cursed_Gemstone
+              - Material: Sin_Fragment
                 Amount: 100
               - Material: M_Dimension_Essence
           - Enchant: Attack_Delay_3
             Upgrade: Attack_Delay_4
             Materials:
-              - Material: GH_Cursed_Crystal
+              - Material: Fate_Fragment
                 Amount: 250
-              - Material: GH_Cursed_Gemstone
+              - Material: Sin_Fragment
                 Amount: 250
               - Material: M_Dimension_Essence
           - Enchant: Spell6
             Upgrade: Spell7
             Materials:
-              - Material: GH_Cursed_Crystal
+              - Material: Fate_Fragment
                 Amount: 250
-              - Material: GH_Cursed_Gemstone
+              - Material: Sin_Fragment
                 Amount: 250
               - Material: M_Dimension_Essence
           - Enchant: Expert_Archer4
             Upgrade: Expert_Archer5
             Materials:
-              - Material: GH_Cursed_Crystal
+              - Material: Fate_Fragment
                 Amount: 250
-              - Material: GH_Cursed_Gemstone
+              - Material: Sin_Fragment
                 Amount: 250
               - Material: M_Dimension_Essence
           - Enchant: Expert_Magician4
             Upgrade: Expert_Magician5
             Materials:
-              - Material: GH_Cursed_Crystal
+              - Material: Fate_Fragment
                 Amount: 250
-              - Material: GH_Cursed_Gemstone
+              - Material: Sin_Fragment
                 Amount: 250
               - Material: M_Dimension_Essence
           - Enchant: Expert_Fighter4
             Upgrade: Expert_Fighter5
             Materials:
-              - Material: GH_Cursed_Crystal
+              - Material: Fate_Fragment
                 Amount: 250
-              - Material: GH_Cursed_Gemstone
+              - Material: Sin_Fragment
                 Amount: 250
               - Material: M_Dimension_Essence
       - Slot: 2
@@ -31360,13 +31594,17 @@ Body:
           - Item: Justice_Vigor_AG
             Price: 5000000
             Materials:
-              - Material: GH_Cursed_Crystal
+              - Material: Fate_Fragment
+                Amount: 50
+              - Material: Sin_Fragment
                 Amount: 50
               - Material: Enchant_Ticket
           - Item: Injustice_Vigor_AG
             Price: 5000000
             Materials:
-              - Material: GH_Cursed_Crystal
+              - Material: Fate_Fragment
+                Amount: 50
+              - Material: Sin_Fragment
                 Amount: 50
               - Material: Enchant_Ticket
   - Id: 136
@@ -31376,9 +31614,9 @@ Body:
       Chance: 90000
       Price: 1500000
       Materials:
-        - Material: GH_Cursed_Crystal
+        - Material: Fate_Fragment
           Amount: 30
-        - Material: GH_Cursed_Gemstone
+        - Material: Sin_Fragment
           Amount: 30
     Order:
       - Slot: 3
@@ -31389,112 +31627,122 @@ Body:
           - Item: Attack_Delay_2
             Price: 1000000
             Materials:
-              - Material: GH_Cursed_Gemstone
+              - Material: Fate_Fragment
+                Amount: 50
+              - Material: Sin_Fragment
                 Amount: 50
               - Material: M_Dimension_Essence
           - Item: Spell5
             Price: 1000000
             Materials:
-              - Material: GH_Cursed_Gemstone
+              - Material: Fate_Fragment
+                Amount: 50
+              - Material: Sin_Fragment
                 Amount: 50
               - Material: M_Dimension_Essence
           - Item: Expert_Archer3
             Price: 1000000
             Materials:
-              - Material: GH_Cursed_Gemstone
+              - Material: Fate_Fragment
+                Amount: 50
+              - Material: Sin_Fragment
                 Amount: 50
               - Material: M_Dimension_Essence
           - Item: Expert_Magician3
             Price: 1000000
             Materials:
-              - Material: GH_Cursed_Gemstone
+              - Material: Fate_Fragment
+                Amount: 50
+              - Material: Sin_Fragment
                 Amount: 50
               - Material: M_Dimension_Essence
           - Item: Expert_Fighter3
             Price: 1000000
             Materials:
-              - Material: GH_Cursed_Gemstone
+              - Material: Fate_Fragment
+                Amount: 50
+              - Material: Sin_Fragment
                 Amount: 50
               - Material: M_Dimension_Essence
         Upgrades:
           - Enchant: Attack_Delay_2
             Upgrade: Attack_Delay_3
             Materials:
-              - Material: GH_Cursed_Crystal
+              - Material: Fate_Fragment
                 Amount: 100
-              - Material: GH_Cursed_Gemstone
+              - Material: Sin_Fragment
                 Amount: 100
               - Material: M_Dimension_Essence
           - Enchant: Spell5
             Upgrade: Spell6
             Materials:
-              - Material: GH_Cursed_Crystal
+              - Material: Fate_Fragment
                 Amount: 100
-              - Material: GH_Cursed_Gemstone
+              - Material: Sin_Fragment
                 Amount: 100
               - Material: M_Dimension_Essence
           - Enchant: Expert_Archer3
             Upgrade: Expert_Archer4
             Materials:
-              - Material: GH_Cursed_Crystal
+              - Material: Fate_Fragment
                 Amount: 100
-              - Material: GH_Cursed_Gemstone
+              - Material: Sin_Fragment
                 Amount: 100
               - Material: M_Dimension_Essence
           - Enchant: Expert_Magician3
             Upgrade: Expert_Magician4
             Materials:
-              - Material: GH_Cursed_Crystal
+              - Material: Fate_Fragment
                 Amount: 100
-              - Material: GH_Cursed_Gemstone
+              - Material: Sin_Fragment
                 Amount: 100
               - Material: M_Dimension_Essence
           - Enchant: Expert_Fighter3
             Upgrade: Expert_Fighter4
             Materials:
-              - Material: GH_Cursed_Crystal
+              - Material: Fate_Fragment
                 Amount: 100
-              - Material: GH_Cursed_Gemstone
+              - Material: Sin_Fragment
                 Amount: 100
               - Material: M_Dimension_Essence
           - Enchant: Attack_Delay_3
             Upgrade: Attack_Delay_4
             Materials:
-              - Material: GH_Cursed_Crystal
+              - Material: Fate_Fragment
                 Amount: 250
-              - Material: GH_Cursed_Gemstone
+              - Material: Sin_Fragment
                 Amount: 250
               - Material: M_Dimension_Essence
           - Enchant: Spell6
             Upgrade: Spell7
             Materials:
-              - Material: GH_Cursed_Crystal
+              - Material: Fate_Fragment
                 Amount: 250
-              - Material: GH_Cursed_Gemstone
+              - Material: Sin_Fragment
                 Amount: 250
               - Material: M_Dimension_Essence
           - Enchant: Expert_Archer4
             Upgrade: Expert_Archer5
             Materials:
-              - Material: GH_Cursed_Crystal
+              - Material: Fate_Fragment
                 Amount: 250
-              - Material: GH_Cursed_Gemstone
+              - Material: Sin_Fragment
                 Amount: 250
               - Material: M_Dimension_Essence
           - Enchant: Expert_Magician4
             Upgrade: Expert_Magician5
             Materials:
-              - Material: GH_Cursed_Crystal
+              - Material: Fate_Fragment
                 Amount: 250
-              - Material: GH_Cursed_Gemstone
+              - Material: Sin_Fragment
                 Amount: 250
               - Material: M_Dimension_Essence
           - Enchant: Expert_Fighter4
             Upgrade: Expert_Fighter5
             Materials:
-              - Material: GH_Cursed_Crystal
+              - Material: Fate_Fragment
                 Amount: 250
-              - Material: GH_Cursed_Gemstone
+              - Material: Sin_Fragment
                 Amount: 250
               - Material: M_Dimension_Essence
       - Slot: 2
@@ -31502,13 +31750,17 @@ Body:
           - Item: Justice_Vigor_NW
             Price: 5000000
             Materials:
-              - Material: GH_Cursed_Crystal
+              - Material: Fate_Fragment
+                Amount: 50
+              - Material: Sin_Fragment
                 Amount: 50
               - Material: Enchant_Ticket
           - Item: Injustice_Vigor_NW
             Price: 5000000
             Materials:
-              - Material: GH_Cursed_Crystal
+              - Material: Fate_Fragment
+                Amount: 50
+              - Material: Sin_Fragment
                 Amount: 50
               - Material: Enchant_Ticket
   - Id: 137
@@ -38795,6 +39047,103 @@ Body:
                 Chance: 300
               - Item: Nebula_Of_HP3
                 Chance: 300
+        Upgrades:
+          - Enchant: Nebula_Of_FS2
+            Upgrade: Nebula_Of_FS3
+            Price: 15000000
+            Materials:
+              - Material: Pow_Meteor_Extract
+                Amount: 12
+              - Material: Con_Meteor_Extract
+                Amount: 8
+              - Material: Frontier_Extract_BL
+                Amount: 8
+              - Material: Frontier_Extract_YL
+                Amount: 8
+              - Material: Frontier_Extract_GR
+                Amount: 8
+              - Material: Frontier_Extract_BK
+                Amount: 8
+          - Enchant: Nebula_Of_EA2
+            Upgrade: Nebula_Of_EA3
+            Price: 15000000
+            Materials:
+              - Material: Con_Meteor_Extract
+                Amount: 12
+              - Material: Sta_Meteor_Extract
+                Amount: 8
+              - Material: Frontier_Extract_BL
+                Amount: 8
+              - Material: Frontier_Extract_YL
+                Amount: 8
+              - Material: Frontier_Extract_GR
+                Amount: 8
+              - Material: Frontier_Extract_BK
+                Amount: 8
+          - Enchant: Nebula_Of_SH2
+            Upgrade: Nebula_Of_SH3
+            Price: 15000000
+            Materials:
+              - Material: Crt_Meteor_Extract
+                Amount: 12
+              - Material: Wis_Meteor_Extract
+                Amount: 8
+              - Material: Frontier_Extract_BL
+                Amount: 8
+              - Material: Frontier_Extract_YL
+                Amount: 8
+              - Material: Frontier_Extract_GR
+                Amount: 8
+              - Material: Frontier_Extract_BK
+                Amount: 8
+          - Enchant: Nebula_Of_SP2
+            Upgrade: Nebula_Of_SP3
+            Price: 15000000
+            Materials:
+              - Material: Spl_Meteor_Extract
+                Amount: 12
+              - Material: Wis_Meteor_Extract
+                Amount: 8
+              - Material: Frontier_Extract_BL
+                Amount: 8
+              - Material: Frontier_Extract_YL
+                Amount: 8
+              - Material: Frontier_Extract_GR
+                Amount: 8
+              - Material: Frontier_Extract_BK
+                Amount: 8
+          - Enchant: Nebula_Of_HL2
+            Upgrade: Nebula_Of_HL3
+            Price: 15000000
+            Materials:
+              - Material: Wis_Meteor_Extract
+                Amount: 12
+              - Material: Sta_Meteor_Extract
+                Amount: 8
+              - Material: Frontier_Extract_BL
+                Amount: 8
+              - Material: Frontier_Extract_YL
+                Amount: 8
+              - Material: Frontier_Extract_GR
+                Amount: 8
+              - Material: Frontier_Extract_BK
+                Amount: 8
+          - Enchant: Nebula_Of_HP2
+            Upgrade: Nebula_Of_HP3
+            Price: 15000000
+            Materials:
+              - Material: Sta_Meteor_Extract
+                Amount: 12
+              - Material: Con_Meteor_Extract
+                Amount: 8
+              - Material: Frontier_Extract_BL
+                Amount: 8
+              - Material: Frontier_Extract_YL
+                Amount: 8
+              - Material: Frontier_Extract_GR
+                Amount: 8
+              - Material: Frontier_Extract_BK
+                Amount: 8
       - Slot: 1
         Price: 1000000
         Materials:
@@ -39001,3 +39350,481 @@ Body:
                 Chance: 300
               - Item: Star_Cluster_Of_Wis3
                 Chance: 300
+        Upgrades:
+          - Enchant: Star_Cluster_Of_Pow2
+            Upgrade: Star_Cluster_Of_Pow3
+            Price: 30000000
+            Materials:
+              - Material: Pow_Meteor_Extract
+                Amount: 15
+              - Material: Con_Meteor_Extract
+                Amount: 10
+              - Material: Frontier_Extract_BL
+                Amount: 12
+              - Material: Frontier_Extract_YL
+                Amount: 12
+              - Material: Frontier_Extract_GR
+                Amount: 12
+              - Material: Frontier_Extract_BK
+                Amount: 12
+          - Enchant: Star_Cluster_Of_Sta2
+            Upgrade: Star_Cluster_Of_Sta3
+            Price: 30000000
+            Materials:
+              - Material: Sta_Meteor_Extract
+                Amount: 15
+              - Material: Con_Meteor_Extract
+                Amount: 10
+              - Material: Frontier_Extract_BL
+                Amount: 12
+              - Material: Frontier_Extract_YL
+                Amount: 12
+              - Material: Frontier_Extract_GR
+                Amount: 12
+              - Material: Frontier_Extract_BK
+                Amount: 12
+          - Enchant: Star_Cluster_Of_Con2
+            Upgrade: Star_Cluster_Of_Con3
+            Price: 30000000
+            Materials:
+              - Material: Con_Meteor_Extract
+                Amount: 15
+              - Material: Sta_Meteor_Extract
+                Amount: 10
+              - Material: Frontier_Extract_BL
+                Amount: 12
+              - Material: Frontier_Extract_YL
+                Amount: 12
+              - Material: Frontier_Extract_GR
+                Amount: 12
+              - Material: Frontier_Extract_BK
+                Amount: 12
+          - Enchant: Star_Cluster_Of_Crt2
+            Upgrade: Star_Cluster_Of_Crt3
+            Price: 30000000
+            Materials:
+              - Material: Crt_Meteor_Extract
+                Amount: 15
+              - Material: Wis_Meteor_Extract
+                Amount: 10
+              - Material: Frontier_Extract_BL
+                Amount: 12
+              - Material: Frontier_Extract_YL
+                Amount: 12
+              - Material: Frontier_Extract_GR
+                Amount: 12
+              - Material: Frontier_Extract_BK
+                Amount: 12
+          - Enchant: Star_Cluster_Of_Spl2
+            Upgrade: Star_Cluster_Of_Spl3
+            Price: 30000000
+            Materials:
+              - Material: Spl_Meteor_Extract
+                Amount: 15
+              - Material: Wis_Meteor_Extract
+                Amount: 10
+              - Material: Frontier_Extract_BL
+                Amount: 12
+              - Material: Frontier_Extract_YL
+                Amount: 12
+              - Material: Frontier_Extract_GR
+                Amount: 12
+              - Material: Frontier_Extract_BK
+                Amount: 12
+          - Enchant: Star_Cluster_Of_Wis2
+            Upgrade: Star_Cluster_Of_Wis3
+            Price: 30000000
+            Materials:
+              - Material: Wis_Meteor_Extract
+                Amount: 15
+              - Material: Sta_Meteor_Extract
+                Amount: 10
+              - Material: Frontier_Extract_BL
+                Amount: 12
+              - Material: Frontier_Extract_YL
+                Amount: 12
+              - Material: Frontier_Extract_GR
+                Amount: 12
+              - Material: Frontier_Extract_BK
+                Amount: 12
+  - Id: 1004
+    TargetItems:
+      6th_Anni_Ring_TH: true
+      6th_Anni_Ring_LT_TH: true
+    MinimumRefine: 0
+    Reset:
+      Chance: 80000
+      Price: 0
+      Materials:
+        - Material: Silvervine
+          Amount: 2
+    Order:
+      - Slot: 3
+      - Slot: 2
+      - Slot: 1
+    Slots:
+      - Slot: 3
+        Price: 1000000
+        Materials:
+          - Material: Instance_Emblem
+            Amount: 2
+        Enchants:
+          - Enchantgrade: 0
+            Items:
+              - Item: Ba_Pow1
+                Chance: 16000
+              - Item: Ba_Pow5
+                Chance: 9000
+              - Item: Ba_Con1
+                Chance: 16000
+              - Item: Ba_Con5
+                Chance: 9000
+              - Item: Ba_Crt1
+                Chance: 16000
+              - Item: Ba_Crt5
+                Chance: 9000
+              - Item: Ba_Spl1
+                Chance: 16000
+              - Item: Ba_Spl5
+                Chance: 9000
+          - Enchantgrade: 1
+            Items:
+              - Item: Ba_Pow1
+                Chance: 16000
+              - Item: Ba_Pow5
+                Chance: 9000
+              - Item: Ba_Con1
+                Chance: 16000
+              - Item: Ba_Con5
+                Chance: 9000
+              - Item: Ba_Crt1
+                Chance: 16000
+              - Item: Ba_Crt5
+                Chance: 9000
+              - Item: Ba_Spl1
+                Chance: 16000
+              - Item: Ba_Spl5
+                Chance: 9000
+          - Enchantgrade: 2
+            Items:
+              - Item: Ba_Pow1
+                Chance: 16000
+              - Item: Ba_Pow5
+                Chance: 9000
+              - Item: Ba_Con1
+                Chance: 16000
+              - Item: Ba_Con5
+                Chance: 9000
+              - Item: Ba_Crt1
+                Chance: 16000
+              - Item: Ba_Crt5
+                Chance: 9000
+              - Item: Ba_Spl1
+                Chance: 16000
+              - Item: Ba_Spl5
+                Chance: 9000
+          - Enchantgrade: 3
+            Items:
+              - Item: Ba_Pow1
+                Chance: 16000
+              - Item: Ba_Pow5
+                Chance: 9000
+              - Item: Ba_Con1
+                Chance: 16000
+              - Item: Ba_Con5
+                Chance: 9000
+              - Item: Ba_Crt1
+                Chance: 16000
+              - Item: Ba_Crt5
+                Chance: 9000
+              - Item: Ba_Spl1
+                Chance: 16000
+              - Item: Ba_Spl5
+                Chance: 9000
+          - Enchantgrade: 4
+            Items:
+              - Item: Ba_Pow1
+                Chance: 16000
+              - Item: Ba_Pow5
+                Chance: 9000
+              - Item: Ba_Con1
+                Chance: 16000
+              - Item: Ba_Con5
+                Chance: 9000
+              - Item: Ba_Crt1
+                Chance: 16000
+              - Item: Ba_Crt5
+                Chance: 9000
+              - Item: Ba_Spl1
+                Chance: 16000
+              - Item: Ba_Spl5
+                Chance: 9000
+      - Slot: 2
+        Price: 4000000
+        Materials:
+          - Material: Instance_Emblem
+            Amount: 3
+        Enchants:
+          - Enchantgrade: 0
+            Items:
+              - Item: Star_Of_Spirit1
+                Chance: 15000
+              - Item: Star_Of_Vital1
+                Chance: 15000
+              - Item: Star_Of_Spell1
+                Chance: 14000
+              - Item: Star_Of_Speed1
+                Chance: 14000
+              - Item: Star_Of_Sharp1
+                Chance: 14000
+              - Item: Star_Of_Mettle1
+                Chance: 14000
+              - Item: Star_Of_MasterArcher1
+                Chance: 14000
+          - Enchantgrade: 1
+            Items:
+              - Item: Star_Of_Spirit1
+                Chance: 15000
+              - Item: Star_Of_Vital1
+                Chance: 15000
+              - Item: Star_Of_Spell1
+                Chance: 14000
+              - Item: Star_Of_Speed1
+                Chance: 14000
+              - Item: Star_Of_Sharp1
+                Chance: 14000
+              - Item: Star_Of_Mettle1
+                Chance: 14000
+              - Item: Star_Of_MasterArcher1
+                Chance: 14000
+          - Enchantgrade: 2
+            Items:
+              - Item: Star_Of_Spirit1
+                Chance: 15000
+              - Item: Star_Of_Vital1
+                Chance: 15000
+              - Item: Star_Of_Spell1
+                Chance: 14000
+              - Item: Star_Of_Speed1
+                Chance: 14000
+              - Item: Star_Of_Sharp1
+                Chance: 14000
+              - Item: Star_Of_Mettle1
+                Chance: 14000
+              - Item: Star_Of_MasterArcher1
+                Chance: 14000
+          - Enchantgrade: 3
+            Items:
+              - Item: Star_Of_Spirit1
+                Chance: 15000
+              - Item: Star_Of_Vital1
+                Chance: 15000
+              - Item: Star_Of_Spell1
+                Chance: 14000
+              - Item: Star_Of_Speed1
+                Chance: 14000
+              - Item: Star_Of_Sharp1
+                Chance: 14000
+              - Item: Star_Of_Mettle1
+                Chance: 14000
+              - Item: Star_Of_MasterArcher1
+                Chance: 14000
+          - Enchantgrade: 4
+            Items:
+              - Item: Star_Of_Spirit1
+                Chance: 15000
+              - Item: Star_Of_Vital1
+                Chance: 15000
+              - Item: Star_Of_Spell1
+                Chance: 14000
+              - Item: Star_Of_Speed1
+                Chance: 14000
+              - Item: Star_Of_Sharp1
+                Chance: 14000
+              - Item: Star_Of_Mettle1
+                Chance: 14000
+              - Item: Star_Of_MasterArcher1
+                Chance: 14000
+        Upgrades:
+          - Enchant: Star_Of_Spirit1
+            Upgrade: Star_Of_Spirit2
+            Price: 10000000
+            Materials:
+              - Material: Instance_Emblem
+                Amount: 10
+          - Enchant: Star_Of_Spirit2
+            Upgrade: Star_Of_Spirit3
+            Price: 20000000
+            Materials:
+              - Material: Instance_Emblem
+                Amount: 20
+          - Enchant: Star_Of_Spirit3
+            Upgrade: Star_Of_Spirit4
+            Price: 30000000
+            Materials:
+              - Material: Instance_Emblem
+                Amount: 30
+          - Enchant: Star_Of_Spirit4
+            Upgrade: Star_Of_Spirit5
+            Price: 80000000
+            Materials:
+              - Material: Instance_Emblem
+                Amount: 40
+          - Enchant: Star_Of_Vital1
+            Upgrade: Star_Of_Vital2
+            Price: 10000000
+            Materials:
+              - Material: Instance_Emblem
+                Amount: 10
+          - Enchant: Star_Of_Vital2
+            Upgrade: Star_Of_Vital3
+            Price: 20000000
+            Materials:
+              - Material: Instance_Emblem
+                Amount: 20
+          - Enchant: Star_Of_Vital3
+            Upgrade: Star_Of_Vital4
+            Price: 30000000
+            Materials:
+              - Material: Instance_Emblem
+                Amount: 30
+          - Enchant: Star_Of_Vital4
+            Upgrade: Star_Of_Vital5
+            Price: 80000000
+            Materials:
+              - Material: Instance_Emblem
+                Amount: 40
+          - Enchant: Star_Of_Spell1
+            Upgrade: Star_Of_Spell2
+            Price: 10000000
+            Materials:
+              - Material: Instance_Emblem
+                Amount: 10
+          - Enchant: Star_Of_Spell2
+            Upgrade: Star_Of_Spell3
+            Price: 20000000
+            Materials:
+              - Material: Instance_Emblem
+                Amount: 20
+          - Enchant: Star_Of_Spell3
+            Upgrade: Star_Of_Spell4
+            Price: 30000000
+            Materials:
+              - Material: Instance_Emblem
+                Amount: 30
+          - Enchant: Star_Of_Spell4
+            Upgrade: Star_Of_Spell5
+            Price: 80000000
+            Materials:
+              - Material: Instance_Emblem
+                Amount: 40
+          - Enchant: Star_Of_Speed1
+            Upgrade: Star_Of_Speed2
+            Price: 10000000
+            Materials:
+              - Material: Instance_Emblem
+                Amount: 10
+          - Enchant: Star_Of_Speed2
+            Upgrade: Star_Of_Speed3
+            Price: 20000000
+            Materials:
+              - Material: Instance_Emblem
+                Amount: 20
+          - Enchant: Star_Of_Speed3
+            Upgrade: Star_Of_Speed4
+            Price: 30000000
+            Materials:
+              - Material: Instance_Emblem
+                Amount: 30
+          - Enchant: Star_Of_Speed4
+            Upgrade: Star_Of_Speed5
+            Price: 80000000
+            Materials:
+              - Material: Instance_Emblem
+                Amount: 40
+          - Enchant: Star_Of_Sharp1
+            Upgrade: Star_Of_Sharp2
+            Price: 10000000
+            Materials:
+              - Material: Instance_Emblem
+                Amount: 10
+          - Enchant: Star_Of_Sharp2
+            Upgrade: Star_Of_Sharp3
+            Price: 20000000
+            Materials:
+              - Material: Instance_Emblem
+                Amount: 20
+          - Enchant: Star_Of_Sharp3
+            Upgrade: Star_Of_Sharp4
+            Price: 30000000
+            Materials:
+              - Material: Instance_Emblem
+                Amount: 30
+          - Enchant: Star_Of_Sharp4
+            Upgrade: Star_Of_Sharp5
+            Price: 80000000
+            Materials:
+              - Material: Instance_Emblem
+                Amount: 40
+          - Enchant: Star_Of_MasterArcher1
+            Upgrade: Star_Of_MasterArcher2
+            Price: 10000000
+            Materials:
+              - Material: Instance_Emblem
+                Amount: 10
+          - Enchant: Star_Of_MasterArcher2
+            Upgrade: Star_Of_MasterArcher3
+            Price: 20000000
+            Materials:
+              - Material: Instance_Emblem
+                Amount: 20
+          - Enchant: Star_Of_MasterArcher3
+            Upgrade: Star_Of_MasterArcher4
+            Price: 30000000
+            Materials:
+              - Material: Instance_Emblem
+                Amount: 30
+          - Enchant: Star_Of_MasterArcher4
+            Upgrade: Star_Of_MasterArcher5
+            Price: 80000000
+            Materials:
+              - Material: Instance_Emblem
+                Amount: 40
+          - Enchant: Star_Of_Mettle1
+            Upgrade: Star_Of_Mettle2
+            Price: 10000000
+            Materials:
+              - Material: Instance_Emblem
+                Amount: 10
+          - Enchant: Star_Of_Mettle2
+            Upgrade: Star_Of_Mettle3
+            Price: 20000000
+            Materials:
+              - Material: Instance_Emblem
+                Amount: 20
+          - Enchant: Star_Of_Mettle3
+            Upgrade: Star_Of_Mettle4
+            Price: 30000000
+            Materials:
+              - Material: Instance_Emblem
+                Amount: 30
+          - Enchant: Star_Of_Mettle4
+            Upgrade: Star_Of_Mettle5
+            Price: 80000000
+            Materials:
+              - Material: Instance_Emblem
+                Amount: 40
+      - Slot: 1
+        PerfectEnchants:
+          - Item: Bio_Jam_Normal
+            Price: 100000000
+            Materials:
+              - Material: Instance_Emblem
+                Amount: 100
+              - Material: Enchant_Ticket
+          - Item: Bio_Jam_Boss
+            Price: 100000000
+            Materials:
+              - Material: Instance_Emblem
+                Amount: 100
+              - Material: Enchant_Ticket

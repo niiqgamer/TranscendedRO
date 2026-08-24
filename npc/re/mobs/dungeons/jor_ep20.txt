@@ -8,37 +8,45 @@
 //============================================================
 
 // jor_maze - Snake Labyrinth
-jor_maze	monster	Jormungandr Guardian-Y	21973,35
-jor_maze	monster	수상한 아윈 훈련병	21974,35
-jor_maze	monster	Jormungandr Sanctuary Cleaner	21990,30
+jor_maze	monster	--ja--	21972,35
+jor_maze	monster	--ja--	21973,35
+jor_maze	monster	--ja--	21989,30
+jor_maze	monster	--ja--	21853,10
+jor_maze	monster	--ja--	22005,10
 
 // jor_root1 - Snake God's Root 1F
-jor_root1	monster	Jormungandr Guardian-Y	21973,20
-jor_root1	monster	수상한 아윈 훈련병	21974,10
-jor_root1	monster	Superior Rgan Healer	21986,80
-jor_root1	monster	Jormungandr Church Warlock	21987,70
-jor_root1	monster	Jormungandr Sanctuary Cleaner	21990,20
+jor_root1	monster	--ja--	21972,30
+jor_root1	monster	--ja--	21973,20
+jor_root1	monster	--ja--	21986,80
+jor_root1	monster	--ja--	21985,90
+jor_root1	monster	--ja--	21989,30
+jor_root1	monster	--ja--	21853,10
+jor_root1	monster	--ja--	22005,10
 
 // jor_root2 - Snake God's Root 2F
-jor_root2	monster	Jormungandr Guardian-Y	21973,5
-jor_root2	monster	수상한 아윈 훈련병	21974,15
-jor_root2	monster	Jormungandr Sanctuary Cleaner	21990,60
-jor_root2	monster	Jormungandr Church Bishop	21988,40
-jor_root2	monster	Jormungandr Sanctuary Guardian	21989,30
+jor_root2	monster	--ja--	21972,15
+jor_root2	monster	--ja--	21973,25
+jor_root2	monster	--ja--	21989,70
+jor_root2	monster	--ja--	21987,50
+jor_root2	monster	--ja--	21988,40
+jor_root2	monster	--ja--	21853,10
+jor_root2	monster	--ja--	22005,10
 
 // jor_root3 - Deep Root Cave
-jor_root3	monster	Jormungandr Guardian-P	21972,30
-jor_root3	monster	Bear Bug	21971,110
-jor_root3	monster	요르문간드 가디언	21991,130
-jor_root3	boss_monster	Lasgand	21981,1,21600000,600000,0
+jor_root3	monster	--ja--	21972,40
+jor_root3	monster	--ja--	21970,120
+jor_root3	monster	--ja--	21990,140
+jor_root3	monster	--ja--	21853,10
+jor_root3	monster	--ja--	22005,10
+jor_root3	boss_monster	--ja--	21980,1,21600000,600000,0
 
 // jor_twice - Drift Ice Zone
-jor_twice	monster	Melibe Slug	21970,60
-jor_twice	monster	Jormungandr Guardian-Y	21973,20
-jor_twice	monster	수상한 아윈 훈련병	21974,20
-jor_twice	monster	Icewind Egg	21984,60
-jor_twice	monster	Jormungandr Church Bishop	21988,40
+jor_twice	monster	--ja--	21969,60
+jor_twice	monster	--ja--	21973,20
+jor_twice	monster	--ja--	21972,20
+jor_twice	monster	--ja--	21983,60
+jor_twice	monster	--ja--	21987,40
 
 // jor_twig - Issgard Sanctuary Twig's Nest
-jor_twig	monster	Jormungandr Guardian-Y	21973,20
-jor_twig	monster	수상한 아윈 훈련병	21974,20
+jor_twig	monster	--ja--	21972,20
+jor_twig	monster	--ja--	21973,20

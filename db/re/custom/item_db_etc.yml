@@ -25,6 +25,666 @@ Body:
       bonus bLongAtkRate,5;
       bonus bMaxHPrate,10;
       bonus bCritAtkRate,10;
+  - Id: 300673
+    AegisName: Upd_Sup_No_Card
+    Name: Upgrade Super Novice 2 Card
+    Type: Card
+    Buy: 20
+    Weight: 10
+    Locations:
+      Garment: true
+    Flags:
+      DropEffect: CLIENT
+    Script: |
+      .@r = getrefine();
+      bonus2 bAddSize,Size_All,4*(.@r/3);
+      bonus2 bMagicAddSize,Size_All,4*(.@r/3);
+      if (BaseLevel>=175)
+         bonus bAllStats,15;
+      if (.@r>=10)
+         bonus bAllStats,15;
+      if (BaseJob == JOB_SUPER_NOVICE || BaseJob == JOB_HYPER_NOVICE) {
+         bonus bMaxHPrate,15;
+         bonus2 bAddRace,RC_All,15;
+         bonus2 bMagicAddRace,RC_All,15;
+      }
+  - Id: 300674
+    AegisName: Upd_Summoner_Card
+    Name: Upgrade Summoner Card
+    Type: Card
+    Buy: 20
+    Weight: 10
+    Locations:
+      Garment: true
+    Flags:
+      DropEffect: CLIENT
+    Script: |
+      .@r = getrefine();
+      bonus2 bAddSize,Size_All,4*(.@r/3);
+      bonus2 bMagicAddSize,Size_All,4*(.@r/3);
+      if (BaseLevel>=175)
+         bonus bAllStats,15;
+      if (.@r>=10)
+         bonus bAllStats,15;
+      if (BaseJob == JOB_SUMMONER || BaseJob == JOB_SPIRIT_HANDLER) {
+         bonus bMaxHPrate,15;
+         bonus2 bAddRace,RC_All,15;
+         bonus2 bMagicAddRace,RC_All,15;
+      }
+  - Id: 300675
+    AegisName: Upd_Rebellion_Card
+    Name: Upgrade Rebellion Card
+    Type: Card
+    Buy: 20
+    Weight: 10
+    Locations:
+      Garment: true
+    Flags:
+      DropEffect: CLIENT
+    Script: |
+      .@r = getrefine();
+      bonus2 bAddSize,Size_All,4*(.@r/3);
+      if (BaseLevel>=175)
+         bonus bAllStats,15;
+      if (.@r>=10)
+         bonus bAllStats,15;
+      if (BaseJob == JOB_REBELLION || BaseJob == JOB_NIGHT_WATCH) {
+         bonus bMaxHPrate,15;
+         bonus2 bAddRace,RC_All,15;
+      }
+  - Id: 300676
+    AegisName: Upd_Kagerou_Card
+    Name: Upgrade Kagerou Card
+    Type: Card
+    Buy: 20
+    Weight: 10
+    Locations:
+      Garment: true
+    Flags:
+      DropEffect: CLIENT
+    Script: |
+      .@r = getrefine();
+      bonus2 bAddSize,Size_All,4*(.@r/3);
+      if (BaseLevel>=175)
+         bonus bAllStats,15;
+      if (.@r>=10)
+         bonus bAllStats,15;
+      if (BaseJob == JOB_KAGEROU || BaseJob == JOB_OBORO || BaseJob == JOB_SHINKIRO || BaseJob == JOB_SHIRANUI) {
+         bonus bMaxHPrate,15;
+         bonus2 bAddRace,RC_All,15;
+      }
+  - Id: 300677
+    AegisName: Upd_Oboro_Card
+    Name: Upgrade Oboro Card
+    Type: Card
+    Buy: 20
+    Weight: 10
+    Locations:
+      Garment: true
+    Flags:
+      DropEffect: CLIENT
+    Script: |
+      .@r = getrefine();
+      bonus2 bMagicAddSize,Size_All,4*(.@r/3);
+      if (BaseLevel>=175)
+         bonus bAllStats,15;
+      if (.@r>=10)
+         bonus bAllStats,15;
+      if (BaseJob == JOB_KAGEROU || BaseJob == JOB_OBORO || BaseJob == JOB_SHINKIRO || BaseJob == JOB_SHIRANUI) {
+         bonus bMaxHPrate,15;
+         bonus2 bMagicAddRace,RC_All,15;
+      }
+  - Id: 300678
+    AegisName: Upd_Emperor_Card
+    Name: Upgrade Star Emperor Card
+    Type: Card
+    Buy: 20
+    Weight: 10
+    Locations:
+      Garment: true
+    Flags:
+      DropEffect: CLIENT
+    Script: |
+      .@r = getrefine();
+      bonus2 bAddSize,Size_All,4*(.@r/3);
+      if (BaseLevel>=175)
+         bonus bAllStats,15;
+      if (.@r>=10)
+         bonus bAllStats,15;
+      if (BaseJob == JOB_STAR_EMPEROR || BaseJob == JOB_SKY_EMPEROR) {
+         bonus bMaxHPrate,15;
+         bonus2 bAddRace,RC_All,15;
+      }
+  - Id: 300679
+    AegisName: Upd_Reaper_Card
+    Name: Upgrade Soul Reaper Card
+    Type: Card
+    Buy: 20
+    Weight: 10
+    Locations:
+      Garment: true
+    Flags:
+      DropEffect: CLIENT
+    Script: |
+      .@r = getrefine();
+      bonus2 bMagicAddSize,Size_All,4*(.@r/3);
+      if (BaseLevel>=175)
+         bonus bAllStats,15;
+      if (.@r>=10)
+         bonus bAllStats,15;
+      if (BaseJob == JOB_SOUL_REAPER || BaseJob == JOB_SOUL_ASCETIC) {
+         bonus bMaxHPrate,15;
+         bonus2 bMagicAddRace,RC_All,15;
+      }
+  - Id: 300757
+    AegisName: aegis_300757
+    Name: Upgrade Dragon Knight Card
+    Type: Card
+    Weight: 10
+    Locations:
+      Garment: true
+    Flags:
+      BuyingStore: true
+      DropEffect: CLIENT
+    Script: |
+      .@r = getrefine();
+      bonus2 bAddSize,Size_All,5*(.@r/3);
+      if (BaseLevel >= 200) {
+         bonus bAllStats,20;
+         bonus bAllTraitStats,5;
+      }
+      if (.@r >= 10) {
+         bonus bAllStats,20;
+         bonus bAllTraitStats,5;
+      }
+      if (BaseJob == JOB_DRAGON_KNIGHT) {
+         bonus2 bAddRace,RC_All,20;
+         bonus bMaxHPrate,20;
+         bonus bBaseAtk,100;
+      }
+  - Id: 300758
+    AegisName: aegis_300758
+    Name: Upgrade Troubadour Card
+    Type: Card
+    Weight: 10
+    Locations:
+      Garment: true
+    Flags:
+      BuyingStore: true
+      DropEffect: CLIENT
+    Script: |
+      .@r = getrefine();
+      bonus2 bMagicAtkEle,Ele_All,5*(.@r/3);
+      if (BaseLevel >= 200) {
+         bonus bAllStats,20;
+         bonus bAllTraitStats,5;
+      }
+      if (.@r >= 10) {
+         bonus bAllStats,20;
+         bonus bAllTraitStats,5;
+      }
+      if (BaseJob == JOB_TROUBADOUR) {
+         bonus2 bMagicAddRace,RC_All,20;
+         bonus bMaxHPrate,20;
+         bonus bMatk,100;
+      }
+  - Id: 300759
+    AegisName: aegis_300759
+    Name: Upgrade Imperial Guard Card
+    Type: Card
+    Weight: 10
+    Locations:
+      Garment: true
+    Flags:
+      BuyingStore: true
+      DropEffect: CLIENT
+    Script: |
+      .@r = getrefine();
+      bonus2 bAddSize,Size_All,5*(.@r/3);
+      bonus2 bMagicAddSize,Size_All,5*(.@r/3);
+      if (BaseLevel >= 200) {
+         bonus bAllStats,20;
+         bonus bAllTraitStats,5;
+      }
+      if (.@r >= 10) {
+         bonus bAllStats,20;
+         bonus bAllTraitStats,5;
+      }
+      if (BaseJob == JOB_IMPERIAL_GUARD) {
+         bonus2 bAddRace,RC_All,15;
+         bonus2 bMagicAddRace,RC_All,15;
+         bonus bMaxHPrate,20;
+         bonus bBaseAtk,100;
+         bonus bMatk,100;
+      }
+  - Id: 300912
+    AegisName: aegis_300912
+    Name: Upgrade Arch Mage Card
+    Type: Card
+    Weight: 10
+    Locations:
+      Garment: true
+    Flags:
+      BuyingStore: true
+      DropEffect: CLIENT
+    Script: |
+      .@r = getrefine();
+      bonus2 bMagicAtkEle,Ele_All,5*(.@r/3);
+      if (BaseLevel >= 200) {
+         bonus bAllStats,20;
+         bonus bAllTraitStats,5;
+      }
+      if (.@r >= 10) {
+         bonus bAllStats,20;
+         bonus bAllTraitStats,5;
+      }
+      if (BaseJob == JOB_ARCH_MAGE) {
+         bonus2 bMagicAddRace,RC_All,20;
+         bonus bMaxHPrate,20;
+         bonus bMatk,100;
+      }
+  - Id: 300913
+    AegisName: aegis_300913
+    Name: Upgrade Elemental Master Card
+    Type: Card
+    Weight: 10
+    Locations:
+      Garment: true
+    Flags:
+      BuyingStore: true
+      DropEffect: CLIENT
+    Script: |
+      .@r = getrefine();
+      bonus2 bMagicAtkEle,Ele_All,5*(.@r/3);
+      if (BaseLevel >= 200) {
+         bonus bAllStats,20;
+         bonus bAllTraitStats,5;
+      }
+      if (.@r >= 10) {
+         bonus bAllStats,20;
+         bonus bAllTraitStats,5;
+      }
+      if (BaseJob == JOB_ELEMENTAL_MASTER) {
+         bonus2 bMagicAddRace,RC_All,20;
+         bonus bMaxHPrate,20;
+         bonus bMatk,100;
+      }
+  - Id: 300914
+    AegisName: aegis_300914
+    Name: Upgrade Meister Card
+    Type: Card
+    Weight: 10
+    Locations:
+      Garment: true
+    Flags:
+      BuyingStore: true
+      DropEffect: CLIENT
+    Script: |
+      .@r = getrefine();
+      bonus2 bAddSize,Size_All,5*(.@r/3);
+      if (BaseLevel >= 200) {
+         bonus bAllStats,20;
+         bonus bAllTraitStats,5;
+      }
+      if (.@r >= 10) {
+         bonus bAllStats,20;
+         bonus bAllTraitStats,5;
+      }
+      if (BaseJob == JOB_MEISTER) {
+         bonus2 bAddRace,RC_All,20;
+         bonus bMaxHPrate,20;
+         bonus bBaseAtk,100;
+      }
+  - Id: 300917
+    AegisName: aegis_300917
+    Name: Upgrade Biolo Card
+    Type: Card
+    Weight: 10
+    Locations:
+      Garment: true
+    Flags:
+      BuyingStore: true
+      DropEffect: CLIENT
+    Script: |
+      .@r = getrefine();
+      bonus2 bAddSize,Size_All,5*(.@r/3);
+      if (BaseLevel >= 200) {
+         bonus bAllStats,20;
+         bonus bAllTraitStats,5;
+      }
+      if (.@r >= 10) {
+         bonus bAllStats,20;
+         bonus bAllTraitStats,5;
+      }
+      if (BaseJob == JOB_BIOLO) {
+         bonus2 bAddRace,RC_All,20;
+         bonus bMaxHPrate,20;
+         bonus bBaseAtk,100;
+      }
+  - Id: 300918
+    AegisName: aegis_300918
+    Name: Upgrade Cardinal Card
+    Type: Card
+    Weight: 10
+    Locations:
+      Garment: true
+    Flags:
+      BuyingStore: true
+      DropEffect: CLIENT
+    Script: |
+      .@r = getrefine();
+      bonus2 bAddSize,Size_All,5*(.@r/3);
+      bonus2 bMagicAddSize,Size_All,5*(.@r/3);
+      if (BaseLevel >= 200) {
+         bonus bAllStats,20;
+         bonus bAllTraitStats,5;
+      }
+      if (.@r >= 10) {
+         bonus bAllStats,20;
+         bonus bAllTraitStats,5;
+      }
+      if (BaseJob == JOB_CARDINAL) {
+         bonus2 bAddRace,RC_All,15;
+         bonus2 bMagicAddRace,RC_All,15;
+         bonus bMaxHPrate,20;
+         bonus bBaseAtk,100;
+         bonus bMatk,100;
+      }
+  - Id: 300919
+    AegisName: aegis_300919
+    Name: Upgrade Inquisitor Card
+    Type: Card
+    Weight: 10
+    Locations:
+      Garment: true
+    Flags:
+      BuyingStore: true
+      DropEffect: CLIENT
+    Script: |
+      .@r = getrefine();
+      bonus2 bAddSize,Size_All,5*(.@r/3);
+      if (BaseLevel >= 200) {
+         bonus bAllStats,20;
+         bonus bAllTraitStats,5;
+      }
+      if (.@r >= 10) {
+         bonus bAllStats,20;
+         bonus bAllTraitStats,5;
+      }
+      if (BaseJob == JOB_INQUISITOR) {
+         bonus2 bAddRace,RC_All,20;
+         bonus bMaxHPrate,20;
+         bonus bBaseAtk,100;
+      }
+  - Id: 300920
+    AegisName: aegis_300920
+    Name: Upgrade Shadow Cross Card
+    Type: Card
+    Weight: 10
+    Locations:
+      Garment: true
+    Flags:
+      BuyingStore: true
+      DropEffect: CLIENT
+    Script: |
+      .@r = getrefine();
+      bonus2 bAddSize,Size_All,5*(.@r/3);
+      if (BaseLevel >= 200) {
+         bonus bAllStats,20;
+         bonus bAllTraitStats,5;
+      }
+      if (.@r >= 10) {
+         bonus bAllStats,20;
+         bonus bAllTraitStats,5;
+      }
+      if (BaseJob == JOB_SHADOW_CROSS) {
+         bonus2 bAddRace,RC_All,20;
+         bonus bMaxHPrate,20;
+         bonus bBaseAtk,100;
+      }
+  - Id: 300921
+    AegisName: aegis_300921
+    Name: Upgrade Abyss Chaser Card
+    Type: Card
+    Weight: 10
+    Locations:
+      Garment: true
+    Flags:
+      BuyingStore: true
+      DropEffect: CLIENT
+    Script: |
+      .@r = getrefine();
+      bonus2 bAddSize,Size_All,5*(.@r/3);
+      bonus2 bMagicAddSize,Size_All,5*(.@r/3);
+      if (BaseLevel >= 200) {
+         bonus bAllStats,20;
+         bonus bAllTraitStats,5;
+      }
+      if (.@r >= 10) {
+         bonus bAllStats,20;
+         bonus bAllTraitStats,5;
+      }
+      if (BaseJob == JOB_ABYSS_CHASER) {
+         bonus2 bAddRace,RC_All,15;
+         bonus2 bMagicAddRace,RC_All,15;
+         bonus bMaxHPrate,20;
+         bonus bBaseAtk,100;
+         bonus bMatk,100;
+      }
+  - Id: 300922
+    AegisName: aegis_300922
+    Name: Upgrade Windhawk Card
+    Type: Card
+    Weight: 10
+    Locations:
+      Garment: true
+    Flags:
+      BuyingStore: true
+      DropEffect: CLIENT
+    Script: |
+      .@r = getrefine();
+      bonus2 bAddSize,Size_All,5*(.@r/3);
+      if (BaseLevel >= 200) {
+         bonus bAllStats,20;
+         bonus bAllTraitStats,5;
+      }
+      if (.@r >= 10) {
+         bonus bAllStats,20;
+         bonus bAllTraitStats,5;
+      }
+      if (BaseJob == JOB_WINDHAWK) {
+         bonus2 bAddRace,RC_All,20;
+         bonus bMaxHPrate,20;
+         bonus bBaseAtk,100;
+      }
+  - Id: 300923
+    AegisName: aegis_300923
+    Name: Upgrade Trouvere Card
+    Type: Card
+    Weight: 10
+    Locations:
+      Garment: true
+    Flags:
+      BuyingStore: true
+      DropEffect: CLIENT
+    Script: |
+      .@r = getrefine();
+      bonus2 bAddSize,Size_All,5*(.@r/3);
+      if (BaseLevel >= 200) {
+         bonus bAllStats,20;
+         bonus bAllTraitStats,5;
+      }
+      if (.@r >= 10) {
+         bonus bAllStats,20;
+         bonus bAllTraitStats,5;
+      }
+      if (BaseJob == JOB_TROUBADOUR || BaseJob == JOB_TROUVERE) {
+         bonus2 bAddRace,RC_All,20;
+         bonus bMaxHPrate,20;
+         bonus bBaseAtk,100;
+      }
+  - Id: 300924
+    AegisName: aegis_300924
+    Name: Upgrade Soul Ascetic Card
+    Type: Card
+    Weight: 10
+    Locations:
+      Garment: true
+    Flags:
+      BuyingStore: true
+      DropEffect: CLIENT
+    Script: |
+      .@r = getrefine();
+      bonus2 bMagicAtkEle,Ele_All,5*(.@r/3);
+      if (BaseLevel >= 200) {
+         bonus bAllStats,20;
+         bonus bAllTraitStats,5;
+      }
+      if (.@r >= 10) {
+         bonus bAllStats,20;
+         bonus bAllTraitStats,5;
+      }
+      if (BaseJob == JOB_SOUL_ASCETIC) {
+         bonus2 bMagicAddRace,RC_All,20;
+         bonus bMaxHPrate,20;
+         bonus bMatk,100;
+      }
+  - Id: 300925
+    AegisName: aegis_300925
+    Name: Upgrade Shiranui Card
+    Type: Card
+    Weight: 10
+    Locations:
+      Garment: true
+    Flags:
+      BuyingStore: true
+      DropEffect: CLIENT
+    Script: |
+      .@r = getrefine();
+      bonus2 bMagicAtkEle,Ele_All,5*(.@r/3);
+      if (BaseLevel >= 200) {
+         bonus bAllStats,20;
+         bonus bAllTraitStats,5;
+      }
+      if (.@r >= 10) {
+         bonus bAllStats,20;
+         bonus bAllTraitStats,5;
+      }
+      if (BaseJob == JOB_SHIRANUI) {
+         bonus2 bAddRace,RC_All,20;
+         bonus bMaxHPrate,20;
+         bonus bMatk,100;
+      }
+  - Id: 300926
+    AegisName: aegis_300926
+    Name: Upgrade Shinkiro Card
+    Type: Card
+    Weight: 10
+    Locations:
+      Garment: true
+    Flags:
+      BuyingStore: true
+      DropEffect: CLIENT
+    Script: |
+      .@r = getrefine();
+      bonus2 bAddSize,Size_All,5*(.@r/3);
+      if (BaseLevel >= 200) {
+         bonus bAllStats,20;
+         bonus bAllTraitStats,5;
+      }
+      if (.@r >= 10) {
+         bonus bAllStats,20;
+         bonus bAllTraitStats,5;
+      }
+      if (BaseJob == JOB_SHINKIRO) {
+         bonus2 bAddRace,RC_All,20;
+         bonus bMaxHPrate,20;
+         bonus bBaseAtk,100;
+      }
+  - Id: 300927
+    AegisName: aegis_300927
+    Name: Upgrade Night Watch Card
+    Type: Card
+    Weight: 10
+    Locations:
+      Garment: true
+    Flags:
+      BuyingStore: true
+      DropEffect: CLIENT
+    Script: |
+      .@r = getrefine();
+      bonus2 bAddSize,Size_All,5*(.@r/3);
+      if (BaseLevel >= 200) {
+         bonus bAllStats,20;
+         bonus bAllTraitStats,5;
+      }
+      if (.@r >= 10) {
+         bonus bAllStats,20;
+         bonus bAllTraitStats,5;
+      }
+      if (BaseJob == JOB_NIGHT_WATCH) {
+         bonus2 bAddRace,RC_All,20;
+         bonus bMaxHPrate,20;
+         bonus bBaseAtk,100;
+      }
+  - Id: 300928
+    AegisName: aegis_300928
+    Name: Upgrade Hyper Novice Card
+    Type: Card
+    Weight: 10
+    Locations:
+      Garment: true
+    Flags:
+      BuyingStore: true
+      DropEffect: CLIENT
+    Script: |
+      .@r = getrefine();
+      bonus2 bAddSize,Size_All,5*(.@r/3);
+      bonus2 bMagicAddSize,Size_All,5*(.@r/3);
+      if (BaseLevel >= 200) {
+         bonus bAllStats,20;
+         bonus bAllTraitStats,5;
+      }
+      if (.@r >= 10) {
+         bonus bAllStats,20;
+         bonus bAllTraitStats,5;
+      }
+      if (BaseJob == JOB_HYPER_NOVICE) {
+         bonus2 bAddRace,RC_All,15;
+         bonus2 bMagicAddRace,RC_All,15;
+         bonus bMaxHPrate,20;
+         bonus bBaseAtk,100;
+         bonus bMatk,100;
+      }
+  - Id: 300929
+    AegisName: aegis_300929
+    Name: Upgrade Spirit Handler Card
+    Type: Card
+    Weight: 10
+    Locations:
+      Garment: true
+    Flags:
+      BuyingStore: true
+      DropEffect: CLIENT
+    Script: |
+      .@r = getrefine();
+      bonus2 bAddSize,Size_All,5*(.@r/3);
+      bonus2 bMagicAddSize,Size_All,5*(.@r/3);
+      if (BaseLevel >= 200) {
+         bonus bAllStats,20;
+         bonus bAllTraitStats,5;
+      }
+      if (.@r >= 10) {
+         bonus bAllStats,20;
+         bonus bAllTraitStats,5;
+      }
+      if (BaseJob == JOB_SPIRIT_HANDLER) {
+         bonus2 bAddRace,RC_All,15;
+         bonus2 bMagicAddRace,RC_All,15;
+         bonus bMaxHPrate,20;
+         bonus bBaseAtk,100;
+         bonus bMatk,100;
+      }
   - Id: 300754
     AegisName: aegis_300754
     Name: Upgrade Memory of Thanatos Card

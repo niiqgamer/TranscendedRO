@@ -69,7 +69,7 @@
 		sc_end SC_SWOO;
 		sc_end SC_SKA;
 		
-		if(vip_status(1)) {
+	if (vip_status(1) || (getgmlevel() >= 99)) {
 			specialeffect2 EF_INCAGILITY;
 			sc_start SC_INCREASEAGI,3600000,10;
 			specialeffect2 EF_BLESSING;
