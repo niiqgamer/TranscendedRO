@@ -428,7 +428,8 @@ OnInit:
 	410836,
 	420759,
 	470456,
-	491070,
+	491070,						// 6th_Anni_Ring_LT_TH
+	490966,						// 6th_Anni_Ring_TH
 	490720,
 	490681,
 	450589,						// BP11_Antares_Armor
@@ -866,7 +867,8 @@ OnInit:
 	410836,
 	420759,
 	470456,
-	491070,
+	491070,						// 6th_Anni_Ring_LT_TH
+	490966,						// 6th_Anni_Ring_TH
 	490720,
 	490681,
 	450589,						// BP11_Antares_Armor
