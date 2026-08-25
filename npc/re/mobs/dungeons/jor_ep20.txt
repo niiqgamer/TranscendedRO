@@ -33,9 +33,9 @@ jor_root2	monster	--ja--	21853,10
 jor_root2	monster	--ja--	22005,10
 
 // jor_root3 - Deep Root Cave
-jor_root3	monster	--ja--	21972,40
-jor_root3	monster	--ja--	21970,120
-jor_root3	monster	--ja--	21990,140
+jor_root3	monster	--ja--	21972,50
+jor_root3	monster	--ja--	21970,130
+jor_root3	monster	--ja--	21990,150
 jor_root3	monster	--ja--	21853,10
 jor_root3	monster	--ja--	22005,10
 jor_root3	boss_monster	--ja--	21980,1,21600000,600000,0
