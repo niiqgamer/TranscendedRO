@@ -3277,6 +3277,13 @@ Body:
           - Index: 2
             Item: Wis_Meteorite_Dust
             Amount: 35
+      - Index: 35
+        Item: Wis_Meteor_Extract
+        Zeny: 20000
+        RequiredItems:
+          - Index: 0
+            Item: Unknown_Meteorite_F
+            Amount: 40
   - Name: NebulaShop
     Items:
       - Index: 0
@@ -7526,6 +7533,18 @@ Body:
           - Index: 2
             Item: Ignis_Guard_TH
             Refine: 9
+      - Index: 5
+        Item: Guardian_Shield_TH_LT
+        RequiredItems:
+          - Index: 0
+            Item: Old_Steel_Plate
+            Amount: 2000
+          - Index: 1
+            Item: Reform_Stone_TH
+            Amount: 4
+          - Index: 2
+            Item: Guardian_Shield_TH
+            Refine: 9
   - Name: Garments
     Items:
       - Index: 0
@@ -7682,6 +7701,19 @@ Body:
             Amount: 4
           - Index: 5
             Item: Temporal_Ring_TW
+      - Index: 3
+        Item: 6th_Anni_Ring_LT_TH
+        Zeny: 20000000
+        RequiredItems:
+          - Index: 0
+            Item: Phantom_Fragment
+            Amount: 5
+          - Index: 1
+            Item: Reform_Stone_TH
+            Amount: 4
+          - Index: 2
+            Item: 6th_Anni_Ring_TH
+            Refine: 9
   - Name: ctower_basic
     Items:
       - Index: 0
