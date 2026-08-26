@@ -193,7 +193,7 @@ grademk,102,55,6	script	Janna Physical#grademk	862,{
 			}
 
 			// ตรวจสอบไอเท็มซ้ำอีกครั้งก่อน delequip
-			if (countitem(.@id) > 0) {
+			if (countitem(.@id) > 1) {
 				mes "[Janna]";
 				mes "Item switching detected! Please keep duplicates in storage.";
 				end;
@@ -513,7 +513,7 @@ grademk,102,60,6	script	Janna Magical#grademk	906,{
 			}
 
 			// ===== ตรวจสอบไอเท็มซ้ำใน inventory =====
-			if (countitem(.@id) > 0) {
+			if (countitem(.@id) > 1) {
 				mes "[Janna]";
 				mes "Oh!!";
 				mes "You have ^FF0000[" + getitemname(.@id) + "]^000000 in your inventory.";
