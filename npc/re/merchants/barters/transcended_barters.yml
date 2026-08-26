@@ -7247,13 +7247,13 @@ Body:
         RequiredItems:
           - Index: 0
             Item: Zelunium
-            Amount: 200
+            Amount: 50
           - Index: 1
             Item: Shadowdecon
-            Amount: 200
+            Amount: 50
           - Index: 2
-            Item: Dark_Red_Scale
-            Amount: 30
+            Item: Dustball
+            Amount: 1000
       - Index: 5
         Item: Floating_Ball_LT
         Zeny: 1000000
