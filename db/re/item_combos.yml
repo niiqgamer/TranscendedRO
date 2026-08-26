@@ -63474,3 +63474,35 @@ Body:
       bonus bMaxHPrate,20;
       bonus bShortAtkRate,30;
       bonus bLongAtkRate,30;
+  - Combos:
+      - Combo:
+          - Thorn_Breaker_US        # 520062
+          - Tendrilion_Card              # 4463
+    Script: |
+      bonus bPow,12;
+      skill "SR_EARTHSHAKER",5;
+      bonus2 bSkillAtk,"SR_EARTHSHAKER",70;
+  - Combos:
+      - Combo:
+          - Thorn_Breaker_US        # 520062
+          - Alnoldi_Ex_H_Card              # 300086
+    Script: |
+      bonus bPow,12;
+      skill "GN_CRAZYWEED",10;
+      bonus2 bSkillAtk,"GN_CRAZYWEED",70;
+  - Combos:
+      - Combo:
+          - Thorn_Breaker_US        # 520062
+          - Nepenthes_Card              # 4470
+    Script: |
+      bonus bPow,12;
+      skill "GN_HELLS_PLANT",10;
+      bonus2 bSkillAtk,"GN_HELLS_PLANT",70;
+  - Combos:
+      - Combo:
+          - Thorn_Breaker_US        # 520062
+          - Lady_Tanee_Card              # 4376
+    Script: |
+      bonus bPow,30;
+      bonus bCon,30;
+      bonus2 bAddClass,Class_All,50;
