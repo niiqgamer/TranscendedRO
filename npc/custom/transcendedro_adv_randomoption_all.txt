@@ -2,7 +2,7 @@
 //= All in one Random Option Script (All Equipment Version)
 //= Original by sader1992
 //= Modified: Removed item restriction, works with ALL equipment
-//= No need to add items to AddGroup anymore!
+//= Added: Duplicate item check to prevent item switching
 //============================================================
 
 // ============================================================
@@ -102,6 +102,16 @@ grademk,102,55,6	script	Janna Physical#grademk	862,{
 					.@close = true;
 				}
 			}
+
+			// ===== ตรวจสอบไอเท็มซ้ำใน inventory =====
+			if (countitem(.@id) > 0) {
+				mes "[Janna]";
+				mes "Oh!!";
+				mes "You have ^FF0000[" + getitemname(.@id) + "]^000000 in your inventory.";
+				mes "Please keep duplicates in storage before random. Bye!";
+				.@close = true;
+			}
+
 			if (.@close)
 				end;
 
@@ -182,6 +192,13 @@ grademk,102,55,6	script	Janna Physical#grademk	862,{
 				}
 			}
 
+			// ตรวจสอบไอเท็มซ้ำอีกครั้งก่อน delequip
+			if (countitem(.@id) > 0) {
+				mes "[Janna]";
+				mes "Item switching detected! Please keep duplicates in storage.";
+				end;
+			}
+
 			// anti-hack
 			if (callfunc("F_IsEquipIDHack", .@eq, .@id) || callfunc("F_IsEquipCardHack", .@eq, .@c0, .@c1, .@c2, .@c3)) {
 				emotion ET_FRET;
@@ -219,6 +236,10 @@ grademk,102,55,6	script	Janna Physical#grademk	862,{
 			mes "";
 			mes "Just equip the item you want and talk to me.";
 			mes "No need to register items anymore!";
+			mes "";
+			mes "^FF0000IMPORTANT:^000000";
+			mes "Make sure you don't have duplicate items in your inventory!";
+			mes "Please keep duplicates in storage before using this service.";
 			end;
 	}
 	end;
@@ -490,6 +511,16 @@ grademk,102,60,6	script	Janna Magical#grademk	906,{
 					.@close = true;
 				}
 			}
+
+			// ===== ตรวจสอบไอเท็มซ้ำใน inventory =====
+			if (countitem(.@id) > 0) {
+				mes "[Janna]";
+				mes "Oh!!";
+				mes "You have ^FF0000[" + getitemname(.@id) + "]^000000 in your inventory.";
+				mes "Please keep duplicates in storage before random. Bye!";
+				.@close = true;
+			}
+
 			if (.@close)
 				end;
 
@@ -570,6 +601,13 @@ grademk,102,60,6	script	Janna Magical#grademk	906,{
 				}
 			}
 
+			// ตรวจสอบไอเท็มซ้ำอีกครั้งก่อน delequip
+			if (countitem(.@id) > 0) {
+				mes "[Janna]";
+				mes "Item switching detected! Please keep duplicates in storage.";
+				end;
+			}
+
 			// anti-hack
 			if (callfunc("F_IsEquipIDHack", .@eq, .@id) || callfunc("F_IsEquipCardHack", .@eq, .@c0, .@c1, .@c2, .@c3)) {
 				emotion ET_FRET;
@@ -607,6 +645,10 @@ grademk,102,60,6	script	Janna Magical#grademk	906,{
 			mes "";
 			mes "Just equip the item you want and talk to me.";
 			mes "No need to register items anymore!";
+			mes "";
+			mes "^FF0000IMPORTANT:^000000";
+			mes "Make sure you don't have duplicate items in your inventory!";
+			mes "Please keep duplicates in storage before using this service.";
 			end;
 	}
 	end;
