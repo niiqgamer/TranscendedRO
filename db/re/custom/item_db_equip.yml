@@ -1379,6 +1379,39 @@ Body:
             }
          }
       }
+  - Id: 460081
+    AegisName: Guardian_Shield_TH
+    Name: "Guardian's Shield"
+    Type: Armor
+    Weight: 3000
+    Defense: 250
+    Slots: 1
+    Jobs:
+      Paladin: true
+    Classes:
+      Fourth: true
+    Locations:
+      Left_Hand: true
+    ArmorLevel: 1
+    EquipLevelMin: 100
+    Refineable: true
+    View: 1
+    Script: |
+      .@r = getrefine();
+      bonus bUnbreakableShield;
+      bonus bMaxHPRate,10;
+      bonus bMaxSPRate,10;
+      bonus bBaseAtk,10*(.@r/2);
+      if (.@r>=7) {
+         autobonus3 "{ bonus bBaseAtk,90; }",1000,90000,"LG_SHIELDSPELL";
+         if (.@r>=9) {
+            bonus bLongAtkRate,10;
+            bonus bDelayRate,-5;
+            if (.@r>=11) {
+               bonus2 bSkillCooldown,"LG_CANNONSPEAR",-1000;
+            }
+         }
+      }
   - Id: 460092
     AegisName: Ancient_Prontera_US
     Name: Ancient Prontera Book
@@ -2001,6 +2034,63 @@ Body:
             if (.@g>=ENCHANTGRADE_A) {
                bonus2 bMagicAddSize,Size_All,30;
                bonus bPerfectHitAddRate,100;
+            }
+         }
+      }
+  - Id: 460128
+    AegisName: Guardian_Shield_TH_LT
+    Name: "Guardian's Shield-LT"
+    Type: Armor
+    Weight: 3000
+    Defense: 250
+    Slots: 1
+    Jobs:
+      Paladin: true
+    Classes:
+      Fourth: true
+    Locations:
+      Left_Hand: true
+    ArmorLevel: 2
+    EquipLevelMin: 100
+    Refineable: true
+    Gradable: true
+    View: 1
+    Script: |
+      .@r = getrefine();
+      .@g = getenchantgrade();
+      bonus bUnbreakableShield;
+      bonus bMaxHPRate,10;
+      bonus bMaxSPRate,10;
+      bonus bBaseAtk,15*(.@r/2);
+      if (.@r>=7) {
+         autobonus3 "{ bonus bBaseAtk,150; }",1000,90000,"LG_SHIELDSPELL";
+         if (.@r>=9) {
+            bonus bShortAtkRate,15;
+            bonus bLongAtkRate,15;
+            bonus bDelayRate,-10;
+            if (.@r>=11) {
+               bonus2 bSkillCooldown,"LG_CANNONSPEAR",-1500;
+               bonus2 bSkillCooldown,"IG_OVERSLASH",-400;
+               if (.@r>=12) {
+                  bonus bStr,40;
+                  bonus bCritical,20;
+                  bonus bCRate,8;
+               }
+            }
+         }
+      }
+      if (.@g>=ENCHANTGRADE_D) {
+         bonus2 bAddEle,Ele_All,10;
+         if (.@g>=ENCHANTGRADE_C) {
+            bonus2 bSkillAtk,"LG_CANNONSPEAR",20;
+            bonus2 bSkillAtk,"IG_OVERSLASH",20;
+            if (.@g>=ENCHANTGRADE_B) {
+               bonus bPow,10;
+               bonus bAllStats,15;
+               if (.@g>=ENCHANTGRADE_A) {
+                  bonus2 bAddSize,Size_All,20;
+                  bonus bPAtk,8;
+               }
             }
          }
       }
@@ -5116,6 +5206,87 @@ Body:
                if (.@g>=ENCHANTGRADE_A) {
                   bonus2 bDropAddClass,Class_All,10;
                   bonus2 bExpAddClass,Class_All,10;
+               }
+            }
+         }
+      }
+  - Id: 520062
+    AegisName: Thorn_Breaker_US
+    Name: Thorn Breaker
+    Type: Weapon
+    SubType: 1hAxe
+    Weight: 200
+    Attack: 250
+    Range: 1
+    Slots: 3
+    Jobs:
+      Alchemist: true
+      Assassin: true
+      Blacksmith: true
+      Crusader: true
+      Knight: true
+      Merchant: true
+      Novice: true
+      Rogue: true
+      SuperNovice: true
+      Swordman: true
+      Thief: true
+    Classes:
+      Upper: true
+      All_Third: true
+      Fourth: true
+    Locations:
+      Right_Hand: true
+    WeaponLevel: 5
+    EquipLevelMin: 100
+    Refineable: true
+    Gradable: true
+    Script: |
+      .@g = getenchantgrade();
+      .@r = getrefine();
+      bonus bUnbreakableWeapon;
+      bonus bAtlEle,Ele_Earth;
+      skill "BO_EXPLOSIVE_POWDER",5;
+      bonus2 bSkillAtk,"BO_MAYHEMIC_THORNS",50+(12*.@r);
+      bonus2 bSkillAtk,"BO_EXPLOSIVE_POWDER",50+(12*.@r);
+      bonus2 bHPDrainRate,1000,2;
+      bonus2 bAddEff,Eff_Stun,500;
+      if (.@r>=11) {
+         bonus bMaxHPRate,25;
+         bonus bMaxSPRate,25;
+         bonus2 bSubClass,Class_Normal,25;
+         if (.@r>=12) {
+            bonus bBaseAtk,200;
+            bonus bMatk,200;
+            bonus bAllStats,20;
+            if (.@r>=13) {
+               bonus bLongAtkRate,20;
+               bonus2 bSkillAtk,"BO_MAYHEMIC_THORNS",70;
+               bonus2 bSkillAtk,"BO_EXPLOSIVE_POWDER",70;
+               if (.@r>=14) {
+                  bonus bPow,15;
+                  bonus bCon,15;
+                  bonus bLongAtkRate,30;
+                  bonus2 bSkillCooldown,"BO_MAYHEMIC_THORNS",-500;
+                  if (.@r>=15) {
+                     bonus2 bAddClass,Class_All,40;
+                     bonus bDelayRate,-30;
+                  }
+               }
+            }
+         }
+      }
+      if (.@g>=ENCHANTGRADE_D) {
+         bonus bPAtk,25;
+         if (.@g>=ENCHANTGRADE_C) {
+            bonus bDelayRate,-20;
+            if (.@g>=ENCHANTGRADE_B) {
+               bonus2 bIgnoreDefRaceRate,RC_All,75;
+               bonus2 bIgnoreDefRaceRate,RC_Player_Doram,-75;
+               bonus2 bIgnoreDefRaceRate,RC_Player_Human,-75;
+               if (.@g>=ENCHANTGRADE_A) {
+                  bonus bAllStats,12;
+                  bonus bAllTraitStats,12;
                }
             }
          }
