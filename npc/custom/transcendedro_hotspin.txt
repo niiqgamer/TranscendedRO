@@ -740,6 +740,7 @@ OnInit:
 	19306,					// Heart_Card_In_Mouth
 	
 	28941,					// Excelion_Shield
+	460081,					// Guardian_Shield_TH
 	28484,					// Scarf_Of_Rebellion
 	28506,					// StormStone
 	28929,					// HappyShield
