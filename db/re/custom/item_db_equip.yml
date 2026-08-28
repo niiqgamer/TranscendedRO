@@ -5622,7 +5622,7 @@ Body:
       bonus2 bSkillAtk,"SHC_ETERNAL_SLASH",30+(7*.@r);
       bonus2 bSkillAtk,"SHC_SAVAGE_IMPACT",30+(7*.@r);
       if (.@r>=10) {
-         bonus bSubClass,Class_All,20;
+         bonus2 bSubClass,Class_All,20;
          bonus bVit,100;
          if (.@r>=11) {
             bonus2 bSkillCooldown,"SHC_SAVAGE_IMPACT",-700;
