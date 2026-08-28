@@ -63536,3 +63536,11 @@ Body:
       bonus2 bAddSize,Size_All,30;
       bonus3 bAddMonsterDropItem,678,RC_DemiHuman,50;
       autobonus3 "{ bonus bBaseAtk,250; bonus bStr,25; bonus bPow,25; }",1000,25000,"ASC_EDP";
+  - Combos:
+      - Combo:
+          - Great_Wolf_US            # 401012
+          - Cutie_Card                  # 27152
+    Script: |
+      bonus bMaxHPrate,100;
+      bonus bMaxSPrate,50;
+      bonus bAllTraitStats,25;

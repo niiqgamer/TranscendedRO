@@ -127,6 +127,78 @@ Body:
             }
          }
       }
+  - Id: 401012
+    AegisName: Great_Wolf_US
+    Name: Future Wolf King Hat
+    Type: Armor
+    Weight: 200
+    Defense: 50
+    Slots: 1
+    Locations:
+      Head_Top: true
+    ArmorLevel: 2
+    EquipLevelMin: 100
+    Refineable: true
+    Gradable: true
+    View: 783
+    Script: |
+      .@g = getenchantgrade();
+      .@r = getrefine();
+      bonus bUnbreakableArmor;
+      bonus bASPD,10;
+      bonus2 bMagicAddSize,Size_All,20;
+      if (BaseClass == Job_Ninja) {
+         bonus bMaxHP,50000;
+         bonus bMaxSP,5000;
+         bonus bExpAddClass,Class_All,50;
+      }
+      bonus bSpl,.@r/2;
+      bonus2 bMagicAddSize,Size_All,7*(.@r/2);
+      bonus bAllStats,7*(.@r/3);
+      if (.@r>=10) {
+         bonus2 bMagicAddSize,Size_All,15;
+         if (.@r>=11) {
+            bonus bAllStats,7;
+            bonus bMatk,70;
+            bonus5 bAutoSpell,"HN_HELLS_DRIVE",10,50,BF_SHORT|BF_LONG,1;
+            if (.@r>=12) {
+               bonus bAllStats,7;
+               bonus bMatk,70;
+               bonus5 bAutoSpell,"HN_METEOR_STORM_BUSTER",10,70,BF_SHORT|BF_LONG,1;
+               if (.@r>=13) {
+                  bonus bAllStats,20;
+                  bonus bMatk,200;
+                  bonus5 bAutoSpell,"HN_JUPITEL_THUNDER_STORM",10,150,BF_SHORT|BF_LONG,1;
+                  if (.@r>=14) {
+                     bonus bMatk,250;
+                     bonus bDelayRate,-25;
+                     bonus bFixedCast,-500;
+                  }
+               }
+            }
+         }
+      }
+      if (getpetinfo(PETINFO_EGGID) == 9010) {
+         if (getpetinfo(PETINFO_INTIMATE) >= PET_INTIMATE_LOYAL) {
+            bonus bAllStats,5;
+            bonus bAllTraitStats,5;
+            bonus bSpeedRate,25;
+         }
+      }
+      if (.@g>=ENCHANTGRADE_D) {
+         bonus bSMatk,15;
+         if (.@g>=ENCHANTGRADE_C) {
+            bonus bMaxHPRate,20;
+            bonus bMaxSPRate,20;
+            if (.@g>=ENCHANTGRADE_B) {
+               bonus2 bIgnoreMdefRaceRate,RC_All,50;
+               if (.@g>=ENCHANTGRADE_A) {
+                  bonus bAllStats,8;
+                  bonus bAllTraitStats,8;
+               }
+            }
+         }
+      }
   - Id: 401043
     AegisName: Great_Kiel_US
     Name: Kiel Successor Doll
@@ -291,6 +363,42 @@ Body:
                bonus2 bMagicAddRace,RC_Player_Doram,-10;
                bonus2 bMagicAddRace,RC_Player_Human,-10;
             }
+         }
+      }
+  - Id: 401459
+    AegisName: Future_Tiger_US
+    Name: Eddga Follower Doll
+    Type: Armor
+    Weight: 1000
+    Defense: 100
+    Locations:
+      Head_Top: true
+    ArmorLevel: 2
+    EquipLevelMin: 90
+    Refineable: true
+    Gradable: true
+    View: 495
+    Script: |
+      .@g = getenchantgrade();
+      .@r = getrefine();
+      bonus bUnbreakableArmor;
+      bonus bASPD,10;
+      bonus bPow,10;
+      bonus bMdef,5;
+      bonus2 bAddSize,Size_All,20;
+      if (BaseClass == Job_Merchant) {
+         bonus bMaxHP,50000;
+         bonus bMaxSP,5000;
+         bonus bExpAddClass,Class_All,50;
+      }
+      bonus bPow,.@r;
+      bonus2 bAddSize,Size_All,7*.@r;
+      bonus bAllStats,10*(.@r/3);
+      if (.@r>=10) {
+         bonus2 bAddSize,Size_All,15;
+         if (.@r>=11) {
+            bonus bBaseAtk,70;
+            bonus bAllStats,7;
          }
       }
   - Id: 410386
@@ -546,6 +654,34 @@ Body:
          bonus bBaseAtk,160;
          bonus bCritAtkRate,30;
          bonus bCRate,15;
+      }
+  - Id: 410652
+    AegisName: Moon_Follower_US
+    Name: Moon Follower Eyepatch
+    Type: Armor
+    Weight: 500
+    Defense: 50
+    Locations:
+      Head_Mid: true
+    ArmorLevel: 1
+    EquipLevelMin: 100
+    View: 1370
+    Script: |
+      .@a = (readparam(bStr)+readparam(bDex))/30;
+      .@b = (readparam(bInt)+readparam(bDex))/30;
+      bonus bMdef,20;
+      bonus bAllStats,10;
+      bonus bShortAtkRate,10*.@a;
+      bonus bLongAtkRate,10*.@a;
+      bonus2 bMagicAddEle,Ele_All,10*.@b;
+      if (getpetinfo(PETINFO_EGGID) == 9140) {
+         skill "WZ_ESTIMATION",1;
+         if (getpetinfo(PETINFO_INTIMATE) >= PET_INTIMATE_LOYAL) {
+            if (readparam(bStr)>=120)
+               bonus bPow,15;
+            if (readparam(bInt)>=120)
+               bonus bSpl,15;
+         }
       }
   - Id: 410644
     AegisName: Floating_Ball_LT
@@ -3385,7 +3521,7 @@ Body:
             bonus2 bSkillAtk,"RK_DRAGONBREATH_WATER",70;
             if (.@r>=11) {
                bonus bAllStats,15;
-               bonus bSpeedRate,15;
+               bonus bSpeedRate,25;
                if (.@r>=12) {
                   bonus bPow,15;
                   bonus bCon,15;

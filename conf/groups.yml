@@ -52,6 +52,8 @@ Body:
       whodrops: true
       load: true
       refresh: true
+      autotrade: true
+      at: true
     Permissions:
       # without this basic permissions regular players could not trade or party
       can_trade: true
