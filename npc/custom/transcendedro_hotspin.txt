@@ -565,19 +565,26 @@ OnInit:
 	setarray $hotspin_pool1, 
 	24882,					// 21Anni3_W_Shadow_TW
 	1270049,				// Clear_Shield_Shadow3_TW
+	1270142,				// S_BP8_Melee_W
+	1270143,				// S_BP8_Melee_S
+	1270144,				// S_BP8_Range_W
+	1270145,				// S_BP8_Range_S
 	1270146,				// S_BP8_Magic_W
 	1270147,				// S_BP8_Magic_S
 	1001957,				// Purified Stone Garment(Ultimate)
 	25940,					// Loft_StoneUltimate
+	
 	480681,					// Juncea_Follower_US
 	540124,					// Polluted_Follower_US
 	550169,					// Fenrir_Staff_US
 	560077,					// Coatneis_Knuckle_US
+	610103,					// Demigod_Katar_US
 	401043,					// Great_Kiel_US
 	450589,					// BP11_Antares_Armor
 	450590,					// BP11_Sirius_Armor
 	450591,					// BP11_Vega_Armor
 	450592,					// BP11_Regulus_Armor
+	
 	450357,					// Violent_D_S_Armor_LT
 	450358,					// Abbys_L_H_Armor_LT
 	450299,					// Temporal_Armor_TW_LT
@@ -749,6 +756,11 @@ OnInit:
 	1649,					// Rafini_Staff
 	410136,					// Raven_Of_Tomb
 	420368,					// Reaper_Of_Tomb
+	
+	5497,					// King_Tiger_Doll_Hat
+	5498,					// Wondering_Wolf_Helm
+	450368,					// Howling_Tiger_Pajama
+	19444,					// Star_Eyepatch_JP_
 	
 	28502;					// Mob_Scarf
 

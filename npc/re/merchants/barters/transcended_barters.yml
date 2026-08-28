@@ -7200,6 +7200,36 @@ Body:
           - Index: 2
             Item: Wheel
             Amount: 100
+      - Index: 2
+        Item: Great_Wolf_US
+        RequiredItems:
+          - Index: 0
+            Item: Zelunium
+            Amount: 150
+          - Index: 1
+            Item: Claw_Of_Desert_Wolf
+            Amount: 1000
+          - Index: 2
+            Item: Cobold_Hair
+            Amount: 1000
+          - Index: 3
+            Item: Wondering_Wolf_Helm
+            Refine: 9
+      - Index: 3
+        Item: Future_Tiger_US
+        RequiredItems:
+          - Index: 0
+            Item: Zelunium
+            Amount: 150
+          - Index: 1
+            Item: Claw_Of_Desert_Wolf
+            Amount: 1000
+          - Index: 2
+            Item: Tiger_Skin_Panties
+            Amount: 1000
+          - Index: 3
+            Item: King_Tiger_Doll_Hat
+            Refine: 9
   - Name: HeadMid
     Items:
       - Index: 0
@@ -7269,10 +7299,32 @@ Body:
         RequiredItems:
           - Index: 0
             Item: Zelunium
-            Amount: 350
+            Amount: 250
           - Index: 1
             Item: Particles_Of_Energy5
             Amount: 500
+          - Index: 2
+            Item: Reform_Stone_TH
+            Amount: 4
+      - Index: 7
+        Item: Moon_Follower_US
+        RequiredItems:
+          - Index: 0
+            Item: Zelunium
+            Amount: 250
+          - Index: 1
+            Item: Star_Eyepatch_JP_
+          - Index: 2
+            Item: Reform_Stone_TH
+            Amount: 4
+      - Index: 8
+        Item: Exiled_Ninja_US
+        RequiredItems:
+          - Index: 0
+            Item: Zelunium
+            Amount: 250
+          - Index: 1
+            Item: Star_Eyepatch_JP_
           - Index: 2
             Item: Reform_Stone_TH
             Amount: 4

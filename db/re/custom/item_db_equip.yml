@@ -399,6 +399,36 @@ Body:
          if (.@r>=11) {
             bonus bBaseAtk,70;
             bonus bAllStats,7;
+            bonus5 bAutoSpell,"GN_CARTCANNON",10,50,BF_SHORT|BF_LONG,1;
+            if (.@r>=12) {
+               bonus bBaseAtk,70;
+               bonus bAllStats,7;
+               bonus5 bAutoSpell,"LG_EARTHDRIVE",5,70,BF_SHORT|BF_LONG,1;
+               if (.@r>=13) {
+                  bonus bBaseAtk,200;
+                  bonus bAllStats,20;
+                  bonus5 bAutoSpell,"MT_MIGHTY_SMASH",10,100,BF_SHORT|BF_LONG,1;
+                  if (.@r>=14) {
+                     bonus bBaseAtk,250;
+                     bonus bDelayRate,-25;
+                     bonus bFixedCast,-500;
+                  }
+               }
+            }
+         }
+      }
+      if (.@g>=ENCHANTGRADE_D) {
+         bonus bPAtk,15;
+         if (.@g>=ENCHANTGRADE_C) {
+            bonus bMaxHPRate,20;
+            bonus bMaxSPRate,20;
+            if (.@g>=ENCHANTGRADE_B) {
+               bonus2 bIgnoreDefRaceRate,RC_All,50;
+               if (.@g>=ENCHANTGRADE_A) {
+                  bonus bAllStats,10;
+                  bonus bAllTraitStats,10
+               }
+            }
          }
       }
   - Id: 410386
@@ -5873,6 +5903,98 @@ Body:
                   bonus2 bIgnoreMdefRaceRate,RC_All,100;
                   bonus2 bIgnoreMdefRaceRate,RC_Player_Human,-100;
                   bonus2 bIgnoreMdefRaceRate,RC_Player_Doram,-100;
+             }
+         }
+      }
+  - Id: 1270142
+    AegisName: S_BP8_Melee_W
+    Name: Nebula Melee Shadow Weapon
+    Type: ShadowGear
+    Locations:
+      Shadow_Weapon: true
+    EquipLevelMin: 1
+    Refineable: true
+    Script: |
+      .@r = getrefine();
+      bonus bBaseAtk,15*(.@r/2);
+      bonus bShortAtkRate,2*(.@r/3);
+      if (.@r>=7) {
+         bonus2 bAddRace,RC_All,10;
+         if (.@r>=9) {
+             bonus2 bAddClass,Class_Boss,10;
+             if (.@r>=10) {
+                  bonus2 bIgnoreDefRaceRate,RC_All,100;
+                  bonus2 bIgnoreDefRaceRate,RC_Player_Human,-100;
+                  bonus2 bIgnoreDefRaceRate,RC_Player_Doram,-100;
+             }
+         }
+      }
+  - Id: 1270143
+    AegisName: S_BP8_Melee_S
+    Name: Nebula Melee Shadow Shield
+    Type: ShadowGear
+    Locations:
+      Shadow_Shield: true
+    EquipLevelMin: 1
+    Refineable: true
+    Script: |
+      .@r = getrefine();
+      bonus bDelayRate,.@r/2;
+      bonus bFixedCast,-200*(.@r/3);
+      if (.@r>=7) {
+         bonus bAllStats,4;
+         bonus bAllTraitStats,4;
+         if (.@r>=9) {
+             bonus bShortAtkRate,10;
+             if (.@r>=10) {
+                  bonus bMaxHPRate,10;
+                  bonus bMaxSPRate,10;
+             }
+         }
+      }
+  - Id: 1270144
+    AegisName: S_BP8_Range_W
+    Name: Nebula Range Shadow Weapon
+    Type: ShadowGear
+    Locations:
+      Shadow_Weapon: true
+    EquipLevelMin: 1
+    Refineable: true
+    Script: |
+      .@r = getrefine();
+      bonus bBaseAtk,15*(.@r/2);
+      bonus bLongAtkRate,2*(.@r/3);
+      if (.@r>=7) {
+         bonus2 bAddRace,RC_All,10;
+         if (.@r>=9) {
+             bonus2 bAddClass,Class_Boss,10;
+             if (.@r>=10) {
+                  bonus2 bIgnoreDefRaceRate,RC_All,100;
+                  bonus2 bIgnoreDefRaceRate,RC_Player_Human,-100;
+                  bonus2 bIgnoreDefRaceRate,RC_Player_Doram,-100;
+             }
+         }
+      }
+  - Id: 1270145
+    AegisName: S_BP8_Range_S
+    Name: Nebula Range Shadow Shield
+    Type: ShadowGear
+    Locations:
+      Shadow_Shield: true
+    EquipLevelMin: 1
+    Refineable: true
+    Script: |
+      .@r = getrefine();
+      bonus bDelayRate,.@r/2;
+      bonus bFixedCast,-200*(.@r/3);
+      if (.@r>=7) {
+         bonus bAllStats,4;
+         bonus bAllTraitStats,4;
+         if (.@r>=9) {
+             bonus bLongAtkRate,10;
+             if (.@r>=10) {
+                  bonus bMaxHPRate,10;
+                  bonus bMaxSPRate,10;
              }
          }
       }
