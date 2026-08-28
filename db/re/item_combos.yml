@@ -63506,3 +63506,33 @@ Body:
       bonus bPow,30;
       bonus bCon,30;
       bonus2 bAddClass,Class_All,50;
+  - Combos:
+      - Combo:
+          - Demigod_Katar_US            # 610103
+          - Demigod_Lasgand_Card     # 300472
+    Script: |
+      bonus bPow,40;
+      bonus bCrt,40;
+      bonus2 bAddRace,RC_All,50;
+      skill "TK_POWER",5;
+  - Combos:
+      - Combo:
+          - Demigod_Katar_US            # 610103
+          - Simulation_Juncea_Card     # 300378
+      - Combo:
+          - Demigod_Katar_US            # 610103
+          - EP18_Demi_Freyja_Card     # 300228
+    Script: |
+      bonus bPow,30;
+      bonus bCrt,30;
+      bonus2 bAddRace,RC_All,40;
+      skill "TK_POWER",2;
+  - Combos:
+      - Combo:
+          - Demigod_Katar_US            # 610103
+          - GuillotineCross_Card          # 4674
+    Script: |
+      bonus bPAtk,30;
+      bonus2 bAddSize,Size_All,30;
+      bonus3 bAddMonsterDropItem,678,RC_DemiHuman,50;
+      autobonus3 "{ bonus bBaseAtk,250; bonus bStr,25; bonus bPow,25; }",1000,25000,"ASC_EDP";

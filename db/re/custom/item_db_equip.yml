@@ -5597,6 +5597,72 @@ Body:
             }
          }
       }
+  - Id: 610103
+    AegisName: Demigod_Katar_US
+    Name: Demigod Katar
+    Type: Weapon
+    SubType: Katar
+    Weight: 2000
+    Attack: 300
+    Range: 1
+    Slots: 3
+    Jobs:
+      Assassin: true
+    Locations:
+      Both_Hand: true
+    WeaponLevel: 5
+    EquipLevelMin: 100
+    Refineable: true
+    Gradable: true
+    Script: |
+      .@g = getenchantgrade();
+      .@r = getrefine();
+      bonus bUnbreakableWeapon;
+      bonus bPAtk,20;
+      bonus2 bSkillAtk,"SHC_ETERNAL_SLASH",30+(7*.@r);
+      bonus2 bSkillAtk,"SHC_SAVAGE_IMPACT",30+(7*.@r);
+      if (.@r>=10) {
+         bonus bSubClass,Class_All,20;
+         bonus bVit,100;
+         if (.@r>=11) {
+            bonus2 bSkillCooldown,"SHC_SAVAGE_IMPACT",-700;
+            bonus5 bAutoSpellOnSkill,"SHC_SAVAGE_IMPACT","GC_WEAPONBLOCKING",5,100,1;
+            bonus4 bAutoSpellOnSkill,"SHC_SAVAGE_IMPACT","SHC_ETERNAL_SLASH",5,1000;
+            if (.@r>=12) {
+               bonus2 bAddSize,Size_All,30;
+               bonus bAllTraitStats,10;
+               if (.@r>=13) {
+                  bonus bShortAtkRate,30;
+                  bonus2 bSkillAtk,"SHC_ETERNAL_SLASH",50;
+                  bonus2 bSkillAtk,"SHC_SAVAGE_IMPACT",50;
+                  if (.@r>=14) {
+                     bonus bPow,15;
+                     bonus bCrt,15;
+                     bonus bShortAtkRate,30;
+                     bonus2 bSkillAtk,"SHC_ETERNAL_SLASH",50;
+                     if (.@r>=15) {
+                        bonus2 bAddClass,Class_All,40;
+                        bonus bDelayRate,-30;
+                     }
+                  }
+               }
+            }
+         }
+      }
+      if (.@g >= ENCHANTGRADE_D) {
+         bonus bPAtk,15;
+         if (.@g >= ENCHANTGRADE_C) {
+            bonus bDelayRate,-20;
+            if (.@g >= ENCHANTGRADE_B) {
+               bonus2 bAddEle,Ele_All,20;
+               if (.@g >= ENCHANTGRADE_A) {
+                  if (.@r>=14) {
+                     bonus bCritAtkRate,50;
+                  }
+               }
+            }
+         }
+      }
   - Id: 640070
     AegisName: LMN_AG_Staff
     Name: Orrivane Arch Staff
