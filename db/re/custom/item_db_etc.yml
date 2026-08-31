@@ -1265,6 +1265,34 @@ Body:
       NoGuildStorage: true
       NoMail: true
       NoAuction: true
+  - Id: 9900015
+    AegisName: BP_Mat_Melee
+    Name: "BP Material (Melee)"
+    Type: Etc
+    Weight: 0
+    Flags:
+      BuyingStore: true
+  - Id: 9900016
+    AegisName: BP_Mat_Range
+    Name: "BP Material (Range)"
+    Type: Etc
+    Weight: 0
+    Flags:
+      BuyingStore: true
+  - Id: 9900017
+    AegisName: BP_Mat_Magic
+    Name: "BP Material (Magic)"
+    Type: Etc
+    Weight: 0
+    Flags:
+      BuyingStore: true
+  - Id: 9900018
+    AegisName: BP_Mat_Fusion
+    Name: "BP Material (Fusion)"
+    Type: Etc
+    Weight: 0
+    Flags:
+      BuyingStore: true
   - Id: 9910000
     AegisName: T_A1_Refining
     Name: "Transcended Armor Refining (Lv.1)"
