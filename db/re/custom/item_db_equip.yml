@@ -150,7 +150,7 @@ Body:
       if (BaseClass == Job_Ninja) {
          bonus bMaxHP,50000;
          bonus bMaxSP,5000;
-         bonus bExpAddClass,Class_All,50;
+         bonus2 bExpAddClass,Class_All,50;
       }
       bonus bSpl,.@r/2;
       bonus2 bMagicAddSize,Size_All,7*(.@r/2);
@@ -389,7 +389,7 @@ Body:
       if (BaseClass == Job_Merchant) {
          bonus bMaxHP,50000;
          bonus bMaxSP,5000;
-         bonus bExpAddClass,Class_All,50;
+         bonus2 bExpAddClass,Class_All,50;
       }
       bonus bPow,.@r;
       bonus2 bAddSize,Size_All,7*.@r;
@@ -6044,6 +6044,94 @@ Body:
              }
          }
       }
+  - Id: 1270188
+    AegisName: S_BP9_Melee_A
+    Name: Snow Flower Melee Shadow Armor
+    Type: ShadowGear
+    Locations:
+      Shadow_Armor: true
+    EquipLevelMin: 1
+    Refineable: true
+    Script: |
+      .@r = getrefine();
+      bonus bPAtk,.@r/2;
+      bonus bShortAtkRate,2*(.@r/3);
+      if (.@r>=7) {
+         bonus bMaxHPRate,10;
+         bonus bRes,30;
+         if (.@r>=9) {
+             bonus bDelayRate,-10;
+             if (.@r>=10) {
+                  bonus2 bAddEle,Ele_All,10;
+             }
+         }
+      }
+  - Id: 1270189
+    AegisName: S_BP9_Melee_S
+    Name: Snow Flower Melee Shadow Shoes
+    Type: ShadowGear
+    Locations:
+      Shadow_Shoes: true
+    EquipLevelMin: 1
+    Refineable: true
+    Script: |
+      .@r = getrefine();
+      bonus bPAtk,.@r/2;
+      bonus bAspdRate,5*(.@r/3);
+      if (.@r>=7) {
+         bonus bMaxSPRate,10;
+         bonus bMRes,30;
+         if (.@r>=9) {
+             bonus bFixedCast,-300;
+             if (.@r>=10) {
+                  bonus2 bAddSize,Size_All,10;
+             }
+         }
+      }
+  - Id: 1270190
+    AegisName: S_BP9_Melee_A
+    Name: Snow Flower Melee Shadow Armor
+    Type: ShadowGear
+    Locations:
+      Shadow_Armor: true
+    EquipLevelMin: 1
+    Refineable: true
+    Script: |
+      .@r = getrefine();
+      bonus bPAtk,.@r/2;
+      bonus bLongAtkRate,2*(.@r/3);
+      if (.@r>=7) {
+         bonus bMaxHPRate,10;
+         bonus bRes,30;
+         if (.@r>=9) {
+             bonus bDelayRate,-10;
+             if (.@r>=10) {
+                  bonus2 bAddEle,Ele_All,10;
+             }
+         }
+      }
+  - Id: 1270191
+    AegisName: S_BP9_Melee_S
+    Name: Snow Flower Melee Shadow Shoes
+    Type: ShadowGear
+    Locations:
+      Shadow_Shoes: true
+    EquipLevelMin: 1
+    Refineable: true
+    Script: |
+      .@r = getrefine();
+      bonus bPAtk,.@r/2;
+      bonus bAspdRate,5*(.@r/3);
+      if (.@r>=7) {
+         bonus bMaxSPRate,10;
+         bonus bMRes,30;
+         if (.@r>=9) {
+             bonus bFixedCast,-300;
+             if (.@r>=10) {
+                  bonus2 bAddSize,Size_All,10;
+             }
+         }
+      }
   - Id: 1270192
     AegisName: S_BP9_Magic_A
     Name: Snow Flower Magic Shadow Armor
@@ -6121,6 +6209,7 @@ Body:
          skill "AM_REST",1;
          skill "AM_CALLHOMUN",1;
          skill "AM_RESURRECTHOMUN",5;
+         skill "ALL_BUYING_STORE",2;
          bonus2 bSkillCooldown,"WL_COMET",-20000;
          bonus2 bSkillCooldown,"SH_KI_SUL_WATER_SPRAYING",-3000;
          bonus bFixedCast,-5000;

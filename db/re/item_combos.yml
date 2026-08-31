@@ -61722,6 +61722,26 @@ Body:
       bonus2 bIgnoreMResRaceRate,RC_All,30;
   - Combos:
       - Combo:
+          - S_BP9_Melee_A    # 1270188
+          - S_BP9_Melee_S    # 1270189
+    Script: |
+      .@r = getequiprefinerycnt(EQI_SHADOW_ARMOR) + getequiprefinerycnt(EQI_SHADOW_SHOES);
+      bonus bShortAtkRate,4;
+      if (.@r>19) {
+         bonus bNoSizeFix;
+      }
+  - Combos:
+      - Combo:
+          - S_BP9_Range_A    # 1270190
+          - S_BP9_Range_S    # 1270191
+    Script: |
+      .@r = getequiprefinerycnt(EQI_SHADOW_ARMOR) + getequiprefinerycnt(EQI_SHADOW_SHOES);
+      bonus bLongAtkRate,4;
+      if (.@r>19) {
+         bonus bNoSizeFix;
+      }
+  - Combos:
+      - Combo:
           - S_BP9_Magic_A    # 1270192
           - S_BP9_Magic_S    # 1270193
     Script: |
