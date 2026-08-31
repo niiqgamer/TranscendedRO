@@ -1,4 +1,4 @@
 // BP
-prt_fild08a	monster	--ja--	21292,111
-prt_fild08a	monster	--ja--	21293,111
-prt_fild08a	monster	--ja--	21294,111
+prt_fild08a	monster	--ja--	21292,125
+prt_fild08a	monster	--ja--	21293,125
+prt_fild08a	monster	--ja--	21294,125
