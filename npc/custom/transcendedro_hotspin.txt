@@ -571,6 +571,12 @@ OnInit:
 	1270145,				// S_BP8_Range_S
 	1270146,				// S_BP8_Magic_W
 	1270147,				// S_BP8_Magic_S
+	1270188,				// S_BP9_Melee_A
+	1270189,				// S_BP9_Melee_S
+	1270190,				// S_BP9_Range_A
+	1270191,				// S_BP9_Range_S
+	1270192,				// S_BP9_Magic_A
+	1270193,				// S_BP9_Magic_S
 	1001957,				// Purified Stone Garment(Ultimate)
 	25940,					// Loft_StoneUltimate
 	
