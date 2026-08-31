@@ -6089,8 +6089,8 @@ Body:
          }
       }
   - Id: 1270190
-    AegisName: S_BP9_Melee_A
-    Name: Snow Flower Melee Shadow Armor
+    AegisName: S_BP9_Range_A
+    Name: Snow Flower Range Shadow Armor
     Type: ShadowGear
     Locations:
       Shadow_Armor: true
@@ -6111,8 +6111,8 @@ Body:
          }
       }
   - Id: 1270191
-    AegisName: S_BP9_Melee_S
-    Name: Snow Flower Melee Shadow Shoes
+    AegisName: S_BP9_Range_S
+    Name: Snow Flower Range Shadow Shoes
     Type: ShadowGear
     Locations:
       Shadow_Shoes: true
