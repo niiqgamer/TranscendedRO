@@ -637,8 +637,8 @@ I30: Restrict("RE");
 // --------------------------------------------------
 	Special:
 // --------------------------------------------------
-menu	"^FF0000[Test Damage Area]^000000 Training Ground",S11, "Auction Hall",S1, 
-		"Battlegrounds",S2, "Casino",S3, "Dimensional Rift",S4,
+menu	"^FF0000[Test Damage Area]^000000 Training Ground",S11, "^00AA00BATTLE PASS^000000 Area",S12,
+		"Auction Hall",S1, "Battlegrounds",S2, "Casino",S3, "Dimensional Rift",S4,
 		"Eden Group Headquarters",S5, "Kunlun Arena",S6, "Izlude Arena",S7, 
 		"Monster Race Arena",S8, "Para Market",S9, "Turbo Track",S10;
 
@@ -656,6 +656,7 @@ S9: Restrict("RE");
 	Go("paramk",97,17);
 S10: Go("turbo_room",99,114);
 S11: Go("tra_fild",97,170);
+S12: Go("prt_fild08a",193,194);
 
 OnNaviGenerate:
 
