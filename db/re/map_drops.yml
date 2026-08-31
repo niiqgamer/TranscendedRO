@@ -4101,3 +4101,17 @@ Body:
       - Index: 2
         Item: Flower_V
         Rate: 34000
+  - Map: prt_fild08a
+    GlobalDrops:
+      - Index: 0
+        Item: BP_Mat_Melee
+        Rate: 10000
+      - Index: 1
+        Item: BP_Mat_Range
+        Rate: 10000
+      - Index: 2
+        Item: BP_Mat_Magic
+        Rate: 10000
+      - Index: 3
+        Item: BP_Mat_Fusion
+        Rate: 1000

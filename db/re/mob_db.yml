@@ -104753,8 +104753,35 @@ Body:
 #    AegisName: DROPS_TW
 #  - Id: 20430
 #    AegisName: MARIN_TW
-#  - Id: 20431
-#    AegisName: AB_MOB_077
+  - Id: 20431
+    AegisName: AB_MOB_077
+    Name: BP Squirrel Gals
+    Level: 175
+    Hp: 1152000
+    BaseExp: 50
+    JobExp: 50
+    Attack: 1319
+    Attack2: 123
+    Defense: 266
+    MagicDefense: 300
+    Str: 198
+    Agi: 125
+    Vit: 60
+    Int: 123
+    Dex: 211
+    Luk: 65
+    AttackRange: 3
+    SkillRange: 10
+    ChaseRange: 12
+    Size: Large
+    Race: Demihuman
+    Element: Dark
+    ElementLevel: 4
+    WalkSpeed: 200
+    AttackDelay: 828
+    AttackMotion: 528
+    DamageMotion: 192
+    Ai: 09
 #  - Id: 20432
 #    AegisName: AB_MOB_078
 #  - Id: 20433
