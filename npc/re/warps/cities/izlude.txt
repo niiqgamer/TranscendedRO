@@ -38,11 +38,11 @@ izlude_in,171,97,0	warp	iz06	3,2,izlude_in,172,119
 //grademk,51,179,0	warp	mkiz	1,1,izlude,158,125
 
 //= Izlude & Prontera Field 8 Duplicates =====================
-prt_fild08a,371,212,0	warp	prtf005_a	3,3,izlude_a,24,98
+//prt_fild08a,371,212,0	warp	prtf005_a	3,3,izlude_a,24,98
 prt_fild08b,371,212,0	warp	prtf005_b	3,3,izlude_b,24,98
 prt_fild08c,371,212,0	warp	prtf005_c	3,3,izlude_c,24,98
 prt_fild08d,371,212,0	warp	prtf005_d	3,3,izlude_d,24,98
-izlude_a,20,98,0	warp	iz001_a	3,3,prt_fild08a,367,212
+//izlude_a,20,98,0	warp	iz001_a	3,3,prt_fild08a,367,212
 izlude_b,20,98,0	warp	iz001_b	3,3,prt_fild08b,367,212
 izlude_c,20,98,0	warp	iz001_c	3,3,prt_fild08c,367,212
 izlude_d,20,98,0	warp	iz001_d	3,3,prt_fild08d,367,212
