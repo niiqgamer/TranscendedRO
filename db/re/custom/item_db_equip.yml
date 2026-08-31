@@ -426,7 +426,7 @@ Body:
                bonus2 bIgnoreDefRaceRate,RC_All,50;
                if (.@g>=ENCHANTGRADE_A) {
                   bonus bAllStats,10;
-                  bonus bAllTraitStats,10
+                  bonus bAllTraitStats,10;
                }
             }
          }
