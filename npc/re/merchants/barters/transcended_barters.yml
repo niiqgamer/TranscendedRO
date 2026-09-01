@@ -8711,3 +8711,60 @@ Body:
           - Index: 3
             Item: Phantom_Fragment
             Amount: 10
+  - Name: BP
+    Items:
+      - Index: 0
+        Item: BP_Mat_Fusion
+        Zeny: 10000
+        RequiredItems:
+          - Index: 0
+            Item: BP_Mat_Melee
+            Amount: 5
+          - Index: 1
+            Item: BP_Mat_Range
+            Amount: 5
+          - Index: 2
+            Item: BP_Mat_Magic
+            Amount: 5
+      - Index: 1
+        Item: BP_Mat_Melee
+        Zeny: 10000
+        RequiredItems:
+          - Index: 0
+            Item: BP_Mat_Range
+            Amount: 3
+      - Index: 2
+        Item: BP_Mat_Melee
+        Zeny: 10000
+        RequiredItems:
+          - Index: 0
+            Item: BP_Mat_Magic
+            Amount: 3
+      - Index: 3
+        Item: BP_Mat_Range
+        Zeny: 10000
+        RequiredItems:
+          - Index: 0
+            Item: BP_Mat_Melee
+            Amount: 3
+      - Index: 4
+        Item: BP_Mat_Range
+        Zeny: 10000
+        RequiredItems:
+          - Index: 0
+            Item: BP_Mat_Magic
+            Amount: 3
+      - Index: 5
+        Item: BP_Mat_Magic
+        Zeny: 10000
+        RequiredItems:
+          - Index: 0
+            Item: BP_Mat_Melee
+            Amount: 3
+      - Index: 6
+        Item: BP_Mat_Magic
+        Zeny: 10000
+        RequiredItems:
+          - Index: 0
+            Item: BP_Mat_Range
+            Amount: 3

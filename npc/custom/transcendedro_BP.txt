@@ -1,0 +1,32 @@
+moc_para1,52,34,4	script	BP Officer	10056,{
+	switch(select(
+	
+	"~ Exchange BP Materials",
+	"~ BP Quests",
+	"~ Warp to ^00AA00BATTLE PASS^000000 Area",
+	"Cancel"
+	
+	)) {
+		case 1:
+			callshop "BP";
+			end;
+		case 2:
+			mes "Sorry, no any quests yet!";
+			mes "Be patient!";
+			close2;
+			end;
+		case 3:
+			warp "prt_fild08a", 193, 194;
+			end;
+		case 4:
+			mes "Bye, guys!";
+			close2;
+			end;
+	}
+	close;
+}
+
+// BP Mob Spawn
+prt_fild08a	monster	--ja--	21292,125
+prt_fild08a	monster	--ja--	21293,125
+prt_fild08a	monster	--ja--	21294,125
