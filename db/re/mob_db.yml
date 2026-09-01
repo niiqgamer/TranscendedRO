@@ -113203,6 +113203,7 @@ Body:
     AttackMotion: 864
     ClientAttackMotion: 648
     DamageMotion: 1440
+    DamageTaken: 10
     Ai: Abr_Offensive
   - Id: 20835
     AegisName: ABR_DUAL_CANNON
@@ -113228,6 +113229,7 @@ Body:
     AttackMotion: 768
     ClientAttackMotion: 576
     DamageMotion: 1008
+    DamageTaken: 10
     Ai: Abr_Offensive
   - Id: 20836
     AegisName: ABR_MOTHER_NET
@@ -113253,6 +113255,7 @@ Body:
     AttackMotion: 1008
     ClientAttackMotion: 672
     DamageMotion: 576
+    DamageTaken: 10
     Ai: Abr_Passive
   - Id: 20837
     AegisName: ABR_INFINITY
@@ -113278,6 +113281,7 @@ Body:
     AttackMotion: 1728
     ClientAttackMotion: 840
     DamageMotion: 1008
+    DamageTaken: 10
     Ai: Abr_Offensive
 #  - Id: 20838
 #    AegisName: ELEMETAL_MASTER_S1
