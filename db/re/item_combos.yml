@@ -63606,3 +63606,212 @@ Body:
     Script: |
       bonus bPAtk,5;
       bonus2 bAddSize,Size_All,20;
+  - Combos:
+      - Combo:
+          - Dracul_Ear_US            # 410708
+          - Red_Bat2_US              # 420863
+    Script: |
+      bonus bAllStats,20;
+      bonus bAllTraitStats,20;
+      bonus2 bAddClass,Class_All,20;
+      bonus2 bMagicAddClass,Class_All,20;
+      bonus2 bSubSize,Size_Medium,40;
+      bonus2 bSubRace,RC_DemiHuman,40;
+      bonus bRestartFullRecover;
+  - Combos:
+      - Combo:
+          - Dimglacier_Follower_US            # 410709
+          - D_Glacier_M_Mace    # 590048
+      - Combo:
+          - Dimglacier_Follower_US            # 410709
+          - D_Glacier_Mace    # 590047
+      - Combo:
+          - Dimglacier_Follower_US            # 410709
+          - D_Glacier_Whip    # 590033
+      - Combo:
+          - Dimglacier_Follower_US            # 410709
+          - D_Glacier_Rifle    # 810015
+      - Combo:
+          - Dimglacier_Follower_US            # 410709
+          - D_Glacier_Violin    # 570032
+      - Combo:
+          - Dimglacier_Follower_US            # 410709
+          - D_Glacier_Knuckle    # 560037
+      - Combo:
+          - Dimglacier_Follower_US            # 410709
+          - D_Glacier_Foxtail    # 550090
+      - Combo:
+          - Dimglacier_Follower_US            # 410709
+          - D_Glacier_Wand    # 550089
+      - Combo:
+          - Dimglacier_Follower_US            # 410709
+          - D_Glacier_Book    # 540056
+      - Combo:
+          - Dimglacier_Follower_US            # 410709
+          - D_Glacier_Spear    # 530034
+      - Combo:
+          - Dimglacier_Follower_US            # 410709
+          - D_Glacier_Axe    # 520021
+      - Combo:
+          - Dimglacier_Follower_US            # 410709
+          - D_Glacier_B_Knife    # 510076
+      - Combo:
+          - Dimglacier_Follower_US            # 410709
+          - D_Glacier_R_Knife    # 510075
+      - Combo:
+          - Dimglacier_Follower_US            # 410709
+          - D_Glacier_B_Sword    # 500055
+      - Combo:
+          - Dimglacier_Follower_US            # 410709
+          - D_Glacier_Sword    # 500054
+      - Combo:
+          - Dimglacier_Follower_US            # 410709
+          - D_Glacier_Launcher    # 840010
+      - Combo:
+          - Dimglacier_Follower_US            # 410709
+          - D_Glacier_Gatling    # 830015
+      - Combo:
+          - Dimglacier_Follower_US            # 410709
+          - D_Glacier_Shotgun    # 820011
+      - Combo:
+          - Dimglacier_Follower_US            # 410709
+          - D_Glacier_Revolver    # 800015
+      - Combo:
+          - Dimglacier_Follower_US            # 410709
+          - D_Glacier_Bow    # 700059
+      - Combo:
+          - Dimglacier_Follower_US            # 410709
+          - D_Glacier_Humma    # 650028
+      - Combo:
+          - Dimglacier_Follower_US            # 410709
+          - D_Glacier_Staff    # 640034
+      - Combo:
+          - Dimglacier_Follower_US            # 410709
+          - D_Glacier_Lance    # 630019
+      - Combo:
+          - Dimglacier_Follower_US            # 410709
+          - D_Glacier_T_Axe    # 620019
+      - Combo:
+          - Dimglacier_Follower_US            # 410709
+          - D_Glacier_Katar    # 610041
+      - Combo:
+          - Dimglacier_Follower_US            # 410709
+          - D_Glacier_T_Sword    # 600030
+    Script: |
+      .@r = getequiprefinerycnt(EQI_HAND_R);
+      bonus bAllStats,15;
+      bonus bAllTraitStats,15;
+      bonus bDelayRate,-15;
+      bonus2 bAddSize,Size_All,15*.@r;
+      bonus2 bMagicAddSize,Size_All,15*.@r;
+  - Combos:
+      - Combo:
+          - Dimglacier_Follower_US            # 410709
+          - Limacina_Card    # 300363
+    Script: |
+      bonus bAllStats,10;
+      bonus2 bAddClass,Class_All,15;
+      bonus2 bMagicAddClass,Class_All,15;
+  - Combos:
+      - Combo:
+          - Dimglacier_Follower_US            # 410709
+          - Ultra_Limacina_Card    # 300377
+    Script: |
+      bonus bPAtk,25;
+      bonus bSMatk,25;
+      bonus2 bAddClass,Class_All,40;
+      bonus2 bMagicAddClass,Class_All,40;
+  - Combos:
+      - Combo:
+          - Venom_Shield_US            # 460185
+          - Cave_Calmaring_Card      # 300371
+    Script: |
+      bonus2 bMagicAtkEle,Ele_Poison,35;
+  - Combos:
+      - Combo:
+          - Venom_Shield_US            # 460185
+          - Discarded_P_R_Card        # 300369
+    Script: |
+      bonus2 bMagicAtkEle,Ele_Dark,35;
+  - Combos:
+      - Combo:
+          - Venom_Shield_US            # 460185
+          - MD_Airboat_Card6           # 300175
+    Script: |
+      bonus bSpl,25;
+      bonus2 bMagicAtkEle,Ele_All,40;
+      bonus2 bSkillAtk,"AG_MYSTERY_ILLUSION",50;
+      bonus2 bSkillAtk,"EM_VENOM_SWAMP",50;
+      skill "SO_POISON_BUSTER",5;
+  - Combos:
+      - Combo:
+          - Venom_Shield_US            # 460185
+          - MD_Airboat_Card7           # 300176
+    Script: |
+      bonus bPAtk,30;
+      bonus bPow,30;
+      bonus2 bAddSize,Size_All,60;
+  - Combos:
+      - Combo:
+          - Stray_Mage_US               # 470468
+          - Dio_Anemos_Card           # 27250
+    Script: |
+      bonus bSMatk,15;
+      bonus2 bSkillAtk,"AG_ALL_BLOOM",40;
+      bonus2 bSkillAtk,"AG_ALL_BLOOM_ATK",40;
+      bonus2 bSkillAtk,"AG_ALL_BLOOM_ATK2",40;
+      bonus2 bSkillCooldown,"AG_ALL_BLOOM",-3000;
+  - Combos:
+      - Combo:
+          - Stray_Mage_US               # 470468
+          - Ordre_Card                     # 27255
+    Script: |
+      bonus bSMatk,15;
+      bonus2 bSkillAtk,"EM_CONFLAGRATION",40;
+      bonus2 bSkillCooldown,"AG_ALL_BLOOM",-1000;
+  - Combos:
+      - Combo:
+          - Stray_Mage_US               # 470468
+          - MD_Geffen_Dio_Card       # 300178
+    Script: |
+      bonus bSMatk,25;
+      bonus bSpl,25;
+      bonus2 bSkillAtk,"AG_ALL_BLOOM",80;
+      bonus2 bSkillAtk,"AG_ALL_BLOOM_ATK",80;
+      bonus2 bSkillAtk,"AG_ALL_BLOOM_ATK2",80;
+      bonus2 bSkillCooldown,"AG_ALL_BLOOM",-5000;
+  - Combos:
+      - Combo:
+          - Stray_Mage_US               # 470468
+          - MD_Geffen_Ordre_Card    # 300183
+    Script: |
+      bonus bSMatk,25;
+      bonus bSpl,25;
+      bonus2 bSkillAtk,"EM_CONFLAGRATION",80;
+      bonus2 bSkillCooldown,"AG_ALL_BLOOM",-1500;
+  - Combos:
+      - Combo:
+          - Stray_Mage_US               # 470468
+          - Fenrir_Card_                   # 4557
+    Script: |
+      bonus bSMatk,15;
+      bonus bDelayRate,-15;
+      bonus2 bMagicAddSize,Size_All,15;
+  - Combos:
+      - Combo:
+          - Hunter_Watch_US               # 491093
+          - Hunter_Locket_US               # 490854
+    Script: |
+      bonus bPAtk,20;
+      bonus bLongAtkRate,30;
+      bonus2 bDropAddRace,RC_All,30;
+  - Combos:
+      - Combo:
+          - Heart_Hunter_AT_Card        # 300381
+          - Hunter_Locket_US               # 490854
+    Script: |
+      if (getenchantgrade(EQI_ARMOR) >= ENCHANTGRADE_B) {
+         bonus bPAtk,15;
+         bonus bLongAtkRate,25;
+         bonus2 bDropAddRace,RC_All,25;
+      }
