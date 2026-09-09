@@ -3168,10 +3168,10 @@ Body:
          }
       }
       if (.@g>=ENCHANTGRADE_D) {
-         if (BaseJob == JOB_ELEMENTAL_MASTER) {
+         if (BaseJob == JOB_Sage) {
             skill "AG_RAIN_OF_CRYSTAL",5;
          }
-         if (BaseJob == JOB_ARCH_MAGE) {
+         if (BaseJob == JOB_Wizard) {
             skill "EM_DIAMOND_STORM",5;
          }
          if (.@g>=ENCHANTGRADE_C) {
