@@ -3179,7 +3179,7 @@ Body:
             if (.@g>=ENCHANTGRADE_B) {
                bonus2 bMagicAddRace,RC_All,25;
                if (.@g>=ENCHANTGRADE_A) {
-                  bonus bbNoGemStone;
+                  bonus bNoGemStone;
                }
             }
          }
