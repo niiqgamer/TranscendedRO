@@ -228,6 +228,30 @@ Body:
       any_warp: true
       view_hpmeter: true
       macro_detect: true
+  - Id: 98
+    Name: Sub Admin
+    Level: 98
+    Inherit:
+      Support: true
+      Law Enforcement: true
+    LogCommands: true
+    Permissions:
+      can_trade: false
+      can_party: true
+      command_enable: true
+      all_skill: false
+      all_equipment: false
+      skill_unconditional: false
+      use_check: true
+      use_changemaptype: true
+      all_commands: true
+      channel_admin: true
+      can_trade_bounded: false
+      item_unconditional: false
+      bypass_stat_onclone: true
+      bypass_max_stat: true
+      macro_register: true
+      trade_unconditional: false
   - Id: 99
     Name: Admin
     Level: 99
