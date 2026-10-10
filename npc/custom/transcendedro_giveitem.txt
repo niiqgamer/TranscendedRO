@@ -7,7 +7,8 @@ OnGiveItem:
 	.@gm_id = getcharid(3);
 	switch(select(
 	
-	"Transcended Coin [9955500]",
+	"Transcended Coin [9955500]",	
+	"Transcended Coin x1000 [9955502]",
 	"Blacksmith Blessing [6635]",
 	"Etel Dust [1000322]",
 	"Etel Stone [1000323]",
@@ -21,24 +22,27 @@ OnGiveItem:
 			$@item = 9955500;
 			break;
 		case 2:
-			$@item = 6635;
+			$@item = 9955502;
 			break;
 		case 3:
-			$@item = 1000322;
+			$@item = 6635;
 			break;
 		case 4:
-			$@item = 1000323;
+			$@item = 1000322;
 			break;
 		case 5:
-			$@item = 1000405;
+			$@item = 1000323;
 			break;
 		case 6:
-			$@item = 1001036;
+			$@item = 1000405;
 			break;
 		case 7:
-			$@item = 14545;
+			$@item = 1001036;
 			break;
 		case 8:
+			$@item = 14545;
+			break;
+		case 9:
 			mes "Bye!";
 			end;
 	}
