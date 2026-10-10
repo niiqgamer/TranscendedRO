@@ -2924,6 +2924,70 @@ Body:
             }
          }
       }
+  - Id: 470349
+    AegisName: Dark_Chaser_US
+    Name: Dark Chaser Boots
+    Type: Armor
+    Weight: 1500
+    Defense: 70
+    Slots: 1
+    Jobs:
+      Knight: true
+      Crusader: true
+      Blacksmith: true
+      Alchemist: true
+      Assassin: true
+      Rogue: true
+    Classes:
+      All_Third: true
+      Fourth: true
+    Locations:
+      Shoes: true
+    ArmorLevel: 2
+    EquipLevelMin: 100
+    Refineable: true
+    Gradable: true
+    Script: |
+      .@r = getrefine();
+      .@g = getenchantgrade();
+      bonus2 bMagicAtkEle,Ele_All,15+10*(.@r/3);
+      bonus bMatk,30*(.@r/2);
+      bonus bSpl,.@r/2;
+      if (.@r>=8) {
+         bonus2 bMagicAtkEle,Ele_All,15;
+         if (.@r>=9) {
+            bonus5 bAutoSpell,"AB_JUDEX",7,100,BF_WEAPON|BF_LONG,1;
+            bonus5 bAutoSpell,"LG_RAYOFGENESIS",7,100,BF_WEAPON|BF_LONG,1;
+            if (.@r>=10) {
+               bonus5 bAutoSpell,"ABC_FROM_THE_ABYSS",4,100,BF_WEAPON|BF_LONG,1;
+               if (.@r>=11) {
+                  bonus5 bAutoSpell,"WL_TETRAVORTEX",10,100,BF_WEAPON|BF_LONG,1;
+                  bonus5 bAutoSpell,"WL_SUMMONFB",1,300,BF_WEAPON|BF_LONG,1;
+                  bonus5 bAutoSpell,"WL_SUMMONWB",1,300,BF_WEAPON|BF_LONG,1;
+                  bonus5 bAutoSpell,"WL_SUMMONBL",1,300,BF_WEAPON|BF_LONG,1;
+                  bonus5 bAutoSpell,"WL_SUMMONSTONE",1,300,BF_WEAPON|BF_LONG,1;
+                  if (.@r>=12) {
+                     bonus bMatk,200;
+                     bonus bSpl,10;
+                     bonus bASPD,10;
+                  }
+               }
+            }
+         }
+      }
+      if (.@g>=ENCHANTGRADE_D) {
+         bonus2 bIgnoreMdefClassRate,Class_All,20;
+         if (.@g>=ENCHANTGRADE_C) {
+            bonus2 bMagicAddEle,Ele_All,15;
+            if (.@g>=ENCHANTGRADE_B) {
+               bonus2 bMagicAtkEle,Ele_All,15;
+               if (.@g>=ENCHANTGRADE_A) {
+                  bonus bSpl,5;
+                  skill "WL_RECOGNIZEDSPELL",1;
+               }
+            }
+         }
+      }
   - Id: 470424
     AegisName: Aladdin_Shoes
     Name: Aladdin Shoes
@@ -5208,6 +5272,25 @@ Body:
       bonus bCon,10;
       bonus bAtkRate,6;
       bonus2 bAddClass,Class_All,15;
+  - Id: 490920
+    AegisName: Chaser_Eye_US
+    Name: Dark Chaser Ring
+    Type: Armor
+    Weight: 500
+    Defense: 30
+    Slots: 1
+    Locations:
+      Right_Accessory: true
+    ArmorLevel: 1
+    EquipLevelMin: 200
+    Script: |
+      bonus bMdef,30;
+      bonus bInt,15;
+      bonus bSpl,15;
+      bonus2 bMagicAddRace,RC_All,BaseLevel/5;
+      if (getskilllv("ABC_FROM_THE_ABYSS") == 5) {
+         bonus2 bSkillCooldown,"ABC_ABYSS_SQUARE",-2000;
+      }
   - Id: 490941
     AegisName: AG_Dim_Ring_TH
     Name: "Dim Glacier Ring of Resonance (Arch Mage)"
