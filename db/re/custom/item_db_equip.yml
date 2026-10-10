@@ -2956,16 +2956,16 @@ Body:
       if (.@r>=8) {
          bonus2 bMagicAtkEle,Ele_All,15;
          if (.@r>=9) {
-            bonus5 bAutoSpell,"AB_JUDEX",7,100,BF_WEAPON|BF_LONG,1;
-            bonus5 bAutoSpell,"LG_RAYOFGENESIS",7,100,BF_WEAPON|BF_LONG,1;
+            bonus5 bAutoSpell,"AB_JUDEX",7,100,BF_WEAPON|BF_SHORT|BF_LONG,1;
+            bonus5 bAutoSpell,"LG_RAYOFGENESIS",7,100,BF_WEAPON|BF_SHORT|BF_LONG,1;
             if (.@r>=10) {
-               bonus5 bAutoSpell,"ABC_FROM_THE_ABYSS",4,100,BF_WEAPON|BF_LONG,1;
+               bonus5 bAutoSpell,"ABC_FROM_THE_ABYSS",4,100,BF_WEAPON|BF_SHORT|BF_LONG,1;
                if (.@r>=11) {
-                  bonus5 bAutoSpell,"WL_TETRAVORTEX",10,100,BF_WEAPON|BF_LONG,1;
-                  bonus5 bAutoSpell,"WL_SUMMONFB",1,300,BF_WEAPON|BF_LONG,1;
-                  bonus5 bAutoSpell,"WL_SUMMONWB",1,300,BF_WEAPON|BF_LONG,1;
-                  bonus5 bAutoSpell,"WL_SUMMONBL",1,300,BF_WEAPON|BF_LONG,1;
-                  bonus5 bAutoSpell,"WL_SUMMONSTONE",1,300,BF_WEAPON|BF_LONG,1;
+                  bonus5 bAutoSpell,"WL_TETRAVORTEX",10,100,BF_WEAPON|BF_SHORT|BF_LONG,1;
+                  bonus5 bAutoSpell,"WL_SUMMONFB",1,300,BF_WEAPON|BF_SHORT|BF_LONG,0;
+                  bonus5 bAutoSpell,"WL_SUMMONWB",1,300,BF_WEAPON|BF_SHORT|BF_LONG,0;
+                  bonus5 bAutoSpell,"WL_SUMMONBL",1,300,BF_WEAPON|BF_SHORT|BF_LONG,0;
+                  bonus5 bAutoSpell,"WL_SUMMONSTONE",1,300,BF_WEAPON|BF_SHORT|BF_LONG,0;
                   if (.@r>=12) {
                      bonus bMatk,200;
                      bonus bSpl,10;
