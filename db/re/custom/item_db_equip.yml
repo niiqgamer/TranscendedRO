@@ -3122,6 +3122,155 @@ Body:
             }
          }
       }
+  - Id: 470443
+    AegisName: Stray_Acolyte_US
+    Name: Heretic Acolyte Boots
+    Type: Armor
+    Weight: 300
+    Defense: 50
+    Slots: 1
+    Jobs:
+      Priest: true
+      Monk: true
+    Classes:
+      Fourth: true
+    Locations:
+      Shoes: true
+    ArmorLevel: 2
+    EquipLevelMin: 100
+    Refineable: true
+    Gradable: true
+    Script: |
+      .@r = getrefine();
+      .@g = getenchantgrade();
+      bonus bMdef,10;
+      bonus bAllStats,15;
+      bonus bAllTraitStats,15;
+      bonus bMaxHPRate,20;
+      bonus bMaxSPRate,20;
+      bonus bBaseAtk,70*(BaseLevel/20);
+      bonus bMatk,70*(BaseLevel/20);
+      bonus2 bSkillAtk,"AB_ADORAMUS",30*(.@r/2);
+      bonus2 bSkillAtk,"SR_TIGERCANNON",30*(.@r/2);
+      bonus bPow,5*(.@r/3);
+      bonus bSpl,5*(.@r/3);
+      bonus bWis,5*(.@r/3);
+      if (.@r>=11) {
+         bonus2 bSkillCooldown,"AB_ADORAMUS",-2500;
+         bonus2 bSkillCooldown,"SR_TIGERCANNON",-3000;
+         if (.@r>=12) {
+             skill "MG_ENERGYCOAT",1;
+             bonus2 bSkillAtk,"AB_ADORAMUS",70;
+             bonus2 bSkillAtk,"SR_TIGERCANNON",70;
+             if (.@r>=13) {
+                 bonus2 bSkillAtk,"CD_FRAMEN",70;
+                 bonus2 bSkillAtk,"IQ_EXPOSION_BLASTER",70;
+                 bonus bFixedCast,-1000;
+                 if (.@r>=14) {
+                    bonus bSpl,20;
+                    bonus bPow,20;
+                    bonus bDelayRate,-30;
+                    if (.@r>=15) {
+                       bonus2 bAddEle,Ele_All,50;
+                       bonus2 bMagicAddEle,Ele_All,50;
+                    }
+                 }
+             }
+         }
+      }
+      if (.@g>=ENCHANTGRADE_D) {
+         if (BaseJob == Job_Priest) {
+            skill "IQ_EXPOSION_BLASTER",5;
+         }
+         if (BaseJob == Job_Monk) {
+            skill "CD_FRAMEN",5;
+         }
+         if (.@g>=ENCHANTGRADE_C) {
+            autobonus3 "{ bonus bStr,100; bonus bInt,100; bonus bSpeedRate,250; }",1000,10000,"MG_ENERGYCOAT";
+            if (.@g>=ENCHANTGRADE_B) {
+               bonus2 bAddRace,RC_All,25;
+               bonus2 bMagicAddRace,RC_All,25;
+               if (.@g>=ENCHANTGRADE_A) {
+                  bonus bNoGemStone;
+               }
+            }
+         }
+      }
+  - Id: 470451
+    AegisName: Stray_Swordman_US
+    Name: Heretic Swordman Boots
+    Type: Armor
+    Weight: 300
+    Defense: 50
+    Slots: 1
+    Jobs:
+      Knight: true
+      Crusader: true
+    Classes:
+      Fourth: true
+    Locations:
+      Shoes: true
+    ArmorLevel: 2
+    EquipLevelMin: 100
+    Refineable: true
+    Gradable: true
+    Script: |
+      .@r = getrefine();
+      .@g = getenchantgrade();
+      bonus bUnbreakableShoes;
+      bonus bMdef,10;
+      bonus bAllStats,15;
+      bonus bAllTraitStats,15;
+      bonus bMaxHPRate,20;
+      bonus bMaxSPRate,20;
+      bonus bBaseAtk,70*(BaseLevel/20);
+      bonus bMatk,70*(BaseLevel/20);
+      bonus2 bSkillAtk,"RK_IGNITIONBREAK",30*(.@r/2);
+      bonus2 bSkillAtk,"LG_RAYOFGENESIS",30*(.@r/2);
+      bonus bPow,5*(.@r/3);
+      bonus bSpl,5*(.@r/3);
+      bonus bWis,5*(.@r/3);
+      if (.@r>=11) {
+         bonus2 bSkillCooldown,"RK_IGNITIONBREAK",-200;
+         bonus2 bSkillCooldown,"LG_RAYOFGENESIS",-200;
+         if (.@r>=12) {
+             skill "MG_ENERGYCOAT",1;
+             bonus2 bSkillAtk,"RK_IGNITIONBREAK",70;
+             bonus2 bSkillAtk,"LG_RAYOFGENESIS",70;
+             if (.@r>=13) {
+                 bonus2 bSkillAtk,"IG_CROSS_RAIN",70;
+                 bonus2 bSkillAtk,"DK_HACKANDSLASHER",70;
+                 bonus bFixedCast,-1000;
+                 if (.@r>=14) {
+                    bonus bSpl,20;
+                    bonus bPow,20;
+                    bonus bDelayRate,-30;
+                    if (.@r>=15) {
+                       bonus2 bAddEle,Ele_All,50;
+                       bonus2 bMagicAddEle,Ele_All,50;
+                    }
+                 }
+             }
+         }
+      }
+      if (.@g>=ENCHANTGRADE_D) {
+         if (BaseJob == Job_Knight) {
+            skill "IG_CROSS_RAIN",10;
+         }
+         if (BaseJob == Job_Crusader) {
+            skill "DK_HACKANDSLASHER",10;
+         }
+         if (.@g>=ENCHANTGRADE_C) {
+            autobonus3 "{ bonus bStr,100; bonus bInt,100; bonus bSpeedRate,250; }",1000,10000,"MG_ENERGYCOAT";
+            if (.@g>=ENCHANTGRADE_B) {
+               bonus2 bAddRace,RC_All,25;
+               bonus2 bMagicAddRace,RC_All,25;
+               if (.@g>=ENCHANTGRADE_A) {
+                  bonus bNoWalkDelay;
+               }
+            }
+         }
+      }
   - Id: 470456
     AegisName: Ayothaya_Boots_LT_TH
     Name: "Ayothaya Adventurer's Boots-LT"
@@ -3170,6 +3319,155 @@ Body:
                if (.@g>=ENCHANTGRADE_A) {
                   bonus bAllStats,.@r*2;
                   bonus bAllTraitStats,.@r*2;
+               }
+            }
+         }
+      }
+  - Id: 470461
+    AegisName: Stray_Merchant_US
+    Name: Heretic Merchant Boots
+    Type: Armor
+    Weight: 300
+    Defense: 50
+    Slots: 1
+    Jobs:
+      Blacksmith: true
+      Alchemist: true
+    Classes:
+      Fourth: true
+    Locations:
+      Shoes: true
+    ArmorLevel: 2
+    EquipLevelMin: 100
+    Refineable: true
+    Gradable: true
+    Script: |
+      .@r = getrefine();
+      .@g = getenchantgrade();
+      bonus bUnbreakableShoes;
+      bonus bMdef,10;
+      bonus bAllStats,15;
+      bonus bAllTraitStats,15;
+      bonus bMaxHPRate,20;
+      bonus bMaxSPRate,20;
+      bonus bBaseAtk,70*(BaseLevel/20);
+      bonus bMatk,70*(BaseLevel/20);
+      bonus2 bSkillAtk,"NC_ARMSCANNON",30*(.@r/2);
+      bonus2 bSkillAtk,"GN_CARTCANNON",30*(.@r/2);
+      bonus bPow,5*(.@r/3);
+      bonus bCon,5*(.@r/3);
+      if (.@r>=11) {
+         bonus2 bSkillAtk,"NC_ARMSCANNON",100;
+         bonus2 bSkillAtk,"GN_CARTCANNON",100;
+         if (.@r>=12) {
+             skill "MG_ENERGYCOAT",1;
+             bonus2 bSkillAtk,"NC_ARMSCANNON",70;
+             bonus2 bSkillAtk,"GN_CARTCANNON",70;
+             if (.@r>=13) {
+                 bonus2 bSkillAtk,"MT_TRIPLE_LASER",70;
+                 bonus2 bSkillAtk,"BO_MAYHEMIC_THORNS",70;
+                 bonus bFixedCast,-1000;
+                 if (.@r>=14) {
+                    bonus bCon,20;
+                    bonus bPow,20;
+                    bonus bDelayRate,-30;
+                    if (.@r>=15) {
+                       bonus2 bAddEle,Ele_All,50;
+                       bonus2 bMagicAddEle,Ele_All,50;
+                    }
+                 }
+             }
+         }
+      }
+      if (.@g>=ENCHANTGRADE_D) {
+         if (BaseJob == Job_Alchemist) {
+            skill "MT_MIGHTY_SMASH",5;
+         }
+         if (BaseJob == Job_Blacksmith) {
+            skill "BO_EXPLOSIVE_POWDER",5;
+         }
+         if (.@g>=ENCHANTGRADE_C) {
+            autobonus3 "{ bonus bStr,100; bonus bInt,100; bonus bSpeedRate,250; }",1000,10000,"MG_ENERGYCOAT";
+            if (.@g>=ENCHANTGRADE_B) {
+               bonus2 bAddRace,RC_All,25;
+               bonus2 bMagicAddRace,RC_All,25;
+               if (.@g>=ENCHANTGRADE_A) {
+                  bonus bNoGemStone;
+               }
+            }
+         }
+      }
+  - Id: 470467
+    AegisName: Stray_Taekwon_US
+    Name: Heretic Taekwon Boots
+    Type: Armor
+    Weight: 300
+    Defense: 50
+    Slots: 1
+    Jobs:
+      StarGladiator: true
+      SoulLinker: true
+    Classes:
+      Fourth: true
+    Locations:
+      Shoes: true
+    ArmorLevel: 2
+    EquipLevelMin: 100
+    Refineable: true
+    Gradable: true
+    Script: |
+      .@r = getrefine();
+      .@g = getenchantgrade();
+      bonus bUnbreakableShoes;
+      bonus bMdef,10;
+      bonus bAllStats,15;
+      bonus bAllTraitStats,15;
+      bonus bMaxHPRate,20;
+      bonus bMaxSPRate,20;
+      bonus bBaseAtk,50*(BaseLevel/20);
+      bonus bMatk,50*(BaseLevel/20);
+      bonus2 bSkillAtk,"SKE_NOON_BLAST",20*(.@r/2);
+      bonus2 bSkillAtk,"SKE_MIDNIGHT_KICK",20*(.@r/2);
+      bonus2 bSkillAtk,"SOA_TALISMAN_OF_WHITE_TIGER",20*(.@r/2);
+      bonus2 bSkillAtk,"SOA_TALISMAN_OF_RED_PHOENIX",20*(.@r/2);
+      bonus bPow,5*(.@r/3);
+      bonus bSpl,5*(.@r/3);
+      if (.@r>=11) {
+         bonus bVariableCastRate,-30;
+         if (.@r>=12) {
+             skill "MG_ENERGYCOAT",1;
+             bonus2 bSkillAtk,"SKE_NOON_BLAST",50;
+             bonus2 bSkillAtk,"SKE_MIDNIGHT_KICK",50;
+             bonus2 bSkillAtk,"SOA_TALISMAN_OF_WHITE_TIGER",50;
+             bonus2 bSkillAtk,"SOA_TALISMAN_OF_RED_PHOENIX",50;
+             if (.@r>=13) {
+                 bonus2 bSkillAtk,"SKE_DAWN_BREAK",70;
+                 bonus2 bSkillAtk,"SKE_STAR_CANNON",70;
+                 bonus2 bSkillAtk,"SOA_TALISMAN_OF_FOUR_BEARING_GOD",70;
+                 bonus2 bSkillAtk,"SOA_EXORCISM_OF_MALICIOUS_SOUL",70;
+                 bonus bFixedCast,-1000;
+                 if (.@r>=14) {
+                    bonus bSpl,20;
+                    bonus bPow,20;
+                    bonus bDelayRate,-30;
+                    if (.@r>=15) {
+                       bonus2 bAddEle,Ele_All,50;
+                       bonus2 bMagicAddEle,Ele_All,50;
+                    }
+                 }
+             }
+         }
+      }
+      if (.@g>=ENCHANTGRADE_D) {
+         skill "AL_INCAGI",10;
+         skill "AL_BLESSING",10;
+         if (.@g>=ENCHANTGRADE_C) {
+            autobonus3 "{ bonus bStr,100; bonus bInt,100; bonus bSpeedRate,250; }",1000,10000,"MG_ENERGYCOAT";
+            if (.@g>=ENCHANTGRADE_B) {
+               bonus2 bAddRace,RC_All,25;
+               bonus2 bMagicAddRace,RC_All,25;
+               if (.@g>=ENCHANTGRADE_A) {
+                  bonus bNoWalkDelay;
                }
             }
          }
@@ -3244,6 +3542,87 @@ Body:
                bonus2 bMagicAddRace,RC_All,25;
                if (.@g>=ENCHANTGRADE_A) {
                   bonus bNoGemStone;
+               }
+            }
+         }
+      }
+  - Id: 470470
+    AegisName: Stray_Ninja_US
+    Name: Heretic Ninja Boots
+    Type: Armor
+    Weight: 300
+    Defense: 20
+    Slots: 1
+    Jobs:
+      KagerouOboro: true
+    Classes:
+      All_Third: true
+      Fourth: true
+    Locations:
+      Shoes: true
+    ArmorLevel: 2
+    EquipLevelMin: 100
+    Refineable: true
+    Gradable: true
+    Script: |
+      .@r = getrefine();
+      .@g = getenchantgrade();
+      bonus bUnbreakableShoes;
+      bonus bMdef,10;
+      bonus bAllStats,15;
+      bonus bAllTraitStats,15;
+      bonus bMaxHPRate,20;
+      bonus bMaxSPRate,20;
+      bonus bBaseAtk,60*(BaseLevel/20);
+      bonus bMatk,60*(BaseLevel/20);
+      bonus2 bMagicAtkEle,Ele_All,20;
+      bonus bShortAtkRate,20;
+      bonus bLongAtkRate,20;
+      bonus bPow,5*(.@r/3);
+      bonus bCon,5*(.@r/3);
+      bonus bSpl,5*(.@r/3);
+      if (.@r>=11) {
+         bonus bPow,15;
+         bonus bSpl,15;
+         bonus2 bSkillCooldown,"SS_SHINKIROU",-3000;
+         if (.@r>=12) {
+             skill "MG_ENERGYCOAT",1;
+             bonus2 bMagicAtkEle,Ele_All,40;
+             bonus2 bSkillAtk,"SS_KAGEGISSEN",40;
+             bonus2 bSkillAtk,"SS_KUNAIKUSSETSU",40;
+             bonus2 bSkillAtk,"SS_FUUMAKOUCHIKU",40;
+             if (.@r>=13) {
+                 bonus2 bSkillAtk,"SS_KAGENOMAI",100;
+                 bonus2 bSkillAtk,"SS_KUNAIKAITEN",100;
+                 bonus2 bSkillAtk,"SS_FUUMASHOUAKU",100;
+                 bonus2 bSkillAtk,"SS_REIKETSUHOU",200;
+                 bonus2 bSkillAtk,"SS_SEKIENHOU",200;
+                 bonus2 bSkillAtk,"SS_ANTENPOU",200;
+                 bonus bFixedCast,-1000;
+                 if (.@r>=14) {
+                    bonus4 bAutoSpellOnSkill,"SS_KAGEGISSEN","SS_KAGENOMAI",10,300;
+                    bonus4 bAutoSpellOnSkill,"SS_KUNAIKAITEN","SS_KUNAIKUSSETSU",10,300;
+                    bonus4 bAutoSpellOnSkill,"SS_RAIDENPOU","SS_SEKIENHOU",10,300;
+                    bonus4 bAutoSpellOnSkill,"SS_FUUMAKOUCHIKU","SS_FUUMASHOUAKU",10,200;
+                    if (.@r>=15) {
+                       bonus2 bAddEle,Ele_All,40;
+                       bonus2 bMagicAddEle,Ele_All,40;
+                    }
+                 }
+             }
+         }
+      }
+      if (.@g>=ENCHANTGRADE_D) {
+         skill "WL_RECOGNIZEDSPELL",5;
+         skill "BS_MAXIMIZE",5;
+         if (.@g>=ENCHANTGRADE_C) {
+            autobonus3 "{ bonus bStr,100; bonus bInt,100; bonus bSpeedRate,250; }",1000,10000,"KO_IZAYOI";
+            if (.@g>=ENCHANTGRADE_B) {
+               bonus2 bAddRace,RC_All,25;
+               bonus2 bMagicAddRace,RC_All,25;
+               if (.@g>=ENCHANTGRADE_A) {
+                  bonus bNoKnockback;
+                  bonus bDelayRate,-20;
                }
             }
          }
