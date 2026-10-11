@@ -63839,3 +63839,201 @@ Body:
          bonus bSpl,15;
          bonus2 bMagicAtkEle,Ele_All,25;
       }
+  - Combos:
+      - Combo:
+          - Stray_Acolyte_US               # 470443
+          - Rechenier_Card                 # 27259
+    Script: |
+      bonus bSMatk,15;
+      bonus2 bSkillAtk,"CD_FRAMEN",50;
+      bonus2 bSkillCooldown,"CD_FRAMEN",-200;
+  - Combos:
+      - Combo:
+          - Stray_Acolyte_US               # 470443
+          - Pa_Monk_Card                   # 27254
+    Script: |
+      bonus bPAtk,15;
+      bonus2 bSkillAtk,"IQ_EXPOSION_BLASTER",50;
+      bonus2 bSkillCooldown,"IQ_EXPOSION_BLASTER",-600;
+  - Combos:
+      - Combo:
+          - Stray_Acolyte_US               # 470443
+          - MD_Geffen_Reche_Card      # 300188
+    Script: |
+      bonus bSMatk,30;
+      bonus bSpl,30;
+      bonus2 bSkillAtk,"CD_FRAMEN",100;
+      bonus2 bSkillCooldown,"CD_FRAMEN",-300;
+  - Combos:
+      - Combo:
+          - Stray_Acolyte_US               # 470443
+          - MD_Geffen_Monk_Card       # 300182
+    Script: |
+      bonus bPAtk,30;
+      bonus bPow,30;
+      bonus2 bSkillAtk,"IQ_EXPOSION_BLASTER",100;
+      bonus2 bSkillCooldown,"IQ_EXPOSION_BLASTER",-700;
+  - Combos:
+      - Combo:
+          - Stray_Acolyte_US               # 470443
+          - Fenrir_Card_                      # 4557
+    Script: |
+      bonus bPAtk,15;
+      bonus bSMatk,15;
+      bonus bDelayRate,-15;
+      bonus2 bAddSize,Size_All,15;
+      bonus2 bMagicAddSize,Size_All,15;
+  - Combos:
+      - Combo:
+          - Stray_Merchant_US               # 470461
+          - Geffen_Thug_Card                 # 27252
+    Script: |
+      bonus bPAtk,15;
+      bonus2 bSkillAtk,"MT_TRIPLE_LASER",50;
+      bonus2 bSkillCooldown,"MT_TRIPLE_LASER",-150;
+  - Combos:
+      - Combo:
+          - Stray_Merchant_US               # 470461
+          - Fei_Kanabian_Card                 # 27263
+    Script: |
+      bonus bPAtk,15;
+      bonus2 bSkillAtk,"BO_MAYHEMIC_THORNS",100;
+      bonus2 bSkillCooldown,"BO_MAYHEMIC_THORNS",-300;
+  - Combos:
+      - Combo:
+          - Stray_Merchant_US               # 470461
+          - MD_Geffen_Thug_Card                 # 300181
+    Script: |
+      bonus bPAtk,30;
+      bonus bPow,30;
+      bonus2 bSkillAtk,"MT_TRIPLE_LASER",100;
+      bonus2 bSkillCooldown,"MT_TRIPLE_LASER",-300;
+  - Combos:
+      - Combo:
+          - Stray_Merchant_US               # 470461
+          - MD_Geffen_Fei_Card                 # 300190
+    Script: |
+      bonus bPAtk,30;
+      bonus bPow,30;
+      bonus2 bSkillAtk,"BO_MAYHEMIC_THORNS",100;
+      bonus2 bSkillCooldown,"BO_MAYHEMIC_THORNS",-600;
+  - Combos:
+      - Combo:
+          - Stray_Merchant_US               # 470461
+          - Fenrir_Card_                      # 4557
+    Script: |
+      bonus bPAtk,15;
+      bonus bSMatk,15;
+      bonus bDelayRate,-15;
+      bonus2 bAddSize,Size_All,15;
+      bonus2 bMagicAddSize,Size_All,15;
+  - Combos:
+      - Combo:
+          - Stray_Ninja_US                      # 470470
+          - Kuro_Akuma_Card                  # 27257
+    Script: |
+      bonus bPAtk,15;
+      bonus bSMatk,15;
+      bonus2 bSkillAtk,"SS_KAGEGISSEN",50;
+      bonus2 bSkillAtk,"SS_FUUMAKOUCHIKU",50;
+      bonus2 bSkillAtk,"SS_RAIDENPOU",50;
+      bonus2 bSkillCooldown,"SS_KAGEGISSEN",-250;
+      bonus2 bSkillCooldown,"SS_SEKIENHOU",-300;
+      bonus2 bSkillCooldown,"SS_REIKETSUHOU",-300;
+      bonus2 bSkillCooldown,"SS_ANTENPOU",-300;
+  - Combos:
+      - Combo:
+          - Stray_Ninja_US                      # 470470
+          - MD_Geffen_Akuma_Card         # 300185
+    Script: |
+      bonus bPAtk,30;
+      bonus bSMatk,30;
+      bonus2 bSkillAtk,"SS_KAGEGISSEN",100;
+      bonus2 bSkillAtk,"SS_FUUMAKOUCHIKU",100;
+      bonus2 bSkillAtk,"SS_RAIDENPOU",100;
+      bonus2 bSkillCooldown,"SS_KAGEGISSEN",-500;
+      bonus2 bSkillCooldown,"SS_SEKIENHOU",-500;
+      bonus2 bSkillCooldown,"SS_REIKETSUHOU",-500;
+      bonus2 bSkillCooldown,"SS_ANTENPOU",-500;
+  - Combos:
+      - Combo:
+          - Stray_Ninja_US                      # 470470
+          - Fenrir_Card_                      # 4557
+    Script: |
+      bonus bPAtk,15;
+      bonus bSMatk,15;
+      bonus bDelayRate,-15;
+      bonus2 bAddSize,Size_All,15;
+      bonus2 bMagicAddSize,Size_All,15;
+  - Combos:
+      - Combo:
+          - Stray_Swordman_US          # 470451
+          - Blut_Hase_Card                 # 27256
+    Script: |
+      bonus bSMatk,15;
+      bonus2 bSkillAtk,"IG_CROSS_RAIN",50;
+      bonus2 bSkillCooldown,"IG_CROSS_RAIN",-2000;
+  - Combos:
+      - Combo:
+          - Stray_Swordman_US          # 470451
+          - Hyper_Death_Card             # 27258
+    Script: |
+      bonus bPAtk,15;
+      bonus2 bSkillAtk,"DK_HACKANDSLASHER",50;
+      bonus2 bSkillCooldown,"DK_HACKANDSLASHER",-500;
+  - Combos:
+      - Combo:
+          - Stray_Swordman_US          # 470451
+          - MD_Geffen_Blut_Card         # 300184
+    Script: |
+      bonus bSMatk,30;
+      bonus bSpl,30;
+      bonus2 bSkillAtk,"IG_CROSS_RAIN",100;
+      bonus2 bSkillCooldown,"IG_CROSS_RAIN",-2000;
+  - Combos:
+      - Combo:
+          - Stray_Swordman_US          # 470451
+          - MD_Geffen_Hyper_Card      # 300186
+    Script: |
+      bonus bPAtk,15;
+      bonus bPow,30;
+      bonus2 bSkillAtk,"DK_HACKANDSLASHER",100;
+      bonus2 bSkillCooldown,"DK_HACKANDSLASHER",-500;
+  - Combos:
+      - Combo:
+          - Stray_Swordman_US          # 470451
+          - Fenrir_Card_                      # 4557
+    Script: |
+      bonus bPAtk,15;
+      bonus bSMatk,15;
+      bonus bDelayRate,-15;
+      bonus2 bAddSize,Size_All,15;
+      bonus2 bMagicAddSize,Size_All,15;
+  - Combos:
+      - Combo:
+          - Stray_Taekwon_US            # 470467
+          - Archi_Card                        # 27249
+    Script: |
+      bonus bPAtk,10;
+      bonus bSMatk,10;
+      bonus bVariableCastRate,-10;
+      bonus bDelayRate,-10;
+  - Combos:
+      - Combo:
+          - Stray_Taekwon_US            # 470467
+          - MD_Geffen_Archi_Card       # 300177
+    Script: |
+      bonus bPAtk,20;
+      bonus bSMatk,20;
+      bonus bVariableCastRate,-20;
+      bonus bDelayRate,-20;
+  - Combos:
+      - Combo:
+          - Stray_Taekwon_US            # 470467
+          - Fenrir_Card_                      # 4557
+    Script: |
+      bonus bPAtk,15;
+      bonus bSMatk,15;
+      bonus bDelayRate,-20;
+      bonus2 bAddSize,Size_All,15;
+      bonus2 bMagicAddSize,Size_All,15;
