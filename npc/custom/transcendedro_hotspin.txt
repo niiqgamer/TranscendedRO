@@ -637,7 +637,14 @@ OnInit:
 	410708,					// Dracul_Ear_US
 	410709,					// Dimglacier_Follower_US
 	460185,					// Venom_Shield_US
+	470349,					// Dark_Chaser_US
+	490920,					// Chaser_Eye_US
+	470443,					// Stray_Acolyte_US
 	470468,					// Stray_Mage_US
+	470461,					// Stray_Merchant_US
+	470470,					// Stray_Ninja_US
+	470451,					// Stray_Swordman_US
+	470467,					// Stray_Taekwon_US
 	491093,					// Hunter_Watch_US
 	490854,					// Hunter_Locket_US
 	25940,					// Loft_StoneUltimate
