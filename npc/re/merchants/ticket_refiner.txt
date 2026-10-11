@@ -230,3 +230,5 @@ prontera,184,177,6	script	Refine Master	851,{
 	mes "Farewell~!";
 	close;
 }
+
+grademk,38,186,4	duplicate(Refine Master)	Refine Master#mk	851
