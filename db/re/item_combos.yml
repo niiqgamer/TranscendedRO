@@ -64037,3 +64037,47 @@ Body:
       bonus bDelayRate,-20;
       bonus2 bAddSize,Size_All,15;
       bonus2 bMagicAddSize,Size_All,15;
+  - Combos:
+      - Combo:
+          - Stray_Thief_US                  # 470457
+          - Geffen_Gang_Card             # 27251
+    Script: |
+      bonus bPAtk,15;
+      bonus2 bSkillAtk,"SHC_SAVAGE_IMPACT",50;
+      bonus2 bSkillCooldown,"SHC_SAVAGE_IMPACT",-300;
+  - Combos:
+      - Combo:
+          - Stray_Thief_US                  # 470457
+          - Geffen_Thief_Card             # 27253
+    Script: |
+      bonus bSMatk,15;
+      bonus2 bSkillAtk,"ABC_ABYSS_SQUARE",50;
+      bonus2 bSkillCooldown,"ABC_ABYSS_SQUARE",-1500;
+  - Combos:
+      - Combo:
+          - Stray_Thief_US                  # 470457
+          - MD_Geffen_Gang_Card       # 300180
+    Script: |
+      bonus bPAtk,30;
+      bonus bPow,30;
+      bonus2 bSkillAtk,"SHC_SAVAGE_IMPACT",100;
+      bonus2 bSkillCooldown,"SHC_SAVAGE_IMPACT",-500;
+  - Combos:
+      - Combo:
+          - Stray_Thief_US                  # 470457
+          - MD_Geffen_Thief_Card       # 300179
+    Script: |
+      bonus bSMatk,30;
+      bonus bSpl,30;
+      bonus2 bSkillAtk,"ABC_ABYSS_SQUARE",100;
+      bonus2 bSkillCooldown,"ABC_ABYSS_SQUARE",-2300;
+  - Combos:
+      - Combo:
+          - Stray_Thief_US                  # 470457
+          - Fenrir_Card_                      # 4557
+    Script: |
+      bonus bPAtk,15;
+      bonus bSMatk,15;
+      bonus bDelayRate,-20;
+      bonus2 bAddSize,Size_All,15;
+      bonus2 bMagicAddSize,Size_All,15;

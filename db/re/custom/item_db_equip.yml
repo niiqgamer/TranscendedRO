@@ -43,16 +43,16 @@ Body:
          bonus2 bAddRace,RC_All,10;
          bonus2 bMagicAddRace,RC_All,10;
          if (.@r>=9) {
-             bonus2 bAddClass,Class_Boss,10;
-             bonus2 bMagicAddClass,Class_Boss,10;
-             if (.@r>=10) {
-                  bonus2 bIgnoreDefRaceRate,RC_All,100;
-                  bonus2 bIgnoreDefRaceRate,RC_Player_Human,-100;
-                  bonus2 bIgnoreDefRaceRate,RC_Player_Doram,-100;
-                  bonus2 bIgnoreMdefRaceRate,RC_All,100;
-                  bonus2 bIgnoreMdefRaceRate,RC_Player_Human,-100;
-                  bonus2 bIgnoreMdefRaceRate,RC_Player_Doram,-100;
-             }
+            bonus2 bAddClass,Class_Boss,10;
+            bonus2 bMagicAddClass,Class_Boss,10;
+            if (.@r>=10) {
+               bonus2 bIgnoreDefRaceRate,RC_All,100;
+               bonus2 bIgnoreDefRaceRate,RC_Player_Human,-100;
+               bonus2 bIgnoreDefRaceRate,RC_Player_Doram,-100;
+               bonus2 bIgnoreMdefRaceRate,RC_All,100;
+               bonus2 bIgnoreMdefRaceRate,RC_Player_Human,-100;
+               bonus2 bIgnoreMdefRaceRate,RC_Player_Doram,-100;
+            }
          }
       }
   - Id: 400814
@@ -3319,6 +3319,80 @@ Body:
                if (.@g>=ENCHANTGRADE_A) {
                   bonus bAllStats,.@r*2;
                   bonus bAllTraitStats,.@r*2;
+               }
+            }
+         }
+      }
+  - Id: 470457
+    AegisName: Stray_Thief_US
+    Name: Wandering Thief Boots
+    Type: Armor
+    Weight: 300
+    Defense: 50
+    Slots: 1
+    Jobs:
+      Assassin: true
+      Rogue: true
+    Classes:
+      Fourth: true
+    Locations:
+      Shoes: true
+    ArmorLevel: 2
+    EquipLevelMin: 100
+    Refineable: true
+    Gradable: true
+    Script: |
+      .@r = getrefine();
+      .@g = getenchantgrade();
+      bonus bUnbreakableShoes;
+      bonus bMdef,10;
+      bonus bAllStats,15;
+      bonus bAllTraitStats,15;
+      bonus bMaxHPRate,20;
+      bonus bMaxSPRate,20;
+      bonus bBaseAtk,70*(BaseLevel/20);
+      bonus bMatk,70*(BaseLevel/20);
+      bonus2 bSkillAtk,"GC_CROSSIMPACT",30*(.@r/2);
+      bonus2 bMagicAtkEle,Ele_All,30*(.@r/2);
+      bonus bPow,5*(.@r/3);
+      bonus bSpl,5*(.@r/3);
+      if (.@r>=11) {
+         bonus bSpl,20;
+         bonus2 bSkillCooldown,"GC_CROSSIMPACT",-300;
+         if (.@r>=12) {
+             skill "MG_ENERGYCOAT",1;
+             bonus2 bMagicAtkEle,Ele_All,60;
+             bonus2 bSkillAtk,"GC_CROSSIMPACT",70;
+             if (.@r>=13) {
+                 bonus2 bSkillAtk,"ABC_ABYSS_SQUARE",60;
+                 bonus2 bSkillAtk,"SHC_SAVAGE_IMPACT",60;
+                 bonus bFixedCast,-1000;
+                 if (.@r>=14) {
+                    bonus bSpl,20;
+                    bonus bPow,20;
+                    bonus bDelayRate,-30;
+                    if (.@r>=15) {
+                       bonus2 bAddEle,Ele_All,50;
+                       bonus2 bMagicAddEle,Ele_All,50;
+                    }
+                 }
+             }
+         }
+      }
+      if (.@g>=ENCHANTGRADE_D) {
+         if (BaseJob == Job_Rogue) {
+            skill "GC_CROSSIMPACT",5;
+         }
+         if (BaseJob == Job_Assassin) {
+            skill "ABC_ABYSS_SQUARE",5;
+         }
+         if (.@g>=ENCHANTGRADE_C) {
+            autobonus3 "{ bonus bStr,100; bonus bInt,100; bonus bSpeedRate,250; }",1000,10000,"MG_ENERGYCOAT";
+            if (.@g>=ENCHANTGRADE_B) {
+               bonus2 bAddRace,RC_All,25;
+               bonus2 bMagicAddRace,RC_All,25;
+               if (.@g>=ENCHANTGRADE_A) {
+                  bonus bNoWalkDelay;
                }
             }
          }
@@ -6607,17 +6681,17 @@ Body:
       if (.@r>=7) {
          bonus bAllStats,8;
          if (.@r>=9) {
-             bonus bShortAtkRate,10;
-             bonus bLongAtkRate,10;
-             bonus2 bMagicAtkEle,Ele_All,10;
-             if (.@r>=10) {
-                  bonus2 bIgnoreDefRaceRate,RC_All,100;
-                  bonus2 bIgnoreDefRaceRate,RC_Player_Human,-100;
-                  bonus2 bIgnoreDefRaceRate,RC_Player_Doram,-100;
-                  bonus2 bIgnoreMdefRaceRate,RC_All,100;
-                  bonus2 bIgnoreMdefRaceRate,RC_Player_Human,-100;
-                  bonus2 bIgnoreMdefRaceRate,RC_Player_Doram,-100;
-             }
+            bonus bShortAtkRate,10;
+            bonus bLongAtkRate,10;
+            bonus2 bMagicAtkEle,Ele_All,10;
+            if (.@r>=10) {
+               bonus2 bIgnoreDefRaceRate,RC_All,100;
+               bonus2 bIgnoreDefRaceRate,RC_Player_Human,-100;
+               bonus2 bIgnoreDefRaceRate,RC_Player_Doram,-100;
+               bonus2 bIgnoreMdefRaceRate,RC_All,100;
+               bonus2 bIgnoreMdefRaceRate,RC_Player_Human,-100;
+               bonus2 bIgnoreMdefRaceRate,RC_Player_Doram,-100;
+            }
          }
       }
   - Id: 1270142

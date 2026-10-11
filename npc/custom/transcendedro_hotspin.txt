@@ -645,6 +645,7 @@ OnInit:
 	470470,					// Stray_Ninja_US
 	470451,					// Stray_Swordman_US
 	470467,					// Stray_Taekwon_US
+	470457,					// Stray_Thief_US
 	491093,					// Hunter_Watch_US
 	490854,					// Hunter_Locket_US
 	25940,					// Loft_StoneUltimate
