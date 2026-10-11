@@ -231,4 +231,4 @@ prontera,184,177,6	script	Refine Master	851,{
 	close;
 }
 
-grademk,38,186,4	duplicate(Refine Master)	Refine Master#mk	851
+grademk,17,186,5	duplicate(Refine Master)	Refine Master#mk	851
