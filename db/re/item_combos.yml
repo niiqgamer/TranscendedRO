@@ -64081,3 +64081,151 @@ Body:
       bonus bDelayRate,-20;
       bonus2 bAddSize,Size_All,15;
       bonus2 bMagicAddSize,Size_All,15;
+  - Combos:
+      - Combo:
+          - Poenitentia_Ring_SH           # 490742
+          - Poenitentia_Ramus             # 550060
+    Script: |
+      .@r = getequiprefinerycnt(EQI_HAND_R);
+      if (.@r>=10) {
+         bonus2 bSkillCooldown,"SH_HYUN_ROKS_BREEZE",-2000;
+         bonus4 bAutoSpellOnSkill,"SH_HYUN_ROKS_BREEZE","SH_HYUN_ROK_CANNON",7,350;
+      }
+  - Combos:
+      - Combo:
+          - Poenitentia_Ring_IQ           # 490744
+          - Poenitentia_Ungula            # 560013
+    Script: |
+      .@r = getequiprefinerycnt(EQI_HAND_R);
+      if (.@r>=10) {
+         bonus2 bSkillCooldown,"SR_EARTHSHAKER",-1500;
+         bonus2 bSkillCooldown,"SR_RAMPAGEBLASTER",-1500;
+         bonus2 bSkillCooldown,"IQ_EXPOSION_BLASTER",-350;
+      }
+  - Combos:
+      - Combo:
+          - Poenitentia_Ring_HN           # 490748
+          - Poenitentia_Ferrum             # 550062
+    Script: |
+      .@r = getequiprefinerycnt(EQI_HAND_R);
+      if (.@r>=10) {
+         bonus2 bSkillCooldown,"HN_METEOR_STORM_BUSTER",-2000;
+         bonus2 bSkillCooldown,"HN_JACK_FROST_NOVA",-2000;
+      }
+  - Combos:
+      - Combo:
+          - Poenitentia_Ring_NW           # 490750
+          - Poenitentia_Foramen            # 800011
+    Script: |
+      .@r = getequiprefinerycnt(EQI_HAND_R);
+      if (.@r>=10) {
+         bonus2 bSkillCooldown,"NW_MAGAZINE_FOR_ONE",-200;
+      }
+  - Combos:
+      - Combo:
+          - Poenitentia_Ring_NW           # 490750
+          - Poenitentia_Veloci                # 830010
+    Script: |
+      .@r = getequiprefinerycnt(EQI_HAND_R);
+      if (.@r>=10) {
+         bonus bFixedCast,-1000;
+      }
+  - Combos:
+      - Combo:
+          - Poenitentia_Ring_SHC         # 490752
+          - Poenitentia_Manus             # 610016
+    Script: |
+      .@r = getequiprefinerycnt(EQI_HAND_R);
+      if (.@r>=10) {
+         bonus2 bSkillCooldown,"SHC_IMPACT_CRATER",-1000;
+         bonus4 bAutoSpellOnSkill,"GC_ROLLINGCUTTER","SHC_IMPACT_CRATER",5,400;
+      }
+  - Combos:
+      - Combo:
+          - Poenitentia_Ring_IG           # 490754
+          - Poenitentia_Gladius            # 500019
+    Script: |
+      .@r = getequiprefinerycnt(EQI_HAND_R);
+      if (.@r>=10) {
+         bonus2 bSkillCooldown,"IG_CROSS_RAIN",-2000;
+         bonus4 bAutoSpellOnSkill,"LG_RAYOFGENESIS","IG_CROSS_RAIN",10,300;
+      }
+  - Combos:
+      - Combo:
+          - Poenitentia_Ring_AC           # 490768
+          - Poenetentia_Dilacero           # 510028
+    Script: |
+      .@r = getequiprefinerycnt(EQI_HAND_R);
+      if (.@r>=10) {
+         bonus bPAtk,10;
+         bonus4 bAutoSpellOnSkill,"ABC_DEFT_STAB","SC_FATALMENACE",10,400;
+      }
+  - Combos:
+      - Combo:
+          - Poenitentia_Ring_MT           # 490770
+          - Poenitentia_Clava                # 590016
+    Script: |
+      .@r = getequiprefinerycnt(EQI_HAND_R);
+      if (.@r>=10) {
+         bonus bNoMadoFuel;
+         bonus2 bVariableCastRate,"NC_ARMSCANNON",-100;
+      }
+  - Combos:
+      - Combo:
+          - Poenitentia_Ring_MT           # 490770
+          - Poenitentia_Ascia                # 620006
+    Script: |
+      .@r = getequiprefinerycnt(EQI_HAND_R);
+      if (.@r>=10) {
+         bonus bPAtk,10;
+         bonus2 bSkillCooldown,"MT_AXE_STOMP",-500;
+      }
+  - Combos:
+      - Combo:
+          - Poenitentia_Ring_WH           # 490772
+          - Poenitentia_Nervus              # 700023
+    Script: |
+      .@r = getequiprefinerycnt(EQI_HAND_R);
+      if (.@r>=10) {
+         bonus4 bAutoSpellOnSkill,"RA_AIMEDBOLT","WH_CRESCIVE_BOLT",5,400;
+      }
+  - Combos:
+      - Combo:
+          - Poenitentia_Ring_SS           # 490774
+          - Poenitentia_Jana                # 510057
+    Script: |
+      .@r = getequiprefinerycnt(EQI_HAND_R);
+      if (.@r>=10) {
+         bonus2 bSkillCooldown,"SS_RAIDENPOU",-500;
+         bonus4 bAutoSpellOnSkill,"SS_KINRYUUHOU","SS_RAIDENPOU",10,300;
+      }
+  - Combos:
+      - Combo:
+          - Queen_Scale_US                  # 490791
+          - FaceWorm_Skin_                  # 20718
+    Script: |
+      .@r = getequiprefinerycnt(EQI_GARMENT);
+      bonus bPow,5;
+      bonus bCon,5;
+      bonus bMaxHPrate,15;
+      bonus bMaxSPrate,15;
+      bonus bShortAtkRate,5*.@r;
+      bonus bLongAtkRate,5*.@r;
+  - Combos:
+      - Combo:
+          - Queen_Scale_US                  # 490791
+          - Faceworm_Q_Card               # 27164
+    Script: |
+      bonus bPow,20;
+      bonus bCon,20;
+      bonus bCRate,20;
+      bonus2 bAddRace,RC_All,30;
+  - Combos:
+      - Combo:
+          - Queen_Scale_US                  # 490791
+          - Faceworm_Card                   # 27163
+    Script: |
+      bonus bPow,3;
+      bonus bCon,3;
+      bonus bCRate,4;
+      bonus2 bAddRace,RC_All,10;
