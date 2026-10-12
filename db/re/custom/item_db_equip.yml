@@ -371,6 +371,7 @@ Body:
     Type: Armor
     Weight: 1000
     Defense: 100
+    Slots: 1
     Locations:
       Head_Top: true
     ArmorLevel: 2
@@ -4715,6 +4716,249 @@ Body:
       bonus2 bAddSize,Size_All,20;
       bonus2 bMagicAddSize,Size_All,20;
       bonus2 bExpAddRace,RC_All,20;
+  - Id: 490742
+    AegisName: Poenitentia_Ring_SH
+    Name: "Poenitentia Ring (Spirit Handler)"
+    Type: Armor
+    Slots: 1
+    Jobs:
+      Summoner: true
+      Spirit_Handler: true
+    Weight: 100
+    Locations:
+      Left_Accessory: true
+    ArmorLevel: 1
+    EquipLevelMin: 230
+    Script: |
+      bonus bMatk,100;
+      bonus bVariableCastRate,-15;
+      bonus bDelayRate,-10;
+      bonus2 bMagicAddSize,Size_All,15;
+      bonus2 bSkillAtk,"SH_HYUN_ROKS_BREEZE",25;
+      bonus2 bSkillAtk,"SH_HYUN_ROK_CANNON",25;
+  - Id: 490744
+    AegisName: Poenitentia_Ring_IQ
+    Name: "Poenitentia Ring (Inquisitor)"
+    Type: Armor
+    Slots: 1
+    Jobs:
+      Monk: true
+    Classes:
+      All_Third: true
+      Fourth: true
+    Weight: 100
+    Locations:
+      Left_Accessory: true
+    ArmorLevel: 1
+    EquipLevelMin: 230
+    Script: |
+      bonus bBaseAtk,100;
+      bonus bCritical,15;
+      bonus bUseSPrate,-10;
+      bonus2 bAddSize,Size_All,15;
+      bonus2 bSkillAtk,"IQ_EXPOSION_BLASTER",25;
+      bonus2 bSkillAtk,"SR_RAMPAGEBLASTER",35;
+  - Id: 490748
+    AegisName: Poenitentia_Ring_HN
+    Name: "Poenitentia Ring (Hyper Novice)"
+    Type: Armor
+    Slots: 1
+    Jobs:
+      SuperNovice: true
+    Classes:
+      Upper: true
+      All_Third: true
+      Fourth: true
+    Weight: 100
+    Locations:
+      Left_Accessory: true
+    ArmorLevel: 1
+    EquipLevelMin: 230
+    Script: |
+      bonus bMatk,100;
+      bonus bVariableCastRate,-15;
+      bonus bUseSPrate,-10;
+      bonus2 bMagicAddSize,Size_All,15;
+      bonus2 bSkillAtk,"HN_METEOR_STORM_BUSTER",25;
+      bonus2 bSkillAtk,"HN_JACK_FROST_NOVA",25;
+  - Id: 490750
+    AegisName: Poenitentia_Ring_NW
+    Name: "Poenitentia Ring (Night Watch)"
+    Type: Armor
+    Slots: 1
+    Jobs:
+      Rebellion: true
+    Classes:
+      Third: true
+    Weight: 100
+    Locations:
+      Left_Accessory: true
+    ArmorLevel: 1
+    EquipLevelMin: 230
+    Script: |
+      bonus bBaseAtk,100;
+      bonus bCritical,15;
+      bonus bUseSPrate,-10;
+      bonus2 bAddSize,Size_All,15;
+      bonus2 bSkillAtk,"NW_MAGAZINE_FOR_ONE",25;
+      bonus2 bSkillAtk,"NW_THE_VIGILANTE_AT_NIGHT",25;
+  - Id: 490752
+    AegisName: Poenitentia_Ring_SHC
+    Name: "Poenitentia Ring (Shadow Cross)"
+    Type: Armor
+    Slots: 1
+    Jobs:
+      Assassin: true
+    Classes:
+      All_Third: true
+      Fourth: true
+    Weight: 100
+    Locations:
+      Left_Accessory: true
+    ArmorLevel: 1
+    EquipLevelMin: 230
+    Script: |
+      bonus bBaseAtk,100;
+      bonus bCritical,15;
+      bonus bDelayRate,-10;
+      bonus2 bAddSize,Size_All,15;
+      bonus2 bSkillAtk,"SHC_IMPACT_CRATER",25;
+      bonus2 bSkillAtk,"GC_ROLLINGCUTTER",35;
+  - Id: 490754
+    AegisName: Poenitentia_Ring_IG
+    Name: "Poenitentia Ring (Imperial Guard)"
+    Type: Armor
+    Slots: 1
+    Jobs:
+      Crusader: true
+    Classes:
+      All_Third: true
+      Fourth: true
+    Weight: 100
+    Locations:
+      Left_Accessory: true
+    ArmorLevel: 1
+    EquipLevelMin: 230
+    Script: |
+      bonus bMatk,100;
+      bonus bVariableCastRate,-15;
+      bonus bDelayRate,-10;
+      bonus2 bMagicAddSize,Size_All,15;
+      bonus2 bSkillAtk,"IG_CROSS_RAIN",25;
+      bonus2 bSkillAtk,"LG_RAYOFGENESIS",35;
+  - Id: 490768
+    AegisName: Poenitentia_Ring_AC
+    Name: "Poenitentia Ring (Abyss Chaser)"
+    Type: Armor
+    Slots: 1
+    Jobs:
+      Rogue: true
+    Classes:
+      All_Third: true
+      Fourth: true
+    Weight: 100
+    Locations:
+      Left_Accessory: true
+    ArmorLevel: 1
+    EquipLevelMin: 230
+    Script: |
+      bonus bBaseAtk,100;
+      bonus bCritical,15;
+      bonus bDelayRate,-10;
+      bonus2 bAddSize,Size_All,15;
+      bonus2 bSkillAtk,"ABC_DEFT_STAB",25;
+      bonus2 bSkillAtk,"SC_FATALMENACE",35;
+  - Id: 490770
+    AegisName: Poenitentia_Ring_MT
+    Name: "Poenitentia Ring (Meister)"
+    Type: Armor
+    Slots: 1
+    Jobs:
+      Blacksmith: true
+    Classes:
+      All_Third: true
+      Fourth: true
+    Weight: 100
+    Locations:
+      Left_Accessory: true
+    ArmorLevel: 1
+    EquipLevelMin: 230
+    Script: |
+      bonus bBaseAtk,100;
+      bonus bCritical,15;
+      bonus bDelayRate,-10;
+      bonus2 bAddSize,Size_All,15;
+      bonus2 bSkillAtk,"MT_AXE_STOMP",25;
+      bonus2 bSkillAtk,"NC_ARMSCANNON",35;
+  - Id: 490772
+    AegisName: Poenitentia_Ring_WH
+    Name: "Poenitentia Ring (Wind Hawk)"
+    Type: Armor
+    Slots: 1
+    Jobs:
+      Hunter: true
+    Classes:
+      All_Third: true
+      Fourth: true
+    Weight: 100
+    Locations:
+      Left_Accessory: true
+    ArmorLevel: 1
+    EquipLevelMin: 230
+    Script: |
+      bonus bBaseAtk,100;
+      bonus bCritical,15;
+      bonus bDelayRate,-10;
+      bonus2 bAddSize,Size_All,15;
+      bonus2 bSkillAtk,"WH_CRESCIVE_BOLT",25;
+      bonus2 bSkillAtk,"RA_AIMEDBOLT",35;
+  - Id: 490774
+    AegisName: Poenitentia_Ring_SS
+    Name: "Poenitentia Ring (Shinkiro&Shiranui)"
+    Type: Armor
+    Slots: 1
+    Jobs:
+      KagerouOboro: true
+    Classes:
+      Fourth: true
+    Weight: 100
+    Locations:
+      Left_Accessory: true
+    ArmorLevel: 1
+    EquipLevelMin: 230
+    Script: |
+      bonus bMatk,100;
+      bonus bVariableCastRate,-15;
+      bonus bDelayRate,-10;
+      bonus2 bMagicAddSize,Size_All,15;
+      bonus2 bSkillAtk,"SS_RAIDENPOU",25;
+      bonus2 bSkillAtk,"SS_KINRYUUHOU",25;
+  - Id: 490791
+    AegisName: Queen_Scale_US
+    Name: "Faceworm Queen's Scale"
+    Type: Armor
+    Weight: 1500
+    Defense: 300
+    Slots: 1
+    Locations:
+      Both_Accessory: true
+    ArmorLevel: 1
+    EquipLevelMin: 1
+    Script: |
+      bonus bMdef,30;
+      bonus bFlee2,30;
+      bonus bPow,15;
+      bonus bCon,15;
+      bonus bAspdRate,15;
+      bonus bShortAtkRate,15;
+      bonus bLongAtkRate,15;;
+      if (BaseLevel>=250) {
+         bonus bCritAtkRate,100;
+         bonus2 bAddClass,Class_All,50;
+      } else {
+         bonus bCritAtkRate,2*(BaseLevel/5);
+         bonus2 bAddClass,Class_All,BaseLevel/5;
+      }
   - Id: 490807
     AegisName: CA_Evil_Ring_TH
     Name: "Ring of Evil (Cardinal)"
