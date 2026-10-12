@@ -8768,3 +8768,105 @@ Body:
           - Index: 0
             Item: BP_Mat_Range
             Amount: 3
+  - Name: remorse_ring
+    Items:
+      - Index: 0
+        Item: Poenitentia_Ring_AC
+        Zeny: 10000000
+        RequiredItems:
+          - Index: 0
+            Item: Etel_Dust
+            Amount: 100
+          - Index: 1
+            Item: Mine_As
+            Amount: 500
+      - Index: 1
+        Item: Poenitentia_Ring_HN
+        Zeny: 10000000
+        RequiredItems:
+          - Index: 0
+            Item: Etel_Dust
+            Amount: 100
+          - Index: 1
+            Item: Mine_As
+            Amount: 500
+      - Index: 2
+        Item: Poenitentia_Ring_IG
+        Zeny: 10000000
+        RequiredItems:
+          - Index: 0
+            Item: Etel_Dust
+            Amount: 100
+          - Index: 1
+            Item: Mine_As
+            Amount: 500
+      - Index: 3
+        Item: Poenitentia_Ring_IQ
+        Zeny: 10000000
+        RequiredItems:
+          - Index: 0
+            Item: Etel_Dust
+            Amount: 100
+          - Index: 1
+            Item: Mine_As
+            Amount: 500
+      - Index: 4
+        Item: Poenitentia_Ring_MT
+        Zeny: 10000000
+        RequiredItems:
+          - Index: 0
+            Item: Etel_Dust
+            Amount: 100
+          - Index: 1
+            Item: Mine_As
+            Amount: 500
+      - Index: 5
+        Item: Poenitentia_Ring_NW
+        Zeny: 10000000
+        RequiredItems:
+          - Index: 0
+            Item: Etel_Dust
+            Amount: 100
+          - Index: 1
+            Item: Mine_As
+            Amount: 500
+      - Index: 6
+        Item: Poenitentia_Ring_SHC
+        Zeny: 10000000
+        RequiredItems:
+          - Index: 0
+            Item: Etel_Dust
+            Amount: 100
+          - Index: 1
+            Item: Mine_As
+            Amount: 500
+      - Index: 7
+        Item: Poenitentia_Ring_SS
+        Zeny: 10000000
+        RequiredItems:
+          - Index: 0
+            Item: Etel_Dust
+            Amount: 100
+          - Index: 1
+            Item: Mine_As
+            Amount: 500
+      - Index: 8
+        Item: Poenitentia_Ring_SH
+        Zeny: 10000000
+        RequiredItems:
+          - Index: 0
+            Item: Etel_Dust
+            Amount: 100
+          - Index: 1
+            Item: Mine_As
+            Amount: 500
+      - Index: 9
+        Item: Poenitentia_Ring_WH
+        Zeny: 10000000
+        RequiredItems:
+          - Index: 0
+            Item: Etel_Dust
+            Amount: 100
+          - Index: 1
+            Item: Mine_As
+            Amount: 500
