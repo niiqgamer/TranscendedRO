@@ -7699,6 +7699,22 @@ Body:
           - Index: 5
             Item: Temporal_Boots_TW
             Refine: 12
+      - Index: 2
+        Item: Ayothaya_Boots_LT_TH
+        Zeny: 10000000
+        RequiredItems:
+          - Index: 0
+            Item: Ayothaya_Boots_TH
+            Refine: 12
+          - Index: 1
+            Item: Blacksmith_Blessing
+            Amount: 30
+          - Index: 2
+            Item: M_Dimension_Essence
+            Amount: 20
+          - Index: 3
+            Item: Reform_Stone_TH
+            Amount: 6
   - Name: Accessories
     Items:
       - Index: 0
