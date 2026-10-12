@@ -648,6 +648,7 @@ OnInit:
 	470457,					// Stray_Thief_US
 	491093,					// Hunter_Watch_US
 	490854,					// Hunter_Locket_US
+	490791,					// Queen_Scale_US
 	25940,					// Loft_StoneUltimate
 	27421,					// Shard_Jewelry_Str
 	27422,					// Shard_Jewelry_Agi
