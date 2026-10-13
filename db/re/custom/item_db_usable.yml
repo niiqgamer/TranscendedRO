@@ -183,6 +183,6 @@ Body:
     Name: "Bubble Gum (10 Hours)"
     Type: Usable
     Buy: 2
-    Weight: 10
+    Weight: 0
     Script: |
       sc_start SC_ITEMBOOST,(1000*10*60*60),200;
