@@ -7423,7 +7423,7 @@ Body:
           - Index: 2
             Item: Reform_Stone_TH
             Amount: 4
-      - Index: 3
+      - Index: 9
         Item: Temporal_Sprout_TW
         Zeny: 50000000
         RequiredItems:
@@ -7445,6 +7445,22 @@ Body:
           - Index: 5
             Item: Tree_Of_Sprout_JP
             Amount: 1
+      - Index: 10
+        Item: CharmOfAnywhere
+        Zeny: 10000000
+        RequiredItems:
+          - Index: 0
+            Item: Poison_Bottle
+            Amount: 99
+          - Index: 1
+            Item: Poisonous_Gas
+            Amount: 200
+          - Index: 2
+            Item: Congealed_Poison
+            Amount: 200
+          - Index: 3
+            Item: Etel_Dust
+            Amount: 250
   - Name: Armors
     Items:
       - Index: 0
@@ -7782,6 +7798,38 @@ Body:
           - Index: 2
             Item: 6th_Anni_Ring_TH
             Refine: 9
+  - Name: Cards
+    Items:
+      - Index: 0
+        Item: aegis_300995
+        Zeny: 1000000
+        RequiredItems:
+          - Index: 0
+            Item: Phantom_Fragment
+            Amount: 2
+          - Index: 1
+            Item: Union_Token
+            Amount: 50
+      - Index: 1
+        Item: aegis_300997
+        Zeny: 1000000
+        RequiredItems:
+          - Index: 0
+            Item: Phantom_Fragment
+            Amount: 2
+          - Index: 1
+            Item: Union_Token
+            Amount: 50
+      - Index: 2
+        Item: aegis_300998
+        Zeny: 1000000
+        RequiredItems:
+          - Index: 0
+            Item: Phantom_Fragment
+            Amount: 2
+          - Index: 1
+            Item: Union_Token
+            Amount: 50
   - Name: ctower_basic
     Items:
       - Index: 0

@@ -34613,7 +34613,7 @@ Body:
     AegisName: Big_Bun
     Name: Big Bun
     Type: Healing
-    Weight: 10
+    Weight: 0
     Trade:
       NoDrop: true
       NoTrade: true
@@ -34628,7 +34628,7 @@ Body:
     AegisName: Pill_
     Name: Pill
     Type: Healing
-    Weight: 10
+    Weight: 0
     Trade:
       NoDrop: true
       NoTrade: true

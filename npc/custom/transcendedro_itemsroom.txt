@@ -612,6 +612,7 @@ grademk,145,104,4	script	All Combinations#itroom	HEADSTONE1,{
 	"~ Garments",
 	"~ Shoes",
 	"~ Accessories",
+	"~ Cards",
 	"Cancel"
 	
 	)) {
@@ -643,6 +644,9 @@ grademk,145,104,4	script	All Combinations#itroom	HEADSTONE1,{
 			callshop "Accessories";
 			end;
 		case 10:
+			callshop "Cards";
+			end;
+		case 11:
 			mes "Bye, guys!";
 			close2;
 			end;

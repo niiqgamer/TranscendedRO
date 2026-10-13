@@ -809,6 +809,8 @@ OnInit:
 	25464;					// World_Tour_Ticket
 
 	setarray $hotspin_trash3, 
+	14522,					// Big_Bun
+	14523,					// Pill_
 	984,						// Oridecon
 	985,						// Elunium
 	6223,					// Carnium

@@ -1,4 +1,3 @@
-//prt_cas,373,77,3	script	Balheele#episkip	4_F_VALKYRIE,{
 sec_in02,144,168,3	script	Balheele#episkip	4_F_VALKYRIE,{
 	mes "[Balheele]";
 	mes "...I feel like our eyes are meeting strangely...";

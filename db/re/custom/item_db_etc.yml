@@ -176,6 +176,26 @@ Body:
          bonus bMaxHPrate,15;
          bonus2 bMagicAddRace,RC_All,15;
       }
+  - Id: 300754
+    AegisName: aegis_300754
+    Name: Upgrade Memory of Thanatos Card
+    Type: Card
+    Weight: 10
+    Locations:
+      Right_Hand: true
+    Flags:
+      BuyingStore: true
+      DropEffect: CLIENT
+    Script: |
+      .@r = getrefine();
+      bonus bDefRatioAtkClass,Class_All;
+      bonus bSPDrainValue,-3;
+      bonus bDef,-100;
+      bonus bFlee,-100;
+      if (getiteminfo(getequipid(EQI_HAND_R), ITEMINFO_WEAPONLEVEL)==5) {
+         bonus2 bAtkEle,Ele_All,.@r;
+         bonus2 bIgnoreResRaceRate,RC_All,.@r;
+      }
   - Id: 300757
     AegisName: aegis_300757
     Name: Upgrade Dragon Knight Card
@@ -257,6 +277,16 @@ Body:
          bonus bBaseAtk,100;
          bonus bMatk,100;
       }
+  - Id: 300784
+    AegisName: DimAcc_SHC
+    Name: Shadow Cross Dim Crystal
+    Type: Card
+    SubType: Enchant
+  - Id: 300785
+    AegisName: DimAcc_SS
+    Name: "Shinkiro&Shiranui Dim Crystal"
+    Type: Card
+    SubType: Enchant
   - Id: 300912
     AegisName: aegis_300912
     Name: Upgrade Arch Mage Card
@@ -685,36 +715,66 @@ Body:
          bonus bBaseAtk,100;
          bonus bMatk,100;
       }
-  - Id: 300754
-    AegisName: aegis_300754
-    Name: Upgrade Memory of Thanatos Card
+  - Id: 300995
+    AegisName: aegis_300995
+    Name: Ragnarok Zero Global Card
     Type: Card
     Weight: 10
     Locations:
-      Right_Hand: true
-    Flags:
-      BuyingStore: true
-      DropEffect: CLIENT
+      Shoes: true
     Script: |
       .@r = getrefine();
-      bonus bDefRatioAtkClass,Class_All;
-      bonus bSPDrainValue,-3;
-      bonus bDef,-100;
-      bonus bFlee,-100;
-      if (getiteminfo(getequipid(EQI_HAND_R), ITEMINFO_WEAPONLEVEL)==5) {
-         bonus2 bAtkEle,Ele_All,.@r;
-         bonus2 bIgnoreResRaceRate,RC_All,.@r;
+      .@g = getenchantgrade();
+      bonus bAllStats,5;
+      bonus bRes,2*(BaseLevel/10);
+      bonus bMres,2*(BaseLevel/10);
+      bonus2 bSubEle,Ele_Earth,.@r;
+      bonus2 bSubEle,Ele_Water,.@r;
+      bonus2 bSubEle,Ele_Fire,.@r;
+      bonus bBaseAtk,8*(.@r/3);
+      bonus bMatk,8*(.@r/3);
+      bonus bHPGainValue,500;
+      bonus bSPGainValue,50;
+      bonus bLongHPGainValue,500;
+      bonus bLongSPGainValue,50;
+      bonus bMagicHPGainValue,500;
+      bonus bMagicSPGainValue,50;
+      bonus2 bExpAddRace,RC_All,15;
+      bonus2 bDropAddRace,RC_All,15;
+      if (.@g>=ENCHANTGRADE_A) {
+         bonus bFixedCast,-300;
       }
-  - Id: 300784
-    AegisName: DimAcc_SHC
-    Name: Shadow Cross Dim Crystal
+  - Id: 300997
+    AegisName: aegis_300997
+    Name: Midgard Card
     Type: Card
-    SubType: Enchant
-  - Id: 300785
-    AegisName: DimAcc_SS
-    Name: "Shinkiro&Shiranui Dim Crystal"
+    Weight: 10
+    Locations:
+      Garment: true
+    Script: |
+      .@a = readparam(bCrt)
+      .@b = readparam(bPow)
+      bonus bCritical,5*(.@a/20);
+      if (.@b>=100) {
+         bonus bShortAtkRate,40;
+         bonus bLongAtkRate,40;
+         bonus2 bAddClass,Class_Normal,10;
+      }
+  - Id: 300998
+    AegisName: aegis_300998
+    Name: Issgard Card
     Type: Card
-    SubType: Enchant
+    Weight: 10
+    Locations:
+      Garment: true
+    Script: |
+      .@a = readparam(bCon)
+      .@b = readparam(bSpl)
+      bonus bDelayRate,-2*(.@a/20);
+      if (.@b>=100) {
+         bonus2 bMagicAtkEle,Ele_All,40;
+         bonus2 bMagicAddClass,Class_Normal,10;
+      }
   - Id: 312438
     AegisName: Spirit_Of_Star_01_CN
     Name: Spirit of Knight Lv.1
