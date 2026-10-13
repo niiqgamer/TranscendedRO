@@ -5679,8 +5679,8 @@ Body:
     AegisName: Bloody_Dead_Branch
     Name: Bloody Branch
     Type: Usable
-    Buy: 10000
-    Weight: 200
+    Buy: 10
+    Weight: 0
     Flags:
       BuyingStore: true
       DeadBranch: true
