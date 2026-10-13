@@ -34979,7 +34979,7 @@ Body:
     AegisName: Battle_Manual_X3
     Name: Field Manual 300%
     Type: Usable
-    Weight: 10
+    Weight: 0
     Trade:
       NoDrop: true
       NoTrade: true
