@@ -1,3 +1,15 @@
+-	script	#itemsroom	-1,{
+OnInit:
+	bindatcmd "itemsroom",strnpcinfo(3)+"::OnGoItemsRoom";
+	bindatcmd "itemroom",strnpcinfo(3)+"::OnGoItemsRoom";
+	bindatcmd "itroom",strnpcinfo(3)+"::OnGoItemsRoom";
+	end;
+
+OnGoItemsRoom:
+	warp "grademk",121,73;
+	end;
+}
+
 grademk,130,83,4	script	Biolab Old Headgear#itroom	4_CENERE,{
 
 	mes "Enchant Enchant";
