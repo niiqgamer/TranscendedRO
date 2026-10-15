@@ -64,23 +64,75 @@ OnTimer5000:
 	initnpctimer;
 }
 
-//izlude,130,216	monster	2B-100%#0	21065,1,5000
-//izlude,126,216	monster	2B-100%#1	21065,1,5000
-//izlude,122,216	monster	2B-100%#2	21065,1,5000
+izlude,130,216,4	duplicate(PBag1#0)	2B-1%#1	844
+izlude,126,216,4	duplicate(PBag1#0)	2B-1%#2	844
+izlude,122,216,4	duplicate(PBag1#0)	2B-1%#3	844
 
-izlude,130,216,4	duplicate(PBag100#0)	PBag100#1	844
-izlude,146,216,4	duplicate(PBag100#0)	PBag100#2	844
-izlude,122,216,4	duplicate(PBag100#0)	PBag100#3	844
+izlude,0,0,0	script	PBag01#0	844,{
+	end;
+	
+OnMyMobDead:
+OnInit:
+	getunitdata(getnpcid(0), .@d);
+	monster strnpcinfo(4),.@d[UNPC_X],.@d[UNPC_Y],"Punching Bag",21067,1,strnpcinfo(0)+"::OnMyMobDead";
+	.@dupid = atoi(strnpcinfo(2));
+	.gid[.@dupid] = $@mobid[0];
+	.mhp[.@dupid] = 2000000000;
+	setunitdata .gid[.@dupid],UMOB_MODE,.@d[UMOB_MODE]|0x4000000|0x0200000; // Set MD_STATUS_IMMUNE (0x4000000) because EDP/burn/%MHP based status can skew the DPS counter so much.
+	initnpctimer;
+	end;
+	
+OnTimer5000:
+	.@dupid = atoi(strnpcinfo(2));
+	if(unitexists(.gid[.@dupid])){
+		getunitdata(.gid[.@dupid],.@d);
+		.@diff = (.mhp[.@dupid] - .@d[UMOB_HP]);
+		if(.@diff > 0){
+			npctalk "Punching Bag : I've taken " + (.@diff/5) + " DPS in last 5 seconds.";
+			setunitdata .gid[.@dupid],UMOB_HP,.mhp[.@dupid];
+			specialeffect EF_HEAL;
+		}
+	}
+	initnpctimer;
+}
 
-izlude,130,224	monster	2B-10%#0	21067,1,5000
-izlude,126,224	monster	2B-10%#1	21067,1,5000
-izlude,122,224	monster	2B-10%#2	21067,1,5000
+izlude,130,224,4	duplicate(PBag01#0)	2B-0.1%#1	844
+izlude,126,224,4	duplicate(PBag01#0)	2B-0.1%#2	844
+izlude,122,224,4	duplicate(PBag01#0)	2B-0.1%#3	844
 
-izlude,130,232	monster	2B-1%#0	21077,1,5000
-izlude,126,232	monster	2B-1%#1	21077,1,5000
-izlude,122,232	monster	2B-1%#2	21077,1,5000
+izlude,0,0,0	script	PBag001#0	844,{
+	end;
+	
+OnMyMobDead:
+OnInit:
+	getunitdata(getnpcid(0), .@d);
+	monster strnpcinfo(4),.@d[UNPC_X],.@d[UNPC_Y],"Punching Bag",21077,1,strnpcinfo(0)+"::OnMyMobDead";
+	.@dupid = atoi(strnpcinfo(2));
+	.gid[.@dupid] = $@mobid[0];
+	.mhp[.@dupid] = 2000000000;
+	setunitdata .gid[.@dupid],UMOB_MODE,.@d[UMOB_MODE]|0x4000000|0x0200000; // Set MD_STATUS_IMMUNE (0x4000000) because EDP/burn/%MHP based status can skew the DPS counter so much.
+	initnpctimer;
+	end;
+	
+OnTimer5000:
+	.@dupid = atoi(strnpcinfo(2));
+	if(unitexists(.gid[.@dupid])){
+		getunitdata(.gid[.@dupid],.@d);
+		.@diff = (.mhp[.@dupid] - .@d[UMOB_HP]);
+		if(.@diff > 0){
+			npctalk "Punching Bag : I've taken " + (.@diff/5) + " DPS in last 5 seconds.";
+			setunitdata .gid[.@dupid],UMOB_HP,.mhp[.@dupid];
+			specialeffect EF_HEAL;
+		}
+	}
+	initnpctimer;
+}
 
-izlude,144,136	monster	--ja--	21064,1,5000
+izlude,130,232,4	duplicate(PBag001#0)	2B-0.01%#1	844
+izlude,126,232,4	duplicate(PBag001#0)	2B-0.01%#2	844
+izlude,122,232,4	duplicate(PBag001#0)	2B-0.01%#3	844
+
+izlude,144,136,4	duplicate(PBag001#0)	2B-0.01%#4	844
 
 izlude,134,216,6	script	Punching Bag 100%	4_BULLETIN_BOARD2,{
 OnInit:
