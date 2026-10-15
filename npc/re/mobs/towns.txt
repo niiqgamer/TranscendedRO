@@ -36,7 +36,7 @@ alb_ship,0,0	monster	Strange Mouse	2057,25
 // prontera,251,55	monster	Dummy Lv150	2411,1,5000
 // prontera,259,55	monster	Dummy Lv150	2411,1,5000
 
-izlude,0,0,0	script	PBag100#0	844,{
+izlude,0,0,0	script	PBag1#0	844,{
 	end;
 	
 OnMyMobDead:
