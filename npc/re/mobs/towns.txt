@@ -42,7 +42,7 @@ izlude,0,0,0	script	PBag1#0	844,{
 OnMyMobDead:
 OnInit:
 	getunitdata(getnpcid(0), .@d);
-	monster strnpcinfo(4),.@d[UNPC_X],.@d[UNPC_Y],"Punching Bag",21065,1,strnpcinfo(0)+"::OnMyMobDead";
+	monster strnpcinfo(4),.@d[UNPC_X],.@d[UNPC_Y],"2B-1%",21065,1,strnpcinfo(0)+"::OnMyMobDead";
 	.@dupid = atoi(strnpcinfo(2));
 	.gid[.@dupid] = $@mobid[0];
 	.mhp[.@dupid] = 2000000000;
@@ -74,7 +74,7 @@ izlude,0,0,0	script	PBag01#0	844,{
 OnMyMobDead:
 OnInit:
 	getunitdata(getnpcid(0), .@d);
-	monster strnpcinfo(4),.@d[UNPC_X],.@d[UNPC_Y],"Punching Bag",21067,1,strnpcinfo(0)+"::OnMyMobDead";
+	monster strnpcinfo(4),.@d[UNPC_X],.@d[UNPC_Y],"2B-0.1",21067,1,strnpcinfo(0)+"::OnMyMobDead";
 	.@dupid = atoi(strnpcinfo(2));
 	.gid[.@dupid] = $@mobid[0];
 	.mhp[.@dupid] = 2000000000;
@@ -106,7 +106,7 @@ izlude,0,0,0	script	PBag001#0	844,{
 OnMyMobDead:
 OnInit:
 	getunitdata(getnpcid(0), .@d);
-	monster strnpcinfo(4),.@d[UNPC_X],.@d[UNPC_Y],"Punching Bag",21077,1,strnpcinfo(0)+"::OnMyMobDead";
+	monster strnpcinfo(4),.@d[UNPC_X],.@d[UNPC_Y],"2B-0.01",21077,1,strnpcinfo(0)+"::OnMyMobDead";
 	.@dupid = atoi(strnpcinfo(2));
 	.gid[.@dupid] = $@mobid[0];
 	.mhp[.@dupid] = 2000000000;
