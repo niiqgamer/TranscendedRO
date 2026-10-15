@@ -100,6 +100,19 @@ OnInit:
 	setunitdata .gid[.@dupid],UMOB_MODE,.@d[UMOB_MODE]|0x4000000|0x0200000; // Set MD_STATUS_IMMUNE (0x4000000) because EDP/burn/%MHP based status can skew the DPS counter so much.
 	initnpctimer;
 	end;
+	
+OnTimer5000:
+	.@dupid = atoi(strnpcinfo(2));
+	if(unitexists(.gid[.@dupid])){
+		getunitdata(.gid[.@dupid],.@d);
+		.@diff = (.mhp[.@dupid] - .@d[UMOB_HP]);
+		if(.@diff > 0){
+			npctalk "Punching Bag : I've taken " + (.@diff/5) + " DPS in last 5 seconds.";
+			setunitdata .gid[.@dupid],UMOB_HP,.mhp[.@dupid];
+			specialeffect EF_HEAL;
+		}
+	}
+	initnpctimer;
 }
 
 //hero_lb,133,52,0	duplicate(PunchingBag1#0)	Dummy-2B-1%#1	844
