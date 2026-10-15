@@ -928,12 +928,12 @@ function	script	ReloadHotspinPool	{
 
 	for (set .@i, 0; .@i < getarraysize($hotspin_pool1); set .@i, .@i + 1) {
 		npcshopdelitem "HOTSPIN_POINTSHOP", $hotspin_pool1[.@i];
-		npcshopadditem "HOTSPIN_POINTSHOP", $hotspin_pool1[.@i], 2000;
+		npcshopadditem "HOTSPIN_POINTSHOP", $hotspin_pool1[.@i], 1000;
 	}
 
 	for (set .@i, 0; .@i < getarraysize($hotspin_pool2); set .@i, .@i + 1) {
 		npcshopdelitem "HOTSPIN_POINTSHOP", $hotspin_pool2[.@i];
-		npcshopadditem "HOTSPIN_POINTSHOP", $hotspin_pool2[.@i], 200;
+		npcshopadditem "HOTSPIN_POINTSHOP", $hotspin_pool2[.@i], 250;
 	}
 
 	for (set .@i, 0; .@i < getarraysize($hotspin_pool3); set .@i, .@i + 1) {
