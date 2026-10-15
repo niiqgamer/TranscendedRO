@@ -68,9 +68,9 @@ OnTimer5000:
 //izlude,126,216	monster	2B-100%#1	21065,1,5000
 //izlude,122,216	monster	2B-100%#2	21065,1,5000
 
-izlude,130,216	duplicate(PBag100#0)	PBag100#1	844
-izlude,146,216	duplicate(PBag100#0)	PBag100#2	844
-izlude,122,216	duplicate(PBag100#0)	PBag100#3	844
+izlude,130,216,4	duplicate(PBag100#0)	PBag100#1	844
+izlude,146,216,4	duplicate(PBag100#0)	PBag100#2	844
+izlude,122,216,4	duplicate(PBag100#0)	PBag100#3	844
 
 izlude,130,224	monster	2B-10%#0	21067,1,5000
 izlude,126,224	monster	2B-10%#1	21067,1,5000
