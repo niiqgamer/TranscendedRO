@@ -752,8 +752,8 @@ Body:
     Locations:
       Garment: true
     Script: |
-      .@a = readparam(bCrt)
-      .@b = readparam(bPow)
+      .@a = readparam(bCrt);
+      .@b = readparam(bPow);
       bonus bCritical,5*(.@a/20);
       if (.@b>=100) {
          bonus bShortAtkRate,40;
@@ -768,8 +768,8 @@ Body:
     Locations:
       Garment: true
     Script: |
-      .@a = readparam(bCon)
-      .@b = readparam(bSpl)
+      .@a = readparam(bCon);
+      .@b = readparam(bSpl);
       bonus bDelayRate,-2*(.@a/20);
       if (.@b>=100) {
          bonus2 bMagicAtkEle,Ele_All,40;
