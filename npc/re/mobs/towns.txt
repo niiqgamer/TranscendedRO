@@ -36,7 +36,7 @@ alb_ship,0,0	monster	Strange Mouse	2057,25
 // prontera,251,55	monster	Dummy Lv150	2411,1,5000
 // prontera,259,55	monster	Dummy Lv150	2411,1,5000
 
-izlude,0,0,0	script	PBag1#0	844,{
+izlude,122,216,4	script	PBag1#0	844,{
 	end;
 	
 OnMyMobDead:
@@ -66,9 +66,9 @@ OnTimer5000:
 
 izlude,130,216,4	duplicate(PBag1#0)	2B-1%#1	844
 izlude,126,216,4	duplicate(PBag1#0)	2B-1%#2	844
-izlude,122,216,4	duplicate(PBag1#0)	2B-1%#3	844
+//izlude,122,216,4	duplicate(PBag1#0)	2B-1%#3	844
 
-izlude,0,0,0	script	PBag01#0	844,{
+izlude,122,224,4	script	PBag01#0	844,{
 	end;
 	
 OnMyMobDead:
@@ -98,9 +98,9 @@ OnTimer5000:
 
 izlude,130,224,4	duplicate(PBag01#0)	2B-0.1%#1	844
 izlude,126,224,4	duplicate(PBag01#0)	2B-0.1%#2	844
-izlude,122,224,4	duplicate(PBag01#0)	2B-0.1%#3	844
+//izlude,122,224,4	duplicate(PBag01#0)	2B-0.1%#3	844
 
-izlude,0,0,0	script	PBag001#0	844,{
+izlude,144,136,4	script	PBag001#0	844,{
 	end;
 	
 OnMyMobDead:
@@ -132,7 +132,7 @@ izlude,130,232,4	duplicate(PBag001#0)	2B-0.01%#1	844
 izlude,126,232,4	duplicate(PBag001#0)	2B-0.01%#2	844
 izlude,122,232,4	duplicate(PBag001#0)	2B-0.01%#3	844
 
-izlude,144,136,4	duplicate(PBag001#0)	2B-0.01%#4	844
+//izlude,144,136,4	duplicate(PBag001#0)	2B-0.01%#4	844
 
 izlude,134,216,6	script	Punching Bag 100%	4_BULLETIN_BOARD2,{
 OnInit:
