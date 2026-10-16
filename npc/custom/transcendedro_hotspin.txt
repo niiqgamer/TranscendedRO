@@ -908,10 +908,10 @@ function	script	S_ResetHotspin	{
 function	script	GetItemPrice	{
 	set .@item_id, getarg(0);
 	for (set .@i, 0; .@i < getarraysize($hotspin_pool1); set .@i, .@i + 1) {
-		if ($hotspin_pool1[.@i] == .@item_id) return 2000;
+		if ($hotspin_pool1[.@i] == .@item_id) return 1000;
 	}
 	for (set .@i, 0; .@i < getarraysize($hotspin_pool2); set .@i, .@i + 1) {
-		if ($hotspin_pool2[.@i] == .@item_id) return 200;
+		if ($hotspin_pool2[.@i] == .@item_id) return 250;
 	}
 	for (set .@i, 0; .@i < getarraysize($hotspin_pool3); set .@i, .@i + 1) {
 		if ($hotspin_pool3[.@i] == .@item_id) return 100;
