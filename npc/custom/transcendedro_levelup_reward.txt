@@ -24,12 +24,12 @@ OnPCBaseLvUpEvent:
 		mail .@charid, .@sender$, .@title$, .@body$, .@zeny, .@mailitem, .@mailamount;
 		dispbottom "Congrats on reaching Level "+BaseLevel+" ! Check your RODEX to receive your reward(s).",0xFF33FF;
 	} else if ( BaseLevel == 250) {
-		setarray .@mailitem[0], 9955502;
-		setarray .@mailamount[0], 1;
+		setarray .@mailitem[0], 9955501;
+		setarray .@mailamount[0], 5;
 		mail .@charid, .@sender$, .@title$, .@body$, .@zeny, .@mailitem, .@mailamount;
 		dispbottom "Congrats on reaching Level "+BaseLevel+" ! Check your RODEX to receive your reward(s).",0xFF33FF;
 	} else if ( BaseLevel == 275) {
-		setarray .@mailitem[0], 9955502;
+		setarray .@mailitem[0], 9955501;
 		setarray .@mailamount[0], 5;
 		mail .@charid, .@sender$, .@title$, .@body$, .@zeny, .@mailitem, .@mailamount;
 		dispbottom "Congrats on reaching Level "+BaseLevel+" ! Check your RODEX to receive your reward(s).",0xFF33FF;
