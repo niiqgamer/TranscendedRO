@@ -1215,6 +1215,69 @@ Body:
             }
          }
       }
+  - Id: 450442
+    AegisName: Saint_Knight_US
+    Name: Saint Knight Armor
+    Type: Armor
+    Weight: 3000
+    Defense: 300
+    Slots: 1
+    Locations:
+      Armor: true
+    ArmorLevel: 2
+    EquipLevelMin: 100
+    Refineable: true
+    Gradable: true
+    Script: |
+      .@r = getrefine();
+      .@g = getenchantgrade();
+      bonus bBaseAtk,150;
+      bonus bMatk,150;
+      bonus2 bSubClass,Class_All,20;
+      if (BaseJob == Job_Crusader) {
+         skill "RK_HUNDREDSPEAR",10;
+      }
+      if (BaseJob == Job_Knight) {
+         skill "LG_RAYOFGENESIS",10;
+      }
+      if (.@r>=10) {
+         bonus4 bAutoSpellOnSkill,"RK_HUNDREDSPEAR","SU_TUNABELLY",2,300;
+         bonus4 bAutoSpellOnSkill,"LG_RAYOFGENESIS","SU_TUNABELLY",2,300;
+         if (.@r>=11) {
+            bonus2 bSkillAtk,"RK_HUNDREDSPEAR",BaseLevel/2;
+            bonus2 bSkillAtk,"LG_RAYOFGENESIS",BaseLevel/2;
+            bonus4 bAutoSpellOnSkill,"CR_HOLYCROSS","LG_RAYOFGENESIS",10,1000;
+            if (.@r>=12) {
+               bonus bAllStats,20;
+               bonus bBaseAtk,200;
+               bonus bMatk,200;
+               if (.@r>=13) {
+                  bonus2 bSkillAtk,"IG_CROSS_RAIN",BaseLevel/3;
+                  bonus2 bSkillAtk,"IG_JUDGEMENT_CROSS",BaseLevel/3;
+                  bonus2 bSkillAtk,"DK_HACKANDSLASHER",BaseLevel/3;
+                  bonus2 bSkillAtk,"DK_STORMSLASH",BaseLevel/3;
+                  if (.@r>=14) {
+                     bonus2 bAddSize,Size_All,10*(.@r/2);
+                     bonus2 bMagicAddSize,Size_All,10*(.@r/2);
+                  }
+               }
+            }
+         }
+      }
+      if (.@g>=ENCHANTGRADE_D) {
+         bonus bVariableCastRate,-15;
+         if (.@g>=ENCHANTGRADE_C) {
+            bonus bPow,5;
+            bonus bSpl,5;
+            if (.@g>=ENCHANTGRADE_B) {
+               bonus bPAtk,15;
+               bonus bSMatk,15;
+               if (.@g>=ENCHANTGRADE_A) {
+                  bonus bFixedCast,-1000;
+               }
+            }
+         }
+      }
   - Id: 450444
     AegisName: Dark_Acolyte_US
     Name: Dark Apostate Armor
@@ -3010,6 +3073,58 @@ Body:
             }
          }
       }
+  - Id: 470340
+    AegisName: Knight_Shoes_US
+    Name: Ancient Knight Shoes
+    Type: Armor
+    Weight: 1000
+    Defense: 50
+    Slots: 1
+    Locations:
+      Shoes: true
+    ArmorLevel: 2
+    EquipLevelMin: 100
+    Refineable: true
+    Gradable: true
+    Script: |
+      .@r = getrefine();
+      .@g = getenchantgrade();
+      bonus bMdef,10;
+      bonus bPow,3*(.@r/2);
+      bonus bMaxHPRate,5*(.@r/3);
+      bonus bDelayRate,-3*(.@r/3);
+      if (.@r>=9) {
+         bonus2 bAddSize,Size_All,15;
+         if (.@r>=11) {
+             bonus bAllStats,12;
+             bonus bSpeedRate,25;
+             if (.@r>=12) {
+                 bonus2 bAddEle,Ele_All,25;
+                 if (.@r>=13) {
+                    bonus2 bSkillAtk,"RK_HUNDREDSPEAR",100;
+                    bonus2 bSkillAtk,"RK_WINDCUTTER",100;
+                    bonus2 bSkillCooldown,"RK_HUNDREDSPEAR",-2000;
+                    bonus2 bSkillCooldown,"RK_WINDCUTTER",-2000;
+                    if (.@r>=14) {
+                       bonus2 bSkillAtk,"RK_HUNDREDSPEAR",2*BaseLevel;
+                       bonus2 bSkillAtk,"RK_WINDCUTTER",5*BaseLevel;
+                    }
+                 }
+             }
+         }
+      }
+      if (.@g>=ENCHANTGRADE_D) {
+         bonus bFixedCast,-500;
+         if (.@g>=ENCHANTGRADE_C) {
+            bonus2 bAddSize,Size_All,15;
+            if (.@g>=ENCHANTGRADE_B) {
+               bonus bAllTraitStats,10;
+               if (.@g>=ENCHANTGRADE_A) {
+                  bonus bMaxHPRate,50;
+               }
+            }
+         }
+      }
   - Id: 470343
     AegisName: Corruption_Boots_US
     Name: Corruption Boots
@@ -4180,6 +4295,63 @@ Body:
          if (.@r>=14) {
              bonus2 bSkillAtk,"GN_CARTCANNON",70;
              bonus2 bSkillAtk,"NC_ARMSCANNON",70;
+         }
+      }
+  - Id: 480557
+    AegisName: Black_Cat_US
+    Name: Black Cat Backpack
+    Type: Armor
+    Weight: 3000
+    Defense: 300
+    Slots: 1
+    Locations:
+      Armor: true
+    ArmorLevel: 2
+    EquipLevelMin: 100
+    Refineable: true
+    Gradable: true
+    Script: |
+      .@r = getrefine();
+      .@g = getenchantgrade();
+      bonus bBaseAtk,30*(.@r/2);
+      bonus bPow,2*(.@r/2);
+      bonus bCrt,2*(.@r/2);
+      bonus bShortAtkRate,15*(.@r/3);
+      bonus bCritAtkRate,15*(.@r/3);
+      if (BaseJob == Job_Thief) {
+         skill "RK_IGNITIONBREAK",5;
+      }
+      if (.@r>=9) {
+         bonus2 bAddSize,Size_All,15;
+         bonus bAspdRate,15;
+         if (.@r>=10) {
+            bonus2 bAddEle,Ele_All,20;
+            if (.@r>=11) {
+               bonus bBaseAtk,100;
+               bonus bCritical,30;
+               if (.@r>=12) {
+                  bonus bShortAtkRate,20;
+                  bonus bCRate,10;
+                  if (.@r>=13) {
+                     bonus2 bSkillAtk,"RK_IGNITIONBREAK",40;
+                     bonus2 bSkillAtk,"SC_FATALMENACE",40;
+                     bonus2 bSkillAtk,"ABC_DEFT_STAB",40;
+                  }
+               }
+            }
+         }
+      }
+      if (.@g>=ENCHANTGRADE_D) {
+         bonus bBaseAtk,100;
+         if (.@g>=ENCHANTGRADE_C) {
+            bonus bDelayRate,-15;
+            if (.@g>=ENCHANTGRADE_B) {
+               bonus2 bSkillAtk,"RK_IGNITIONBREAK",50*(.@r/3);
+               bonus2 bSkillAtk,"SC_FATALMENACE",50*(.@r/3);
+               if (.@g>=ENCHANTGRADE_A) {
+                  bonus2 bSkillAtk,"ABC_DEFT_STAB",30*(.@r/3);
+               }
+            }
          }
       }
   - Id: 480597

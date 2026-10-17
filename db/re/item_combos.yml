@@ -64276,3 +64276,80 @@ Body:
       bonus bAllStats,7;
       bonus bCritical,30;
       bonus bAllTraitStats,7;
+  - Combos:
+      - Combo:
+          - Saint_Knight_US                  # 450442
+          - Unknown_Swordman_Card   # 300266
+    Script: |
+      .@r = getequiprefinerycnt(EQI_ARMOR);
+      bonus bMaxHPrate,30;
+      bonus bMaxSPrate,30;
+      skill "MG_ENERGYCOAT",1;
+      if (.@r=>13) {
+         bonus2 bAddClass,Class_All,40;
+         bonus2 bMagicAddClass,Class_All,40;
+      }
+  - Combos:
+      - Combo:
+          - Black_Cat_US                        # 480557
+          - Poenetentia_Dilacero             # 510028
+    Script: |
+      .@r = getequiprefinerycnt(EQI_GARMENT);
+      bonus bBaseAtk,200;
+      bonus2 bAddClass,Class_All,20;
+      if (.@r=>13) {
+         autobonus "{ bonus bStr,77; bonus bDex,77; bonus bLuk,77; }",70,20000,BF_WEAPON|BF_SHORT|BF_LONG;
+      }
+  - Combos:
+      - Combo:
+          - Black_Cat_US                        # 480557
+          - Knight_Sakray_Card               # 27184
+    Script: |
+      .@r = getequiprefinerycnt(EQI_HAND_R);
+      bonus bPow,10;
+      bonus bCrt,10;
+      if (.@r=>13) {
+         bonus2 bSkillCooldown,"RK_IGNITIONBREAK",-1000;
+         bonus2 bSkillCooldown,"GC_DARKCROW",-30000;
+         if (BaseJob == Job_Thief) {
+            skill "GC_DARKCROW",5;
+         }
+      }
+  - Combos:
+      - Combo:
+          - Black_Cat_US                        # 480557
+          - IFN_Osiris_Card                    # 4647
+    Script: |
+      bonus bRestartFullRecover;
+      bonus bNoSizeFix;
+      bonus2 bAddClass,Class_Boss,30;
+      bonus2 bSubEle,Ele_Dark,50;
+      bonus2 bSubEle,Ele_Fire;
+  - Combos:
+      - Combo:
+          - Knight_Shoes_US                 # 470340
+          - Knight_Of_Abyss_Card          # 4140
+    Script: |
+      bonus bBaseAtk,150;
+      bonus2 bSkillAtk,"RK_WINDCUTTER",60;
+  - Combos:
+      - Combo:
+          - Knight_Shoes_US                 # 470340
+          - White_Knightage_Card          # 4608
+    Script: |
+      bonus bBaseAtk,150;
+      bonus2 bSkillAtk,"RK_HUNDREDSPEAR",60;
+  - Combos:
+      - Combo:
+          - Knight_Shoes_US                 # 470340
+          - Lord_Of_Death_Card            # 4276
+    Script: |
+      .@r = getequiprefinerycnt(EQI_SHOES);
+      bonus bBaseAtk,150;
+      bonus bPow,20;
+      bonus2 bSubSize,Size_Large,20;
+      bonus2 bSubSize,Size_Medium,20;
+      bonus2 bAddSize,Size_All,6*(.@r/2);
+      if (BaseJob == Job_Swordman) {
+         bonus bBaseAtk,250;
+      }
