@@ -64369,3 +64369,29 @@ Body:
       bonus bBaseAtk,150;
       bonus bLongAtkRate,20;
       bonus bVariableCastRate,-40;
+  - Combos:
+      - Combo:
+          - Dragon_Ring_US                   # 490690
+          - YSF01_Ring                          # 490319
+    Script: |
+      .@r = getequiprefinerycnt(EQI_ARMOR);
+      bonus bMaxHPrate,15;
+      bonus bLongAtkRate,15;
+      bonus2 bAddSize,Size_All,15;
+      if (.@r=>14) {
+         autobonus "{ bonus bPow,15; bonus bCon,15; bonus bStr,150; bonus bDex,150; }",30,10000,BF_WEAPON|BF_SHORT|BF_LONG;
+      }
+  - Combos:
+      - Combo:
+          - Great_Gunner_US                  # 450361
+          - Heart_Hunter_Card                # 27149
+    Script: |
+      bonus2 bSkillAtk,"RL_FIREDANCE",30;
+      autobonus3 "{ bonus bFlee,100; }",1000,30000,"RL_FALLEN_ANGEL";
+  - Combos:
+      - Combo:
+          - Great_Gunner_US                  # 450361
+          - Felock_Card                          # 27182
+    Script: |
+      bonus2 bSkillAtk,"RL_D_TAIL",50;
+      bonus2 bSkillCooldown,"RL_D_TAIL",-2000;

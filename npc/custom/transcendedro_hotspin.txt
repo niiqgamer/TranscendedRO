@@ -649,6 +649,24 @@ OnInit:
 	491093,					// Hunter_Watch_US
 	490854,					// Hunter_Locket_US
 	490791,					// Queen_Scale_US
+	
+	450468,					// Kiel_Uniform_US
+	400974,					// Great_Yoyo_US
+	401307,					// Great_Gryphon_US
+	450442,					// Saint_Knight_US
+	480557,					// Black_Cat_US
+	470340,					// Knight_Shoes_US
+	490728,					// Green_Butterfly_US
+	450444,					// Dark_Acolyte_US
+	410333,					// Karasu_TenguMask_
+	490690,					// Dragon_Ring_US
+	490545,					// Overdrive_Rampage_
+	470289,					// Mecha_Greaves_US
+	470330,					// Santa_Boots
+	470291,					// Astrolo_Dawn_Boots
+	450360,					// Alphabeast_Armor_US
+	450361,					// Great_Gunner_US
+	
 	25940,					// Loft_StoneUltimate
 	27421,					// Shard_Jewelry_Str
 	27422,					// Shard_Jewelry_Agi

@@ -1215,6 +1215,103 @@ Body:
             }
          }
       }
+  - Id: 450360
+    AegisName: Alphabeast_Armor_US
+    Name: Alpha Beast Armor
+    Type: Armor
+    Weight: 1000
+    Defense: 100
+    Slots: 1
+    Locations:
+      Armor: true
+    ArmorLevel: 2
+    EquipLevelMin: 100
+    Refineable: true
+    Gradable: true
+    Script: |
+      .@g = getenchantgrade();
+      .@r = getrefine();
+      bonus bLongAtkRate,15+(getskilllv("WH_HAWKRUSH")*10);
+      bonus bASPD,2;
+      bonus2 bSkillAtk,"RA_WUGSTRIKE",getskilllv("HT_BEASTBANE")*30;
+      bonus2 bSkillAtk,"WH_HAWKRUSH",getskilllv("HT_STEELCROW")*30;
+      bonus bDex,getskilllv("RA_WUGRIDER")*10;
+      bonus bBaseAtk,getskilllv("RA_WUGRIDER")*10;
+      if (.@r>=8) {
+         bonus bPerfectHitAddRate,30;
+         bonus bAspdRate,3;
+         if (.@r>=9) {
+            bonus bNoKnockback;
+            bonus bUnbreakableArmor;
+            if (.@r>=10) {
+               bonus bDef,200;
+               bonus2 bSkillAtk,"RA_WUGSTRIKE",60;
+               bonus2 bSkillAtk,"WH_HAWKRUSH",60;
+               if (.@r>=11) {
+                  bonus bCon,3;
+                  skill "TF_DOUBLE",10;
+               }
+            }
+         }
+      }
+      if (.@g>=ENCHANTGRADE_D) {
+         bonus2 bAddEle,Ele_All,12;
+         if (.@g>=ENCHANTGRADE_C) {
+            bonus bCon,6;
+            bonus bAtkRate,20;
+            if (.@g>=ENCHANTGRADE_B) {
+               bonus2 bSkillAtk,"WH_HAWKBOOMERANG",200;
+               if (.@g>=ENCHANTGRADE_A) {
+                  bonus bCon,2*(.@r/3);
+                  bonus bPAtk,3*(.@r/3);
+               }
+            }
+         }
+      }
+  - Id: 450361
+    AegisName: Great_Gunner_US
+    Name: Great Gunner Armor
+    Type: Armor
+    Weight: 700
+    Defense: 100
+    Slots: 1
+    Locations:
+      Armor: true
+    ArmorLevel: 1
+    EquipLevelMin: 100
+    Refineable: true
+    Script: |
+      .@r = getrefine();
+      bonus bLongAtkRate,15+(getskilllv("GS_SNAKEEYE")*5);
+      bonus bASPD,2;
+      bonus bDex,3*(.@r/3);
+      bonus bAgi,3*(.@r/3);
+      if (getskilllv("RL_FALLEN_ANGEL") == 1) {
+         bonus bDex,15;
+         bonus bBaseAtk,75;
+      }
+      if (.@r>=8) {
+         bonus bPerfectHitAddRate,30;
+         bonus bAspdRate,3;
+         if (.@r>=9) {
+            bonus2 bSkillAtk,"RL_FIREDANCE",40;
+            bonus2 bSkillAtk,"RL_BANISHING_BUSTER",40;
+            bonus2 bSkillAtk,"RL_S_STORM",40;
+            if (.@r>=10) {
+               bonus2 bSkillAtk,"RL_R_TRIP",40;
+               bonus2 bSkillAtk,"RL_D_TAIL",40;
+               if (.@r>=11) {
+                  bonus2 bHPDrainRate,30,3;
+                  bonus2 bSPDrainRate,20,2;
+                  if (.@r>=12) {
+                     skill "SN_SIGHT",10;
+                     bonus2 bSkillCooldown,"RL_R_TRIP",-500;
+                     bonus2 bIgnoreDefClassRate,Class_Normal,getskilllv("GS_SINGLEACTION")*3;
+                  }
+               }
+            }
+         }
+      }
   - Id: 450442
     AegisName: Saint_Knight_US
     Name: Saint Knight Armor
@@ -5043,6 +5140,26 @@ Body:
       bonus2 bAddSize,Size_All,20;
       bonus2 bMagicAddSize,Size_All,20;
       bonus2 bExpAddRace,RC_All,20;
+  - Id: 490690
+    AegisName: Dragon_Ring_US
+    Name: Dragon Eye Ring
+    Type: Armor
+    Weight: 100
+    Slots: 1
+    Locations:
+      Left_Accessory: true
+    ArmorLevel: 1
+    EquipLevelMin: 100
+    Script: |
+      bonus bVit,20;
+      bonus bMaxHPRate,20;
+      bonus bLongAtkRate,20;
+      bonus bPerfectHitAddRate,15;
+      bonus2 bSubClass,Class_All,10;
+      bonus2 bSkillCooldown,"RK_HUNDREDSPEAR",-1000;
+      bonus2 bSkillAtk,"RK_DRAGONBREATH",BaseLevel;
+      bonus2 bSkillAtk,"RK_DRAGONBREATH_WATER",BaseLevel;
+      bonus2 bSkillAtk,"RK_HUNDREDSPEAR",5*BaseLevel;
   - Id: 490691
     AegisName: aegis_490691
     Name: White Fox Charm
