@@ -5212,7 +5212,7 @@ Body:
       bonus bInt,10;
       bonus bPow,10;
       bonus bLongAtkRate,15;
-      if (BaseLevel=>250) {
+      if (BaseLevel>=250) {
          bonus2 bSkillAtk,"GN_SPORE_EXPLOSION",250;
          bonus2 bSkillAtk,"GN_HELLS_PLANT",250;
          bonus2 bAddClass,Class_All,50;

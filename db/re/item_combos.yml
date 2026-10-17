@@ -64248,7 +64248,7 @@ Body:
           - Alicel_Card                          # 4401
     Script: |
       .@r = getequiprefinerycnt(EQI_ARMOR);
-      if (.@r=>12) {
+      if (.@r>=12) {
          bonus bLongAtkRate,30;
          bonus2 bSkillAtk,"MT_A_MACHINE",75;
       }
@@ -64285,7 +64285,7 @@ Body:
       bonus bMaxHPrate,30;
       bonus bMaxSPrate,30;
       skill "MG_ENERGYCOAT",1;
-      if (.@r=>13) {
+      if (.@r>=13) {
          bonus2 bAddClass,Class_All,40;
          bonus2 bMagicAddClass,Class_All,40;
       }
@@ -64297,7 +64297,7 @@ Body:
       .@r = getequiprefinerycnt(EQI_GARMENT);
       bonus bBaseAtk,200;
       bonus2 bAddClass,Class_All,20;
-      if (.@r=>13) {
+      if (.@r>=13) {
          autobonus "{ bonus bStr,77; bonus bDex,77; bonus bLuk,77; }",70,20000,BF_WEAPON|BF_SHORT|BF_LONG;
       }
   - Combos:
@@ -64308,7 +64308,7 @@ Body:
       .@r = getequiprefinerycnt(EQI_HAND_R);
       bonus bPow,10;
       bonus bCrt,10;
-      if (.@r=>13) {
+      if (.@r>=13) {
          bonus2 bSkillCooldown,"RK_IGNITIONBREAK",-1000;
          bonus2 bSkillCooldown,"GC_DARKCROW",-30000;
          if (BaseJob == Job_Thief) {
@@ -64324,7 +64324,7 @@ Body:
       bonus bNoSizeFix;
       bonus2 bAddClass,Class_Boss,30;
       bonus2 bSubEle,Ele_Dark,50;
-      bonus2 bSubEle,Ele_Fire;
+      bonus2 bSubEle,Ele_Fire,50;
   - Combos:
       - Combo:
           - Knight_Shoes_US                 # 470340
@@ -64378,7 +64378,7 @@ Body:
       bonus bMaxHPrate,15;
       bonus bLongAtkRate,15;
       bonus2 bAddSize,Size_All,15;
-      if (.@r=>14) {
+      if (.@r>=14) {
          autobonus "{ bonus bPow,15; bonus bCon,15; bonus bStr,150; bonus bDex,150; }",30,10000,BF_WEAPON|BF_SHORT|BF_LONG;
       }
   - Combos:
