@@ -385,8 +385,6 @@ grademk,74,86,4	script	Glacier Set#itroom	EP19_NPC_LEHAR,{
 	"~ Enchant Dim Glacier Armor/Robe",
 	"~ Enchant Dim Glacier Manteau/Muffler",
 	"~ Enchant Dim Glacier Boots/Shoes",
-	"~~ Snow Flower Materials Shop",
-	"~~ Glacier / Dim Glacier Materials Shop",
 	"Cancel"
 	
 	)) {
@@ -433,12 +431,6 @@ grademk,74,86,4	script	Glacier Set#itroom	EP19_NPC_LEHAR,{
 			item_enchant(97);
 			end;
 		case 15:
-			callshop "EnchantShopSnowF",1;
-			end;
-		case 16:
-			callshop "barter_ep19_repu_2";
-			end;
-		case 17:
 			mes "Bye, guys!";
 			close2;
 			end;
