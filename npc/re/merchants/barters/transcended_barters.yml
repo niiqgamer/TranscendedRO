@@ -5272,6 +5272,7 @@ Body:
             Amount: 5
       - Index: 4
         Item: Ice_F_Stone_Box
+        Zeny: 10000
         RequiredItems:
           - Index: 0
             Item: Ep19_Snow_Flower
