@@ -69,6 +69,10 @@ Body:
     Items:
       - Item: C_Wing_Of_Fly_1Day_Box
         Price: 990
+  - Tab: New
+    Items:
+      - Item: C_Giant_Fly_1Day_Box
+        Price: 1990
   - Tab: Limited
     Items:
       - Item: C_20th_Anniversary_Wing

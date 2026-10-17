@@ -64353,3 +64353,19 @@ Body:
       if (BaseJob == Job_Swordman) {
          bonus bBaseAtk,250;
       }
+  - Combos:
+      - Combo:
+          - Green_Butterfly_US               # 490728
+          - Papila_H_Card                      # 300092
+    Script: |
+      bonus bBaseAtk,200;
+      bonus bMaxHPrate,20;
+      bonus bMaxSPrate,20;
+  - Combos:
+      - Combo:
+          - Green_Butterfly_US               # 490728
+          - Blood_Butterfly_Card             # 4327
+    Script: |
+      bonus bBaseAtk,150;
+      bonus bLongAtkRate,20;
+      bonus bVariableCastRate,-40;
