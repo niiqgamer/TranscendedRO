@@ -432,10 +432,12 @@ OnBuyItem:
 	}
 	.@size = getarraysize(@bought_nameid);
 	.@need = 0;
+	freeloop(1);
 	for (set .@i, 0; .@i < .@size; set .@i, .@i + 1) {
 		.@item_price = callfunc("GetItemPrice", @bought_nameid[.@i]);
 		.@need += @bought_quantity[.@i] * .@item_price;
 	}
+	freeloop(0);
 
 	if (#GUARANTEE_POINT < .@need) {
 		mes "[ HOTSPIN! ]";
@@ -799,6 +801,7 @@ OnInit:
 	23225,					// EF_AGI_Biscuit_Stick
 	23226;					// EF_INT_Biscuit_Stick
 
+	freeloop(1);
 	npcshopdelitem "hotspin_recycle_shop", 909;
 	npcshopdelitem "HOTSPIN_POINTSHOP", 512;
 		for (set .@i, 0; .@i < getarraysize($hotspin_pool1); set .@i, .@i + 1) {
@@ -834,6 +837,7 @@ OnInit:
 		npcshopadditem "hotspin_recycle_shop", $hotspin_pool2[.@i], 0;
 	for (set .@i, 0; .@i < getarraysize($hotspin_pool3); set .@i, .@i + 1)
 		npcshopadditem "hotspin_recycle_shop", $hotspin_pool3[.@i], 0;
+	freeloop(0);
 	end;
 }
 
@@ -897,6 +901,7 @@ function	script	GetItemPrice	{
 function	script	ReloadHotspinPool	{
 	npcshopdelitem "HOTSPIN_POINTSHOP", 512;
 
+	freeloop(1);
 	for (set .@j, 0; .@j < 500; set .@j, .@j + 1) {
 		npcshopdelitem "HOTSPIN_POINTSHOP", 0;
 	}
@@ -915,6 +920,7 @@ function	script	ReloadHotspinPool	{
 		npcshopdelitem "HOTSPIN_POINTSHOP", $hotspin_pool3[.@i];
 		npcshopadditem "HOTSPIN_POINTSHOP", $hotspin_pool3[.@i], 100;
 	}
+	freeloop(0);
 	return;
 }
 
