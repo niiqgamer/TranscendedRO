@@ -373,6 +373,7 @@ grademk,74,86,4	script	Glacier Set#itroom	EP19_NPC_LEHAR,{
 	
 	"~ EP.19 Materials",
 	"~ Issgard Headgears",
+	"~ EP.19 Equipment Combos",
 	"~ Dim Glacier Ring of Resonance (GGT)",
 	"~ Enchant Dim Glacier Ring of Resonance (GGT)",
 	"~ Enchant Snow Flower Armor/Robe",
@@ -395,42 +396,45 @@ grademk,74,86,4	script	Glacier Set#itroom	EP19_NPC_LEHAR,{
 			callshop "EP19Headgears";
 			end;
 		case 3:
-			callshop "DimRingTH";
+			callshop "EP19Combos";
 			end;
 		case 4:
-			item_enchant(349);
+			callshop "DimRingTH";
 			end;
 		case 5:
-			item_enchant(26);
+			item_enchant(349);
 			end;
 		case 6:
-			item_enchant(27);
+			item_enchant(26);
 			end;
 		case 7:
-			item_enchant(28);
+			item_enchant(27);
 			end;
 		case 8:
-			item_enchant(29);
+			item_enchant(28);
 			end;
 		case 9:
-			item_enchant(30);
+			item_enchant(29);
 			end;
 		case 10:
-			item_enchant(31);
+			item_enchant(30);
 			end;
 		case 11:
-			item_enchant(47);
+			item_enchant(31);
 			end;
 		case 12:
-			item_enchant(95);
+			item_enchant(47);
 			end;
 		case 13:
-			item_enchant(96);
+			item_enchant(95);
 			end;
 		case 14:
-			item_enchant(97);
+			item_enchant(96);
 			end;
 		case 15:
+			item_enchant(97);
+			end;
+		case 16:
 			mes "Bye, guys!";
 			close2;
 			end;

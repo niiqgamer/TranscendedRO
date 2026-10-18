@@ -318,24 +318,18 @@ Body:
             Item: Instance_Emblem
             Amount: 200
       - Index: 33
-        Item: Snow_Fox_TH_LT
-        RequiredItems:
-          - Index: 0
-            Item: Instance_Emblem
-            Amount: 250
-      - Index: 34
         Item: Nebula_Orb_US
         RequiredItems:
           - Index: 0
             Item: Instance_Emblem
             Amount: 250
-      - Index: 35
+      - Index: 34
         Item: Galaxy_Circlet
         RequiredItems:
           - Index: 0
             Item: Instance_Emblem
             Amount: 100
-      - Index: 36
+      - Index: 35
         Item: Old_Moroc_Acc
         RequiredItems:
           - Index: 0
@@ -5250,6 +5244,48 @@ Body:
           - Index: 3
             Item: Glacier_Helm_3
             Refine: 9
+  - Name: EP19Combos
+    Items:
+      - Index: 0
+        Item: Snow_Fox_TH_LT
+        Zeny: 5000000
+        RequiredItems:
+          - Index: 0
+            Item: Ep19_Snow_Flower
+            Amount: 2000
+          - Index: 1
+            Item: EP19_D_P_Stone
+            Amount: 10
+      - Index: 1
+        Item: BP2_Middle_LT_US
+        Zeny: 5000000
+        RequiredItems:
+          - Index: 0
+            Item: Ep19_Snow_Flower
+            Amount: 2000
+          - Index: 1
+            Item: EP19_D_P_Stone
+            Amount: 10
+      - Index: 2
+        Item: Dimglacier_Follower_US
+        Zeny: 5000000
+        RequiredItems:
+          - Index: 0
+            Item: Ep19_Snow_Flower
+            Amount: 2000
+          - Index: 1
+            Item: EP19_D_P_Stone
+            Amount: 10
+      - Index: 3
+        Item: Ice_Lord_Ring_US
+        Zeny: 5000000
+        RequiredItems:
+          - Index: 0
+            Item: Ep19_Snow_Flower
+            Amount: 2000
+          - Index: 1
+            Item: EP19_D_P_Stone
+            Amount: 10
   - Name: EP19Materials
     Items:
       - Index: 0

@@ -577,6 +577,12 @@ OnInit:
 	1270191,				// S_BP9_Range_S
 	1270192,				// S_BP9_Magic_A
 	1270193,				// S_BP9_Magic_S
+	1270224,				// S_BP10_Melee_E
+	1270225,				// S_BP10_Melee_P
+	1270226,				// S_BP10_Range_E
+	1270227,				// S_BP10_Range_P
+	1270228,				// S_BP10_Magic_E
+	1270229,				// S_BP10_Magic_P
 	1001957,				// Purified Stone Garment(Ultimate)
 	25940,					// Loft_StoneUltimate
 	
@@ -586,6 +592,7 @@ OnInit:
 	560077,					// Coatneis_Knuckle_US
 	610103,					// Demigod_Katar_US
 	401043,					// Great_Kiel_US
+	540126,					// Time_Distortion_US
 	450589,					// BP11_Antares_Armor
 	450590,					// BP11_Sirius_Armor
 	450591,					// BP11_Vega_Armor
@@ -665,6 +672,21 @@ OnInit:
 	470291,					// Astrolo_Dawn_Boots
 	450360,					// Alphabeast_Armor_US
 	450361,					// Great_Gunner_US
+	420899,					// BP3_Lower_LT_US
+	470382,					// Poison_Shoes_US
+	470266,					// Mythical_Moonlight_US
+	480899,					// Dark_Scientist_US
+	460136,					// Wind_Insect_Shield_US
+	410550,					// Kitsune_Gaze_US
+	470372,					// Ancient_Sky_US
+	470329,					// Ranger_Shoes_US
+	470355,					// Olympian_Boots_US
+	450295,					// Apollo_Armor_TW_LT
+	450293,					// Ceres_Armor_TW_LT
+	450294,					// Jupiter_Armor_TW_LT
+	450296,					// Mars_Armor_TW_LT
+	450297,					// Vinus_Armor_TW_LT
+	450298,					// Vulcan_Armor_TW_LT
 	25940,					// Loft_StoneUltimate
 	27421,					// Shard_Jewelry_Str
 	27422,					// Shard_Jewelry_Agi

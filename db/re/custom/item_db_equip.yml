@@ -739,6 +739,29 @@ Body:
     EquipLevelMin: 200
     Script: |
       bonus bAllTraitStats,2;
+  - Id: 410550
+    AegisName: Kitsune_Gaze_US
+    Name: Kitsune Gaze
+    Type: Armor
+    Weight: 200
+    Defense: 33
+    Slots: 1
+    Locations:
+      Head_Mid: true
+    ArmorLevel: 1
+    EquipLevelMin: 1
+    Script: |
+      bonus bMatk,100;
+      bonus bSpl,10;
+      bonus bMdef,33;
+      bonus2 bMagicAddSize,Size_All,10;
+      bonus2 bMagicAddClass,Class_Boss,10;
+      bonus2 bSubSize,Size_Medium,20;
+      bonus2 bSubSize,Size_Small,20;
+      bonus2 bSubRace,RC_Brute,20;
+      bonus2 bSubRace,RC_DemiHuman,20;
+      bonus2 bSubRace,RC_Player_Human,20;
+      bonus2 bSubRace,RC_Player_Doram,20;
   - Id: 410553
     AegisName: Old_Moroc_Acc_LT
     Name: Ancient Morocc Noble Jewelry-LT
@@ -1037,6 +1060,25 @@ Body:
       skill "BS_GREED",1;
       bonus2 bExpAddClass,Class_All,20;
       bonus2 bDropAddClass,Class_All,20;
+  - Id: 420899
+    AegisName: BP3_Lower_LT_US
+    Name: "[S3] Nyar's Familiar-VG"
+    Type: Armor
+    Buy: 10
+    Weight: 300
+    Defense: 0
+    Slots: 1
+    Locations:
+      Head_Low: true
+    ArmorLevel: 1
+    EquipLevelMin: 1
+    View: 1689
+    Script: |
+      bonus bAllStats,15;
+      bonus bAllTraitStats,15;
+      bonus2 bExpAddClass,Class_All,15;
+      bonus2 bDropAddClass,Class_All,15;
+      bonus bDelayRate,-15;
   - Id: 420930
     AegisName: Snow_Aura_LT_TH
     Name: "Snow Aura-LT"
@@ -2680,6 +2722,73 @@ Body:
             }
          }
       }
+  - Id: 460136
+    AegisName: Wind_Insect_Shield_US
+    Name: Thundershell Ward
+    Type: Armor
+    Weight: 1500
+    Defense: 150
+    Slots: 1
+    Locations:
+      Left_Hand: true
+    ArmorLevel: 2
+    EquipLevelMin: 1
+    Refineable: true
+    Gradable: true
+    View: 4
+    Script: |
+      .@r = getrefine();
+      .@g = getenchantgrade();
+      bonus bASPD,10;
+      skill "MG_LIGHTNINGBOLT",10;
+      bonus bSpl,.@r;
+      bonus2 bMagicAddClass,Class_All,7*.@r;
+      bonus bWis,3*(.@r/2);
+      bonus bSta,3*(.@r/2);
+      bonus bMaxHPRate,15*(.@r/2);
+      if (BaseLevel<100) {
+         bonus bBaseAtk,-200;
+         bonus bMatk,-200;
+         bonus2 bSubSize,Size_Medium,-50;
+      }
+      if (BaseLevel>=250) {
+         bonus2 bSkillAtk,"MG_LIGHTNINGBOLT",2500;
+         bonus2 bSkillAtk,"WZ_VERMILION",2500;
+      } else {
+         bonus2 bSkillAtk,"MG_LIGHTNINGBOLT",10*BaseLevel;
+         bonus2 bSkillAtk,"WZ_VERMILION",10*BaseLevel;
+      }
+      if (.@r>=10) {
+         bonus bAllStats,15;
+         if (.@r>=11) {
+            bonus bInt,25;
+            bonus bDex,25;
+            if (.@r>=12) {
+               bonus5 bAutoSpell,"MG_LIGHTNINGBOLT",10,200,BF_NORMAL,1;
+               bonus5 bAutoSpell,"WZ_VERMILION",10,200,BF_NORMAL,1;
+               if (.@r>=13) {
+                  bonus2 bMagicAddClass,Class_All,25;
+                  if (.@r>=14) {
+                     bonus2 bSkillAtk,"WL_CHAINLIGHTNING",50;
+                     bonus2 bMagicAddClass,Class_All,20;
+                  }
+               }
+            }
+         }
+      }
+      if (.@g>=ENCHANTGRADE_D) {
+         bonus bSpl,7;
+         if (.@g>=ENCHANTGRADE_C) {
+            bonus2 bIgnoreMdefRaceRate,RC_All,40;
+            if (.@g>=ENCHANTGRADE_B) {
+               bonus bSMatk,20;
+               if (.@g>=ENCHANTGRADE_A) {
+                  bonus2 bSkillAtk,"WL_CHAINLIGHTNING",60;
+                  bonus2 bSkillAtk,"WZ_VERMILION",60;
+               }
+            }
+         }
+      }
   - Id: 460138
     AegisName: Trap_Follower_US
     Name: Trap Follower Shield
@@ -3393,6 +3502,197 @@ Body:
             }
          }
       }
+  - Id: 470355
+    AegisName: Olympian_Boots_US
+    Name: Pantheon Boots
+    Type: Armor
+    Weight: 500
+    Defense: 80
+    Slots: 1
+    Locations:
+      Shoes: true
+    ArmorLevel: 2
+    EquipLevelMin: 100
+    Refineable: true
+    Gradable: true
+    Script: |
+      .@r = getrefine();
+      .@g = getenchantgrade();
+      bonus bUnbreakableShoes;
+      bonus2 bSubClass,Class_All,15;
+      bonus bMaxHPRate,15;
+      bonus bMaxSPRate,15;
+      bonus bBaseAtk,30*(.@r/2);
+      bonus bMatk,30*(.@r/2);
+      bonus bPow,2*(.@r/2);
+      bonus bSpl,2*(.@r/2);
+      bonus2 bAddSize,Size_All,10*(.@r/3);
+      bonus2 bMagicAddSize,Size_All,10*(.@r/3);
+      if (.@r>=11) {
+         bonus2 bAddSize,Size_All,15;
+         bonus2 bMagicAddSize,Size_All,15;
+         bonus2 bSubClass,Class_All,15;
+         if (.@r>=12) {
+            bonus bBaseAtk,150;
+            bonus bMatk,150;
+            if (.@r>=13) {
+               bonus2 bAddEle,Ele_All,30;
+               bonus2 bMagicAddEle,Ele_All,30;
+               if (.@r>=14) {
+                  bonus bDelayRate,-20;
+                  bonus bPow,20;
+                  bonus bSpl,20;
+               }
+            }
+         }
+      }
+      if (.@g>=ENCHANTGRADE_D) {
+         bonus2 bAddSize,Size_All,15;
+         bonus2 bMagicAddSize,Size_All,15;
+         if (.@g>=ENCHANTGRADE_C) {
+            bonus bSMatk,20;
+            bonus bPAtk,20;
+            if (.@g>=ENCHANTGRADE_B) {
+               bonus bFixedCast,-500;
+               if (.@g>=ENCHANTGRADE_A) {
+                  if (.@r>=14) {
+                     autobonus "{ bonus bStr,175; bonus bInt,175; bonus bDex,175; bonus bLuk,175; }",50,10000,BF_WEAPON|BF_SHORT|BF_LONG|BF_MAGIC;
+                  }
+               }
+            }
+         }
+      }
+  - Id: 470372
+    AegisName: Ancient_Sky_US
+    Name: Ancient Sky Emperor Shoes
+    Type: Armor
+    Weight: 1000
+    Defense: 100
+    Slots: 1
+    Locations:
+      Shoes: true
+    ArmorLevel: 2
+    EquipLevelMin: 100
+    Refineable: true
+    Gradable: true
+    Script: |
+      .@r = getrefine();
+      .@g = getenchantgrade();
+      bonus bUnbreakableShoes;
+      bonus bPow,5;
+      bonus bDelayRate,-10;
+      bonus2 bAddSize,Size_All,5*.@r;
+      if (BaseJob == Job_Star_Gladiator) {
+         bonus bAllStats,7;
+         bonus bAllTraitStats,7;
+         bonus2 bSkillAtk,"SKE_ALL_IN_THE_SKY",20*.@r;
+      }
+      if (.@r>=10) {
+         bonus2 bAddSize,Size_All,30;
+         if (.@r>=11) {
+            bonus2 bSkillAtk,"SJ_SOLARBURST",50;
+            bonus2 bSkillAtk,"SJ_FALLINGSTAR",50;
+            bonus2 bSkillAtk,"SJ_FULLMOONKICK",50;
+            if (.@r>=12) {
+               bonus bPow,5;
+               bonus bBaseAtk,50;
+               bonus2 bSkillAtk,"SKE_MIDNIGHT_KICK",50;
+               bonus2 bSkillAtk,"SKE_NOON_BLAST",50;
+               bonus2 bSkillAtk,"SKE_STAR_CANNON",50;
+               if (.@r>=13) {
+                  bonus bPow,13;
+                  bonus bBaseAtk,130;
+                  bonus4 bAutoSpellOnSkill,"SJ_SOLARBURST","RK_IGNITIONBREAK",5,1000;
+                  bonus4 bAutoSpellOnSkill,"SJ_FULLMOONKICK","RK_IGNITIONBREAK",5,1000;
+                  if (.@r>=14) {
+                     bonus bAllStats,25;
+                     bonus bMaxHPRate,25;
+                     bonus2 bSkillCooldown,"SKE_STAR_CANNON",-3500;
+                  }
+               }
+            }
+         }
+      }
+      if (.@g>=ENCHANTGRADE_D) {
+         bonus bBaseAtk,75;
+         if (.@g>=ENCHANTGRADE_C) {
+            bonus bDelayRate,-15;
+            if (.@g>=ENCHANTGRADE_B) {
+               bonus2 bSkillCooldown,"SKE_TWINKLING_GALAXY",-5000;
+               if (.@g>=ENCHANTGRADE_A) {
+                  if (.@r>=15) {
+                     bonus bAllTraitStats,20;
+                     bonus2 bAddClass,Class_All,20;
+                     bonus2 bMagicAddClass,Class_All,20;
+                  }
+               }
+            }
+         }
+      }
+  - Id: 470382
+    AegisName: Poison_Shoes_US
+    Name: Poison Shoes
+    Type: Armor
+    Weight: 500
+    Defense: 100
+    Slots: 1
+    Locations:
+      Shoes: true
+    ArmorLevel: 2
+    EquipLevelMin: 1
+    Refineable: true
+    Gradable: true
+    Script: |
+      .@r = getrefine();
+      .@g = getenchantgrade();
+      bonus bMaxHPRate,15;
+      bonus bMaxSPRate,15;
+      bonus2 bAddSize,Size_All,30;
+      bonus2 bMagicAddSize,Size_All,30;
+      bonus2 bSkillAtk,"ASC_METEORASSAULT",2*BaseLevel;
+      bonus bAllStats,.@r;
+      bonus bAllTraitStats,.@r;
+      bonus bStr,10*(.@r/2);
+      bonus bInt,10*(.@r/2);
+      if (BaseJob == Job_Acolyte || BaseJob == Job_Thief) {
+         bonus bPow,10;
+         bonus bSpl,10;
+         bonus bBaseAtk,200;
+         bonus bMatk,200;
+      }
+      if (.@r>=10) {
+         skill "SO_POISON_BUSTER",5;
+         skill "SO_CLOUD_KILL",5;
+         if (.@r>=11) {
+            bonus2 bVariableCastRate,"ASC_METEORASSAULT",-100;
+            bonus2 bSkillCooldown,"ASC_METEORASSAULT",-500;
+            if (.@r>=12) {
+               bonus bDelayRate,-15;
+               bonus bAllStats,15;
+               if (.@r>=13) {
+                  bonus2 bMagicAtkEle,Ele_Poison,100;
+                  if (.@r>=14) {
+                     bonus2 bAddSize,Size_All,30;
+                     bonus2 bMagicAddSize,Size_All,30;
+                  }
+               }
+            }
+         }
+      }
+      if (.@g>=ENCHANTGRADE_D) {
+         bonus bPow,4;
+         bonus bSpl,4;
+         if (.@g>=ENCHANTGRADE_C) {
+            bonus2 bAddSize,Size_All,15;
+            bonus2 bMagicAddSize,Size_All,15;
+            if (.@g>=ENCHANTGRADE_B) {
+               bonus bFixedCast,-300;
+               if (.@g>=ENCHANTGRADE_A) {
+                  bonus bAllTraitStats,12;
+               }
+            }
+         }
+      }
   - Id: 470424
     AegisName: Aladdin_Shoes
     Name: Aladdin Shoes
@@ -4033,10 +4333,8 @@ Body:
     Defense: 20
     Slots: 1
     Jobs:
+      Ninja: true
       KagerouOboro: true
-    Classes:
-      All_Third: true
-      Fourth: true
     Locations:
       Shoes: true
     ArmorLevel: 2
@@ -5061,6 +5359,77 @@ Body:
                if (.@g>=ENCHANTGRADE_A) {
                   bonus2 bSkillAtk,"AG_ALL_BLOOM",100;
                   bonus2 bSkillAtk,"AG_MYSTERY_ILLUSION",100;
+               }
+            }
+         }
+      }
+  - Id: 480899
+    AegisName: Dark_Scientist_US
+    Name: Dark Scientist Robe
+    Type: Armor
+    Weight: 500
+    Defense: 150
+    Slots: 1
+    Locations:
+      Garment: true
+    ArmorLevel: 2
+    EquipLevelMin: 100
+    Refineable: true
+    Gradable: true
+    Script: |
+      .@g = getenchantgrade();
+      .@r = getrefine();
+      bonus bUnbreakableArmor;
+      bonus bMdef,20;
+      bonus bBaseAtk,50+(15*.@r);
+      bonus bMatk,50+(15*.@r);
+      bonus bPow,5+.@r;
+      bonus bSpl,5+.@r;
+      bonus bDelayRate,-20;
+      bonus2 bAddSize,Size_All,15*(.@r/2);
+      bonus2 bMagicAddSize,Size_All,15*(.@r/2);
+      if (BaseJob == Job_Blacksmith) {
+         bonus bPow,10;
+         bonus bPAtk,10;
+         bonus bBaseAtk,300;
+         skill "GC_DARKCROW",5;
+      }
+      if (BaseJob == Job_Rogue) {
+         bonus bSpl,10;
+         bonus bSMatk,10;
+         bonus bMatk,300;
+         skill "GC_DARKCROW",5;
+      }
+      if (.@r>=11) {
+         bonus bAllStats,10;
+         skill "AB_DUPLELIGHT",10;
+         if (.@r>=12) {
+            bonus bPAtk,10;
+            bonus bSMatk,10;
+            bonus bDelayRate,-15;
+            if (.@r>=13) {
+               bonus bAllStats,20;
+               bonus bLongAtkRate,30;
+               bonus2 bMagicAtkEle,Ele_All,30;
+               if (.@r>=14) {
+                  bonus bPAtk,15;
+                  bonus bSMatk,15;
+                  bonus bAllTraitStats,15;
+               }
+            }
+         }
+      }
+      if (.@g>=ENCHANTGRADE_D) {
+         bonus bMaxHPRate,30;
+         bonus bMaxSPRate,30;
+         if (.@g>=ENCHANTGRADE_C) {
+            bonus bFixedCast,-700;
+            if (.@g>=ENCHANTGRADE_B) {
+               skill "DK_SERVANTWEAPON",5;
+               if (.@g>=ENCHANTGRADE_A) {
+                  bonus bPAtk,15;
+                  bonus bSMatk,15;
+                  bonus bNoGemStone;
                }
             }
          }
@@ -6913,6 +7282,54 @@ Body:
          bonus2 bDropAddClass,Class_All,35;
          bonus2 bExpAddClass,Class_All,35;
       }
+  - Id: 491102
+    AegisName: Ice_Lord_Ring_US
+    Name: "Ring of Ice Lord"
+    Type: Armor
+    Weight: 0
+    Defense: 40
+    Slots: 1
+    Locations:
+      Left_Accessory: true
+    ArmorLevel: 2
+    EquipLevelMin: 1
+    Refineable: true
+    Gradable: true
+    Script: |
+      .@r = getrefine();
+      .@g = getenchantgrade();
+      bonus bShortAtkRate,15;
+      bonus bLongAtkRate,15;
+      bonus bMatkRate,15;
+      bonus bPow,4*(.@r/2);
+      bonus bSpl,4*(.@r/2);
+      bonus bCon,4*(.@r/2);
+      if (.@r>=9) {
+         bonus bDelayRate,-15;
+         if (.@r>=12) {
+            bonus2 bAddSize,Size_All,20;
+            bonus2 bMagicAddSize,Size_All,20;
+            if (.@r>=14) {
+               bonus2 bAddClass,Class_All,20;
+               bonus2 bMagicAddClass,Class_All,20;
+            }
+         }
+      }
+      if (.@g>=ENCHANTGRADE_D) {
+         bonus bBaseAtk,250;
+         bonus bMatk,250;
+         if (.@g>=ENCHANTGRADE_C) {
+            bonus bFixedCast,-500;
+            if (.@g>=ENCHANTGRADE_B) {
+               bonus bPAtk,15;
+               bonus bSMatk,15;
+               if (.@g>=ENCHANTGRADE_A) {
+                  bonus2 bAddRace,RC_All,20;
+                  bonus2 bMagicAddRace,RC_All,20;
+               }
+            }
+         }
+      }
   - Id: 520062
     AegisName: Thorn_Breaker_US
     Name: Thorn Breaker
@@ -7071,6 +7488,70 @@ Body:
                bonus bFixedCast,-500;
                if (.@g>=ENCHANTGRADE_A) {
                   bonus bVariableCastRate,-30;
+               }
+            }
+         }
+      }
+  - Id: 540126
+    AegisName: Time_Distortion_US
+    Name: Time Distortion
+    Type: Weapon
+    SubType: Book
+    Weight: 1000
+    Attack: 300
+    Range: 1
+    Slots: 2
+    Jobs:
+      Sage: true
+    Classes:
+      All_Third: true
+      Fourth: true
+    Locations:
+      Right_Hand: true
+    WeaponLevel: 5
+    EquipLevelMin: 100
+    Refineable: true
+    Gradable: true
+    Script: |
+      .@g = getenchantgrade();
+      .@r = getrefine();
+      bonus bUnbreakableWeapon;
+      bonus bMatk,300;
+      bonus bDelayRate,-10;
+      bonus2 bMagicAddSize,Size_All,30+(12*.@r);
+      bonus2 bSkillAtk,"SO_DIAMONDDUST",25*(.@r/2);
+      bonus2 bSkillAtk,"SO_PSYCHIC_WAVE",25*(.@r/2);
+      bonus2 bSkillAtk,"SO_EARTHGRAVE",25*(.@r/2);
+      if (.@r>=10) {
+         bonus bSpl,10;
+         bonus bDelayRate,-10;
+         if (.@r>=11) {
+            bonus bMatk,150;
+            bonus2 bSkillCooldown,"SO_DIAMONDDUST",-5000;
+            bonus2 bSkillCooldown,"SO_PSYCHIC_WAVE",-3000;
+            if (.@r>=12) {
+               bonus2 bSkillAtk,"EM_CONFLAGRATION",30;
+               bonus2 bSkillCooldown,"EM_CONFLAGRATION",-2000;
+               if (.@r>=13) {
+                  bonus bAllStats,25;
+                  bonus bMatk,250;
+                  bonus bMaxHPRate,25;
+                  if (.@r>=14) {
+                     bonus bAllTraitStats,15;
+                     bonus2 bMagicAtkEle,Ele_All,30;
+                  }
+               }
+            }
+         }
+      }
+      if (.@g>=ENCHANTGRADE_D) {
+         bonus bMatk,150;
+         if (.@g>=ENCHANTGRADE_C) {
+            bonus bSMatk,15;
+            if (.@g>=ENCHANTGRADE_B) {
+               bonus bFixedCast,-300;
+               if (.@g>=ENCHANTGRADE_A) {
+                  bonus2 bMagicAddSize,Size_All,40;
                }
             }
          }
@@ -7449,7 +7930,7 @@ Body:
     Type: ShadowGear
     Locations:
       Shadow_Weapon: true
-    EquipLevelMin: 1
+    EquipLevelMin: 100
     Refineable: true
     Script: |
       .@r = getrefine();
@@ -7472,7 +7953,7 @@ Body:
     Type: ShadowGear
     Locations:
       Shadow_Shield: true
-    EquipLevelMin: 1
+    EquipLevelMin: 100
     Refineable: true
     Script: |
       .@r = getrefine();
@@ -7495,7 +7976,7 @@ Body:
     Type: ShadowGear
     Locations:
       Shadow_Weapon: true
-    EquipLevelMin: 1
+    EquipLevelMin: 100
     Refineable: true
     Script: |
       .@r = getrefine();
@@ -7518,7 +7999,7 @@ Body:
     Type: ShadowGear
     Locations:
       Shadow_Shield: true
-    EquipLevelMin: 1
+    EquipLevelMin: 100
     Refineable: true
     Script: |
       .@r = getrefine();
@@ -7541,7 +8022,7 @@ Body:
     Type: ShadowGear
     Locations:
       Shadow_Weapon: true
-    EquipLevelMin: 1
+    EquipLevelMin: 100
     Refineable: true
     Script: |
       .@r = getrefine();
@@ -7564,7 +8045,7 @@ Body:
     Type: ShadowGear
     Locations:
       Shadow_Shield: true
-    EquipLevelMin: 1
+    EquipLevelMin: 100
     Refineable: true
     Script: |
       .@r = getrefine();
@@ -7587,7 +8068,7 @@ Body:
     Type: ShadowGear
     Locations:
       Shadow_Armor: true
-    EquipLevelMin: 1
+    EquipLevelMin: 100
     Refineable: true
     Script: |
       .@r = getrefine();
@@ -7609,7 +8090,7 @@ Body:
     Type: ShadowGear
     Locations:
       Shadow_Shoes: true
-    EquipLevelMin: 1
+    EquipLevelMin: 100
     Refineable: true
     Script: |
       .@r = getrefine();
@@ -7631,7 +8112,7 @@ Body:
     Type: ShadowGear
     Locations:
       Shadow_Armor: true
-    EquipLevelMin: 1
+    EquipLevelMin: 100
     Refineable: true
     Script: |
       .@r = getrefine();
@@ -7653,7 +8134,7 @@ Body:
     Type: ShadowGear
     Locations:
       Shadow_Shoes: true
-    EquipLevelMin: 1
+    EquipLevelMin: 100
     Refineable: true
     Script: |
       .@r = getrefine();
@@ -7675,7 +8156,7 @@ Body:
     Type: ShadowGear
     Locations:
       Shadow_Armor: true
-    EquipLevelMin: 1
+    EquipLevelMin: 100
     Refineable: true
     Script: |
       .@r = getrefine();
@@ -7697,7 +8178,7 @@ Body:
     Type: ShadowGear
     Locations:
       Shadow_Shoes: true
-    EquipLevelMin: 1
+    EquipLevelMin: 100
     Refineable: true
     Script: |
       .@r = getrefine();
@@ -7710,6 +8191,138 @@ Body:
              bonus bFixedCast,-300;
              if (.@r>=10) {
                   bonus2 bMagicAddSize,Size_All,10;
+             }
+         }
+      }
+  - Id: 1270224
+    AegisName: S_BP10_Melee_E
+    Name: Varmundt Melee Shadow Earring
+    Type: ShadowGear
+    Locations:
+      Shadow_Right_Accessory: true
+    EquipLevelMin: 100
+    Refineable: true
+    Script: |
+      .@r = getrefine();
+      bonus bShortAtkRate,2*(.@r/3);
+      bonus bPAtk,2*(.@r/3);
+      if (.@r>=7) {
+         bonus bFixedCast,-300;
+         bonus bRes,30;
+         if (.@r>=9) {
+             bonus bDelayRate,-10;
+             if (.@r>=10) {
+                  bonus2 bAddClass,Class_Boss,10;
+             }
+         }
+      }
+  - Id: 1270225
+    AegisName: S_BP10_Melee_P
+    Name: Varmundt Melee Shadow Pendant
+    Type: ShadowGear
+    Locations:
+      Shadow_Left_Accessory: true
+    EquipLevelMin: 100
+    Refineable: true
+    Script: |
+      .@r = getrefine();
+      bonus bAspdRate,3*(.@r/3);
+      bonus bPAtk,2*(.@r/3);
+      if (.@r>=7) {
+         bonus bAllStats,5;
+         bonus bMRes,30;
+         if (.@r>=9) {
+             bonus bVariableCastRate,-10;
+             if (.@r>=10) {
+                  bonus bShortAtkRate,10;
+             }
+         }
+      }
+  - Id: 1270226
+    AegisName: S_BP10_Range_E
+    Name: Varmundt Range Shadow Earring
+    Type: ShadowGear
+    Locations:
+      Shadow_Right_Accessory: true
+    EquipLevelMin: 100
+    Refineable: true
+    Script: |
+      .@r = getrefine();
+      bonus bLongAtkRate,2*(.@r/3);
+      bonus bPAtk,2*(.@r/3);
+      if (.@r>=7) {
+         bonus bFixedCast,-300;
+         bonus bRes,30;
+         if (.@r>=9) {
+             bonus bDelayRate,-10;
+             if (.@r>=10) {
+                  bonus2 bAddClass,Class_Boss,10;
+             }
+         }
+      }
+  - Id: 1270227
+    AegisName: S_BP10_Range_P
+    Name: Varmundt Range Shadow Pendant
+    Type: ShadowGear
+    Locations:
+      Shadow_Left_Accessory: true
+    EquipLevelMin: 100
+    Refineable: true
+    Script: |
+      .@r = getrefine();
+      bonus bAspdRate,3*(.@r/3);
+      bonus bPAtk,2*(.@r/3);
+      if (.@r>=7) {
+         bonus bAllStats,5;
+         bonus bMRes,30;
+         if (.@r>=9) {
+             bonus bVariableCastRate,-10;
+             if (.@r>=10) {
+                  bonus bLongAtkRate,10;
+             }
+         }
+      }
+  - Id: 1270228
+    AegisName: S_BP10_Magic_E
+    Name: Varmundt Magic Shadow Earring
+    Type: ShadowGear
+    Locations:
+      Shadow_Right_Accessory: true
+    EquipLevelMin: 100
+    Refineable: true
+    Script: |
+      .@r = getrefine();
+      bonus bSMatk,2*(.@r/3);
+      bonus2 bMagicAtkEle,Ele_All,2*(.@r/3);
+      if (.@r>=7) {
+         bonus bFixedCast,-300;
+         bonus bRes,30;
+         if (.@r>=9) {
+             bonus bDelayRate,-10;
+             if (.@r>=10) {
+                  bonus2 bMagicAddClass,Class_Boss,10;
+             }
+         }
+      }
+  - Id: 1270229
+    AegisName: S_BP10_Magic_P
+    Name: Varmundt Magic Shadow Pendant
+    Type: ShadowGear
+    Locations:
+      Shadow_Left_Accessory: true
+    EquipLevelMin: 100
+    Refineable: true
+    Script: |
+      .@r = getrefine();
+      bonus bAspdRate,3*(.@r/3);
+      bonus bSMatk,2*(.@r/3);
+      if (.@r>=7) {
+         bonus bAllStats,5;
+         bonus bMRes,30;
+         if (.@r>=9) {
+             bonus bVariableCastRate,-10;
+             if (.@r>=10) {
+                  bonus bMatkRate,10;
              }
          }
       }
