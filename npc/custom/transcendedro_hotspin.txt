@@ -420,6 +420,7 @@ L_GMRemoveTrash:
 
 OnBuyItem:
 	if (@hotspin_viewonly) {
+		freeloop(1);
 		mes "[ HOTSPIN VIEW SHOP ]";
 		mes "^FF0000This shop is for viewing only.^000000";
 		mes "You cannot purchase items here.";
@@ -446,7 +447,7 @@ OnBuyItem:
 		close;
 	}
 	
-	freeloop(1);
+//	freeloop(1);
 	for (set .@i, 0; .@i < .@size; set .@i, .@i + 1) {
 		getitem @bought_nameid[.@i], @bought_quantity[.@i];
 		.@item_price = callfunc("GetItemPrice", @bought_nameid[.@i]);
@@ -685,7 +686,6 @@ OnInit:
 	450296,					// Mars_Armor_TW_LT
 	450297,					// Vinus_Armor_TW_LT
 	450298,					// Vulcan_Armor_TW_LT
-	25940,					// Loft_StoneUltimate
 	27421,					// Shard_Jewelry_Str
 	27422,					// Shard_Jewelry_Agi
 	27423,					// Shard_Jewelry_Dex
@@ -749,7 +749,6 @@ OnInit:
 	28484,					// Scarf_Of_Rebellion
 	28506,					// StormStone
 	28929,					// HappyShield
-	28394,					// King_of_Spirit_Ring
 	19102,					// Pale_Moon_Hat
 	20799,					// Elemental_Towel
 	18813,					// New_Wave_Sunglasses
@@ -794,7 +793,6 @@ OnInit:
 	22134,					// Enforcer_Shoes
 	19246,					// Royalguard_Necklace
 	19306,					// Heart_Card_In_Mouth
-	28941,					// Excelion_Shield
 	460081,					// Guardian_Shield_TH
 	28484,					// Scarf_Of_Rebellion
 	28506,					// StormStone
