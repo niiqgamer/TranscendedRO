@@ -1,12 +1,12 @@
 // ================================
 // HOTSPIN Main NPC
+// by Transcended RO (github.com/niiqgamer)
 // ================================
 sec_in02,156,184,4	script	H O T S P I N !	OBJ_A2,{
 
-	.@aid = getcharid(3); // account_id ของผู้เล่น
+	.@aid = getcharid(3);
 	.@spins = 0;
 	query_sql("SELECT spins FROM hotspin_rank WHERE account_id = " + .@aid, .@spins);
-
 	mes "^i[12828] <font size = 18><b>^0000AA[ H O T S P I N ! ]^000000</b></font> ^i[12828]";
 	mes "==============================";
 	mes "<font size = 14>Spins: <font size = 18><b>^AA0000" + callfunc("F_InsertComma",.@spins) + "^000000</b></font> times.</font>";
