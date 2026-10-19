@@ -64854,3 +64854,18 @@ Body:
       bonus bPow,15;
       bonus2 bAddSize,Size_All,10*.@r;
       bonus2 bMagicAddSize,Size_All,10*.@r;
+  - Combos:
+      - Combo:
+          - Storm_Wings_TH                  # 480969
+          - AmdaraisH_Card                   # 4602
+    Script: |
+      bonus bCon,15;
+      bonus2 bAddClass,Class_Boss,50;
+  - Combos:
+      - Combo:
+          - Storm_Wings_TH                  # 480969
+          - C_Amdarais_Card                  # 27383
+    Script: |
+      bonus bCon,30;
+      bonus2 bSkillAtk,"WH_GALESTORM",30;
+      bonus2 bSkillAtk,"WH_CRESCIVE_BOLT",30;

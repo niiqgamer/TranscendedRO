@@ -3279,6 +3279,90 @@ Body:
             }
          }
       }
+  - Id: 460188
+    AegisName: Soul_Talis_Shield
+    Name: Soul Talisman Shield
+    Type: Armor
+    Weight: 100
+    Defense: 30
+    Slots: 1
+    Jobs:
+      SoulLinker: true
+    Classes:
+      Fourth: true
+    Locations:
+      Left_Hand: true
+    ArmorLevel: 1
+    EquipLevelMin: 200
+    Refineable: true
+    View: 1
+    Script: |
+      .@r = getrefine();
+      bonus bAspdRate,10;
+      bonus bMaxHP,10*.@r;
+      bonus2 bMagicAtkEle,Ele_All,4*(.@r/3);
+      if (.@r>=7) {
+         bonus bASPD,2;
+         if (.@r>=9) {
+            bonus2 bSkillCooldown,"SOA_TALISMAN_OF_FOUR_BEARING_GOD",-100;
+            if (.@r>=11) {
+               autobonus "{ bonus bInt,150; bonus2 bHPLossRate,100,1000; bonus2 bSPLossRate,100,1000; }",40,10000,BF_MAGIC;
+               if (.@r>=12) {
+                  bonus2 bSkillAtk,"SOA_TALISMAN_OF_FOUR_BEARING_GOD",15;
+               }
+            }
+         }
+      }
+  - Id: 460189
+    AegisName: Soul_Talis_Shield_LT
+    Name: Soul Talisman Shield-LT
+    Type: Armor
+    Weight: 100
+    Defense: 30
+    Slots: 1
+    Jobs:
+      SoulLinker: true
+    Classes:
+      Fourth: true
+    Locations:
+      Left_Hand: true
+    ArmorLevel: 2
+    EquipLevelMin: 200
+    Refineable: true
+    Gradable: true
+    View: 1
+    Script: |
+      .@r = getrefine();
+      .@g = getenchantgrade();
+      bonus bASPD,3;
+      bonus2 bSubClass,Class_All,10;
+      bonus bMaxHP,500*.@r;
+      bonus2 bMagicAtkEle,Ele_All,8*(.@r/3);
+      if (.@r>=9) {
+         bonus2 bSkillCooldown,"SOA_TALISMAN_OF_FOUR_BEARING_GOD",-300;
+         if (.@r>=11) {
+            if (.@g>=ENCHANTGRADE_B) {
+               autobonus "{ bonus bSpl,100; bonus bSMatk,20; bonus2 bHPLossRate,500,1000; }",40,10000,BF_MAGIC,"{ showscript \"Tailsman Blessing!\"; }";
+            } else {
+               autobonus "{ bonus bSpl,50; bonus bSMatk,10; bonus2 bHPLossRate,500,1000; }",40,10000,BF_MAGIC,"{ showscript \"Tailsman Blessing!\"; }";
+            }
+            if (.@r>=12) {
+               bonus2 bSkillAtk,"SOA_TALISMAN_OF_FOUR_BEARING_GOD",20;
+            }
+         }
+      }
+      if (.@g>=ENCHANTGRADE_D) {
+         bonus2 bIgnoreMdefRaceRate,RC_All,30;
+         bonus2 bIgnoreMdefRaceRate,RC_Player_Doram,-30;
+         bonus2 bIgnoreMdefRaceRate,RC_Player_Human,-30;
+         if (.@g>=ENCHANTGRADE_C) {
+            bonus bFixedCast,-500;
+            if (.@g>=ENCHANTGRADE_A) {
+               bonus2 bMagicAddSize,Size_All,20;
+               bonus bMatkRate,15;
+            }
+         }
+      }
   - Id: 470340
     AegisName: Knight_Shoes_US
     Name: Ancient Knight Shoes
@@ -5434,6 +5518,56 @@ Body:
             }
          }
       }
+  - Id: 480969
+    AegisName: Storm_Wings_TH
+    Name: Green Storm Wing
+    Type: Armor
+    Weight: 500
+    Defense: 150
+    Slots: 1
+    Jobs:
+      Hunter: true
+    Classes:
+      All_Third: true
+      Fourth: true
+    Locations:
+      Garment: true
+    ArmorLevel: 2
+    EquipLevelMin: 200
+    Refineable: true
+    Gradable: true
+    Script: |
+      .@g = getenchantgrade();
+      .@r = getrefine();
+      bonus bBaseAtk,15*(.@r/2);
+      bonus bCon,.@r/2;
+      bonus2 bAddSize,Size_All,5*(.@r/3);
+      if (.@r>=7) {
+         bonus bAspdRate,15;
+         if (.@r>=9) {
+            bonus bAtkRate,15;
+            if (.@r>=11) {
+               bonus2 bAddRace,RC_All,10;
+               if (.@r>=13) {
+                  autobonus3 "{ bonus bPAtk,25; bonus bCon,50; bonus2 bSkillAtk,\"WH_GALESTORM\",30; bonus2 bSkillAtk,\"WH_CRESCIVE_BOLT\",30; }",1000,60000,"WH_CALAMITYGALE";
+               }
+            }
+         }
+      }
+      if (.@g>=ENCHANTGRADE_D) {
+         bonus bRes,30;
+         bonus bMRes,30;
+         if (.@g>=ENCHANTGRADE_C) {
+            bonus2 bAddEle,Ele_All,10;
+            if (.@g>=ENCHANTGRADE_B) {
+               bonus2 bAddSize,Size_All,12;
+               if (.@g>=ENCHANTGRADE_A) {
+                  skill "SS_SHIMIRU",5;
+                  bonus2 bSkillCooldown,"WH_CALAMITYGALE",-60000;
+               }
+            }
+         }
+      }
   - Id: 490310
     AegisName: Secret_Illusion_Ring_TH
     Name: Secret Illusion Ring
@@ -7426,6 +7560,8 @@ Body:
       SoulLinker: true
       StarGladiator: true
     Classes:
+      Upper: true
+      All_Third: true
       Fourth: true
     Locations:
       Right_Hand: true
