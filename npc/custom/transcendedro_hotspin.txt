@@ -689,6 +689,7 @@ OnInit:
 	450298,					// Vulcan_Armor_TW_LT
 	460188,					// Soul_Talis_Shield
 	480969,					// Storm_Wings_TH
+	650066,					// Mugen_Shuriken_US
 	27421,					// Shard_Jewelry_Str
 	27422,					// Shard_Jewelry_Agi
 	27423,					// Shard_Jewelry_Dex
