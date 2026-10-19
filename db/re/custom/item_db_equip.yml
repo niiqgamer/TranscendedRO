@@ -3922,6 +3922,7 @@ Body:
       Priest: true
       Monk: true
     Classes:
+      All_Third: true
       Fourth: true
     Locations:
       Shoes: true
@@ -3996,6 +3997,7 @@ Body:
       Knight: true
       Crusader: true
     Classes:
+      All_Third: true
       Fourth: true
     Locations:
       Shoes: true
@@ -4123,6 +4125,7 @@ Body:
       Assassin: true
       Rogue: true
     Classes:
+      All_Third: true
       Fourth: true
     Locations:
       Shoes: true
@@ -4197,6 +4200,7 @@ Body:
       Blacksmith: true
       Alchemist: true
     Classes:
+      All_Third: true
       Fourth: true
     Locations:
       Shoes: true
@@ -4346,6 +4350,7 @@ Body:
       Wizard: true
       Sage: true
     Classes:
+      All_Third: true
       Fourth: true
     Locations:
       Shoes: true

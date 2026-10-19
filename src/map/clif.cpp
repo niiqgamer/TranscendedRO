@@ -5234,8 +5234,10 @@ static int64 clif_hallucination_damage( const block_list& bl, int64 damage ){
 ///     12 = (touch skill?)
 ///     13 = multi-hit critical
 void clif_damage(block_list& src, block_list& dst, t_tick tick, int32 sdelay, int32 ddelay, int64 sdamage, int16 div, enum e_damage_type type, int64 sdamage2, bool spdamage){
-	int32 damage = (int32)cap_value(sdamage,INT_MIN,INT_MAX);
-	int32 damage2 = (int32)cap_value(sdamage2,INT_MIN,INT_MAX);
+//	int32 damage = (int32)cap_value(sdamage,INT_MIN,INT_MAX);
+//	int32 damage2 = (int32)cap_value(sdamage2,INT_MIN,INT_MAX);
+	int64 damage = (int64)cap_value(sdamage, INT64_MIN, INT64_MAX);
+	int64 damage2 = (int64)cap_value(sdamage2, INT64_MIN, INT64_MAX);
 
 	type = clif_calc_delay(dst, type, div, damage+damage2, ddelay, tick);
 
