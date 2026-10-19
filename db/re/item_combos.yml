@@ -64869,3 +64869,40 @@ Body:
       bonus bCon,30;
       bonus2 bSkillAtk,"WH_GALESTORM",30;
       bonus2 bSkillAtk,"WH_CRESCIVE_BOLT",30;
+  - Combos:
+      - Combo:
+          - Mugen_Shuriken_US                  # 650066
+          - Sealed_Apocalips_H_Card           # 4503
+    Script: |
+      bonus2 bSkillAtk,"SS_RAIDENPOU",100;
+      bonus2 bSkillCooldown,"SS_RAIDENPOU",-200;
+      if (getenchantgrade(EQI_HAND_R) >= ENCHANTGRADE_A) {
+         bonus bSpl,10;
+         bonus2 bMagicAtkEle,Ele_All,15;
+         bonus2 bIgnoreMdefRaceRate,RC_All,50;
+      }
+  - Combos:
+      - Combo:
+          - Mugen_Shuriken_US                  # 650066
+          - Apocalips_H_Card                      # 4374
+    Script: |
+      bonus2 bSkillAtk,"SS_RAIDENPOU",200;
+      bonus2 bSkillCooldown,"SS_RAIDENPOU",-700;
+      if (getenchantgrade(EQI_HAND_R) >= ENCHANTGRADE_A) {
+         bonus bSpl,10;
+         bonus2 bMagicAtkEle,Ele_All,30;
+         bonus2 bIgnoreMdefRaceRate,RC_All,100;
+      }
+  - Combos:
+      - Combo:
+          - Mugen_Shuriken_US                  # 650066
+          - Drake_Card                               # 4137
+    Script: |
+      bonus bSplashRange,1;
+      bonus bPow,20;
+      bonus bCon,20;
+      bonus2 bAddSize,Size_All,20;
+      if (getenchantgrade(EQI_HAND_R) >= ENCHANTGRADE_A) {
+         bonus2 bAddClass,Class_All,30;
+         bonus2 bIgnoreDefRaceRate,RC_All,100;
+      }

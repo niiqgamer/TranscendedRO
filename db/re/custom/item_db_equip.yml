@@ -8031,6 +8031,91 @@ Body:
             }
          }
       }
+  - Id: 650066
+    AegisName: Mugen_Shuriken_US
+    Name: Mugen Shuriken
+    Type: Weapon
+    SubType: Katar
+    Weight: 1000
+    Attack: 300
+    Range: 1
+    Slots: 3
+    Jobs:
+      Ninja: true
+      KagerouOboro: true
+    Locations:
+      Both_Hand: true
+    WeaponLevel: 5
+    EquipLevelMin: 100
+    Refineable: true
+    Gradable: true
+    Script: |
+      .@g = getenchantgrade();
+      .@r = getrefine();
+      bonus bUnbreakableWeapon;
+      bonus bBaseAtk,30*.@r;
+      bonus bMatk,300+(30*.@r);
+      bonus bDef,100;
+      bonus bMdef,20;
+      bonus bASPD,10;
+      skill "RK_WINDCUTTER",5;
+      skill "WL_CHAINLIGHTNING",5;
+      bonus bDelayRate,-15;
+      bonus bPow,.@r;
+      bonus bSpl,.@r;
+      bonus2 bAddSize,Size_All,15;
+      bonus2 bMagicAddSize,Size_All,15;
+      if (.@r>=9) {
+         bonus bAllStats,15;
+         bonus2 bSkillAtk,"RK_WINDCUTTER",50;
+         bonus2 bSkillAtk,"WL_CHAINLIGHTNING",50;
+         if (.@r>=10) {
+            bonus2 bSkillCooldown,"SS_KAGENOMAI",-400;
+            bonus2 bSkillCooldown,"SS_KAGEGISSEN",-400;
+            bonus2 bSkillAtk,"SS_KAGENOMAI",50;
+            bonus2 bSkillAtk,"SS_KAGEGISSEN",50;
+            if (.@r>=11) {
+               bonus2 bSkillAtk,"SS_FUUMASHOUAKU",70;
+               bonus2 bSkillAtk,"SS_FUUMAKOUCHIKU",70;
+               bonus2 bSkillCooldown,"SS_FUUMASHOUAKU",-1000;
+               bonus2 bSkillCooldown,"SS_FUUMAKOUCHIKU",-1000;
+               if (.@r>=12) {
+                  bonus2 bSkillAtk,"SS_KUNAIWAIKYOKU",100;
+                  bonus2 bSkillAtk,"SS_KUNAIKUSSETSU",100;
+                  bonus2 bSkillCooldown,"SS_KUNAIWAIKYOKU",-350;
+                  bonus2 bSkillCooldown,"SS_KUNAIKUSSETSU",-2000;
+                  if (.@r>=13) {
+                     bonus2 bSkillAtk,"SS_KUNAIKAITEN",100;
+                     bonus2 bSkillCooldown,"SS_KUNAIKAITEN",-2000;
+                     if (.@r>=14) {
+                        bonus bVariableCastRate,-20;
+                        bonus bDelayRate,-20;
+                        bonus bFixedCast,-200;
+                        if (.@r>=15) {
+                           bonus2 bAddClass,Class_All,40;
+                           bonus2 bMagicAddClass,Class_All,40;
+                        }
+                     }
+                  }
+               }
+            }
+         }
+      }
+      if (.@g >= ENCHANTGRADE_D) {
+         bonus bPow,7;
+         bonus bSpl,7;
+         bonus bPAtk,7;
+         bonus bSMatk,7;
+         if (.@g >= ENCHANTGRADE_C) {
+            autobonus3 "{ bonus bBaseAtk,200; bonus bMatk,200; }",1000,20000,"NJ_NEN";
+            if (.@g >= ENCHANTGRADE_B) {
+               bonus2 bHPDrainRate,1000,2;
+               if (.@g >= ENCHANTGRADE_A) {
+                  bonus bNoWalkDelay;
+               }
+            }
+         }
+      }
   - Id: 1270049
     AegisName: Clear_Shield_Shadow3_TW
     Name: Sanctified Shadow Shield
