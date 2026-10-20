@@ -770,6 +770,7 @@ grademk,107,100,4	script	Furious Equipments#itemroom	915,{
 	"~ Furious Crowns / Boots / Rings",
 	"~ Furious Weapons",
 	"~ Enchant ^AA0000Furious Crown^000000",
+	"~ Enchant ^AA0000Furious Weapons^000000",
 	"Cancel"
 	
 	)) {
@@ -783,6 +784,9 @@ grademk,107,100,4	script	Furious Equipments#itemroom	915,{
 			item_enchant(148);
 			end;
 		case 4:
+			item_enchant(147);
+			end;
+		case 5:
 			mes "Bye, guys!";
 			close2;
 			end;
