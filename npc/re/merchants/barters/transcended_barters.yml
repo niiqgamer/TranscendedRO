@@ -9298,6 +9298,44 @@ Body:
           - Index: 3
             Item: Instance_Emblem
             Amount: 200
+      - Index: 18
+        Item: Shield_Furious
+        Zeny: 2000000
+        RequiredItems:
+          - Index: 0
+            Item: Evil_Minded_Ruby
+            Amount: 375
+          - Index: 1
+            Item: Whittling
+            Amount: 500
+          - Index: 2
+            Item: Elunium
+            Amount: 25
+          - Index: 3
+            Item: M_Dimension_Essence
+            Amount: 2
+          - Index: 4
+            Item: Instance_Emblem
+            Amount: 100
+      - Index: 19
+        Item: FuriousBoots
+        Zeny: 6000000
+        RequiredItems:
+          - Index: 0
+            Item: Evil_Minded_Ruby
+            Amount: 200
+          - Index: 1
+            Item: Shining_Crystal
+            Amount: 625
+          - Index: 2
+            Item: Elunium
+            Amount: 25
+          - Index: 3
+            Item: Mightysoul_Essence
+            Amount: 2
+          - Index: 4
+            Item: Instance_Emblem
+            Amount: 100
   - Name: Furious_Weapons
     Items:
       - Index: 0
@@ -9862,6 +9900,22 @@ Body:
             Amount: 100
       - Index: 35
         Item: WhiteSword_Furious
+        Zeny: 40000000
+        RequiredItems:
+          - Index: 0
+            Item: Evil_Minded_Ruby
+            Amount: 625
+          - Index: 1
+            Item: Whittling
+            Amount: 375
+          - Index: 2
+            Item: M_Dimension_Essence
+            Amount: 2
+          - Index: 3
+            Item: Instance_Emblem
+            Amount: 100
+      - Index: 36
+        Item: Demonius_Furious
         Zeny: 40000000
         RequiredItems:
           - Index: 0

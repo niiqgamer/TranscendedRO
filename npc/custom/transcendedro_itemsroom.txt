@@ -767,8 +767,9 @@ OnTimer1000:
 grademk,107,100,4	script	Furious Equipments#itemroom	915,{
 	switch(select(
 	
-	"~ Furious Crowns / Boots",
+	"~ Furious Crowns / Boots / Rings",
 	"~ Furious Weapons",
+	"~ Enchant ^AA0000Furious Crown^000000",
 	"Cancel"
 	
 	)) {
@@ -779,6 +780,9 @@ grademk,107,100,4	script	Furious Equipments#itemroom	915,{
 			callshop "Furious_Weapons";
 			end;
 		case 3:
+			item_enchant(148);
+			end;
+		case 4:
 			mes "Bye, guys!";
 			close2;
 			end;
