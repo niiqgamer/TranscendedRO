@@ -763,5 +763,37 @@ OnTimer1000:
     end;
 }
 
+// Furious Equipments
+grademk,107,100,4	script	Furious Equipments#itemroom	915,{
+	switch(select(
+	
+	"~ Furious Crowns / Boots",
+	"~ Furious Weapons",
+	"Cancel"
+	
+	)) {
+		case 1:
+			callshop "Furious_EQ";
+			end;
+		case 2:
+			callshop "Furious_Weapons";
+			end;
+		case 3:
+			mes "Bye, guys!";
+			close2;
+			end;
+	}
+	close;
+
+OnInit:
+	initnpctimer;
+	end;
+
+OnTimer1000:
+    showscript(" ! Furious Equipments ! ");
+    setnpctimer 0;
+    end;
+}
+
 grademk	mapflag	noteleport
 grademk	mapflag	novending
