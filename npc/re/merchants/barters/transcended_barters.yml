@@ -9026,10 +9026,858 @@ Body:
           - Index: 3
             Item: Instance_Emblem
             Amount: 200
+      - Index: 1
+        Item: FuriousCirclet_AG
+        Zeny: 6000000
+        RequiredItems:
+          - Index: 0
+            Item: Evil_Minded_Ruby
+            Amount: 500
+          - Index: 1
+            Item: Blaze_Stone
+            Amount: 500
+          - Index: 2
+            Item: EP19_Luminant
+            Amount: 10
+          - Index: 3
+            Item: Instance_Emblem
+            Amount: 200
+      - Index: 2
+        Item: FuriousCirclet_BO
+        Zeny: 6000000
+        RequiredItems:
+          - Index: 0
+            Item: Evil_Minded_Ruby
+            Amount: 500
+          - Index: 1
+            Item: Blaze_Stone
+            Amount: 500
+          - Index: 2
+            Item: EP19_Luminant
+            Amount: 10
+          - Index: 3
+            Item: Instance_Emblem
+            Amount: 200
+      - Index: 3
+        Item: FuriousCirclet_CD
+        Zeny: 6000000
+        RequiredItems:
+          - Index: 0
+            Item: Evil_Minded_Ruby
+            Amount: 500
+          - Index: 1
+            Item: Blaze_Stone
+            Amount: 500
+          - Index: 2
+            Item: EP19_Luminant
+            Amount: 10
+          - Index: 3
+            Item: Instance_Emblem
+            Amount: 200
+      - Index: 4
+        Item: FuriousCirclet_DK
+        Zeny: 6000000
+        RequiredItems:
+          - Index: 0
+            Item: Evil_Minded_Ruby
+            Amount: 500
+          - Index: 1
+            Item: Blaze_Stone
+            Amount: 500
+          - Index: 2
+            Item: EP19_Luminant
+            Amount: 10
+          - Index: 3
+            Item: Instance_Emblem
+            Amount: 200
+      - Index: 5
+        Item: FuriousCirclet_EM
+        Zeny: 6000000
+        RequiredItems:
+          - Index: 0
+            Item: Evil_Minded_Ruby
+            Amount: 500
+          - Index: 1
+            Item: Blaze_Stone
+            Amount: 500
+          - Index: 2
+            Item: EP19_Luminant
+            Amount: 10
+          - Index: 3
+            Item: Instance_Emblem
+            Amount: 200
+      - Index: 6
+        Item: FuriousCirclet_HN
+        Zeny: 6000000
+        RequiredItems:
+          - Index: 0
+            Item: Evil_Minded_Ruby
+            Amount: 500
+          - Index: 1
+            Item: Blaze_Stone
+            Amount: 500
+          - Index: 2
+            Item: EP19_Luminant
+            Amount: 10
+          - Index: 3
+            Item: Instance_Emblem
+            Amount: 200
+      - Index: 7
+        Item: FuriousCirclet_IG
+        Zeny: 6000000
+        RequiredItems:
+          - Index: 0
+            Item: Evil_Minded_Ruby
+            Amount: 500
+          - Index: 1
+            Item: Blaze_Stone
+            Amount: 500
+          - Index: 2
+            Item: EP19_Luminant
+            Amount: 10
+          - Index: 3
+            Item: Instance_Emblem
+            Amount: 200
+      - Index: 8
+        Item: FuriousCirclet_IQ
+        Zeny: 6000000
+        RequiredItems:
+          - Index: 0
+            Item: Evil_Minded_Ruby
+            Amount: 500
+          - Index: 1
+            Item: Blaze_Stone
+            Amount: 500
+          - Index: 2
+            Item: EP19_Luminant
+            Amount: 10
+          - Index: 3
+            Item: Instance_Emblem
+            Amount: 200
+      - Index: 9
+        Item: FuriousCirclet_MT
+        Zeny: 6000000
+        RequiredItems:
+          - Index: 0
+            Item: Evil_Minded_Ruby
+            Amount: 500
+          - Index: 1
+            Item: Blaze_Stone
+            Amount: 500
+          - Index: 2
+            Item: EP19_Luminant
+            Amount: 10
+          - Index: 3
+            Item: Instance_Emblem
+            Amount: 200
+      - Index: 10
+        Item: FuriousCirclet_NW
+        Zeny: 6000000
+        RequiredItems:
+          - Index: 0
+            Item: Evil_Minded_Ruby
+            Amount: 500
+          - Index: 1
+            Item: Blaze_Stone
+            Amount: 500
+          - Index: 2
+            Item: EP19_Luminant
+            Amount: 10
+          - Index: 3
+            Item: Instance_Emblem
+            Amount: 200
+      - Index: 11
+        Item: FuriousCirclet_SHC
+        Zeny: 6000000
+        RequiredItems:
+          - Index: 0
+            Item: Evil_Minded_Ruby
+            Amount: 500
+          - Index: 1
+            Item: Blaze_Stone
+            Amount: 500
+          - Index: 2
+            Item: EP19_Luminant
+            Amount: 10
+          - Index: 3
+            Item: Instance_Emblem
+            Amount: 200
+      - Index: 12
+        Item: FuriousCirclet_SS
+        Zeny: 6000000
+        RequiredItems:
+          - Index: 0
+            Item: Evil_Minded_Ruby
+            Amount: 500
+          - Index: 1
+            Item: Blaze_Stone
+            Amount: 500
+          - Index: 2
+            Item: EP19_Luminant
+            Amount: 10
+          - Index: 3
+            Item: Instance_Emblem
+            Amount: 200
+      - Index: 13
+        Item: FuriousCirclet_SKE
+        Zeny: 6000000
+        RequiredItems:
+          - Index: 0
+            Item: Evil_Minded_Ruby
+            Amount: 500
+          - Index: 1
+            Item: Blaze_Stone
+            Amount: 500
+          - Index: 2
+            Item: EP19_Luminant
+            Amount: 10
+          - Index: 3
+            Item: Instance_Emblem
+            Amount: 200
+      - Index: 14
+        Item: FuriousCirclet_SOA
+        Zeny: 6000000
+        RequiredItems:
+          - Index: 0
+            Item: Evil_Minded_Ruby
+            Amount: 500
+          - Index: 1
+            Item: Blaze_Stone
+            Amount: 500
+          - Index: 2
+            Item: EP19_Luminant
+            Amount: 10
+          - Index: 3
+            Item: Instance_Emblem
+            Amount: 200
+      - Index: 15
+        Item: FuriousCirclet_SH
+        Zeny: 6000000
+        RequiredItems:
+          - Index: 0
+            Item: Evil_Minded_Ruby
+            Amount: 500
+          - Index: 1
+            Item: Blaze_Stone
+            Amount: 500
+          - Index: 2
+            Item: EP19_Luminant
+            Amount: 10
+          - Index: 3
+            Item: Instance_Emblem
+            Amount: 200
+      - Index: 16
+        Item: FuriousCirclet_TR
+        Zeny: 6000000
+        RequiredItems:
+          - Index: 0
+            Item: Evil_Minded_Ruby
+            Amount: 500
+          - Index: 1
+            Item: Blaze_Stone
+            Amount: 500
+          - Index: 2
+            Item: EP19_Luminant
+            Amount: 10
+          - Index: 3
+            Item: Instance_Emblem
+            Amount: 200
+      - Index: 17
+        Item: FuriousCirclet_WH
+        Zeny: 6000000
+        RequiredItems:
+          - Index: 0
+            Item: Evil_Minded_Ruby
+            Amount: 500
+          - Index: 1
+            Item: Blaze_Stone
+            Amount: 500
+          - Index: 2
+            Item: EP19_Luminant
+            Amount: 10
+          - Index: 3
+            Item: Instance_Emblem
+            Amount: 200
   - Name: Furious_Weapons
     Items:
       - Index: 0
-        Item: Axe_Furious
+        Item: Exterminate_Furious
+        Zeny: 40000000
+        RequiredItems:
+          - Index: 0
+            Item: Evil_Minded_Ruby
+            Amount: 625
+          - Index: 1
+            Item: Whittling
+            Amount: 375
+          - Index: 2
+            Item: M_Dimension_Essence
+            Amount: 2
+          - Index: 3
+            Item: Instance_Emblem
+            Amount: 100
+      - Index: 1
+        Item: Flame_Staff_Furious
+        Zeny: 40000000
+        RequiredItems:
+          - Index: 0
+            Item: Evil_Minded_Ruby
+            Amount: 625
+          - Index: 1
+            Item: Whittling
+            Amount: 375
+          - Index: 2
+            Item: M_Dimension_Essence
+            Amount: 2
+          - Index: 3
+            Item: Instance_Emblem
+            Amount: 100
+      - Index: 2
+        Item: Foxtail_Furious
+        Zeny: 40000000
+        RequiredItems:
+          - Index: 0
+            Item: Evil_Minded_Ruby
+            Amount: 625
+          - Index: 1
+            Item: Whittling
+            Amount: 375
+          - Index: 2
+            Item: M_Dimension_Essence
+            Amount: 2
+          - Index: 3
+            Item: Instance_Emblem
+            Amount: 100
+      - Index: 3
+        Item: Setaria_Furious
+        Zeny: 40000000
+        RequiredItems:
+          - Index: 0
+            Item: Evil_Minded_Ruby
+            Amount: 625
+          - Index: 1
+            Item: Whittling
+            Amount: 375
+          - Index: 2
+            Item: M_Dimension_Essence
+            Amount: 2
+          - Index: 3
+            Item: Instance_Emblem
+            Amount: 100
+      - Index: 4
+        Item: GaleClaw_Furious
+        Zeny: 40000000
+        RequiredItems:
+          - Index: 0
+            Item: Evil_Minded_Ruby
+            Amount: 625
+          - Index: 1
+            Item: Whittling
+            Amount: 375
+          - Index: 2
+            Item: M_Dimension_Essence
+            Amount: 2
+          - Index: 3
+            Item: Instance_Emblem
+            Amount: 100
+      - Index: 5
+        Item: GiganticAxe_Furious
+        Zeny: 40000000
+        RequiredItems:
+          - Index: 0
+            Item: Evil_Minded_Ruby
+            Amount: 625
+          - Index: 1
+            Item: Whittling
+            Amount: 375
+          - Index: 2
+            Item: M_Dimension_Essence
+            Amount: 2
+          - Index: 3
+            Item: Instance_Emblem
+            Amount: 100
+      - Index: 6
+        Item: Grimoire_Furious
+        Zeny: 40000000
+        RequiredItems:
+          - Index: 0
+            Item: Evil_Minded_Ruby
+            Amount: 625
+          - Index: 1
+            Item: Whittling
+            Amount: 375
+          - Index: 2
+            Item: M_Dimension_Essence
+            Amount: 2
+          - Index: 3
+            Item: Instance_Emblem
+            Amount: 100
+      - Index: 7
+        Item: Hammer_Furious
+        Zeny: 40000000
+        RequiredItems:
+          - Index: 0
+            Item: Evil_Minded_Ruby
+            Amount: 625
+          - Index: 1
+            Item: Whittling
+            Amount: 375
+          - Index: 2
+            Item: M_Dimension_Essence
+            Amount: 2
+          - Index: 3
+            Item: Instance_Emblem
+            Amount: 100
+      - Index: 8
+        Item: Harp_Furious
+        Zeny: 40000000
+        RequiredItems:
+          - Index: 0
+            Item: Evil_Minded_Ruby
+            Amount: 625
+          - Index: 1
+            Item: Whittling
+            Amount: 375
+          - Index: 2
+            Item: M_Dimension_Essence
+            Amount: 2
+          - Index: 3
+            Item: Instance_Emblem
+            Amount: 100
+      - Index: 9
+        Item: Humma_Furious
+        Zeny: 40000000
+        RequiredItems:
+          - Index: 0
+            Item: Evil_Minded_Ruby
+            Amount: 625
+          - Index: 1
+            Item: Whittling
+            Amount: 375
+          - Index: 2
+            Item: M_Dimension_Essence
+            Amount: 2
+          - Index: 3
+            Item: Instance_Emblem
+            Amount: 100
+      - Index: 10
+        Item: Impact_Furious
+        Zeny: 40000000
+        RequiredItems:
+          - Index: 0
+            Item: Evil_Minded_Ruby
+            Amount: 625
+          - Index: 1
+            Item: Whittling
+            Amount: 375
+          - Index: 2
+            Item: M_Dimension_Essence
+            Amount: 2
+          - Index: 3
+            Item: Instance_Emblem
+            Amount: 100
+      - Index: 11
+        Item: Lance_Furious
+        Zeny: 40000000
+        RequiredItems:
+          - Index: 0
+            Item: Evil_Minded_Ruby
+            Amount: 625
+          - Index: 1
+            Item: Whittling
+            Amount: 375
+          - Index: 2
+            Item: M_Dimension_Essence
+            Amount: 2
+          - Index: 3
+            Item: Instance_Emblem
+            Amount: 100
+      - Index: 12
+        Item: MasterSpellBook_Furious
+        Zeny: 40000000
+        RequiredItems:
+          - Index: 0
+            Item: Evil_Minded_Ruby
+            Amount: 625
+          - Index: 1
+            Item: Whittling
+            Amount: 375
+          - Index: 2
+            Item: M_Dimension_Essence
+            Amount: 2
+          - Index: 3
+            Item: Instance_Emblem
+            Amount: 100
+      - Index: 13
+        Item: MetalVilolin_Furious
+        Zeny: 40000000
+        RequiredItems:
+          - Index: 0
+            Item: Evil_Minded_Ruby
+            Amount: 625
+          - Index: 1
+            Item: Whittling
+            Amount: 375
+          - Index: 2
+            Item: M_Dimension_Essence
+            Amount: 2
+          - Index: 3
+            Item: Instance_Emblem
+            Amount: 100
+      - Index: 14
+        Item: MetalWhip_Furious
+        Zeny: 40000000
+        RequiredItems:
+          - Index: 0
+            Item: Evil_Minded_Ruby
+            Amount: 625
+          - Index: 1
+            Item: Whittling
+            Amount: 375
+          - Index: 2
+            Item: M_Dimension_Essence
+            Amount: 2
+          - Index: 3
+            Item: Instance_Emblem
+            Amount: 100
+      - Index: 15
+        Item: MoonBook_Furious
+        Zeny: 40000000
+        RequiredItems:
+          - Index: 0
+            Item: Evil_Minded_Ruby
+            Amount: 625
+          - Index: 1
+            Item: Whittling
+            Amount: 375
+          - Index: 2
+            Item: M_Dimension_Essence
+            Amount: 2
+          - Index: 3
+            Item: Instance_Emblem
+            Amount: 100
+      - Index: 16
+        Item: Gatling_Furious
+        Zeny: 40000000
+        RequiredItems:
+          - Index: 0
+            Item: Evil_Minded_Ruby
+            Amount: 625
+          - Index: 1
+            Item: Whittling
+            Amount: 375
+          - Index: 2
+            Item: M_Dimension_Essence
+            Amount: 2
+          - Index: 3
+            Item: Instance_Emblem
+            Amount: 100
+      - Index: 17
+        Item: OverSpear_Furious
+        Zeny: 40000000
+        RequiredItems:
+          - Index: 0
+            Item: Evil_Minded_Ruby
+            Amount: 625
+          - Index: 1
+            Item: Whittling
+            Amount: 375
+          - Index: 2
+            Item: M_Dimension_Essence
+            Amount: 2
+          - Index: 3
+            Item: Instance_Emblem
+            Amount: 100
+      - Index: 18
+        Item: Lapier_Furious
+        Zeny: 40000000
+        RequiredItems:
+          - Index: 0
+            Item: Evil_Minded_Ruby
+            Amount: 625
+          - Index: 1
+            Item: Whittling
+            Amount: 375
+          - Index: 2
+            Item: M_Dimension_Essence
+            Amount: 2
+          - Index: 3
+            Item: Instance_Emblem
+            Amount: 100
+      - Index: 19
+        Item: Rifle_Furious
+        Zeny: 40000000
+        RequiredItems:
+          - Index: 0
+            Item: Evil_Minded_Ruby
+            Amount: 625
+          - Index: 1
+            Item: Whittling
+            Amount: 375
+          - Index: 2
+            Item: M_Dimension_Essence
+            Amount: 2
+          - Index: 3
+            Item: Instance_Emblem
+            Amount: 100
+      - Index: 20
+        Item: SaintWand_Furious
+        Zeny: 40000000
+        RequiredItems:
+          - Index: 0
+            Item: Evil_Minded_Ruby
+            Amount: 625
+          - Index: 1
+            Item: Whittling
+            Amount: 375
+          - Index: 2
+            Item: M_Dimension_Essence
+            Amount: 2
+          - Index: 3
+            Item: Instance_Emblem
+            Amount: 100
+      - Index: 21
+        Item: Hall_Furious
+        Zeny: 40000000
+        RequiredItems:
+          - Index: 0
+            Item: Evil_Minded_Ruby
+            Amount: 625
+          - Index: 1
+            Item: Whittling
+            Amount: 375
+          - Index: 2
+            Item: M_Dimension_Essence
+            Amount: 2
+          - Index: 3
+            Item: Instance_Emblem
+            Amount: 100
+      - Index: 22
+        Item: LeftShape_Furious
+        Zeny: 40000000
+        RequiredItems:
+          - Index: 0
+            Item: Evil_Minded_Ruby
+            Amount: 625
+          - Index: 1
+            Item: Whittling
+            Amount: 375
+          - Index: 2
+            Item: M_Dimension_Essence
+            Amount: 2
+          - Index: 3
+            Item: Instance_Emblem
+            Amount: 100
+      - Index: 23
+        Item: RightShape_Furious
+        Zeny: 40000000
+        RequiredItems:
+          - Index: 0
+            Item: Evil_Minded_Ruby
+            Amount: 625
+          - Index: 1
+            Item: Whittling
+            Amount: 375
+          - Index: 2
+            Item: M_Dimension_Essence
+            Amount: 2
+          - Index: 3
+            Item: Instance_Emblem
+            Amount: 100
+      - Index: 24
+        Item: SharpSword_Furious
+        Zeny: 40000000
+        RequiredItems:
+          - Index: 0
+            Item: Evil_Minded_Ruby
+            Amount: 625
+          - Index: 1
+            Item: Whittling
+            Amount: 375
+          - Index: 2
+            Item: M_Dimension_Essence
+            Amount: 2
+          - Index: 3
+            Item: Instance_Emblem
+            Amount: 100
+      - Index: 25
+        Item: Slayer_Furious
+        Zeny: 40000000
+        RequiredItems:
+          - Index: 0
+            Item: Evil_Minded_Ruby
+            Amount: 625
+          - Index: 1
+            Item: Whittling
+            Amount: 375
+          - Index: 2
+            Item: M_Dimension_Essence
+            Amount: 2
+          - Index: 3
+            Item: Instance_Emblem
+            Amount: 100
+      - Index: 26
+        Item: Soul_Furious
+        Zeny: 40000000
+        RequiredItems:
+          - Index: 0
+            Item: Evil_Minded_Ruby
+            Amount: 625
+          - Index: 1
+            Item: Whittling
+            Amount: 375
+          - Index: 2
+            Item: M_Dimension_Essence
+            Amount: 2
+          - Index: 3
+            Item: Instance_Emblem
+            Amount: 100
+      - Index: 27
+        Item: Specter_Furious
+        Zeny: 40000000
+        RequiredItems:
+          - Index: 0
+            Item: Evil_Minded_Ruby
+            Amount: 625
+          - Index: 1
+            Item: Whittling
+            Amount: 375
+          - Index: 2
+            Item: M_Dimension_Essence
+            Amount: 2
+          - Index: 3
+            Item: Instance_Emblem
+            Amount: 100
+      - Index: 28
+        Item: SpiritStick_Furious
+        Zeny: 40000000
+        RequiredItems:
+          - Index: 0
+            Item: Evil_Minded_Ruby
+            Amount: 625
+          - Index: 1
+            Item: Whittling
+            Amount: 375
+          - Index: 2
+            Item: M_Dimension_Essence
+            Amount: 2
+          - Index: 3
+            Item: Instance_Emblem
+            Amount: 100
+      - Index: 29
+        Item: Stick_Furious
+        Zeny: 40000000
+        RequiredItems:
+          - Index: 0
+            Item: Evil_Minded_Ruby
+            Amount: 625
+          - Index: 1
+            Item: Whittling
+            Amount: 375
+          - Index: 2
+            Item: M_Dimension_Essence
+            Amount: 2
+          - Index: 3
+            Item: Instance_Emblem
+            Amount: 100
+      - Index: 30
+        Item: StormBow_Furious
+        Zeny: 40000000
+        RequiredItems:
+          - Index: 0
+            Item: Evil_Minded_Ruby
+            Amount: 625
+          - Index: 1
+            Item: Whittling
+            Amount: 375
+          - Index: 2
+            Item: M_Dimension_Essence
+            Amount: 2
+          - Index: 3
+            Item: Instance_Emblem
+            Amount: 100
+      - Index: 31
+        Item: SunBook_Furious
+        Zeny: 40000000
+        RequiredItems:
+          - Index: 0
+            Item: Evil_Minded_Ruby
+            Amount: 625
+          - Index: 1
+            Item: Whittling
+            Amount: 375
+          - Index: 2
+            Item: M_Dimension_Essence
+            Amount: 2
+          - Index: 3
+            Item: Instance_Emblem
+            Amount: 100
+      - Index: 32
+        Item: TornadoBow_Furious
+        Zeny: 40000000
+        RequiredItems:
+          - Index: 0
+            Item: Evil_Minded_Ruby
+            Amount: 625
+          - Index: 1
+            Item: Whittling
+            Amount: 375
+          - Index: 2
+            Item: M_Dimension_Essence
+            Amount: 2
+          - Index: 3
+            Item: Instance_Emblem
+            Amount: 100
+      - Index: 33
+        Item: Trident_Furious
+        Zeny: 40000000
+        RequiredItems:
+          - Index: 0
+            Item: Evil_Minded_Ruby
+            Amount: 625
+          - Index: 1
+            Item: Whittling
+            Amount: 375
+          - Index: 2
+            Item: M_Dimension_Essence
+            Amount: 2
+          - Index: 3
+            Item: Instance_Emblem
+            Amount: 100
+      - Index: 34
+        Item: WheelHumma_Furious
+        Zeny: 40000000
+        RequiredItems:
+          - Index: 0
+            Item: Evil_Minded_Ruby
+            Amount: 625
+          - Index: 1
+            Item: Whittling
+            Amount: 375
+          - Index: 2
+            Item: M_Dimension_Essence
+            Amount: 2
+          - Index: 3
+            Item: Instance_Emblem
+            Amount: 100
+      - Index: 35
+        Item: Whip_Furious
+        Zeny: 40000000
+        RequiredItems:
+          - Index: 0
+            Item: Evil_Minded_Ruby
+            Amount: 625
+          - Index: 1
+            Item: Whittling
+            Amount: 375
+          - Index: 2
+            Item: M_Dimension_Essence
+            Amount: 2
+          - Index: 3
+            Item: Instance_Emblem
+            Amount: 100
+      - Index: 36
+        Item: WhiteSword_Furious
         Zeny: 40000000
         RequiredItems:
           - Index: 0
