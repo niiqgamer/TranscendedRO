@@ -1136,6 +1136,51 @@ Body:
     Name: Soul Ascetic Dim Crystal
     Type: Card
     SubType: Enchant
+  - Id: 315165
+    AegisName: BP10_Bio_Melee
+    Name: Bio Energy of Melee
+    Type: Card
+    SubType: Enchant
+    Script: |
+      .@r = getrefine();
+      bonus2 bSubRace,RC_All,2*(.@r/2);
+      bonus2 bSubRace,RC_Player_Human,-2*(.@r/2);
+      bonus2 bSubRace,RC_Player_Doram,-2*(.@r/2);
+      bonus bDelayRate,-2*(.@r/3);
+      if (.@r>10) {
+         bonus bAllTraitStats,6;
+         bonus2 bAddRace,RC_All,6;
+      }
+  - Id: 315166
+    AegisName: BP10_Bio_Range
+    Name: Bio Energy of Range
+    Type: Card
+    SubType: Enchant
+    Script: |
+      .@r = getrefine();
+      bonus2 bSubRace,RC_All,2*(.@r/2);
+      bonus2 bSubRace,RC_Player_Human,-2*(.@r/2);
+      bonus2 bSubRace,RC_Player_Doram,-2*(.@r/2);
+      bonus bDelayRate,-2*(.@r/3);
+      if (.@r>10) {
+         bonus bAllTraitStats,6;
+         bonus2 bAddRace,RC_All,6;
+      }
+  - Id: 315167
+    AegisName: BP10_Bio_Magic
+    Name: Bio Energy of Magic
+    Type: Card
+    SubType: Enchant
+    Script: |
+      .@r = getrefine();
+      bonus2 bSubRace,RC_All,2*(.@r/2);
+      bonus2 bSubRace,RC_Player_Human,-2*(.@r/2);
+      bonus2 bSubRace,RC_Player_Doram,-2*(.@r/2);
+      bonus bDelayRate,-2*(.@r/3);
+      if (.@r>10) {
+         bonus bAllTraitStats,6;
+         bonus2 bMagicAddRace,RC_All,6;
+      }
   - Id: 315286
     AegisName: Orrivane_Enc_WH
     Name: "Orrivane Orb (Windhawk)"

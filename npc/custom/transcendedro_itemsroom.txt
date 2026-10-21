@@ -341,6 +341,9 @@ grademk,65,86,5	script	Enchant GGT#itroom	4_F_PREMI,{
 	
 	"~ ^FF0000+11^000000 Illusion Shield I / II",
 	"~ 6th Anniversary Ayothaya Ring Normal / LT",
+	"~ Enchant ^00AA00Nebula Shadow^000000",
+	"~ Enchant ^0000AASnow Flower Shadow^000000",
+	"~ Enchant ^AA0000Varmundt Shadow^000000",
 	"Cancel"
 	
 	)) {
@@ -351,6 +354,15 @@ grademk,65,86,5	script	Enchant GGT#itroom	4_F_PREMI,{
 			item_enchant(1004);
 			end;
 		case 3:
+			item_enchant(13331);
+			end;
+		case 4:
+			item_enchant(13351);
+			end;
+		case 5:
+			item_enchant(13356);
+			end;
+		case 6:
 			mes "Bye, guys!";
 			close2;
 			end;
@@ -770,7 +782,8 @@ grademk,107,100,4	script	Furious Equipments#itemroom	915,{
 	"~ Furious Crowns / Boots / Rings",
 	"~ Furious Weapons",
 	"~ Enchant ^AA0000Furious Crown^000000",
-	"~ Enchant ^AA0000Furious Weapons^000000",
+	"~ Enchant ^00AA00Furious Weapons^000000",
+	"~ Enchant ^0000AAFurious Rings^000000",
 	"Cancel"
 	
 	)) {
@@ -787,6 +800,9 @@ grademk,107,100,4	script	Furious Equipments#itemroom	915,{
 			item_enchant(147);
 			end;
 		case 5:
+			item_enchant(13365);
+			end;
+		case 6:
 			mes "Bye, guys!";
 			close2;
 			end;

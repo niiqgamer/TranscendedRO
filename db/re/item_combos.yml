@@ -64906,3 +64906,165 @@ Body:
          bonus2 bAddClass,Class_All,30;
          bonus2 bIgnoreDefRaceRate,RC_All,100;
       }
+  - Combos:
+      - Combo:
+          - FuriousRing_DK                  # 491066
+          - Slayer_Furious                   # 600059
+    Script: |
+      .@r = getequiprefinerycnt(EQI_HAND_R);
+      bonus2 bAddSize,Size_All,15;
+      bonus2 bSkillAtk,"DK_SERVANTWEAPON",20;
+      bonus2 bSkillAtk,"DK_SERVANTWEAPON_ATK",20;
+      bonus2 bSkillAtk,"DK_HACKANDSLASHER",20;
+      if (.@r>=10) {
+         bonus2 bAddEle,Ele_All,15;
+         bonus2 bSkillAtk,"DK_SERVANTWEAPON",20;
+         bonus2 bSkillAtk,"DK_SERVANTWEAPON_ATK",20;
+         bonus2 bSkillAtk,"DK_HACKANDSLASHER",20;
+      }
+      if (getenchantgrade(EQI_HAND_R) >= ENCHANTGRADE_C) {
+         bonus bPAtk,10;
+         bonus2 bSkillCooldown,"DK_HACKANDSLASHER",-500;
+         bonus2 bSkillAtk,"DK_SERVANTWEAPON",20;
+         bonus2 bSkillAtk,"DK_SERVANTWEAPON_ATK",20;
+         bonus2 bSkillAtk,"DK_HACKANDSLASHER",20;
+         if (getenchantgrade(EQI_HAND_R) >= ENCHANTGRADE_B) {
+            skill "TK_POWER",2;
+            skill "GC_DARKCROW",5;
+            bonus3 bAutoSpell,"DK_SERVANTWEAPON_ATK",5,300;
+            bonus2 bSkillCooldown,"DK_HACKANDSLASHER",-200;
+            bonus2 bSkillAtk,"DK_SERVANTWEAPON",20;
+            bonus2 bSkillAtk,"DK_SERVANTWEAPON_ATK",20;
+            bonus2 bSkillAtk,"DK_HACKANDSLASHER",20;
+         }
+      }
+  - Combos:
+      - Combo:
+          - FuriousRing_DK2                 # 491075
+          - Trident_Furious                   # 630045
+    Script: |
+      .@r = getequiprefinerycnt(EQI_HAND_R);
+      bonus2 bAddSize,Size_All,15;
+      bonus2 bSkillAtk,"DK_MADNESS_CRUSHER",25;
+      if (.@r>=10) {
+         bonus2 bAddEle,Ele_All,15;
+         bonus2 bSkillAtk,"DK_MADNESS_CRUSHER",25;
+      }
+      if (getenchantgrade(EQI_HAND_R) >= ENCHANTGRADE_C) {
+         bonus bPAtk,10;
+         bonus2 bSkillCooldown,"DK_MADNESS_CRUSHER",-250;
+         bonus2 bSkillAtk,"DK_MADNESS_CRUSHER",25;
+         if (getenchantgrade(EQI_HAND_R) >= ENCHANTGRADE_B) {
+            skill "TK_POWER",4;
+            autobonus3 "{ bonus bPow,100; bonus bPAtk,20; }",30,5000,"DK_MADNESS_CRUSHER";
+            bonus2 bSkillCooldown,"DK_MADNESS_CRUSHER",-100;
+            bonus2 bSkillAtk,"DK_MADNESS_CRUSHER",25;
+         }
+      }
+  - Combos:
+      - Combo:
+          - FuriousRing_ABC2                  # 491089
+          - Demonsword_Furious             # 510151
+    Script: |
+      .@r = getequiprefinerycnt(EQI_HAND_R);
+      bonus2 bMagicAddSize,Size_All,15;
+      bonus2 bSkillAtk,"ABC_FROM_THE_ABYSS",20;
+      bonus2 bSkillAtk,"ABC_FROM_THE_ABYSS_ATK",20;
+      bonus2 bSkillAtk,"ABC_ABYSS_SQUARE",20;
+      if (.@r>=10) {
+         bonus2 bMagicAtkEle,Ele_All,15;
+         bonus2 bSkillAtk,"ABC_FROM_THE_ABYSS",20;
+         bonus2 bSkillAtk,"ABC_FROM_THE_ABYSS_ATK",20;
+         bonus2 bSkillAtk,"ABC_ABYSS_SQUARE",20;
+      }
+      if (getenchantgrade(EQI_HAND_R) >= ENCHANTGRADE_C) {
+         bonus bSMatk,10;
+         bonus2 bSkillCooldown,"ABC_ABYSS_SQUARE",-1300;
+         bonus2 bSkillAtk,"ABC_FROM_THE_ABYSS",20;
+         bonus2 bSkillAtk,"ABC_FROM_THE_ABYSS_ATK",20;
+         bonus2 bSkillAtk,"ABC_ABYSS_SQUARE",20;
+         if (getenchantgrade(EQI_HAND_R) >= ENCHANTGRADE_B) {
+            bonus2 bMagicAtkEle,"Ele_Fire",20;
+            bonus2 bMagicAtkEle,"Ele_Neutral",20;
+            bonus2 bSkillCooldown,"ABC_ABYSS_SQUARE",-1300;
+            bonus2 bSkillAtk,"ABC_FROM_THE_ABYSS",20;
+            bonus2 bSkillAtk,"ABC_FROM_THE_ABYSS_ATK",20;
+            bonus2 bSkillAtk,"ABC_ABYSS_SQUARE",20;
+            bonus3 bAutoSpell,"AG_ALL_BLOOM",5,300;
+         }
+      }
+  - Combos:
+      - Combo:
+          - FuriousRing_ABC                  # 491097
+          - Demonius_Furious                # 510150
+    Script: |
+      .@r = getequiprefinerycnt(EQI_HAND_R);
+      bonus2 bAddSize,Size_All,15;
+      bonus2 bSkillAtk,"ABC_DEFT_STAB",25;
+      if (.@r>=10) {
+         bonus2 bAddEle,Ele_All,15;
+         bonus2 bSkillAtk,"ABC_DEFT_STAB",25;
+      }
+      if (getenchantgrade(EQI_HAND_R) >= ENCHANTGRADE_C) {
+         bonus bPAtk,10;
+         bonus2 bSkillCooldown,"ABC_DEFT_STAB",-600;
+         bonus2 bSkillAtk,"ABC_DEFT_STAB",25;
+         if (getenchantgrade(EQI_HAND_R) >= ENCHANTGRADE_B) {
+            skill "TK_POWER",4;
+            skill "SHC_DANCING_KNIFE",5;
+            bonus4 bAutoSpellOnSkill,"ABC_UNLUCKY_RUSH","ABC_DEFT_STAB",10,1000;
+            bonus2 bSkillAtk,"ABC_DEFT_STAB",25;
+            bonus2 bSkillAtk,"SHC_DANCING_KNIFE",25;
+         }
+      }
+  - Combos:
+      - Combo:
+          - FuriousRing_AG                    # 491108
+          - Specter_Furious                   # 550150
+    Script: |
+      .@r = getequiprefinerycnt(EQI_HAND_R);
+      bonus2 bMagicAddSize,Size_All,15;
+      bonus2 bSkillAtk,"AG_SOUL_VC_STRIKE",20;
+      bonus2 bSkillAtk,"AG_MYSTERY_ILLUSION",20;
+      if (.@r>=10) {
+         bonus2 bMagicAtkEle,Ele_All,15;
+         bonus2 bSkillAtk,"AG_SOUL_VC_STRIKE",20;
+         bonus2 bSkillAtk,"AG_MYSTERY_ILLUSION",20;
+      }
+      if (getenchantgrade(EQI_HAND_R) >= ENCHANTGRADE_C) {
+         bonus bSMatk,10;
+         bonus2 bSkillCooldown,"AG_SOUL_VC_STRIKE",-600;
+         bonus2 bSkillCooldown,"AG_MYSTERY_ILLUSION",-2000;
+         bonus2 bSkillAtk,"AG_SOUL_VC_STRIKE",20;
+         bonus2 bSkillAtk,"AG_MYSTERY_ILLUSION",20;
+         if (getenchantgrade(EQI_HAND_R) >= ENCHANTGRADE_B) {
+            skill "TK_HIGHJUMP",5;
+            bonus2 bSkillCooldown,"WL_TELEKINESIS_INTENSE",-300000;
+            bonus2 bSkillAtk,"AG_SOUL_VC_STRIKE",20;
+            bonus2 bSkillAtk,"AG_MYSTERY_ILLUSION",20;
+         }
+      }
+  - Combos:
+      - Combo:
+          - FuriousRing_SS2                   # 491109
+          - Humma_Furious                   # 610072
+    Script: |
+      .@r = getequiprefinerycnt(EQI_HAND_R);
+      bonus2 bAddSize,Size_All,15;
+      bonus2 bSkillAtk,"SS_KUNAIKAITEN",25;
+      if (.@r>=10) {
+         bonus2 bAddEle,Ele_All,15;
+         bonus2 bSkillAtk,"SS_KUNAIKAITEN",25;
+      }
+      if (getenchantgrade(EQI_HAND_R) >= ENCHANTGRADE_C) {
+         bonus bPAtk,10;
+         bonus2 bSkillCooldown,"SS_KUNAIKAITEN",-1700;
+         bonus2 bSkillAtk,"SS_KUNAIKAITEN",25;
+         if (getenchantgrade(EQI_HAND_R) >= ENCHANTGRADE_B) {
+            skill "TK_POWER",4;
+            bonus2 bSkillCooldown,"SS_KUNAIKAITEN",-100;
+            bonus2 bSkillCooldown,"SS_SHIMIRU",-300;
+            bonus4 bAutoSpellOnSkill,"SS_SHIMIRU","SS_KUNAIKAITEN",5,1000;
+            bonus2 bSkillAtk,"SS_KUNAIKAITEN",25;
+         }
+      }

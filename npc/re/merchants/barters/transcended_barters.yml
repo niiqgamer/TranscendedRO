@@ -9336,6 +9336,196 @@ Body:
           - Index: 4
             Item: Instance_Emblem
             Amount: 100
+      - Index: 20
+        Item: FuriousRing_ABC
+        Zeny: 5000000
+        RequiredItems:
+          - Index: 0
+            Item: Ep19_Snow_Flower
+            Amount: 250
+          - Index: 1
+            Item: EP19_S_F_3_Extract
+            Amount: 20
+          - Index: 2
+            Item: Snowflower_Ring
+            Amount: 1
+          - Index: 3
+            Item: EP19_D_P_Stone
+            Amount: 5
+          - Index: 4
+            Item: Instance_Emblem
+            Amount: 100
+      - Index: 21
+        Item: FuriousRing_ABC2
+        Zeny: 5000000
+        RequiredItems:
+          - Index: 0
+            Item: Ep19_Snow_Flower
+            Amount: 250
+          - Index: 1
+            Item: EP19_S_F_3_Extract
+            Amount: 20
+          - Index: 2
+            Item: Snowflower_Ring
+            Amount: 1
+          - Index: 3
+            Item: EP19_D_P_Stone
+            Amount: 5
+          - Index: 4
+            Item: Instance_Emblem
+            Amount: 100
+      - Index: 22
+        Item: FuriousRing_AG
+        Zeny: 5000000
+        RequiredItems:
+          - Index: 0
+            Item: Ep19_Snow_Flower
+            Amount: 250
+          - Index: 1
+            Item: EP19_S_F_3_Extract
+            Amount: 20
+          - Index: 2
+            Item: Snowflower_Ring
+            Amount: 1
+          - Index: 3
+            Item: EP19_D_P_Stone
+            Amount: 5
+          - Index: 4
+            Item: Instance_Emblem
+            Amount: 100
+      - Index: 23
+        Item: FuriousRing_DK
+        Zeny: 5000000
+        RequiredItems:
+          - Index: 0
+            Item: Ep19_Snow_Flower
+            Amount: 250
+          - Index: 1
+            Item: EP19_S_F_3_Extract
+            Amount: 20
+          - Index: 2
+            Item: Snowflower_Ring
+            Amount: 1
+          - Index: 3
+            Item: EP19_D_P_Stone
+            Amount: 5
+          - Index: 4
+            Item: Instance_Emblem
+            Amount: 100
+      - Index: 24
+        Item: FuriousRing_DK2
+        Zeny: 5000000
+        RequiredItems:
+          - Index: 0
+            Item: Ep19_Snow_Flower
+            Amount: 250
+          - Index: 1
+            Item: EP19_S_F_3_Extract
+            Amount: 20
+          - Index: 2
+            Item: Snowflower_Ring
+            Amount: 1
+          - Index: 3
+            Item: EP19_D_P_Stone
+            Amount: 5
+          - Index: 4
+            Item: Instance_Emblem
+            Amount: 100
+      - Index: 25
+        Item: FuriousRing_EM
+        Zeny: 5000000
+        RequiredItems:
+          - Index: 0
+            Item: Ep19_Snow_Flower
+            Amount: 250
+          - Index: 1
+            Item: EP19_S_F_3_Extract
+            Amount: 20
+          - Index: 2
+            Item: Snowflower_Ring
+            Amount: 1
+          - Index: 3
+            Item: EP19_D_P_Stone
+            Amount: 5
+          - Index: 4
+            Item: Instance_Emblem
+            Amount: 100
+      - Index: 26
+        Item: FuriousRing_EM2
+        Zeny: 5000000
+        RequiredItems:
+          - Index: 0
+            Item: Ep19_Snow_Flower
+            Amount: 250
+          - Index: 1
+            Item: EP19_S_F_3_Extract
+            Amount: 20
+          - Index: 2
+            Item: Snowflower_Ring
+            Amount: 1
+          - Index: 3
+            Item: EP19_D_P_Stone
+            Amount: 5
+          - Index: 4
+            Item: Instance_Emblem
+            Amount: 100
+      - Index: 27
+        Item: FuriousRing_SHC
+        Zeny: 5000000
+        RequiredItems:
+          - Index: 0
+            Item: Ep19_Snow_Flower
+            Amount: 250
+          - Index: 1
+            Item: EP19_S_F_3_Extract
+            Amount: 20
+          - Index: 2
+            Item: Snowflower_Ring
+            Amount: 1
+          - Index: 3
+            Item: EP19_D_P_Stone
+            Amount: 5
+          - Index: 4
+            Item: Instance_Emblem
+            Amount: 100
+      - Index: 28
+        Item: FuriousRing_SHC2
+        Zeny: 5000000
+        RequiredItems:
+          - Index: 0
+            Item: Ep19_Snow_Flower
+            Amount: 250
+          - Index: 1
+            Item: EP19_S_F_3_Extract
+            Amount: 20
+          - Index: 2
+            Item: Snowflower_Ring
+            Amount: 1
+          - Index: 3
+            Item: EP19_D_P_Stone
+            Amount: 5
+          - Index: 4
+            Item: Instance_Emblem
+            Amount: 100
+      - Index: 29
+        Item: FuriousRing_SS2
+        Zeny: 5000000
+        RequiredItems:
+          - Index: 0
+            Item: Ep19_Snow_Flower
+            Amount: 250
+          - Index: 1
+            Item: EP19_S_F_3_Extract
+            Amount: 20
+          - Index: 2
+            Item: Snowflower_Ring
+            Amount: 1
+          - Index: 3
+            Item: EP19_D_P_Stone
+            Amount: 5
+          - Index: 4
+            Item: Instance_Emblem
+            Amount: 100
   - Name: Furious_Weapons
     Items:
       - Index: 0

@@ -7340,6 +7340,28 @@ Body:
       bonus bSpl,10;
       bonus bFixedCast,-500;
       bonus2 bMagicAddClass,Class_All,15;
+  - Id: 491066
+    AegisName: FuriousRing_DK
+    Name: "Furious Ring (Dragon Knight)"
+    Type: Armor
+    Weight: 200
+    Defense: 0
+    Slots: 1
+    Jobs:
+      Knight: true
+    Classes:
+      All_Third: true
+      Fourth: true
+    Locations:
+      Right_Accessory: true
+    ArmorLevel: 1
+    EquipLevelMin: 205
+    Script: |
+      bonus bBaseAtk,100;
+      bonus bDelayRate,-10;
+      bonus bPow,10;
+      bonus bCritical,15;
+      bonus2 bAddClass,Class_All,15;
   - Id: 491070
     AegisName: 6th_Anni_Ring_LT_TH
     Name: "6th Anniversary Ayothaya Ring-LT"
@@ -7399,6 +7421,50 @@ Body:
             }
          }
       }
+  - Id: 491075
+    AegisName: FuriousRing_DK2
+    Name: "White Furious Ring (DK)"
+    Type: Armor
+    Weight: 200
+    Defense: 0
+    Slots: 1
+    Jobs:
+      Knight: true
+    Classes:
+      All_Third: true
+      Fourth: true
+    Locations:
+      Right_Accessory: true
+    ArmorLevel: 1
+    EquipLevelMin: 205
+    Script: |
+      bonus bBaseAtk,100;
+      bonus bDelayRate,-10;
+      bonus bPow,10;
+      bonus bNonCritAtkRate,10;
+      bonus2 bAddClass,Class_All,15;
+  - Id: 491089
+    AegisName: FuriousRing_ABC2
+    Name: "White Furious Ring (Abyss Chaser)"
+    Type: Armor
+    Weight: 200
+    Defense: 0
+    Slots: 1
+    Jobs:
+      Rogue: true
+    Classes:
+      All_Third: true
+      Fourth: true
+    Locations:
+      Right_Accessory: true
+    ArmorLevel: 1
+    EquipLevelMin: 205
+    Script: |
+      bonus bMatk,100;
+      bonus bDelayRate,-10;
+      bonus bSpl,10;
+      bonus bFixedCast,-500;
+      bonus2 bMagicAddClass,Class_All,15;
   - Id: 491093
     AegisName: Hunter_Watch_US
     Name: "Hunter's Watch"
@@ -7421,6 +7487,28 @@ Body:
          bonus2 bDropAddClass,Class_All,35;
          bonus2 bExpAddClass,Class_All,35;
       }
+  - Id: 491097
+    AegisName: FuriousRing_ABC
+    Name: "Furious Ring (Abyss Chaser)"
+    Type: Armor
+    Weight: 200
+    Defense: 0
+    Slots: 1
+    Jobs:
+      Rogue: true
+    Classes:
+      All_Third: true
+      Fourth: true
+    Locations:
+      Right_Accessory: true
+    ArmorLevel: 1
+    EquipLevelMin: 205
+    Script: |
+      bonus bBaseAtk,100;
+      bonus bDelayRate,-10;
+      bonus bPow,10;
+      bonus bNonCritAtkRate,10;
+      bonus2 bAddClass,Class_All,15;
   - Id: 491102
     AegisName: Ice_Lord_Ring_US
     Name: "Ring of Ice Lord"
@@ -7469,6 +7557,50 @@ Body:
             }
          }
       }
+  - Id: 491108
+    AegisName: FuriousRing_AG
+    Name: "Furious Ring (Arch Mage)"
+    Type: Armor
+    Weight: 200
+    Defense: 0
+    Slots: 1
+    Jobs:
+      Wizard: true
+    Classes:
+      All_Third: true
+      Fourth: true
+    Locations:
+      Right_Accessory: true
+    ArmorLevel: 1
+    EquipLevelMin: 205
+    Script: |
+      bonus bMatk,100;
+      bonus bDelayRate,-10;
+      bonus bSpl,10;
+      bonus bFixedCast,-500;
+      bonus2 bMagicAddClass,Class_All,15;
+  - Id: 491109
+    AegisName: FuriousRing_SS2
+    Name: "White Furious Ring (SS)"
+    Type: Armor
+    Weight: 200
+    Defense: 0
+    Slots: 1
+    Jobs:
+      KagerouOboro: true
+    Classes:
+      All_Third: true
+      Fourth: true
+    Locations:
+      Right_Accessory: true
+    ArmorLevel: 1
+    EquipLevelMin: 205
+    Script: |
+      bonus bBaseAtk,100;
+      bonus bDelayRate,-10;
+      bonus bPow,10;
+      bonus bNonCritAtkRate,10;
+      bonus2 bAddClass,Class_All,15;
   - Id: 520062
     AegisName: Thorn_Breaker_US
     Name: Thorn Breaker

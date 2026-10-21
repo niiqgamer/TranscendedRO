@@ -39828,3 +39828,1351 @@ Body:
               - Material: Instance_Emblem
                 Amount: 100
               - Material: Enchant_Ticket
+  - Id: 13331
+    TargetItems:
+      S_BP8_Melee_W: true
+      S_BP8_Range_W: true
+      S_BP8_Magic_W: true
+      S_BP8_Melee_S: true
+      S_BP8_Range_S: true
+      S_BP8_Magic_S: true
+    MinimumRefine: 0
+    Reset:
+      Chance: 1000000
+      Price: 0
+      Materials:
+        - Material: Silvervine
+          Amount: 10
+    Order:
+      - Slot: 3
+      - Slot: 2
+      - Slot: 1
+    Slots:
+      - Slot: 3
+        Price: 5000000
+        Materials:
+          - Material: Pow_Meteorite_Fragment
+            Amount: 10
+          - Material: Sta_Meteorite_Fragment
+            Amount: 10
+          - Material: Con_Meteorite_Fragment
+            Amount: 10
+          - Material: Crt_Meteorite_Fragment
+            Amount: 10
+          - Material: Spl_Meteorite_Fragment
+            Amount: 10
+          - Material: Wis_Meteorite_Fragment
+            Amount: 10
+        Enchants:
+          - Enchantgrade: 0
+            Items:
+              - Item: Strength5
+                Chance: 13000
+              - Item: Inteligence5
+                Chance: 12000
+              - Item: Dexterity5
+                Chance: 12000
+              - Item: Agility5
+                Chance: 13000
+              - Item: Vitality5
+                Chance: 13000
+              - Item: Luck5
+                Chance: 13000
+              - Item: M_Pow3
+                Chance: 4000
+              - Item: M_Sta3
+                Chance: 4000
+              - Item: M_Wis3
+                Chance: 4000
+              - Item: M_Spl3
+                Chance: 4000
+              - Item: M_Con3
+                Chance: 4000
+              - Item: M_Crt3
+                Chance: 4000
+          - Enchantgrade: 1
+            Items:
+              - Item: Strength5
+                Chance: 13000
+              - Item: Inteligence5
+                Chance: 12000
+              - Item: Dexterity5
+                Chance: 12000
+              - Item: Agility5
+                Chance: 13000
+              - Item: Vitality5
+                Chance: 13000
+              - Item: Luck5
+                Chance: 13000
+              - Item: M_Pow3
+                Chance: 4000
+              - Item: M_Sta3
+                Chance: 4000
+              - Item: M_Wis3
+                Chance: 4000
+              - Item: M_Spl3
+                Chance: 4000
+              - Item: M_Con3
+                Chance: 4000
+              - Item: M_Crt3
+                Chance: 4000
+          - Enchantgrade: 2
+            Items:
+              - Item: Strength5
+                Chance: 13000
+              - Item: Inteligence5
+                Chance: 12000
+              - Item: Dexterity5
+                Chance: 12000
+              - Item: Agility5
+                Chance: 13000
+              - Item: Vitality5
+                Chance: 13000
+              - Item: Luck5
+                Chance: 13000
+              - Item: M_Pow3
+                Chance: 4000
+              - Item: M_Sta3
+                Chance: 4000
+              - Item: M_Wis3
+                Chance: 4000
+              - Item: M_Spl3
+                Chance: 4000
+              - Item: M_Con3
+                Chance: 4000
+              - Item: M_Crt3
+                Chance: 4000
+          - Enchantgrade: 3
+            Items:
+              - Item: Strength5
+                Chance: 13000
+              - Item: Inteligence5
+                Chance: 12000
+              - Item: Dexterity5
+                Chance: 12000
+              - Item: Agility5
+                Chance: 13000
+              - Item: Vitality5
+                Chance: 13000
+              - Item: Luck5
+                Chance: 13000
+              - Item: M_Pow3
+                Chance: 4000
+              - Item: M_Sta3
+                Chance: 4000
+              - Item: M_Wis3
+                Chance: 4000
+              - Item: M_Spl3
+                Chance: 4000
+              - Item: M_Con3
+                Chance: 4000
+              - Item: M_Crt3
+                Chance: 4000
+          - Enchantgrade: 4
+            Items:
+              - Item: Strength5
+                Chance: 13000
+              - Item: Inteligence5
+                Chance: 12000
+              - Item: Dexterity5
+                Chance: 12000
+              - Item: Agility5
+                Chance: 13000
+              - Item: Vitality5
+                Chance: 13000
+              - Item: Luck5
+                Chance: 13000
+              - Item: M_Pow3
+                Chance: 4000
+              - Item: M_Sta3
+                Chance: 4000
+              - Item: M_Wis3
+                Chance: 4000
+              - Item: M_Spl3
+                Chance: 4000
+              - Item: M_Con3
+                Chance: 4000
+              - Item: M_Crt3
+                Chance: 4000
+      - Slot: 2
+        Price: 5000000
+        Materials:
+          - Material: Pow_Meteorite_Fragment
+            Amount: 10
+          - Material: Sta_Meteorite_Fragment
+            Amount: 10
+          - Material: Con_Meteorite_Fragment
+            Amount: 10
+          - Material: Crt_Meteorite_Fragment
+            Amount: 10
+          - Material: Spl_Meteorite_Fragment
+            Amount: 10
+          - Material: Wis_Meteorite_Fragment
+            Amount: 10
+        Enchants:
+          - Enchantgrade: 0
+            Items:
+              - Item: Strength5
+                Chance: 13000
+              - Item: Inteligence5
+                Chance: 12000
+              - Item: Dexterity5
+                Chance: 12000
+              - Item: Agility5
+                Chance: 13000
+              - Item: Vitality5
+                Chance: 13000
+              - Item: Luck5
+                Chance: 13000
+              - Item: M_Pow3
+                Chance: 4000
+              - Item: M_Sta3
+                Chance: 4000
+              - Item: M_Wis3
+                Chance: 4000
+              - Item: M_Spl3
+                Chance: 4000
+              - Item: M_Con3
+                Chance: 4000
+              - Item: M_Crt3
+                Chance: 4000
+          - Enchantgrade: 1
+            Items:
+              - Item: Strength5
+                Chance: 13000
+              - Item: Inteligence5
+                Chance: 12000
+              - Item: Dexterity5
+                Chance: 12000
+              - Item: Agility5
+                Chance: 13000
+              - Item: Vitality5
+                Chance: 13000
+              - Item: Luck5
+                Chance: 13000
+              - Item: M_Pow3
+                Chance: 4000
+              - Item: M_Sta3
+                Chance: 4000
+              - Item: M_Wis3
+                Chance: 4000
+              - Item: M_Spl3
+                Chance: 4000
+              - Item: M_Con3
+                Chance: 4000
+              - Item: M_Crt3
+                Chance: 4000
+          - Enchantgrade: 2
+            Items:
+              - Item: Strength5
+                Chance: 13000
+              - Item: Inteligence5
+                Chance: 12000
+              - Item: Dexterity5
+                Chance: 12000
+              - Item: Agility5
+                Chance: 13000
+              - Item: Vitality5
+                Chance: 13000
+              - Item: Luck5
+                Chance: 13000
+              - Item: M_Pow3
+                Chance: 4000
+              - Item: M_Sta3
+                Chance: 4000
+              - Item: M_Wis3
+                Chance: 4000
+              - Item: M_Spl3
+                Chance: 4000
+              - Item: M_Con3
+                Chance: 4000
+              - Item: M_Crt3
+                Chance: 4000
+          - Enchantgrade: 3
+            Items:
+              - Item: Strength5
+                Chance: 13000
+              - Item: Inteligence5
+                Chance: 12000
+              - Item: Dexterity5
+                Chance: 12000
+              - Item: Agility5
+                Chance: 13000
+              - Item: Vitality5
+                Chance: 13000
+              - Item: Luck5
+                Chance: 13000
+              - Item: M_Pow3
+                Chance: 4000
+              - Item: M_Sta3
+                Chance: 4000
+              - Item: M_Wis3
+                Chance: 4000
+              - Item: M_Spl3
+                Chance: 4000
+              - Item: M_Con3
+                Chance: 4000
+              - Item: M_Crt3
+                Chance: 4000
+          - Enchantgrade: 4
+            Items:
+              - Item: Strength5
+                Chance: 13000
+              - Item: Inteligence5
+                Chance: 12000
+              - Item: Dexterity5
+                Chance: 12000
+              - Item: Agility5
+                Chance: 13000
+              - Item: Vitality5
+                Chance: 13000
+              - Item: Luck5
+                Chance: 13000
+              - Item: M_Pow3
+                Chance: 4000
+              - Item: M_Sta3
+                Chance: 4000
+              - Item: M_Wis3
+                Chance: 4000
+              - Item: M_Spl3
+                Chance: 4000
+              - Item: M_Con3
+                Chance: 4000
+              - Item: M_Crt3
+                Chance: 4000
+      - Slot: 1
+        PerfectEnchants:
+          - Item: Star_Melee
+            Price: 100000000
+            Materials:
+              - Material: Enchant_Ticket
+                Amount: 4
+              - Material: Pow_Meteorite_Fragment
+                Amount: 200
+              - Material: Sta_Meteorite_Fragment
+                Amount: 200
+              - Material: Con_Meteorite_Fragment
+                Amount: 200
+              - Material: Crt_Meteorite_Fragment
+                Amount: 200
+              - Material: Spl_Meteorite_Fragment
+                Amount: 200
+              - Material: Wis_Meteorite_Fragment
+                Amount: 200
+          - Item: Star_Range
+            Price: 100000000
+            Materials:
+              - Material: Enchant_Ticket
+                Amount: 4
+              - Material: Pow_Meteorite_Fragment
+                Amount: 200
+              - Material: Sta_Meteorite_Fragment
+                Amount: 200
+              - Material: Con_Meteorite_Fragment
+                Amount: 200
+              - Material: Crt_Meteorite_Fragment
+                Amount: 200
+              - Material: Spl_Meteorite_Fragment
+                Amount: 200
+              - Material: Wis_Meteorite_Fragment
+                Amount: 200
+          - Item: Star_Magic
+            Price: 100000000
+            Materials:
+              - Material: Enchant_Ticket
+                Amount: 4
+              - Material: Pow_Meteorite_Fragment
+                Amount: 200
+              - Material: Sta_Meteorite_Fragment
+                Amount: 200
+              - Material: Con_Meteorite_Fragment
+                Amount: 200
+              - Material: Crt_Meteorite_Fragment
+                Amount: 200
+              - Material: Spl_Meteorite_Fragment
+                Amount: 200
+              - Material: Wis_Meteorite_Fragment
+                Amount: 200
+  - Id: 13351
+    TargetItems:
+      S_BP9_Melee_A: true
+      S_BP9_Range_A: true
+      S_BP9_Magic_A: true
+      S_BP9_Melee_S: true
+      S_BP9_Range_S: true
+      S_BP9_Magic_S: true
+    MinimumRefine: 0
+    Reset:
+      Chance: 1000000
+      Price: 0
+      Materials:
+        - Material: Silvervine
+          Amount: 10
+    Order:
+      - Slot: 3
+      - Slot: 2
+      - Slot: 1
+    Slots:
+      - Slot: 3
+        Price: 5000000
+        Materials:
+          - Material: Ep19_Snow_Flower
+            Amount: 150
+        Enchants:
+          - Enchantgrade: 0
+            Items:
+              - Item: Strength5
+                Chance: 13000
+              - Item: Inteligence5
+                Chance: 12000
+              - Item: Dexterity5
+                Chance: 12000
+              - Item: Agility5
+                Chance: 13000
+              - Item: Vitality5
+                Chance: 13000
+              - Item: Luck5
+                Chance: 13000
+              - Item: M_Pow3
+                Chance: 4000
+              - Item: M_Sta3
+                Chance: 4000
+              - Item: M_Wis3
+                Chance: 4000
+              - Item: M_Spl3
+                Chance: 4000
+              - Item: M_Con3
+                Chance: 4000
+              - Item: M_Crt3
+                Chance: 4000
+          - Enchantgrade: 1
+            Items:
+              - Item: Strength5
+                Chance: 13000
+              - Item: Inteligence5
+                Chance: 12000
+              - Item: Dexterity5
+                Chance: 12000
+              - Item: Agility5
+                Chance: 13000
+              - Item: Vitality5
+                Chance: 13000
+              - Item: Luck5
+                Chance: 13000
+              - Item: M_Pow3
+                Chance: 4000
+              - Item: M_Sta3
+                Chance: 4000
+              - Item: M_Wis3
+                Chance: 4000
+              - Item: M_Spl3
+                Chance: 4000
+              - Item: M_Con3
+                Chance: 4000
+              - Item: M_Crt3
+                Chance: 4000
+          - Enchantgrade: 2
+            Items:
+              - Item: Strength5
+                Chance: 13000
+              - Item: Inteligence5
+                Chance: 12000
+              - Item: Dexterity5
+                Chance: 12000
+              - Item: Agility5
+                Chance: 13000
+              - Item: Vitality5
+                Chance: 13000
+              - Item: Luck5
+                Chance: 13000
+              - Item: M_Pow3
+                Chance: 4000
+              - Item: M_Sta3
+                Chance: 4000
+              - Item: M_Wis3
+                Chance: 4000
+              - Item: M_Spl3
+                Chance: 4000
+              - Item: M_Con3
+                Chance: 4000
+              - Item: M_Crt3
+                Chance: 4000
+          - Enchantgrade: 3
+            Items:
+              - Item: Strength5
+                Chance: 13000
+              - Item: Inteligence5
+                Chance: 12000
+              - Item: Dexterity5
+                Chance: 12000
+              - Item: Agility5
+                Chance: 13000
+              - Item: Vitality5
+                Chance: 13000
+              - Item: Luck5
+                Chance: 13000
+              - Item: M_Pow3
+                Chance: 4000
+              - Item: M_Sta3
+                Chance: 4000
+              - Item: M_Wis3
+                Chance: 4000
+              - Item: M_Spl3
+                Chance: 4000
+              - Item: M_Con3
+                Chance: 4000
+              - Item: M_Crt3
+                Chance: 4000
+          - Enchantgrade: 4
+            Items:
+              - Item: Strength5
+                Chance: 13000
+              - Item: Inteligence5
+                Chance: 12000
+              - Item: Dexterity5
+                Chance: 12000
+              - Item: Agility5
+                Chance: 13000
+              - Item: Vitality5
+                Chance: 13000
+              - Item: Luck5
+                Chance: 13000
+              - Item: M_Pow3
+                Chance: 4000
+              - Item: M_Sta3
+                Chance: 4000
+              - Item: M_Wis3
+                Chance: 4000
+              - Item: M_Spl3
+                Chance: 4000
+              - Item: M_Con3
+                Chance: 4000
+              - Item: M_Crt3
+                Chance: 4000
+      - Slot: 2
+        Price: 5000000
+        Materials:
+          - Material: Ep19_Snow_Flower
+            Amount: 250
+        Enchants:
+          - Enchantgrade: 0
+            Items:
+              - Item: Strength5
+                Chance: 13000
+              - Item: Inteligence5
+                Chance: 12000
+              - Item: Dexterity5
+                Chance: 12000
+              - Item: Agility5
+                Chance: 13000
+              - Item: Vitality5
+                Chance: 13000
+              - Item: Luck5
+                Chance: 13000
+              - Item: M_Pow3
+                Chance: 4000
+              - Item: M_Sta3
+                Chance: 4000
+              - Item: M_Wis3
+                Chance: 4000
+              - Item: M_Spl3
+                Chance: 4000
+              - Item: M_Con3
+                Chance: 4000
+              - Item: M_Crt3
+                Chance: 4000
+          - Enchantgrade: 1
+            Items:
+              - Item: Strength5
+                Chance: 13000
+              - Item: Inteligence5
+                Chance: 12000
+              - Item: Dexterity5
+                Chance: 12000
+              - Item: Agility5
+                Chance: 13000
+              - Item: Vitality5
+                Chance: 13000
+              - Item: Luck5
+                Chance: 13000
+              - Item: M_Pow3
+                Chance: 4000
+              - Item: M_Sta3
+                Chance: 4000
+              - Item: M_Wis3
+                Chance: 4000
+              - Item: M_Spl3
+                Chance: 4000
+              - Item: M_Con3
+                Chance: 4000
+              - Item: M_Crt3
+                Chance: 4000
+          - Enchantgrade: 2
+            Items:
+              - Item: Strength5
+                Chance: 13000
+              - Item: Inteligence5
+                Chance: 12000
+              - Item: Dexterity5
+                Chance: 12000
+              - Item: Agility5
+                Chance: 13000
+              - Item: Vitality5
+                Chance: 13000
+              - Item: Luck5
+                Chance: 13000
+              - Item: M_Pow3
+                Chance: 4000
+              - Item: M_Sta3
+                Chance: 4000
+              - Item: M_Wis3
+                Chance: 4000
+              - Item: M_Spl3
+                Chance: 4000
+              - Item: M_Con3
+                Chance: 4000
+              - Item: M_Crt3
+                Chance: 4000
+          - Enchantgrade: 3
+            Items:
+              - Item: Strength5
+                Chance: 13000
+              - Item: Inteligence5
+                Chance: 12000
+              - Item: Dexterity5
+                Chance: 12000
+              - Item: Agility5
+                Chance: 13000
+              - Item: Vitality5
+                Chance: 13000
+              - Item: Luck5
+                Chance: 13000
+              - Item: M_Pow3
+                Chance: 4000
+              - Item: M_Sta3
+                Chance: 4000
+              - Item: M_Wis3
+                Chance: 4000
+              - Item: M_Spl3
+                Chance: 4000
+              - Item: M_Con3
+                Chance: 4000
+              - Item: M_Crt3
+                Chance: 4000
+          - Enchantgrade: 4
+            Items:
+              - Item: Strength5
+                Chance: 13000
+              - Item: Inteligence5
+                Chance: 12000
+              - Item: Dexterity5
+                Chance: 12000
+              - Item: Agility5
+                Chance: 13000
+              - Item: Vitality5
+                Chance: 13000
+              - Item: Luck5
+                Chance: 13000
+              - Item: M_Pow3
+                Chance: 4000
+              - Item: M_Sta3
+                Chance: 4000
+              - Item: M_Wis3
+                Chance: 4000
+              - Item: M_Spl3
+                Chance: 4000
+              - Item: M_Con3
+                Chance: 4000
+              - Item: M_Crt3
+                Chance: 4000
+      - Slot: 1
+        PerfectEnchants:
+          - Item: BP9_Snow_Melee
+            Price: 100000000
+            Materials:
+              - Material: EP19_S_F_2_Extract
+                Amount: 200
+              - Material: EP19_S_F_3_Extract
+                Amount: 200
+              - Material: Enchant_Ticket
+                Amount: 4
+          - Item: BP9_Snow_Range
+            Price: 100000000
+            Materials:
+              - Material: EP19_S_F_2_Extract
+                Amount: 200
+              - Material: EP19_S_F_3_Extract
+                Amount: 200
+              - Material: Enchant_Ticket
+                Amount: 4
+          - Item: BP9_Snow_Magic
+            Price: 100000000
+            Materials:
+              - Material: EP19_S_F_2_Extract
+                Amount: 200
+              - Material: EP19_S_F_3_Extract
+                Amount: 200
+              - Material: Enchant_Ticket
+                Amount: 4
+  - Id: 13356
+    TargetItems:
+      S_BP10_Melee_E: true
+      S_BP10_Range_E: true
+      S_BP10_Magic_E: true
+      S_BP10_Melee_P: true
+      S_BP10_Range_P: true
+      S_BP10_Magic_P: true
+    MinimumRefine: 0
+    Reset:
+      Chance: 1000000
+      Price: 0
+      Materials:
+        - Material: Silvervine
+          Amount: 10
+    Order:
+      - Slot: 3
+      - Slot: 2
+      - Slot: 1
+    Slots:
+      - Slot: 3
+        Price: 5000000
+        Materials:
+          - Material: Death_Barmund_Rune2
+            Amount: 10
+          - Material: Flame_Barmund_Rune2
+            Amount: 10
+          - Material: Ice_Barmund_Rune2
+            Amount: 10
+          - Material: Plain_Barmund_Rune2
+            Amount: 10
+        Enchants:
+          - Enchantgrade: 0
+            Items:
+              - Item: Strength5
+                Chance: 13000
+              - Item: Inteligence5
+                Chance: 12000
+              - Item: Dexterity5
+                Chance: 12000
+              - Item: Agility5
+                Chance: 13000
+              - Item: Vitality5
+                Chance: 13000
+              - Item: Luck5
+                Chance: 13000
+              - Item: M_Pow3
+                Chance: 4000
+              - Item: M_Sta3
+                Chance: 4000
+              - Item: M_Wis3
+                Chance: 4000
+              - Item: M_Spl3
+                Chance: 4000
+              - Item: M_Con3
+                Chance: 4000
+              - Item: M_Crt3
+                Chance: 4000
+          - Enchantgrade: 1
+            Items:
+              - Item: Strength5
+                Chance: 13000
+              - Item: Inteligence5
+                Chance: 12000
+              - Item: Dexterity5
+                Chance: 12000
+              - Item: Agility5
+                Chance: 13000
+              - Item: Vitality5
+                Chance: 13000
+              - Item: Luck5
+                Chance: 13000
+              - Item: M_Pow3
+                Chance: 4000
+              - Item: M_Sta3
+                Chance: 4000
+              - Item: M_Wis3
+                Chance: 4000
+              - Item: M_Spl3
+                Chance: 4000
+              - Item: M_Con3
+                Chance: 4000
+              - Item: M_Crt3
+                Chance: 4000
+          - Enchantgrade: 2
+            Items:
+              - Item: Strength5
+                Chance: 13000
+              - Item: Inteligence5
+                Chance: 12000
+              - Item: Dexterity5
+                Chance: 12000
+              - Item: Agility5
+                Chance: 13000
+              - Item: Vitality5
+                Chance: 13000
+              - Item: Luck5
+                Chance: 13000
+              - Item: M_Pow3
+                Chance: 4000
+              - Item: M_Sta3
+                Chance: 4000
+              - Item: M_Wis3
+                Chance: 4000
+              - Item: M_Spl3
+                Chance: 4000
+              - Item: M_Con3
+                Chance: 4000
+              - Item: M_Crt3
+                Chance: 4000
+          - Enchantgrade: 3
+            Items:
+              - Item: Strength5
+                Chance: 13000
+              - Item: Inteligence5
+                Chance: 12000
+              - Item: Dexterity5
+                Chance: 12000
+              - Item: Agility5
+                Chance: 13000
+              - Item: Vitality5
+                Chance: 13000
+              - Item: Luck5
+                Chance: 13000
+              - Item: M_Pow3
+                Chance: 4000
+              - Item: M_Sta3
+                Chance: 4000
+              - Item: M_Wis3
+                Chance: 4000
+              - Item: M_Spl3
+                Chance: 4000
+              - Item: M_Con3
+                Chance: 4000
+              - Item: M_Crt3
+                Chance: 4000
+          - Enchantgrade: 4
+            Items:
+              - Item: Strength5
+                Chance: 13000
+              - Item: Inteligence5
+                Chance: 12000
+              - Item: Dexterity5
+                Chance: 12000
+              - Item: Agility5
+                Chance: 13000
+              - Item: Vitality5
+                Chance: 13000
+              - Item: Luck5
+                Chance: 13000
+              - Item: M_Pow3
+                Chance: 4000
+              - Item: M_Sta3
+                Chance: 4000
+              - Item: M_Wis3
+                Chance: 4000
+              - Item: M_Spl3
+                Chance: 4000
+              - Item: M_Con3
+                Chance: 4000
+              - Item: M_Crt3
+                Chance: 4000
+      - Slot: 2
+        Price: 5000000
+        Materials:
+          - Material: Death_Barmund_Rune2
+            Amount: 20
+          - Material: Flame_Barmund_Rune2
+            Amount: 20
+          - Material: Ice_Barmund_Rune2
+            Amount: 20
+          - Material: Plain_Barmund_Rune2
+            Amount: 20
+        Enchants:
+          - Enchantgrade: 0
+            Items:
+              - Item: Strength5
+                Chance: 13000
+              - Item: Inteligence5
+                Chance: 12000
+              - Item: Dexterity5
+                Chance: 12000
+              - Item: Agility5
+                Chance: 13000
+              - Item: Vitality5
+                Chance: 13000
+              - Item: Luck5
+                Chance: 13000
+              - Item: M_Pow3
+                Chance: 4000
+              - Item: M_Sta3
+                Chance: 4000
+              - Item: M_Wis3
+                Chance: 4000
+              - Item: M_Spl3
+                Chance: 4000
+              - Item: M_Con3
+                Chance: 4000
+              - Item: M_Crt3
+                Chance: 4000
+          - Enchantgrade: 1
+            Items:
+              - Item: Strength5
+                Chance: 13000
+              - Item: Inteligence5
+                Chance: 12000
+              - Item: Dexterity5
+                Chance: 12000
+              - Item: Agility5
+                Chance: 13000
+              - Item: Vitality5
+                Chance: 13000
+              - Item: Luck5
+                Chance: 13000
+              - Item: M_Pow3
+                Chance: 4000
+              - Item: M_Sta3
+                Chance: 4000
+              - Item: M_Wis3
+                Chance: 4000
+              - Item: M_Spl3
+                Chance: 4000
+              - Item: M_Con3
+                Chance: 4000
+              - Item: M_Crt3
+                Chance: 4000
+          - Enchantgrade: 2
+            Items:
+              - Item: Strength5
+                Chance: 13000
+              - Item: Inteligence5
+                Chance: 12000
+              - Item: Dexterity5
+                Chance: 12000
+              - Item: Agility5
+                Chance: 13000
+              - Item: Vitality5
+                Chance: 13000
+              - Item: Luck5
+                Chance: 13000
+              - Item: M_Pow3
+                Chance: 4000
+              - Item: M_Sta3
+                Chance: 4000
+              - Item: M_Wis3
+                Chance: 4000
+              - Item: M_Spl3
+                Chance: 4000
+              - Item: M_Con3
+                Chance: 4000
+              - Item: M_Crt3
+                Chance: 4000
+          - Enchantgrade: 3
+            Items:
+              - Item: Strength5
+                Chance: 13000
+              - Item: Inteligence5
+                Chance: 12000
+              - Item: Dexterity5
+                Chance: 12000
+              - Item: Agility5
+                Chance: 13000
+              - Item: Vitality5
+                Chance: 13000
+              - Item: Luck5
+                Chance: 13000
+              - Item: M_Pow3
+                Chance: 4000
+              - Item: M_Sta3
+                Chance: 4000
+              - Item: M_Wis3
+                Chance: 4000
+              - Item: M_Spl3
+                Chance: 4000
+              - Item: M_Con3
+                Chance: 4000
+              - Item: M_Crt3
+                Chance: 4000
+          - Enchantgrade: 4
+            Items:
+              - Item: Strength5
+                Chance: 13000
+              - Item: Inteligence5
+                Chance: 12000
+              - Item: Dexterity5
+                Chance: 12000
+              - Item: Agility5
+                Chance: 13000
+              - Item: Vitality5
+                Chance: 13000
+              - Item: Luck5
+                Chance: 13000
+              - Item: M_Pow3
+                Chance: 4000
+              - Item: M_Sta3
+                Chance: 4000
+              - Item: M_Wis3
+                Chance: 4000
+              - Item: M_Spl3
+                Chance: 4000
+              - Item: M_Con3
+                Chance: 4000
+              - Item: M_Crt3
+                Chance: 4000
+      - Slot: 1
+        PerfectEnchants:
+          - Item: BP10_Bio_Melee
+            Price: 100000000
+            Materials:
+              - Material: Death_Barmund_Rune2
+                Amount: 50
+              - Material: Flame_Barmund_Rune2
+                Amount: 50
+              - Material: Ice_Barmund_Rune2
+                Amount: 50
+              - Material: Plain_Barmund_Rune2
+                Amount: 50
+              - Material: Enchant_Ticket
+                Amount: 4
+          - Item: BP10_Bio_Range
+            Price: 100000000
+            Materials:
+              - Material: Death_Barmund_Rune2
+                Amount: 50
+              - Material: Flame_Barmund_Rune2
+                Amount: 50
+              - Material: Ice_Barmund_Rune2
+                Amount: 50
+              - Material: Plain_Barmund_Rune2
+                Amount: 50
+              - Material: Enchant_Ticket
+                Amount: 4
+          - Item: BP10_Bio_Magic
+            Price: 100000000
+            Materials:
+              - Material: Death_Barmund_Rune2
+                Amount: 50
+              - Material: Flame_Barmund_Rune2
+                Amount: 50
+              - Material: Ice_Barmund_Rune2
+                Amount: 50
+              - Material: Plain_Barmund_Rune2
+                Amount: 50
+              - Material: Enchant_Ticket
+                Amount: 4
+  - Id: 13365
+    TargetItems:
+      FuriousRing_DK: true
+      FuriousRing_DK2: true
+      FuriousRing_EM: true
+      FuriousRing_EM2: true
+      FuriousRing_ABC: true
+      FuriousRing_ABC2: true
+      FuriousRing_AG: true
+      FuriousRing_SS2: true
+    MinimumRefine: 0
+    Reset:
+      Chance: 100000
+      Price: 0
+      Materials:
+        - Material: Silvervine
+          Amount: 5
+    Order:
+      - Slot: 3
+      - Slot: 2
+      - Slot: 1
+    Slots:
+      - Slot: 3
+        Price: 2000000
+        Materials:
+          - Material: EP19_D_P_Crystal
+            Amount: 30
+          - Material: EP19_N_P_Crystal
+            Amount: 30
+        Enchants:
+          - Enchantgrade: 0
+            Items:
+              - Item: Spell3
+                Chance: 16000
+              - Item: Spell5
+                Chance: 4000
+              - Item: Attack_Delay_2
+                Chance: 16000
+              - Item: Attack_Delay_4
+                Chance: 4000
+              - Item: Expert_Archer3
+                Chance: 16000
+              - Item: Expert_Archer5
+                Chance: 4000
+              - Item: Expert_Fighter3
+                Chance: 16000
+              - Item: Expert_Fighter5
+                Chance: 4000
+              - Item: Expert_Magician3
+                Chance: 16000
+              - Item: Expert_Magician5
+                Chance: 4000
+          - Enchantgrade: 1
+            Items:
+              - Item: Spell3
+                Chance: 16000
+              - Item: Spell5
+                Chance: 4000
+              - Item: Attack_Delay_2
+                Chance: 16000
+              - Item: Attack_Delay_4
+                Chance: 4000
+              - Item: Expert_Archer3
+                Chance: 16000
+              - Item: Expert_Archer5
+                Chance: 4000
+              - Item: Expert_Fighter3
+                Chance: 16000
+              - Item: Expert_Fighter5
+                Chance: 4000
+              - Item: Expert_Magician3
+                Chance: 16000
+              - Item: Expert_Magician5
+                Chance: 4000
+          - Enchantgrade: 2
+            Items:
+              - Item: Spell3
+                Chance: 16000
+              - Item: Spell5
+                Chance: 4000
+              - Item: Attack_Delay_2
+                Chance: 16000
+              - Item: Attack_Delay_4
+                Chance: 4000
+              - Item: Expert_Archer3
+                Chance: 16000
+              - Item: Expert_Archer5
+                Chance: 4000
+              - Item: Expert_Fighter3
+                Chance: 16000
+              - Item: Expert_Fighter5
+                Chance: 4000
+              - Item: Expert_Magician3
+                Chance: 16000
+              - Item: Expert_Magician5
+                Chance: 4000
+          - Enchantgrade: 3
+            Items:
+              - Item: Spell3
+                Chance: 16000
+              - Item: Spell5
+                Chance: 4000
+              - Item: Attack_Delay_2
+                Chance: 16000
+              - Item: Attack_Delay_4
+                Chance: 4000
+              - Item: Expert_Archer3
+                Chance: 16000
+              - Item: Expert_Archer5
+                Chance: 4000
+              - Item: Expert_Fighter3
+                Chance: 16000
+              - Item: Expert_Fighter5
+                Chance: 4000
+              - Item: Expert_Magician3
+                Chance: 16000
+              - Item: Expert_Magician5
+                Chance: 4000
+          - Enchantgrade: 4
+            Items:
+              - Item: Spell3
+                Chance: 16000
+              - Item: Spell5
+                Chance: 4000
+              - Item: Attack_Delay_2
+                Chance: 16000
+              - Item: Attack_Delay_4
+                Chance: 4000
+              - Item: Expert_Archer3
+                Chance: 16000
+              - Item: Expert_Archer5
+                Chance: 4000
+              - Item: Expert_Fighter3
+                Chance: 16000
+              - Item: Expert_Fighter5
+                Chance: 4000
+              - Item: Expert_Magician3
+                Chance: 16000
+              - Item: Expert_Magician5
+                Chance: 4000
+      - Slot: 2
+        Price: 5000000
+        Materials:
+          - Material: EP19_D_P_Crystal
+            Amount: 50
+          - Material: EP19_N_P_Crystal
+            Amount: 50
+        Enchants:
+          - Enchantgrade: 0
+            Items:
+              - Item: Pow_Assist
+                Chance: 8000
+              - Item: Pow_Enforce
+                Chance: 7000
+              - Item: SPL_Assist
+                Chance: 8000
+              - Item: SPL_Enforce
+                Chance: 7000
+              - Item: STA_Assist
+                Chance: 8000
+              - Item: STA_Enforce
+                Chance: 7000
+              - Item: WIS_Assist
+                Chance: 8000
+              - Item: WIS_Enforce
+                Chance: 7000
+              - Item: CON_Assist
+                Chance: 8000
+              - Item: CON_Enforce_Melee
+                Chance: 8000
+              - Item: CON_Enforce_Magic
+                Chance: 7000
+              - Item: CRT_Assist
+                Chance: 8000
+              - Item: CRT_Enforce
+                Chance: 7000
+          - Enchantgrade: 1
+            Items:
+              - Item: Pow_Assist
+                Chance: 8000
+              - Item: Pow_Enforce
+                Chance: 7000
+              - Item: SPL_Assist
+                Chance: 8000
+              - Item: SPL_Enforce
+                Chance: 7000
+              - Item: STA_Assist
+                Chance: 8000
+              - Item: STA_Enforce
+                Chance: 7000
+              - Item: WIS_Assist
+                Chance: 8000
+              - Item: WIS_Enforce
+                Chance: 7000
+              - Item: CON_Assist
+                Chance: 8000
+              - Item: CON_Enforce_Melee
+                Chance: 8000
+              - Item: CON_Enforce_Magic
+                Chance: 7000
+              - Item: CRT_Assist
+                Chance: 8000
+              - Item: CRT_Enforce
+                Chance: 7000
+          - Enchantgrade: 2
+            Items:
+              - Item: Pow_Assist
+                Chance: 8000
+              - Item: Pow_Enforce
+                Chance: 7000
+              - Item: SPL_Assist
+                Chance: 8000
+              - Item: SPL_Enforce
+                Chance: 7000
+              - Item: STA_Assist
+                Chance: 8000
+              - Item: STA_Enforce
+                Chance: 7000
+              - Item: WIS_Assist
+                Chance: 8000
+              - Item: WIS_Enforce
+                Chance: 7000
+              - Item: CON_Assist
+                Chance: 8000
+              - Item: CON_Enforce_Melee
+                Chance: 8000
+              - Item: CON_Enforce_Magic
+                Chance: 7000
+              - Item: CRT_Assist
+                Chance: 8000
+              - Item: CRT_Enforce
+                Chance: 7000
+          - Enchantgrade: 3
+            Items:
+              - Item: Pow_Assist
+                Chance: 8000
+              - Item: Pow_Enforce
+                Chance: 7000
+              - Item: SPL_Assist
+                Chance: 8000
+              - Item: SPL_Enforce
+                Chance: 7000
+              - Item: STA_Assist
+                Chance: 8000
+              - Item: STA_Enforce
+                Chance: 7000
+              - Item: WIS_Assist
+                Chance: 8000
+              - Item: WIS_Enforce
+                Chance: 7000
+              - Item: CON_Assist
+                Chance: 8000
+              - Item: CON_Enforce_Melee
+                Chance: 8000
+              - Item: CON_Enforce_Magic
+                Chance: 7000
+              - Item: CRT_Assist
+                Chance: 8000
+              - Item: CRT_Enforce
+                Chance: 7000
+          - Enchantgrade: 4
+            Items:
+              - Item: Pow_Assist
+                Chance: 8000
+              - Item: Pow_Enforce
+                Chance: 7000
+              - Item: SPL_Assist
+                Chance: 8000
+              - Item: SPL_Enforce
+                Chance: 7000
+              - Item: STA_Assist
+                Chance: 8000
+              - Item: STA_Enforce
+                Chance: 7000
+              - Item: WIS_Assist
+                Chance: 8000
+              - Item: WIS_Enforce
+                Chance: 7000
+              - Item: CON_Assist
+                Chance: 8000
+              - Item: CON_Enforce_Melee
+                Chance: 8000
+              - Item: CON_Enforce_Magic
+                Chance: 7000
+              - Item: CRT_Assist
+                Chance: 8000
+              - Item: CRT_Enforce
+                Chance: 7000
+      - Slot: 1
+        PerfectEnchants:
+          - Item: Warrior_Orb_15
+            Price: 100000000
+            Materials:
+              - Material: EP19_D_P_Crystal
+                Amount: 300
+              - Material: EP19_N_P_Crystal
+                Amount: 300
+              - Material: Enchant_Ticket
+                Amount: 4
+          - Item: Shooter_Orb_15
+            Price: 100000000
+            Materials:
+              - Material: EP19_D_P_Crystal
+                Amount: 300
+              - Material: EP19_N_P_Crystal
+                Amount: 300
+              - Material: Enchant_Ticket
+                Amount: 4
+          - Item: Magician_Orb_15
+            Price: 100000000
+            Materials:
+              - Material: EP19_D_P_Crystal
+                Amount: 300
+              - Material: EP19_N_P_Crystal
+                Amount: 300
+              - Material: Enchant_Ticket
+                Amount: 4
