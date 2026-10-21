@@ -64940,6 +64940,39 @@ Body:
       }
   - Combos:
       - Combo:
+          - FuriousRing_EM2                 # 491074
+          - MasterSpellBook_Furious      # 540091
+    Script: |
+      .@r = getequiprefinerycnt(EQI_HAND_R);
+      bonus2 bMagicAddSize,Size_All,15;
+      bonus2 bSkillAtk,"EM_CONFLAGRATION",20;
+      bonus2 bSkillAtk,"EM_LIGHTNING_LAND",20;
+      bonus2 bSkillAtk,"EM_VENOM_SWAMP",20;
+      if (.@r>=10) {
+         bonus2 bMagicAtkEle,Ele_All,15;
+         bonus2 bSkillAtk,"EM_CONFLAGRATION",20;
+         bonus2 bSkillAtk,"EM_LIGHTNING_LAND",20;
+         bonus2 bSkillAtk,"EM_VENOM_SWAMP",20;
+      }
+      if (getenchantgrade(EQI_HAND_R) >= ENCHANTGRADE_C) {
+         bonus bSMatk,10;
+         bonus2 bSkillCooldown,"EM_CONFLAGRATION",-1000;
+         bonus2 bSkillCooldown,"EM_LIGHTNING_LAND",-1000;
+         bonus2 bSkillCooldown,"EM_VENOM_SWAMP",-1500;
+         bonus2 bSkillAtk,"EM_CONFLAGRATION",20;
+         bonus2 bSkillAtk,"EM_LIGHTNING_LAND",20;
+         bonus2 bSkillAtk,"EM_VENOM_SWAMP",20;
+         if (getenchantgrade(EQI_HAND_R) >= ENCHANTGRADE_B) {
+            bonus2 bMagicAtkEle,"Ele_Fire",20;
+            bonus2 bMagicAtkEle,"Ele_Wind",20;
+            bonus2 bMagicAtkEle,"Ele_Poison",20;
+            bonus2 bSkillAtk,"EM_CONFLAGRATION",20;
+            bonus2 bSkillAtk,"EM_LIGHTNING_LAND",20;
+            bonus2 bSkillAtk,"EM_VENOM_SWAMP",20;
+         }
+      }
+  - Combos:
+      - Combo:
           - FuriousRing_DK2                 # 491075
           - Trident_Furious                   # 630045
     Script: |
@@ -64959,6 +64992,52 @@ Body:
             autobonus3 "{ bonus bPow,100; bonus bPAtk,20; }",30,5000,"DK_MADNESS_CRUSHER";
             bonus2 bSkillCooldown,"DK_MADNESS_CRUSHER",-100;
             bonus2 bSkillAtk,"DK_MADNESS_CRUSHER",25;
+         }
+      }
+  - Combos:
+      - Combo:
+          - FuriousRing_EM               # 491088
+          - Grimoire_Furious             # 540091
+    Script: |
+      .@r = getequiprefinerycnt(EQI_HAND_R);
+      bonus2 bMagicAddSize,Size_All,15;
+      bonus2 bSkillAtk,"MG_FIREBOLT",40;
+      bonus2 bSkillAtk,"MG_COLDBOLT",40;
+      bonus2 bSkillAtk,"MG_LIGHTNINGBOLT",40;
+      bonus2 bSkillAtk,"EM_DIAMOND_STORM",20;
+      bonus2 bSkillAtk,"EM_TERRA_DRIVE",20;
+      if (.@r>=10) {
+         bonus2 bMagicAtkEle,Ele_All,15;
+         bonus2 bSkillAtk,"MG_FIREBOLT",40;
+         bonus2 bSkillAtk,"MG_COLDBOLT",40;
+         bonus2 bSkillAtk,"MG_LIGHTNINGBOLT",40;
+         bonus2 bSkillAtk,"EM_DIAMOND_STORM",20;
+         bonus2 bSkillAtk,"EM_TERRA_DRIVE",20;
+      }
+      if (getenchantgrade(EQI_HAND_R) >= ENCHANTGRADE_C) {
+         bonus bSMatk,10;
+         bonus2 bSkillCooldown,"EM_DIAMOND_STORM",-400;
+         bonus2 bSkillCooldown,"EM_TERRA_DRIVE",-400;
+         bonus2 bSkillAtk,"MG_FIREBOLT",40;
+         bonus2 bSkillAtk,"MG_COLDBOLT",40;
+         bonus2 bSkillAtk,"MG_LIGHTNINGBOLT",40;
+         bonus2 bSkillAtk,"EM_DIAMOND_STORM",20;
+         bonus2 bSkillAtk,"EM_TERRA_DRIVE",20;
+         if (getenchantgrade(EQI_HAND_R) >= ENCHANTGRADE_B) {
+            bonus2 bMagicAtkEle,"Ele_Fire",20;
+            bonus2 bMagicAtkEle,"Ele_Water",20;
+            bonus2 bMagicAtkEle,"Ele_Wind",20;
+            bonus2 bMagicAtkEle,"Ele_Earth",20;
+            bonus2 bSkillAtk,"MG_FIREBOLT",40;
+            bonus2 bSkillAtk,"MG_COLDBOLT",40;
+            bonus2 bSkillAtk,"MG_LIGHTNINGBOLT",40;
+            bonus2 bSkillAtk,"EM_DIAMOND_STORM",20;
+            bonus2 bSkillAtk,"EM_TERRA_DRIVE",20;
+            autobonus3 "{ bonus3 bAutoSpell,\"MG_FIREBOLT\",10,150; bonus3 bAutoSpell,\"MG_COLDBOLT\",10,150; bonus3 bAutoSpell,\"MG_LIGHTNINGBOLT\",10,150; bonus3 bAutoSpell,\"WZ_EARTHSPIKE\",10,150; bonus3 bAutoSpell,\"EM_ELEMENTAL_BUSTER\",10,150;}",1000,1500000,"EM_SUMMON_ELEMENTAL_DILUVIO";
+            autobonus3 "{ bonus3 bAutoSpell,\"MG_FIREBOLT\",10,150; bonus3 bAutoSpell,\"MG_COLDBOLT\",10,150; bonus3 bAutoSpell,\"MG_LIGHTNINGBOLT\",10,150; bonus3 bAutoSpell,\"WZ_EARTHSPIKE\",10,150; bonus3 bAutoSpell,\"EM_ELEMENTAL_BUSTER\",10,150;}",1000,1500000,"EM_SUMMON_ELEMENTAL_ARDOR";
+            autobonus3 "{ bonus3 bAutoSpell,\"MG_FIREBOLT\",10,150; bonus3 bAutoSpell,\"MG_COLDBOLT\",10,150; bonus3 bAutoSpell,\"MG_LIGHTNINGBOLT\",10,150; bonus3 bAutoSpell,\"WZ_EARTHSPIKE\",10,150; bonus3 bAutoSpell,\"EM_ELEMENTAL_BUSTER\",10,150;}",1000,1500000,"EM_SUMMON_ELEMENTAL_PROCELLA";
+            autobonus3 "{ bonus3 bAutoSpell,\"MG_FIREBOLT\",10,150; bonus3 bAutoSpell,\"MG_COLDBOLT\",10,150; bonus3 bAutoSpell,\"MG_LIGHTNINGBOLT\",10,150; bonus3 bAutoSpell,\"WZ_EARTHSPIKE\",10,150; bonus3 bAutoSpell,\"EM_ELEMENTAL_BUSTER\",10,150;}",1000,1500000,"EM_SUMMON_ELEMENTAL_SERPENS";
+            autobonus3 "{ bonus3 bAutoSpell,\"MG_FIREBOLT\",10,150; bonus3 bAutoSpell,\"MG_COLDBOLT\",10,150; bonus3 bAutoSpell,\"MG_LIGHTNINGBOLT\",10,150; bonus3 bAutoSpell,\"WZ_EARTHSPIKE\",10,150; bonus3 bAutoSpell,\"EM_ELEMENTAL_BUSTER\",10,150;}",1000,1500000,"EM_SUMMON_ELEMENTAL_TERREMOTUS";
          }
       }
   - Combos:
@@ -64995,6 +65074,30 @@ Body:
       }
   - Combos:
       - Combo:
+          - FuriousRing_SHC2            # 491096
+          - Impact_Furious                # 610071
+    Script: |
+      .@r = getequiprefinerycnt(EQI_HAND_R);
+      bonus2 bAddSize,Size_All,15;
+      bonus2 bSkillAtk,"SHC_SAVAGE_IMPACT",20;
+      if (.@r>=10) {
+         bonus2 bAddEle,Ele_All,15;
+         bonus2 bSkillAtk,"SHC_SAVAGE_IMPACT",20;
+      }
+      if (getenchantgrade(EQI_HAND_R) >= ENCHANTGRADE_C) {
+         bonus bPAtk,10;
+         bonus2 bSkillCooldown,"SHC_SAVAGE_IMPACT",-500;
+         bonus2 bSkillAtk,"SHC_SAVAGE_IMPACT",20;
+         if (getenchantgrade(EQI_HAND_R) >= ENCHANTGRADE_B) {
+            bonus2 bSkillCooldown,"GC_DARKCROW",-30000;
+            bonus bBaseAtk,20*getskilllv("GC_DARKCROW");
+            bonus bShortAtkRate,5*getskilllv("GC_DARKCROW");
+            bonus2 bSkillCooldown,"SHC_SAVAGE_IMPACT",-200;
+            bonus2 bSkillAtk,"SHC_SAVAGE_IMPACT",20;
+         }
+      }
+  - Combos:
+      - Combo:
           - FuriousRing_ABC                  # 491097
           - Demonius_Furious                # 510150
     Script: |
@@ -65015,6 +65118,32 @@ Body:
             bonus4 bAutoSpellOnSkill,"ABC_UNLUCKY_RUSH","ABC_DEFT_STAB",10,1000;
             bonus2 bSkillAtk,"ABC_DEFT_STAB",25;
             bonus2 bSkillAtk,"SHC_DANCING_KNIFE",25;
+         }
+      }
+  - Combos:
+      - Combo:
+          - FuriousRing_SHC                    # 491107
+          - RightShape_Furious                # 510152
+    Script: |
+      .@r = getequiprefinerycnt(EQI_HAND_R);
+      bonus2 bAddSize,Size_All,15;
+      bonus2 bSkillAtk,"SHC_SHADOW_STAB",25;
+      if (.@r>=10) {
+         bonus2 bAddEle,Ele_All,15;
+         bonus2 bSkillAtk,"SHC_SHADOW_STAB",25;
+      }
+      if (getenchantgrade(EQI_HAND_R) >= ENCHANTGRADE_C) {
+         bonus bPAtk,10;
+         bonus2 bSkillCooldown,"SHC_SHADOW_STAB",-500;
+         bonus2 bSkillAtk,"SHC_SHADOW_STAB",25;
+         if (getenchantgrade(EQI_HAND_R) >= ENCHANTGRADE_B) {
+            skill "TK_POWER",4;
+            bonus2 bSkillCooldown,"GC_DARKCROW",-30000;
+            bonus bBaseAtk,20*getskilllv("GC_DARKCROW");
+            bonus bShortAtkRate,5*getskilllv("GC_DARKCROW");
+            bonus4 bAutoSpellOnSkill,"GC_CROSSIMPACT","SHC_SHADOW_STAB",5,1000;
+            bonus2 bSkillAtk,"SHC_SHADOW_STAB",25;
+            bonus bNonCritAtkRate,10;
          }
       }
   - Combos:

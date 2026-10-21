@@ -39838,8 +39838,8 @@ Body:
       S_BP8_Magic_S: true
     MinimumRefine: 0
     Reset:
-      Chance: 1000000
-      Price: 0
+      Chance: 100000
+      Price: 1000000
       Materials:
         - Material: Silvervine
           Amount: 10
@@ -40203,8 +40203,8 @@ Body:
       S_BP9_Magic_S: true
     MinimumRefine: 0
     Reset:
-      Chance: 1000000
-      Price: 0
+      Chance: 100000
+      Price: 1000000
       Materials:
         - Material: Silvervine
           Amount: 10
@@ -40524,8 +40524,8 @@ Body:
       S_BP10_Magic_P: true
     MinimumRefine: 0
     Reset:
-      Chance: 1000000
-      Price: 0
+      Chance: 100000
+      Price: 1000000
       Materials:
         - Material: Silvervine
           Amount: 10
@@ -40872,7 +40872,7 @@ Body:
     MinimumRefine: 0
     Reset:
       Chance: 100000
-      Price: 0
+      Price: 100000
       Materials:
         - Material: Silvervine
           Amount: 5

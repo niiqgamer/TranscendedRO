@@ -7421,6 +7421,28 @@ Body:
             }
          }
       }
+  - Id: 491088
+    AegisName: FuriousRing_EM2
+    Name: "White Furious Ring (EM)"
+    Type: Armor
+    Weight: 200
+    Defense: 0
+    Slots: 1
+    Jobs:
+      Sage: true
+    Classes:
+      All_Third: true
+      Fourth: true
+    Locations:
+      Right_Accessory: true
+    ArmorLevel: 1
+    EquipLevelMin: 205
+    Script: |
+      bonus bMatk,100;
+      bonus bDelayRate,-10;
+      bonus bSpl,10;
+      bonus bFixedCast,-500;
+      bonus2 bMagicAddClass,Class_All,15;
   - Id: 491075
     AegisName: FuriousRing_DK2
     Name: "White Furious Ring (DK)"
@@ -7443,6 +7465,28 @@ Body:
       bonus bPow,10;
       bonus bNonCritAtkRate,10;
       bonus2 bAddClass,Class_All,15;
+  - Id: 491088
+    AegisName: FuriousRing_EM
+    Name: "Furious Ring (EM)"
+    Type: Armor
+    Weight: 200
+    Defense: 0
+    Slots: 1
+    Jobs:
+      Sage: true
+    Classes:
+      All_Third: true
+      Fourth: true
+    Locations:
+      Right_Accessory: true
+    ArmorLevel: 1
+    EquipLevelMin: 205
+    Script: |
+      bonus bMatk,100;
+      bonus bDelayRate,-10;
+      bonus bSpl,10;
+      bonus bFixedCast,-500;
+      bonus2 bMagicAddClass,Class_All,15;
   - Id: 491089
     AegisName: FuriousRing_ABC2
     Name: "White Furious Ring (Abyss Chaser)"
@@ -7487,6 +7531,28 @@ Body:
          bonus2 bDropAddClass,Class_All,35;
          bonus2 bExpAddClass,Class_All,35;
       }
+  - Id: 491096
+    AegisName: FuriousRing_SHC2
+    Name: "White Furious Ring (SHC)"
+    Type: Armor
+    Weight: 200
+    Defense: 0
+    Slots: 1
+    Jobs:
+      Assassin: true
+    Classes:
+      All_Third: true
+      Fourth: true
+    Locations:
+      Right_Accessory: true
+    ArmorLevel: 1
+    EquipLevelMin: 205
+    Script: |
+      bonus bBaseAtk,100;
+      bonus bDelayRate,-10;
+      bonus bPow,10;
+      bonus bCritical,15;
+      bonus2 bAddClass,Class_All,15;
   - Id: 491097
     AegisName: FuriousRing_ABC
     Name: "Furious Ring (Abyss Chaser)"
@@ -7557,6 +7623,28 @@ Body:
             }
          }
       }
+  - Id: 491107
+    AegisName: FuriousRing_SHC
+    Name: "Furious Ring (SHC)"
+    Type: Armor
+    Weight: 200
+    Defense: 0
+    Slots: 1
+    Jobs:
+      Assassin: true
+    Classes:
+      All_Third: true
+      Fourth: true
+    Locations:
+      Right_Accessory: true
+    ArmorLevel: 1
+    EquipLevelMin: 205
+    Script: |
+      bonus bBaseAtk,100;
+      bonus bDelayRate,-10;
+      bonus bPow,10;
+      bonus bNonCritAtkRate,10;
+      bonus2 bAddClass,Class_All,15;
   - Id: 491108
     AegisName: FuriousRing_AG
     Name: "Furious Ring (Arch Mage)"
