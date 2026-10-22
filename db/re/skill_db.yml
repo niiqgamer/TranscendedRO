@@ -35483,7 +35483,7 @@ Body:
       Interval: 300
       Target: Enemy
       Flag:
-        NoOverlap: false
+        NoOverlap: true
         PathCheck: true
     Status: Climax_Bloom
   - Id: 5223
