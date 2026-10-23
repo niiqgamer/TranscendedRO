@@ -707,7 +707,7 @@ OnSummon:
 	monster instance_mapname("2@ch_t"),93,97,"--ja--",20996,1,instance_npcname(strnpcinfo(0)) + "::OnBossKill";
 	set_instance_var("boss_id",$@mobid[0]);
 	.@gid = get_instance_var("boss_id");
-	unitskilluseid $@mobid[0],"NPC_RELIEVE_ON",1;
+	unitskilluseid $@mobid[0],"NPC_RELIEVE_ON",5;
 	while (true) {
 		sleep 1000;
         if (!unitexists(.@gid)) {
@@ -1515,7 +1515,7 @@ OnFirstPhase:
 	.@event$ = instance_npcname(strnpcinfo(0)) + "::OnBossKill";
 	monster .@map$,156,85,"Betelguese",20994,1,.@event$;
 	set_instance_var("gid",$@mobid[0]);
-    unitskilluseid $@mobid[0],"NPC_RELIEVE_ON",1;
+    unitskilluseid $@mobid[0],"NPC_RELIEVE_ON",5;
     ctower_calc_stats($@mobid[0]);
 	instance_event("#ctower_party_check","OnCheck",false);
 	instance_event("#ctower_check_area","OnCheck",false);
@@ -1588,7 +1588,7 @@ OnSecondPhaseTalk:
 	instance_enable("#ctower_betel_1",false);
 	monster .@map$, 156, 80,"Betelguese", 20994, 1, .@event$;
 	set_instance_var("gid",$@mobid[0]);
-    unitskilluseid $@mobid[0],"NPC_RELIEVE_ON",1;
+    unitskilluseid $@mobid[0],"NPC_RELIEVE_ON",5;
     ctower_calc_stats($@mobid[0]);
 	ctower_recalc_stats($@mobid[0],1);
 	instance_event(strnpcinfo(0),"OnSecondPhaseCheck",false);
@@ -1652,7 +1652,7 @@ OnThirdPhaseTalk:
 	instance_enable("#ctower_betel_2",false);
 	monster .@map$,156,80,"Betelguese",20994,1,.@event$;
 	set_instance_var("gid",$@mobid[0]);
-    unitskilluseid $@mobid[0],"NPC_RELIEVE_ON",1;
+    unitskilluseid $@mobid[0],"NPC_RELIEVE_ON",5;
     ctower_calc_stats($@mobid[0]);
 	ctower_recalc_stats($@mobid[0],2);
 end;

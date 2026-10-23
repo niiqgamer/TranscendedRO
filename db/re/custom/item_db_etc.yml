@@ -754,8 +754,9 @@ Body:
     Script: |
       .@a = readparam(bCrt);
       .@b = readparam(bPow);
+      .@c = readparam(bCon);
       bonus bCritical,5*(.@a/20);
-      if (.@b>=100) {
+      if (.@b>=100 || .@c>=100) {
          bonus bShortAtkRate,40;
          bonus bLongAtkRate,40;
          bonus2 bAddClass,Class_Normal,10;
