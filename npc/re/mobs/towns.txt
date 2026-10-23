@@ -163,7 +163,7 @@ OnInit:
 	end;
 }
 
-izlude,144,133,6	script	Punching Bag 0.01%	844,{
+izlude,144,133,6	script	Punching Bag 0.01%#2	844,{
 	end;
 
 OnInit:
