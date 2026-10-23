@@ -133931,7 +133931,7 @@ Body:
     AttackDelay: 470
     AttackMotion: 420
     DamageMotion: 360
-    DamageTaken: 10
+    DamageTaken: 1000
     Ai: 21
     Class: Boss
     Modes:
@@ -133964,7 +133964,7 @@ Body:
     AttackDelay: 430
     AttackMotion: 520
     DamageMotion: 360
-    DamageTaken: 1
+    DamageTaken: 100
     Ai: 21
     Class: Boss
     Modes:
@@ -133997,7 +133997,7 @@ Body:
     AttackDelay: 470
     AttackMotion: 420
     DamageMotion: 360
-    DamageTaken: 10
+    DamageTaken: 1000
     Ai: 21
     Class: Boss
     Modes:
@@ -137045,7 +137045,7 @@ Body:
     Element: Neutral
     ElementLevel: 1
     WalkSpeed: 1000
-    DamageTaken: 1000
+    DamageTaken: 10
     Ai: 06
     Class: Boss
     Modes:
@@ -137255,7 +137255,7 @@ Body:
     Element: Neutral
     ElementLevel: 1
     WalkSpeed: 1000
-    DamageTaken: 100
+    DamageTaken: 1
     Ai: 06
     Class: Boss
     Modes:

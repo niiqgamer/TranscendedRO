@@ -8279,7 +8279,6 @@ Body:
       DisplayPc: true
     Script: |
       percentheal 100,100;
-      AP = 500;
   - Status: Flametechnic
     Icon: EFST_FLAMETECHNIC
     Flags:
