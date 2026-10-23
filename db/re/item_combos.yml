@@ -65197,3 +65197,51 @@ Body:
             bonus2 bSkillAtk,"SS_KUNAIKAITEN",25;
          }
       }
+  - Combos:
+      - Combo:
+          - LMN_ABC_Dagger              # 510160 Orrivane Abyss Dagger
+          - LMN_Orrivane_C_ABC         # 550202 Orrivane Crown (Abyss Chaser)
+    Script: |
+      .@sum = getequiprefinerycnt(EQI_HEAD_TOP)+getequiprefinerycnt(EQI_HAND_R);
+      bonus2 bSkillAtk,"ABC_DEFT_STAB",10;
+      bonus bShortAtkRate,5;
+      if (getenchantgrade(EQI_HEAD_TOP) >= ENCHANTGRADE_A) {
+         if (.@r>=22) {
+            bonus2 bSkillCooldown,"ABC_DEFT_STAB",-100;
+            bonus2 bSkillAtk,"ABC_DEFT_STAB",10;
+         }
+      }
+  - Combos:
+      - Combo:
+          - LMN_ABC_C_Bow               # 700133 Orrivane Abyss Crossbow
+          - LMN_Orrivane_C_ABC         # 550202 Orrivane Crown (Abyss Chaser)
+    Script: |
+      .@sum = getequiprefinerycnt(EQI_HEAD_TOP)+getequiprefinerycnt(EQI_HAND_R);
+      bonus2 bSkillAtk,"ABC_FRENZY_SHOT",10;
+      bonus bLongAtkRate,5;
+      if (getenchantgrade(EQI_HEAD_TOP) >= ENCHANTGRADE_A) {
+         if (.@r>=22) {
+            bonus2 bSkillCooldown,"ABC_FRENZY_SHOT",-100;
+            bonus2 bSkillAtk,"ABC_FRENZY_SHOT",10;
+         }
+      }
+  - Combos:
+      - Combo:
+          - Orrivane_Enc_ABC              # 315287 Orrivane Orb (Abyss Chaser)
+          - LMN_ABC_Dagger               # 510160 Orrivane Abyss Dagger
+    Script: |
+      .@r = getequiprefinerycnt(EQI_HAND_R);
+      bonus bNonCritAtkRate,10;
+      bonus2 bSkillAtk,"ABC_DEFT_STAB",6*(.@r/2);
+      bonus2 bSkillAtk,"ABC_ABYSS_DAGGER",6*(.@r/2);
+      if (getenchantgrade(EQI_HAND_R) >= ENCHANTGRADE_C) {
+         bonus bPAtk,10;
+         bonus2 bSkillCooldown,"ABC_ABYSS_DAGGER",-300;
+         bonus2 bSkillCooldown,"ABC_DEFT_STAB",-600;
+         if (.@r>=10) {
+            skill "TK_POWER",4;
+            skill "GC_DARKCROW",4;
+            bonus2 bSkillCooldown,"GC_DARKCROW",-30000;
+            bonus4 bAutoSpellOnSkill,"ABC_DEFT_STAB","ABC_ABYSS_DAGGER",5,1000;
+         }
+      }

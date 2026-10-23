@@ -388,6 +388,55 @@ Body:
             }
          }
       }
+  - Id: 401270
+    AegisName: LMN_Orrivane_C_ABC
+    Name: "Orrivane Crown (Abyss Chaser)"
+    Type: Armor
+    Weight: 500
+    Defense: 35
+    Slots: 1
+    Jobs:
+      Rogue: true
+    Classes:
+      All_Third: true
+      Fourth: true
+    Locations:
+      Head_Top: true
+    ArmorLevel: 2
+    EquipLevelMin: 230
+    Refineable: true
+    Gradable: true
+    View: 2662
+    Script: |
+      .@g = getenchantgrade();
+      .@r = getrefine();
+      bonus bMaxHP,100*(.@r/3);
+      bonus bMaxSP,15*(.@r/3);
+      bonus2 bSkillAtk,"ABC_DEFT_STAB",5*(.@r/4);
+      bonus2 bSkillAtk,"ABC_FRENZY_SHOT",5*(.@r/4);
+      if (.@r>=7) {
+         bonus bShortAtkRate,10;
+         bonus bLongAtkRate,10;
+         if (.@r>=9) {
+            bonus bPAtk,5;
+            bonus bAtkRate,5;
+            if (.@r>=11) {
+               bonus2 bAddSize,Size_All,10;
+            }
+         }
+      }
+      if (.@g>=ENCHANTGRADE_D) {
+         bonus bPAtk,5;
+         if (.@g>=ENCHANTGRADE_C) {
+            bonus bMaxHPRate,5;
+            bonus bMaxSPRate,5;
+            if (.@g>=ENCHANTGRADE_B) {
+               bonus2 bAddRace,RC_All,10;
+               bonus2 bAddRace,RC_Player_Doram,-10;
+               bonus2 bAddRace,RC_Player_Human,-10;
+            }
+         }
+      }
   - Id: 401273
     AegisName: LMN_Orrivane_C_AG
     Name: "Orrivane Crown (Arch Mage)"
@@ -398,6 +447,7 @@ Body:
     Jobs:
       Wizard: true
     Classes:
+      All_Third: true
       Fourth: true
     Locations:
       Head_Top: true

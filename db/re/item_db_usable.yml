@@ -13688,10 +13688,22 @@ Body:
     AegisName: 10M_Zeny_Check
     Name: 10M Zeny Check
     Type: Usable
+    Buy: 20
+    Trade:
+      NoSell: true
+    Script: |
+      Zeny += 10000000;
+      dispbottom "You recieved 10,000,000 Zeny.";
   - Id: 12781
     AegisName: 1M_Zeny_Check
     Name: 1M Zeny Check
     Type: Usable
+    Buy: 20
+    Trade:
+      NoSell: true
+    Script: |
+      Zeny += 1000000;
+      dispbottom "You recieved 1,000,000 Zeny.";
   - Id: 12782
     AegisName: 100T_Zeny_Check
     Name: 100T Zeny Check
