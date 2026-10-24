@@ -35,7 +35,7 @@ Header:
 
 Body:
   - Group: BLOODY_DEAD_BRANCH
-    Default: BAPHOMET
+    Default: GOLDEN_BUG
     Summon:
       - Mob: OSIRIS
         Rate: 500000
@@ -128,6 +128,200 @@ Body:
       - Mob: BOITATA
         Rate: 500000
       - Mob: QUEEN_SCARABA
+        Rate: 500000
+      - Mob: MOROCC_
+        Rate: 500000
+      - Mob: NAGHT_SIEGER
+        Rate: 500000
+      - Mob: ENTWEIHEN
+        Rate: 500000
+      - Mob: LEAK
+        Rate: 500000
+      - Mob: COELACANTH_N_A
+        Rate: 500000
+      - Mob: COELACANTH_N_M
+        Rate: 500000
+      - Mob: COELACANTH_H_M
+        Rate: 500000
+      - Mob: COELACANTH_H_A
+        Rate: 500000
+      - Mob: MD_GIANT_OCTOPUS
+        Rate: 500000
+      - Mob: KRAKEN
+        Rate: 500000
+      - Mob: PYURIEL
+        Rate: 500000
+      - Mob: GIOIA
+        Rate: 500000
+      - Mob: DAEHYON
+        Rate: 500000
+      - Mob: KADES
+        Rate: 500000
+      - Mob: BUWAYA
+        Rate: 500000
+      - Mob: N_AMON_RA
+        Rate: 500000
+      - Mob: NG_BAPHOMET
+        Rate: 500000
+      - Mob: FACEWORM_QUEEN
+        Rate: 500000
+      - Mob: FACEWORM_QUEEN_R
+        Rate: 500000
+      - Mob: FACEWORM_QUEEN_G
+        Rate: 500000
+      - Mob: FACEWORM_QUEEN_B
+        Rate: 500000
+      - Mob: FACEWORM_QUEEN_Y
+        Rate: 500000
+      - Mob: XM_CELINE_KIMI
+        Rate: 500000
+      - Mob: TIMEHOLDER
+        Rate: 500000
+      - Mob: V_B_EREMES
+        Rate: 500000
+      - Mob: V_B_MAGALETA
+        Rate: 500000
+      - Mob: V_B_SHECIL
+        Rate: 500000
+      - Mob: V_B_HARWORD
+        Rate: 500000
+      - Mob: V_B_KATRINN
+        Rate: 500000
+      - Mob: V_B_SEYREN
+        Rate: 500000
+      - Mob: V_B_RANDEL
+        Rate: 500000
+      - Mob: V_B_FLAMEL
+        Rate: 500000
+      - Mob: V_B_CELIA
+        Rate: 500000
+      - Mob: V_B_CHEN
+        Rate: 500000
+      - Mob: V_B_GERTIE
+        Rate: 500000
+      - Mob: V_B_ALPHOCCIO
+        Rate: 500000
+      - Mob: V_B_TRENTINI
+        Rate: 500000
+      - Mob: T_W_O
+        Rate: 500000
+      - Mob: MIN_EDDGA
+        Rate: 500000
+      - Mob: MIN_OSIRIS
+        Rate: 500000
+      - Mob: MIN_PHREEONI
+        Rate: 500000
+      - Mob: MIN_ORK_HERO
+        Rate: 500000
+      - Mob: MIN_TAO_GUNKA
+        Rate: 500000
+      - Mob: BIJOU
+        Rate: 500000
+      - Mob: AS_RAGGED_GOLEM
+        Rate: 500000
+      - Mob: DR_BIG_EGGRING
+        Rate: 500000
+      - Mob: EP16_2_MM_CUTIE
+        Rate: 500000
+      - Mob: EP16_2_H_HUNTER_EV
+        Rate: 500000
+      - Mob: EP16_2_VENOM_KIMERA
+        Rate: 500000
+      - Mob: MD_LICH_LORD_160
+        Rate: 500000
+      - Mob: MECHASPIDER
+        Rate: 500000
+      - Mob: ILL_DRACULA
+        Rate: 500000
+      - Mob: ILL_MOONLIGHT
+        Rate: 500000
+      - Mob: ILL_KTULLANUX
+        Rate: 500000
+      - Mob: ILL_TURTLE_GENERAL
+        Rate: 500000
+      - Mob: ILL_TAO_GUNKA
+        Rate: 500000
+      - Mob: ILL_WOOTAN_DEFENDER
+        Rate: 500000
+      - Mob: GOBLIN_KING
+        Rate: 500000
+      - Mob: MD_EL_A17T
+        Rate: 500000
+      - Mob: MD_MIGUEL
+        Rate: 500000
+      - Mob: EP17_1_R4885_BESTIA
+        Rate: 500000
+      - Mob: MUSPELLSKOLL_H
+        Rate: 500000
+      - Mob: BRINARANEA_H
+        Rate: 500000
+      - Mob: DARK_LORD_H
+        Rate: 500000
+      - Mob: ILL_BAPHOMET
+        Rate: 500000
+      - Mob: JUNGOLIANT
+        Rate: 500000
+      - Mob: REGINLEIF
+        Rate: 500000
+      - Mob: INGRID
+        Rate: 500000
+      - Mob: MD_REDPEPPER
+        Rate: 500000
+      - Mob: MD_REDPEPPER_H
+        Rate: 500000
+      - Mob: MD_SWEETY
+        Rate: 500000
+      - Mob: EP17_2_PITAYA_BOSS
+        Rate: 500000
+      - Mob: MD_PITAYA_BOSS
+        Rate: 500000
+      - Mob: MD_SILVA_PAPILIA
+        Rate: 500000
+      - Mob: MD_GRAN_PAPILIA
+        Rate: 500000
+      - Mob: ILL_KRAKEN
+        Rate: 500000
+      - Mob: ILL_ABYSMAL_WITCH
+        Rate: 500000
+      - Mob: CHIMERA_THEONE
+        Rate: 500000
+      - Mob: R001_BESTIA
+        Rate: 500000
+      - Mob: DEATH_WITCH
+        Rate: 500000
+      - Mob: EP18_BURNING_FANG
+        Rate: 500000
+      - Mob: ILL_MAYA
+        Rate: 500000
+      - Mob: EP19_MD_AQUILA
+        Rate: 500000
+      - Mob: EP19_MD_JUNCEA_S
+        Rate: 500000
+      - Mob: EP19_LIMACINA_BOSS
+        Rate: 500000
+      - Mob: ECO_MISTRESS
+        Rate: 500000
+      - Mob: ECO_DETALE
+        Rate: 500000
+      - Mob: ECO_KTULLANUX
+        Rate: 500000
+      - Mob: ECO_LORD_OF_DEATH
+        Rate: 500000
+      - Mob: ECO_RANDGRIS
+        Rate: 500000
+      - Mob: ECO_VENOM_KIMERA
+        Rate: 500000
+      - Mob: ECO_GLOOMUNDERNIGHT
+        Rate: 500000
+      - Mob: RENIRE
+        Rate: 500000
+      - Mob: EP20_BOSS_CLANER
+        Rate: 500000
+      - Mob: MD_EP20_BOSS_LASGAND
+        Rate: 500000
+      - Mob: MD_EP20_FALLENANGEL
+        Rate: 500000
+      - Mob: EP20_SNOW_ANGEL
         Rate: 500000
   - Group: BRANCH_OF_DEAD_TREE
     Default: SCORPION
