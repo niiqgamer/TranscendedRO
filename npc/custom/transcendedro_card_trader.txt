@@ -195,3 +195,4 @@ OnInit:
 -	shop	card_shop	-1,909:-1
 
 //izlude,158,168,4	duplicate(Card Trader)	Card Trader#para	4_M_SOULREAPER
+grademk,137,104,4	duplicate(Card Trader)	Card Trader#itroom	4_M_SOULREAPER
