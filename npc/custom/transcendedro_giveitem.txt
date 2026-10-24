@@ -17,6 +17,8 @@ OnGiveItem:
 	"Battle Manual X3 [14545]",
 	"Bubble Gum (10 Hours) [9955518]",
 	"Bloody Branch [12103]",
+	"Cashier's Cheque (1M zeny) [12781]",
+	"Cashier's Cheque (10M zeny) [12780]",
 	"Cancle"
 	
 	)) {
@@ -51,6 +53,12 @@ OnGiveItem:
 			$@item = 12103;
 			break;
 		case 11:
+			$@item = 12781;
+			break;
+		case 12:
+			$@item = 12780;
+			break;
+		case 13:
 			mes "Bye!";
 			end;
 	}

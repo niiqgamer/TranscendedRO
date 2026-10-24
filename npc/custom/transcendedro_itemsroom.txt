@@ -821,3 +821,7 @@ OnTimer1000:
 
 grademk	mapflag	noteleport
 grademk	mapflag	novending
+grademk	mapflag	nobuyingstore
+grademk	mapflag	nobranch
+grademk	mapflag	nomemo
+grademk	mapflag	noicewall
