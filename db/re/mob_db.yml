@@ -50130,7 +50130,7 @@ Body:
     Hp: 500000
     BaseExp: 20000
     JobExp: 10000
-   MvpExp: 22222
+    MvpExp: 22222
     Attack: 1900
     Attack2: 1200
     Defense: 154
