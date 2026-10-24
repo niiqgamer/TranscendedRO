@@ -50130,7 +50130,7 @@ Body:
     Hp: 500000
     BaseExp: 20000
     JobExp: 10000
-#   MvpExp:
+   MvpExp: 22222
     Attack: 1900
     Attack2: 1200
     Defense: 154
@@ -87059,7 +87059,7 @@ Body:
     Hp: 12600000
     BaseExp: 3000000
     JobExp: 3000000
-#   MvpExp:
+    MvpExp: 3333333
     Attack: 8000
     Attack2: 2000
     Defense: 360
@@ -87131,7 +87131,7 @@ Body:
     Hp: 14400000
     BaseExp: 3000000
     JobExp: 3000000
-#   MvpExp:
+    MvpExp: 3333333
     Attack: 2500
     Attack2: 7000
     Defense: 320
@@ -87204,7 +87204,7 @@ Body:
     Hp: 12600000
     BaseExp: 3000000
     JobExp: 3000000
-#   MvpExp:
+    MvpExp: 3333333
     Attack: 7000
     Attack2: 2000
     Defense: 200
@@ -87277,7 +87277,7 @@ Body:
     Hp: 18000000
     BaseExp: 3000000
     JobExp: 3000000
-#   MvpExp:
+    MvpExp: 3333333
     Attack: 5000
     Attack2: 3000
     Defense: 400
@@ -87350,7 +87350,7 @@ Body:
     Hp: 10800000
     BaseExp: 3000000
     JobExp: 3000000
-#   MvpExp:
+    MvpExp: 3333333
     Attack: 2000
     Attack2: 6000
     Defense: 220
@@ -87422,7 +87422,7 @@ Body:
     Hp: 14400000
     BaseExp: 3000000
     JobExp: 3000000
-#   MvpExp:
+    MvpExp: 3333333
     Attack: 9000
     Attack2: 4000
     Defense: 800
@@ -88120,7 +88120,7 @@ Body:
     Hp: 18000000
     BaseExp: 3000000
     JobExp: 3000000
-#   MvpExp:
+    MvpExp: 3333333
     Attack: 6000
     Attack2: 2000
     Defense: 600
@@ -88192,7 +88192,7 @@ Body:
     Hp: 14400000
     BaseExp: 3000000
     JobExp: 3000000
-#   MvpExp:
+    MvpExp: 3333333
     Attack: 5000
     Attack2: 5000
     Defense: 260
@@ -88264,7 +88264,7 @@ Body:
     Hp: 16200000
     BaseExp: 3000000
     JobExp: 3000000
-#   MvpExp:
+    MvpExp: 3333333
     Attack: 3000
     Attack2: 5000
     Defense: 220
@@ -88336,7 +88336,7 @@ Body:
     Hp: 12600000
     BaseExp: 3000000
     JobExp: 3000000
-#   MvpExp:
+    MvpExp: 3333333
     Attack: 8000
     Attack2: 3000
     Defense: 360
@@ -88408,7 +88408,7 @@ Body:
     Hp: 14400000
     BaseExp: 3000000
     JobExp: 3000000
-#   MvpExp:
+    MvpExp: 3333333
     Attack: 7000
     Attack2: 2500
     Defense: 320
@@ -88480,7 +88480,7 @@ Body:
     Hp: 10800000
     BaseExp: 3000000
     JobExp: 3000000
-#   MvpExp:
+    MvpExp: 3333333
     Attack: 4000
     Attack2: 6000
     Defense: 240
@@ -88552,7 +88552,7 @@ Body:
     Hp: 10800000
     BaseExp: 3000000
     JobExp: 3000000
-#   MvpExp:
+    MvpExp: 3333333
     Attack: 4000
     Attack2: 6000
     Defense: 200
@@ -101792,7 +101792,7 @@ Body:
     Hp: 19280000
     BaseExp: 4001752
     JobExp: 3001314
-#   MvpExp:
+    MvpExp: 4444444
     Attack: 5070
     Attack2: 3028
     Defense: 905
@@ -102006,7 +102006,7 @@ Body:
     Hp: 20154000
     BaseExp: 4001552
     JobExp: 3001164
-#   MvpExp:
+    MvpExp: 4444444
     Attack: 2535
     Attack2: 3101
     Defense: 874
@@ -102275,7 +102275,7 @@ Body:
     Hp: 16412000
     BaseExp: 2639829
     JobExp: 2292824
-#   MvpExp:
+    MvpExp: 3333333
     Attack: 1543
     Attack2: 854
     Defense: 355
@@ -102516,7 +102516,7 @@ Body:
     Hp: 8600000
     BaseExp: 1200000
     JobExp: 900000
-#   MvpExp:
+    MvpExp: 1555555
     Attack: 4350
     Attack2: 2450
     Defense: 216
@@ -104988,7 +104988,7 @@ Body:
     Hp: 21278744
     BaseExp: 4255749
     JobExp: 2979024
-    #MvpExp:
+    MvpExp: 4444444
     Attack: 6141
     Attack2: 3168
     Defense: 343
@@ -110095,7 +110095,7 @@ Body:
     Hp: 7375012
     BaseExp: 670456
     JobExp: 469319
-#   MvpExp:
+    MvpExp: 777777
     Attack: 1450
     Attack2: 1334
     Defense: 241
@@ -110146,7 +110146,7 @@ Body:
     Hp: 74730723
     BaseExp: 5337909
     JobExp: 3736536
-#   MvpExp:
+    MvpExp: 5555555
     Attack: 4368
     Attack2: 2470
     Defense: 384
@@ -113085,7 +113085,7 @@ Body:
     Hp: 81289587
     BaseExp: 5865974
     JobExp: 4178562
-#   MvpExp:
+    MvpExp: 6666666
     Attack: 10874
     Attack2: 1889
     Defense: 335
@@ -113300,7 +113300,7 @@ Body:
     Hp: 78368745
     BaseExp: 5896412
     JobExp: 4143664
-#   MvpExp:
+    MvpExp: 6666666
     Attack: 11016
     Attack2: 1853
     Defense: 452
