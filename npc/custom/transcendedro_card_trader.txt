@@ -187,9 +187,13 @@ OnInit:
 	  "4560,4566,31023,31026,27020,4625,4602,4604,4681,4673,4683,4675,4677,4678,4680,4671,4672,"+
 	  "4682,27346,4674,4676,4679,27363,27362,300262,300560,300565";
 
+	freeloop(1);
 	npcshopdelitem "card_shop",909;
-	for(set .@i,0; .@i<getarraysize(.Shop); set .@i,.@i+2)
-		npcshopadditem "card_shop",.Shop[.@i],.Shop[.@i+1];
+	for(set .@i,0; .@i<getarraysize(.Shop); set .@i,.@i+2) {
+		npcshopdelitem "card_shop", .Shop[.@i];
+		npcshopadditem "card_shop", .Shop[.@i], .Shop[.@i+1];
+	}
+	freeloop(0);
 	end;
 }
 -	shop	card_shop	-1,909:-1
