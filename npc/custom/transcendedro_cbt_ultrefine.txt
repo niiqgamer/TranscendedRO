@@ -54,8 +54,8 @@ grademk,22,180,4	script	Ultimate Refiner	4_M_BLACKSMITH,{
     }
 
     // 1. เก็บข้อมูลเดิมทั้งหมด (Refine, การ์ด 4 ช่อง, เกรดเดิม)
-    .@refine = getrefine(.@slot);
-    .@grade = getenchantgrade(.@slot);
+    .@refine = getrefine();
+    .@grade = getenchantgrade();
     .@card1 = getequipcardid(.@slot, 0);
     .@card2 = getequipcardid(.@slot, 1);
     .@card3 = getequipcardid(.@slot, 2);
