@@ -133974,7 +133974,7 @@ Body:
     Modes:
       Mvp: true
     Drops:
-      - Item: aegis_300532
+      - Item: Cap_Of_G_Ship_Card
         Rate: 1
         StealProtected: true
   - Id: 22373
@@ -134182,7 +134182,7 @@ Body:
 #    AegisName: EP21_MD_BOX2  
   - Id: 22412
     AegisName: EP21_YORTUS_A_H
-    Name: Awakened Jortus Bishop
+    Name: Awakened Yortus Bishop
     Level: 275
     Hp: 45077880
     Attack: 12440
@@ -134226,7 +134226,7 @@ Body:
         StealProtected: true
   - Id: 22413
     AegisName: EP21_YORTUS_B_H
-    Name: Awakened Jortus Warlock
+    Name: Awakened Yortus Warlock
     Level: 275
     Hp: 43024000
     Attack: 14887
@@ -134270,7 +134270,7 @@ Body:
         StealProtected: true
   - Id: 22414
     AegisName: EP21_YORDOS_A_H
-    Name: Awakened Jordos Inquisitor
+    Name: Awakened Yordos IQ
     Level: 243
     Hp: 36208440
     Attack: 12337
@@ -134311,7 +134311,7 @@ Body:
         Rate: 1000
   - Id: 22415
     AegisName: EP21_YORDOS_B_H
-    Name: Awakened Jordos Judge
+    Name: Awakened Yordos Judge
     Level: 243
     Hp: 35448998
     Attack: 12844
@@ -134357,7 +134357,7 @@ Body:
         StealProtected: true
   - Id: 22416
     AegisName: EP21_YORDOS_C_H
-    Name: Awakened Jordos Executioner
+    Name: Awakened Yordos Ex
     Level: 243
     Hp: 34849000
     Attack: 11944
@@ -134481,7 +134481,7 @@ Body:
         StealProtected: true
   - Id: 22419
     AegisName: EP21_YOSCOPUS_A_H
-    Name: Awakened Jorcopus Guardian
+    Name: Awakened Jorcopus Guard
     Level: 264
     Hp: 41778900
     Attack: 13447
