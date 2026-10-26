@@ -39,8 +39,8 @@ grademk,22,180,4	script	Ultimate Refiner	636,{
         close;
     }
 
-    .@armor_lv = getequiparmorlv(.@item_id, ITEMINFO_TYPE);
-    .@weapon_lv = getequipweaponlv(.@item_id, ITEMINFO_TYPE);
+    .@armor_lv = getequiparmorlv(.@slot);
+    .@weapon_lv = getequipweaponlv(.@slot);
     if (.@armor_lv <= 1 || .@weapon_lv <= 4) {
         mes "[Ultimate Refiner]";
         mes "This item cannot be graded!";
