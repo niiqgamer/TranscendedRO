@@ -40,8 +40,21 @@ sec_in02,169,173,4	script	Ultimate Refiner	636,{
         close;
     }
 
-    .@armor_lv = getiteminfo(.@item_id,ITEMINFO_ARMORLEVEL);
-    .@weapon_lv = getiteminfo(.@item_id,ITEMINFO_WEAPONLEVEL);
+    if (.@slot == 9) {
+		.@weapon_lv = getiteminfo(.@item_id,ITEMINFO_WEAPONLEVEL);
+		if (.@weapon_lv <= 4) {
+			mes "[Ultimate Refiner]";
+			mes .@slot + "/" + .@eq_slots;
+			mes getitemname(.@item_id);
+			mes "This item cannot be graded!";
+			mes " ";
+			mes "Your weapon level is " + .@weapon_lv;
+			close;
+		}
+	}
+	
+	.@armor_lv = getiteminfo(.@item_id,ITEMINFO_ARMORLEVEL);
+    
     if (.@armor_lv <= 1) {
         mes "[Ultimate Refiner]";
 		mes .@slot + " / " + .@eq_slots;
@@ -49,14 +62,6 @@ sec_in02,169,173,4	script	Ultimate Refiner	636,{
         mes "This item cannot be graded!";
 		mes " ";
 		mes "Your armor level is " + .@armor_lv;
-        close;
-    } else if (.@weapon_lv <= 4) {
-        mes "[Ultimate Refiner]";
-		mes .@slot + "/" + .@eq_slots;
-		mes getitemname(.@item_id);
-        mes "This item cannot be graded!";
-		mes " ";
-		mes "Your weapon level is " + .@weapon_lv;
         close;
     }
 
