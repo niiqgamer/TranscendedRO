@@ -40,11 +40,11 @@ sec_in02,169,173,4	script	Ultimate Refiner	636,{
         close;
     }
 
-    .@armor_lv = getequiparmorlv(.@slot);
-    .@weapon_lv = getequipweaponlv(.@slot);
+    .@armor_lv = getiteminfo(.@item_id,ITEMINFO_ARMORLEVEL);
+    .@weapon_lv = getiteminfo(.@item_id,ITEMINFO_WEAPONLEVEL);
     if (.@armor_lv <= 1) {
         mes "[Ultimate Refiner]";
-		mes .@slot + "/" + .@eq_slots;
+		mes .@slot + " / " + .@eq_slots;
 		mes getitemname(.@item_id);
         mes "This item cannot be graded!";
 		mes " ";
