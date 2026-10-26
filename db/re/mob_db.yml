@@ -134211,13 +134211,13 @@ Body:
     DamageTaken: 10
     Ai: 09
     Drops:
-      - Item: Ep21_Jor_Wand_Acc
+      - Item: aegis_1001636 #Ep21_Jor_Wand_Acc
         Rate: 500
-      - Item: Ep21_Jor_G_Rosary
+      - Item: aegis_1001638 #Ep21_Jor_G_Rosary
         Rate: 500
-      - Item: Ep21_Jor_Accessary
+      - Item: aegis_1001639 #Ep21_Jor_Accessary
         Rate: 500
-      - Item: Ep21_Jor_Stick
+      - Item: aegis_1001635 #Ep21_Jor_Stick
         Rate: 500
       - Item: Shining_Crystal
         Rate: 500
@@ -134255,13 +134255,13 @@ Body:
     DamageTaken: 10
     Ai: 09
     Drops:
-      - Item: Ep21_Jor_Stick
+      - Item: aegis_1001635 #Ep21_Jor_Stick
         Rate: 500
-      - Item: Ep21_Jor_Wand_Acc
+      - Item: aegis_1001636 #Ep21_Jor_Wand_Acc
         Rate: 500
-      - Item: Ep21_Jor_G_Rosary
+      - Item: aegis_1001638 #Ep21_Jor_G_Rosary
         Rate: 500
-      - Item: Ep21_Jor_Accessary
+      - Item: aegis_1001639 #Ep21_Jor_Accessary
         Rate: 500
       - Item: Shining_Crystal
         Rate: 500
@@ -134303,11 +134303,11 @@ Body:
         Rate: 800
       - Item: Evil_Minded_Ruby
         Rate: 800
-      - Item: Ep21_Jor_Stick
+      - Item: aegis_1001635 #Ep21_Jor_Stick
         Rate: 500
-      - Item: Ep21_Fanatic_Mask
+      - Item: aegis_1001633 #Ep21_Fanatic_Mask
         Rate: 1000
-      - Item: Ep21_Fanatic_Cap
+      - Item: aegis_1001634 #Ep21_Fanatic_Cap
         Rate: 1000
   - Id: 22415
     AegisName: EP21_YORDOS_B_H
@@ -134346,11 +134346,11 @@ Body:
         Rate: 800
       - Item: Evil_Minded_Ruby
         Rate: 800
-      - Item: Ep21_Fanatic_Mask
+      - Item: aegis_1001633 #Ep21_Fanatic_Mask
         Rate: 1000
-      - Item: Ep21_Fanatic_Cap
+      - Item: aegis_1001634 #Ep21_Fanatic_Cap
         Rate: 1000
-      - Item: Ep21_Jor_Dagger_Pcs
+      - Item: aegis_1001637 #Ep21_Jor_Dagger_Pcs
         Rate: 500
       - Item: Yordos_Judge_Card
         Rate: 1
@@ -134390,11 +134390,11 @@ Body:
         Rate: 800
       - Item: Evil_Minded_Ruby
         Rate: 800
-      - Item: Ep21_Fanatic_Mask
+      - Item: aegis_1001633 #Ep21_Fanatic_Mask
         Rate: 1000
-      - Item: Ep21_Fanatic_Cap
+      - Item: aegis_1001634 #Ep21_Fanatic_Cap
         Rate: 1000
-      - Item: Ep21_Jor_Dagger_Pcs
+      - Item: aegis_1001637 #Ep21_Jor_Dagger_Pcs
         Rate: 500
       - Item: Yordos_Execute_Card
         Rate: 1
@@ -134430,11 +134430,11 @@ Body:
     DamageTaken: 10
     Ai: 09
     Drops:
-      - Item: Ep21_Jor_Rosary
+      - Item: aegis_1001628 #Ep21_Jor_Rosary
         Rate: 800
-      - Item: Ep21_Jor_Dagger_Pcs
+      - Item: aegis_1001637 #Ep21_Jor_Dagger_Pcs
         Rate: 800
-      - Item: Ep21_Jor_Bible
+      - Item: aegis_1001629 #Ep21_Jor_Bible
         Rate: 800
       - Item: Yormi_Card
         Rate: 1
@@ -134470,11 +134470,11 @@ Body:
     DamageTaken: 10
     Ai: 09
     Drops:
-      - Item: Ep21_Jor_Rosary
+      - Item: aegis_1001628 #Ep21_Jor_Rosary
         Rate: 800
-      - Item: Ep21_Jor_Bible
+      - Item: aegis_1001629 #Ep21_Jor_Bible
         Rate: 800
-      - Item: Ep21_Jor_Dagger_Pcs
+      - Item: aegis_1001637 #Ep21_Jor_Dagger_Pcs
         Rate: 800
       - Item: Yormi_M_Card
         Rate: 1
@@ -134510,11 +134510,11 @@ Body:
     DamageTaken: 10
     Ai: 09
     Drops:
-      - Item: Ep21_Jor_Wand_Acc
+      - Item: aegis_1001636 #Ep21_Jor_Wand_Acc
         Rate: 800
       - Item: Congealed_Poison
         Rate: 500
-      - Item: Ep21_Jor_Stick
+      - Item: aegis_1001635 #Ep21_Jor_Stick
         Rate: 800
       - Item: Yoscopus_G_Cards
         Rate: 1
@@ -134552,9 +134552,9 @@ Body:
     Drops:
       - Item: Congealed_Poison
         Rate: 500
-      - Item: Ep21_Jor_Stick
+      - Item: aegis_1001635 #Ep21_Jor_Stick
         Rate: 800
-      - Item: Ep21_Jor_Wand_Acc
+      - Item: aegis_1001636 #Ep21_Jor_Wand_Acc
         Rate: 800
       - Item: Yoscopus_S_Card
         Rate: 1
