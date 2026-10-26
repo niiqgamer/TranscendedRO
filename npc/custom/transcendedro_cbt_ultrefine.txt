@@ -20,8 +20,8 @@ grademk,22,180,4	script	Ultimate Refiner	4_M_BLACKSMITH,{
         close;
     }
 
-    setarray .@eq_slots[0], EQI_ARMOR, EQI_HAND_R, EQI_HAND_L, EQI_GARMENT, EQI_SHOES;
-    setarray .@eq_names$[0], "Armor", "Right Hand", "Left Hand", "Garment", "Shoes";
+    setarray .@eq_slots[0], EQI_HEAD_TOP, EQI_ARMOR, EQI_HAND_R, EQI_HAND_L, EQI_GARMENT, EQI_SHOES;
+    setarray .@eq_names$[0], "Top Headgear", "Armor", "Right Hand", "Left Hand", "Garment", "Shoes";
 
     .@menu$ = "";
     for (.@i = 0; .@i < getarraysize(.@eq_slots); .@i++) {
@@ -53,29 +53,16 @@ grademk,22,180,4	script	Ultimate Refiner	4_M_BLACKSMITH,{
         close;
     }
 
-    // 1. เก็บข้อมูลเดิมทั้งหมด (Refine, การ์ด 4 ช่อง, เกรดเดิม)
-    .@refine = getrefine();
-    .@grade = getenchantgrade();
+    .@refine = getequiprefinerycnt(.@slot);
+    .@grade = getenchantgrade(.@slot);
     .@card1 = getequipcardid(.@slot, 0);
     .@card2 = getequipcardid(.@slot, 1);
     .@card3 = getequipcardid(.@slot, 2);
     .@card4 = getequipcardid(.@slot, 3);
-
-    // 2. ดึงค่า Random Option (ออฟชั่นสุ่ม) ทั้งหมดที่ติดมากับไอเท็มเดิม
-    // rAthena รองรับการดึงค่า Option ผ่าน getequipoption ด้วยลูป 5 แถว (Index 0 ถึง 4)
-    for (.@i = 0; .@i < 5; .@i++) {
-        .@opt_id[.@i]    = getequipoption(.@slot, .@i, EO_ID);
-        .@opt_val[.@i]   = getequipoption(.@slot, .@i, EO_VALUE);
-        .@opt_param[.@i] = getequipoption(.@slot, .@i, EO_PARAM);
-    }
-
-    // 3. หักไอเท็มวัตถุดิบ
+	
     delitem .req_item, .req_amount;
-
-    // 4. ถอดไอเท็มออกจากตัว
     unequip .@slot;
 
-    // 5. ค้นหาและลบไอเท็มชิ้นเดิมออกจากกระเป๋า
     getinventorylist();
     for (.@i = 0; .@i < $@inventorylist_count; .@i++) {
         if ($@inventorylist_id[.@i] == .@item_id &&
@@ -85,7 +72,6 @@ grademk,22,180,4	script	Ultimate Refiner	4_M_BLACKSMITH,{
             $@inventorylist_card3[.@i] == .@card3 &&
             $@inventorylist_card4[.@i] == .@card4) {
             
-            // ลบไอเท็มชิ้นเก่าทิ้งเพื่อแทนที่ด้วยชิ้นใหม่ที่อัปเกรดแล้ว
             delitem2 .@item_id, 1, 1, .@refine, 0, .@card1, .@card2, .@card3, .@card4;
             break;
         }
@@ -93,12 +79,7 @@ grademk,22,180,4	script	Ultimate Refiner	4_M_BLACKSMITH,{
 
     // 6. สร้างไอเท็มใหม่ด้วย getitem4 (เซ็ต Grade A = 4 และ Refine = +15 พร้อมแนบออฟชั่นและช่องการ์ดเดิม)
     // โครงสร้าง: getitem4 <itemID>,<amount>,<identify>,<refine>,<attribute>,<card1>,<card2>,<card3>,<card4>,<grade>,<RandomIDArray>,<RandomValueArray>,<RandomParamArray>
-    getitem4 .@item_id, 1, 1, 15, 0, .@card1, .@card2, .@card3, .@card4, 4, .@opt_id, .@opt_val, .@opt_param;
-
-    // 7. สวมใส่อุปกรณ์ชิ้นใหม่กลับเข้าไปอัตโนมัติ
-    // ใช้คำสั่ง equip ตามไอดี หรือดึงจากช่องล่าสุดที่เพิ่งเพิ่มเข้ามา
-    // วิธีง่ายและเสถียรใน rAthena คือให้ผู้เล่นกดสวมใส่ หรือใช้คำสั่งสวมใส่ตามช่องที่เหมาะสม
-    // (ระบบจะทำการเชี่ยวชาญสวมใส่อัตโนมัติหากอยู่ในกระเป๋าช่องแรกๆ)
+    getitem4 .@item_id, 1, 1, 15, 0, .@card1, .@card2, .@card3, .@card4, 4, 0, 0, 0;
     
     specialeffect2 EF_REFINEOK;
     emotion ET_SUCCESS;
