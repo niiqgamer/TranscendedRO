@@ -133642,6 +133642,7 @@ Body:
     AttackDelay: 469
     AttackMotion: 386
     DamageMotion: 386
+    DamageTaken: 1
     Ai: 09
     Class: Boss
     Modes:
