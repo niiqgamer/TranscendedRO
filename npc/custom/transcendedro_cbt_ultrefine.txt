@@ -47,8 +47,7 @@ grademk,22,180,4	script	Ultimate Refiner	636,{
 		mes " ";
 		mes "Your armor level is " + .@armor_lv;
         close;
-    }
-    if (.@weapon_lv <= 4) {
+    } else if (.@weapon_lv <= 4) {
         mes "[Ultimate Refiner]";
         mes "This item cannot be graded!";
 		mes " ";
