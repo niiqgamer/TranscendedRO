@@ -133593,7 +133593,7 @@ Body:
       - Item: Old_Card_Album
         Rate: 5000
     Drops:
-      - Item: Ep21_Shining_Coral
+      - Item: aegis_1001649 #Ep21_Shining_Coral
         Rate: 5000
       - Item: Brown_Dia
         Rate: 1000
