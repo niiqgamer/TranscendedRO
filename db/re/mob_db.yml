@@ -132616,11 +132616,7 @@ Body:
     DamageMotion: 367
     Ai: 09
     Drops:
-      - Item: Ep20_Huge_Feather_W
-        Rate: 1500
-      - Item: Ep21_Guano
-        Rate: 800
-      - Item: aegis_300515
+      - Item: Sea_Wind_Card
         Rate: 1
         StealProtected: true
   - Id: 22314
@@ -132655,11 +132651,9 @@ Body:
     DamageMotion: 384
     Ai: 09
     Drops:
-      - Item: Ep21_Bright_Eye
-        Rate: 1000
-      - Item: Ep21_Daribitsal
+      - Item: aegis_1001640
         Rate: 800
-      - Item: aegis_300506
+      - Item: Scalleg_Card
         Rate: 1
         StealProtected: true
   - Id: 22315
@@ -132696,11 +132690,9 @@ Body:
     Modes:
       Looter: true
     Drops:
-      - Item: Ep21_Vellelopy
+      - Item: aegis_1001643
         Rate: 800
-      - Item: EP19_CaCalapy
-        Rate: 1000
-      - Item: aegis_300507
+      - Item: Velelling_Card
         Rate: 1
         StealProtected: true
   - Id: 22316
@@ -132735,11 +132727,9 @@ Body:
     DamageMotion: 576
     Ai: 09
     Drops:
-      - Item: Ep21_Bright_Eye
+      - Item: aegis_1001645
         Rate: 800
-      - Item: Ep21_Stiff_Limb
-        Rate: 800
-      - Item: aegis_300509
+      - Item: Letterster_Card
         Rate: 1
         StealProtected: true
   - Id: 22317
@@ -132774,11 +132764,7 @@ Body:
     DamageMotion: 486
     Ai: 09
     Drops:
-      - Item: Cool_Liquid
-        Rate: 1000
-      - Item: Ep21_Thick_Flesh
-        Rate: 800
-      - Item: aegis_300511
+      - Item: Rock_Striker_Card
         Rate: 1
         StealProtected: true
   - Id: 22318
@@ -132812,11 +132798,7 @@ Body:
     DamageMotion: 480
     Ai: 09
     Drops:
-      - Item: aegis_1001231
-        Rate: 1000
-      - Item: Ep21_Star_Candy
-        Rate: 800
-      - Item: aegis_300512
+      - Item: Ice_Seahorse_Card
         Rate: 1
         StealProtected: true
   - Id: 22319
@@ -132851,11 +132833,9 @@ Body:
     DamageMotion: 384
     Ai: 09
     Drops:
-      - Item: Ep21_Skipskip_Fin
-        Rate: 1000
-      - Item: Ep21_Bright_Eye
+      - Item: aegis_1001644
         Rate: 800
-      - Item: aegis_300508
+      - Item: Skipskipper_Card
         Rate: 1
         StealProtected: true
   - Id: 22320
@@ -132888,16 +132868,12 @@ Body:
     DamageMotion: 326
     Ai: 09
     Drops:
-      - Item: Ep21_Fluffy_Core
-        Rate: 800
-      - Item: EP19_Unknown_Cell
-        Rate: 1000
-      - Item: aegis_300510
+      - Item: Cliolima_Card
         Rate: 1
         StealProtected: true
   - Id: 22321
     AegisName: EP21_YORKER_A
-    Name: Jorker Resident
+    Name: Yorker Worker
     Level: 236
     Hp: 30400000
     Attack: 9041
@@ -132925,16 +132901,12 @@ Body:
     DamageMotion: 240
     Ai: 09
     Drops:
-      - Item: Ep21_Old_Bandana
-        Rate: 800
-      - Item: Ep21_Old_Homi
-        Rate: 800
-      - Item: aegis_300526
+      - Item: Yorker_Worker_Card
         Rate: 1
         StealProtected: true
   - Id: 22322
     AegisName: EP21_YORKER_B
-    Name: Jorker Merchant
+    Name: Yorker Trader
     Level: 235
     Hp: 29994800
     Attack: 8443
@@ -132962,16 +132934,12 @@ Body:
     DamageMotion: 326
     Ai: 09
     Drops:
-      - Item: Ep21_Old_Apron
-        Rate: 800
-      - Item: Ep21_Old_Bandana
-        Rate: 800
-      - Item: aegis_300527
+      - Item: Yorker_R_Worker_Card
         Rate: 1
         StealProtected: true
   - Id: 22323
     AegisName: EP21_YOSTER_A
-    Name: Joster Cleaner
+    Name: Yoster Janitor
     Level: 241
     Hp: 33200800
     Attack: 10243
@@ -132999,18 +132967,18 @@ Body:
     DamageMotion: 378
     Ai: 09
     Drops:
-      - Item: Ep21_Fanatic_Cap
+      - Item: aegis_1001634 #Ep21_Fanatic_Cap
         Rate: 1000
-      - Item: Ep21_Fanatic_Mask
+      - Item: aegis_1001633 #Ep21_Fanatic_Mask
         Rate: 1000
-      - Item: Ep21_Jor_Bible
+      - Item: aegis_1001629 #Ep21_Jor_Bible
         Rate: 300
-      - Item: aegis_300514
+      - Item: Yoster_Cleaner_Card
         Rate: 1
         StealProtected: true
   - Id: 22324
     AegisName: EP21_YOSTER_B
-    Name: Joster Mechanic
+    Name: Yoster The Fixer
     Level: 242
     Hp: 32899400
     Attack: 10483
@@ -133038,18 +133006,18 @@ Body:
     DamageMotion: 378
     Ai: 09
     Drops:
-      - Item: Ep21_Jor_Bible
+      - Item: aegis_1001629 #Ep21_Jor_Bible
         Rate: 300
-      - Item: Ep21_Fanatic_Mask
+      - Item: aegis_1001633 #Ep21_Fanatic_Mask
         Rate: 1000
-      - Item: Ep21_Fanatic_Cap
+      - Item: aegis_1001634 #Ep21_Fanatic_Cap
         Rate: 1000
-      - Item: aegis_300515
+      - Item: Yoster_Fixer_Card
         Rate: 1
         StealProtected: true
   - Id: 22325
     AegisName: EP21_YOSTER_C
-    Name: Joster Collector
+    Name: Yoster Collector
     Level: 242
     Hp: 33098400
     Attack: 10322
@@ -133077,18 +133045,18 @@ Body:
     DamageMotion: 378
     Ai: 09
     Drops:
-      - Item: Ep21_Jor_Bible
+      - Item: aegis_1001629 #Ep21_Jor_Bible
         Rate: 300
-      - Item: Ep21_Fanatic_Mask
+      - Item: aegis_1001633 #Ep21_Fanatic_Mask
         Rate: 1000
-      - Item: Ep21_Fanatic_Cap
+      - Item: aegis_1001634 #Ep21_Fanatic_Cap
         Rate: 1000
-      - Item: aegis_300516
+      - Item: Yoster_Collect_Card
         Rate: 1
         StealProtected: true
   - Id: 22326
     AegisName: EP21_YOSTER_D
-    Name: Joster Mediator
+    Name: Yoster Negotiator
     Level: 241
     Hp: 33242450
     Attack: 12883
@@ -133116,18 +133084,18 @@ Body:
     DamageMotion: 378
     Ai: 09
     Drops:
-      - Item: Ep21_Jor_Bible
+      - Item: aegis_1001629 #Ep21_Jor_Bible
         Rate: 300
-      - Item: Ep21_Fanatic_Mask
+      - Item: aegis_1001633 #Ep21_Fanatic_Mask
         Rate: 1000
-      - Item: Ep21_Fanatic_Cap
+      - Item: aegis_1001634 #Ep21_Fanatic_Cap
         Rate: 1000
-      - Item: aegis_300517
+      - Item: Yoster_Nego_Card
         Rate: 1
         StealProtected: true
   - Id: 22327
     AegisName: EP21_YOSTER_E
-    Name: Joster Cook
+    Name: Yoster Chef
     Level: 241
     Attack: 12884
     Attack2: 14244
@@ -133154,13 +133122,13 @@ Body:
     DamageMotion: 378
     Ai: 09
     Drops:
-      - Item: Ep21_Jor_Bible
+      - Item: aegis_1001629 #Ep21_Jor_Bible
         Rate: 300
-      - Item: Ep21_Fanatic_Mask
+      - Item: aegis_1001633 #Ep21_Fanatic_Mask
         Rate: 1000
-      - Item: Ep21_Fanatic_Cap
+      - Item: aegis_1001634 #Ep21_Fanatic_Cap
         Rate: 1000
-      - Item: aegis_300518
+      - Item: Yoster_Cooker_Card
         Rate: 1
         StealProtected: true
 #  - Id: 22328
@@ -133215,7 +133183,7 @@ Body:
 #    AegisName: MQ_KIND_OF_BEETLE4
   - Id: 22353
     AegisName: EP21_YORMI_A
-    Name: Jormi
+    Name: Yormi
     Level: 241
     Hp: 35777000
     Attack: 12484
@@ -133243,18 +133211,18 @@ Body:
     DamageMotion: 378
     Ai: 09
     Drops:
-      - Item: Ep21_Jor_Rosary
+      - Item: aegis_1001633 #Ep21_Fanatic_Mask
         Rate: 800
-      - Item: Ep21_Jor_Dagger_Pcs
+      - Item: aegis_1001634 #Ep21_Fanatic_Cap
         Rate: 800
-      - Item: Ep21_Jor_Bible
+      - Item: aegis_1001628 #Ep21_Jor_Rosary
         Rate: 800
       - Item: Yormi_Card
         Rate: 1
         StealProtected: true
   - Id: 22354
     AegisName: EP21_YORMI_B
-    Name: Jormi Evangelist
+    Name: Evangelist Yormi
     Level: 242
     Hp: 36774120
     Attack: 12338
@@ -133282,18 +133250,18 @@ Body:
     DamageMotion: 378
     Ai: 09
     Drops:
-      - Item: Ep21_Jor_Rosary
+      - Item: aegis_1001628 #Ep21_Jor_Rosary
         Rate: 800
-      - Item: Ep21_Jor_Bible
+      - Item: aegis_1001629 #Ep21_Jor_Bible
         Rate: 800
-      - Item: Ep21_Jor_Dagger_Pcs
+      - Item: aegis_1001637 #Ep21_Jor_Dagger_Pcs
         Rate: 800
       - Item: Yormi_M_Card
         Rate: 1
         StealProtected: true
   - Id: 22355
     AegisName: EP21_YORDOS_A
-    Name: Jordos Inquisitor
+    Name: Yordos Inquisitor
     Level: 243
     Hp: 36208440
     Attack: 12337
@@ -133325,15 +133293,18 @@ Body:
         Rate: 800
       - Item: Evil_Minded_Ruby
         Rate: 800
-      - Item: Ep21_Jor_Stick
+      - Item: aegis_1001633 #Ep21_Fanatic_Mask
         Rate: 500
-      - Item: Ep21_Fanatic_Mask
+      - Item: aegis_1001634 #Ep21_Fanatic_Cap
         Rate: 1000
-      - Item: Ep21_Fanatic_Cap
+      - Item: aegis_1001628 #Ep21_Jor_Rosary
         Rate: 1000
+      - Item: Yordos_Inve_Card
+        Rate: 1
+        StealProtected: true
   - Id: 22356
     AegisName: EP21_YORDOS_B
-    Name: Jordos Judge
+    Name: Yordos Judge
     Level: 243
     Hp: 35448998
     Attack: 12844
@@ -133367,12 +133338,12 @@ Body:
         Rate: 800
       - Item: Evil_Minded_Ruby
         Rate: 800
-      - Item: Ep21_Fanatic_Mask
-        Rate: 1000
-      - Item: Ep21_Fanatic_Cap
-        Rate: 1000
-      - Item: Ep21_Jor_Dagger_Pcs
+      - Item: aegis_1001633 #Ep21_Fanatic_Mask
         Rate: 500
+      - Item: aegis_1001634 #Ep21_Fanatic_Cap
+        Rate: 1000
+      - Item: aegis_1001637 #Ep21_Jor_Dagger_Pcs
+        Rate: 1000
       - Item: Yordos_Judge_Card
         Rate: 1
         StealProtected: true
@@ -133410,12 +133381,12 @@ Body:
         Rate: 800
       - Item: Evil_Minded_Ruby
         Rate: 800
-      - Item: Ep21_Fanatic_Mask
-        Rate: 1000
-      - Item: Ep21_Fanatic_Cap
-        Rate: 1000
-      - Item: Ep21_Jor_Dagger_Pcs
+      - Item: aegis_1001633 #Ep21_Fanatic_Mask
         Rate: 500
+      - Item: aegis_1001634 #Ep21_Fanatic_Cap
+        Rate: 1000
+      - Item: aegis_1001637 #Ep21_Jor_Dagger_Pcs
+        Rate: 1000
       - Item: Yordos_Execute_Card
         Rate: 1
         StealProtected: true
@@ -133449,11 +133420,11 @@ Body:
     DamageMotion: 386
     Ai: 09
     Drops:
-      - Item: Ep21_Jor_Wand_Acc
+      - Item: aegis_1001636 #Ep21_Jor_Wand_Acc
         Rate: 800
       - Item: Congealed_Poison
         Rate: 500
-      - Item: Ep21_Jor_Stick
+      - Item: aegis_1001635 #Ep21_Jor_Stick
         Rate: 800
       - Item: Yoscopus_G_Cards
         Rate: 1
@@ -133490,9 +133461,9 @@ Body:
     Drops:
       - Item: Congealed_Poison
         Rate: 500
-      - Item: Ep21_Jor_Stick
+      - Item: aegis_1001635 #Ep21_Jor_Stick
         Rate: 800
-      - Item: Ep21_Jor_Wand_Acc
+      - Item: aegis_1001636 #Ep21_Jor_Wand_Acc
         Rate: 800
       - Item: Yoscopus_S_Card
         Rate: 1
@@ -133527,13 +133498,13 @@ Body:
     DamageMotion: 386
     Ai: 09
     Drops:
-      - Item: Ep21_Jor_Wand_Acc
+      - Item: aegis_1001636 #Ep21_Jor_Wand_Acc
         Rate: 500
-      - Item: Ep21_Jor_G_Rosary
+      - Item: aegis_1001638 #Ep21_Jor_G_Rosary
         Rate: 500
-      - Item: Ep21_Jor_Accessary
+      - Item: aegis_1001639 #Ep21_Jor_Accessary
         Rate: 500
-      - Item: Ep21_Jor_Stick
+      - Item: aegis_1001635 #Ep21_Jor_Stick
         Rate: 500
       - Item: Shining_Crystal
         Rate: 500
@@ -133570,13 +133541,13 @@ Body:
     DamageMotion: 386
     Ai: 09
     Drops:
-      - Item: Ep21_Jor_Stick
+      - Item: aegis_1001635 #Ep21_Jor_Stick
         Rate: 500
-      - Item: Ep21_Jor_Wand_Acc
+      - Item: aegis_1001636 #Ep21_Jor_Wand_Acc
         Rate: 500
-      - Item: Ep21_Jor_G_Rosary
+      - Item: aegis_1001638 #Ep21_Jor_G_Rosary
         Rate: 500
-      - Item: Ep21_Jor_Accessary
+      - Item: aegis_1001639 #Ep21_Jor_Accessary
         Rate: 500
       - Item: Shining_Crystal
         Rate: 500
