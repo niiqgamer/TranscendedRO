@@ -13707,9 +13707,16 @@ Body:
       Zeny += 1000000;
       dispbottom "You recieved 1,000,000 Zeny.";
   - Id: 12782
-    AegisName: 100T_Zeny_Check
-    Name: 100T Zeny Check
+    AegisName: 100M_Zeny_Check
+    Name: 100M Zeny Check
     Type: Usable
+    Buy: 20
+    Trade:
+      NoSell: true
+    Script: |
+      specialeffect2 18;
+      Zeny += 100000000;
+      dispbottom "You recieved 100,000,000 Zeny.";
   - Id: 12783
     AegisName: 10000_Zeny_Check
     Name: 10000 Zeny Check
