@@ -1,0 +1,109 @@
+// ========================================================
+// Instant Max Grade (Grade A) & Refine (+15) NPC (ENG)
+// Dev for NIIQ
+// ========================================================
+
+grademk,22,180,4	script	Ultimate Refiner	4_M_BLACKSMITH,{
+    .req_item = 6417;   // Required Item ID
+    .req_amount = 100;  // Required Amount
+
+    disable_items;
+    mes "[Ultimate Refiner]";
+    mes "Hello, NIIQ!";
+    mes "I can instantly awaken your equipped gear to its absolute limit!";
+    mes "I will upgrade your equipped item to ^02C851Grade A^000000 and refine it to ^FF0000+15^000000 instantly!";
+    next;
+
+    mes "[Ultimate Refiner]";
+    mes "Service Requirements:";
+    mes "- The equipment must support the Grade system.";
+    mes "- Costs ^FF8800" + getitemname(.req_item) + " x " + .req_amount + "^000000.";
+    mes "- Cards, Refine levels, and Options will be safely preserved.";
+    next;
+
+    if (select("Proceed with Upgrade:Cancel") == 2) {
+        mes "[Ultimate Refiner]";
+        mes "Come back whenever you are ready!";
+        close;
+    }
+
+    // Equipment slots to check
+    setarray .@eq_slots[0], EQI_ARMOR, EQI_HAND_R, EQI_HAND_L, EQI_GARMENT, EQI_SHOES;
+    setarray .@eq_names$[0], "Armor", "Right Hand (Weapon)", "Shield / Left Hand", "Garment", "Shoes";
+
+    mes "[Ultimate Refiner]";
+    mes "Please select the equipment slot you want to upgrade:";
+    
+    .@menu$ = "";
+    for (.@i = 0; .@i < getarraysize(.@eq_slots); .@i++) {
+        .@item_id = getequipid(.@eq_slots[.@i]);
+        if (.@item_id > 0) {
+            .@menu$ += .@eq_names$[.@i] + " [ " + getitemname(.@item_id) + " ]:";
+        } else {
+            .@menu$ += .@eq_names$[.@i] + " [ Empty ]:";
+        }
+    }
+    
+    .@part_idx = select(.@menu$) - 1;
+    .@slot = .@eq_slots[.@part_idx];
+    .@item_id = getequipid(.@slot);
+
+    if (.@item_id <= 0) {
+        mes "[Ultimate Refiner]";
+        mes "You are not wearing any equipment in that slot!";
+        close;
+    }
+
+    // Check if item supports grading
+    .@armor_lv = getItemInfo(.@item_id, ITEMINFO_ARMOR_LV);
+    .@weapon_lv = getItemInfo(.@item_id, ITEMINFO_WEAPON_LV);
+
+    if (.@armor_lv <= 0 && .@weapon_lv <= 0) {
+        mes "[Ultimate Refiner]";
+        mes "This item cannot be upgraded with a grade!";
+        close;
+    }
+
+    mes "[Ultimate Refiner]";
+    mes "Target Equipment: ^0055FF" + getitemname(.@item_id) + "^000000";
+    mes "Cost: ^FF0000" + .req_amount + "x^000000 ^FF8800" + getitemname(.req_item) + "^000000";
+    mes "Result: ^02C851Grade A +15^000000";
+    next;
+
+    if (select("Confirm Upgrade:Cancel") == 2) {
+        mes "[Ultimate Refiner]";
+        mes "Upgrade cancelled.";
+        close;
+    }
+
+    // Check materials
+    if (countitem(.req_item) < .req_amount) {
+        mes "[Ultimate Refiner]";
+        mes "You don't have enough materials!";
+        mes "You need ^FF0000" + .req_amount + "x^000000, but you only have ^FF8800" + countitem(.req_item) + "x^000000.";
+        close;
+    }
+
+    // Deduct items
+    delitem .req_item, .req_amount;
+
+    // Set Grade to 4 (Grade A) and Refine to +15
+    changeequiprefinegrade .@slot, 4;
+    setequiprefine .@slot, 15;
+
+    specialeffect2 EF_REFINEOK;
+    emotion ET_SUCCESS;
+
+    mes "[Ultimate Refiner]";
+    mes "Success! Your equipment has been fully awakened to ^02C851(Grade A +15)^000000!";
+    close;
+
+OnInit:
+	initnpctimer;
+	end;
+
+OnTimer1000:
+    showscript(" ! Ultimate Refiner ! ");
+    setnpctimer 0;
+    end;
+}
