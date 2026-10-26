@@ -1144,6 +1144,29 @@ Body:
     Script: |
       bonus bAllStats,5;
       bonus2 bDropAddClass,Class_All,10;
+  - Id: 420931
+    AegisName: Gangster_Tactician_US
+    Name: "Gangster Tactician Headset"
+    Type: Armor
+    Weight: 200
+    Defense: 20
+    Slots: 1
+    Locations:
+      Head_Low: true
+    ArmorLevel: 1
+    EquipLevelMin: 1
+    View: 2716
+    Script: |
+      bonus bMdef,20;
+      bonus bBaseAtk,300;
+      bonus bMatk,300;
+      bonus bAllStats,15;
+      bonus bAllTraitStats,15;
+      skill "BS_GREED",1;
+      skill "MC_OVERCHARGE",10;
+      skill "WZ_ESTIMATION",1;
+      bonus2 bDropAddClass,Class_All,25;
+      bonus2 bExpAddClass,Class_All,25;
   - Id: 450355
     AegisName: Violent_D_S_Armor
     Name: Violent Dragon Shadow Armor
