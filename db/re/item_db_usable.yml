@@ -13692,6 +13692,7 @@ Body:
     Trade:
       NoSell: true
     Script: |
+      specialeffect2 18;
       Zeny += 10000000;
       dispbottom "You recieved 10,000,000 Zeny.";
   - Id: 12781
@@ -13702,6 +13703,7 @@ Body:
     Trade:
       NoSell: true
     Script: |
+      specialeffect2 18;
       Zeny += 1000000;
       dispbottom "You recieved 1,000,000 Zeny.";
   - Id: 12782
