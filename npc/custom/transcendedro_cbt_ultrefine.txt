@@ -88,8 +88,8 @@ grademk,22,180,4	script	Ultimate Refiner	4_M_BLACKSMITH,{
     delitem .req_item, .req_amount;
 
     // Set Grade to 4 (Grade A) and Refine to +15
-    changeequiprefinegrade .@slot, 4;
-    setequiprefine .@slot, 15;
+    grade .@slot, 4;
+    refine .@slot, 15;
 
     specialeffect2 EF_REFINEOK;
     emotion ET_SUCCESS;
