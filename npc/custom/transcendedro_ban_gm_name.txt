@@ -13,7 +13,9 @@ OnPCLoginEvent:
 	.@name$ = strcharinfo(0);
 	if( compare( .@name$,"GM" ) || compare( .@name$,"Admin" ) || compare( .@name$,"จีเอ็ม" ) || compare( .@name$,"แอดมิน" ) ){
 		mes "[GM]";
-		mes "<FONT SIZE = 18><B>Your name will be banned because it contains these words. ^FF0000จีเอ็ม / GM^000000 or/and ^FF0000แอดมิน / Admin^000000, please delete the character and give it a suitable new name.</B></FONT>";
+		mes "<FONT SIZE = 16><B>Your name will be banned";
+		mes "because it contains words about someting 'GM',";
+		mes "please delete the character and create a suitable new name.</B></FONT>";
 		sleep2 3500;
 		atcommand "@jail "+.@name$;
 		globalmes .@name$+" The character has been banned due to inappropriate naming.";
