@@ -1,7 +1,6 @@
 -	script	ban_gm_name	-1,{
 
 OnPCLoginEvent:
-	unbindatcmd "autoloot";
 	.@account_id = getcharid(3);
 	.@char_id = getcharid(0);
 	if (getgmlevel() >=99) {
@@ -13,13 +12,21 @@ OnPCLoginEvent:
 	end;
 
 	.@name$ = strcharinfo(0);
-
-	if( compare( .@name$,"GM" ) || compare( .@name$,"Admin" ) || compare( .@name$,"®’‡ÕÁ¡" ) || compare( .@name$,"·Õ¥¡‘π" ) ){
+	if( compare( .@name$,"GM" ) || compare( .@name$,"Admin" ) || compare( .@name$,"‡∏à‡∏µ‡πÄ‡∏≠‡πá‡∏°" ) || compare( .@name$,"‡πÅ‡∏≠‡∏î‡∏°‡∏¥‡∏ô" ) ){
 		mes "[GM]";
-		mes "<FONT SIZE = 18><B>From the name you set, you will be banned because it contains these words. ^FF0000®’‡ÕÁ¡ / GM^000000 or/and ^FF0000·Õ¥¡‘π / Admin^000000, please delete the character and give it a suitable new name.</B></FONT>";
+		mes "<FONT SIZE = 18><B>Your name will be banned because it contains these words. ^FF0000‡∏à‡∏µ‡πÄ‡∏≠‡πá‡∏° / GM^000000 or/and ^FF0000‡πÅ‡∏≠‡∏î‡∏°‡∏¥‡∏ô / Admin^000000, please delete the character and give it a suitable new name.</B></FONT>";
 		sleep2 3500;
 		atcommand "@jail "+.@name$;
 		globalmes .@name$+" The character has been banned due to inappropriate naming.";
 	}
 	end;
+	
+	set .@ip$, getcharip();
+    query_sql("SELECT COUNT(DISTINCT `char`.`account_id`) FROM `login` INNER JOIN `char` ON `char`.`account_id` = `login`.`account_id` WHERE `login`.`last_ip` = '" + .@ip$ + "' AND `char`.`online` = 1", .@count);
+    if (.@count > 3) {
+        dispbottom "Sorry, you have exceeded the maximum limit of 3 windows per IP.";
+        sleep2 3000;
+        atcommand "@kick " + strcharinfo(0);
+    }
+    end;
 }
