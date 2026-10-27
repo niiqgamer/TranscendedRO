@@ -3,8 +3,8 @@
 // Dev for NIIQ
 // ========================================================
 
-//grademk,22,180,4	script	Ultimate Refiner	636,{
-sec_in02,169,173,4	script	Ultimate Refiner	636,{
+grademk,22,180,4	script	Ultimate Refiner	636,{
+//sec_in02,169,173,4	script	Ultimate Refiner	636,{
     .req_item = 6417;   // Required Item ID
     .req_amount = 100;  // Required Amount
 
