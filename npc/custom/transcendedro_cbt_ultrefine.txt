@@ -94,7 +94,8 @@ sec_in02,169,173,4	script	Ultimate Refiner	636,{
             $@inventorylist_card3[.@i] == .@card3 &&
             $@inventorylist_card4[.@i] == .@card4) {
             
-            delitem2 .@item_id, 1, 1, .@refine, 0, .@card1, .@card2, .@card3, .@card4;
+            //delitem2 .@item_id, 1, 1, .@refine, 0, .@card1, .@card2, .@card3, .@card4;
+			delequip(.@item_id);
             break;
         }
     }
