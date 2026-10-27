@@ -59,7 +59,7 @@ Body:
         Rate: 1500
       - Index: 2
         Item: Thanatos_Antiquity
-        Rate: 1000
+        Rate: 4000
   - Map: tha_t10
     GlobalDrops:
       - Index: 0
@@ -70,7 +70,7 @@ Body:
         Rate: 1500
       - Index: 2
         Item: Thanatos_Antiquity
-        Rate: 1000
+        Rate: 4000
     SpecificDrops:
       - Monster: VOID_MIMIC
         Drops:
@@ -87,7 +87,7 @@ Body:
         Rate: 1700
       - Index: 2
         Item: Thanatos_Antiquity
-        Rate: 1200
+        Rate: 4200
   - Map: tha_t12
     GlobalDrops:
       - Index: 0
@@ -98,7 +98,7 @@ Body:
         Rate: 1700
       - Index: 2
         Item: Thanatos_Antiquity
-        Rate: 1200
+        Rate: 4200
   - Map: lhz_dun_n
     GlobalDrops:
       - Index: 0
