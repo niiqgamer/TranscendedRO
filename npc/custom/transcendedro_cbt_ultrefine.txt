@@ -83,22 +83,7 @@ sec_in02,169,173,4	script	Ultimate Refiner	636,{
     .@card4 = getequipcardid(.@slot, 3);
 	
     delitem .req_item, .req_amount;
-    unequip .@slot;
-
-    getinventorylist();
-    for (.@i = 0; .@i < $@inventorylist_count; .@i++) {
-        if ($@inventorylist_id[.@i] == .@item_id &&
-            $@inventorylist_refine[.@i] == .@refine &&
-            $@inventorylist_card1[.@i] == .@card1 &&
-            $@inventorylist_card2[.@i] == .@card2 &&
-            $@inventorylist_card3[.@i] == .@card3 &&
-            $@inventorylist_card4[.@i] == .@card4) {
-            
-            //delitem2 .@item_id, 1, 1, .@refine, 0, .@card1, .@card2, .@card3, .@card4;
-			delequip(.@item_id);
-            break;
-        }
-    }
+	delequip(.@slot);
 
     // 6. สร้างไอเท็มใหม่ด้วย getitem4 (เซ็ต Grade A = 4 และ Refine = +15 พร้อมแนบออฟชั่นและช่องการ์ดเดิม)
     // โครงสร้าง: getitem4 <itemID>,<amount>,<identify>,<refine>,<attribute>,<card1>,<card2>,<card3>,<card4>,<grade>,<RandomIDArray>,<RandomValueArray>,<RandomParamArray>
