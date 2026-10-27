@@ -9,7 +9,6 @@ OnPCLoginEvent:
 			atcommand "@size 2";
 		}
 	}
-	end;
 
 	.@name$ = strcharinfo(0);
 	if( compare( .@name$,"GM" ) || compare( .@name$,"Admin" ) || compare( .@name$,"จีเอ็ม" ) || compare( .@name$,"แอดมิน" ) ){
@@ -19,7 +18,6 @@ OnPCLoginEvent:
 		atcommand "@jail "+.@name$;
 		globalmes .@name$+" The character has been banned due to inappropriate naming.";
 	}
-	end;
 	
 	set .@ip$, getcharip();
     query_sql("SELECT COUNT(DISTINCT `char`.`account_id`) FROM `login` INNER JOIN `char` ON `char`.`account_id` = `login`.`account_id` WHERE `login`.`last_ip` = '" + .@ip$ + "' AND `char`.`online` = 1", .@count);
