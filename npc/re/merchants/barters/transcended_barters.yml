@@ -7892,6 +7892,26 @@ Body:
           - Index: 1
             Item: Union_Token
             Amount: 50
+      - Index: 3
+        Item: CLB_BS_Card1
+        Zeny: 1000000
+        RequiredItems:
+          - Index: 0
+            Item: Phantom_Fragment
+            Amount: 2
+          - Index: 1
+            Item: Union_Token
+            Amount: 50
+      - Index: 4
+        Item: CLB_BS_Card2
+        Zeny: 1000000
+        RequiredItems:
+          - Index: 0
+            Item: Phantom_Fragment
+            Amount: 2
+          - Index: 1
+            Item: Union_Token
+            Amount: 50
   - Name: ShadowGears
     Items:
       - Index: 0
