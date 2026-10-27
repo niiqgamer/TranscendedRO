@@ -75,7 +75,7 @@ sec_in02,169,173,4	script	Ultimate Refiner	636,{
         close;
     }
 
-    .@refine = getequiprefinerycnt(.@slot);
+	.@refine = getequiprefinerycnt(.@slot);
     .@grade = getenchantgrade(.@slot);
     .@card1 = getequipcardid(.@slot, 0);
     .@card2 = getequipcardid(.@slot, 1);
@@ -101,7 +101,10 @@ sec_in02,169,173,4	script	Ultimate Refiner	636,{
 
     // 6. สร้างไอเท็มใหม่ด้วย getitem4 (เซ็ต Grade A = 4 และ Refine = +15 พร้อมแนบออฟชั่นและช่องการ์ดเดิม)
     // โครงสร้าง: getitem4 <itemID>,<amount>,<identify>,<refine>,<attribute>,<card1>,<card2>,<card3>,<card4>,<grade>,<RandomIDArray>,<RandomValueArray>,<RandomParamArray>
-    getitem4(.@item_id,1,1,15,0,.@card1,.@card2,.@card3,.@card4,4,0,0,.@null);
+	setarray .@OptID[0],0;
+	setarray .@OptVal[0],0;
+	setarray .@OptParam[0],0;
+    getitem4(.@item_id,1,1,15,0,.@card1,.@card2,.@card3,.@card4,4,.@OptID,.@OptVal,.@OptParam);
     
     specialeffect2 EF_REFINEOK;
     emotion ET_SUCCESS;
