@@ -287,6 +287,46 @@ Body:
     Name: "Shinkiro&Shiranui Dim Crystal"
     Type: Card
     SubType: Enchant
+  - Id: 300834
+    AegisName: CLB_BS_Card1
+    Name: Baby Shark Card
+    Type: Card
+    Weight: 10
+    Locations:
+      Garment: true
+    Flags:
+      BuyingStore: true
+      DropEffect: CLIENT
+    Script: |
+      if (BaseLevel>=250) {
+         bonus bBaseAtk,250;
+         bonus bDef,75;
+         bonus bMdef,25;
+      } else {
+         bonus bBaseAtk,10*(BaseLevel/10);
+         bonus bDef,3*(BaseLevel/10);
+         bonus bMdef,BaseLevel/10;
+      }
+  - Id: 300835
+    AegisName: CLB_BS_Card2
+    Name: Shark Family Card
+    Type: Card
+    Weight: 10
+    Locations:
+      Garment: true
+    Flags:
+      BuyingStore: true
+      DropEffect: CLIENT
+    Script: |
+      if (BaseLevel>=250) {
+         bonus bMatk,250;
+         bonus bDef,75;
+         bonus bMdef,25;
+      } else {
+         bonus bMatk,10*(BaseLevel/10);
+         bonus bDef,3*(BaseLevel/10);
+         bonus bMdef,BaseLevel/10;
+      }
   - Id: 300912
     AegisName: aegis_300912
     Name: Upgrade Arch Mage Card
