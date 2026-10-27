@@ -77675,6 +77675,7 @@ Body:
     Weight: 0
     Flags:
       Container: true
+      BuyingStore: true
       DropEffect: CLIENT
     Script: |
       getgroupitem(IG_SCHMIDT_ANTIQUITY,true);
@@ -77686,6 +77687,7 @@ Body:
     Weight: 0
     Flags:
       Container: true
+      BuyingStore: true
       DropEffect: CLIENT
     Script: |
       getgroupitem(IG_SCHMIDT_ANTIQUITY2,true);
@@ -77696,6 +77698,7 @@ Body:
     Weight: 0
     Flags:
       Container: true
+      BuyingStore: true
       DropEffect: CLIENT
     Script: |
       getgroupitem(IG_C_AMDARAIS_ANTIQUITY,true);
@@ -77706,6 +77709,7 @@ Body:
     Weight: 0
     Flags:
       Container: true
+      BuyingStore: true
       DropEffect: CLIENT
     Script: |
       getgroupitem(IG_C_HIMEL_ANTIQUITY,true);
@@ -77716,6 +77720,7 @@ Body:
     Weight: 0
     Flags:
       Container: true
+      BuyingStore: true
       DropEffect: CLIENT
     Script: |
       getgroupitem(IG_AMDARAIS_ANTIQUITY,true);
@@ -77726,6 +77731,7 @@ Body:
     Weight: 0
     Flags:
       Container: true
+      BuyingStore: true
       DropEffect: CLIENT
     Script: |
       getgroupitem(IG_AMDARAIS_ANTIQUITY2,true);
@@ -77736,6 +77742,7 @@ Body:
     Weight: 0
     Flags:
       Container: true
+      BuyingStore: true
       DropEffect: CLIENT
     Script: |
       getgroupitem(IG_MIGUEL_ANTIQUITY,true);
@@ -77746,6 +77753,7 @@ Body:
     Weight: 0
     Flags:
       Container: true
+      BuyingStore: true
       DropEffect: CLIENT
     Script: |
       getgroupitem(IG_EL_A17T_ANTIQUITY,true);
@@ -77756,6 +77764,7 @@ Body:
     Weight: 0
     Flags:
       Container: true
+      BuyingStore: true
       DropEffect: CLIENT
     Script: |
       getgroupitem(IG_PITAYA_BOSS_ANTIQUITY,true);
@@ -77766,6 +77775,7 @@ Body:
     Weight: 0
     Flags:
       Container: true
+      BuyingStore: true
       DropEffect: CLIENT
     Script: |
       getgroupitem(IG_SWEETY_ANTIQUITY,true);
@@ -77776,6 +77786,7 @@ Body:
     Weight: 0
     Flags:
       Container: true
+      BuyingStore: true
       DropEffect: CLIENT
     Script: |
       getgroupitem(IG_REDPEPPER_ANTIQUITY,true);
@@ -77786,6 +77797,7 @@ Body:
     Weight: 0
     Flags:
       Container: true
+      BuyingStore: true
       DropEffect: CLIENT
     Script: |
       getgroupitem(IG_REDPEPPER_ANTIQUITY2,true);
@@ -77796,6 +77808,7 @@ Body:
     Weight: 0
     Flags:
       Container: true
+      BuyingStore: true
       DropEffect: CLIENT
     Script: |
       getgroupitem(IG_DEMI_FREYJA_ANTIQUITY,true);
@@ -77806,6 +77819,7 @@ Body:
     Weight: 0
     Flags:
       Container: true
+      BuyingStore: true
       DropEffect: CLIENT
     Script: |
       getgroupitem(IG_JUNCEA_ANTIQUITY,true);
@@ -77816,6 +77830,7 @@ Body:
     Weight: 0
     Flags:
       Container: true
+      BuyingStore: true
       DropEffect: CLIENT
     Script: |
       getgroupitem(IG_AQUILA_ANTIQUITY,true);
@@ -77826,6 +77841,7 @@ Body:
     Weight: 0
     Flags:
       Container: true
+      BuyingStore: true
       DropEffect: CLIENT
     Script: |
       getgroupitem(IG_AQUILA_ANTIQUITY2,true);
@@ -77836,6 +77852,7 @@ Body:
     Weight: 0
     Flags:
       Container: true
+      BuyingStore: true
       DropEffect: CLIENT
     Script: |
       getgroupitem(IG_F_ICESLUG_ANTIQUIY,true);
@@ -77846,6 +77863,7 @@ Body:
     Weight: 0
     Flags:
       Container: true
+      BuyingStore: true
       DropEffect: CLIENT
     Script: |
       getgroupitem(IG_LASGAND_ANTIQUITY,true);
@@ -77856,6 +77874,7 @@ Body:
     Weight: 0
     Flags:
       Container: true
+      BuyingStore: true
       DropEffect: CLIENT
     Script: |
       getgroupitem(IG_LASGAND_ANTIQUITY2,true);
@@ -77866,6 +77885,7 @@ Body:
     Weight: 0
     Flags:
       Container: true
+      BuyingStore: true
       DropEffect: CLIENT
     Script: |
       getgroupitem(IG_CELINE_KIMI_ANTIQUITY,true);
@@ -77876,6 +77896,7 @@ Body:
     Weight: 0
     Flags:
       Container: true
+      BuyingStore: true
       DropEffect: CLIENT
     Script: |
       getgroupitem(IG_SAKRAY_ANTIQUITY,true);
@@ -77886,6 +77907,7 @@ Body:
     Weight: 0
     Flags:
       Container: true
+      BuyingStore: true
       DropEffect: CLIENT
     Script: |
       getgroupitem(IG_UNKNOWN_ANTIQUITY,true);
@@ -77896,6 +77918,7 @@ Body:
     Weight: 0
     Flags:
       Container: true
+      BuyingStore: true
       DropEffect: CLIENT
     Script: |
       getgroupitem(IG_THANATOS_ANTIQUITY,true);
@@ -77906,6 +77929,7 @@ Body:
     Weight: 0
     Flags:
       Container: true
+      BuyingStore: true
       DropEffect: CLIENT
     Script: |
       getgroupitem(IG_AIRBOAT_ANTIQUITY,true);
