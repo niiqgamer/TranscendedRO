@@ -43,21 +43,30 @@ sec_in02,169,173,4	script	Ultimate Refiner	636,{
 	.@weapon_lv = getiteminfo(.@item_id,ITEMINFO_WEAPONLEVEL);
 	.@armor_lv = getiteminfo(.@item_id,ITEMINFO_ARMORLEVEL);
 	
-	if (.@weapon_lv <= 4) {
-		mes "[Ultimate Refiner]";
-		mes "This item cannot be graded!";
-		mes " ";
-		mes "Your weapon level is " + .@weapon_lv;
-		close;
-    } else if (.@armor_lv <= 1) {
-        mes "[Ultimate Refiner]";
-        mes "This item cannot be graded!";
-		mes " ";
-		mes "Your armor level is " + .@armor_lv;
-        close;
-    } else {
-        mes "[Ultimate Refiner]";
-		mes "Ready?";
+	if (!.@weapon_lv) {
+		if (.@armor_lv <= 1) {
+			mes "[Ultimate Refiner]";
+			mes "This item cannot be graded!";
+			mes " ";
+			mes "Your armor level is " + .@armor_lv;
+			close;
+		} else {
+			mes "[Ultimate Refiner]";
+			mes "Ready?";
+		}
+	}
+	
+	if (!.@armor_lv) {
+		if (.@weapon_lv <= 4) {
+			mes "[Ultimate Refiner]";
+			mes "This item cannot be graded!";
+			mes " ";
+			mes "Your weapon level is " + .@weapon_lv;
+			close;
+		} else {
+			mes "[Ultimate Refiner]";
+			mes "Ready?";
+		}
 	}
 	next;
 
