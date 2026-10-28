@@ -7860,6 +7860,27 @@ Body:
           - Index: 2
             Item: 6th_Anni_Ring_TH
             Refine: 9
+      - Index: 4
+        Item: Exotic_Temp_Ring_LT
+        Zeny: 20000000
+        RequiredItems:
+          - Index: 0
+            Item: Temporal_Crystal
+            Amount: 50
+          - Index: 1
+            Item: Fragment_Of_Time
+            Amount: 50
+          - Index: 2
+            Item: Jewel_Of_Time_Ore
+            Amount: 50
+          - Index: 3
+            Item: Spell_Of_Time
+            Amount: 50
+          - Index: 4
+            Item: Reform_Stone_TH
+            Amount: 4
+          - Index: 5
+            Item: Temporal_Ring_TW
   - Name: Cards
     Items:
       - Index: 0
