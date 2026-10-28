@@ -1350,15 +1350,14 @@ Body:
       NoSell: true
       NoAuction: true
   - Id: 9900010
-    AegisName: VIP_Coin
-    Name: VIP Coin
+    AegisName: Donation_Coin
+    Name: Donation Coin
     Type: Etc
     Trade:
       NoDrop: true
       NoSell: true
-      NoCart: true
-      NoGuildStorage: true
-      NoAuction: true
+    Flags:
+      BuyingStore: true
   - Id: 9900011
     AegisName: Bossnia_Ticket_1F1h
     Name: Bossnia Ticket 1F (1 Hour)
@@ -1435,6 +1434,20 @@ Body:
   - Id: 9900018
     AegisName: BP_Mat_Fusion
     Name: "BP Material (Fusion)"
+    Type: Etc
+    Weight: 0
+    Flags:
+      BuyingStore: true
+  - Id: 9900019
+    AegisName: Cos_Enc_Fragment
+    Name: "Cos Enchant Fragment"
+    Type: Etc
+    Weight: 0
+    Flags:
+      BuyingStore: true
+  - Id: 9900020
+    AegisName: Cos_Enc_Stone
+    Name: "Cos Enchant Stone"
     Type: Etc
     Weight: 0
     Flags:

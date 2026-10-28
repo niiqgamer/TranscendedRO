@@ -40869,6 +40869,9 @@ Body:
       FuriousRing_ABC2: true
       FuriousRing_AG: true
       FuriousRing_SS2: true
+      FuriousRing_IQ2: true
+      FuriousRing_AG2: true
+      FuriousRing_SS: true
     MinimumRefine: 0
     Reset:
       Chance: 100000

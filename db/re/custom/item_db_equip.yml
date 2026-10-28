@@ -7762,6 +7762,119 @@ Body:
       bonus bPow,10;
       bonus bNonCritAtkRate,10;
       bonus2 bAddClass,Class_All,15;
+  - Id: 491130
+    AegisName: FuriousRing_IQ2
+    Name: "White Furious Ring (IQ)"
+    Type: Armor
+    Weight: 200
+    Defense: 0
+    Slots: 1
+    Jobs:
+      Monk: true
+    Classes:
+      All_Third: true
+      Fourth: true
+    Locations:
+      Right_Accessory: true
+    ArmorLevel: 1
+    EquipLevelMin: 205
+    Script: |
+      bonus bBaseAtk,100;
+      bonus bDelayRate,-10;
+      bonus bPow,10;
+      bonus bCritical,15;
+      bonus2 bAddClass,Class_All,15;
+  - Id: 491131
+    AegisName: FuriousRing_AG2
+    Name: "White Furious Ring (AG)"
+    Type: Armor
+    Weight: 200
+    Defense: 0
+    Slots: 1
+    Jobs:
+      Wizard: true
+    Classes:
+      All_Third: true
+      Fourth: true
+    Locations:
+      Right_Accessory: true
+    ArmorLevel: 1
+    EquipLevelMin: 205
+    Script: |
+      bonus bMatk,100;
+      bonus bDelayRate,-10;
+      bonus bSpl,10;
+      bonus bFixedCast,-500;
+      bonus2 bMagicAddClass,Class_All,15;
+  - Id: 491132
+    AegisName: FuriousRing_SS
+    Name: "Furious Ring (SS)"
+    Type: Armor
+    Weight: 200
+    Defense: 0
+    Slots: 1
+    Jobs:
+      KagerouOboro: true
+    Classes:
+      All_Third: true
+      Fourth: true
+    Locations:
+      Right_Accessory: true
+    ArmorLevel: 1
+    EquipLevelMin: 205
+    Script: |
+      bonus bMatk,100;
+      bonus bDelayRate,-10;
+      bonus bSpl,10;
+      bonus bFixedCast,-500;
+      bonus2 bMagicAddClass,Class_All,15;
+  - Id: 491133
+    AegisName: Exotic_Temp_Ring_LT
+    Name: Exotic Temporal Ring-LT
+    Type: Armor
+    Weight: 200
+    Slots: 1
+    Locations:
+      Both_Accessory: true
+    ArmorLevel: 2
+    EquipLevelMin: 100
+    Script: |
+      .@r = getrefine();
+      .@g = getenchantgrade();
+      bonus bBaseAtk,120;
+      bonus bMatk,120;
+      bonus2 bAddSize,Size_All,4*(.@r/3);
+      bonus2 bMagicAddSize,Size_All,4*(.@r/3);
+      if (.@r>=7) {
+         bonus bCritical,50;
+         bonus bVariableCastRate,-20;
+         if (.@r>=9) {
+            bonus bDelayRate,-10;
+            if (.@r>=12) {
+               bonus2 bAddRace,RC_All,15;
+               bonus2 bAddRace,RC_Player_Doram,-15;
+               bonus2 bAddRace,RC_Player_Human,-15;
+               bonus2 bMagicAddRace,RC_All,15;
+               bonus2 bMagicAddRace,RC_Player_Doram,-15;
+               bonus2 bMagicAddRace,RC_Player_Human,-15;
+            }
+         }
+      }
+      if (.@g>=ENCHANTGRADE_D) {
+         bonus bFixedCast,-500;
+         if (.@g>=ENCHANTGRADE_C) {
+            bonus bPAtk,15;
+            bonus bSMatk,15;
+            if (.@g>=ENCHANTGRADE_B) {
+               bonus bAllStats,10;
+               bonus bAllTraitStats,10;
+               if (.@g>=ENCHANTGRADE_A) {
+                  bonus2 bExpAddClass,Class_All,10;
+                  bonus2 bDropAddClass,Class_All,10;
+               }
+            }
+         }
+      }
   - Id: 520062
     AegisName: Thorn_Breaker_US
     Name: Thorn Breaker

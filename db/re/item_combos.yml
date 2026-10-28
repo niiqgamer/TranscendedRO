@@ -65199,6 +65199,103 @@ Body:
       }
   - Combos:
       - Combo:
+          - FuriousRing_IQ2                  # 491130
+          - GaleClaw_Furious                # 560067
+    Script: |
+      .@r = getequiprefinerycnt(EQI_HAND_R);
+      bonus2 bAddSize,Size_All,15;
+      bonus2 bSkillAtk,"IQ_EXPOSION_BLASTER",20;
+      bonus2 bSkillAtk,"IQ_MASSIVE_F_BLASTER",20;
+      if (.@r>=10) {
+         bonus2 bAddEle,Ele_All,15;
+         bonus2 bSkillAtk,"IQ_EXPOSION_BLASTER",20;
+         bonus2 bSkillAtk,"IQ_MASSIVE_F_BLASTER",20;
+      }
+      if (getenchantgrade(EQI_HAND_R) >= ENCHANTGRADE_C) {
+         bonus bPAtk,10;
+         bonus2 bSkillCooldown,"IQ_EXPOSION_BLASTER",-350;
+         bonus2 bSkillCooldown,"IQ_MASSIVE_F_BLASTER",-1000;
+         bonus2 bSkillAtk,"IQ_EXPOSION_BLASTER",20;
+         bonus2 bSkillAtk,"IQ_MASSIVE_F_BLASTER",20;
+         if (getenchantgrade(EQI_HAND_R) >= ENCHANTGRADE_B) {
+            bonus bLongAtkRate,30;
+            bonus bDelayRate,-20;
+            bonus4 bAutoSpellOnSkill,"IQ_OLEUM_SANCTUM","IQ_EXPOSION_BLASTER",5,1000;
+            bonus4 bAutoSpellOnSkill,"IQ_EXPOSION_BLASTER","IQ_MASSIVE_F_BLASTER",10,400;
+            bonus2 bSkillAtk,"IQ_EXPOSION_BLASTER",20;
+            bonus2 bSkillAtk,"IQ_MASSIVE_F_BLASTER",20;
+         }
+      }
+  - Combos:
+      - Combo:
+          - FuriousRing_AG2                    # 491131
+          - Flame_Staff_Furious               # 640053
+    Script: |
+      .@r = getequiprefinerycnt(EQI_HAND_R);
+      bonus2 bMagicAddSize,Size_All,15;
+      bonus2 bSkillAtk,"AG_VIOLENT_QUAKE",25;
+      bonus2 bSkillAtk,"AG_VIOLENT_QUAKE_ATK",25;
+      bonus2 bSkillAtk,"AG_ALL_BLOOM",25;
+      bonus2 bSkillAtk,"AG_ALL_BLOOM_ATK",25;
+      bonus2 bSkillAtk,"AG_ALL_BLOOM_ATK2",25;
+      if (.@r>=10) {
+         bonus2 bMagicAtkEle,Ele_All,15;
+         bonus2 bSkillAtk,"AG_VIOLENT_QUAKE",25;
+         bonus2 bSkillAtk,"AG_VIOLENT_QUAKE_ATK",25;
+         bonus2 bSkillAtk,"AG_ALL_BLOOM",25;
+         bonus2 bSkillAtk,"AG_ALL_BLOOM_ATK",25;
+         bonus2 bSkillAtk,"AG_ALL_BLOOM_ATK2",25;
+      }
+      if (getenchantgrade(EQI_HAND_R) >= ENCHANTGRADE_C) {
+         bonus bSMatk,10;
+         bonus2 bSkillCooldown,"AG_VIOLENT_QUAKE",-2800;
+         bonus2 bSkillCooldown,"AG_ALL_BLOOM",-2800;
+         bonus2 bSkillAtk,"AG_SOUL_VC_STRIKE",25;
+         bonus2 bSkillAtk,"AG_VIOLENT_QUAKE_ATK",25;
+         bonus2 bSkillAtk,"AG_ALL_BLOOM",25;
+         bonus2 bSkillAtk,"AG_ALL_BLOOM_ATK",25;
+         bonus2 bSkillAtk,"AG_ALL_BLOOM_ATK2",25;
+         if (getenchantgrade(EQI_HAND_R) >= ENCHANTGRADE_B) {
+            skill "TK_HIGHJUMP",5;
+            bonus2 bSkillCooldown,"AG_VIOLENT_QUAKE",-2800;
+            bonus2 bSkillCooldown,"AG_ALL_BLOOM",-2800;
+            autobonus "{ bonus bSMatk,50; bonus bSpl,100; bonus2 bSkillAtk,\"AG_VIOLENT_QUAKE\",100; }",30,10000,BF_MAGIC;
+            bonus2 bSkillAtk,"AG_SOUL_VC_STRIKE",25;
+            bonus2 bSkillAtk,"AG_VIOLENT_QUAKE_ATK",25;
+            bonus2 bSkillAtk,"AG_ALL_BLOOM",25;
+            bonus2 bSkillAtk,"AG_ALL_BLOOM_ATK",25;
+            bonus2 bSkillAtk,"AG_ALL_BLOOM_ATK2",25;
+         }
+      }
+  - Combos:
+      - Combo:
+          - FuriousRing_SS                    # 491132
+          - WheelHumma_Furious          # 650049
+    Script: |
+      .@r = getequiprefinerycnt(EQI_HAND_R);
+      bonus2 bMagicAddSize,Size_All,15;
+      bonus2 bSkillAtk,"SS_REIKETSUHOU",25;
+      bonus2 bSkillAtk,"SS_KINRYUUHOU",25;
+      if (.@r>=10) {
+         bonus2 bMagicAtkEle,Ele_All,15;
+         bonus2 bSkillAtk,"SS_REIKETSUHOU",25;
+         bonus2 bSkillAtk,"SS_KINRYUUHOU",25;
+      }
+      if (getenchantgrade(EQI_HAND_R) >= ENCHANTGRADE_C) {
+         bonus bSMatk,10;
+         bonus2 bSkillCooldown,"SS_REIKETSUHOU",-500;
+         bonus2 bSkillCooldown,"SS_KINRYUUHOU",-300;
+         bonus2 bSkillAtk,"SS_REIKETSUHOU",25;
+         bonus2 bSkillAtk,"SS_KINRYUUHOU",25;
+         if (getenchantgrade(EQI_HAND_R) >= ENCHANTGRADE_B) {
+            bonus4 bAutoSpellOnSkill,"SS_KINRYUUHOU","AG_VIOLENT_QUAKE",5,400;
+            autobonus "{ bonus bSMatk,50; bonus bSpl,100; bonus2 bSkillAtk,\"AG_VIOLENT_QUAKE\",100; }",30,10000,BF_MAGIC;
+            bonus2 bSkillAtk,"SS_REIKETSUHOU",25;
+            bonus2 bSkillAtk,"SS_KINRYUUHOU",25;
+         }
+      }
+  - Combos:
+      - Combo:
           - LMN_ABC_Dagger              # 510160 Orrivane Abyss Dagger
           - LMN_Orrivane_C_ABC         # 550202 Orrivane Crown (Abyss Chaser)
     Script: |
@@ -65244,4 +65341,58 @@ Body:
             bonus2 bSkillCooldown,"GC_DARKCROW",-30000;
             bonus4 bAutoSpellOnSkill,"ABC_DEFT_STAB","ABC_ABYSS_DAGGER",5,1000;
          }
+      }
+  - Combos:
+      - Combo:
+          - Exotic_Temp_Ring_LT              # 491133
+          - Temporal_Boots_LT_TW           # 470183
+    Script: |
+      .@a = readparam(bStr);
+      .@b = readparam(bAgi);
+      .@c = readparam(bVit);
+      .@d = readparam(bInt);
+      .@e = readparam(bDex);
+      .@f = readparam(bLuk);
+      if (.@a>=108) {
+         bonus bNonCritAtkRate,10;
+         bonus2 bAddSize,Size_All,10;
+      }
+      if (.@b>=108) {
+         bonus bAspdRate,10;
+         bonus bCritAtkRate,20;
+      }
+      if (.@c>=108) {
+         bonus bMaxHPrate,15;
+         bonus bDelayRate,-15;
+      }
+      if (.@d>=108) {
+         bonus bMatkRate,10;
+         bonus2 bMagicAtkEle,Ele_All,15;
+      }
+      if (.@e>=108) {
+         bonus bLongAtkRate,10;
+         bonus bAtkRate,15;
+      }
+      if (.@f>=108) {
+         bonus bCritAtkRate,20;
+         bonus bAspdRate,15;
+      }
+      if (getenchantgrade(EQI_SHOES) >= ENCHANTGRADE_A) {
+         bonus2 bExpAddRace,RC_All,10;
+         bonus2 bDropAddRace,RC_All,10;
+      }
+  - Combos:
+      - Combo:
+          - Exotic_Temp_Ring_LT              # 491133
+          - Temporal_Cape_TW_LT            # 480312
+    Script: |
+      bonus2 bIgnoreResRaceRate,RC_All,10;
+      bonus2 bIgnoreResRaceRate,RC_Player_Doram,10;
+      bonus2 bIgnoreResRaceRate,RC_Player_Human,10;
+      bonus2 bIgnoreMResRaceRate,RC_All,10;
+      bonus2 bIgnoreMResRaceRate,RC_Player_Doram,10;
+      bonus2 bIgnoreMResRaceRate,RC_Player_Human,10;
+      if (getenchantgrade(EQI_GARMENT) >= ENCHANTGRADE_A) {
+         bonus2 bAddClass,Class_Boss,15;
+         bonus2 bMagicAddClass,Class_Boss,15;
       }
