@@ -10218,3 +10218,19 @@ Body:
           - Index: 3
             Item: Instance_Emblem
             Amount: 100
+      - Index: 37
+        Item: Demonsword_Furious
+        Zeny: 40000000
+        RequiredItems:
+          - Index: 0
+            Item: Evil_Minded_Ruby
+            Amount: 625
+          - Index: 1
+            Item: Whittling
+            Amount: 375
+          - Index: 2
+            Item: M_Dimension_Essence
+            Amount: 2
+          - Index: 3
+            Item: Instance_Emblem
+            Amount: 100
