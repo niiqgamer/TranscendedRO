@@ -21,6 +21,8 @@
 //   AA_TPSKILL                1 = teleport with AL_TELEPORT
 //   AA_AVOID[0..29]           monster ids to teleport away from
 //   AA_AVOIDBOSS              1 = teleport away from MVP / mini boss
+//   AA_IGNORE[0..9]           monster ids treated as not there (never targeted, even when
+//                             they attack us; idle teleport delay still applies)
 //   AA_PICKUP                 1 = walk to and pick up floor items
 //   AA_GREED                  1 = use BS_GREED when items are close
 //   AA_RANGE                  search range (hidden, default 9)
@@ -67,6 +69,7 @@ constexpr int32 DEFAULT_RANGE = 9;
 constexpr int32 MAX_RANGE = 14;
 constexpr int32 SLOTS = 10;
 constexpr int32 MAX_AVOID = 30;
+constexpr int32 MAX_IGNORE = 10;
 constexpr int32 LOOT_RANGE = 9;
 constexpr t_itemid FLY_WINGS[] = { 601, 12887 };
 
@@ -547,6 +550,19 @@ inline bool is_avoided( map_session_data* sd, mob_data* md ) {
 	return false;
 }
 
+/// AA_IGNORE[]: monsters treated as if they were not on the map (never targeted, even
+/// while attacking us). With only these around, the normal teleport delay applies.
+inline bool is_ignored( map_session_data* sd, const mob_data* md ) {
+	for( int32 i = 0; i < MAX_IGNORE; i++ ) {
+		int64 id = setting( sd, "AA_IGNORE", i );
+		if( id == 0 )
+			break; // the menu keeps the list packed
+		if( id == md->mob_id )
+			return true;
+	}
+	return false;
+}
+
 inline int32 avoid_sub( block_list* bl, va_list ap ) {
 	map_session_data* sd = va_arg( ap, map_session_data* );
 	mob_data* md = reinterpret_cast<mob_data*>( bl );
@@ -567,7 +583,7 @@ inline int32 search_range( map_session_data* sd ) {
 
 inline int32 enemy_count_sub( block_list* bl, va_list ap ) {
 	map_session_data* sd = va_arg( ap, map_session_data* );
-	if( status_isdead( *bl ) )
+	if( status_isdead( *bl ) || is_ignored( sd, reinterpret_cast<mob_data*>( bl ) ) )
 		return 0;
 	return battle_check_target( sd, bl, BCT_ENEMY ) > 0 ? 1 : 0;
 }
@@ -635,7 +651,7 @@ inline int32 search_sub( block_list* bl, va_list ap ) {
 		return 0;
 	if( md->special_state.ai != AI_NONE ) // summoned / player-owned monsters
 		return 0;
-	if( is_avoided( sd, md ) )
+	if( is_avoided( sd, md ) || is_ignored( sd, md ) )
 		return 0;
 	if( battle_check_target( sd, bl, BCT_ENEMY ) <= 0 )
 		return 0;
@@ -674,6 +690,8 @@ inline block_list* valid_target( map_session_data* sd, int32 id ) {
 	block_list* bl = map_id2bl( id );
 	if( bl == nullptr || bl->type != BL_MOB || bl->m != sd->m || status_isdead( *bl ) )
 		return nullptr;
+	if( is_ignored( sd, reinterpret_cast<mob_data*>( bl ) ) ) // added to the list while fighting it
+		return nullptr;
 	if( battle_check_target( sd, bl, BCT_ENEMY ) <= 0 )
 		return nullptr;
 	if( !check_distance_bl( sd, bl, MAX_RANGE * 2 ) )
@@ -695,7 +713,7 @@ inline block_list* find_target( map_session_data* sd, s_state& st, t_tick tick )
 inline int32 aggressor_sub( block_list* bl, va_list ap ) {
 	map_session_data* sd = va_arg( ap, map_session_data* );
 	mob_data* md = reinterpret_cast<mob_data*>( bl );
-	return ( !status_isdead( *bl ) && md->target_id == sd->id ) ? 1 : 0;
+	return ( !status_isdead( *bl ) && md->target_id == sd->id && !is_ignored( sd, md ) ) ? 1 : 0;
 }
 
 /// True when a living monster nearby is targeting us.
