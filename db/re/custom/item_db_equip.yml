@@ -9502,7 +9502,10 @@ Body:
     Locations:
       Head_Mid: true
     View: 2831
+    ArmorLevel: 2
     EquipLevelMin: 100
+    Refineable: true
+    Gradable: true
     Script: |
       bonus bUnbreakableHelm;
       bonus bMdef,10;

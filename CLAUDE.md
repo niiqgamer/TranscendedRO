@@ -10,6 +10,7 @@ rAthena-based Ragnarok Online server (Renewal).
 - Divine Pride weight is in-game weight; the DB stores it ×10 (in-game 30 → `Weight: 300`).
 - Set partner items: use the IDs Divine Pride lists in the set section and map them to AegisNames in our DB. Every combo item must exist in our DB, or the combo fails to load.
 - Headgear needs a `View` (sprite ID). Divine Pride doesn't show it, so ask the user for it.
+- Every `Type: Armor` item needs `ArmorLevel` (the server warns and defaults to 1 otherwise). Current-generation gear has item level 2, including middle/lower headgear and left/right accessories, and is refineable and gradable even when the description has no refine or grade lines. Give such items `ArmorLevel: 2`, `Refineable: true` and `Gradable: true`; check each item carefully rather than assuming from the description.
 
 ### Fixed interpretations
 
