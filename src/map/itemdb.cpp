@@ -2714,6 +2714,46 @@ uint64 ItemEnchantDatabase::parseBodyNode( const ryml::NodeRef& node ){
 
 ItemEnchantDatabase item_enchant_db;
 
+const std::string ItemVendingDatabase::getDefaultLocation(){
+	return std::string( db_path ) + "/item_vending_db.yml";
+}
+
+/**
+ * Reads and parses an entry from the item_vending_db (Extended Vending currencies).
+ * @param node: YAML node containing the entry.
+ * @return count of successfully parsed rows
+ */
+uint64 ItemVendingDatabase::parseBodyNode( const ryml::NodeRef& node ){
+	std::string item_name;
+
+	if( !this->asString( node, "Item", item_name ) ){
+		return 0;
+	}
+
+	std::shared_ptr<item_data> item = item_db.search_aegisname( item_name.c_str() );
+
+	if( item == nullptr ){
+		this->invalidWarning( node["Item"], "Unknown item %s.\n", item_name.c_str() );
+		return 0;
+	}
+
+	if( !itemdb_isstackable2( item.get() ) ){
+		this->invalidWarning( node["Item"], "Item %s is not stackable and cannot be used as vending currency.\n", item_name.c_str() );
+		return 0;
+	}
+
+	if( this->exists( item->nameid ) ){
+		return 1;
+	}
+
+	std::shared_ptr<s_item_vending_currency> entry = std::make_shared<s_item_vending_currency>();
+
+	entry->nameid = item->nameid;
+	this->put( item->nameid, entry );
+
+	return 1;
+}
+
 const std::string ItemPackageDatabase::getDefaultLocation(){
 	return std::string( db_path ) + "/item_packages.yml";
 }
@@ -2914,6 +2954,7 @@ uint64 ItemPackageDatabase::parseBodyNode( const ryml::NodeRef& node ){
 }
 
 ItemPackageDatabase item_package_db;
+ItemVendingDatabase itemdb_vending;
 
 /*==========================================
  * Finds up to N matches. Returns number of matches [Skotlex]
@@ -4920,6 +4961,7 @@ static void itemdb_read(void) {
 	item_reform_db.load();
 	item_enchant_db.load();
 	item_package_db.load();
+	itemdb_vending.load();
 
 	if (battle_config.feature_roulette)
 		itemdb_parse_roulette_db();
@@ -5014,6 +5056,7 @@ void do_final_itemdb(void) {
 	item_reform_db.clear();
 	item_enchant_db.clear();
 	item_package_db.clear();
+	itemdb_vending.clear();
 	if (battle_config.feature_roulette)
 		itemdb_roulette_free();
 }
