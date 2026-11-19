@@ -9979,6 +9979,7 @@ Body:
     EquipLevelMin: 200
     Refineable: true
     Gradable: true
+    View: 1
     Script: |
       .@r = getrefine();
       .@g = getenchantgrade();
@@ -10030,6 +10031,7 @@ Body:
     EquipLevelMin: 200
     Refineable: true
     Gradable: true
+    View: 1
     Script: |
       .@r = getrefine();
       bonus bUnbreakableShield;
@@ -10061,6 +10063,7 @@ Body:
     EquipLevelMin: 100
     Refineable: true
     Gradable: true
+    View: 1
     Script: |
       .@r = getrefine();
       .@g = getenchantgrade();
@@ -10116,6 +10119,7 @@ Body:
     EquipLevelMin: 200
     Refineable: true
     Gradable: true
+    View: 1
     Script: |
       .@r = getrefine();
       .@g = getenchantgrade();
@@ -10168,6 +10172,7 @@ Body:
     EquipLevelMin: 200
     Refineable: true
     Gradable: true
+    View: 1
     Script: |
       .@r = getrefine();
       bonus bAspdRate,10;
@@ -10202,6 +10207,7 @@ Body:
     EquipLevelMin: 200
     Refineable: true
     Gradable: true
+    View: 1
     Script: |
       .@r = getrefine();
       bonus bCritical,5;
