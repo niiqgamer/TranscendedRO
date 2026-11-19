@@ -9038,3 +9038,632 @@ Body:
       if (getskilllv("SU_MEOWMEOW") == 5) {
          bonus2 bSkillCooldown,"SU_CN_METEOR",-2000;
       }
+  - Id: 450606
+    AegisName: Evil_Taegeuk_US
+    Name: Evil Taegeuk
+    Type: Armor
+    Weight: 300
+    Defense: 20
+    Slots: 1
+    Jobs:
+      Taekwon: true
+      StarGladiator: true
+      SoulLinker: true
+    Locations:
+      Armor: true
+    ArmorLevel: 2
+    EquipLevelMin: 100
+    Refineable: true
+    Gradable: true
+    Script: |
+      .@r = getrefine();
+      .@g = getenchantgrade();
+      bonus bUnbreakableArmor;
+      skill "GC_CROSSIMPACT",1;
+      bonus bMdef,15;
+      bonus bMaxHPrate,30;
+      bonus bMaxSPrate,30;
+      bonus2 bExpAddClass,Class_All,30;
+      bonus bMatk,70*(.@r/2);
+      bonus bBaseAtk,70*(.@r/2);
+      bonus bSpl,3*(.@r/3);
+      bonus bPow,3*(.@r/3);
+      if (readparam(bInt) >= 110) {
+         bonus bMatk,200;
+         bonus bSpl,10;
+         bonus2 bSkillAtk,"SP_SPA",200;
+         bonus2 bSkillAtk,"SP_SWHOO",200;
+         bonus4 bAutoSpellOnSkill,"GC_CROSSIMPACT","AG_CRYSTAL_IMPACT",2,1000;
+      }
+      if (readparam(bStr) >= 110) {
+         bonus bBaseAtk,200;
+         bonus bPow,10;
+         bonus2 bSkillAtk,"SJ_NEWMOONKICK",200;
+         bonus2 bSkillAtk,"SJ_FULLMOONKICK",200;
+         bonus4 bAutoSpellOnSkill,"GC_CROSSIMPACT","BO_EXPLOSIVE_POWDER",5,1000;
+      }
+      if (readparam(bSpl) >= 70) {
+         bonus bMatk,300;
+         bonus bSpl,15;
+         bonus2 bSkillAtk,"SOA_TALISMAN_OF_WHITE_TIGER",200;
+         bonus2 bSkillAtk,"SOA_TALISMAN_OF_BLACK_TORTOISE",200;
+      }
+      if (readparam(bPow) >= 70) {
+         bonus bBaseAtk,300;
+         bonus bPow,15;
+         bonus2 bSkillAtk,"SKE_NOON_BLAST",200;
+         bonus2 bSkillAtk,"SKE_MIDNIGHT_KICK",200;
+      }
+      if (.@r >= 11) {
+         bonus2 bSkillCooldown,"SOA_TALISMAN_OF_WHITE_TIGER",-400;
+      }
+      if (.@r >= 12) {
+         bonus2 bSkillCooldown,"SKE_NOON_BLAST",-700;
+      }
+      if (.@r >= 13) {
+         bonus bPow,20;
+         bonus bSpl,20;
+      }
+      if (.@r >= 14) {
+         skill "CD_ARGUTUS_VITA",5;
+         skill "CD_ARGUTUS_TELUM",5;
+      }
+      if (.@g >= ENCHANTGRADE_D) {
+         bonus bMaxHPrate,20;
+         bonus bMaxSPrate,20;
+      }
+      if (.@g >= ENCHANTGRADE_C) {
+         bonus2 bAddSize,Size_All,20;
+         bonus2 bMagicAddSize,Size_All,20;
+      }
+      if (.@g >= ENCHANTGRADE_B) {
+         bonus bDelayRate,-20;
+      }
+      if (.@g >= ENCHANTGRADE_A) {
+         bonus bSMatk,20;
+         bonus bPAtk,20;
+      }
+  - Id: 470489
+    AegisName: Stray_Archer_US
+    Name: Heretic Archer Boots
+    Type: Armor
+    Weight: 300
+    Defense: 20
+    Slots: 1
+    Jobs:
+      Archer: true
+      BardDancer: true
+      Hunter: true
+    Locations:
+      Shoes: true
+    ArmorLevel: 2
+    EquipLevelMin: 100
+    Refineable: true
+    Gradable: true
+    Script: |
+      .@r = getrefine();
+      .@g = getenchantgrade();
+      bonus bMdef,10;
+      bonus bUnbreakableShoes;
+      bonus bAllStats,15;
+      bonus bAllTraitStats,15;
+      bonus bMaxHPrate,20;
+      bonus bMaxSPrate,20;
+      bonus bBaseAtk,75*(BaseLevel/20);
+      bonus bMatk,75*(BaseLevel/20);
+      bonus2 bMagicAtkEle,Ele_All,25*(.@r/2);
+      bonus bShortAtkRate,25*(.@r/2);
+      bonus bLongAtkRate,25*(.@r/2);
+      bonus bCon,5*(.@r/3);
+      bonus bSpl,5*(.@r/3);
+      if (.@r >= 11) {
+         bonus bCon,15;
+         bonus bSpl,15;
+         bonus2 bSkillCooldown,"RA_UNLIMIT",-120000;
+      }
+      if (.@r >= 12) {
+         bonus2 bMagicAtkEle,Ele_All,40;
+         bonus bShortAtkRate,40;
+         bonus bLongAtkRate,40;
+         skill "MG_ENERGYCOAT",1;
+      }
+      if (.@r >= 13) {
+         bonus2 bSkillAtk,"TR_METALIC_FURY",100;
+         bonus2 bSkillAtk,"WH_CRESCIVE_BOLT",100;
+         bonus bFixedCast,-1000;
+      }
+      if (.@r >= 14) {
+         bonus bCon,20;
+         bonus bSpl,20;
+         bonus bDelayRate,-30;
+      }
+      if (.@r >= 15) {
+         bonus2 bAddEle,Ele_All,60;
+         bonus2 bMagicAddEle,Ele_All,60;
+      }
+      if (.@g >= ENCHANTGRADE_D) {
+         if (Class == JOB_TROUBADOUR || Class == JOB_TROUVERE)
+            skill "RA_UNLIMIT",5;
+         if (Class == JOB_WINDHAWK || Class == JOB_WINDHAWK2)
+            skill "BS_MAXIMIZE",5;
+      }
+      if (.@g >= ENCHANTGRADE_C) {
+         autobonus3 "{ bonus bDex,150; bonus bInt,150; bonus bSpeedRate,25; }",1000,15000,"MG_ENERGYCOAT";
+      }
+      if (.@g >= ENCHANTGRADE_B) {
+         bonus2 bAddRace,RC_All,25;
+         bonus2 bMagicAddRace,RC_All,25;
+      }
+      if (.@g >= ENCHANTGRADE_A) {
+         bonus bNoWalkDelay;
+      }
+  - Id: 510241
+    AegisName: Jack_Ripper_US
+    Name: Jack the Ripper
+    Type: Weapon
+    SubType: Dagger
+    Weight: 500
+    Attack: 300
+    MagicAttack: 300
+    Slots: 3
+    Jobs:
+      Rogue: true
+    Locations:
+      Right_Hand: true
+    WeaponLevel: 5
+    EquipLevelMin: 100
+    Refineable: true
+    Gradable: true
+    Script: |
+      .@r = getrefine();
+      .@g = getenchantgrade();
+      bonus bUnbreakableWeapon;
+      bonus bAspd,10;
+      bonus bDelayRate,-10;
+      bonus2 bSubRace,RC_All,20;
+      bonus2 bSubRace,RC_Player_Human,20;
+      bonus2 bSubRace,RC_Player_Doram,20;
+      bonus2 bAddSize,Size_All,40+12*.@r;
+      bonus bPow,4*(.@r/2);
+      bonus bMaxHPrate,4*(.@r/2);
+      bonus2 bSkillAtk,"ABC_UNLUCKY_RUSH",15*(.@r/2);
+      bonus2 bSkillAtk,"ABC_ABYSS_DAGGER",15*(.@r/2);
+      bonus2 bSkillAtk,"ABC_DEFT_STAB",15*(.@r/2);
+      if (.@r >= 10) {
+         bonus bPow,15;
+         bonus bDelayRate,-20;
+      }
+      if (.@r >= 11) {
+         bonus2 bSkillCooldown,"SC_ENERVATION",-2000;
+         bonus2 bSkillCooldown,"SC_GROOMY",-2000;
+         bonus2 bSkillCooldown,"SC_IGNORANCE",-2000;
+         bonus2 bSkillCooldown,"SC_LAZINESS",-2000;
+         bonus2 bSkillCooldown,"SC_UNLUCKY",-2000;
+         bonus2 bSkillCooldown,"SC_WEAKNESS",-2000;
+      }
+      if (.@r >= 12) {
+         bonus2 bSkillAtk,"ABC_ABYSS_DAGGER",40;
+         bonus2 bSkillCooldown,"ABC_ABYSS_DAGGER",-400;
+      }
+      if (.@r >= 13) {
+         bonus bAllStats,25;
+         bonus bBaseAtk,250;
+         bonus bMaxHPrate,25;
+      }
+      if (.@r >= 14) {
+         bonus bShortAtkRate,40;
+         bonus bAllTraitStats,15;
+      }
+      if (.@r >= 15) {
+         bonus bLongAtkDef,40;
+         bonus2 bSubEle,Ele_All,40;
+      }
+      if (.@g >= ENCHANTGRADE_D) {
+         bonus bFixedCast,-1000;
+      }
+      if (.@g >= ENCHANTGRADE_C) {
+         bonus bShortAtkRate,20;
+      }
+      if (.@g >= ENCHANTGRADE_B) {
+         bonus2 bSkillAtk,"ABC_UNLUCKY_RUSH",30;
+         bonus2 bSkillAtk,"ABC_ABYSS_DAGGER",30;
+         bonus2 bSkillAtk,"ABC_DEFT_STAB",30;
+      }
+      if (.@g >= ENCHANTGRADE_A) {
+         skill "AS_CLOAKING",5;
+         bonus bAllTraitStats,7;
+         bonus bAllStats,7;
+      }
+  - Id: 570110
+    AegisName: Metallic_Guitar_US
+    Name: Metallic Guitar
+    Type: Weapon
+    SubType: Musical
+    Weight: 700
+    Attack: 300
+    MagicAttack: 300
+    Slots: 3
+    Jobs:
+      BardDancer: true
+    Gender: Male
+    Locations:
+      Right_Hand: true
+    WeaponLevel: 5
+    EquipLevelMin: 200
+    Refineable: true
+    Gradable: true
+    Script: |
+      .@r = getrefine();
+      .@g = getenchantgrade();
+      bonus bUnbreakableWeapon;
+      bonus bMaxHPrate,20;
+      bonus bMaxSPrate,20;
+      bonus bDelayRate,-20;
+      bonus2 bSkillAtk,"TR_METALIC_FURY",50;
+      bonus2 bMagicAtkEle,Ele_Wind,15*.@r;
+      bonus2 bMagicAtkEle,Ele_Neutral,15*.@r;
+      bonus bCon,10*(.@r/3);
+      bonus bSpl,10*(.@r/3);
+      if (.@r >= 10) {
+         autobonus3 "{ bonus bInt,100; bonus bSpeedRate,25; }",1000,30000,"MI_RUSH_WINDMILL";
+      }
+      if (.@r >= 11) {
+         bonus bAllStats,25;
+         bonus bMatk,250;
+      }
+      if (.@r >= 12) {
+         bonus2 bSkillCooldown,"TR_METALIC_FURY",-400;
+         bonus2 bSkillAtk,"TR_METALIC_FURY",100;
+         bonus2 bSkillCooldown,"WM_METALICSOUND",-2000;
+         bonus2 bSkillAtk,"WM_METALICSOUND",100;
+      }
+      if (.@r >= 13) {
+         bonus4 bAutoSpellOnSkill,"TR_METALIC_FURY","WL_CHAINLIGHTNING",5,300;
+      }
+      if (.@r >= 14) {
+         bonus4 bAutoSpellOnSkill,"TR_METALIC_FURY","SS_RAIDENPOU",10,300;
+      }
+      if (.@r >= 15) {
+         skill "EM_LIGHTNING_LAND",5;
+         bonus4 bAutoSpellOnSkill,"WM_METALICSOUND","EM_LIGHTNING_LAND",5,300;
+      }
+      if (.@g >= ENCHANTGRADE_D) {
+         bonus bMatk,200;
+      }
+      if (.@g >= ENCHANTGRADE_C) {
+         skill "CD_RELIGIO",5;
+      }
+      if (.@g >= ENCHANTGRADE_B) {
+         bonus bSMatk,20;
+      }
+      if (.@g >= ENCHANTGRADE_A) {
+         bonus2 bMagicAddEle,Ele_All,20;
+      }
+  - Id: 401610
+    AegisName: Orc_Emperor_US
+    Name: Orc Emperor Helm
+    Type: Armor
+    Weight: 1000
+    Defense: 200
+    Slots: 1
+    Locations:
+      Head_Top: true
+    View: 381
+    ArmorLevel: 2
+    EquipLevelMin: 1
+    Refineable: true
+    Gradable: true
+    Script: |
+      .@r = getrefine();
+      .@g = getenchantgrade();
+      bonus bUnbreakableHelm;
+      bonus bMdef,20;
+      bonus bAllTraitStats,15;
+      bonus bAspd,2;
+      bonus2 bSubRace,RC_All,3*.@r;
+      bonus2 bSubRace,RC_Player_Human,3*.@r;
+      bonus2 bSubRace,RC_Player_Doram,3*.@r;
+      bonus bMaxHPrate,7*.@r;
+      if (.@r >= 10) {
+         bonus bAllStats,10;
+         bonus bMaxHPrate,25;
+      }
+      if (.@r >= 11) {
+         bonus bAllTraitStats,5;
+         bonus bBaseAtk,50;
+         bonus bMatk,50;
+         bonus3 bAutoSpell,"LG_EARTHDRIVE",5,50;
+      }
+      if (.@r >= 12) {
+         bonus bAllTraitStats,7;
+         bonus bBaseAtk,70;
+         bonus bMatk,70;
+         bonus3 bAutoSpell,"SR_EARTHSHAKER",5,60;
+      }
+      if (.@r >= 13) {
+         bonus bAllStats,15;
+         bonus bBaseAtk,150;
+         bonus bMatk,150;
+         bonus3 bAutoSpell,"WL_EARTHSTRAIN",5,70;
+      }
+      if (.@r >= 14) {
+         bonus bDelayRate,-25;
+         bonus bBaseAtk,250;
+         bonus bMatk,250;
+         bonus bFixedCast,-500;
+      }
+      if (.@g >= ENCHANTGRADE_D) {
+         bonus bPAtk,15;
+         bonus bSMatk,15;
+      }
+      if (.@g >= ENCHANTGRADE_C) {
+         bonus bMaxHPrate,25;
+         bonus bMaxSPrate,25;
+      }
+      if (.@g >= ENCHANTGRADE_B) {
+         skill "BS_MAXIMIZE",5;
+         skill "WL_RECOGNIZEDSPELL",5;
+      }
+      if (.@g >= ENCHANTGRADE_A) {
+         bonus2 bIgnoreDefRaceRate,RC_All,75;
+         bonus2 bIgnoreDefRaceRate,RC_Player_Human,75;
+         bonus2 bIgnoreDefRaceRate,RC_Player_Doram,75;
+         bonus2 bIgnoreMdefRaceRate,RC_All,75;
+         bonus2 bIgnoreMdefRaceRate,RC_Player_Human,75;
+         bonus2 bIgnoreMdefRaceRate,RC_Player_Doram,75;
+      }
+  - Id: 401612
+    AegisName: Explosive_Hat_US
+    Name: Explosive Hat
+    Type: Armor
+    Weight: 1000
+    Defense: 100
+    Slots: 1
+    Jobs:
+      Gunslinger: true
+    Locations:
+      Head_Top: true
+    View: 1191
+    ArmorLevel: 2
+    EquipLevelMin: 1
+    Refineable: true
+    Gradable: true
+    Script: |
+      .@r = getrefine();
+      .@g = getenchantgrade();
+      bonus bUnbreakableHelm;
+      bonus bMdef,20;
+      bonus bBaseAtk,150;
+      bonus bAllStats,10;
+      bonus bAllTraitStats,10;
+      bonus2 bSubClass,Class_All,20;
+      bonus bLongAtkRate,30+5*.@r;
+      bonus bPow,.@r;
+      bonus bCon,.@r;
+      bonus2 bSkillAtk,"RL_D_TAIL",2*BaseLevel;
+      bonus2 bSkillAtk,"GN_SPORE_EXPLOSION",2*BaseLevel;
+      if (.@r >= 9) {
+         bonus2 bAddSize,Size_All,15;
+      }
+      if (.@r >= 10) {
+         bonus bMaxHPrate,20;
+         bonus bMaxSPrate,20;
+         bonus2 bSkillCooldown,"RL_D_TAIL",-3000;
+         bonus4 bAutoSpellOnSkill,"RL_D_TAIL","RL_C_MARKER",1,500;
+      }
+      if (.@r >= 11) {
+         bonus4 bAutoSpellOnSkill,"RL_C_MARKER","GN_SPORE_EXPLOSION",10,200;
+      }
+      if (.@r >= 12) {
+         bonus bLongAtkRate,20;
+         bonus2 bSkillAtk,"NW_HASTY_FIRE_IN_THE_HOLE",40;
+         bonus2 bSkillAtk,"NW_GRENADES_DROPPING",40;
+         bonus2 bSkillAtk,"NW_MISSION_BOMBARD",40;
+      }
+      if (.@r >= 13) {
+         bonus bPow,7;
+         bonus bCon,7;
+         bonus2 bSkillAtk,"NW_HASTY_FIRE_IN_THE_HOLE",70;
+         bonus2 bSkillAtk,"NW_GRENADES_DROPPING",70;
+         bonus2 bSkillAtk,"NW_MISSION_BOMBARD",70;
+      }
+      if (.@r >= 14) {
+         bonus2 bSkillCooldown,"NW_HASTY_FIRE_IN_THE_HOLE",-800;
+         bonus2 bSkillCooldown,"NW_GRENADES_DROPPING",-4000;
+         bonus2 bSkillCooldown,"NW_MISSION_BOMBARD",-7000;
+      }
+      if (.@r >= 15) {
+         bonus bLongAtkRate,30;
+         bonus4 bAutoSpellOnSkill,"NW_HASTY_FIRE_IN_THE_HOLE","NW_GRENADES_DROPPING",5,1000;
+      }
+      if (.@g >= ENCHANTGRADE_D) {
+         bonus bMaxHPrate,20;
+         bonus bMaxSPrate,20;
+      }
+      if (.@g >= ENCHANTGRADE_C) {
+         bonus bVariableCastRate,-20;
+         bonus bDelayRate,-20;
+      }
+      if (.@g >= ENCHANTGRADE_B) {
+         bonus bSpeedRate,25;
+         bonus bPow,5;
+         bonus bCon,5;
+      }
+      if (.@g >= ENCHANTGRADE_A) {
+         skill "RA_UNLIMIT",3;
+      }
+  - Id: 410742
+    AegisName: Good_Evil_Follower_US
+    Name: Good and Evil Follower
+    Type: Armor
+    Weight: 1000
+    Defense: 100
+    Slots: 1
+    Locations:
+      Head_Mid: true
+    View: 2831
+    EquipLevelMin: 100
+    Script: |
+      bonus bUnbreakableHelm;
+      bonus bMdef,10;
+      bonus bBaseAtk,150;
+      bonus bMatk,150;
+      bonus bAllStats,12;
+      bonus bAllTraitStats,12;
+      bonus2 bAddSize,Size_All,20;
+      bonus2 bMagicAddSize,Size_All,20;
+  - Id: 491110
+    AegisName: Taming_Earring_US
+    Name: Kafra Taming Shadow Earrings
+    Type: ShadowGear
+    Locations:
+      Shadow_Right_Accessory: true
+    EquipLevelMin: 1
+    Trade:
+      NoDrop: true
+      NoTrade: true
+      NoCart: true
+      NoGuildStorage: true
+      NoMail: true
+      NoAuction: true
+    Script: |
+      if (BaseLevel <= 200) {
+         bonus bMaxHP,200;
+         bonus bMaxSP,20;
+         bonus bAllStats,2;
+         bonus bFixedCast,-200;
+         bonus2 bSubRace,RC_Player_Human,2;
+         bonus2 bSubRace,RC_Player_Doram,2;
+      }
+  - Id: 540149
+    AegisName: Purified_Grimoire_US
+    Name: Purified Forbidden Grimoire
+    Type: Weapon
+    SubType: Book
+    Weight: 700
+    Attack: 300
+    MagicAttack: 300
+    Slots: 3
+    Jobs:
+      Priest: true
+      Sage: true
+      Taekwon: true
+      StarGladiator: true
+      SoulLinker: true
+    Locations:
+      Right_Hand: true
+    WeaponLevel: 5
+    EquipLevelMin: 200
+    Refineable: true
+    Gradable: true
+    Script: |
+      .@r = getrefine();
+      .@g = getenchantgrade();
+      bonus bUnbreakableWeapon;
+      bonus2 bSubClass,Class_All,30;
+      bonus2 bSkillAtk,"CD_ARBITRIUM",30+10*.@r;
+      bonus2 bSkillAtk,"CD_ARBITRIUM_ATK",30+10*.@r;
+      bonus2 bSkillAtk,"CD_PETITIO",30+10*.@r;
+      bonus bHPlus,10*.@r;
+      bonus bHealPower,15*.@r;
+      if (.@r >= 10) {
+         bonus bAllStats,20;
+         bonus bBaseAtk,200;
+         bonus bMatk,200;
+      }
+      if (.@r >= 11) {
+         bonus2 bSkillCooldown,"CD_PETITIO",-400;
+         bonus4 bAutoSpellOnSkill,"CD_PETITIO","CD_PETITIO",10,300;
+      }
+      if (.@r >= 12) {
+         bonus2 bSkillCooldown,"CD_ARBITRIUM",-1400;
+         bonus4 bAutoSpellOnSkill,"CD_ARBITRIUM","CD_FRAMEN",5,200;
+         bonus4 bAutoSpellOnSkill,"CD_ARBITRIUM","CD_ARBITRIUM",10,300;
+      }
+      if (.@r >= 13) {
+         bonus bAllTraitStats,15;
+         bonus2 bAddSize,Size_All,30;
+         bonus2 bMagicAddSize,Size_All,30;
+      }
+      if (.@r >= 14) {
+         bonus4 bAutoSpellOnSkill,"CD_PETITIO","AB_VITUPERATUM",5,100;
+         bonus4 bAutoSpellOnSkill,"CD_ARBITRIUM","AB_VITUPERATUM",5,100;
+      }
+      if (.@r >= 15) {
+         bonus2 bAddClass,Class_All,50;
+         bonus2 bMagicAddClass,Class_All,50;
+      }
+      if (.@g >= ENCHANTGRADE_D) {
+         bonus bNoGemStone;
+      }
+      if (.@g >= ENCHANTGRADE_C) {
+         bonus bPAtk,15;
+         bonus bSMatk,15;
+      }
+      if (.@g >= ENCHANTGRADE_B) {
+         bonus2 bAddEle,Ele_All,40;
+         bonus2 bMagicAddEle,Ele_All,40;
+      }
+      if (.@g >= ENCHANTGRADE_A) {
+         bonus bNoWalkDelay;
+      }
+  - Id: 480663
+    AegisName: Fallen_Valkyrie_US
+    Name: Fallen Valkyrie
+    Type: Armor
+    Weight: 1000
+    Defense: 200
+    Slots: 1
+    Locations:
+      Garment: true
+    ArmorLevel: 2
+    EquipLevelMin: 100
+    Refineable: true
+    Gradable: true
+    Script: |
+      .@r = getrefine();
+      .@g = getenchantgrade();
+      bonus bMdef,20;
+      bonus bBaseAtk,250;
+      bonus bMatk,250;
+      bonus bFlee2,25;
+      bonus2 bSkillAtk,"CD_PETITIO",20;
+      bonus bBaseAtk,40*(.@r/2);
+      bonus bMatk,40*(.@r/2);
+      bonus bPow,.@r/2;
+      bonus bSpl,.@r/2;
+      if (.@r >= 11) {
+         bonus bPow,15;
+         bonus bSpl,15;
+      }
+      if (.@r >= 12) {
+         skill "NC_POWERSWING",10;
+         bonus2 bSkillAtk,"NC_POWERSWING",3*BaseLevel;
+      }
+      if (.@r >= 13) {
+         bonus bAllStats,25;
+         bonus bBaseAtk,250;
+         bonus bMatk,250;
+         bonus4 bAutoSpellOnSkill,"NC_POWERSWING","CD_PETITIO",10,200;
+         bonus4 bAutoSpellOnSkill,"CD_PETITIO","AG_VIOLENT_QUAKE",5,700;
+      }
+      if (.@r >= 14) {
+         skill "LG_SHIELDSPELL",3;
+         bonus2 bSkillAtk,"CD_PETITIO",40;
+         bonus2 bSkillCooldown,"CD_PETITIO",-500;
+      }
+      if (.@g >= ENCHANTGRADE_D) {
+         bonus bDelayRate,-20;
+      }
+      if (.@g >= ENCHANTGRADE_C) {
+         bonus bPow,10;
+         bonus bSpl,10;
+      }
+      if (.@g >= ENCHANTGRADE_B) {
+         bonus bPAtk,20;
+         bonus bSMatk,20;
+      }
+      if (.@g >= ENCHANTGRADE_A && .@r >= 15) {
+         bonus2 bAddSize,Size_All,40;
+         bonus2 bMagicAddSize,Size_All,40;
+      }
