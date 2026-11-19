@@ -738,6 +738,7 @@ public:
 	int32 vender_id;
 	int32 vend_num;
 	uint16 vend_skill_lv;
+	t_itemid vend_loot = 0; ///< Extended Vending: currency item of the shop (0 = Zeny)
 	char message[MESSAGE_SIZE];
 	struct s_vending vending[MAX_VENDING];
 

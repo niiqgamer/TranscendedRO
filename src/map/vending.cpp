@@ -3,7 +3,10 @@
 
 #include "vending.hpp"
 
-#include <cstdlib> // atoi
+#include <algorithm>
+#include <cstdlib> // atoi, strtoul
+#include <ctime>
+#include <string>
 
 #include <common/malloc.hpp> // aMalloc, aFree
 #include <common/nullpo.hpp>
@@ -18,7 +21,9 @@
 #include "buyingstore.hpp" // struct s_autotrade_entry, struct s_autotrader
 #include "chrif.hpp"
 #include "clif.hpp"
+#include "intif.hpp"
 #include "itemdb.hpp"
+#include "map.hpp"
 #include "log.hpp"
 #include "npc.hpp"
 #include "path.hpp"
@@ -32,6 +37,238 @@ static DBMap *vending_db; ///DB holder the vender : charid -> map_session_data
 static DBMap *vending_autotrader_db; /// Holds autotrader info: char_id -> struct s_autotrader
 static void vending_autotrader_remove(struct s_autotrader *at, bool remove);
 static int32 vending_autotrader_free(DBKey key, DBData *data, va_list ap);
+
+/*==========================================
+ * Extended Vending system
+ * A shop sells for Zeny (vend_loot == 0), Cash Points (vend_loot == item_cash)
+ * or a currency item from db/item_vending_db.yml (vend_loot == item ID).
+ *------------------------------------------*/
+
+enum e_vending_currency_type : uint8 {
+	VENDCURRENCY_ZENY = 0,
+	VENDCURRENCY_CASH,
+	VENDCURRENCY_ITEM,
+};
+
+static e_vending_currency_type vending_currency_type( t_itemid currency ){
+	if( currency == 0 || ( battle_config.item_zeny > 0 && currency == static_cast<t_itemid>( battle_config.item_zeny ) ) )
+		return VENDCURRENCY_ZENY;
+	if( battle_config.item_cash > 0 && currency == static_cast<t_itemid>( battle_config.item_cash ) )
+		return VENDCURRENCY_CASH;
+	return VENDCURRENCY_ITEM;
+}
+
+/**
+ * Currencies a player can pick when opening a shop, in display order.
+ * Zeny and Cash are represented by their dummy items (item_zeny/item_cash).
+ * Empty when extended vending is disabled (= plain Zeny vending).
+ */
+std::vector<t_itemid> vending_currency_list(){
+	std::vector<t_itemid> list;
+
+	if( !battle_config.extended_vending )
+		return list;
+
+	if( battle_config.item_zeny > 0 && item_db.exists( battle_config.item_zeny ) )
+		list.push_back( battle_config.item_zeny );
+	if( battle_config.item_cash > 0 && item_db.exists( battle_config.item_cash ) )
+		list.push_back( battle_config.item_cash );
+
+	for( const auto& it : itemdb_vending ){
+		t_itemid nameid = it.first;
+
+		if( !item_db.exists( nameid ) || vending_currency_type( nameid ) != VENDCURRENCY_ITEM )
+			continue;
+		list.push_back( nameid );
+	}
+
+	return list;
+}
+
+/**
+ * Whether a shop may sell for this currency with the current configuration.
+ * @param currency: 0 for Zeny, item_cash for Cash Points or a currency item ID
+ */
+bool vending_currency_allowed( t_itemid currency ){
+	std::vector<t_itemid> list = vending_currency_list();
+
+	if( list.empty() )
+		return currency == 0; // Extended vending off or nothing configured: Zeny only
+
+	t_itemid wanted = ( currency == 0 ) ? static_cast<t_itemid>( battle_config.item_zeny ) : currency;
+
+	if( wanted == 0 )
+		return false; // Zeny shops disabled (item_zeny: 0)
+
+	return std::find( list.begin(), list.end(), wanted ) != list.end();
+}
+
+const char* vending_currency_name( t_itemid currency ){
+	switch( vending_currency_type( currency ) ){
+		case VENDCURRENCY_ZENY:
+			return "Zeny";
+		case VENDCURRENCY_CASH:
+			return "Cash Points";
+		default: {
+			std::shared_ptr<item_data> id = item_db.find( currency );
+
+			return id != nullptr ? id->ename.c_str() : "Unknown";
+		}
+	}
+}
+
+/// Formats a number with thousands separators (1234567 -> "1,234,567")
+static std::string vending_format_number( int64 value ){
+	std::string digits = std::to_string( value < 0 ? -value : value );
+	std::string out;
+	int32 n = 0;
+
+	for( auto it = digits.rbegin(); it != digits.rend(); ++it, ++n ){
+		if( n > 0 && n % 3 == 0 )
+			out.insert( out.begin(), ',' );
+		out.insert( out.begin(), *it );
+	}
+
+	if( value < 0 )
+		out.insert( out.begin(), '-' );
+
+	return out;
+}
+
+/// Whether an inventory item may be used to pay in a currency-item shop
+static bool vending_currency_item_usable( const map_session_data& sd, const item& it, t_itemid currency, bool allow_bound ){
+	if( it.nameid != currency || it.amount <= 0 )
+		return false;
+	if( it.equip || it.expire_time || !it.identify || it.attribute == 1 )
+		return false;
+	if( it.bound && !allow_bound )
+		return false;
+	if( !itemdb_cantrade( &it, pc_get_group_level( &sd ), pc_get_group_level( &sd ) ) )
+		return false;
+	return true;
+}
+
+/// Amount of currency items the buyer can pay with
+static int64 vending_currency_item_count( const map_session_data& sd, t_itemid currency, bool allow_bound ){
+	int64 total = 0;
+
+	for( int32 i = 0; i < MAX_INVENTORY; i++ ){
+		if( vending_currency_item_usable( sd, sd.inventory.u.items_inventory[i], currency, allow_bound ) )
+			total += sd.inventory.u.items_inventory[i].amount;
+	}
+
+	return total;
+}
+
+/// Removes `amount` currency items from the buyer, across as many stacks as needed
+static void vending_currency_item_delete( map_session_data& sd, t_itemid currency, int32 amount ){
+	bool allow_bound = battle_config.ex_buying_bound != 0;
+
+	for( int32 i = 0; i < MAX_INVENTORY && amount > 0; i++ ){
+		const item& it = sd.inventory.u.items_inventory[i];
+
+		if( !vending_currency_item_usable( sd, it, currency, allow_bound ) )
+			continue;
+
+		int32 take = std::min<int32>( amount, it.amount );
+
+		pc_delitem( &sd, i, take, 0, 0, LOG_TYPE_VENDING );
+		amount -= take;
+	}
+}
+
+/// Sends the shop setup window (saving the cart first if needed). This is the stock MC_VENDING behavior.
+static void vending_open_setup_ui( map_session_data& sd ){
+	int32 i = 0;
+
+	sd.state.prevend = 1;
+	sd.state.workinprogress = WIP_DISABLE_ALL;
+	ARR_FIND(0, MAX_CART, i, sd.cart.u.items_cart[i].nameid && sd.cart.u.items_cart[i].id == 0);
+	if (i < MAX_CART) {
+		// Save the cart before opening the vending UI
+		sd.state.pending_vending_ui = true;
+		intif_storage_save(&sd, &sd.cart);
+	} else {
+		// Instantly open the vending UI
+		sd.state.pending_vending_ui = false;
+		clif_openvendingreq(sd, 2 + sd.vend_skill_lv);
+	}
+}
+
+/**
+ * MC_VENDING was cast: show the currency list, or open the shop setup directly
+ * when there is no choice to make.
+ * @param sd: Player
+ * @param skill_lv: Vending skill level used
+ */
+void vending_start_setup( map_session_data& sd, uint16 skill_lv ){
+	std::vector<t_itemid> list = vending_currency_list();
+
+	sd.vend_skill_lv = skill_lv;
+	sd.vend_loot = 0;
+
+	if( list.size() > 1 ){
+		// Nothing is locked until a currency is picked, so closing the list leaves the player free
+		clif_vending_currency_list( sd, list );
+		return;
+	}
+
+	if( list.size() == 1 ){
+		char output[CHAT_SIZE_MAX];
+
+		sd.vend_loot = ( vending_currency_type( list[0] ) == VENDCURRENCY_ZENY ) ? 0 : list[0];
+		safesnprintf( output, sizeof( output ), msg_txt( &sd, 1596 ), vending_currency_name( sd.vend_loot ) ); // Shop currency: %s
+		clif_messagecolor( &sd, color_table[COLOR_CYAN], output, false, SELF );
+	}
+
+	vending_open_setup_ui( sd );
+}
+
+/**
+ * Player picked a currency from the list sent by vending_start_setup.
+ * @param sd: Player
+ * @param nameid: Item ID the client sent back (0 = cancelled)
+ */
+void vending_select_currency( map_session_data& sd, t_itemid nameid ){
+	if( nameid == 0 )
+		return; // cancelled
+
+	// The player could have changed state while the list was open
+	if( sd.state.vending || sd.state.prevend || pc_isdead( &sd ) || pc_istrading( &sd ) || !pc_iscarton( &sd ) || !pc_checkskill( &sd, MC_VENDING ) || !pc_can_give_items( &sd ) ){
+		clif_skill_fail( sd, MC_VENDING );
+		return;
+	}
+	if( map_getmapflag( sd.m, MF_NOVENDING ) ){
+		clif_displaymessage( sd.fd, msg_txt( &sd, 276 ) ); // "You can't open a shop on this map"
+		clif_skill_fail( sd, MC_VENDING );
+		return;
+	}
+	if( map_getcell( sd.m, sd.x, sd.y, CELL_CHKNOVENDING ) ){
+		clif_displaymessage( sd.fd, msg_txt( &sd, 204 ) ); // "You can't open a shop on this cell."
+		clif_skill_fail( sd, MC_VENDING );
+		return;
+	}
+	if( npc_isnear( &sd ) ){
+		clif_skill_fail( sd, MC_VENDING, USESKILL_FAIL_THERE_ARE_NPC_AROUND );
+		return;
+	}
+
+	std::vector<t_itemid> list = vending_currency_list();
+
+	if( std::find( list.begin(), list.end(), nameid ) == list.end() ){
+		clif_displaymessage( sd.fd, msg_txt( &sd, 1605 ) ); // This currency cannot be used for vending.
+		clif_skill_fail( sd, MC_VENDING );
+		return;
+	}
+
+	char output[CHAT_SIZE_MAX];
+
+	sd.vend_loot = ( vending_currency_type( nameid ) == VENDCURRENCY_ZENY ) ? 0 : nameid;
+	safesnprintf( output, sizeof( output ), msg_txt( &sd, 1594 ), vending_currency_name( sd.vend_loot ) ); // Shop currency selected: %s
+	clif_messagecolor( &sd, color_table[COLOR_CYAN], output, false, SELF );
+
+	vending_open_setup_ui( sd );
+}
 
 /**
  * Lookup to get the vending_db outside module
@@ -67,6 +304,7 @@ void vending_closevending(map_session_data* sd)
 
 		sd->state.vending = false;
 		sd->vender_id = 0;
+		sd->vend_loot = 0; // Extended Vending
 		clif_closevendingboard( *sd, AREA_WOS, nullptr );
 		idb_remove(vending_db, sd->status.char_id);
 	}
@@ -90,6 +328,17 @@ void vending_vendinglistreq(map_session_data* sd, int32 id)
 	if (!pc_can_give_items(sd) || !pc_can_give_items(vsd)) { //check if both GMs are allowed to trade
 		clif_displaymessage( sd->fd, msg_txt( sd, 246 ) ); // Your GM level doesn't authorize you to perform this action.
 		return;
+	}
+
+	// Extended Vending: tell the buyer what this shop sells for
+	if( vsd->vend_loot != 0 ){
+		char output[CHAT_SIZE_MAX];
+
+		safesnprintf( output, sizeof( output ), msg_txt( sd, 1595 ), vsd->status.name, vending_currency_name( vsd->vend_loot ) ); // %s's shop sells for: %s
+		if( battle_config.show_broadcast_info )
+			clif_broadcast( sd, output, strlen( output ) + 1, BC_BLUE, SELF );
+		else
+			clif_messagecolor( sd, color_table[COLOR_CYAN], output, false, SELF );
 	}
 
 	sd->vended_id = vsd->vender_id;  // register vending uid
@@ -149,6 +398,16 @@ void vending_purchasereq(map_session_data* sd, int32 aid, int32 uid, const uint8
 	// duplicate item in vending to check hacker with multiple packets
 	memcpy(&vending, &vsd->vending, sizeof(vsd->vending)); // copy vending list
 
+	// Extended Vending: what this shop sells for
+	const t_itemid currency = vsd->vend_loot;
+	const e_vending_currency_type currency_type = vending_currency_type( currency );
+	char output[CHAT_SIZE_MAX];
+
+	if( currency != 0 && !vending_currency_allowed( currency ) ){
+		clif_displaymessage( sd->fd, msg_txt( sd, 1605 ) ); // This currency cannot be used for vending.
+		return;
+	}
+
 	// some checks
 	z = 0.; // zeny counter
 	w = 0;  // weight counter
@@ -171,14 +430,49 @@ void vending_purchasereq(map_session_data* sd, int32 aid, int32 uid, const uint8
 			vend_list[i] = j;
 
 		z += ((double)vsd->vending[j].value * (double)amount);
-		if( z > (double)sd->status.zeny || z < 0. || z > (double)MAX_ZENY ) {
-			clif_buyvending( *sd, idx, amount, PURCHASEMC_NO_ZENY ); // you don't have enough zeny
+		if( z < 0. || z > (double)MAX_ZENY ) {
+			clif_buyvending( *sd, idx, amount, PURCHASEMC_NO_ZENY ); // total price out of range
 			return;
 		}
-		if( z + (double)vsd->status.zeny > (double)MAX_ZENY ) {
-			clif_buyvending( *sd, idx, vsd->vending[j].amount, PURCHASEMC_OUT_OF_STOCK ); // too much zeny = overflow
-			return;
 
+		switch( currency_type ){
+			case VENDCURRENCY_ZENY:
+				if( z > (double)sd->status.zeny ) {
+					clif_buyvending( *sd, idx, amount, PURCHASEMC_NO_ZENY ); // you don't have enough zeny
+					return;
+				}
+				if( z + (double)vsd->status.zeny > (double)MAX_ZENY ) {
+					clif_buyvending( *sd, idx, vsd->vending[j].amount, PURCHASEMC_OUT_OF_STOCK ); // too much zeny = overflow
+					return;
+				}
+				break;
+
+			case VENDCURRENCY_CASH:
+				if( z > (double)sd->cashPoints ) {
+					clif_displaymessage( sd->fd, msg_txt( sd, 1590 ) ); // You do not have enough Cash Points.
+					return;
+				}
+				if( z + (double)vsd->cashPoints > (double)MAX_CASHPOINT ) {
+					clif_displaymessage( sd->fd, msg_txt( sd, 1603 ) ); // The seller cannot hold any more Cash Points.
+					return;
+				}
+				break;
+
+			case VENDCURRENCY_ITEM:
+				if( z > (double)MAX_AMOUNT ) {
+					safesnprintf( output, sizeof( output ), msg_txt( sd, 1593 ), vending_currency_name( currency ) ); // The seller cannot receive that many %s.
+					clif_displaymessage( sd->fd, output );
+					return;
+				}
+				if( z > (double)vending_currency_item_count( *sd, currency, battle_config.ex_buying_bound != 0 ) ) {
+					if( !battle_config.ex_buying_bound && z <= (double)vending_currency_item_count( *sd, currency, true ) )
+						safesnprintf( output, sizeof( output ), msg_txt( sd, 1604 ), vending_currency_name( currency ) ); // Bound %s cannot be used for payment.
+					else
+						safesnprintf( output, sizeof( output ), msg_txt( sd, 1591 ), vending_currency_name( currency ) ); // You do not have enough %s.
+					clif_displaymessage( sd->fd, output );
+					return;
+				}
+				break;
 		}
 		w += itemdb_weight(vsd->cart.u.items_cart[idx].nameid) * amount;
 		if( w + sd->weight > sd->max_weight ) {
@@ -213,10 +507,63 @@ void vending_purchasereq(map_session_data* sd, int32 aid, int32 uid, const uint8
 		}
 	}
 
-	pc_payzeny(sd, (int32)z, LOG_TYPE_VENDING, vsd->status.char_id);
-	achievement_update_objective(sd, AG_SPEND_ZENY, 1, (int32)z);
-	z = vending_calc_tax(sd, z);
-	pc_getzeny(vsd, (int32)z, LOG_TYPE_VENDING, sd->status.char_id);
+	const int32 total_price = (int32)z;
+
+	switch( currency_type ){
+		case VENDCURRENCY_ZENY:
+			pc_payzeny(sd, (int32)z, LOG_TYPE_VENDING, vsd->status.char_id);
+			achievement_update_objective(sd, AG_SPEND_ZENY, 1, (int32)z);
+			z = vending_calc_tax(sd, z);
+			pc_getzeny(vsd, (int32)z, LOG_TYPE_VENDING, sd->status.char_id);
+			break;
+
+		case VENDCURRENCY_CASH:
+			if( pc_paycash( sd, total_price, 0, LOG_TYPE_VENDING ) < 0 ) {
+				clif_displaymessage( sd->fd, msg_txt( sd, 1590 ) ); // You do not have enough Cash Points.
+				return;
+			}
+			pc_getcash( vsd, total_price, 0, LOG_TYPE_VENDING );
+			break;
+
+		case VENDCURRENCY_ITEM: {
+			// The seller must be able to receive the whole payment
+			switch( pc_checkadditem( vsd, currency, total_price ) ) {
+				case CHKADDITEM_OVERAMOUNT:
+					safesnprintf( output, sizeof( output ), msg_txt( sd, 1593 ), vending_currency_name( currency ) ); // The seller cannot receive that many %s.
+					clif_displaymessage( sd->fd, output );
+					return;
+				case CHKADDITEM_NEW:
+					if( pc_inventoryblank( vsd ) <= 0 ) {
+						safesnprintf( output, sizeof( output ), msg_txt( sd, 1592 ), vending_currency_name( currency ) ); // The seller has no free inventory space to receive %s.
+						clif_displaymessage( sd->fd, output );
+						return;
+					}
+					break;
+			}
+			if( (int64)itemdb_weight( currency ) * total_price + vsd->weight > vsd->max_weight ) {
+				safesnprintf( output, sizeof( output ), msg_txt( sd, 1593 ), vending_currency_name( currency ) ); // The seller cannot receive that many %s.
+				clif_displaymessage( sd->fd, output );
+				return;
+			}
+
+			struct item payment = {};
+
+			payment.nameid = currency;
+			payment.identify = 1;
+
+			// Give to the seller first: if it fails nothing has been taken from the buyer yet
+			if( pc_additem( vsd, &payment, total_price, LOG_TYPE_VENDING ) != ADDITEM_SUCCESS ) {
+				safesnprintf( output, sizeof( output ), msg_txt( sd, 1593 ), vending_currency_name( currency ) ); // The seller cannot receive that many %s.
+				clif_displaymessage( sd->fd, output );
+				return;
+			}
+			vending_currency_item_delete( *sd, currency, total_price );
+			} break;
+	}
+
+	std::string report; // Extended Vending: RODEX sale report
+	int32 report_lines = 0;
+	int64 report_revenue = 0;
 
 	for( i = 0; i < count; i++ ) {
 		int16 amount = *(uint16*)(data + 4*i + 0);
@@ -239,16 +586,67 @@ void vending_purchasereq(map_session_data* sd, int32 aid, int32 uid, const uint8
 			}
 		}
 
+		// Save the sold item's ID before it may be removed from the cart
+		t_itemid sold_nameid = vsd->cart.u.items_cart[idx].nameid;
+
 		pc_cart_delitem(vsd, idx, amount, 0, LOG_TYPE_VENDING);
-		z = vending_calc_tax(sd, z);
-		clif_vendingreport( *vsd, idx, amount, sd->status.char_id, (int32)z );
+
+		// Tax only applies to Zeny
+		if( currency_type == VENDCURRENCY_ZENY )
+			z = vending_calc_tax(sd, z);
+		clif_vendingreport( *vsd, idx, amount, sd->status.char_id, currency_type == VENDCURRENCY_ZENY ? (int32)z : 0 );
 
 		//print buyer's name
 		if( battle_config.buyer_name ) {
 			char temp[256];
-			sprintf(temp, msg_txt(sd,265), sd->status.name);
+
+			if( battle_config.ex_vending_info ) // %s bought '%s' x %d. Revenue: %s %s
+				safesnprintf( temp, sizeof( temp ), msg_txt( vsd, 1597 ), sd->status.name, itemdb_ename( sold_nameid ), amount, vending_format_number( (int64)z ).c_str(), vending_currency_name( currency ) );
+			else
+				safesnprintf( temp, sizeof( temp ), msg_txt( vsd, 265 ), sd->status.name );
 			clif_messagecolor(vsd, color_table[COLOR_LIGHT_GREEN], temp, false, SELF);
 		}
+
+		// Extended Vending: collect the RODEX report
+		if( report_lines < 5 ) {
+			char line[128];
+
+			safesnprintf( line, sizeof( line ), msg_txt( vsd, 1600 ), itemdb_ename( sold_nameid ), amount ); //  - %s x %d
+			report += line;
+			report += "\r\n";
+		} else if( report_lines == 5 ) {
+			report += msg_txt( vsd, 1601 ); //  ...and more
+			report += "\r\n";
+		}
+		report_lines++;
+		report_revenue += (int64)z;
+	}
+
+	// Extended Vending: total revenue of this purchase
+	if( battle_config.ex_vending_info && count > 1 ) {
+		safesnprintf( output, sizeof( output ), msg_txt( vsd, 1598 ), sd->status.name, vending_format_number( report_revenue ).c_str(), vending_currency_name( currency ) ); // Total revenue from %s: %s %s
+		clif_messagecolor( vsd, color_table[COLOR_LIGHT_GREEN], output, false, SELF );
+	}
+
+	// Extended Vending: RODEX sale report to the seller
+	if( battle_config.ex_vending_report && pc_readglobalreg( vsd, add_str( "NOVREPORT" ) ) == 0 ) {
+		struct mail_message msg = {};
+		char header[128], footer[128];
+
+		safesnprintf( header, sizeof( header ), msg_txt( vsd, 1599 ), sd->status.name ); // [%s] bought from your shop:
+		safesnprintf( footer, sizeof( footer ), msg_txt( vsd, 1602 ), vending_format_number( report_revenue ).c_str(), vending_currency_name( currency ) ); // Total revenue: %s %s
+
+		std::string body = std::string( header ) + "\r\n" + report + "\r\n" + footer;
+
+		msg.dest_id = vsd->status.char_id;
+		safestrncpy( msg.dest_name, vsd->status.name, NAME_LENGTH );
+		safestrncpy( msg.send_name, msg_txt( vsd, 1606 ), NAME_LENGTH ); // Vending
+		safestrncpy( msg.title, msg_txt( vsd, 1607 ), MAIL_TITLE_LENGTH ); // Vending Report
+		safestrncpy( msg.body, body.c_str(), MAIL_BODY_LENGTH );
+		msg.status = MAIL_NEW;
+		msg.type = MAIL_INBOX_NORMAL;
+		msg.timestamp = time( nullptr );
+		intif_Mail_send( 0, &msg );
 	}
 
 	// compact the vending list
@@ -325,6 +723,16 @@ int8 vending_openvending( map_session_data& sd, const char* message, const uint8
 		return 3;
 	}
 
+	// Extended Vending: the shop currency must still be valid
+	if( !vending_currency_allowed( sd.vend_loot ) ) {
+		clif_displaymessage( sd.fd, msg_txt( &sd, 1605 ) ); // This currency cannot be used for vending.
+		clif_skill_fail( sd, MC_VENDING );
+		sd.state.prevend = 0;
+		sd.state.workinprogress = WIP_DISABLE_NONE;
+		clif_openvending_ack( sd, OPENSTORE2_FAILED );
+		return 6;
+	}
+
 	if (save_settings&CHARSAVE_VENDING) // Avoid invalid data from saving
 		chrif_save(&sd, CSAVE_INVENTORY|CSAVE_CART);
 
@@ -345,6 +753,7 @@ int8 vending_openvending( map_session_data& sd, const char* message, const uint8
 		||  sd.cart.u.items_cart[index].attribute == 1 // broken item
 		||  sd.cart.u.items_cart[index].expire_time // It should not be in the cart but just in case
 		||  (sd.cart.u.items_cart[index].bound && !pc_can_give_bounded_items(&sd)) // can't trade account bound items and has no permission
+		||  (sd.vend_loot != 0 && sd.cart.u.items_cart[index].nameid == sd.vend_loot) // Extended Vending: can't sell the shop currency itself
 		||  !itemdb_cantrade(&sd.cart.u.items_cart[index], pc_get_group_level(&sd), pc_get_group_level(&sd)) ) // untradeable item
 			continue;
 
@@ -356,7 +765,8 @@ int8 vending_openvending( map_session_data& sd, const char* message, const uint8
 	}
 
 	// check if the total value of the items plus the current zeny is over the limit
-	if ( !battle_config.vending_over_max && (static_cast<int64>(sd.status.zeny) + total) > MAX_ZENY ) {
+	// (Extended Vending: only relevant for Zeny shops)
+	if ( vending_currency_type( sd.vend_loot ) == VENDCURRENCY_ZENY && !battle_config.vending_over_max && (static_cast<int64>(sd.status.zeny) + total) > MAX_ZENY ) {
 #if PACKETVER >= 20200819
 		clif_msg_color( sd, MSI_MERCHANTSHOP_TOTA_LOVER_ZENY_ERR, color_table[COLOR_RED] );
 #endif
@@ -393,9 +803,9 @@ int8 vending_openvending( map_session_data& sd, const char* message, const uint8
 	
 	Sql_EscapeString( mmysql_handle, message_sql, sd.message );
 
-	if( Sql_Query( mmysql_handle, "INSERT INTO `%s`(`id`, `account_id`, `char_id`, `sex`, `map`, `x`, `y`, `title`, `autotrade`, `body_direction`, `head_direction`, `sit`) "
-		"VALUES( %d, %d, %d, '%c', '%s', %d, %d, '%s', %d, '%d', '%d', '%d' );",
-		vendings_table, sd.vender_id, sd.status.account_id, sd.status.char_id, sd.status.sex == SEX_FEMALE ? 'F' : 'M', map_getmapdata(sd.m)->name, sd.x, sd.y, message_sql, sd.state.autotrade, at ? at->dir : sd.ud.dir, at ? at->head_dir : sd.head_dir, at ? at->sit : pc_issit(&sd) ) != SQL_SUCCESS ) {
+	if( Sql_Query( mmysql_handle, "INSERT INTO `%s`(`id`, `account_id`, `char_id`, `sex`, `map`, `x`, `y`, `title`, `autotrade`, `body_direction`, `head_direction`, `sit`, `extended_vending_item`) "
+		"VALUES( %d, %d, %d, '%c', '%s', %d, %d, '%s', %d, '%d', '%d', '%d', %u );",
+		vendings_table, sd.vender_id, sd.status.account_id, sd.status.char_id, sd.status.sex == SEX_FEMALE ? 'F' : 'M', map_getmapdata(sd.m)->name, sd.x, sd.y, message_sql, sd.state.autotrade, at ? at->dir : sd.ud.dir, at ? at->head_dir : sd.head_dir, at ? at->sit : pc_issit(&sd), sd.vend_loot ) != SQL_SUCCESS ) {
 		Sql_ShowDebug(mmysql_handle);
 	}
 
@@ -552,6 +962,7 @@ void vending_reopen( map_session_data& sd )
 
 		sd.state.prevend = 1; // Set him into a hacked prevend state
 		sd.state.autotrade = 1;
+		sd.vend_loot = at->vend_loot; // Extended Vending: restore the shop currency
 
 		// Make sure abort all NPCs
 		npc_event_dequeue(&sd);
@@ -596,7 +1007,7 @@ void do_init_vending_autotrade(void)
 {
 	if (battle_config.feature_autotrade) {
 		if (Sql_Query(mmysql_handle,
-			"SELECT `id`, `account_id`, `char_id`, `sex`, `title`, `body_direction`, `head_direction`, `sit` "
+			"SELECT `id`, `account_id`, `char_id`, `sex`, `title`, `body_direction`, `head_direction`, `sit`, `extended_vending_item` "
 			"FROM `%s` "
 			"WHERE `autotrade` = 1 AND (SELECT COUNT(`vending_id`) FROM `%s` WHERE `vending_id` = `id`) > 0 "
 			"ORDER BY `id`;",
@@ -626,7 +1037,16 @@ void do_init_vending_autotrade(void)
 				Sql_GetData(mmysql_handle, 5, &data, nullptr); at->dir = atoi(data);
 				Sql_GetData(mmysql_handle, 6, &data, nullptr); at->head_dir = atoi(data);
 				Sql_GetData(mmysql_handle, 7, &data, nullptr); at->sit = atoi(data);
+				Sql_GetData(mmysql_handle, 8, &data, nullptr); at->vend_loot = static_cast<t_itemid>( strtoul( data, nullptr, 10 ) );
 				at->count = 0;
+
+				// Extended Vending: never reopen a Cash/item shop as a Zeny shop (prices would be wrong).
+				// If its currency is no longer allowed, skip it; the items stay in the cart.
+				if( !vending_currency_allowed( at->vend_loot ) ){
+					ShowWarning( "do_init_vending_autotrade: Skipping autotrader (CID=%d/AID=%d), its shop currency %u is not allowed anymore.\n", at->char_id, at->account_id, at->vend_loot );
+					aFree( at );
+					continue;
+				}
 
 				if (battle_config.feature_autotrade_direction >= 0)
 					at->dir = battle_config.feature_autotrade_direction;
