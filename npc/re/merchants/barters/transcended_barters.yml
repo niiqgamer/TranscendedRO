@@ -7893,6 +7893,19 @@ Body:
             Amount: 4
           - Index: 5
             Item: Temporal_Ring_TW
+      - Index: 5
+        Item: Taming_Earring_US
+        Zeny: 5000000
+        RequiredItems:
+          - Index: 0
+            Item: Instance_Emblem
+            Amount: 50
+          - Index: 1
+            Item: Angel_Poring_Earing
+            Amount: 1
+          - Index: 2
+            Item: Shadowdecon
+            Amount: 10
   - Name: Cards
     Items:
       - Index: 0
