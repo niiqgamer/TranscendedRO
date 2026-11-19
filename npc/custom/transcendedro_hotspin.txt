@@ -679,6 +679,7 @@ OnInit:
 	5498,					// Wondering_Wolf_Helm
 	450368,					// Howling_Tiger_Pajama
 	19444,					// Star_Eyepatch_JP_
+	28592,					// Angel_Poring_Earing
 	28502;					// Mob_Scarf
 
 	setarray $hotspin_trash1,
