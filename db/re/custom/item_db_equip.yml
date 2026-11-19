@@ -8992,6 +8992,7 @@ Body:
          skill "AM_CALLHOMUN",1;
          skill "AM_RESURRECTHOMUN",5;
          skill "ALL_BUYING_STORE",2;
+         skill "MC_VENDING",10;
          bonus2 bSkillCooldown,"WL_COMET",-20000;
          bonus2 bSkillCooldown,"SH_KI_SUL_WATER_SPRAYING",-3000;
          bonus bFixedCast,-5000;
