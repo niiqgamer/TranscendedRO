@@ -606,6 +606,20 @@ OnInit:
 	410742,					// Good_Evil_Follower_US
 	540149,					// Purified_Grimoire_US
 	480663,					// Fallen_Valkyrie_US
+	700144,					// Vayu_Follower_US
+	450601,					// Stormy_December_US
+	401544,					// Blighted_Skullcap_US
+	491087,					// Mintaka_Necklace_US
+	480869,					// Battle_Aura_Manteau_UPD
+	480737,					// Mecha_Engine_Wing
+	460175,					// Robot_Shield_TH
+	460171,					// Soul_Shield_TH
+	460167,					// GEMS_DarkBlood_UPD
+	460166,					// Star_Dust_Shield_TH
+	460143,					// Valkyrie_Guard_TH
+	460142,					// Punish_Shield_TH
+	450537,					// Dungeon_Metal_Armor
+	410657,					// Eye_of_Necro_TH
 	27421,					// Shard_Jewelry_Str
 	27422,					// Shard_Jewelry_Agi
 	27423,					// Shard_Jewelry_Dex
