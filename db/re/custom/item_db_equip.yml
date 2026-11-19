@@ -9670,3 +9670,608 @@ Body:
          bonus2 bAddSize,Size_All,40;
          bonus2 bMagicAddSize,Size_All,40;
       }
+  - Id: 700144
+    AegisName: Vayu_Follower_US
+    Name: Vayu Follower Bow
+    Type: Weapon
+    SubType: Bow
+    Weight: 1500
+    Attack: 350
+    MagicAttack: 350
+    Range: 5
+    Slots: 4
+    Jobs:
+      Archer: true
+      BardDancer: true
+      Hunter: true
+    Locations:
+      Both_Hand: true
+    WeaponLevel: 5
+    EquipLevelMin: 100
+    Refineable: true
+    Gradable: true
+    Script: |
+      .@r = getrefine();
+      .@g = getenchantgrade();
+      bonus bUnbreakableWeapon;
+      bonus2 bSkillAtk,"WH_CRESCIVE_BOLT",40+12*.@r;
+      bonus2 bSkillAtk,"WH_GALESTORM",40+12*.@r;
+      bonus4 bAutoSpellOnSkill,"WH_CRESCIVE_BOLT","WH_GALESTORM",10,300;
+      bonus bCon,5*(.@r/2);
+      bonus2 bAddSize,Size_All,20*(.@r/2);
+      if (.@r >= 10) {
+         bonus bLongAtkRate,30;
+      }
+      if (.@r >= 11) {
+         bonus bAllStats,25;
+         bonus bBaseAtk,250;
+         bonus bMaxHPrate,25;
+      }
+      if (.@r >= 12) {
+         bonus bAllTraitStats,15;
+         bonus bLongAtkRate,50;
+      }
+      if (.@r >= 13) {
+         bonus2 bSkillAtk,"WH_CRESCIVE_BOLT",70;
+         bonus2 bSkillCooldown,"WH_CRESCIVE_BOLT",-350;
+      }
+      if (.@r >= 14) {
+         bonus2 bSkillAtk,"WH_GALESTORM",70;
+         bonus2 bSkillCooldown,"WH_GALESTORM",-1200;
+      }
+      if (.@r >= 15) {
+         bonus2 bAddClass,Class_All,40;
+         bonus bDelayRate,-20;
+      }
+      if (.@g >= ENCHANTGRADE_D) {
+         bonus bSpeedRate,25;
+      }
+      if (.@g >= ENCHANTGRADE_C) {
+         bonus bPAtk,30;
+      }
+      if (.@g >= ENCHANTGRADE_B) {
+         bonus bCRate,30;
+      }
+      if (.@g >= ENCHANTGRADE_A) {
+         bonus bLongAtkRate,60;
+      }
+  - Id: 450601
+    AegisName: Stormy_December_US
+    Name: Stormy December
+    Type: Armor
+    Weight: 1000
+    Defense: 100
+    Slots: 1
+    Locations:
+      Armor: true
+    ArmorLevel: 2
+    EquipLevelMin: 100
+    Refineable: true
+    Gradable: true
+    Script: |
+      .@r = getrefine();
+      .@g = getenchantgrade();
+      bonus bDefEle,Ele_Water;
+      bonus bUnbreakableArmor;
+      bonus bMdef,20;
+      bonus bMaxHP,20000;
+      bonus bAllStats,20;
+      bonus2 bMagicAtkEle,Ele_Water,20;
+      bonus2 bSkillAtk,"SS_REIKETSUHOU",10*.@r;
+      bonus2 bSkillAtk,"EM_DIAMOND_STORM",10*.@r;
+      bonus bSpl,3*(.@r/2);
+      bonus2 bSkillAtk,"HN_JACK_FROST_NOVA",20*(.@r/2);
+      if (.@r >= 11) {
+         bonus2 bMagicAtkEle,Ele_Water,30;
+      }
+      if (.@r >= 12) {
+         bonus2 bSkillCooldown,"SS_REIKETSUHOU",-500;
+         bonus4 bAutoSpellOnSkill,"SS_REIKETSUHOU","EM_DIAMOND_STORM",5,200;
+      }
+      if (.@r >= 13) {
+         bonus2 bSkillCooldown,"EM_DIAMOND_STORM",-1000;
+         bonus4 bAutoSpellOnSkill,"EM_DIAMOND_STORM","HN_JACK_FROST_NOVA",10,200;
+      }
+      if (.@r >= 14) {
+         bonus2 bSkillCooldown,"HN_JACK_FROST_NOVA",-3000;
+         bonus4 bAutoSpellOnSkill,"HN_JACK_FROST_NOVA","SS_REIKETSUHOU",10,200;
+      }
+      if (.@r >= 15) {
+         bonus2 bMagicAtkEle,Ele_Water,50;
+      }
+      if (.@g >= ENCHANTGRADE_D) {
+         bonus bDelayRate,-20;
+      }
+      if (.@g >= ENCHANTGRADE_C) {
+         bonus2 bMagicAtkEle,Ele_Water,20;
+      }
+      if (.@g >= ENCHANTGRADE_B) {
+         bonus bMatk,200;
+      }
+      if (.@g >= ENCHANTGRADE_A) {
+         bonus bSMatk,20;
+      }
+  - Id: 401544
+    AegisName: Blighted_Skullcap_US
+    Name: Blighted Skullcap
+    Type: Armor
+    Weight: 1000
+    Defense: 100
+    Slots: 1
+    Locations:
+      Head_Top: true
+    View: 713
+    ArmorLevel: 2
+    EquipLevelMin: 100
+    Refineable: true
+    Gradable: true
+    Script: |
+      .@r = getrefine();
+      .@g = getenchantgrade();
+      bonus bUnbreakableHelm;
+      bonus bMdef,10;
+      bonus2 bMagicAddEle,Ele_All,30;
+      bonus2 bSkillAtk,"EM_VENOM_SWAMP",12*.@r;
+      bonus2 bSkillAtk,"AG_DEADLY_PROJECTION",12*.@r;
+      bonus bAllStats,10*(.@r/3);
+      if (.@r >= 10) {
+         bonus2 bMagicAddEle,Ele_All,30;
+      }
+      if (.@r >= 11) {
+         bonus bSpl,30;
+         bonus2 bSkillCooldown,"EM_SUMMON_ELEMENTAL_SERPENS",-300000;
+         bonus bFixedCast,-500;
+      }
+      if (.@r >= 12) {
+         bonus bMatk,100;
+         bonus bAllTraitStats,10;
+         bonus2 bSkillCooldown,"EM_VENOM_SWAMP",-2000;
+         bonus3 bAutoSpell,"EM_VENOM_SWAMP",5,100;
+      }
+      if (.@r >= 13) {
+         bonus bMatk,100;
+         bonus bAllTraitStats,10;
+         bonus2 bSkillCooldown,"AG_DEADLY_PROJECTION",-2000;
+         bonus3 bAutoSpell,"AG_DEADLY_PROJECTION",5,100;
+         bonus4 bAutoSpellOnSkill,"AG_DEADLY_PROJECTION","AG_DEADLY_PROJECTION",5,300;
+      }
+      if (.@r >= 15) {
+         bonus2 bMagicAddClass,Class_All,40;
+         bonus bDelayRate,-25;
+         bonus bFixedCast,-500;
+      }
+      if (.@g >= ENCHANTGRADE_D) {
+         bonus2 bMagicAtkEle,Ele_Poison,20;
+         bonus2 bMagicAtkEle,Ele_Dark,20;
+      }
+      if (.@g >= ENCHANTGRADE_C) {
+         bonus bDelayRate,-20;
+      }
+      if (.@g >= ENCHANTGRADE_B) {
+         bonus2 bMagicAddRace,RC_All,20;
+      }
+      if (.@g >= ENCHANTGRADE_A) {
+         bonus2 bSkillAtk,"EM_VENOM_SWAMP",50;
+         bonus2 bSkillAtk,"AG_DEADLY_PROJECTION",50;
+      }
+  - Id: 491087
+    AegisName: Mintaka_Necklace_US
+    Name: Necklace of Mintaka
+    Type: Armor
+    Weight: 200
+    Defense: 200
+    Slots: 1
+    Locations:
+      Right_Accessory: true
+    ArmorLevel: 2
+    EquipLevelMin: 1
+    Refineable: true
+    Gradable: true
+    Script: |
+      bonus bMdef,40;
+      bonus bAllTraitStats,25;
+      bonus bDelayRate,-30;
+      bonus2 bAddSize,Size_All,40;
+      bonus2 bMagicAddSize,Size_All,40;
+      if (vip_status(VIP_STATUS_ACTIVE)) {
+         bonus bPAtk,20;
+         bonus bSMatk,20;
+         bonus2 bDropAddRace,RC_All,35;
+         bonus2 bExpAddRace,RC_All,35;
+      }
+  - Id: 480869
+    AegisName: Battle_Aura_Manteau_UPD
+    Name: Enhanced Battle Aura Manteau
+    Type: Armor
+    Weight: 100
+    Defense: 20
+    Slots: 1
+    Locations:
+      Garment: true
+    ArmorLevel: 2
+    EquipLevelMin: 190
+    Refineable: true
+    Gradable: true
+    Script: |
+      .@r = getrefine();
+      .@g = getenchantgrade();
+      bonus bNoKnockback;
+      skill "MO_CALLSPIRITS",5;
+      bonus bBaseAtk,8*(.@r/2);
+      bonus bPow,.@r/2;
+      bonus bCon,.@r/2;
+      bonus bShortAtkRate,6*(.@r/3);
+      bonus bLongAtkRate,6*(.@r/3);
+      if (.@r >= 7) {
+         bonus bAtkRate,10;
+         bonus bAspdRate,10;
+      }
+      if (.@r >= 9) {
+         bonus2 bAddEle,Ele_All,10;
+      }
+      if (.@r >= 11) {
+         bonus bPerfectHitAddRate,20;
+      }
+      if (.@r >= 13) {
+         bonus bShortAtkRate,8;
+         bonus bLongAtkRate,8;
+      }
+      if (.@g >= ENCHANTGRADE_D) {
+         bonus bBaseAtk,80;
+      }
+      if (.@g >= ENCHANTGRADE_C) {
+         bonus bPerfectHitAddRate,10;
+      }
+      if (.@g >= ENCHANTGRADE_B) {
+         bonus2 bAddSize,Size_All,8;
+      }
+      if (.@g >= ENCHANTGRADE_A) {
+         bonus bDelayRate,-7;
+         if (.@r >= 13)
+            bonus2 bAddRace,RC_All,10;
+      }
+  - Id: 480737
+    AegisName: Mecha_Engine_Wing
+    Name: Mecha Engine Wing
+    Type: Armor
+    Weight: 100
+    Defense: 10
+    Slots: 1
+    Locations:
+      Garment: true
+    ArmorLevel: 2
+    EquipLevelMin: 100
+    Refineable: true
+    Gradable: true
+    Script: |
+      .@r = getrefine();
+      bonus bNoKnockback;
+      bonus bBaseAtk,10*(.@r/2);
+      bonus2 bAddSize,Size_All,4*(.@r/3);
+      if (.@r >= 7) {
+         bonus bPerfectHitAddRate,8;
+      }
+      if (.@r >= 9) {
+         bonus2 bAddEle,Ele_All,10;
+      }
+      if (.@r >= 11) {
+         bonus bPerfectHitAddRate,15;
+      }
+      if (BaseJob == Job_Mechanic) {
+         bonus bShortAtkRate,15;
+         bonus bLongAtkRate,15;
+         bonus2 bAddSize,Size_All,15;
+      }
+  - Id: 460175
+    AegisName: Robot_Shield_TH
+    Name: Robot Spark Shield
+    Type: Armor
+    Weight: 500
+    Defense: 50
+    Slots: 1
+    Jobs:
+      Blacksmith: true
+    Classes:
+      Fourth: true
+    Locations:
+      Left_Hand: true
+    ArmorLevel: 2
+    EquipLevelMin: 200
+    Refineable: true
+    Gradable: true
+    Script: |
+      .@r = getrefine();
+      .@g = getenchantgrade();
+      bonus bRes,15;
+      bonus bMRes,15;
+      bonus2 bSubClass,Class_All,15;
+      if (.@r >= 7) {
+         bonus bAspd,2;
+         bonus bMaxHPrate,10;
+      }
+      if (.@r >= 9) {
+         bonus2 bSkillCooldown,"MT_SPARK_BLASTER",-100;
+      }
+      if (.@r >= 11) {
+         bonus bDelayRate,-10;
+         bonus bLongAtkRate,20;
+      }
+      if (.@r >= 12) {
+         bonus2 bSkillAtk,"MT_SPARK_BLASTER",20;
+      }
+      if (.@g >= ENCHANTGRADE_D) {
+         bonus bMaxHPrate,20;
+      }
+      if (.@g >= ENCHANTGRADE_C) {
+         bonus2 bAddSize,Size_All,10;
+         bonus bPAtk,4;
+      }
+      if (.@g >= ENCHANTGRADE_B) {
+         bonus bMaxHP,5000;
+         bonus bPAtk,6;
+      }
+      if (.@g >= ENCHANTGRADE_A) {
+         bonus2 bAddSize,Size_All,20;
+      }
+  - Id: 460171
+    AegisName: Soul_Shield_TH
+    Name: Soul Demon Shield
+    Type: Armor
+    Weight: 100
+    Defense: 20
+    Slots: 1
+    Jobs:
+      SoulLinker: true
+    Classes:
+      Fourth: true
+    Locations:
+      Left_Hand: true
+    ArmorLevel: 2
+    EquipLevelMin: 200
+    Refineable: true
+    Gradable: true
+    Script: |
+      .@r = getrefine();
+      bonus bUnbreakableShield;
+      bonus bAspdRate,10;
+      bonus bMaxHP,100*.@r;
+      bonus2 bMagicAtkEle,Ele_All,4*(.@r/3);
+      if (.@r >= 7) {
+         bonus bAspd,2;
+      }
+      if (.@r >= 9) {
+         bonus2 bSkillCooldown,"SOA_EXORCISM_OF_MALICIOUS_SOUL",-300;
+      }
+      if (.@r >= 11) {
+         autobonus "{ bonus bInt,150; bonus2 bHPLossRate,100,1000; bonus2 bSPLossRate,100,1000; }",40,10000,BF_MAGIC;
+      }
+      if (.@r >= 12) {
+         bonus2 bSkillAtk,"SOA_EXORCISM_OF_MALICIOUS_SOUL",15;
+      }
+  - Id: 460167
+    AegisName: GEMS_DarkBlood_UPD
+    Name: Enhanced God-Devouring Demonic Shield
+    Type: Armor
+    Weight: 800
+    Defense: 100
+    Slots: 1
+    Locations:
+      Left_Hand: true
+    ArmorLevel: 2
+    EquipLevelMin: 100
+    Refineable: true
+    Gradable: true
+    Script: |
+      .@r = getrefine();
+      .@g = getenchantgrade();
+      bonus bMdef,10;
+      bonus bNoKnockback;
+      bonus bAspd,2;
+      bonus bAtkRate,10;
+      bonus bMatkRate,10;
+      bonus bUseSPrate,-10;
+      bonus2 bSubSize,Size_All,2*(.@r/3);
+      if (.@r >= 7) {
+         bonus bAspdRate,15;
+      }
+      if (.@r >= 9) {
+         bonus bDelayRate,-5;
+      }
+      if (.@r >= 11) {
+         bonus bShortAtkRate,8;
+         bonus bLongAtkRate,8;
+         bonus2 bMagicAtkEle,Ele_All,8;
+      }
+      if (.@g >= ENCHANTGRADE_D) {
+         bonus bDef,50;
+         bonus bMdef,10;
+      }
+      if (.@g >= ENCHANTGRADE_C) {
+         bonus bPow,2;
+         bonus bSpl,2;
+         bonus bCon,2;
+      }
+      if (.@g >= ENCHANTGRADE_B) {
+         bonus2 bAddRace,RC_All,8;
+         bonus2 bMagicAddRace,RC_All,8;
+      }
+      if (.@g >= ENCHANTGRADE_A) {
+         bonus2 bIgnoreDefRaceRate,RC_All,40;
+         bonus2 bIgnoreMdefRaceRate,RC_All,40;
+      }
+  - Id: 460166
+    AegisName: Star_Dust_Shield_TH
+    Name: Falling Star Shield
+    Type: Armor
+    Weight: 500
+    Defense: 50
+    Slots: 1
+    Jobs:
+      StarGladiator: true
+    Classes:
+      Fourth: true
+    Locations:
+      Left_Hand: true
+    ArmorLevel: 2
+    EquipLevelMin: 200
+    Refineable: true
+    Gradable: true
+    Script: |
+      .@r = getrefine();
+      .@g = getenchantgrade();
+      bonus bCritical,15;
+      bonus2 bSubClass,Class_All,15;
+      if (.@r >= 7) {
+         bonus bAspd,2;
+         bonus bMaxHPrate,10;
+      }
+      if (.@r >= 9) {
+         bonus2 bSkillCooldown,"SKE_TWINKLING_GALAXY",-800;
+         bonus2 bSkillCooldown,"SKE_STAR_CANNON",-300;
+      }
+      if (.@r >= 11) {
+         bonus bDelayRate,-10;
+         bonus bShortAtkRate,20;
+      }
+      if (.@r >= 12) {
+         bonus2 bSkillAtk,"SKE_TWINKLING_GALAXY",20;
+         bonus2 bSkillAtk,"SKE_STAR_CANNON",20;
+      }
+      if (.@g >= ENCHANTGRADE_D) {
+         bonus2 bSkillCooldown,"SKE_TWINKLING_GALAXY",-500;
+      }
+      if (.@g >= ENCHANTGRADE_C) {
+         bonus bCritical,15;
+         bonus bPAtk,4;
+      }
+      if (.@g >= ENCHANTGRADE_B) {
+         bonus bMaxHP,5000;
+         bonus bPAtk,6;
+      }
+      if (.@g >= ENCHANTGRADE_A) {
+         bonus2 bAddSize,Size_All,20;
+      }
+  - Id: 460143
+    AegisName: Valkyrie_Guard_TH
+    Name: Valkyrie Angel Guard
+    Type: Armor
+    Weight: 200
+    Defense: 25
+    Slots: 1
+    Jobs:
+      SuperNovice: true
+    Classes:
+      Fourth: true
+    Locations:
+      Left_Hand: true
+    ArmorLevel: 2
+    EquipLevelMin: 200
+    Refineable: true
+    Gradable: true
+    Script: |
+      .@r = getrefine();
+      bonus bAspdRate,10;
+      bonus bMaxHP,100*.@r;
+      bonus2 bMagicAtkEle,Ele_All,4*(.@r/3);
+      if (.@r >= 7) {
+         bonus bAspd,2;
+      }
+      if (.@r >= 9) {
+         bonus2 bSkillCooldown,"HN_JUPITEL_THUNDER_STORM",-300;
+      }
+      if (.@r >= 11) {
+         autobonus "{ bonus bInt,150; bonus2 bHPLossRate,100,1000; bonus2 bSPLossRate,100,1000; }",40,10000,BF_MAGIC;
+      }
+      if (.@r >= 12) {
+         bonus2 bSkillAtk,"HN_JUPITEL_THUNDER_STORM",15;
+      }
+  - Id: 460142
+    AegisName: Punish_Shield_TH
+    Name: Punishment Chain Shield
+    Type: Armor
+    Weight: 1600
+    Defense: 50
+    Slots: 1
+    Jobs:
+      Monk: true
+    Classes:
+      Fourth: true
+    Locations:
+      Left_Hand: true
+    ArmorLevel: 2
+    EquipLevelMin: 200
+    Refineable: true
+    Gradable: true
+    Script: |
+      .@r = getrefine();
+      bonus bCritical,5;
+      if (.@r >= 7) {
+         bonus bAspd,2;
+      }
+      if (.@r >= 9 && getskilllv("IQ_THIRD_FLAME_BOMB") == 0) {
+         bonus2 bSkillCooldown,"IQ_FIRST_BRAND",-1000;
+      }
+      if (.@r >= 11) {
+         bonus bDelayRate,-5;
+         bonus bCritAtkRate,10;
+      }
+      if (.@r >= 12) {
+         bonus2 bSkillAtk,"IQ_THIRD_PUNISH",15;
+      }
+  - Id: 450537
+    AegisName: Dungeon_Metal_Armor
+    Name: Dungeon Metal Armor
+    Type: Armor
+    Weight: 1000
+    Defense: 50
+    Slots: 1
+    Locations:
+      Armor: true
+    ArmorLevel: 1
+    EquipLevelMin: 130
+    Refineable: true
+    Script: |
+      .@r = getrefine();
+      bonus bAllStats,10;
+      bonus bPerfectHitAddRate,5;
+      bonus bCritical,5;
+      bonus bBaseAtk,20*(.@r/2);
+      bonus bPow,.@r/3;
+      bonus bCon,.@r/3;
+      bonus bCRate,.@r/3;
+      if (.@r >= 9) {
+         bonus2 bAddSize,Size_All,12;
+         bonus bCritAtkRate,25;
+      }
+      if (.@r >= 11) {
+         bonus2 bAddSize,Size_Medium,20;
+         bonus2 bAddSize,Size_Large,20;
+      }
+      if (.@r >= 13) {
+         bonus bDelayRate,-15;
+      }
+      if (BaseClass == Job_Merchant) {
+         bonus bShortAtkRate,12;
+         bonus bLongAtkRate,12;
+      }
+  - Id: 410657
+    AegisName: Eye_of_Necro_TH
+    Name: Eye of Necromancer
+    Type: Armor
+    Weight: 100
+    Slots: 1
+    Locations:
+      Head_Mid: true
+    View: 2809
+    ArmorLevel: 2
+    EquipLevelMin: 100
+    Refineable: true
+    Gradable: true
+    Script: |
+      bonus bDelayRate,-10;
+      bonus2 bAddSize,Size_All,(readparam(bStr)+readparam(bDex))/20;
+      bonus bBaseAtk,readparam(bCon);
+      if (readparam(bCon) >= 100) {
+         bonus2 bAddSize,Size_All,10;
+         bonus2 bAddEle,Ele_All,10;
+      }
