@@ -2931,6 +2931,30 @@ map_session_data* mob_data::get_mvp_player(map_session_data* first_sd) {
  * Signals death of mob.
  * type&1 -> no drops, type&2 -> no exp
  *------------------------------------------*/
+/**
+ * [TranscendedRO] Queue an MVP card drop for the Discord relay (tools/discord_mvp_card.php).
+ * Only writes a row to `mvp_card_announce`; the relay does the HTTP part so the map-server never waits on Discord.
+ */
+static void mob_queue_mvp_card_announce(mob_data* md, map_session_data* sd, const item_data& it, int32 drop_rate)
+{
+	std::string esc_item(it.ename.size() * 2 + 1, '\0');
+	char esc_mob[NAME_LENGTH * 2 + 1];
+	char esc_char[NAME_LENGTH * 2 + 1];
+	char esc_map[MAP_NAME_LENGTH_EXT * 2 + 1];
+	struct map_data* mapdata = map_getmapdata(md->m);
+
+	Sql_EscapeStringLen(mmysql_handle, esc_item.data(), it.ename.c_str(), it.ename.size());
+	Sql_EscapeStringLen(mmysql_handle, esc_mob, md->name, strnlen(md->name, NAME_LENGTH));
+	Sql_EscapeStringLen(mmysql_handle, esc_char, sd->status.name, strnlen(sd->status.name, NAME_LENGTH));
+	Sql_EscapeStringLen(mmysql_handle, esc_map, mapdata->name, strnlen(mapdata->name, MAP_NAME_LENGTH_EXT));
+
+	if (SQL_ERROR == Sql_Query(mmysql_handle,
+		"INSERT INTO `mvp_card_announce` (`drop_time`, `nameid`, `item_name`, `mob_id`, `mob_name`, `drop_rate`, `char_id`, `char_name`, `map`, `x`, `y`) "
+		"VALUES (NOW(), '%u', '%s', '%u', '%s', '%d', '%u', '%s', '%s', '%d', '%d')",
+		it.nameid, esc_item.c_str(), md->mob_id, esc_mob, drop_rate, sd->status.char_id, esc_char, esc_map, md->x, md->y))
+		Sql_ShowDebug(mmysql_handle);
+}
+
 int32 mob_dead(mob_data *md, block_list *src, int32 type)
 {
 	struct status_data *status;
@@ -3349,6 +3373,9 @@ int32 mob_dead(mob_data *md, block_list *src, int32 type)
 				//MSG: "'%s' won %s's %s (chance: %0.02f%%)"
 				intif_broadcast(message, strlen(message) + 1, BC_DEFAULT);
 			}
+			// [TranscendedRO] MVP card drop -> Discord queue
+			if (first_sd != nullptr && it->type == IT_CARD && md->get_bosstype() == BOSSTYPE_MVP)
+				mob_queue_mvp_card_announce(md, first_sd, *it, drop_rate);
 			// Announce first, or else ditem will be freed. [Lance]
 			// By popular demand, use base drop rate for autoloot code. [Skotlex]
 			mob_item_drop(md, dlist, ditem, 0, battle_config.autoloot_adjust ? drop_rate : entry->rate, homkillonly || merckillonly);
