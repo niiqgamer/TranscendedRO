@@ -9576,12 +9576,12 @@ Body:
       }
       if (.@r >= 11) {
          bonus2 bSkillCooldown,"CD_PETITIO",-400;
-         bonus4 bAutoSpellOnSkill,"CD_PETITIO","CD_PETITIO",10,300;
+         bonus4 bAutoSpellOnSkill,"CD_PETITIO","CD_EFFLIGO",10,300;
       }
       if (.@r >= 12) {
          bonus2 bSkillCooldown,"CD_ARBITRIUM",-1400;
          bonus4 bAutoSpellOnSkill,"CD_ARBITRIUM","CD_FRAMEN",5,200;
-         bonus4 bAutoSpellOnSkill,"CD_ARBITRIUM","CD_ARBITRIUM",10,300;
+         bonus4 bAutoSpellOnSkill,"CD_ARBITRIUM","CD_PNEUMATICUS_PROCELLA",10,100;
       }
       if (.@r >= 13) {
          bonus bAllTraitStats,15;
