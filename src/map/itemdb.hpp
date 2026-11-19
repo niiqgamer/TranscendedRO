@@ -3850,6 +3850,23 @@ public:
 
 extern ItemPackageDatabase item_package_db;
 
+/// Extended Vending: items that can be used as a vending shop currency
+struct s_item_vending_currency {
+	t_itemid nameid;
+};
+
+class ItemVendingDatabase : public TypesafeYamlDatabase<t_itemid, s_item_vending_currency> {
+public:
+	ItemVendingDatabase() : TypesafeYamlDatabase("ITEM_VENDING_DB", 1) {
+
+	}
+
+	const std::string getDefaultLocation() override;
+	uint64 parseBodyNode(const ryml::NodeRef& node) override;
+};
+
+extern ItemVendingDatabase itemdb_vending;
+
 uint16 itemdb_searchname_array(std::map<t_itemid, std::shared_ptr<item_data>> &data, uint16 size, const char *str);
 struct item_data* itemdb_search(t_itemid nameid);
 

@@ -4,6 +4,8 @@
 #ifndef	_VENDING_HPP_
 #define	_VENDING_HPP_
 
+#include <vector>
+
 #include <common/cbasetypes.hpp>
 #include <common/db.hpp>
 #include <common/mmo.hpp>
@@ -31,5 +33,12 @@ void vending_purchasereq(map_session_data* sd, int32 aid, int32 uid, const uint8
 bool vending_search( const map_session_data* sd, t_itemid nameid );
 bool vending_searchall( const map_session_data* sd, const s_search_store_search* s );
 void vending_update(map_session_data &sd);
+
+// Extended Vending system
+std::vector<t_itemid> vending_currency_list();
+bool vending_currency_allowed( t_itemid currency );
+const char* vending_currency_name( t_itemid currency );
+void vending_start_setup( map_session_data& sd, uint16 skill_lv );
+void vending_select_currency( map_session_data& sd, t_itemid nameid );
 
 #endif /* _VENDING_HPP_ */

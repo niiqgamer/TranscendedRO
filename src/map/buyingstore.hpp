@@ -51,6 +51,7 @@ struct s_autotrader {
 	char title[MESSAGE_SIZE]; ///< Store name
 	uint32 limit; ///< Maximum zeny to be spent (for buyingstore)
 	uint16 count; ///< Number of item in store
+	t_itemid vend_loot; ///< Extended Vending: currency item of the shop (0 = Zeny)
 	struct s_autotrade_entry **entries; ///< Store details
 	map_session_data *sd;
 };
