@@ -26,7 +26,9 @@
 # Items must be stackable (Etc/Usable...).
 #
 ###########################################################################
-# - Item              Item AegisName.
+# - Item              Item AegisName of the currency.
+#   DisplayItem       AegisName of an item shown in the currency selection list instead,
+#                     e.g. a dummy with a shorter name that fits the window. (Default: Item itself)
 ###########################################################################
 
 Header:
@@ -35,3 +37,4 @@ Header:
 
 Body:
   - Item: Donation_Coin
+    DisplayItem: Vending_Donation_Coin

@@ -85,6 +85,16 @@ std::vector<t_itemid> vending_currency_list(){
 	return list;
 }
 
+/// Item shown in the currency selection list for a currency (its DisplayItem, or the currency itself)
+static t_itemid vending_currency_display_item( t_itemid currency ){
+	std::shared_ptr<s_item_vending_currency> entry = itemdb_vending.find( currency );
+
+	if( entry != nullptr && entry->display_nameid != 0 && item_db.exists( entry->display_nameid ) )
+		return entry->display_nameid;
+
+	return currency;
+}
+
 /**
  * Whether a shop may sell for this currency with the current configuration.
  * @param currency: 0 for Zeny, item_cash for Cash Points or a currency item ID
@@ -208,8 +218,14 @@ void vending_start_setup( map_session_data& sd, uint16 skill_lv ){
 	sd.vend_loot = 0;
 
 	if( list.size() > 1 ){
+		// Show each currency's display item (e.g. a short-named dummy) instead of the real item
+		std::vector<t_itemid> shown;
+
+		for( const t_itemid& currency : list )
+			shown.push_back( vending_currency_display_item( currency ) );
+
 		// Nothing is locked until a currency is picked, so closing the list leaves the player free
-		clif_vending_currency_list( sd, list );
+		clif_vending_currency_list( sd, shown );
 		return;
 	}
 
@@ -253,13 +269,23 @@ void vending_select_currency( map_session_data& sd, t_itemid nameid ){
 		return;
 	}
 
+	// Map the picked (display) item back to the real currency
 	std::vector<t_itemid> list = vending_currency_list();
+	auto picked = std::find_if( list.begin(), list.end(), [nameid]( t_itemid currency ){
+		t_itemid shown = vending_currency_display_item( currency );
 
-	if( std::find( list.begin(), list.end(), nameid ) == list.end() ){
+		t_itemid view = itemdb_viewid( shown ); // the client sends back the view ID if the item has one
+
+		return nameid == shown || ( view > 0 && nameid == view );
+	} );
+
+	if( picked == list.end() ){
 		clif_displaymessage( sd.fd, msg_txt( &sd, 1605 ) ); // This currency cannot be used for vending.
 		clif_skill_fail( sd, MC_VENDING );
 		return;
 	}
+
+	nameid = *picked;
 
 	char output[CHAT_SIZE_MAX];
 

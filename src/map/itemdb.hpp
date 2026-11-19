@@ -3853,6 +3853,7 @@ extern ItemPackageDatabase item_package_db;
 /// Extended Vending: items that can be used as a vending shop currency
 struct s_item_vending_currency {
 	t_itemid nameid;
+	t_itemid display_nameid; ///< Item shown in the currency selection list instead of nameid (0 = nameid itself)
 };
 
 class ItemVendingDatabase : public TypesafeYamlDatabase<t_itemid, s_item_vending_currency> {

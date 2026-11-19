@@ -2742,14 +2742,35 @@ uint64 ItemVendingDatabase::parseBodyNode( const ryml::NodeRef& node ){
 		return 0;
 	}
 
-	if( this->exists( item->nameid ) ){
-		return 1;
+	std::shared_ptr<s_item_vending_currency> entry = this->find( item->nameid );
+	bool exists = entry != nullptr;
+
+	if( !exists ){
+		entry = std::make_shared<s_item_vending_currency>();
+		entry->nameid = item->nameid;
+		entry->display_nameid = 0;
 	}
 
-	std::shared_ptr<s_item_vending_currency> entry = std::make_shared<s_item_vending_currency>();
+	if( this->nodeExists( node, "DisplayItem" ) ){
+		std::string display_name;
 
-	entry->nameid = item->nameid;
-	this->put( item->nameid, entry );
+		if( !this->asString( node, "DisplayItem", display_name ) ){
+			return 0;
+		}
+
+		std::shared_ptr<item_data> display = item_db.search_aegisname( display_name.c_str() );
+
+		if( display == nullptr ){
+			this->invalidWarning( node["DisplayItem"], "Unknown display item %s, showing %s itself.\n", display_name.c_str(), item_name.c_str() );
+			entry->display_nameid = 0;
+		}else{
+			entry->display_nameid = display->nameid;
+		}
+	}
+
+	if( !exists ){
+		this->put( item->nameid, entry );
+	}
 
 	return 1;
 }
