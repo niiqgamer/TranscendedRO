@@ -9833,7 +9833,7 @@ Body:
          bonus bAllTraitStats,10;
          bonus2 bSkillCooldown,"AG_DEADLY_PROJECTION",-2000;
          bonus3 bAutoSpell,"AG_DEADLY_PROJECTION",5,100;
-         bonus4 bAutoSpellOnSkill,"AG_DEADLY_PROJECTION","AG_DEADLY_PROJECTION",5,300;
+         bonus4 bAutoSpellOnSkill,"AG_DEADLY_PROJECTION","AG_MYSTERY_ILLUSION",5,300;
       }
       if (.@r >= 15) {
          bonus2 bMagicAddClass,Class_All,40;
