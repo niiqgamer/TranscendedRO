@@ -606,7 +606,6 @@ OnInit:
 	410742,					// Good_Evil_Follower_US
 	540149,					// Purified_Grimoire_US
 	480663,					// Fallen_Valkyrie_US
-<<<<<<< Updated upstream
 	700144,					// Vayu_Follower_US
 	450601,					// Stormy_December_US
 	401544,					// Blighted_Skullcap_US
@@ -621,9 +620,7 @@ OnInit:
 	460142,					// Punish_Shield_TH
 	450537,					// Dungeon_Metal_Armor
 	410657,					// Eye_of_Necro_TH
-=======
 	420931,					// Gangster_Tactician_US
->>>>>>> Stashed changes
 	27421,					// Shard_Jewelry_Str
 	27422,					// Shard_Jewelry_Agi
 	27423,					// Shard_Jewelry_Dex
