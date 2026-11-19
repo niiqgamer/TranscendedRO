@@ -597,6 +597,15 @@ OnInit:
 	480969,					// Storm_Wings_TH
 	650066,					// Mugen_Shuriken_US
 	420422,					// Red_Bat_US
+	450606,					// Evil_Taegeuk_US
+	470489,					// Stray_Archer_US
+	510241,					// Jack_Ripper_US
+	570110,					// Metallic_Guitar_US
+	401610,					// Orc_Emperor_US
+	401612,					// Explosive_Hat_US
+	410742,					// Good_Evil_Follower_US
+	540149,					// Purified_Grimoire_US
+	480663,					// Fallen_Valkyrie_US
 	27421,					// Shard_Jewelry_Str
 	27422,					// Shard_Jewelry_Agi
 	27423,					// Shard_Jewelry_Dex
