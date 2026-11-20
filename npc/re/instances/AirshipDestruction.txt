@@ -1415,7 +1415,7 @@ OnStart:
 			case 5:  unitskilluseid .@gid, "NPC_PULSESTRIKE", 3; break;
 			case 6:  unitskilluseid .@gid, "NPC_SLOWCAST", 3; break;
 			// on target
-			case 7:  unitskilluseid .@gid, "NPC_FATALMENACE", 5, .@t; break;
+			case 7:  unitskilluseid .@gid, "ASC_BREAKER", 5, .@t; break;
 			case 8:  unitskilluseid .@gid, "NPC_RAYOFGENESIS", 5, .@t; break;
 			case 9:  unitskilluseid .@gid, "NPC_FIREBREATH", 5, .@t; break;
 			case 10: unitskilluseid .@gid, "NPC_ICEBREATH", 5, .@t; break;
@@ -1864,6 +1864,8 @@ OnTouchNPC:
 	// unitskilluseid 'boss_id, "WL_TETRAVORTEX_FIRE",1;	// (doesn't work) should be used to display some effect on the boss before and after teleport
 	// unitskilluseid 'boss_id, "WL_TETRAVORTEX_WIND",1;
 	// Approximate coordinates
+	// monster_noteleport mapflag blocks unitwarp on monsters too: lift it for this scripted boss teleport only
+	removemapflag 'map_whl$, MF_MONSTER_NOTELEPORT;
 	switch( rand(6) ) {
 	case 1:
 		unitwarp 0,'map_whl$,143,167;
@@ -1884,6 +1886,7 @@ OnTouchNPC:
 		unitwarp 0,'map_whl$,159,182;
 		break;
 	}
+	setmapflag 'map_whl$, MF_MONSTER_NOTELEPORT;
 	disablenpc();
 	mapannounce 'map_whl$, "Green ether charging complete. Core's defense will disappear for 5 seconds until fully stabilized. Be careful with core handling.", bc_map, 0xFFFF;
 
@@ -1995,6 +1998,8 @@ OnStop:
 
 // Mapflags (instance copies inherit these from 1@whl)
 // noteleport = no Fly Wing / Teleport, noreturn = no Butterfly Wing, nobranch = no Dead Branch / Bloody Branch
+// monster_noteleport = monsters (boss included) cannot teleport
 1@whl	mapflag	noteleport
 1@whl	mapflag	noreturn
 1@whl	mapflag	nobranch
+1@whl	mapflag	monster_noteleport
