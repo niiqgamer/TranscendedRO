@@ -378,11 +378,7 @@ Body:
       bonus bDelayRate,-15;
       .@r = getequiprefinerycnt(EQI_HAND_R);
       bonus2 bAddRace,RC_All,10*.@r;
-      bonus2 bAddRace,RC_Player_Human,10*.@r;
-      bonus2 bAddRace,RC_Player_Doram,10*.@r;
       bonus2 bMagicAddRace,RC_All,10*.@r;
-      bonus2 bMagicAddRace,RC_Player_Human,10*.@r;
-      bonus2 bMagicAddRace,RC_Player_Doram,10*.@r;
   - Combos:
       - Combo:
           - Good_Evil_Follower_US
@@ -622,3 +618,1745 @@ Body:
       bonus bCritAtkRate,30;
       bonus2 bAddClass,Class_All,18;
       bonus2 bIgnoreDefClassRate,Class_All,20;
+  - Combos:
+      - Combo:
+          - LMN_Orrivane_C_ABC
+          - ABC_Orrivane_R_TH
+    Script: |
+      .@r = getequiprefinerycnt(EQI_HEAD_TOP);
+      bonus2 bAddSize,Size_All,15;
+      bonus2 bSkillAtk,"ABC_DEFT_STAB",20;
+      bonus2 bSkillAtk,"ABC_FRENZY_SHOT",20;
+      if (.@r >= 10) {
+         bonus2 bAddEle,Ele_All,15;
+         bonus2 bSkillAtk,"ABC_DEFT_STAB",20;
+         bonus2 bSkillAtk,"ABC_FRENZY_SHOT",20;
+      }
+      if (getenchantgrade(EQI_HEAD_TOP) >= ENCHANTGRADE_C) {
+         bonus bPAtk,10;
+         bonus2 bSkillAtk,"ABC_DEFT_STAB",20;
+         bonus2 bSkillAtk,"ABC_FRENZY_SHOT",20;
+      }
+  - Combos:
+      - Combo:
+          - LMN_Orrivane_C_BO
+          - BO_Orrivane_R_TH
+    Script: |
+      .@r = getequiprefinerycnt(EQI_HEAD_TOP);
+      bonus2 bAddSize,Size_All,15;
+      bonus2 bSkillAtk,"BO_EXPLOSIVE_POWDER",20;
+      bonus2 bSkillAtk,"BO_MAYHEMIC_THORNS",20;
+      if (.@r >= 10) {
+         bonus2 bAddEle,Ele_All,15;
+         bonus2 bSkillAtk,"BO_EXPLOSIVE_POWDER",20;
+         bonus2 bSkillAtk,"BO_MAYHEMIC_THORNS",20;
+      }
+      if (getenchantgrade(EQI_HEAD_TOP) >= ENCHANTGRADE_C) {
+         bonus bPAtk,10;
+         bonus2 bSkillAtk,"BO_EXPLOSIVE_POWDER",20;
+         bonus2 bSkillAtk,"BO_MAYHEMIC_THORNS",20;
+      }
+  - Combos:
+      - Combo:
+          - LMN_Orrivane_C_CD
+          - CA_Orrivane_R_TH
+    Script: |
+      .@r = getequiprefinerycnt(EQI_HEAD_TOP);
+      bonus2 bAddSize,Size_All,15;
+      bonus2 bMagicAddSize,Size_All,15;
+      bonus2 bSkillAtk,"CD_PETITIO",20;
+      bonus2 bSkillAtk,"CD_ARBITRIUM",20;
+      bonus2 bSkillAtk,"CD_ARBITRIUM_ATK",20;
+      if (.@r >= 10) {
+         bonus2 bAddEle,Ele_All,15;
+         bonus2 bMagicAddEle,Ele_All,15;
+         bonus2 bSkillAtk,"CD_PETITIO",20;
+         bonus2 bSkillAtk,"CD_ARBITRIUM",20;
+         bonus2 bSkillAtk,"CD_ARBITRIUM_ATK",20;
+      }
+      if (getenchantgrade(EQI_HEAD_TOP) >= ENCHANTGRADE_C) {
+         bonus bPAtk,10;
+         bonus bSMatk,10;
+         bonus2 bSkillAtk,"CD_PETITIO",20;
+         bonus2 bSkillAtk,"CD_ARBITRIUM",20;
+         bonus2 bSkillAtk,"CD_ARBITRIUM_ATK",20;
+      }
+  - Combos:
+      - Combo:
+          - LMN_Orrivane_C_DK
+          - DK_Orrivane_R_TH
+    Script: |
+      .@r = getequiprefinerycnt(EQI_HEAD_TOP);
+      bonus2 bAddSize,Size_All,15;
+      bonus2 bSkillAtk,"DK_HACKANDSLASHER",20;
+      bonus2 bSkillAtk,"DK_DRAGONIC_BREATH",20;
+      if (.@r >= 10) {
+         bonus2 bAddEle,Ele_All,15;
+         bonus2 bSkillAtk,"DK_HACKANDSLASHER",20;
+         bonus2 bSkillAtk,"DK_DRAGONIC_BREATH",20;
+      }
+      if (getenchantgrade(EQI_HEAD_TOP) >= ENCHANTGRADE_C) {
+         bonus bPAtk,10;
+         bonus2 bSkillAtk,"DK_HACKANDSLASHER",20;
+         bonus2 bSkillAtk,"DK_DRAGONIC_BREATH",20;
+      }
+  - Combos:
+      - Combo:
+          - LMN_Orrivane_C_EM
+          - EM_Orrivane_R_TH
+    Script: |
+      .@r = getequiprefinerycnt(EQI_HEAD_TOP);
+      bonus2 bMagicAddSize,Size_All,15;
+      bonus2 bSkillAtk,"EM_LIGHTNING_LAND",20;
+      bonus2 bSkillAtk,"EM_VENOM_SWAMP",20;
+      if (.@r >= 10) {
+         bonus2 bMagicAddEle,Ele_All,15;
+         bonus2 bSkillAtk,"EM_LIGHTNING_LAND",20;
+         bonus2 bSkillAtk,"EM_VENOM_SWAMP",20;
+      }
+      if (getenchantgrade(EQI_HEAD_TOP) >= ENCHANTGRADE_C) {
+         bonus bSMatk,10;
+         bonus2 bSkillAtk,"EM_LIGHTNING_LAND",20;
+         bonus2 bSkillAtk,"EM_VENOM_SWAMP",20;
+      }
+  - Combos:
+      - Combo:
+          - LMN_Orrivane_C_HN
+          - HN_Orrivane_R_TH
+    Script: |
+      .@r = getequiprefinerycnt(EQI_HEAD_TOP);
+      bonus2 bAddSize,Size_All,15;
+      bonus2 bMagicAddSize,Size_All,15;
+      bonus2 bSkillAtk,"HN_MEGA_SONIC_BLOW",20;
+      bonus2 bSkillAtk,"HN_JACK_FROST_NOVA",20;
+      if (.@r >= 10) {
+         bonus2 bAddEle,Ele_All,15;
+         bonus2 bMagicAddEle,Ele_All,15;
+         bonus2 bSkillAtk,"HN_MEGA_SONIC_BLOW",20;
+         bonus2 bSkillAtk,"HN_JACK_FROST_NOVA",20;
+      }
+      if (getenchantgrade(EQI_HEAD_TOP) >= ENCHANTGRADE_C) {
+         bonus bPAtk,10;
+         bonus bSMatk,10;
+         bonus2 bSkillAtk,"HN_MEGA_SONIC_BLOW",20;
+         bonus2 bSkillAtk,"HN_JACK_FROST_NOVA",20;
+      }
+  - Combos:
+      - Combo:
+          - LMN_Orrivane_C_IG
+          - IG_Orrivane_R_TH
+    Script: |
+      .@r = getequiprefinerycnt(EQI_HEAD_TOP);
+      bonus2 bAddSize,Size_All,15;
+      bonus2 bMagicAddSize,Size_All,15;
+      bonus2 bSkillAtk,"IG_OVERSLASH",20;
+      bonus2 bSkillAtk,"IG_CROSS_RAIN",20;
+      if (.@r >= 10) {
+         bonus2 bAddEle,Ele_All,15;
+         bonus2 bMagicAddEle,Ele_All,15;
+         bonus2 bSkillAtk,"IG_OVERSLASH",20;
+         bonus2 bSkillAtk,"IG_CROSS_RAIN",20;
+      }
+      if (getenchantgrade(EQI_HEAD_TOP) >= ENCHANTGRADE_C) {
+         bonus bPAtk,10;
+         bonus bSMatk,10;
+         bonus2 bSkillAtk,"IG_OVERSLASH",20;
+         bonus2 bSkillAtk,"IG_CROSS_RAIN",20;
+      }
+  - Combos:
+      - Combo:
+          - LMN_Orrivane_C_IQ
+          - IQ_Orrivane_R_TH
+    Script: |
+      .@r = getequiprefinerycnt(EQI_HEAD_TOP);
+      bonus2 bAddSize,Size_All,15;
+      bonus2 bSkillAtk,"IQ_THIRD_FLAME_BOMB",20;
+      bonus2 bSkillAtk,"IQ_EXPOSION_BLASTER",20;
+      if (.@r >= 10) {
+         bonus2 bAddEle,Ele_All,15;
+         bonus2 bSkillAtk,"IQ_THIRD_FLAME_BOMB",20;
+         bonus2 bSkillAtk,"IQ_EXPOSION_BLASTER",20;
+      }
+      if (getenchantgrade(EQI_HEAD_TOP) >= ENCHANTGRADE_C) {
+         bonus bPAtk,10;
+         bonus2 bSkillAtk,"IQ_THIRD_FLAME_BOMB",20;
+         bonus2 bSkillAtk,"IQ_EXPOSION_BLASTER",20;
+      }
+  - Combos:
+      - Combo:
+          - LMN_Orrivane_C_MT
+          - MT_Orrivane_R_TH
+    Script: |
+      .@r = getequiprefinerycnt(EQI_HEAD_TOP);
+      bonus2 bAddSize,Size_All,15;
+      bonus2 bSkillAtk,"MT_MIGHTY_SMASH",20;
+      bonus2 bSkillAtk,"MT_SPARK_BLASTER",20;
+      if (.@r >= 10) {
+         bonus2 bAddEle,Ele_All,15;
+         bonus2 bSkillAtk,"MT_MIGHTY_SMASH",20;
+         bonus2 bSkillAtk,"MT_SPARK_BLASTER",20;
+      }
+      if (getenchantgrade(EQI_HEAD_TOP) >= ENCHANTGRADE_C) {
+         bonus bPAtk,10;
+         bonus2 bSkillAtk,"MT_MIGHTY_SMASH",20;
+         bonus2 bSkillAtk,"MT_SPARK_BLASTER",20;
+      }
+  - Combos:
+      - Combo:
+          - LMN_Orrivane_C_NW
+          - NW_Orrivane_R_TH
+    Script: |
+      .@r = getequiprefinerycnt(EQI_HEAD_TOP);
+      bonus2 bAddSize,Size_All,15;
+      bonus2 bSkillAtk,"NW_THE_VIGILANTE_AT_NIGHT",20;
+      bonus2 bSkillAtk,"NW_MAGAZINE_FOR_ONE",20;
+      if (.@r >= 10) {
+         bonus2 bAddEle,Ele_All,15;
+         bonus2 bSkillAtk,"NW_THE_VIGILANTE_AT_NIGHT",20;
+         bonus2 bSkillAtk,"NW_MAGAZINE_FOR_ONE",20;
+      }
+      if (getenchantgrade(EQI_HEAD_TOP) >= ENCHANTGRADE_C) {
+         bonus bPAtk,10;
+         bonus2 bSkillAtk,"NW_THE_VIGILANTE_AT_NIGHT",20;
+         bonus2 bSkillAtk,"NW_MAGAZINE_FOR_ONE",20;
+      }
+  - Combos:
+      - Combo:
+          - LMN_Orrivane_C_SHC
+          - SHC_Orrivane_R_TH
+    Script: |
+      .@r = getequiprefinerycnt(EQI_HEAD_TOP);
+      bonus2 bAddSize,Size_All,15;
+      bonus2 bSkillAtk,"SHC_ETERNAL_SLASH",20;
+      bonus2 bSkillAtk,"SHC_SAVAGE_IMPACT",20;
+      if (.@r >= 10) {
+         bonus2 bAddEle,Ele_All,15;
+         bonus2 bSkillAtk,"SHC_ETERNAL_SLASH",20;
+         bonus2 bSkillAtk,"SHC_SAVAGE_IMPACT",20;
+      }
+      if (getenchantgrade(EQI_HEAD_TOP) >= ENCHANTGRADE_C) {
+         bonus bPAtk,10;
+         bonus2 bSkillAtk,"SHC_ETERNAL_SLASH",20;
+         bonus2 bSkillAtk,"SHC_SAVAGE_IMPACT",20;
+      }
+  - Combos:
+      - Combo:
+          - LMN_Orrivane_C_SS
+          - SS_Orrivane_R_TH
+    Script: |
+      .@r = getequiprefinerycnt(EQI_HEAD_TOP);
+      bonus2 bAddSize,Size_All,15;
+      bonus2 bMagicAddSize,Size_All,15;
+      bonus2 bSkillAtk,"SS_KAGEGISSEN",20;
+      bonus2 bSkillAtk,"SS_REIKETSUHOU",20;
+      if (.@r >= 10) {
+         bonus2 bAddEle,Ele_All,15;
+         bonus2 bMagicAddEle,Ele_All,15;
+         bonus2 bSkillAtk,"SS_KAGEGISSEN",20;
+         bonus2 bSkillAtk,"SS_REIKETSUHOU",20;
+      }
+      if (getenchantgrade(EQI_HEAD_TOP) >= ENCHANTGRADE_C) {
+         bonus bPAtk,10;
+         bonus bSMatk,10;
+         bonus2 bSkillAtk,"SS_KAGEGISSEN",20;
+         bonus2 bSkillAtk,"SS_REIKETSUHOU",20;
+      }
+  - Combos:
+      - Combo:
+          - LMN_Orrivane_C_SKE
+          - SKE_Orrivane_R_TH
+    Script: |
+      .@r = getequiprefinerycnt(EQI_HEAD_TOP);
+      bonus2 bAddSize,Size_All,15;
+      bonus2 bSkillAtk,"SKE_NOON_BLAST",20;
+      bonus2 bSkillAtk,"SKE_STAR_CANNON",20;
+      if (.@r >= 10) {
+         bonus2 bAddEle,Ele_All,15;
+         bonus2 bSkillAtk,"SKE_NOON_BLAST",20;
+         bonus2 bSkillAtk,"SKE_STAR_CANNON",20;
+      }
+      if (getenchantgrade(EQI_HEAD_TOP) >= ENCHANTGRADE_C) {
+         bonus bPAtk,10;
+         bonus2 bSkillAtk,"SKE_NOON_BLAST",20;
+         bonus2 bSkillAtk,"SKE_STAR_CANNON",20;
+      }
+  - Combos:
+      - Combo:
+          - LMN_Orrivane_C_SOA
+          - SOA_Orrivane_R_TH
+    Script: |
+      .@r = getequiprefinerycnt(EQI_HEAD_TOP);
+      bonus2 bMagicAddSize,Size_All,15;
+      bonus2 bSkillAtk,"SOA_TALISMAN_OF_FOUR_BEARING_GOD",20;
+      bonus2 bSkillAtk,"SOA_EXORCISM_OF_MALICIOUS_SOUL",20;
+      if (.@r >= 10) {
+         bonus2 bMagicAddEle,Ele_All,15;
+         bonus2 bSkillAtk,"SOA_TALISMAN_OF_FOUR_BEARING_GOD",20;
+         bonus2 bSkillAtk,"SOA_EXORCISM_OF_MALICIOUS_SOUL",20;
+      }
+      if (getenchantgrade(EQI_HEAD_TOP) >= ENCHANTGRADE_C) {
+         bonus bSMatk,10;
+         bonus2 bSkillAtk,"SOA_TALISMAN_OF_FOUR_BEARING_GOD",20;
+         bonus2 bSkillAtk,"SOA_EXORCISM_OF_MALICIOUS_SOUL",20;
+      }
+  - Combos:
+      - Combo:
+          - LMN_Orrivane_C_SH
+          - SH_Orrivane_R_TH
+    Script: |
+      .@r = getequiprefinerycnt(EQI_HEAD_TOP);
+      bonus2 bAddSize,Size_All,15;
+      bonus2 bMagicAddSize,Size_All,15;
+      bonus2 bSkillAtk,"SH_HOGOGONG_STRIKE",20;
+      bonus2 bSkillAtk,"SH_HYUN_ROKS_BREEZE",20;
+      if (.@r >= 10) {
+         bonus2 bAddEle,Ele_All,15;
+         bonus2 bMagicAddEle,Ele_All,15;
+         bonus2 bSkillAtk,"SH_HOGOGONG_STRIKE",20;
+         bonus2 bSkillAtk,"SH_HYUN_ROKS_BREEZE",20;
+      }
+      if (getenchantgrade(EQI_HEAD_TOP) >= ENCHANTGRADE_C) {
+         bonus bPAtk,10;
+         bonus bSMatk,10;
+         bonus2 bSkillAtk,"SH_HOGOGONG_STRIKE",20;
+         bonus2 bSkillAtk,"SH_HYUN_ROKS_BREEZE",20;
+      }
+  - Combos:
+      - Combo:
+          - LMN_Orrivane_C_TR
+          - TR_Orrivane_R_TH
+    Script: |
+      .@r = getequiprefinerycnt(EQI_HEAD_TOP);
+      bonus2 bAddSize,Size_All,15;
+      bonus2 bMagicAddSize,Size_All,15;
+      bonus2 bSkillAtk,"TR_METALIC_FURY",20;
+      bonus2 bSkillAtk,"TR_RHYTHMSHOOTING",20;
+      if (.@r >= 10) {
+         bonus2 bAddEle,Ele_All,15;
+         bonus2 bMagicAddEle,Ele_All,15;
+         bonus2 bSkillAtk,"TR_METALIC_FURY",20;
+         bonus2 bSkillAtk,"TR_RHYTHMSHOOTING",20;
+      }
+      if (getenchantgrade(EQI_HEAD_TOP) >= ENCHANTGRADE_C) {
+         bonus bPAtk,10;
+         bonus bSMatk,10;
+         bonus2 bSkillAtk,"TR_METALIC_FURY",20;
+         bonus2 bSkillAtk,"TR_RHYTHMSHOOTING",20;
+      }
+  - Combos:
+      - Combo:
+          - LMN_Orrivane_C_WH
+          - WH_Orrivane_R_TH
+    Script: |
+      .@r = getequiprefinerycnt(EQI_HEAD_TOP);
+      bonus2 bAddSize,Size_All,15;
+      bonus2 bSkillAtk,"WH_CRESCIVE_BOLT",20;
+      bonus2 bSkillAtk,"WH_GALESTORM",20;
+      if (.@r >= 10) {
+         bonus2 bAddEle,Ele_All,15;
+         bonus2 bSkillAtk,"WH_CRESCIVE_BOLT",20;
+         bonus2 bSkillAtk,"WH_GALESTORM",20;
+      }
+      if (getenchantgrade(EQI_HEAD_TOP) >= ENCHANTGRADE_C) {
+         bonus bPAtk,10;
+         bonus2 bSkillAtk,"WH_CRESCIVE_BOLT",20;
+         bonus2 bSkillAtk,"WH_GALESTORM",20;
+      }
+  - Combos:
+      - Combo:
+          - LMN_ABC_C_Bow
+          - LMN_Orrivane_C_ABC
+    Script: |
+      .@sum = getequiprefinerycnt(EQI_HEAD_TOP) + getequiprefinerycnt(EQI_HAND_R);
+      bonus2 bSkillAtk,"ABC_FRENZY_SHOT",10;
+      bonus bLongAtkRate,5;
+      if (getenchantgrade(EQI_HEAD_TOP) >= ENCHANTGRADE_A && .@sum >= 22) {
+         bonus2 bSkillCooldown,"ABC_FRENZY_SHOT",-100;
+         bonus2 bSkillAtk,"ABC_FRENZY_SHOT",10;
+      }
+  - Combos:
+      - Combo:
+          - LMN_ABC_Dagger
+          - LMN_Orrivane_C_ABC
+    Script: |
+      .@sum = getequiprefinerycnt(EQI_HEAD_TOP) + getequiprefinerycnt(EQI_HAND_R);
+      bonus2 bSkillAtk,"ABC_DEFT_STAB",10;
+      bonus bShortAtkRate,5;
+      if (getenchantgrade(EQI_HEAD_TOP) >= ENCHANTGRADE_A && .@sum >= 22) {
+         bonus2 bSkillCooldown,"ABC_DEFT_STAB",-100;
+         bonus2 bSkillAtk,"ABC_DEFT_STAB",10;
+      }
+  - Combos:
+      - Combo:
+          - LMN_BO_Hall
+          - LMN_Orrivane_C_BO
+    Script: |
+      .@sum = getequiprefinerycnt(EQI_HEAD_TOP) + getequiprefinerycnt(EQI_HAND_R);
+      bonus2 bSkillAtk,"BO_EXPLOSIVE_POWDER",10;
+      bonus bShortAtkRate,5;
+      if (getenchantgrade(EQI_HEAD_TOP) >= ENCHANTGRADE_A && .@sum >= 22) {
+         bonus2 bSkillCooldown,"BO_EXPLOSIVE_POWDER",-100;
+         bonus2 bSkillAtk,"BO_EXPLOSIVE_POWDER",10;
+      }
+  - Combos:
+      - Combo:
+          - LMN_BO_Sword
+          - LMN_Orrivane_C_BO
+    Script: |
+      .@sum = getequiprefinerycnt(EQI_HEAD_TOP) + getequiprefinerycnt(EQI_HAND_R);
+      bonus2 bSkillAtk,"BO_MAYHEMIC_THORNS",10;
+      bonus bLongAtkRate,5;
+      if (getenchantgrade(EQI_HEAD_TOP) >= ENCHANTGRADE_A && .@sum >= 22) {
+         bonus2 bSkillCooldown,"BO_MAYHEMIC_THORNS",-100;
+         bonus2 bSkillAtk,"BO_MAYHEMIC_THORNS",10;
+      }
+  - Combos:
+      - Combo:
+          - LMN_DK_Lance
+          - LMN_Orrivane_C_DK
+    Script: |
+      .@sum = getequiprefinerycnt(EQI_HEAD_TOP) + getequiprefinerycnt(EQI_HAND_R);
+      bonus2 bSkillAtk,"DK_DRAGONIC_BREATH",10;
+      bonus bLongAtkRate,5;
+      if (getenchantgrade(EQI_HEAD_TOP) >= ENCHANTGRADE_A && .@sum >= 22) {
+         bonus2 bSkillCooldown,"DK_DRAGONIC_BREATH",-100;
+         bonus2 bSkillAtk,"DK_DRAGONIC_BREATH",10;
+      }
+  - Combos:
+      - Combo:
+          - LMN_DK_Sword
+          - LMN_Orrivane_C_DK
+    Script: |
+      .@sum = getequiprefinerycnt(EQI_HEAD_TOP) + getequiprefinerycnt(EQI_HAND_R);
+      bonus2 bSkillAtk,"DK_HACKANDSLASHER",10;
+      bonus bShortAtkRate,5;
+      if (getenchantgrade(EQI_HEAD_TOP) >= ENCHANTGRADE_A && .@sum >= 22) {
+         bonus2 bSkillCooldown,"DK_HACKANDSLASHER",-100;
+         bonus2 bSkillAtk,"DK_HACKANDSLASHER",10;
+      }
+  - Combos:
+      - Combo:
+          - LMN_EM_Book
+          - LMN_Orrivane_C_EM
+    Script: |
+      .@sum = getequiprefinerycnt(EQI_HEAD_TOP) + getequiprefinerycnt(EQI_HAND_R);
+      bonus2 bSkillAtk,"EM_LIGHTNING_LAND",10;
+      bonus2 bMagicAtkEle,Ele_Wind,10;
+      if (getenchantgrade(EQI_HEAD_TOP) >= ENCHANTGRADE_A && .@sum >= 22) {
+         bonus2 bSkillCooldown,"EM_LIGHTNING_LAND",-500;
+         bonus2 bSkillAtk,"EM_LIGHTNING_LAND",10;
+      }
+  - Combos:
+      - Combo:
+          - LMN_EM_S_Book
+          - LMN_Orrivane_C_EM
+    Script: |
+      .@sum = getequiprefinerycnt(EQI_HEAD_TOP) + getequiprefinerycnt(EQI_HAND_R);
+      bonus2 bSkillAtk,"EM_VENOM_SWAMP",10;
+      bonus2 bMagicAtkEle,Ele_Poison,10;
+      if (getenchantgrade(EQI_HEAD_TOP) >= ENCHANTGRADE_A && .@sum >= 22) {
+         bonus2 bSkillCooldown,"EM_VENOM_SWAMP",-500;
+         bonus2 bSkillAtk,"EM_VENOM_SWAMP",10;
+      }
+  - Combos:
+      - Combo:
+          - LMN_SE_Book_N
+          - LMN_Orrivane_C_SKE
+    Script: |
+      .@sum = getequiprefinerycnt(EQI_HEAD_TOP) + getequiprefinerycnt(EQI_HAND_R);
+      bonus2 bSkillAtk,"SKE_NOON_BLAST",10;
+      bonus bShortAtkRate,5;
+      if (getenchantgrade(EQI_HEAD_TOP) >= ENCHANTGRADE_A && .@sum >= 22) {
+         bonus2 bSkillCooldown,"SKE_NOON_BLAST",-100;
+         bonus2 bSkillAtk,"SKE_NOON_BLAST",10;
+      }
+  - Combos:
+      - Combo:
+          - LMN_SE_Book_S
+          - LMN_Orrivane_C_SKE
+    Script: |
+      .@sum = getequiprefinerycnt(EQI_HEAD_TOP) + getequiprefinerycnt(EQI_HAND_R);
+      bonus2 bSkillAtk,"SKE_STAR_CANNON",10;
+      bonus bShortAtkRate,5;
+      if (getenchantgrade(EQI_HEAD_TOP) >= ENCHANTGRADE_A && .@sum >= 22) {
+         bonus5 bAutoSpell,"SKE_TWINKLING_GALAXY",max(getskilllv("SKE_TWINKLING_GALAXY"),1),400,BF_WEAPON|BF_SHORT,0;
+         bonus2 bSkillAtk,"SKE_STAR_CANNON",10;
+      }
+  - Combos:
+      - Combo:
+          - LMN_SS_P_Humma
+          - LMN_Orrivane_C_SS
+    Script: |
+      .@sum = getequiprefinerycnt(EQI_HEAD_TOP) + getequiprefinerycnt(EQI_HAND_R);
+      bonus2 bSkillAtk,"SS_KAGEGISSEN",10;
+      bonus bShortAtkRate,5;
+      if (getenchantgrade(EQI_HEAD_TOP) >= ENCHANTGRADE_A && .@sum >= 22) {
+         bonus2 bSkillCooldown,"SS_KAGEGISSEN",-100;
+         bonus2 bSkillAtk,"SS_KAGEGISSEN",10;
+      }
+  - Combos:
+      - Combo:
+          - LMN_HN_Sword
+          - LMN_Orrivane_C_HN
+    Script: |
+      .@sum = getequiprefinerycnt(EQI_HEAD_TOP) + getequiprefinerycnt(EQI_HAND_R);
+      bonus2 bSkillAtk,"HN_MEGA_SONIC_BLOW",10;
+      bonus bShortAtkRate,5;
+      if (getenchantgrade(EQI_HEAD_TOP) >= ENCHANTGRADE_A && .@sum >= 22) {
+         bonus2 bSkillCooldown,"HN_MEGA_SONIC_BLOW",-100;
+         bonus2 bSkillAtk,"HN_MEGA_SONIC_BLOW",10;
+      }
+  - Combos:
+      - Combo:
+          - LMN_HN_Wand
+          - LMN_Orrivane_C_HN
+    Script: |
+      .@sum = getequiprefinerycnt(EQI_HEAD_TOP) + getequiprefinerycnt(EQI_HAND_R);
+      bonus2 bSkillAtk,"HN_JACK_FROST_NOVA",10;
+      bonus2 bMagicAtkEle,Ele_All,10;
+      if (getenchantgrade(EQI_HEAD_TOP) >= ENCHANTGRADE_A && .@sum >= 22) {
+         bonus2 bSkillCooldown,"HN_JACK_FROST_NOVA",-500;
+         bonus2 bSkillAtk,"HN_JACK_FROST_NOVA",10;
+      }
+  - Combos:
+      - Combo:
+          - LMN_IG_Spear
+          - LMN_Orrivane_C_IG
+    Script: |
+      .@sum = getequiprefinerycnt(EQI_HEAD_TOP) + getequiprefinerycnt(EQI_HAND_R);
+      bonus2 bSkillAtk,"IG_OVERSLASH",10;
+      bonus2 bSkillAtk,"LG_OVERBRAND",20;
+      bonus bShortAtkRate,10;
+      if (getenchantgrade(EQI_HEAD_TOP) >= ENCHANTGRADE_A && .@sum >= 22) {
+         bonus2 bSkillCooldown,"IG_OVERSLASH",-300;
+         bonus2 bSkillAtk,"IG_OVERSLASH",10;
+         bonus2 bSkillAtk,"LG_OVERBRAND",30;
+      }
+  - Combos:
+      - Combo:
+          - LMN_IG_Sword
+          - LMN_Orrivane_C_IG
+    Script: |
+      .@sum = getequiprefinerycnt(EQI_HEAD_TOP) + getequiprefinerycnt(EQI_HAND_R);
+      bonus2 bSkillAtk,"IG_CROSS_RAIN",10;
+      bonus2 bSkillAtk,"LG_RAYOFGENESIS",20;
+      bonus2 bMagicAtkEle,Ele_Holy,5;
+      bonus2 bMagicAtkEle,Ele_Neutral,5;
+      if (getenchantgrade(EQI_HEAD_TOP) >= ENCHANTGRADE_A && .@sum >= 22) {
+         bonus2 bSkillCooldown,"IG_CROSS_RAIN",-1000;
+         bonus2 bSkillAtk,"IG_CROSS_RAIN",10;
+         bonus2 bSkillAtk,"LG_RAYOFGENESIS",30;
+      }
+  - Combos:
+      - Combo:
+          - LMN_IQ_Claw
+          - LMN_Orrivane_C_IQ
+    Script: |
+      .@sum = getequiprefinerycnt(EQI_HEAD_TOP) + getequiprefinerycnt(EQI_HAND_R);
+      bonus2 bSkillAtk,"IQ_EXPOSION_BLASTER",10;
+      bonus bLongAtkRate,5;
+      if (getenchantgrade(EQI_HEAD_TOP) >= ENCHANTGRADE_A && .@sum >= 22) {
+         bonus2 bSkillCooldown,"IQ_EXPOSION_BLASTER",-100;
+         bonus2 bSkillAtk,"IQ_EXPOSION_BLASTER",10;
+      }
+  - Combos:
+      - Combo:
+          - LMN_IQ_Knuckle
+          - LMN_Orrivane_C_IQ
+    Script: |
+      .@sum = getequiprefinerycnt(EQI_HEAD_TOP) + getequiprefinerycnt(EQI_HAND_R);
+      bonus2 bSkillAtk,"IQ_THIRD_FLAME_BOMB",10;
+      bonus bShortAtkRate,5;
+      if (getenchantgrade(EQI_HEAD_TOP) >= ENCHANTGRADE_A && .@sum >= 22) {
+         bonus bShortAtkRate,10;
+         bonus2 bSkillAtk,"IQ_THIRD_FLAME_BOMB",10;
+      }
+  - Combos:
+      - Combo:
+          - LMN_MT_Axe
+          - LMN_Orrivane_C_MT
+    Script: |
+      .@sum = getequiprefinerycnt(EQI_HEAD_TOP) + getequiprefinerycnt(EQI_HAND_R);
+      bonus2 bSkillAtk,"MT_MIGHTY_SMASH",10;
+      bonus bShortAtkRate,10;
+      if (getenchantgrade(EQI_HEAD_TOP) >= ENCHANTGRADE_A && .@sum >= 22) {
+         bonus2 bSkillCooldown,"MT_MIGHTY_SMASH",-100;
+         bonus2 bSkillAtk,"MT_MIGHTY_SMASH",10;
+      }
+  - Combos:
+      - Combo:
+          - LMN_MT_Mace
+          - LMN_Orrivane_C_MT
+    Script: |
+      .@sum = getequiprefinerycnt(EQI_HEAD_TOP) + getequiprefinerycnt(EQI_HAND_R);
+      bonus2 bSkillAtk,"MT_SPARK_BLASTER",10;
+      bonus bLongAtkRate,5;
+      if (getenchantgrade(EQI_HEAD_TOP) >= ENCHANTGRADE_A && .@sum >= 22) {
+         bonus2 bSkillCooldown,"MT_SPARK_BLASTER",-100;
+         bonus2 bSkillAtk,"MT_SPARK_BLASTER",10;
+      }
+  - Combos:
+      - Combo:
+          - LMN_TR_Harp
+          - LMN_Orrivane_C_TR
+    Script: |
+      .@sum = getequiprefinerycnt(EQI_HEAD_TOP) + getequiprefinerycnt(EQI_HAND_R);
+      bonus2 bSkillAtk,"TR_RHYTHMSHOOTING",10;
+      bonus bLongAtkRate,5;
+      if (getenchantgrade(EQI_HEAD_TOP) >= ENCHANTGRADE_A && .@sum >= 22) {
+         bonus bLongAtkRate,10;
+         bonus2 bSkillAtk,"TR_RHYTHMSHOOTING",10;
+      }
+  - Combos:
+      - Combo:
+          - LMN_TR_Ribbon
+          - LMN_Orrivane_C_TR
+    Script: |
+      .@sum = getequiprefinerycnt(EQI_HEAD_TOP) + getequiprefinerycnt(EQI_HAND_R);
+      bonus2 bSkillAtk,"TR_METALIC_FURY",10;
+      bonus2 bMagicAtkEle,Ele_All,10;
+      if (getenchantgrade(EQI_HEAD_TOP) >= ENCHANTGRADE_A && .@sum >= 22) {
+         bonus2 bSkillCooldown,"TR_METALIC_FURY",-100;
+         bonus2 bSkillAtk,"TR_METALIC_FURY",10;
+      }
+  - Combos:
+      - Combo:
+          - LMN_TR_Rope
+          - LMN_Orrivane_C_TR
+    Script: |
+      .@sum = getequiprefinerycnt(EQI_HEAD_TOP) + getequiprefinerycnt(EQI_HAND_R);
+      bonus2 bSkillAtk,"TR_RHYTHMSHOOTING",10;
+      bonus bLongAtkRate,5;
+      if (getenchantgrade(EQI_HEAD_TOP) >= ENCHANTGRADE_A && .@sum >= 22) {
+         bonus bLongAtkRate,10;
+         bonus2 bSkillAtk,"TR_RHYTHMSHOOTING",10;
+      }
+  - Combos:
+      - Combo:
+          - LMN_TR_Violin
+          - LMN_Orrivane_C_TR
+    Script: |
+      .@sum = getequiprefinerycnt(EQI_HEAD_TOP) + getequiprefinerycnt(EQI_HAND_R);
+      bonus2 bSkillAtk,"TR_METALIC_FURY",10;
+      bonus2 bMagicAtkEle,Ele_All,10;
+      if (getenchantgrade(EQI_HEAD_TOP) >= ENCHANTGRADE_A && .@sum >= 22) {
+         bonus2 bSkillCooldown,"TR_METALIC_FURY",-100;
+         bonus2 bSkillAtk,"TR_METALIC_FURY",10;
+      }
+  - Combos:
+      - Combo:
+          - LMN_NW_Gatling
+          - LMN_Orrivane_C_NW
+    Script: |
+      .@sum = getequiprefinerycnt(EQI_HEAD_TOP) + getequiprefinerycnt(EQI_HAND_R);
+      bonus2 bSkillAtk,"NW_THE_VIGILANTE_AT_NIGHT",10;
+      bonus bLongAtkRate,5;
+      if (getenchantgrade(EQI_HEAD_TOP) >= ENCHANTGRADE_A && .@sum >= 22) {
+         bonus2 bSkillCooldown,"NW_THE_VIGILANTE_AT_NIGHT",-100;
+         bonus2 bSkillAtk,"NW_THE_VIGILANTE_AT_NIGHT",10;
+      }
+  - Combos:
+      - Combo:
+          - LMN_NW_Pistol
+          - LMN_Orrivane_C_NW
+    Script: |
+      .@sum = getequiprefinerycnt(EQI_HEAD_TOP) + getequiprefinerycnt(EQI_HAND_R);
+      bonus2 bSkillAtk,"NW_MAGAZINE_FOR_ONE",5;
+      bonus bLongAtkRate,5;
+      if (getenchantgrade(EQI_HEAD_TOP) >= ENCHANTGRADE_A && .@sum >= 22) {
+         bonus2 bSkillCooldown,"NW_MAGAZINE_FOR_ONE",-100;
+         bonus2 bSkillAtk,"NW_MAGAZINE_FOR_ONE",10;
+      }
+  - Combos:
+      - Combo:
+          - LMN_CD_Book
+          - LMN_Orrivane_C_CD
+    Script: |
+      .@sum = getequiprefinerycnt(EQI_HEAD_TOP) + getequiprefinerycnt(EQI_HAND_R);
+      bonus2 bSkillAtk,"CD_PETITIO",10;
+      bonus bShortAtkRate,5;
+      if (getenchantgrade(EQI_HEAD_TOP) >= ENCHANTGRADE_A && .@sum >= 22) {
+         bonus2 bSkillCooldown,"CD_PETITIO",-100;
+         bonus2 bSkillAtk,"CD_PETITIO",10;
+      }
+  - Combos:
+      - Combo:
+          - LMN_CD_Wand
+          - LMN_Orrivane_C_CD
+    Script: |
+      .@sum = getequiprefinerycnt(EQI_HEAD_TOP) + getequiprefinerycnt(EQI_HAND_R);
+      bonus2 bSkillAtk,"CD_ARBITRIUM",10;
+      bonus2 bSkillAtk,"CD_ARBITRIUM_ATK",10;
+      bonus2 bMagicAtkEle,Ele_Holy,10;
+      if (getenchantgrade(EQI_HEAD_TOP) >= ENCHANTGRADE_A && .@sum >= 22) {
+         bonus2 bSkillCooldown,"CD_ARBITRIUM",-300;
+         bonus2 bSkillAtk,"CD_ARBITRIUM",10;
+         bonus2 bSkillAtk,"CD_ARBITRIUM_ATK",10;
+      }
+  - Combos:
+      - Combo:
+          - LMN_SHC_Cakram
+          - LMN_Orrivane_C_SHC
+    Script: |
+      .@sum = getequiprefinerycnt(EQI_HEAD_TOP) + getequiprefinerycnt(EQI_HAND_R);
+      bonus2 bSkillAtk,"SHC_ETERNAL_SLASH",10;
+      bonus bShortAtkRate,5;
+      if (getenchantgrade(EQI_HEAD_TOP) >= ENCHANTGRADE_A && .@sum >= 22) {
+         bonus2 bSkillCooldown,"SHC_ETERNAL_SLASH",-100;
+         bonus2 bSkillAtk,"SHC_ETERNAL_SLASH",10;
+      }
+  - Combos:
+      - Combo:
+          - LMN_SHC_Katar
+          - LMN_Orrivane_C_SHC
+    Script: |
+      .@sum = getequiprefinerycnt(EQI_HEAD_TOP) + getequiprefinerycnt(EQI_HAND_R);
+      bonus2 bSkillAtk,"SHC_SAVAGE_IMPACT",10;
+      bonus bShortAtkRate,5;
+      if (getenchantgrade(EQI_HEAD_TOP) >= ENCHANTGRADE_A && .@sum >= 22) {
+         bonus2 bSkillCooldown,"SHC_SAVAGE_IMPACT",-100;
+         bonus2 bSkillAtk,"SHC_SAVAGE_IMPACT",10;
+      }
+  - Combos:
+      - Combo:
+          - LMN_SOA_Stick
+          - LMN_Orrivane_C_SOA
+    Script: |
+      .@sum = getequiprefinerycnt(EQI_HEAD_TOP) + getequiprefinerycnt(EQI_HAND_R);
+      bonus2 bSkillAtk,"SOA_EXORCISM_OF_MALICIOUS_SOUL",10;
+      bonus2 bMagicAtkEle,Ele_All,10;
+      if (getenchantgrade(EQI_HEAD_TOP) >= ENCHANTGRADE_A && .@sum >= 22) {
+         bonus2 bSkillCooldown,"SOA_EXORCISM_OF_MALICIOUS_SOUL",-200;
+         bonus2 bSkillAtk,"SOA_EXORCISM_OF_MALICIOUS_SOUL",10;
+      }
+  - Combos:
+      - Combo:
+          - LMN_SOA_Wand
+          - LMN_Orrivane_C_SOA
+    Script: |
+      .@sum = getequiprefinerycnt(EQI_HEAD_TOP) + getequiprefinerycnt(EQI_HAND_R);
+      bonus2 bSkillAtk,"SOA_TALISMAN_OF_FOUR_BEARING_GOD",10;
+      bonus2 bMagicAtkEle,Ele_All,10;
+      if (getenchantgrade(EQI_HEAD_TOP) >= ENCHANTGRADE_A && .@sum >= 22) {
+         bonus2 bSkillCooldown,"SOA_TALISMAN_OF_FOUR_BEARING_GOD",-200;
+         bonus2 bSkillAtk,"SOA_TALISMAN_OF_FOUR_BEARING_GOD",10;
+      }
+  - Combos:
+      - Combo:
+          - LMN_SH_Foxtail
+          - LMN_Orrivane_C_SH
+    Script: |
+      .@sum = getequiprefinerycnt(EQI_HEAD_TOP) + getequiprefinerycnt(EQI_HAND_R);
+      bonus2 bSkillAtk,"SH_HOGOGONG_STRIKE",10;
+      bonus bLongAtkRate,5;
+      if (getenchantgrade(EQI_HEAD_TOP) >= ENCHANTGRADE_A && .@sum >= 22) {
+         bonus2 bSkillCooldown,"SH_HOGOGONG_STRIKE",-100;
+         bonus2 bSkillAtk,"SH_HOGOGONG_STRIKE",10;
+      }
+  - Combos:
+      - Combo:
+          - LMN_SH_F_Foxtail
+          - LMN_Orrivane_C_SH
+    Script: |
+      .@sum = getequiprefinerycnt(EQI_HEAD_TOP) + getequiprefinerycnt(EQI_HAND_R);
+      bonus2 bSkillAtk,"SH_HYUN_ROKS_BREEZE",10;
+      bonus2 bMagicAtkEle,Ele_All,10;
+      if (getenchantgrade(EQI_HEAD_TOP) >= ENCHANTGRADE_A && .@sum >= 22) {
+         bonus2 bSkillCooldown,"SH_HYUN_ROKS_BREEZE",-1000;
+         bonus2 bSkillAtk,"SH_HYUN_ROKS_BREEZE",10;
+      }
+  - Combos:
+      - Combo:
+          - LMN_SS_M_Humma
+          - LMN_Orrivane_C_SS
+    Script: |
+      .@sum = getequiprefinerycnt(EQI_HEAD_TOP) + getequiprefinerycnt(EQI_HAND_R);
+      bonus2 bSkillAtk,"SS_REIKETSUHOU",10;
+      bonus2 bMagicAtkEle,Ele_Water,10;
+      if (getenchantgrade(EQI_HEAD_TOP) >= ENCHANTGRADE_A && .@sum >= 22) {
+         bonus2 bSkillCooldown,"SS_REIKETSUHOU",-100;
+         bonus2 bSkillAtk,"SS_REIKETSUHOU",10;
+      }
+  - Combos:
+      - Combo:
+          - LMN_WH_Bow
+          - LMN_Orrivane_C_WH
+    Script: |
+      .@sum = getequiprefinerycnt(EQI_HEAD_TOP) + getequiprefinerycnt(EQI_HAND_R);
+      bonus2 bSkillAtk,"WH_GALESTORM",10;
+      bonus bLongAtkRate,5;
+      if (getenchantgrade(EQI_HEAD_TOP) >= ENCHANTGRADE_A && .@sum >= 22) {
+         bonus2 bSkillCooldown,"WH_GALESTORM",-100;
+         bonus2 bSkillAtk,"WH_GALESTORM",10;
+      }
+  - Combos:
+      - Combo:
+          - LMN_WH_C_Bow
+          - LMN_Orrivane_C_WH
+    Script: |
+      .@sum = getequiprefinerycnt(EQI_HEAD_TOP) + getequiprefinerycnt(EQI_HAND_R);
+      bonus2 bSkillAtk,"WH_CRESCIVE_BOLT",10;
+      bonus bLongAtkRate,5;
+      if (getenchantgrade(EQI_HEAD_TOP) >= ENCHANTGRADE_A && .@sum >= 22) {
+         bonus2 bSkillCooldown,"WH_CRESCIVE_BOLT",-100;
+         bonus2 bSkillAtk,"WH_CRESCIVE_BOLT",10;
+      }
+  - Combos:
+      - Combo:
+          - LMN_WH_Bow
+          - Orrivane_Enc_WH
+    Script: |
+      .@r = getequiprefinerycnt(EQI_HAND_R);
+      bonus bCritAtkRate,20;
+      bonus2 bSkillAtk,"WH_GALESTORM",4*(.@r/2);
+      if (getenchantgrade(EQI_HAND_R) >= ENCHANTGRADE_C) {
+         bonus bPAtk,10;
+         bonus2 bSkillCooldown,"WH_GALESTORM",-1000;
+      }
+      if (getenchantgrade(EQI_HAND_R) >= ENCHANTGRADE_C && .@r >= 10) {
+         skill "TK_POWER",2;
+         skill "AL_PNEUMA",1;
+         bonus2 bSkillCooldown,"WH_CALAMITYGALE",-30000;
+         bonus2 bSkillAtk,"WH_GALESTORM",20;
+      }
+  - Combos:
+      - Combo:
+          - LMN_WH_C_Bow
+          - Orrivane_Enc_WH
+    Script: |
+      .@r = getequiprefinerycnt(EQI_HAND_R);
+      bonus bCritAtkRate,20;
+      bonus2 bSkillAtk,"WH_CRESCIVE_BOLT",4*(.@r/2);
+      if (getenchantgrade(EQI_HAND_R) >= ENCHANTGRADE_C) {
+         bonus bPAtk,10;
+         bonus2 bSkillCooldown,"WH_CRESCIVE_BOLT",-200;
+      }
+      if (getenchantgrade(EQI_HAND_R) >= ENCHANTGRADE_C && .@r >= 10) {
+         skill "TK_POWER",2;
+         bonus4 bAutoSpellOnSkill,"WH_CRESCIVE_BOLT","WH_GALESTORM",max(getskilllv("WH_GALESTORM"),1),300; // placeholder: text says "WH_CRESCIVE_BOLT" autocasts itself
+         bonus2 bSkillCooldown,"WH_CALAMITYGALE",-30000;
+         bonus2 bSkillAtk,"WH_CRESCIVE_BOLT",20;
+      }
+  - Combos:
+      - Combo:
+          - LMN_TR_Rope
+          - Orrivane_Enc_TR
+    Script: |
+      .@r = getequiprefinerycnt(EQI_HAND_R);
+      bonus bNonCritAtkRate,10;
+      bonus2 bSkillAtk,"TR_RHYTHMSHOOTING",6*(.@r/2);
+      bonus2 bSkillAtk,"TR_ROSEBLOSSOM",6*(.@r/2);
+      if (getenchantgrade(EQI_HAND_R) >= ENCHANTGRADE_C) {
+         bonus bPAtk,10;
+         bonus2 bSkillCooldown,"TR_RHYTHMSHOOTING",-300;
+         bonus2 bSkillCooldown,"TR_ROSEBLOSSOM",-600;
+      }
+      if (getenchantgrade(EQI_HAND_R) >= ENCHANTGRADE_C && .@r >= 10) {
+         skill "TK_POWER",4;
+         bonus4 bAutoSpellOnSkill,"TR_ROSEBLOSSOM","TR_ROKI_CAPRICCIO",max(getskilllv("TR_ROKI_CAPRICCIO"),1),300; // placeholder: text says "TR_ROSEBLOSSOM" autocasts itself
+         bonus4 bAutoSpellOnSkill,"TR_RHYTHMSHOOTING","TR_ROSEBLOSSOM",max(getskilllv("TR_ROSEBLOSSOM"),1),300; // placeholder: text says "TR_RHYTHMSHOOTING" autocasts itself
+         bonus2 bSkillAtk,"TR_RHYTHMSHOOTING",25;
+         bonus2 bSkillAtk,"TR_ROSEBLOSSOM",25;
+      }
+  - Combos:
+      - Combo:
+          - LMN_TR_Harp
+          - Orrivane_Enc_TR
+    Script: |
+      .@r = getequiprefinerycnt(EQI_HAND_R);
+      bonus bNonCritAtkRate,10;
+      bonus2 bSkillAtk,"TR_RHYTHMSHOOTING",6*(.@r/2);
+      bonus2 bSkillAtk,"TR_ROSEBLOSSOM",6*(.@r/2);
+      if (getenchantgrade(EQI_HAND_R) >= ENCHANTGRADE_C) {
+         bonus bPAtk,10;
+         bonus2 bSkillCooldown,"TR_RHYTHMSHOOTING",-300;
+         bonus2 bSkillCooldown,"TR_ROSEBLOSSOM",-600;
+      }
+      if (getenchantgrade(EQI_HAND_R) >= ENCHANTGRADE_C && .@r >= 10) {
+         skill "TK_POWER",4;
+         bonus4 bAutoSpellOnSkill,"TR_ROSEBLOSSOM","TR_ROKI_CAPRICCIO",max(getskilllv("TR_ROKI_CAPRICCIO"),1),300; // placeholder: text says "TR_ROSEBLOSSOM" autocasts itself
+         bonus4 bAutoSpellOnSkill,"TR_RHYTHMSHOOTING","TR_ROSEBLOSSOM",max(getskilllv("TR_ROSEBLOSSOM"),1),300; // placeholder: text says "TR_RHYTHMSHOOTING" autocasts itself
+         bonus2 bSkillAtk,"TR_RHYTHMSHOOTING",25;
+         bonus2 bSkillAtk,"TR_ROSEBLOSSOM",25;
+      }
+  - Combos:
+      - Combo:
+          - LMN_TR_Ribbon
+          - Orrivane_Enc_TR
+    Script: |
+      .@r = getequiprefinerycnt(EQI_HAND_R);
+      bonus bMatkRate,10;
+      bonus2 bSkillAtk,"TR_SOUNDBLEND",6*(.@r/2);
+      bonus2 bSkillAtk,"TR_METALIC_FURY",6*(.@r/2);
+      if (getenchantgrade(EQI_HAND_R) >= ENCHANTGRADE_C) {
+         bonus bSMatk,10;
+         bonus2 bSkillCooldown,"TR_METALIC_FURY",-300;
+      }
+      if (getenchantgrade(EQI_HAND_R) >= ENCHANTGRADE_C && .@r >= 10) {
+         bonus2 bMagicAtkEle,Ele_All,20;
+         bonus4 bAutoSpellOnSkill,"TR_SOUNDBLEND","TR_METALIC_FURY",max(getskilllv("TR_METALIC_FURY"),1),1000;
+         bonus4 bAutoSpellOnSkill,"TR_METALIC_FURY","TR_NIPELHEIM_REQUIEM",max(getskilllv("TR_NIPELHEIM_REQUIEM"),1),300; // placeholder: text says "TR_METALIC_FURY" autocasts itself
+         autobonus3 "{}",1000,60000,"TR_JAWAII_SERENADE","{ active_transform 1150,60000; }";
+         bonus2 bSkillAtk,"TR_SOUNDBLEND",20;
+         bonus2 bSkillAtk,"TR_METALIC_FURY",20;
+      }
+  - Combos:
+      - Combo:
+          - LMN_TR_Violin
+          - Orrivane_Enc_TR
+    Script: |
+      .@r = getequiprefinerycnt(EQI_HAND_R);
+      bonus bMatkRate,10;
+      bonus2 bSkillAtk,"TR_SOUNDBLEND",6*(.@r/2);
+      bonus2 bSkillAtk,"TR_METALIC_FURY",6*(.@r/2);
+      if (getenchantgrade(EQI_HAND_R) >= ENCHANTGRADE_C) {
+         bonus bSMatk,10;
+         bonus2 bSkillCooldown,"TR_METALIC_FURY",-300;
+      }
+      if (getenchantgrade(EQI_HAND_R) >= ENCHANTGRADE_C && .@r >= 10) {
+         bonus2 bMagicAtkEle,Ele_All,20;
+         bonus4 bAutoSpellOnSkill,"TR_SOUNDBLEND","TR_METALIC_FURY",max(getskilllv("TR_METALIC_FURY"),1),1000;
+         bonus4 bAutoSpellOnSkill,"TR_METALIC_FURY","TR_NIPELHEIM_REQUIEM",max(getskilllv("TR_NIPELHEIM_REQUIEM"),1),300; // placeholder: text says "TR_METALIC_FURY" autocasts itself
+         autobonus3 "{}",1000,60000,"TR_JAWAII_SERENADE","{ active_transform 1150,60000; }";
+         bonus2 bSkillAtk,"TR_SOUNDBLEND",20;
+         bonus2 bSkillAtk,"TR_METALIC_FURY",20;
+      }
+  - Combos:
+      - Combo:
+          - LMN_SH_F_Foxtail
+          - Orrivane_Enc_SH
+    Script: |
+      .@r = getequiprefinerycnt(EQI_HAND_R);
+      bonus bMatkRate,10;
+      bonus2 bSkillAtk,"SH_HYUN_ROKS_BREEZE",4*(.@r/2);
+      bonus2 bSkillAtk,"SH_HYUN_ROK_CANNON",4*(.@r/2);
+      if (getenchantgrade(EQI_HAND_R) >= ENCHANTGRADE_C) {
+         bonus bSMatk,10;
+         bonus2 bSkillCooldown,"SH_HYUN_ROKS_BREEZE",-1500;
+         bonus2 bSkillCooldown,"SU_LOPE",-4500;
+         bonus2 bSkillCooldown,"SH_HYUN_ROK_CANNON",-1000;
+      }
+      if (getenchantgrade(EQI_HAND_R) >= ENCHANTGRADE_C && .@r >= 10) {
+         bonus2 bMagicAtkEle,Ele_All,20;
+         autobonus3 "{ bonus bSpl,50; }",1000,10000,"SH_TEMPORARY_COMMUNION";
+         bonus4 bAutoSpellOnSkill,"SH_HYUN_ROK_CANNON","SH_HYUN_ROKS_BREEZE",max(getskilllv("SH_HYUN_ROKS_BREEZE"),1),300; // placeholder: text says "SH_HYUN_ROK_CANNON" autocasts itself
+         bonus2 bSkillAtk,"SH_HYUN_ROKS_BREEZE",20;
+         bonus2 bSkillAtk,"SH_HYUN_ROK_CANNON",20;
+      }
+  - Combos:
+      - Combo:
+          - LMN_SH_Foxtail
+          - Orrivane_Enc_SH
+    Script: |
+      .@r = getequiprefinerycnt(EQI_HAND_R);
+      bonus bCritAtkRate,20;
+      bonus2 bSkillAtk,"SH_HOWLING_OF_CHUL_HO",4*(.@r/2);
+      bonus2 bSkillAtk,"SH_HOGOGONG_STRIKE",4*(.@r/2);
+      if (getenchantgrade(EQI_HAND_R) >= ENCHANTGRADE_C) {
+         bonus bPAtk,10;
+         bonus2 bSkillCooldown,"SH_HOWLING_OF_CHUL_HO",-1000;
+      }
+      if (getenchantgrade(EQI_HAND_R) >= ENCHANTGRADE_C && .@r >= 10) {
+         skill "TK_POWER",2;
+         autobonus3 "{ bonus bPow,50; }",1000,10000,"SH_TEMPORARY_COMMUNION";
+         bonus4 bAutoSpellOnSkill,"SH_HOWLING_OF_CHUL_HO","SH_HOGOGONG_STRIKE",max(getskilllv("SH_HOGOGONG_STRIKE"),1),1000;
+         bonus2 bSkillAtk,"SH_HOWLING_OF_CHUL_HO",20;
+         bonus2 bSkillAtk,"SH_HOGOGONG_STRIKE",20;
+      }
+  - Combos:
+      - Combo:
+          - LMN_SOA_Stick
+          - Orrivane_Enc_SOA
+    Script: |
+      .@r = getequiprefinerycnt(EQI_HAND_R);
+      bonus bMatkRate,10;
+      bonus2 bSkillAtk,"SOA_EXORCISM_OF_MALICIOUS_SOUL",4*(.@r/2);
+      if (getenchantgrade(EQI_HAND_R) >= ENCHANTGRADE_C) {
+         bonus bSMatk,10;
+         bonus2 bSkillCooldown,"SOA_EXORCISM_OF_MALICIOUS_SOUL",-800;
+      }
+      if (getenchantgrade(EQI_HAND_R) >= ENCHANTGRADE_C && .@r >= 10) {
+         bonus2 bMagicAtkEle,Ele_All,20;
+         bonus4 bAutoSpellOnSkill,"SOA_EXORCISM_OF_MALICIOUS_SOUL","SOA_SOUL_GATHERING",max(getskilllv("SOA_SOUL_GATHERING"),1),1000;
+         bonus2 bSkillAtk,"SOA_EXORCISM_OF_MALICIOUS_SOUL",20;
+      }
+  - Combos:
+      - Combo:
+          - LMN_SOA_Wand
+          - Orrivane_Enc_SOA
+    Script: |
+      .@r = getequiprefinerycnt(EQI_HAND_R);
+      bonus bMatkRate,10;
+      bonus2 bSkillAtk,"SOA_TALISMAN_OF_FOUR_BEARING_GOD",4*(.@r/2);
+      if (getenchantgrade(EQI_HAND_R) >= ENCHANTGRADE_C) {
+         bonus bSMatk,10;
+         bonus2 bSkillCooldown,"SOA_TALISMAN_OF_FOUR_BEARING_GOD",-800;
+      }
+      if (getenchantgrade(EQI_HAND_R) >= ENCHANTGRADE_C && .@r >= 10) {
+         bonus2 bMagicAtkEle,Ele_All,20;
+         bonus4 bAutoSpellOnSkill,"SOA_TALISMAN_OF_FOUR_BEARING_GOD","SOA_TALISMAN_OF_WHITE_TIGER",max(getskilllv("SOA_TALISMAN_OF_WHITE_TIGER"),1),300; // placeholder: text says "SOA_TALISMAN_OF_FOUR_BEARING_GOD" autocasts itself
+         bonus2 bSkillAtk,"SOA_TALISMAN_OF_FOUR_BEARING_GOD",20;
+      }
+  - Combos:
+      - Combo:
+          - LMN_SE_Book_N
+          - Orrivane_Enc_SKE
+    Script: |
+      .@r = getequiprefinerycnt(EQI_HAND_R);
+      bonus bCritAtkRate,20;
+      bonus2 bSkillAtk,"SKE_NOON_BLAST",6*(.@r/2);
+      if (getenchantgrade(EQI_HAND_R) >= ENCHANTGRADE_C) {
+         bonus bPAtk,10;
+         bonus2 bSkillCooldown,"SKE_NOON_BLAST",-500;
+      }
+      if (getenchantgrade(EQI_HAND_R) >= ENCHANTGRADE_C && .@r >= 10) {
+         bonus bShortAtkRate,6*getskilllv("TK_POWER");
+         bonus4 bAutoSpellOnSkill,"TK_JUMPKICK","SKE_NOON_BLAST",max(getskilllv("SKE_NOON_BLAST"),1),1000;
+         bonus4 bAutoSpellOnSkill,"SKE_NOON_BLAST","SKE_SUNSET_BLAST",max(getskilllv("SKE_SUNSET_BLAST"),1),300; // placeholder: text says "SKE_NOON_BLAST" autocasts itself
+         bonus2 bSkillAtk,"SKE_NOON_BLAST",25;
+      }
+  - Combos:
+      - Combo:
+          - LMN_SE_Book_S
+          - Orrivane_Enc_SKE
+    Script: |
+      .@r = getequiprefinerycnt(EQI_HAND_R);
+      bonus bNonCritAtkRate,10;
+      bonus2 bSkillAtk,"SKE_TWINKLING_GALAXY",6*(.@r/2);
+      bonus2 bSkillAtk,"SKE_STAR_CANNON",6*(.@r/2);
+      bonus2 bSkillAtk,"SKE_STAR_BURST",6*(.@r/2);
+      if (getenchantgrade(EQI_HAND_R) >= ENCHANTGRADE_C) {
+         bonus bPAtk,10;
+         bonus2 bSkillCooldown,"SKE_TWINKLING_GALAXY",-3300;
+         bonus2 bSkillCooldown,"SKE_STAR_CANNON",-3000;
+      }
+      if (getenchantgrade(EQI_HAND_R) >= ENCHANTGRADE_C && .@r >= 10) {
+         bonus bShortAtkRate,6*getskilllv("TK_POWER");
+         bonus5 bAutoSpell,"SKE_STAR_BURST",max(getskilllv("SKE_STAR_BURST"),1),400,BF_WEAPON|BF_SHORT,0;
+         bonus2 bHPDrainRate,400,1;
+         bonus2 bSkillAtk,"SKE_TWINKLING_GALAXY",25;
+         bonus2 bSkillAtk,"SKE_STAR_CANNON",25;
+         bonus2 bSkillAtk,"SKE_STAR_BURST",25;
+      }
+  - Combos:
+      - Combo:
+          - LMN_SS_M_Humma
+          - Orrivane_Enc_SS
+    Script: |
+      .@r = getequiprefinerycnt(EQI_HAND_R);
+      bonus bMatkRate,10;
+      bonus2 bSkillAtk,"SS_REIKETSUHOU",4*(.@r/2);
+      bonus2 bSkillAtk,"SS_RAIDENPOU",4*(.@r/2);
+      if (getenchantgrade(EQI_HAND_R) >= ENCHANTGRADE_C) {
+         bonus bSMatk,10;
+         bonus2 bSkillCooldown,"SS_REIKETSUHOU",-350;
+         bonus2 bSkillCooldown,"SS_RAIDENPOU",-200;
+      }
+      if (getenchantgrade(EQI_HAND_R) >= ENCHANTGRADE_C && .@r >= 10) {
+         bonus2 bMagicAtkEle,Ele_Wind,25;
+         bonus2 bMagicAtkEle,Ele_Water,25;
+         bonus4 bAutoSpellOnSkill,"SS_RAIDENPOU","SS_REIKETSUHOU",max(getskilllv("SS_REIKETSUHOU"),1),1000;
+         bonus2 bSkillAtk,"SS_REIKETSUHOU",20;
+         bonus2 bSkillAtk,"SS_RAIDENPOU",20;
+      }
+  - Combos:
+      - Combo:
+          - LMN_SS_P_Humma
+          - Orrivane_Enc_SS
+    Script: |
+      .@r = getequiprefinerycnt(EQI_HAND_R);
+      bonus bCritAtkRate,20;
+      bonus2 bSkillAtk,"SS_KAGEGISSEN",4*(.@r/2);
+      if (getenchantgrade(EQI_HAND_R) >= ENCHANTGRADE_C) {
+         bonus bPAtk,10;
+         bonus2 bSkillCooldown,"SS_KAGEGISSEN",-350;
+      }
+      if (getenchantgrade(EQI_HAND_R) >= ENCHANTGRADE_C && .@r >= 10) {
+         skill "TK_POWER",2;
+         skill "GC_DARKCROW",5;
+         bonus4 bAutoSpellOnSkill,"SS_KAGEGISSEN","SS_KUNAIKAITEN",max(getskilllv("SS_KUNAIKAITEN"),1),300; // placeholder: text says "SS_KAGEGISSEN" autocasts itself
+         bonus2 bSkillAtk,"SS_KAGEGISSEN",20;
+      }
+  - Combos:
+      - Combo:
+          - LMN_SHC_Cakram
+          - Orrivane_Enc_SHC
+    Script: |
+      .@r = getequiprefinerycnt(EQI_HAND_R);
+      bonus bCritAtkRate,20;
+      bonus2 bSkillAtk,"SHC_ETERNAL_SLASH",4*(.@r/2);
+      if (getenchantgrade(EQI_HAND_R) >= ENCHANTGRADE_C) {
+         bonus bPAtk,10;
+         bonus2 bSkillCooldown,"SHC_ETERNAL_SLASH",-350;
+      }
+      if (getenchantgrade(EQI_HAND_R) >= ENCHANTGRADE_C && .@r >= 10) {
+         skill "TK_POWER",2;
+         bonus4 bAutoSpellOnSkill,"SHC_ETERNAL_SLASH","SHC_SAVAGE_IMPACT",max(getskilllv("SHC_SAVAGE_IMPACT"),1),300; // placeholder: text says "SHC_ETERNAL_SLASH" autocasts itself
+         bonus2 bSkillCooldown,"GC_DARKCROW",-30000;
+         bonus2 bSkillAtk,"SHC_ETERNAL_SLASH",20;
+      }
+  - Combos:
+      - Combo:
+          - LMN_SHC_Katar
+          - Orrivane_Enc_SHC
+    Script: |
+      .@r = getequiprefinerycnt(EQI_HAND_R);
+      bonus bCritAtkRate,20;
+      bonus2 bSkillAtk,"SHC_SAVAGE_IMPACT",4*(.@r/2);
+      if (getenchantgrade(EQI_HAND_R) >= ENCHANTGRADE_C) {
+         bonus bPAtk,10;
+         bonus2 bSkillCooldown,"SHC_SAVAGE_IMPACT",-350;
+      }
+      if (getenchantgrade(EQI_HAND_R) >= ENCHANTGRADE_C && .@r >= 10) {
+         skill "TK_POWER",2;
+         bonus4 bAutoSpellOnSkill,"SHC_SAVAGE_IMPACT","SHC_ETERNAL_SLASH",max(getskilllv("SHC_ETERNAL_SLASH"),1),300; // placeholder: text says "SHC_SAVAGE_IMPACT" autocasts itself
+         bonus2 bSkillCooldown,"GC_DARKCROW",-30000;
+         bonus2 bSkillAtk,"SHC_SAVAGE_IMPACT",20;
+      }
+  - Combos:
+      - Combo:
+          - LMN_NW_Pistol
+          - Orrivane_Enc_NW
+    Script: |
+      .@r = getequiprefinerycnt(EQI_HAND_R);
+      bonus bCritAtkRate,20;
+      bonus2 bSkillAtk,"NW_MAGAZINE_FOR_ONE",4*(.@r/2);
+      if (getenchantgrade(EQI_HAND_R) >= ENCHANTGRADE_C) {
+         bonus bPAtk,10;
+         bonus2 bSkillCooldown,"NW_MAGAZINE_FOR_ONE",-400;
+      }
+      if (getenchantgrade(EQI_HAND_R) >= ENCHANTGRADE_C && .@r >= 10) {
+         skill "TK_POWER",2;
+         bonus bCritical,30;
+         bonus bCRate,5;
+         bonus4 bAutoSpellOnSkill,"NW_MAGAZINE_FOR_ONE","NW_ONLY_ONE_BULLET",max(getskilllv("NW_ONLY_ONE_BULLET"),1),300; // placeholder: text says "NW_MAGAZINE_FOR_ONE" autocasts itself
+         bonus2 bSkillAtk,"NW_MAGAZINE_FOR_ONE",20;
+      }
+  - Combos:
+      - Combo:
+          - LMN_NW_Gatling
+          - Orrivane_Enc_NW
+    Script: |
+      .@r = getequiprefinerycnt(EQI_HAND_R);
+      bonus bNonCritAtkRate,10;
+      bonus2 bSkillAtk,"NW_THE_VIGILANTE_AT_NIGHT",6*(.@r/2);
+      if (getenchantgrade(EQI_HAND_R) >= ENCHANTGRADE_C) {
+         bonus bPAtk,10;
+         bonus2 bSkillCooldown,"NW_THE_VIGILANTE_AT_NIGHT",-500;
+      }
+      if (getenchantgrade(EQI_HAND_R) >= ENCHANTGRADE_C && .@r >= 10) {
+         skill "TK_POWER",4;
+         bonus4 bAutoSpellOnSkill,"NW_THE_VIGILANTE_AT_NIGHT","NW_WILD_FIRE",max(getskilllv("NW_WILD_FIRE"),1),300; // placeholder: text says "NW_THE_VIGILANTE_AT_NIGHT" autocasts itself
+         bonus2 bSkillAtk,"NW_THE_VIGILANTE_AT_NIGHT",25;
+      }
+  - Combos:
+      - Combo:
+          - LMN_MT_Axe
+          - Orrivane_Enc_MT
+    Script: |
+      .@r = getequiprefinerycnt(EQI_HAND_R);
+      bonus bNonCritAtkRate,10;
+      bonus2 bSkillAtk,"MT_MIGHTY_SMASH",6*(.@r/2);
+      if (getenchantgrade(EQI_HAND_R) >= ENCHANTGRADE_C) {
+         bonus bPAtk,10;
+         bonus2 bSkillCooldown,"MT_MIGHTY_SMASH",-500;
+      }
+      if (getenchantgrade(EQI_HAND_R) >= ENCHANTGRADE_C && .@r >= 10) {
+         skill "TK_POWER",4;
+         bonus4 bAutoSpellOnSkill,"MT_MIGHTY_SMASH","MT_AXE_STOMP",max(getskilllv("MT_AXE_STOMP"),1),300; // placeholder: text says "MT_MIGHTY_SMASH" autocasts itself
+         bonus2 bSkillAtk,"MT_MIGHTY_SMASH",25;
+      }
+  - Combos:
+      - Combo:
+          - LMN_MT_Mace
+          - Orrivane_Enc_MT
+    Script: |
+      .@r = getequiprefinerycnt(EQI_HAND_R);
+      bonus bNonCritAtkRate,10;
+      bonus2 bSkillAtk,"MT_SPARK_BLASTER",6*(.@r/2);
+      if (getenchantgrade(EQI_HAND_R) >= ENCHANTGRADE_C) {
+         bonus bPAtk,10;
+         bonus2 bSkillCooldown,"MT_SPARK_BLASTER",-350;
+      }
+      if (getenchantgrade(EQI_HAND_R) >= ENCHANTGRADE_C && .@r >= 10) {
+         skill "TK_POWER",4;
+         bonus4 bAutoSpellOnSkill,"MT_SPARK_BLASTER","MT_RUSH_STRIKE",max(getskilllv("MT_RUSH_STRIKE"),1),300; // placeholder: text says "MT_SPARK_BLASTER" autocasts itself
+         bonus2 bSkillAtk,"MT_SPARK_BLASTER",25;
+      }
+  - Combos:
+      - Combo:
+          - LMN_IQ_Claw
+          - Orrivane_Enc_IQ
+    Script: |
+      .@r = getequiprefinerycnt(EQI_HAND_R);
+      bonus bCritAtkRate,20;
+      bonus2 bSkillAtk,"IQ_EXPOSION_BLASTER",4*(.@r/2);
+      bonus2 bSkillAtk,"IQ_OLEUM_SANCTUM",6*(.@r/2);
+      if (getenchantgrade(EQI_HAND_R) >= ENCHANTGRADE_C) {
+         bonus bPAtk,10;
+         bonus2 bSkillCooldown,"IQ_EXPOSION_BLASTER",-350;
+         bonus2 bSkillCooldown,"IQ_OLEUM_SANCTUM",-900;
+      }
+      if (getenchantgrade(EQI_HAND_R) >= ENCHANTGRADE_C && .@r >= 10) {
+         skill "TK_POWER",2;
+         bonus bDelayRate,-15;
+         bonus4 bAutoSpellOnSkill,"IQ_OLEUM_SANCTUM","IQ_EXPOSION_BLASTER",max(getskilllv("IQ_EXPOSION_BLASTER"),1),1000;
+         bonus4 bAutoSpellOnSkill,"IQ_EXPOSION_BLASTER","IQ_MASSIVE_F_BLASTER",max(getskilllv("IQ_MASSIVE_F_BLASTER"),1),300; // placeholder: text says "IQ_EXPOSION_BLASTER" autocasts itself
+         bonus2 bSkillAtk,"IQ_EXPOSION_BLASTER",20;
+         bonus2 bSkillAtk,"IQ_OLEUM_SANCTUM",25;
+      }
+  - Combos:
+      - Combo:
+          - LMN_IQ_Knuckle
+          - Orrivane_Enc_IQ
+    Script: |
+      .@r = getequiprefinerycnt(EQI_HAND_R);
+      bonus bMaxHPrate,10;
+      bonus2 bSkillAtk,"IQ_THIRD_FLAME_BOMB",4*(.@r/2);
+      if (getenchantgrade(EQI_HAND_R) >= ENCHANTGRADE_C) {
+         bonus bPAtk,10;
+         bonus bMaxHPrate,10;
+      }
+      if (getenchantgrade(EQI_HAND_R) >= ENCHANTGRADE_C && .@r >= 10) {
+         if (getskilllv("IQ_FIRST_BRAND") && getskilllv("IQ_SECOND_FLAME") && getskilllv("IQ_THIRD_FLAME_BOMB")) {
+            bonus4 bAutoSpellOnSkill,"IQ_FIRST_BRAND","IQ_SECOND_FLAME",max(getskilllv("IQ_SECOND_FLAME"),1),1000;
+            bonus4 bAutoSpellOnSkill,"IQ_SECOND_FLAME","IQ_THIRD_FLAME_BOMB",max(getskilllv("IQ_THIRD_FLAME_BOMB"),1),1000;
+         }
+         bonus2 bSkillAtk,"IQ_THIRD_FLAME_BOMB",20;
+      }
+  - Combos:
+      - Combo:
+          - LMN_IG_Sword
+          - Orrivane_Enc_IG
+    Script: |
+      .@r = getequiprefinerycnt(EQI_HAND_R);
+      bonus bMatkRate,10;
+      bonus2 bSkillAtk,"IG_CROSS_RAIN",4*(.@r/2);
+      bonus2 bSkillAtk,"LG_RAYOFGENESIS",10*(.@r/2);
+      if (getenchantgrade(EQI_HAND_R) >= ENCHANTGRADE_C) {
+         bonus bSMatk,10;
+         bonus2 bSkillCooldown,"IG_CROSS_RAIN",-1000;
+      }
+      if (getenchantgrade(EQI_HAND_R) >= ENCHANTGRADE_C && .@r >= 10) {
+         bonus2 bMagicAtkEle,Ele_Holy,25;
+         bonus2 bMagicAtkEle,Ele_Neutral,25;
+         autobonus3 "{}",1000,60000,"CR_AUTOGUARD","{ active_transform 2083,60000; }";
+         bonus2 bSkillAtk,"IG_CROSS_RAIN",20;
+         bonus2 bSkillAtk,"LG_RAYOFGENESIS",40;
+      }
+  - Combos:
+      - Combo:
+          - LMN_IG_Spear
+          - Orrivane_Enc_IG
+    Script: |
+      .@r = getequiprefinerycnt(EQI_HAND_R);
+      bonus bNonCritAtkRate,10;
+      bonus2 bSkillAtk,"IG_OVERSLASH",6*(.@r/2);
+      if (getenchantgrade(EQI_HAND_R) >= ENCHANTGRADE_C) {
+         bonus bPAtk,10;
+         bonus2 bSkillCooldown,"IG_OVERSLASH",-350;
+      }
+      if (getenchantgrade(EQI_HAND_R) >= ENCHANTGRADE_C && .@r >= 10) {
+         autobonus3 "{}",1000,60000,"CR_AUTOGUARD","{ active_transform 1150,60000; }";
+         skill "TK_POWER",4;
+         bonus4 bAutoSpellOnSkill,"IG_OVERSLASH","IG_SHIELD_SHOOTING",max(getskilllv("IG_SHIELD_SHOOTING"),1),300; // placeholder: text says "IG_OVERSLASH" autocasts itself
+         bonus4 bAutoSpellOnSkill,"IG_OVERSLASH","IG_GRAND_JUDGEMENT",max(getskilllv("IG_GRAND_JUDGEMENT"),1),400;
+         bonus2 bSkillAtk,"IG_OVERSLASH",25;
+         bonus2 bSkillAtk,"IG_GRAND_JUDGEMENT",25;
+      }
+  - Combos:
+      - Combo:
+          - LMN_HN_Wand
+          - Orrivane_Enc_HN
+    Script: |
+      .@r = getequiprefinerycnt(EQI_HAND_R);
+      bonus bMatkRate,10;
+      bonus2 bSkillAtk,"HN_JACK_FROST_NOVA",4*(.@r/2);
+      bonus2 bSkillAtk,"HN_JUPITEL_THUNDER_STORM",4*(.@r/2);
+      if (getenchantgrade(EQI_HAND_R) >= ENCHANTGRADE_C) {
+         bonus bSMatk,10;
+         bonus2 bSkillCooldown,"HN_JACK_FROST_NOVA",-2000;
+         bonus2 bSkillCooldown,"HN_JUPITEL_THUNDER_STORM",-1000;
+      }
+      if (getenchantgrade(EQI_HAND_R) >= ENCHANTGRADE_C && .@r >= 10) {
+         bonus2 bMagicAtkEle,Ele_Wind,25;
+         bonus2 bMagicAtkEle,Ele_Water,25;
+         bonus4 bAutoSpellOnSkill,"HN_JUPITEL_THUNDER_STORM","HN_JACK_FROST_NOVA",max(getskilllv("HN_JACK_FROST_NOVA"),1),300; // placeholder: text says "HN_JUPITEL_THUNDER_STORM" autocasts itself
+         bonus2 bSkillAtk,"HN_JACK_FROST_NOVA",20;
+         bonus2 bSkillAtk,"HN_JUPITEL_THUNDER_STORM",20;
+      }
+  - Combos:
+      - Combo:
+          - LMN_HN_Sword
+          - Orrivane_Enc_HN
+    Script: |
+      .@r = getequiprefinerycnt(EQI_HAND_R);
+      bonus bCritAtkRate,20;
+      bonus2 bSkillAtk,"HN_MEGA_SONIC_BLOW",4*(.@r/2);
+      bonus2 bSkillAtk,"HN_DOUBLEBOWLINGBASH",6*(.@r/2);
+      if (getenchantgrade(EQI_HAND_R) >= ENCHANTGRADE_C) {
+         bonus bPAtk,10;
+         bonus2 bSkillCooldown,"HN_MEGA_SONIC_BLOW",-150;
+         bonus2 bSkillCooldown,"HN_DOUBLEBOWLINGBASH",-700;
+      }
+      if (getenchantgrade(EQI_HAND_R) >= ENCHANTGRADE_C && .@r >= 10) {
+         skill "GC_RESEARCHNEWPOISON",5;
+         skill "ASC_EDP",5;
+         bonus4 bAutoSpellOnSkill,"HN_MEGA_SONIC_BLOW","HN_DOUBLEBOWLINGBASH",max(getskilllv("HN_DOUBLEBOWLINGBASH"),1),300; // placeholder: text says "HN_MEGA_SONIC_BLOW" autocasts itself
+         bonus2 bSkillAtk,"HN_MEGA_SONIC_BLOW",20;
+         bonus2 bSkillAtk,"HN_DOUBLEBOWLINGBASH",25;
+      }
+  - Combos:
+      - Combo:
+          - LMN_EM_S_Book
+          - Orrivane_Enc_EM
+    Script: |
+      .@r = getequiprefinerycnt(EQI_HAND_R);
+      bonus bMatkRate,10;
+      bonus2 bSkillAtk,"EM_VENOM_SWAMP",4*(.@r/2);
+      if (getenchantgrade(EQI_HAND_R) >= ENCHANTGRADE_C) {
+         bonus bSMatk,10;
+         bonus2 bSkillCooldown,"EM_VENOM_SWAMP",-1000;
+      }
+      if (getenchantgrade(EQI_HAND_R) >= ENCHANTGRADE_C && .@r >= 10) {
+         bonus2 bMagicAtkEle,Ele_Poison,30;
+         bonus4 bAutoSpellOnSkill,"EM_VENOM_SWAMP","EM_TERRA_DRIVE",max(getskilllv("EM_TERRA_DRIVE"),1),300; // placeholder: text says "EM_VENOM_SWAMP" autocasts itself
+         bonus2 bSkillAtk,"EM_VENOM_SWAMP",20;
+      }
+  - Combos:
+      - Combo:
+          - LMN_EM_Book
+          - Orrivane_Enc_EM
+    Script: |
+      .@r = getequiprefinerycnt(EQI_HAND_R);
+      bonus bMatkRate,10;
+      bonus2 bSkillAtk,"EM_LIGHTNING_LAND",4*(.@r/2);
+      if (getenchantgrade(EQI_HAND_R) >= ENCHANTGRADE_C) {
+         bonus bSMatk,10;
+         bonus2 bSkillCooldown,"EM_LIGHTNING_LAND",-700;
+      }
+      if (getenchantgrade(EQI_HAND_R) >= ENCHANTGRADE_C && .@r >= 10) {
+         bonus2 bMagicAtkEle,Ele_Wind,30;
+         skill "WL_RECOGNIZEDSPELL",5;
+         bonus2 bSkillAtk,"EM_LIGHTNING_LAND",20;
+      }
+  - Combos:
+      - Combo:
+          - LMN_DK_Sword
+          - Orrivane_Enc_DK
+    Script: |
+      .@r = getequiprefinerycnt(EQI_HAND_R);
+      bonus bCritAtkRate,20;
+      bonus2 bSkillAtk,"DK_HACKANDSLASHER",4*(.@r/2);
+      if (getenchantgrade(EQI_HAND_R) >= ENCHANTGRADE_C) {
+         bonus bPAtk,10;
+         bonus2 bSkillCooldown,"DK_HACKANDSLASHER",-500;
+      }
+      if (getenchantgrade(EQI_HAND_R) >= ENCHANTGRADE_C && .@r >= 10) {
+         skill "TK_POWER",2;
+         bonus4 bAutoSpellOnSkill,"DK_HACKANDSLASHER","DK_MADNESS_CRUSHER",max(getskilllv("DK_MADNESS_CRUSHER"),1),300; // placeholder: text says "DK_HACKANDSLASHER" autocasts itself
+         bonus2 bSkillAtk,"DK_HACKANDSLASHER",20;
+      }
+  - Combos:
+      - Combo:
+          - LMN_DK_Lance
+          - Orrivane_Enc_DK
+    Script: |
+      .@r = getequiprefinerycnt(EQI_HAND_R);
+      bonus bMaxHPrate,20;
+      bonus2 bSkillAtk,"DK_DRAGONIC_BREATH",4*(.@r/2);
+      if (getenchantgrade(EQI_HAND_R) >= ENCHANTGRADE_C) {
+         bonus bPAtk,10;
+         bonus2 bSkillCooldown,"DK_DRAGONIC_BREATH",-350;
+      }
+      if (getenchantgrade(EQI_HAND_R) >= ENCHANTGRADE_C && .@r >= 10) {
+         bonus bVariableCastrate,-20;
+         bonus4 bAutoSpellOnSkill,"DK_DRAGONIC_BREATH","DK_SERVANT_W_PHANTOM",max(getskilllv("DK_SERVANT_W_PHANTOM"),1),300; // placeholder: text says "DK_DRAGONIC_BREATH" autocasts itself
+         bonus2 bSkillCooldown,"DK_DRAGONIC_AURA",-30000;
+         bonus2 bSkillAtk,"DK_DRAGONIC_BREATH",20;
+      }
+  - Combos:
+      - Combo:
+          - LMN_CD_Book
+          - Orrivane_Enc_CA
+    Script: |
+      .@r = getequiprefinerycnt(EQI_HAND_R);
+      bonus bCritAtkRate,20;
+      bonus2 bSkillAtk,"CD_PETITIO",4*(.@r/2);
+      if (getenchantgrade(EQI_HAND_R) >= ENCHANTGRADE_C) {
+         bonus bPAtk,10;
+         bonus2 bSkillCooldown,"CD_PETITIO",-150;
+      }
+      if (getenchantgrade(EQI_HAND_R) >= ENCHANTGRADE_C && .@r >= 10) {
+         skill "TK_POWER",2;
+         skill "ABC_UNLUCKY_RUSH",5;
+         bonus4 bAutoSpellOnSkill,"ABC_UNLUCKY_RUSH","CD_PETITIO",max(getskilllv("CD_PETITIO"),1),1000;
+         bonus4 bAutoSpellOnSkill,"CD_PETITIO","CD_EFFLIGO",max(getskilllv("CD_EFFLIGO"),1),300;
+         bonus2 bSkillAtk,"CD_PETITIO",20;
+      }
+  - Combos:
+      - Combo:
+          - LMN_CD_Wand
+          - Orrivane_Enc_CA
+    Script: |
+      .@r = getequiprefinerycnt(EQI_HAND_R);
+      bonus bMatkRate,10;
+      bonus2 bSkillAtk,"CD_ARBITRIUM",4*(.@r/2);
+      bonus2 bSkillAtk,"CD_ARBITRIUM_ATK",4*(.@r/2);
+      if (getenchantgrade(EQI_HAND_R) >= ENCHANTGRADE_C) {
+         bonus bSMatk,10;
+         bonus bSpl,10;
+      }
+      if (getenchantgrade(EQI_HAND_R) >= ENCHANTGRADE_C && .@r >= 10) {
+         bonus4 bAutoSpellOnSkill,"CD_ARBITRIUM","CD_PNEUMATICUS_PROCELLA",max(getskilllv("CD_PNEUMATICUS_PROCELLA"),1),300;
+         bonus4 bAutoSpellOnSkill,"CD_FRAMEN","AG_MYSTERY_ILLUSION",5,400;
+         bonus2 bSkillAtk,"CD_ARBITRIUM",20;
+         bonus2 bSkillAtk,"CD_ARBITRIUM_ATK",20;
+      }
+  - Combos:
+      - Combo:
+          - LMN_BO_Hall
+          - Orrivane_Enc_BO
+    Script: |
+      .@r = getequiprefinerycnt(EQI_HAND_R);
+      bonus bNonCritAtkRate,10;
+      bonus2 bSkillAtk,"BO_EXPLOSIVE_POWDER",6*(.@r/2);
+      if (getenchantgrade(EQI_HAND_R) >= ENCHANTGRADE_C) {
+         bonus bPAtk,10;
+         bonus2 bSkillCooldown,"BO_EXPLOSIVE_POWDER",-500;
+      }
+      if (getenchantgrade(EQI_HAND_R) >= ENCHANTGRADE_C && .@r >= 10) {
+         skill "TK_POWER",4;
+         skill "TK_JUMPKICK",7;
+         bonus4 bAutoSpellOnSkill,"TK_JUMPKICK","BO_EXPLOSIVE_POWDER",max(getskilllv("BO_EXPLOSIVE_POWDER"),1),1000;
+         bonus4 bAutoSpellOnSkill,"BO_EXPLOSIVE_POWDER","BO_MAYHEMIC_THORNS",max(getskilllv("BO_MAYHEMIC_THORNS"),1),300; // placeholder: text says "BO_EXPLOSIVE_POWDER" autocasts itself
+         bonus2 bSkillAtk,"BO_EXPLOSIVE_POWDER",25;
+      }
+  - Combos:
+      - Combo:
+          - LMN_BO_Sword
+          - Orrivane_Enc_BO
+    Script: |
+      .@r = getequiprefinerycnt(EQI_HAND_R);
+      bonus bCritAtkRate,20;
+      bonus2 bSkillAtk,"BO_MAYHEMIC_THORNS",4*(.@r/2);
+      if (getenchantgrade(EQI_HAND_R) >= ENCHANTGRADE_C) {
+         bonus bPAtk,10;
+         bonus2 bSkillCooldown,"BO_MAYHEMIC_THORNS",-400;
+      }
+      if (getenchantgrade(EQI_HAND_R) >= ENCHANTGRADE_C && .@r >= 10) {
+         skill "TK_POWER",2;
+         bonus4 bAutoSpellOnSkill,"BO_MAYHEMIC_THORNS","BO_EXPLOSIVE_POWDER",max(getskilllv("BO_EXPLOSIVE_POWDER"),1),300; // placeholder: text says "BO_MAYHEMIC_THORNS" autocasts itself
+         bonus2 bSkillAtk,"BO_MAYHEMIC_THORNS",20;
+      }
+  - Combos:
+      - Combo:
+          - LMN_ABC_Dagger
+          - Orrivane_Enc_ABC
+    Script: |
+      .@r = getequiprefinerycnt(EQI_HAND_R);
+      bonus bNonCritAtkRate,10;
+      bonus2 bSkillAtk,"ABC_DEFT_STAB",6*(.@r/2);
+      bonus2 bSkillAtk,"ABC_ABYSS_DAGGER",6*(.@r/2);
+      if (getenchantgrade(EQI_HAND_R) >= ENCHANTGRADE_C) {
+         bonus bPAtk,10;
+         bonus2 bSkillCooldown,"ABC_ABYSS_DAGGER",-300;
+         bonus2 bSkillCooldown,"ABC_DEFT_STAB",-600;
+      }
+      if (getenchantgrade(EQI_HAND_R) >= ENCHANTGRADE_C && .@r >= 10) {
+         skill "TK_POWER",4;
+         skill "GC_DARKCROW",4;
+         bonus2 bSkillCooldown,"GC_DARKCROW",-30000;
+         bonus4 bAutoSpellOnSkill,"ABC_DEFT_STAB","ABC_ABYSS_DAGGER",max(getskilllv("ABC_ABYSS_DAGGER"),1),300; // placeholder: text says "ABC_DEFT_STAB" autocasts itself
+         bonus2 bSkillAtk,"ABC_DEFT_STAB",25;
+         bonus2 bSkillAtk,"ABC_ABYSS_DAGGER",25;
+      }
+  - Combos:
+      - Combo:
+          - LMN_ABC_C_Bow
+          - Orrivane_Enc_ABC
+    Script: |
+      .@r = getequiprefinerycnt(EQI_HAND_R);
+      bonus bCritAtkRate,20;
+      bonus2 bSkillAtk,"ABC_FRENZY_SHOT",4*(.@r/2);
+      bonus2 bSkillAtk,"ABC_CHAIN_REACTION_SHOT",6*(.@r/2);
+      if (getenchantgrade(EQI_HAND_R) >= ENCHANTGRADE_C) {
+         bonus bPAtk,10;
+         bonus2 bSkillCooldown,"ABC_CHAIN_REACTION_SHOT",-500;
+         bonus2 bSkillCooldown,"ABC_FRENZY_SHOT",-200;
+      }
+      if (getenchantgrade(EQI_HAND_R) >= ENCHANTGRADE_C && .@r >= 10) {
+         skill "TK_POWER",2;
+         skill "RA_UNLIMIT",1;
+         bonus4 bAutoSpellOnSkill,"ABC_FRENZY_SHOT","ABC_CHAIN_REACTION_SHOT",max(getskilllv("ABC_CHAIN_REACTION_SHOT"),1),300; // placeholder: text says "ABC_FRENZY_SHOT" autocasts itself
+         bonus2 bSkillAtk,"ABC_FRENZY_SHOT",20;
+         bonus2 bSkillAtk,"ABC_CHAIN_REACTION_SHOT",25;
+      }
+  - Combos:
+      - Combo:
+          - LMN_DK_Lance
+          - DK_Orrivane_R_TH
+          - LMN_Range_Card
+    Script: |
+      bonus2 bVariableCastrate,"DK_DRAGONIC_BREATH",-100;
+      bonus bLongAtkRate,10;
+  - Combos:
+      - Combo:
+          - LMN_MT_Mace
+          - MT_Orrivane_R_TH
+          - LMN_Range_Card
+    Script: |
+      bonus bNonCritAtkRate,10;
+      bonus bLongAtkRate,10;
+  - Combos:
+      - Combo:
+          - LMN_BO_Sword
+          - BO_Orrivane_R_TH
+          - LMN_Range_Card
+    Script: |
+      bonus bCritAtkRate,20;
+      bonus bLongAtkRate,10;
+  - Combos:
+      - Combo:
+          - LMN_IQ_Claw
+          - IQ_Orrivane_R_TH
+          - LMN_Range_Card
+    Script: |
+      bonus bCritAtkRate,20;
+      bonus bLongAtkRate,10;
+  - Combos:
+      - Combo:
+          - LMN_WH_Bow
+          - WH_Orrivane_R_TH
+          - LMN_Range_Card
+      - Combo:
+          - LMN_WH_C_Bow
+          - WH_Orrivane_R_TH
+          - LMN_Range_Card
+    Script: |
+      bonus bCritAtkRate,20;
+      bonus2 bAddSize,Size_All,10;
+  - Combos:
+      - Combo:
+          - LMN_ABC_C_Bow
+          - ABC_Orrivane_R_TH
+          - LMN_Range_Card
+    Script: |
+      bonus bCritAtkRate,20;
+      bonus2 bAddSize,Size_All,10;
+  - Combos:
+      - Combo:
+          - LMN_NW_Gatling
+          - NW_Orrivane_R_TH
+          - LMN_Range_Card
+      - Combo:
+          - LMN_NW_Pistol
+          - NW_Orrivane_R_TH
+          - LMN_Range_Card
+    Script: |
+      bonus2 bAddRace,RC_All,10;
+      bonus2 bAddSize,Size_All,10;
+  - Combos:
+      - Combo:
+          - LMN_SH_Foxtail
+          - SH_Orrivane_R_TH
+          - LMN_Range_Card
+    Script: |
+      bonus2 bSkillCooldown,"SU_LOPE",-6000;
+      bonus bLongAtkRate,10;
+  - Combos:
+      - Combo:
+          - LMN_TR_Harp
+          - TR_Orrivane_R_TH
+          - LMN_Range_Card
+      - Combo:
+          - LMN_TR_Rope
+          - TR_Orrivane_R_TH
+          - LMN_Range_Card
+    Script: |
+      bonus bNonCritAtkRate,10;
+      bonus2 bAddSize,Size_All,10;
+  - Combos:
+      - Combo:
+          - LMN_DK_Sword
+          - DK_Orrivane_R_TH
+          - LMN_Fighter_Card
+    Script: |
+      bonus bCritAtkRate,20;
+      bonus bShortAtkRate,10;
+  - Combos:
+      - Combo:
+          - LMN_IG_Spear
+          - IG_Orrivane_R_TH
+          - LMN_Fighter_Card
+    Script: |
+      skill "ASC_EDP",5;
+      bonus bShortAtkRate,10;
+  - Combos:
+      - Combo:
+          - LMN_MT_Axe
+          - MT_Orrivane_R_TH
+          - LMN_Fighter_Card
+    Script: |
+      bonus bNonCritAtkRate,10;
+      bonus bShortAtkRate,10;
+  - Combos:
+      - Combo:
+          - LMN_BO_Hall
+          - BO_Orrivane_R_TH
+          - LMN_Fighter_Card
+    Script: |
+      bonus bNonCritAtkRate,10;
+      bonus bShortAtkRate,10;
+  - Combos:
+      - Combo:
+          - LMN_CD_Book
+          - CA_Orrivane_R_TH
+          - LMN_Fighter_Card
+    Script: |
+      bonus bCritAtkRate,20;
+      bonus bShortAtkRate,10;
+  - Combos:
+      - Combo:
+          - LMN_IQ_Knuckle
+          - IQ_Orrivane_R_TH
+          - LMN_Fighter_Card
+    Script: |
+      bonus bMaxHPrate,10;
+      bonus bShortAtkRate,10;
+  - Combos:
+      - Combo:
+          - LMN_SHC_Katar
+          - SHC_Orrivane_R_TH
+          - LMN_Fighter_Card
+      - Combo:
+          - LMN_SHC_Cakram
+          - SHC_Orrivane_R_TH
+          - LMN_Fighter_Card
+    Script: |
+      bonus bCritAtkRate,20;
+      bonus2 bSkillCooldown,"SHC_SAVAGE_IMPACT",-250;
+  - Combos:
+      - Combo:
+          - LMN_ABC_Dagger
+          - ABC_Orrivane_R_TH
+          - LMN_Fighter_Card
+    Script: |
+      skill "ASC_EDP",5;
+      bonus bShortAtkRate,10;
+  - Combos:
+      - Combo:
+          - LMN_HN_Sword
+          - HN_Orrivane_R_TH
+          - LMN_Fighter_Card
+    Script: |
+      bonus bMaxHPrate,20;
+      bonus bMaxHP,5000;
+  - Combos:
+      - Combo:
+          - LMN_SE_Book_S
+          - SKE_Orrivane_R_TH
+          - LMN_Fighter_Card
+      - Combo:
+          - LMN_SE_Book_N
+          - SKE_Orrivane_R_TH
+          - LMN_Fighter_Card
+    Script: |
+      bonus2 bAddClass,Class_All,15;
+      bonus bShortAtkRate,10;
+  - Combos:
+      - Combo:
+          - LMN_SS_P_Humma
+          - SS_Orrivane_R_TH
+          - LMN_Fighter_Card
+    Script: |
+      bonus bCritAtkRate,20;
+      bonus bShortAtkRate,10;
+  - Combos:
+      - Combo:
+          - LMN_IG_Sword
+          - IG_Orrivane_R_TH
+          - LMN_Magical_Card
+    Script: |
+      bonus2 bMagicAddEle,Ele_All,10;
+      bonus bMatkRate,10;
+  - Combos:
+      - Combo:
+          - LMN_AG_Staff
+          - AG_Orrivane_R_TH
+          - LMN_Magical_Card
+      - Combo:
+          - LMN_AG_Wand
+          - AG_Orrivane_R_TH
+          - LMN_Magical_Card
+    Script: |
+      skill "SO_EARTH_INSIGNIA",3;
+      bonus bMatkRate,10;
+  - Combos:
+      - Combo:
+          - LMN_EM_Book
+          - EM_Orrivane_R_TH
+          - LMN_Magical_Card
+      - Combo:
+          - LMN_EM_S_Book
+          - EM_Orrivane_R_TH
+          - LMN_Magical_Card
+    Script: |
+      skill "WL_COMET",1;
+      bonus bMatkRate,10;
+  - Combos:
+      - Combo:
+          - LMN_CD_Wand
+          - CA_Orrivane_R_TH
+          - LMN_Magical_Card
+    Script: |
+      bonus2 bMagicAddEle,Ele_All,10;
+      bonus bMatkRate,10;
+  - Combos:
+      - Combo:
+          - LMN_TR_Violin
+          - TR_Orrivane_R_TH
+          - LMN_Magical_Card
+      - Combo:
+          - LMN_TR_Ribbon
+          - TR_Orrivane_R_TH
+          - LMN_Magical_Card
+    Script: |
+      bonus2 bMagicAddEle,Ele_All,10;
+      bonus bMatkRate,10;
+  - Combos:
+      - Combo:
+          - LMN_HN_Wand
+          - HN_Orrivane_R_TH
+          - LMN_Magical_Card
+    Script: |
+      skill "SO_FIRE_INSIGNIA",3;
+      bonus bMatkRate,10;
+  - Combos:
+      - Combo:
+          - LMN_SS_M_Humma
+          - SS_Orrivane_R_TH
+          - LMN_Magical_Card
+    Script: |
+      skill "HW_MAGICPOWER",10;
+      autobonus "{ bonus bSMatk,20; bonus bSpl,100; }",30,10000,BF_MAGIC;
+  - Combos:
+      - Combo:
+          - LMN_SOA_Wand
+          - SOA_Orrivane_R_TH
+          - LMN_Magical_Card
+      - Combo:
+          - LMN_SOA_Stick
+          - SOA_Orrivane_R_TH
+          - LMN_Magical_Card
+    Script: |
+      skill "WL_COMET",1;
+      bonus bMatkRate,10;
+  - Combos:
+      - Combo:
+          - LMN_SH_F_Foxtail
+          - SH_Orrivane_R_TH
+          - LMN_Magical_Card
+    Script: |
+      bonus2 bSkillCooldown,"SU_LOPE",-1500;
+      bonus bMatkRate,10;

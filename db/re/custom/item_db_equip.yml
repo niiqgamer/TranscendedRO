@@ -407,6 +407,13 @@ Body:
     Refineable: true
     Gradable: true
     View: 2662
+    Trade:
+      NoDrop: true
+      NoTrade: true
+      NoCart: true
+      NoGuildStorage: true
+      NoMail: true
+      NoAuction: true
     Script: |
       .@g = getenchantgrade();
       .@r = getrefine();
@@ -456,6 +463,13 @@ Body:
     Refineable: true
     Gradable: true
     View: 2662
+    Trade:
+      NoDrop: true
+      NoTrade: true
+      NoCart: true
+      NoGuildStorage: true
+      NoMail: true
+      NoAuction: true
     Script: |
       .@g = getenchantgrade();
       .@r = getrefine();
@@ -9222,8 +9236,6 @@ Body:
       bonus bAspd,10;
       bonus bDelayRate,-10;
       bonus2 bSubRace,RC_All,20;
-      bonus2 bSubRace,RC_Player_Human,20;
-      bonus2 bSubRace,RC_Player_Doram,20;
       bonus2 bAddSize,Size_All,40+12*.@r;
       bonus bPow,4*(.@r/2);
       bonus bMaxHPrate,4*(.@r/2);
@@ -9362,8 +9374,6 @@ Body:
       bonus bAllTraitStats,15;
       bonus bAspd,2;
       bonus2 bSubRace,RC_All,3*.@r;
-      bonus2 bSubRace,RC_Player_Human,3*.@r;
-      bonus2 bSubRace,RC_Player_Doram,3*.@r;
       bonus bMaxHPrate,7*.@r;
       if (.@r >= 10) {
          bonus bAllStats,10;
@@ -9407,11 +9417,7 @@ Body:
       }
       if (.@g >= ENCHANTGRADE_A) {
          bonus2 bIgnoreDefRaceRate,RC_All,75;
-         bonus2 bIgnoreDefRaceRate,RC_Player_Human,75;
-         bonus2 bIgnoreDefRaceRate,RC_Player_Doram,75;
          bonus2 bIgnoreMdefRaceRate,RC_All,75;
-         bonus2 bIgnoreMdefRaceRate,RC_Player_Human,75;
-         bonus2 bIgnoreMdefRaceRate,RC_Player_Doram,75;
       }
   - Id: 401612
     AegisName: Explosive_Hat_US
@@ -10101,7 +10107,11 @@ Body:
       }
       if (.@g >= ENCHANTGRADE_A) {
          bonus2 bIgnoreDefRaceRate,RC_All,40;
+         bonus2 bIgnoreDefRaceRate,RC_Player_Human,-40;
+         bonus2 bIgnoreDefRaceRate,RC_Player_Doram,-40;
          bonus2 bIgnoreMdefRaceRate,RC_All,40;
+         bonus2 bIgnoreMdefRaceRate,RC_Player_Human,-40;
+         bonus2 bIgnoreMdefRaceRate,RC_Player_Doram,-40;
       }
   - Id: 460166
     AegisName: Star_Dust_Shield_TH
@@ -10281,4 +10291,3081 @@ Body:
       if (readparam(bCon) >= 100) {
          bonus2 bAddSize,Size_All,10;
          bonus2 bAddEle,Ele_All,10;
+      }
+  - Id: 491050
+    AegisName: ABC_Orrivane_R_TH
+    Name: "Orrivane Ring (Abyss Chaser)"
+    Type: Armor
+    Weight: 200
+    Defense: 0
+    Slots: 1
+    Jobs:
+      Rogue: true
+    Classes:
+      Fourth: true
+    Locations:
+      Right_Accessory: true
+    ArmorLevel: 2
+    EquipLevelMin: 230
+    Refineable: true
+    Gradable: true
+    Script: |
+      bonus bBaseAtk,100;
+      bonus bDelayRate,-10;
+      bonus bPow,10;
+      bonus bCon,10;
+      bonus bNonCritAtkRate,10;
+      bonus bCritical,15;
+      bonus2 bAddClass,Class_All,15;
+  - Id: 401268
+    AegisName: LMN_Orrivane_C_BO
+    Name: "Orrivane Crown (Biolo)"
+    Type: Armor
+    Weight: 500
+    Defense: 35
+    Slots: 1
+    Jobs:
+      Alchemist: true
+    Classes:
+      Fourth: true
+    Locations:
+      Head_Top: true
+    ArmorLevel: 2
+    EquipLevelMin: 230
+    Refineable: true
+    Gradable: true
+    View: 2662
+    Trade:
+      NoDrop: true
+      NoTrade: true
+      NoCart: true
+      NoGuildStorage: true
+      NoMail: true
+      NoAuction: true
+    Script: |
+      .@r = getrefine();
+      .@g = getenchantgrade();
+      bonus bMaxHP,100*(.@r/3);
+      bonus bMaxSP,15*(.@r/3);
+      bonus2 bSkillAtk,"BO_EXPLOSIVE_POWDER",5*(.@r/4);
+      bonus2 bSkillAtk,"BO_MAYHEMIC_THORNS",5*(.@r/4);
+      if (.@r >= 7) {
+         bonus bShortAtkRate,10;
+         bonus bLongAtkRate,10;
+      }
+      if (.@r >= 9) {
+         bonus bPAtk,5;
+         bonus bAtkRate,5;
+      }
+      if (.@r >= 11) {
+         bonus2 bAddSize,Size_All,10;
+      }
+      if (.@g >= ENCHANTGRADE_D) {
+         bonus bPAtk,5;
+      }
+      if (.@g >= ENCHANTGRADE_C) {
+         bonus bMaxHPrate,5;
+         bonus bMaxSPrate,5;
+      }
+      if (.@g >= ENCHANTGRADE_B) {
+         bonus2 bAddRace,RC_All,10;
+         bonus2 bAddRace,RC_Player_Human,-10;
+         bonus2 bAddRace,RC_Player_Doram,-10;
+      }
+  - Id: 491068
+    AegisName: BO_Orrivane_R_TH
+    Name: "Orrivane Ring (Biolo)"
+    Type: Armor
+    Weight: 200
+    Defense: 0
+    Slots: 1
+    Jobs:
+      Alchemist: true
+    Classes:
+      Fourth: true
+    Locations:
+      Right_Accessory: true
+    ArmorLevel: 2
+    EquipLevelMin: 230
+    Refineable: true
+    Gradable: true
+    Script: |
+      bonus bBaseAtk,100;
+      bonus bDelayRate,-10;
+      bonus bPow,10;
+      bonus bCritical,15;
+      bonus bNonCritAtkRate,10;
+      bonus2 bAddClass,Class_All,15;
+  - Id: 401271
+    AegisName: LMN_Orrivane_C_CD
+    Name: "Orrivane Crown (Cardinal)"
+    Type: Armor
+    Weight: 500
+    Defense: 35
+    Slots: 1
+    Jobs:
+      Priest: true
+    Classes:
+      Fourth: true
+    Locations:
+      Head_Top: true
+    ArmorLevel: 2
+    EquipLevelMin: 230
+    Refineable: true
+    Gradable: true
+    View: 2662
+    Trade:
+      NoDrop: true
+      NoTrade: true
+      NoCart: true
+      NoGuildStorage: true
+      NoMail: true
+      NoAuction: true
+    Script: |
+      .@r = getrefine();
+      .@g = getenchantgrade();
+      bonus bMaxHP,100*(.@r/3);
+      bonus bMaxSP,15*(.@r/3);
+      bonus2 bSkillAtk,"CD_PETITIO",5*(.@r/4);
+      bonus2 bSkillAtk,"CD_ARBITRIUM",5*(.@r/4);
+      bonus2 bSkillAtk,"CD_ARBITRIUM_ATK",5*(.@r/4);
+      if (.@r >= 7) {
+         bonus bShortAtkRate,10;
+         bonus bLongAtkRate,10;
+         bonus2 bMagicAtkEle,Ele_All,10;
+      }
+      if (.@r >= 9) {
+         bonus bPAtk,5;
+         bonus bAtkRate,5;
+         bonus bSMatk,5;
+         bonus bMatkRate,5;
+      }
+      if (.@r >= 11) {
+         bonus2 bAddSize,Size_All,10;
+         bonus2 bMagicAddSize,Size_All,10;
+      }
+      if (.@g >= ENCHANTGRADE_D) {
+         bonus bPAtk,5;
+         bonus bSMatk,5;
+      }
+      if (.@g >= ENCHANTGRADE_C) {
+         bonus bMaxHPrate,5;
+         bonus bMaxSPrate,5;
+      }
+      if (.@g >= ENCHANTGRADE_B) {
+         bonus2 bAddRace,RC_All,10;
+         bonus2 bAddRace,RC_Player_Human,-10;
+         bonus2 bAddRace,RC_Player_Doram,-10;
+         bonus2 bMagicAddRace,RC_All,10;
+         bonus2 bMagicAddRace,RC_Player_Human,-10;
+         bonus2 bMagicAddRace,RC_Player_Doram,-10;
+      }
+  - Id: 491076
+    AegisName: CA_Orrivane_R_TH
+    Name: "Orrivane Ring (Cardinal)"
+    Type: Armor
+    Weight: 200
+    Defense: 0
+    Slots: 1
+    Jobs:
+      Priest: true
+    Classes:
+      Fourth: true
+    Locations:
+      Right_Accessory: true
+    ArmorLevel: 2
+    EquipLevelMin: 230
+    Refineable: true
+    Gradable: true
+    Script: |
+      bonus bBaseAtk,100;
+      bonus bMatk,100;
+      bonus bDelayRate,-10;
+      bonus bPow,10;
+      bonus bSpl,10;
+      bonus bCritical,15;
+      bonus bFixedCast,-500;
+      bonus2 bAddClass,Class_All,15;
+      bonus2 bMagicAddClass,Class_All,15;
+  - Id: 401265
+    AegisName: LMN_Orrivane_C_DK
+    Name: "Orrivane Crown (Dragon Knight)"
+    Type: Armor
+    Weight: 500
+    Defense: 35
+    Slots: 1
+    Jobs:
+      Knight: true
+    Classes:
+      Fourth: true
+    Locations:
+      Head_Top: true
+    ArmorLevel: 2
+    EquipLevelMin: 230
+    Refineable: true
+    Gradable: true
+    View: 2662
+    Trade:
+      NoDrop: true
+      NoTrade: true
+      NoCart: true
+      NoGuildStorage: true
+      NoMail: true
+      NoAuction: true
+    Script: |
+      .@r = getrefine();
+      .@g = getenchantgrade();
+      bonus bMaxHP,100*(.@r/3);
+      bonus bMaxSP,15*(.@r/3);
+      bonus2 bSkillAtk,"DK_HACKANDSLASHER",5*(.@r/4);
+      bonus2 bSkillAtk,"DK_DRAGONIC_BREATH",5*(.@r/4);
+      if (.@r >= 7) {
+         bonus bShortAtkRate,10;
+         bonus bLongAtkRate,10;
+      }
+      if (.@r >= 9) {
+         bonus bPAtk,5;
+         bonus bAtkRate,5;
+      }
+      if (.@r >= 11) {
+         bonus2 bAddSize,Size_All,10;
+      }
+      if (.@g >= ENCHANTGRADE_D) {
+         bonus bPAtk,5;
+      }
+      if (.@g >= ENCHANTGRADE_C) {
+         bonus bMaxHPrate,5;
+         bonus bMaxSPrate,5;
+      }
+      if (.@g >= ENCHANTGRADE_B) {
+         bonus2 bAddRace,RC_All,10;
+         bonus2 bAddRace,RC_Player_Human,-10;
+         bonus2 bAddRace,RC_Player_Doram,-10;
+      }
+  - Id: 491063
+    AegisName: DK_Orrivane_R_TH
+    Name: "Orrivane Ring (Dragon Knight)"
+    Type: Armor
+    Weight: 200
+    Defense: 0
+    Slots: 1
+    Jobs:
+      Knight: true
+    Classes:
+      Fourth: true
+    Locations:
+      Right_Accessory: true
+    ArmorLevel: 2
+    EquipLevelMin: 230
+    Refineable: true
+    Gradable: true
+    Script: |
+      bonus bBaseAtk,100;
+      bonus bDelayRate,-10;
+      bonus bPow,10;
+      bonus bAtkRate,15;
+      bonus2 bAddClass,Class_All,15;
+  - Id: 401274
+    AegisName: LMN_Orrivane_C_EM
+    Name: "Orrivane Crown (Elemental Master)"
+    Type: Armor
+    Weight: 500
+    Defense: 35
+    Slots: 1
+    Jobs:
+      Sage: true
+    Classes:
+      Fourth: true
+    Locations:
+      Head_Top: true
+    ArmorLevel: 2
+    EquipLevelMin: 230
+    Refineable: true
+    Gradable: true
+    View: 2662
+    Trade:
+      NoDrop: true
+      NoTrade: true
+      NoCart: true
+      NoGuildStorage: true
+      NoMail: true
+      NoAuction: true
+    Script: |
+      .@r = getrefine();
+      .@g = getenchantgrade();
+      bonus bMaxHP,100*(.@r/3);
+      bonus bMaxSP,15*(.@r/3);
+      bonus2 bSkillAtk,"EM_LIGHTNING_LAND",5*(.@r/4);
+      bonus2 bSkillAtk,"EM_VENOM_SWAMP",5*(.@r/4);
+      if (.@r >= 7) {
+         bonus2 bMagicAtkEle,Ele_All,10;
+      }
+      if (.@r >= 9) {
+         bonus bSMatk,5;
+         bonus bMatkRate,5;
+      }
+      if (.@r >= 11) {
+         bonus2 bMagicAddSize,Size_All,10;
+      }
+      if (.@g >= ENCHANTGRADE_D) {
+         bonus bSMatk,5;
+      }
+      if (.@g >= ENCHANTGRADE_C) {
+         bonus bMaxHPrate,5;
+         bonus bMaxSPrate,5;
+      }
+      if (.@g >= ENCHANTGRADE_B) {
+         bonus2 bMagicAddRace,RC_All,10;
+         bonus2 bMagicAddRace,RC_Player_Human,-10;
+         bonus2 bMagicAddRace,RC_Player_Doram,-10;
+      }
+  - Id: 491100
+    AegisName: EM_Orrivane_R_TH
+    Name: "Orrivane Ring (Elemental Master)"
+    Type: Armor
+    Weight: 200
+    Defense: 0
+    Slots: 1
+    Jobs:
+      Sage: true
+    Classes:
+      Fourth: true
+    Locations:
+      Right_Accessory: true
+    ArmorLevel: 2
+    EquipLevelMin: 230
+    Refineable: true
+    Gradable: true
+    Script: |
+      bonus bMatk,100;
+      bonus bDelayRate,-10;
+      bonus bSpl,10;
+      bonus bFixedCast,-500;
+      bonus2 bMagicAddClass,Class_All,15;
+  - Id: 401281
+    AegisName: LMN_Orrivane_C_HN
+    Name: "Orrivane Crown (Hyper Novice)"
+    Type: Armor
+    Weight: 500
+    Defense: 35
+    Slots: 1
+    Jobs:
+      SuperNovice: true
+    Classes:
+      Fourth: true
+    Locations:
+      Head_Top: true
+    ArmorLevel: 2
+    EquipLevelMin: 230
+    Refineable: true
+    Gradable: true
+    View: 2662
+    Trade:
+      NoDrop: true
+      NoTrade: true
+      NoCart: true
+      NoGuildStorage: true
+      NoMail: true
+      NoAuction: true
+    Script: |
+      .@r = getrefine();
+      .@g = getenchantgrade();
+      bonus bMaxHP,100*(.@r/3);
+      bonus bMaxSP,15*(.@r/3);
+      bonus2 bSkillAtk,"HN_MEGA_SONIC_BLOW",5*(.@r/4);
+      bonus2 bSkillAtk,"HN_JACK_FROST_NOVA",5*(.@r/4);
+      if (.@r >= 7) {
+         bonus bShortAtkRate,10;
+         bonus2 bMagicAtkEle,Ele_All,10;
+      }
+      if (.@r >= 9) {
+         bonus bPAtk,5;
+         bonus bAtkRate,5;
+         bonus bSMatk,5;
+         bonus bMatkRate,5;
+      }
+      if (.@r >= 11) {
+         bonus2 bAddSize,Size_All,10;
+         bonus2 bMagicAddSize,Size_All,10;
+      }
+      if (.@g >= ENCHANTGRADE_D) {
+         bonus bPAtk,5;
+         bonus bSMatk,5;
+      }
+      if (.@g >= ENCHANTGRADE_C) {
+         bonus bMaxHPrate,5;
+         bonus bMaxSPrate,5;
+      }
+      if (.@g >= ENCHANTGRADE_B) {
+         bonus2 bAddRace,RC_All,10;
+         bonus2 bAddRace,RC_Player_Human,-10;
+         bonus2 bAddRace,RC_Player_Doram,-10;
+         bonus2 bMagicAddRace,RC_All,10;
+         bonus2 bMagicAddRace,RC_Player_Human,-10;
+         bonus2 bMagicAddRace,RC_Player_Doram,-10;
+      }
+  - Id: 491078
+    AegisName: HN_Orrivane_R_TH
+    Name: "Orrivane Ring (Hyper Novice)"
+    Type: Armor
+    Weight: 200
+    Defense: 0
+    Slots: 1
+    Jobs:
+      SuperNovice: true
+    Classes:
+      Fourth: true
+    Locations:
+      Right_Accessory: true
+    ArmorLevel: 2
+    EquipLevelMin: 230
+    Refineable: true
+    Gradable: true
+    Script: |
+      bonus bBaseAtk,100;
+      bonus bMatk,100;
+      bonus bDelayRate,-10;
+      bonus bPow,10;
+      bonus bSpl,10;
+      bonus bCritical,15;
+      bonus bFixedCast,-500;
+      bonus2 bAddClass,Class_All,15;
+      bonus2 bMagicAddClass,Class_All,15;
+  - Id: 401266
+    AegisName: LMN_Orrivane_C_IG
+    Name: "Orrivane Crown (Imperial Guard)"
+    Type: Armor
+    Weight: 500
+    Defense: 35
+    Slots: 1
+    Jobs:
+      Crusader: true
+    Classes:
+      Fourth: true
+    Locations:
+      Head_Top: true
+    ArmorLevel: 2
+    EquipLevelMin: 230
+    Refineable: true
+    Gradable: true
+    View: 2662
+    Trade:
+      NoDrop: true
+      NoTrade: true
+      NoCart: true
+      NoGuildStorage: true
+      NoMail: true
+      NoAuction: true
+    Script: |
+      .@r = getrefine();
+      .@g = getenchantgrade();
+      bonus bMaxHP,100*(.@r/3);
+      bonus bMaxSP,15*(.@r/3);
+      bonus2 bSkillAtk,"IG_OVERSLASH",5*(.@r/4);
+      bonus2 bSkillAtk,"IG_CROSS_RAIN",5*(.@r/4);
+      if (.@r >= 7) {
+         bonus bShortAtkRate,10;
+         bonus2 bMagicAtkEle,Ele_All,10;
+      }
+      if (.@r >= 9) {
+         bonus bPAtk,5;
+         bonus bAtkRate,5;
+         bonus bSMatk,5;
+         bonus bMatkRate,5;
+      }
+      if (.@r >= 11) {
+         bonus2 bAddSize,Size_All,10;
+         bonus2 bMagicAddSize,Size_All,10;
+      }
+      if (.@g >= ENCHANTGRADE_D) {
+         bonus bPAtk,5;
+         bonus bSMatk,5;
+      }
+      if (.@g >= ENCHANTGRADE_C) {
+         bonus bMaxHPrate,5;
+         bonus bMaxSPrate,5;
+      }
+      if (.@g >= ENCHANTGRADE_B) {
+         bonus2 bAddRace,RC_All,10;
+         bonus2 bAddRace,RC_Player_Human,-10;
+         bonus2 bAddRace,RC_Player_Doram,-10;
+         bonus2 bMagicAddRace,RC_All,10;
+         bonus2 bMagicAddRace,RC_Player_Human,-10;
+         bonus2 bMagicAddRace,RC_Player_Doram,-10;
+      }
+  - Id: 491065
+    AegisName: IG_Orrivane_R_TH
+    Name: "Orrivane Ring (Imperial Guard)"
+    Type: Armor
+    Weight: 200
+    Defense: 0
+    Slots: 1
+    Jobs:
+      Crusader: true
+    Classes:
+      Fourth: true
+    Locations:
+      Right_Accessory: true
+    ArmorLevel: 2
+    EquipLevelMin: 230
+    Refineable: true
+    Gradable: true
+    Script: |
+      bonus bBaseAtk,100;
+      bonus bMatk,100;
+      bonus bDelayRate,-10;
+      bonus bPow,10;
+      bonus bSpl,10;
+      bonus bFixedCast,-500;
+      bonus2 bAddClass,Class_All,15;
+      bonus2 bMagicAddClass,Class_All,15;
+  - Id: 401272
+    AegisName: LMN_Orrivane_C_IQ
+    Name: "Orrivane Crown (Inquisitor)"
+    Type: Armor
+    Weight: 500
+    Defense: 35
+    Slots: 1
+    Jobs:
+      Monk: true
+    Classes:
+      Fourth: true
+    Locations:
+      Head_Top: true
+    ArmorLevel: 2
+    EquipLevelMin: 230
+    Refineable: true
+    Gradable: true
+    View: 2662
+    Trade:
+      NoDrop: true
+      NoTrade: true
+      NoCart: true
+      NoGuildStorage: true
+      NoMail: true
+      NoAuction: true
+    Script: |
+      .@r = getrefine();
+      .@g = getenchantgrade();
+      bonus bMaxHP,100*(.@r/3);
+      bonus bMaxSP,15*(.@r/3);
+      bonus2 bSkillAtk,"IQ_THIRD_FLAME_BOMB",5*(.@r/4);
+      bonus2 bSkillAtk,"IQ_EXPOSION_BLASTER",5*(.@r/4);
+      if (.@r >= 7) {
+         bonus bShortAtkRate,10;
+         bonus bLongAtkRate,10;
+      }
+      if (.@r >= 9) {
+         bonus bPAtk,5;
+         bonus bAtkRate,5;
+      }
+      if (.@r >= 11) {
+         bonus2 bAddSize,Size_All,10;
+      }
+      if (.@g >= ENCHANTGRADE_D) {
+         bonus bPAtk,5;
+      }
+      if (.@g >= ENCHANTGRADE_C) {
+         bonus bMaxHPrate,5;
+         bonus bMaxSPrate,5;
+      }
+      if (.@g >= ENCHANTGRADE_B) {
+         bonus2 bAddRace,RC_All,10;
+         bonus2 bAddRace,RC_Player_Human,-10;
+         bonus2 bAddRace,RC_Player_Doram,-10;
+      }
+  - Id: 491090
+    AegisName: IQ_Orrivane_R_TH
+    Name: "Orrivane Ring (Inquisitor)"
+    Type: Armor
+    Weight: 200
+    Defense: 0
+    Slots: 1
+    Jobs:
+      Monk: true
+    Classes:
+      Fourth: true
+    Locations:
+      Right_Accessory: true
+    ArmorLevel: 2
+    EquipLevelMin: 230
+    Refineable: true
+    Gradable: true
+    Script: |
+      bonus bBaseAtk,100;
+      bonus bDelayRate,-10;
+      bonus bPow,10;
+      bonus bCritical,15;
+      bonus bAtkRate,15;
+      bonus2 bAddClass,Class_All,15;
+  - Id: 401267
+    AegisName: LMN_Orrivane_C_MT
+    Name: "Orrivane Crown (Meister)"
+    Type: Armor
+    Weight: 500
+    Defense: 35
+    Slots: 1
+    Jobs:
+      Blacksmith: true
+    Classes:
+      Fourth: true
+    Locations:
+      Head_Top: true
+    ArmorLevel: 2
+    EquipLevelMin: 230
+    Refineable: true
+    Gradable: true
+    View: 2662
+    Trade:
+      NoDrop: true
+      NoTrade: true
+      NoCart: true
+      NoGuildStorage: true
+      NoMail: true
+      NoAuction: true
+    Script: |
+      .@r = getrefine();
+      .@g = getenchantgrade();
+      bonus bMaxHP,100*(.@r/3);
+      bonus bMaxSP,15*(.@r/3);
+      bonus2 bSkillAtk,"MT_MIGHTY_SMASH",5*(.@r/4);
+      bonus2 bSkillAtk,"MT_SPARK_BLASTER",5*(.@r/4);
+      if (.@r >= 7) {
+         bonus bShortAtkRate,10;
+         bonus bLongAtkRate,10;
+      }
+      if (.@r >= 9) {
+         bonus bPAtk,5;
+         bonus bAtkRate,5;
+      }
+      if (.@r >= 11) {
+         bonus2 bAddSize,Size_All,10;
+      }
+      if (.@g >= ENCHANTGRADE_D) {
+         bonus bPAtk,5;
+      }
+      if (.@g >= ENCHANTGRADE_C) {
+         bonus bMaxHPrate,5;
+         bonus bMaxSPrate,5;
+      }
+      if (.@g >= ENCHANTGRADE_B) {
+         bonus2 bAddRace,RC_All,10;
+         bonus2 bAddRace,RC_Player_Human,-10;
+         bonus2 bAddRace,RC_Player_Doram,-10;
+      }
+  - Id: 491064
+    AegisName: MT_Orrivane_R_TH
+    Name: "Orrivane Ring (Meister)"
+    Type: Armor
+    Weight: 200
+    Defense: 0
+    Slots: 1
+    Jobs:
+      Blacksmith: true
+    Classes:
+      Fourth: true
+    Locations:
+      Right_Accessory: true
+    ArmorLevel: 2
+    EquipLevelMin: 230
+    Refineable: true
+    Gradable: true
+    Script: |
+      bonus bBaseAtk,100;
+      bonus bDelayRate,-10;
+      bonus bPow,10;
+      bonus bNonCritAtkRate,10;
+      bonus2 bAddClass,Class_All,15;
+  - Id: 401279
+    AegisName: LMN_Orrivane_C_NW
+    Name: "Orrivane Crown (Night Watch)"
+    Type: Armor
+    Weight: 500
+    Defense: 35
+    Slots: 1
+    Jobs:
+      Rebellion: true
+    Classes:
+      Fourth: true
+    Locations:
+      Head_Top: true
+    ArmorLevel: 2
+    EquipLevelMin: 230
+    Refineable: true
+    Gradable: true
+    View: 2662
+    Trade:
+      NoDrop: true
+      NoTrade: true
+      NoCart: true
+      NoGuildStorage: true
+      NoMail: true
+      NoAuction: true
+    Script: |
+      .@r = getrefine();
+      .@g = getenchantgrade();
+      bonus bMaxHP,100*(.@r/3);
+      bonus bMaxSP,15*(.@r/3);
+      bonus2 bSkillAtk,"NW_THE_VIGILANTE_AT_NIGHT",5*(.@r/4);
+      bonus2 bSkillAtk,"NW_MAGAZINE_FOR_ONE",5*(.@r/4);
+      if (.@r >= 7) {
+         bonus bLongAtkRate,10;
+      }
+      if (.@r >= 9) {
+         bonus bPAtk,5;
+         bonus bAtkRate,5;
+      }
+      if (.@r >= 11) {
+         bonus2 bAddSize,Size_All,10;
+      }
+      if (.@g >= ENCHANTGRADE_D) {
+         bonus bPAtk,5;
+      }
+      if (.@g >= ENCHANTGRADE_C) {
+         bonus bMaxHPrate,5;
+         bonus bMaxSPrate,5;
+      }
+      if (.@g >= ENCHANTGRADE_B) {
+         bonus2 bAddRace,RC_All,10;
+         bonus2 bAddRace,RC_Player_Human,-10;
+         bonus2 bAddRace,RC_Player_Doram,-10;
+      }
+  - Id: 491098
+    AegisName: NW_Orrivane_R_TH
+    Name: "Orrivane Ring (Night Watch)"
+    Type: Armor
+    Weight: 200
+    Defense: 0
+    Slots: 1
+    Jobs:
+      Rebellion: true
+    Classes:
+      Fourth: true
+    Locations:
+      Right_Accessory: true
+    ArmorLevel: 2
+    EquipLevelMin: 230
+    Refineable: true
+    Gradable: true
+    Script: |
+      bonus bBaseAtk,100;
+      bonus bDelayRate,-10;
+      bonus bPow,10;
+      bonus bCritical,15;
+      bonus bAtkRate,15;
+      bonus2 bAddClass,Class_All,15;
+  - Id: 401269
+    AegisName: LMN_Orrivane_C_SHC
+    Name: "Orrivane Crown (Shadow Cross)"
+    Type: Armor
+    Weight: 500
+    Defense: 35
+    Slots: 1
+    Jobs:
+      Assassin: true
+    Classes:
+      Fourth: true
+    Locations:
+      Head_Top: true
+    ArmorLevel: 2
+    EquipLevelMin: 230
+    Refineable: true
+    Gradable: true
+    View: 2662
+    Trade:
+      NoDrop: true
+      NoTrade: true
+      NoCart: true
+      NoGuildStorage: true
+      NoMail: true
+      NoAuction: true
+    Script: |
+      .@r = getrefine();
+      .@g = getenchantgrade();
+      bonus bMaxHP,100*(.@r/3);
+      bonus bMaxSP,15*(.@r/3);
+      bonus2 bSkillAtk,"SHC_ETERNAL_SLASH",5*(.@r/4);
+      bonus2 bSkillAtk,"SHC_SAVAGE_IMPACT",5*(.@r/4);
+      if (.@r >= 7) {
+         bonus bShortAtkRate,10;
+      }
+      if (.@r >= 9) {
+         bonus bPAtk,5;
+         bonus bAtkRate,5;
+      }
+      if (.@r >= 11) {
+         bonus2 bAddSize,Size_All,10;
+      }
+      if (.@g >= ENCHANTGRADE_D) {
+         bonus bPAtk,5;
+      }
+      if (.@g >= ENCHANTGRADE_C) {
+         bonus bMaxHPrate,5;
+         bonus bMaxSPrate,5;
+      }
+      if (.@g >= ENCHANTGRADE_B) {
+         bonus2 bAddRace,RC_All,10;
+         bonus2 bAddRace,RC_Player_Human,-10;
+         bonus2 bAddRace,RC_Player_Doram,-10;
+      }
+  - Id: 491067
+    AegisName: SHC_Orrivane_R_TH
+    Name: "Orrivane Ring (Shadow Cross)"
+    Type: Armor
+    Weight: 200
+    Defense: 0
+    Slots: 1
+    Jobs:
+      Assassin: true
+    Classes:
+      Fourth: true
+    Locations:
+      Right_Accessory: true
+    ArmorLevel: 2
+    EquipLevelMin: 230
+    Refineable: true
+    Gradable: true
+    Script: |
+      bonus bBaseAtk,100;
+      bonus bDelayRate,-10;
+      bonus bPow,10;
+      bonus bCritical,15;
+      bonus2 bAddClass,Class_All,15;
+  - Id: 401280
+    AegisName: LMN_Orrivane_C_SS
+    Name: "Orrivane Crown (Shinkiro & Shiranui)"
+    Type: Armor
+    Weight: 500
+    Defense: 35
+    Slots: 1
+    Jobs:
+      KagerouOboro: true
+    Classes:
+      Fourth: true
+    Locations:
+      Head_Top: true
+    ArmorLevel: 2
+    EquipLevelMin: 230
+    Refineable: true
+    Gradable: true
+    View: 2662
+    Trade:
+      NoDrop: true
+      NoTrade: true
+      NoCart: true
+      NoGuildStorage: true
+      NoMail: true
+      NoAuction: true
+    Script: |
+      .@r = getrefine();
+      .@g = getenchantgrade();
+      bonus bMaxHP,100*(.@r/3);
+      bonus bMaxSP,15*(.@r/3);
+      bonus2 bSkillAtk,"SS_KAGEGISSEN",5*(.@r/4);
+      bonus2 bSkillAtk,"SS_REIKETSUHOU",5*(.@r/4);
+      if (.@r >= 7) {
+         bonus bShortAtkRate,10;
+         bonus2 bMagicAtkEle,Ele_All,10;
+      }
+      if (.@r >= 9) {
+         bonus bPAtk,5;
+         bonus bAtkRate,5;
+         bonus bSMatk,5;
+         bonus bMatkRate,5;
+      }
+      if (.@r >= 11) {
+         bonus2 bAddSize,Size_All,10;
+         bonus2 bMagicAddSize,Size_All,10;
+      }
+      if (.@g >= ENCHANTGRADE_D) {
+         bonus bPAtk,5;
+         bonus bSMatk,5;
+      }
+      if (.@g >= ENCHANTGRADE_C) {
+         bonus bMaxHPrate,5;
+         bonus bMaxSPrate,5;
+      }
+      if (.@g >= ENCHANTGRADE_B) {
+         bonus2 bAddRace,RC_All,10;
+         bonus2 bAddRace,RC_Player_Human,-10;
+         bonus2 bAddRace,RC_Player_Doram,-10;
+         bonus2 bMagicAddRace,RC_All,10;
+         bonus2 bMagicAddRace,RC_Player_Human,-10;
+         bonus2 bMagicAddRace,RC_Player_Doram,-10;
+      }
+  - Id: 491069
+    AegisName: SS_Orrivane_R_TH
+    Name: "Orrivane Ring (Shinkiro & Shiranui)"
+    Type: Armor
+    Weight: 200
+    Defense: 0
+    Slots: 1
+    Jobs:
+      KagerouOboro: true
+    Classes:
+      Fourth: true
+    Locations:
+      Right_Accessory: true
+    ArmorLevel: 2
+    EquipLevelMin: 230
+    Refineable: true
+    Gradable: true
+    Script: |
+      bonus bBaseAtk,100;
+      bonus bMatk,100;
+      bonus bDelayRate,-10;
+      bonus bPow,10;
+      bonus bSpl,10;
+      bonus bCritical,15;
+      bonus bFixedCast,-500;
+      bonus2 bAddClass,Class_All,15;
+      bonus2 bMagicAddClass,Class_All,15;
+  - Id: 401277
+    AegisName: LMN_Orrivane_C_SKE
+    Name: "Orrivane Crown (Sky Emperor)"
+    Type: Armor
+    Weight: 500
+    Defense: 35
+    Slots: 1
+    Jobs:
+      StarGladiator: true
+    Classes:
+      Fourth: true
+    Locations:
+      Head_Top: true
+    ArmorLevel: 2
+    EquipLevelMin: 230
+    Refineable: true
+    Gradable: true
+    View: 2662
+    Trade:
+      NoDrop: true
+      NoTrade: true
+      NoCart: true
+      NoGuildStorage: true
+      NoMail: true
+      NoAuction: true
+    Script: |
+      .@r = getrefine();
+      .@g = getenchantgrade();
+      bonus bMaxHP,100*(.@r/3);
+      bonus bMaxSP,15*(.@r/3);
+      bonus2 bSkillAtk,"SKE_NOON_BLAST",5*(.@r/4);
+      bonus2 bSkillAtk,"SKE_STAR_CANNON",5*(.@r/4);
+      if (.@r >= 7) {
+         bonus bShortAtkRate,10;
+      }
+      if (.@r >= 9) {
+         bonus bPAtk,5;
+         bonus bAtkRate,5;
+      }
+      if (.@r >= 11) {
+         bonus2 bAddSize,Size_All,10;
+      }
+      if (.@g >= ENCHANTGRADE_D) {
+         bonus bPAtk,5;
+      }
+      if (.@g >= ENCHANTGRADE_C) {
+         bonus bMaxHPrate,5;
+         bonus bMaxSPrate,5;
+      }
+      if (.@g >= ENCHANTGRADE_B) {
+         bonus2 bAddRace,RC_All,10;
+         bonus2 bAddRace,RC_Player_Human,-10;
+         bonus2 bAddRace,RC_Player_Doram,-10;
+      }
+  - Id: 491077
+    AegisName: SKE_Orrivane_R_TH
+    Name: "Orrivane Ring (Sky Emperor)"
+    Type: Armor
+    Weight: 200
+    Defense: 0
+    Slots: 1
+    Jobs:
+      StarGladiator: true
+    Classes:
+      Fourth: true
+    Locations:
+      Right_Accessory: true
+    ArmorLevel: 2
+    EquipLevelMin: 230
+    Refineable: true
+    Gradable: true
+    Script: |
+      bonus bBaseAtk,100;
+      bonus bDelayRate,-10;
+      bonus bPow,10;
+      bonus bCritical,15;
+      bonus bNonCritAtkRate,10;
+      bonus2 bAddClass,Class_All,15;
+  - Id: 401278
+    AegisName: LMN_Orrivane_C_SOA
+    Name: "Orrivane Crown (Soul Ascetic)"
+    Type: Armor
+    Weight: 500
+    Defense: 35
+    Slots: 1
+    Jobs:
+      SoulLinker: true
+    Classes:
+      Fourth: true
+    Locations:
+      Head_Top: true
+    ArmorLevel: 2
+    EquipLevelMin: 230
+    Refineable: true
+    Gradable: true
+    View: 2662
+    Trade:
+      NoDrop: true
+      NoTrade: true
+      NoCart: true
+      NoGuildStorage: true
+      NoMail: true
+      NoAuction: true
+    Script: |
+      .@r = getrefine();
+      .@g = getenchantgrade();
+      bonus bMaxHP,100*(.@r/3);
+      bonus bMaxSP,15*(.@r/3);
+      bonus2 bSkillAtk,"SOA_TALISMAN_OF_FOUR_BEARING_GOD",5*(.@r/4);
+      bonus2 bSkillAtk,"SOA_EXORCISM_OF_MALICIOUS_SOUL",5*(.@r/4);
+      if (.@r >= 7) {
+         bonus2 bMagicAtkEle,Ele_All,10;
+      }
+      if (.@r >= 9) {
+         bonus bSMatk,5;
+         bonus bMatkRate,5;
+      }
+      if (.@r >= 11) {
+         bonus2 bMagicAddSize,Size_All,10;
+      }
+      if (.@g >= ENCHANTGRADE_D) {
+         bonus bSMatk,5;
+      }
+      if (.@g >= ENCHANTGRADE_C) {
+         bonus bMaxHPrate,5;
+         bonus bMaxSPrate,5;
+      }
+      if (.@g >= ENCHANTGRADE_B) {
+         bonus2 bMagicAddRace,RC_All,10;
+         bonus2 bMagicAddRace,RC_Player_Human,-10;
+         bonus2 bMagicAddRace,RC_Player_Doram,-10;
+      }
+  - Id: 491099
+    AegisName: SOA_Orrivane_R_TH
+    Name: "Orrivane Ring (Soul Ascetic)"
+    Type: Armor
+    Weight: 200
+    Defense: 0
+    Slots: 1
+    Jobs:
+      SoulLinker: true
+    Classes:
+      Fourth: true
+    Locations:
+      Right_Accessory: true
+    ArmorLevel: 2
+    EquipLevelMin: 230
+    Refineable: true
+    Gradable: true
+    Script: |
+      bonus bMatk,100;
+      bonus bVariableCastrate,-10;
+      bonus bSpl,10;
+      bonus bFixedCast,-500;
+      bonus2 bMagicAddClass,Class_All,15;
+  - Id: 401282
+    AegisName: LMN_Orrivane_C_SH
+    Name: "Orrivane Crown (Spirit Handler)"
+    Type: Armor
+    Weight: 500
+    Defense: 35
+    Slots: 1
+    Jobs:
+      Spirit_Handler: true
+    Classes:
+      Fourth: true
+    Locations:
+      Head_Top: true
+    ArmorLevel: 2
+    EquipLevelMin: 230
+    Refineable: true
+    Gradable: true
+    View: 2662
+    Trade:
+      NoDrop: true
+      NoTrade: true
+      NoCart: true
+      NoGuildStorage: true
+      NoMail: true
+      NoAuction: true
+    Script: |
+      .@r = getrefine();
+      .@g = getenchantgrade();
+      bonus bMaxHP,100*(.@r/3);
+      bonus bMaxSP,15*(.@r/3);
+      bonus2 bSkillAtk,"SH_HOGOGONG_STRIKE",5*(.@r/4);
+      bonus2 bSkillAtk,"SH_HYUN_ROKS_BREEZE",5*(.@r/4);
+      if (.@r >= 7) {
+         bonus bLongAtkRate,10;
+         bonus2 bMagicAtkEle,Ele_All,10;
+      }
+      if (.@r >= 9) {
+         bonus bPAtk,5;
+         bonus bAtkRate,5;
+         bonus bSMatk,5;
+         bonus bMatkRate,5;
+      }
+      if (.@r >= 11) {
+         bonus2 bAddSize,Size_All,10;
+         bonus2 bMagicAddSize,Size_All,10;
+      }
+      if (.@g >= ENCHANTGRADE_D) {
+         bonus bPAtk,5;
+         bonus bSMatk,5;
+      }
+      if (.@g >= ENCHANTGRADE_C) {
+         bonus bMaxHPrate,5;
+         bonus bMaxSPrate,5;
+      }
+      if (.@g >= ENCHANTGRADE_B) {
+         bonus2 bAddRace,RC_All,10;
+         bonus2 bAddRace,RC_Player_Human,-10;
+         bonus2 bAddRace,RC_Player_Doram,-10;
+         bonus2 bMagicAddRace,RC_All,10;
+         bonus2 bMagicAddRace,RC_Player_Human,-10;
+         bonus2 bMagicAddRace,RC_Player_Doram,-10;
+      }
+  - Id: 491092
+    AegisName: SH_Orrivane_R_TH
+    Name: "Orrivane Ring (Spirit Handler)"
+    Type: Armor
+    Weight: 200
+    Defense: 0
+    Slots: 1
+    Jobs:
+      Spirit_Handler: true
+    Classes:
+      Fourth: true
+    Locations:
+      Right_Accessory: true
+    ArmorLevel: 2
+    EquipLevelMin: 230
+    Refineable: true
+    Gradable: true
+    Script: |
+      bonus bBaseAtk,100;
+      bonus bMatk,100;
+      bonus bDelayRate,-10;
+      bonus bPow,10;
+      bonus bSpl,10;
+      bonus bCritical,15;
+      bonus bFixedCast,-500;
+      bonus2 bAddClass,Class_All,15;
+      bonus2 bMagicAddClass,Class_All,15;
+  - Id: 401276
+    AegisName: LMN_Orrivane_C_TR
+    Name: "Orrivane Crown (Troubadour & Trouvere)"
+    Type: Armor
+    Weight: 500
+    Defense: 35
+    Slots: 1
+    Jobs:
+      BardDancer: true
+    Classes:
+      Fourth: true
+    Locations:
+      Head_Top: true
+    ArmorLevel: 2
+    EquipLevelMin: 230
+    Refineable: true
+    Gradable: true
+    View: 2662
+    Trade:
+      NoDrop: true
+      NoTrade: true
+      NoCart: true
+      NoGuildStorage: true
+      NoMail: true
+      NoAuction: true
+    Script: |
+      .@r = getrefine();
+      .@g = getenchantgrade();
+      bonus bMaxHP,100*(.@r/3);
+      bonus bMaxSP,15*(.@r/3);
+      bonus2 bSkillAtk,"TR_METALIC_FURY",5*(.@r/4);
+      bonus2 bSkillAtk,"TR_RHYTHMSHOOTING",5*(.@r/4);
+      if (.@r >= 7) {
+         bonus bLongAtkRate,10;
+         bonus2 bMagicAtkEle,Ele_All,10;
+      }
+      if (.@r >= 9) {
+         bonus bPAtk,5;
+         bonus bAtkRate,5;
+         bonus bSMatk,5;
+         bonus bMatkRate,5;
+      }
+      if (.@r >= 11) {
+         bonus2 bAddSize,Size_All,10;
+         bonus2 bMagicAddSize,Size_All,10;
+      }
+      if (.@g >= ENCHANTGRADE_D) {
+         bonus bPAtk,5;
+         bonus bSMatk,5;
+      }
+      if (.@g >= ENCHANTGRADE_C) {
+         bonus bMaxHPrate,5;
+         bonus bMaxSPrate,5;
+      }
+      if (.@g >= ENCHANTGRADE_B) {
+         bonus2 bAddRace,RC_All,10;
+         bonus2 bAddRace,RC_Player_Human,-10;
+         bonus2 bAddRace,RC_Player_Doram,-10;
+         bonus2 bMagicAddRace,RC_All,10;
+         bonus2 bMagicAddRace,RC_Player_Human,-10;
+         bonus2 bMagicAddRace,RC_Player_Doram,-10;
+      }
+  - Id: 491091
+    AegisName: TR_Orrivane_R_TH
+    Name: "Orrivane Ring (Troubadour & Trouvere)"
+    Type: Armor
+    Weight: 200
+    Defense: 0
+    Slots: 1
+    Jobs:
+      BardDancer: true
+    Classes:
+      Fourth: true
+    Locations:
+      Right_Accessory: true
+    ArmorLevel: 2
+    EquipLevelMin: 230
+    Refineable: true
+    Gradable: true
+    Script: |
+      bonus bBaseAtk,100;
+      bonus bMatk,100;
+      bonus bDelayRate,-10;
+      bonus bPow,10;
+      bonus bSpl,10;
+      bonus bMatkRate,10;
+      bonus bNonCritAtkRate,10;
+      bonus2 bAddClass,Class_All,15;
+      bonus2 bMagicAddClass,Class_All,15;
+  - Id: 401275
+    AegisName: LMN_Orrivane_C_WH
+    Name: "Orrivane Crown (Wind Hawk)"
+    Type: Armor
+    Weight: 500
+    Defense: 35
+    Slots: 1
+    Jobs:
+      Hunter: true
+    Classes:
+      Fourth: true
+    Locations:
+      Head_Top: true
+    ArmorLevel: 2
+    EquipLevelMin: 230
+    Refineable: true
+    Gradable: true
+    View: 2662
+    Trade:
+      NoDrop: true
+      NoTrade: true
+      NoCart: true
+      NoGuildStorage: true
+      NoMail: true
+      NoAuction: true
+    Script: |
+      .@r = getrefine();
+      .@g = getenchantgrade();
+      bonus bMaxHP,100*(.@r/3);
+      bonus bMaxSP,15*(.@r/3);
+      bonus2 bSkillAtk,"WH_CRESCIVE_BOLT",5*(.@r/4);
+      bonus2 bSkillAtk,"WH_GALESTORM",5*(.@r/4);
+      if (.@r >= 7) {
+         bonus bLongAtkRate,10;
+      }
+      if (.@r >= 9) {
+         bonus bPAtk,5;
+         bonus bAtkRate,5;
+      }
+      if (.@r >= 11) {
+         bonus2 bAddSize,Size_All,10;
+      }
+      if (.@g >= ENCHANTGRADE_D) {
+         bonus bPAtk,5;
+      }
+      if (.@g >= ENCHANTGRADE_C) {
+         bonus bMaxHPrate,5;
+         bonus bMaxSPrate,5;
+      }
+      if (.@g >= ENCHANTGRADE_B) {
+         bonus2 bAddRace,RC_All,10;
+         bonus2 bAddRace,RC_Player_Human,-10;
+         bonus2 bAddRace,RC_Player_Doram,-10;
+      }
+  - Id: 491049
+    AegisName: WH_Orrivane_R_TH
+    Name: "Orrivane Ring (Wind Hawk)"
+    Type: Armor
+    Weight: 200
+    Defense: 0
+    Slots: 1
+    Jobs:
+      Hunter: true
+    Classes:
+      Fourth: true
+    Locations:
+      Right_Accessory: true
+    ArmorLevel: 2
+    EquipLevelMin: 230
+    Refineable: true
+    Gradable: true
+    Script: |
+      bonus bBaseAtk,100;
+      bonus bDelayRate,-10;
+      bonus bCon,10;
+      bonus bCritical,15;
+      bonus2 bAddClass,Class_All,15;
+  - Id: 700133
+    AegisName: LMN_ABC_C_Bow
+    Name: Orrivane Abyss Crossbow
+    Type: Weapon
+    SubType: Bow
+    Weight: 2100
+    Attack: 320
+    Range: 5
+    Slots: 2
+    Jobs:
+      Rogue: true
+    Classes:
+      Fourth: true
+    Locations:
+      Both_Hand: true
+    WeaponLevel: 5
+    EquipLevelMin: 230
+    Refineable: true
+    Gradable: true
+    Script: |
+      .@r = getrefine();
+      .@g = getenchantgrade();
+      bonus bCritical,5;
+      bonus bBaseAtk,10*(.@r/2);
+      bonus bAtkRate,.@r/2;
+      bonus2 bSkillAtk,"ABC_FRENZY_SHOT",5+2*(.@r/3);
+      if (.@r >= 7) {
+         bonus bCritAtkRate,15;
+      }
+      if (.@r >= 9) {
+         bonus bCritical,10;
+         bonus bCRate,3;
+      }
+      if (.@r >= 11) {
+         bonus2 bSkillAtk,"ABC_FRENZY_SHOT",10;
+      }
+      if (.@g >= ENCHANTGRADE_D) {
+         bonus bPAtk,2;
+      }
+      if (.@g >= ENCHANTGRADE_C) {
+         bonus2 bSkillAtk,"ABC_FRENZY_SHOT",10;
+      }
+      if (.@g >= ENCHANTGRADE_B) {
+         bonus bLongAtkRate,10;
+      }
+      if (.@g >= ENCHANTGRADE_A) {
+         bonus bPAtk,2*(.@r/2);
+      }
+  - Id: 510160
+    AegisName: LMN_ABC_Dagger
+    Name: Orrivane Abyss Dagger
+    Type: Weapon
+    SubType: Dagger
+    Weight: 1800
+    Attack: 240
+    Range: 1
+    Slots: 2
+    Jobs:
+      Rogue: true
+    Classes:
+      Fourth: true
+    Locations:
+      Right_Hand: true
+    WeaponLevel: 5
+    EquipLevelMin: 230
+    Refineable: true
+    Gradable: true
+    Script: |
+      .@r = getrefine();
+      .@g = getenchantgrade();
+      bonus bAtkRate,3;
+      bonus bBaseAtk,10*(.@r/2);
+      bonus bAtkRate,.@r/2;
+      bonus2 bSkillAtk,"ABC_DEFT_STAB",5+2*(.@r/3);
+      if (.@r >= 7) {
+         bonus bShortAtkRate,15;
+      }
+      if (.@r >= 9) {
+         bonus bDelayRate,-10;
+         bonus bPAtk,3;
+      }
+      if (.@r >= 11) {
+         bonus2 bSkillAtk,"ABC_DEFT_STAB",10;
+      }
+      if (.@g >= ENCHANTGRADE_D) {
+         bonus bPAtk,2;
+      }
+      if (.@g >= ENCHANTGRADE_C) {
+         bonus2 bSkillAtk,"ABC_DEFT_STAB",10;
+      }
+      if (.@g >= ENCHANTGRADE_B) {
+         bonus bShortAtkRate,10;
+      }
+      if (.@g >= ENCHANTGRADE_A) {
+         bonus bPAtk,2*(.@r/2);
+      }
+  - Id: 590120
+    AegisName: LMN_BO_Hall
+    Name: Orrivane Biologic Scepter
+    Type: Weapon
+    SubType: Mace
+    Weight: 2500
+    Attack: 240
+    Range: 1
+    Slots: 2
+    Jobs:
+      Alchemist: true
+    Classes:
+      Fourth: true
+    Locations:
+      Right_Hand: true
+    WeaponLevel: 5
+    EquipLevelMin: 230
+    Refineable: true
+    Gradable: true
+    Script: |
+      .@r = getrefine();
+      .@g = getenchantgrade();
+      bonus bUnbreakableWeapon;
+      bonus bAtkRate,3;
+      bonus bBaseAtk,10*(.@r/2);
+      bonus bAtkRate,.@r/2;
+      bonus2 bSkillAtk,"BO_EXPLOSIVE_POWDER",5+2*(.@r/3);
+      if (.@r >= 7) {
+         bonus bShortAtkRate,15;
+      }
+      if (.@r >= 9) {
+         bonus bDelayRate,-10;
+         bonus bPAtk,3;
+      }
+      if (.@r >= 11) {
+         bonus2 bSkillAtk,"BO_EXPLOSIVE_POWDER",10;
+      }
+      if (.@g >= ENCHANTGRADE_D) {
+         bonus bPAtk,2;
+      }
+      if (.@g >= ENCHANTGRADE_C) {
+         bonus2 bSkillAtk,"BO_EXPLOSIVE_POWDER",10;
+      }
+      if (.@g >= ENCHANTGRADE_B) {
+         bonus bShortAtkRate,10;
+      }
+      if (.@g >= ENCHANTGRADE_A) {
+         bonus bPAtk,2*(.@r/2);
+      }
+  - Id: 500140
+    AegisName: LMN_BO_Sword
+    Name: Orrivane Biologic Sword
+    Type: Weapon
+    SubType: 1hSword
+    Weight: 1800
+    Attack: 240
+    Range: 1
+    Slots: 2
+    Jobs:
+      Alchemist: true
+    Classes:
+      Fourth: true
+    Locations:
+      Right_Hand: true
+    WeaponLevel: 5
+    EquipLevelMin: 230
+    Refineable: true
+    Gradable: true
+    Script: |
+      .@r = getrefine();
+      .@g = getenchantgrade();
+      bonus bCritical,5;
+      bonus bBaseAtk,10*(.@r/2);
+      bonus bAtkRate,.@r/2;
+      bonus2 bSkillAtk,"BO_MAYHEMIC_THORNS",5+2*(.@r/3);
+      if (.@r >= 7) {
+         bonus bCritAtkRate,15;
+      }
+      if (.@r >= 9) {
+         bonus bCritical,10;
+         bonus bCRate,3;
+      }
+      if (.@r >= 11) {
+         bonus2 bSkillAtk,"BO_MAYHEMIC_THORNS",10;
+      }
+      if (.@g >= ENCHANTGRADE_D) {
+         bonus bPAtk,2;
+      }
+      if (.@g >= ENCHANTGRADE_C) {
+         bonus2 bSkillAtk,"BO_MAYHEMIC_THORNS",10;
+      }
+      if (.@g >= ENCHANTGRADE_B) {
+         bonus bLongAtkRate,10;
+      }
+      if (.@g >= ENCHANTGRADE_A) {
+         bonus bPAtk,2*(.@r/2);
+      }
+  - Id: 630067
+    AegisName: LMN_DK_Lance
+    Name: Orrivane Dragon Lance
+    Type: Weapon
+    SubType: 2hSpear
+    Weight: 6500
+    Attack: 300
+    Range: 3
+    Slots: 2
+    Jobs:
+      Knight: true
+    Classes:
+      Fourth: true
+    Locations:
+      Both_Hand: true
+    WeaponLevel: 5
+    EquipLevelMin: 230
+    Refineable: true
+    Gradable: true
+    Script: |
+      .@r = getrefine();
+      .@g = getenchantgrade();
+      bonus bMaxHPrate,5;
+      bonus bBaseAtk,10*(.@r/2);
+      bonus bAtkRate,.@r/2;
+      bonus2 bSkillAtk,"DK_DRAGONIC_BREATH",5+2*(.@r/3);
+      if (.@r >= 7) {
+         bonus bLongAtkRate,15;
+      }
+      if (.@r >= 9) {
+         bonus bVariableCastrate,-10;
+         bonus bPAtk,3;
+      }
+      if (.@r >= 11) {
+         bonus2 bSkillAtk,"DK_DRAGONIC_BREATH",10;
+      }
+      if (.@g >= ENCHANTGRADE_D) {
+         bonus bPAtk,2;
+      }
+      if (.@g >= ENCHANTGRADE_C) {
+         bonus2 bSkillAtk,"DK_DRAGONIC_BREATH",10;
+      }
+      if (.@g >= ENCHANTGRADE_B) {
+         bonus bLongAtkRate,10;
+      }
+      if (.@g >= ENCHANTGRADE_A) {
+         bonus bPAtk,2*(.@r/2);
+      }
+  - Id: 600079
+    AegisName: LMN_DK_Sword
+    Name: Orrivane Dragon Sword
+    Type: Weapon
+    SubType: 2hSword
+    Weight: 3500
+    Attack: 350
+    Range: 1
+    Slots: 2
+    Jobs:
+      Knight: true
+    Classes:
+      Fourth: true
+    Locations:
+      Both_Hand: true
+    WeaponLevel: 5
+    EquipLevelMin: 230
+    Refineable: true
+    Gradable: true
+    Script: |
+      .@r = getrefine();
+      .@g = getenchantgrade();
+      bonus bCritical,5;
+      bonus bBaseAtk,10*(.@r/2);
+      bonus bAtkRate,.@r/2;
+      bonus2 bSkillAtk,"DK_HACKANDSLASHER",5+2*(.@r/3);
+      if (.@r >= 7) {
+         bonus bCritAtkRate,15;
+      }
+      if (.@r >= 9) {
+         bonus bCritical,10;
+         bonus bCRate,3;
+      }
+      if (.@r >= 11) {
+         bonus2 bSkillAtk,"DK_HACKANDSLASHER",10;
+      }
+      if (.@g >= ENCHANTGRADE_D) {
+         bonus bPAtk,2;
+      }
+      if (.@g >= ENCHANTGRADE_C) {
+         bonus2 bSkillAtk,"DK_HACKANDSLASHER",10;
+      }
+      if (.@g >= ENCHANTGRADE_B) {
+         bonus bShortAtkRate,10;
+      }
+      if (.@g >= ENCHANTGRADE_A) {
+         bonus bPAtk,2*(.@r/2);
+      }
+  - Id: 540129
+    AegisName: LMN_EM_Book
+    Name: Orrivane Elemental Magic Book
+    Type: Weapon
+    SubType: Book
+    Weight: 1800
+    Attack: 100
+    Range: 1
+    Slots: 2
+    Jobs:
+      Sage: true
+    Classes:
+      Fourth: true
+    Locations:
+      Right_Hand: true
+    WeaponLevel: 5
+    EquipLevelMin: 230
+    Refineable: true
+    Gradable: true
+    Script: |
+      .@r = getrefine();
+      .@g = getenchantgrade();
+      bonus bMatk,200+10*(.@r/2);
+      bonus bMatkRate,3+(.@r/2);
+      bonus2 bSkillAtk,"EM_LIGHTNING_LAND",5+5*(.@r/3);
+      if (.@r >= 7) {
+         bonus2 bMagicAtkEle,Ele_All,15;
+      }
+      if (.@r >= 9) {
+         bonus bVariableCastrate,-10;
+         bonus bSMatk,3;
+      }
+      if (.@r >= 11) {
+         bonus2 bSkillAtk,"EM_LIGHTNING_LAND",10;
+      }
+      if (.@g >= ENCHANTGRADE_D) {
+         bonus bSMatk,2;
+      }
+      if (.@g >= ENCHANTGRADE_C) {
+         bonus2 bSkillAtk,"EM_LIGHTNING_LAND",10;
+      }
+      if (.@g >= ENCHANTGRADE_B) {
+         bonus2 bMagicAtkEle,Ele_All,10;
+      }
+      if (.@g >= ENCHANTGRADE_A) {
+         bonus bSMatk,2*(.@r/2);
+      }
+  - Id: 540130
+    AegisName: LMN_EM_S_Book
+    Name: Orrivane Elemental Spell Book
+    Type: Weapon
+    SubType: Book
+    Weight: 1800
+    Attack: 100
+    Range: 1
+    Slots: 2
+    Jobs:
+      Sage: true
+    Classes:
+      Fourth: true
+    Locations:
+      Right_Hand: true
+    WeaponLevel: 5
+    EquipLevelMin: 230
+    Refineable: true
+    Gradable: true
+    Script: |
+      .@r = getrefine();
+      .@g = getenchantgrade();
+      bonus bMatk,200+10*(.@r/2);
+      bonus bMatkRate,3+(.@r/2);
+      bonus2 bSkillAtk,"EM_VENOM_SWAMP",5+5*(.@r/3);
+      if (.@r >= 7) {
+         bonus2 bMagicAtkEle,Ele_All,15;
+      }
+      if (.@r >= 9) {
+         bonus bVariableCastrate,-10;
+         bonus bSMatk,3;
+      }
+      if (.@r >= 11) {
+         bonus2 bSkillAtk,"EM_VENOM_SWAMP",10;
+      }
+      if (.@g >= ENCHANTGRADE_D) {
+         bonus bSMatk,2;
+      }
+      if (.@g >= ENCHANTGRADE_C) {
+         bonus2 bSkillAtk,"EM_VENOM_SWAMP",10;
+      }
+      if (.@g >= ENCHANTGRADE_B) {
+         bonus2 bMagicAtkEle,Ele_All,10;
+      }
+      if (.@g >= ENCHANTGRADE_A) {
+         bonus bSMatk,2*(.@r/2);
+      }
+  - Id: 540132
+    AegisName: LMN_SE_Book_N
+    Name: Orrivane Emperor Noon Book
+    Type: Weapon
+    SubType: Book
+    Weight: 2200
+    Attack: 230
+    Range: 1
+    Slots: 2
+    Jobs:
+      StarGladiator: true
+    Classes:
+      Fourth: true
+    Locations:
+      Right_Hand: true
+    WeaponLevel: 5
+    EquipLevelMin: 230
+    Refineable: true
+    Gradable: true
+    Script: |
+      .@r = getrefine();
+      .@g = getenchantgrade();
+      bonus bCritical,5;
+      bonus bBaseAtk,10*(.@r/2);
+      bonus bAtkRate,.@r/2;
+      bonus2 bSkillAtk,"SKE_NOON_BLAST",5+2*(.@r/3);
+      if (.@r >= 7) {
+         bonus bCritAtkRate,15;
+      }
+      if (.@r >= 9) {
+         bonus bCritical,10;
+         bonus bCRate,3;
+      }
+      if (.@r >= 11) {
+         bonus2 bSkillAtk,"SKE_NOON_BLAST",10;
+      }
+      if (.@g >= ENCHANTGRADE_D) {
+         bonus bPAtk,2;
+      }
+      if (.@g >= ENCHANTGRADE_C) {
+         bonus2 bSkillAtk,"SKE_NOON_BLAST",10;
+      }
+      if (.@g >= ENCHANTGRADE_B) {
+         bonus bShortAtkRate,10;
+      }
+      if (.@g >= ENCHANTGRADE_A) {
+         bonus bPAtk,2*(.@r/2);
+      }
+  - Id: 540131
+    AegisName: LMN_SE_Book_S
+    Name: Orrivane Emperor Star Book
+    Type: Weapon
+    SubType: Book
+    Weight: 2400
+    Attack: 240
+    Range: 1
+    Slots: 2
+    Jobs:
+      StarGladiator: true
+    Classes:
+      Fourth: true
+    Locations:
+      Right_Hand: true
+    WeaponLevel: 5
+    EquipLevelMin: 230
+    Refineable: true
+    Gradable: true
+    Script: |
+      .@r = getrefine();
+      .@g = getenchantgrade();
+      bonus bAtkRate,3;
+      bonus bBaseAtk,10*(.@r/2);
+      bonus bAtkRate,.@r/2;
+      bonus2 bSkillAtk,"SKE_STAR_CANNON",5+2*(.@r/3);
+      if (.@r >= 7) {
+         bonus bShortAtkRate,15;
+      }
+      if (.@r >= 9) {
+         bonus bDelayRate,-10;
+         bonus bPAtk,3;
+      }
+      if (.@r >= 11) {
+         bonus2 bSkillAtk,"SKE_STAR_CANNON",10;
+      }
+      if (.@g >= ENCHANTGRADE_D) {
+         bonus bPAtk,2;
+      }
+      if (.@g >= ENCHANTGRADE_C) {
+         bonus2 bSkillAtk,"SKE_STAR_CANNON",10;
+      }
+      if (.@g >= ENCHANTGRADE_B) {
+         bonus bShortAtkRate,10;
+      }
+      if (.@g >= ENCHANTGRADE_A) {
+         bonus bPAtk,2*(.@r/2);
+      }
+  - Id: 650064
+    AegisName: LMN_SS_P_Humma
+    Name: Orrivane Huuma Shuriken
+    Type: Weapon
+    SubType: Huuma
+    Weight: 3200
+    Attack: 370
+    Range: 1
+    Slots: 2
+    Jobs:
+      KagerouOboro: true
+    Classes:
+      Fourth: true
+    Locations:
+      Both_Hand: true
+    WeaponLevel: 5
+    EquipLevelMin: 230
+    Refineable: true
+    Gradable: true
+    Script: |
+      .@r = getrefine();
+      .@g = getenchantgrade();
+      bonus bCritical,5;
+      bonus bBaseAtk,10*(.@r/2);
+      bonus bAtkRate,.@r/2;
+      bonus2 bSkillAtk,"SS_KAGEGISSEN",5+2*(.@r/3);
+      if (.@r >= 7) {
+         bonus bCritAtkRate,15;
+      }
+      if (.@r >= 9) {
+         bonus bCritical,10;
+         bonus bCRate,3;
+      }
+      if (.@r >= 11) {
+         bonus2 bSkillAtk,"SS_KAGEGISSEN",10;
+      }
+      if (.@g >= ENCHANTGRADE_D) {
+         bonus bPAtk,2;
+      }
+      if (.@g >= ENCHANTGRADE_C) {
+         bonus2 bSkillAtk,"SS_KAGEGISSEN",10;
+      }
+      if (.@g >= ENCHANTGRADE_B) {
+         bonus bShortAtkRate,10;
+      }
+      if (.@g >= ENCHANTGRADE_A) {
+         bonus bPAtk,2*(.@r/2);
+      }
+  - Id: 500141
+    AegisName: LMN_HN_Sword
+    Name: Orrivane Hyper Sword
+    Type: Weapon
+    SubType: 1hSword
+    Weight: 1800
+    Attack: 200
+    Range: 1
+    Slots: 2
+    Jobs:
+      SuperNovice: true
+    Classes:
+      Fourth: true
+    Locations:
+      Right_Hand: true
+    WeaponLevel: 5
+    EquipLevelMin: 230
+    Refineable: true
+    Gradable: true
+    Script: |
+      .@r = getrefine();
+      .@g = getenchantgrade();
+      bonus bCritical,5;
+      bonus bBaseAtk,10*(.@r/2);
+      bonus bAtkRate,.@r/2;
+      bonus2 bSkillAtk,"HN_MEGA_SONIC_BLOW",10+2*(.@r/3);
+      if (.@r >= 7) {
+         bonus bCritAtkRate,15;
+      }
+      if (.@r >= 9) {
+         bonus bCritical,15;
+         bonus bCRate,3;
+      }
+      if (.@r >= 11) {
+         bonus2 bSkillAtk,"HN_MEGA_SONIC_BLOW",10;
+      }
+      if (.@g >= ENCHANTGRADE_D) {
+         bonus bPAtk,2;
+      }
+      if (.@g >= ENCHANTGRADE_C) {
+         bonus2 bSkillAtk,"HN_MEGA_SONIC_BLOW",10;
+      }
+      if (.@g >= ENCHANTGRADE_B) {
+         bonus bShortAtkRate,10;
+      }
+      if (.@g >= ENCHANTGRADE_A) {
+         bonus bPAtk,2*(.@r/2);
+      }
+  - Id: 550205
+    AegisName: LMN_HN_Wand
+    Name: Orrivane Hyper Wand
+    Type: Weapon
+    SubType: Staff
+    Weight: 1800
+    Attack: 120
+    Range: 1
+    Slots: 2
+    Jobs:
+      SuperNovice: true
+    Classes:
+      Fourth: true
+    Locations:
+      Right_Hand: true
+    WeaponLevel: 5
+    EquipLevelMin: 230
+    Refineable: true
+    Gradable: true
+    Script: |
+      .@r = getrefine();
+      .@g = getenchantgrade();
+      bonus bUnbreakableWeapon;
+      bonus bMatk,200+10*(.@r/2);
+      bonus bMatkRate,3+(.@r/2);
+      bonus2 bSkillAtk,"HN_JACK_FROST_NOVA",5+2*(.@r/3);
+      if (.@r >= 7) {
+         bonus2 bMagicAtkEle,Ele_All,15;
+      }
+      if (.@r >= 9) {
+         bonus bVariableCastrate,-10;
+         bonus bSMatk,3;
+      }
+      if (.@r >= 11) {
+         bonus2 bSkillAtk,"HN_JACK_FROST_NOVA",10;
+      }
+      if (.@g >= ENCHANTGRADE_D) {
+         bonus bSMatk,2;
+      }
+      if (.@g >= ENCHANTGRADE_C) {
+         bonus2 bSkillAtk,"HN_JACK_FROST_NOVA",10;
+      }
+      if (.@g >= ENCHANTGRADE_B) {
+         bonus2 bMagicAtkEle,Ele_All,10;
+      }
+      if (.@g >= ENCHANTGRADE_A) {
+         bonus bSMatk,2*(.@r/2);
+      }
+  - Id: 530083
+    AegisName: LMN_IG_Spear
+    Name: Orrivane Imperial Spear
+    Type: Weapon
+    SubType: 1hSpear
+    Weight: 3500
+    Attack: 240
+    Range: 3
+    Slots: 2
+    Jobs:
+      Crusader: true
+    Classes:
+      Fourth: true
+    Locations:
+      Right_Hand: true
+    WeaponLevel: 5
+    EquipLevelMin: 230
+    Refineable: true
+    Gradable: true
+    Script: |
+      .@r = getrefine();
+      .@g = getenchantgrade();
+      bonus bAtkRate,3;
+      bonus bBaseAtk,10*(.@r/2);
+      bonus bAtkRate,.@r/2;
+      bonus2 bSkillAtk,"IG_OVERSLASH",5+2*(.@r/3);
+      bonus2 bSkillAtk,"LG_OVERBRAND",5*(.@r/3);
+      if (.@r >= 7) {
+         bonus bShortAtkRate,15;
+      }
+      if (.@r >= 9) {
+         bonus bDelayRate,-10;
+         bonus bPAtk,3;
+      }
+      if (.@r >= 11) {
+         bonus2 bSkillAtk,"IG_OVERSLASH",10;
+         bonus2 bSkillAtk,"LG_OVERBRAND",20;
+      }
+      if (.@g >= ENCHANTGRADE_D) {
+         bonus bPAtk,2;
+      }
+      if (.@g >= ENCHANTGRADE_C) {
+         bonus2 bSkillAtk,"IG_OVERSLASH",10;
+      }
+      if (.@g >= ENCHANTGRADE_B) {
+         bonus bShortAtkRate,10;
+      }
+      if (.@g >= ENCHANTGRADE_A) {
+         bonus bPAtk,2*(.@r/2);
+      }
+  - Id: 500139
+    AegisName: LMN_IG_Sword
+    Name: Orrivane Imperial Sword
+    Type: Weapon
+    SubType: 1hSword
+    Weight: 3500
+    Attack: 100
+    Range: 1
+    Slots: 2
+    Jobs:
+      Crusader: true
+    Classes:
+      Fourth: true
+    Locations:
+      Right_Hand: true
+    WeaponLevel: 5
+    EquipLevelMin: 230
+    Refineable: true
+    Gradable: true
+    Script: |
+      .@r = getrefine();
+      .@g = getenchantgrade();
+      bonus bMatk,200+10*(.@r/2);
+      bonus bMatkRate,3+(.@r/2);
+      bonus2 bSkillAtk,"IG_CROSS_RAIN",5+2*(.@r/3);
+      bonus2 bSkillAtk,"LG_RAYOFGENESIS",5*(.@r/3);
+      if (.@r >= 7) {
+         bonus2 bMagicAtkEle,Ele_Holy,15;
+         bonus2 bMagicAtkEle,Ele_Neutral,15;
+      }
+      if (.@r >= 9) {
+         bonus bVariableCastrate,-10;
+         bonus2 bSkillCooldown,"LG_RAYOFGENESIS",-1000;
+      }
+      if (.@r >= 11) {
+         bonus2 bSkillAtk,"IG_CROSS_RAIN",10;
+         bonus2 bSkillAtk,"LG_RAYOFGENESIS",20;
+      }
+      if (.@g >= ENCHANTGRADE_D) {
+         bonus bSMatk,2;
+      }
+      if (.@g >= ENCHANTGRADE_C) {
+         bonus2 bSkillAtk,"IG_CROSS_RAIN",10;
+      }
+      if (.@g >= ENCHANTGRADE_B) {
+         bonus2 bMagicAtkEle,Ele_Holy,10;
+         bonus2 bMagicAtkEle,Ele_Neutral,10;
+      }
+      if (.@g >= ENCHANTGRADE_A) {
+         bonus bSMatk,2*(.@r/2);
+      }
+  - Id: 560092
+    AegisName: LMN_IQ_Claw
+    Name: Orrivane Judgment Claw
+    Type: Weapon
+    SubType: Knuckle
+    Weight: 2500
+    Attack: 240
+    Range: 1
+    Slots: 2
+    Jobs:
+      Monk: true
+    Classes:
+      Fourth: true
+    Locations:
+      Right_Hand: true
+    WeaponLevel: 5
+    EquipLevelMin: 230
+    Refineable: true
+    Gradable: true
+    Script: |
+      .@r = getrefine();
+      .@g = getenchantgrade();
+      bonus bCritical,5;
+      bonus bBaseAtk,10*(.@r/2);
+      bonus bAtkRate,.@r/2;
+      bonus2 bSkillAtk,"IQ_EXPOSION_BLASTER",5+2*(.@r/3);
+      if (.@r >= 7) {
+         bonus bCritAtkRate,15;
+      }
+      if (.@r >= 9) {
+         bonus bCritical,10;
+         bonus bCRate,3;
+      }
+      if (.@r >= 11) {
+         bonus2 bSkillAtk,"IQ_EXPOSION_BLASTER",10;
+      }
+      if (.@g >= ENCHANTGRADE_D) {
+         bonus bPAtk,2;
+      }
+      if (.@g >= ENCHANTGRADE_C) {
+         bonus2 bSkillAtk,"IQ_EXPOSION_BLASTER",10;
+      }
+      if (.@g >= ENCHANTGRADE_B) {
+         bonus bLongAtkRate,10;
+      }
+      if (.@g >= ENCHANTGRADE_A) {
+         bonus bPAtk,2*(.@r/2);
+      }
+  - Id: 560091
+    AegisName: LMN_IQ_Knuckle
+    Name: Orrivane Judgment Knuckle
+    Type: Weapon
+    SubType: Knuckle
+    Weight: 2300
+    Attack: 240
+    Range: 1
+    Slots: 2
+    Jobs:
+      Monk: true
+    Classes:
+      Fourth: true
+    Locations:
+      Right_Hand: true
+    WeaponLevel: 5
+    EquipLevelMin: 230
+    Refineable: true
+    Gradable: true
+    Script: |
+      .@r = getrefine();
+      .@g = getenchantgrade();
+      bonus bAtkRate,3;
+      bonus bBaseAtk,10*(.@r/2);
+      bonus bAtkRate,.@r/2;
+      bonus2 bSkillAtk,"IQ_THIRD_FLAME_BOMB",5+2*(.@r/3);
+      if (.@r >= 7) {
+         bonus bShortAtkRate,15;
+      }
+      if (.@r >= 9) {
+         bonus bDelayRate,-10;
+         bonus bPAtk,3;
+      }
+      if (.@r >= 11) {
+         bonus2 bSkillAtk,"IQ_THIRD_FLAME_BOMB",10;
+      }
+      if (.@g >= ENCHANTGRADE_D) {
+         bonus bPAtk,2;
+      }
+      if (.@g >= ENCHANTGRADE_C) {
+         bonus2 bSkillAtk,"IQ_THIRD_FLAME_BOMB",10;
+      }
+      if (.@g >= ENCHANTGRADE_B) {
+         bonus bShortAtkRate,10;
+      }
+      if (.@g >= ENCHANTGRADE_A) {
+         bonus bPAtk,2*(.@r/2);
+      }
+  - Id: 620066
+    AegisName: LMN_MT_Axe
+    Name: Orrivane Mechanical Axe
+    Type: Weapon
+    SubType: 2hAxe
+    Weight: 4500
+    Attack: 380
+    Range: 1
+    Slots: 2
+    Jobs:
+      Blacksmith: true
+    Classes:
+      Fourth: true
+    Locations:
+      Both_Hand: true
+    WeaponLevel: 5
+    EquipLevelMin: 230
+    Refineable: true
+    Gradable: true
+    Script: |
+      .@r = getrefine();
+      .@g = getenchantgrade();
+      bonus bUnbreakableWeapon;
+      bonus bAtkRate,3;
+      bonus bBaseAtk,10*(.@r/2);
+      bonus bAtkRate,.@r/2;
+      bonus2 bSkillAtk,"MT_MIGHTY_SMASH",5+2*(.@r/3);
+      if (.@r >= 7) {
+         bonus bShortAtkRate,15;
+      }
+      if (.@r >= 9) {
+         bonus bDelayRate,-10;
+         bonus bPAtk,3;
+      }
+      if (.@r >= 11) {
+         bonus2 bSkillAtk,"MT_MIGHTY_SMASH",10;
+      }
+      if (.@g >= ENCHANTGRADE_D) {
+         bonus bPAtk,2;
+      }
+      if (.@g >= ENCHANTGRADE_C) {
+         bonus2 bSkillAtk,"MT_MIGHTY_SMASH",10;
+      }
+      if (.@g >= ENCHANTGRADE_B) {
+         bonus bShortAtkRate,10;
+      }
+      if (.@g >= ENCHANTGRADE_A) {
+         bonus bPAtk,2*(.@r/2);
+      }
+  - Id: 590119
+    AegisName: LMN_MT_Mace
+    Name: Orrivane Mechanical Mace
+    Type: Weapon
+    SubType: Mace
+    Weight: 2500
+    Attack: 320
+    Range: 1
+    Slots: 2
+    Jobs:
+      Blacksmith: true
+    Classes:
+      Fourth: true
+    Locations:
+      Right_Hand: true
+    WeaponLevel: 5
+    EquipLevelMin: 230
+    Refineable: true
+    Gradable: true
+    Script: |
+      .@r = getrefine();
+      .@g = getenchantgrade();
+      bonus bUnbreakableWeapon;
+      bonus bAtkRate,3;
+      bonus bBaseAtk,10*(.@r/2);
+      bonus bAtkRate,.@r/2;
+      bonus2 bSkillAtk,"MT_SPARK_BLASTER",5+2*(.@r/3);
+      if (.@r >= 7) {
+         bonus bLongAtkRate,15;
+      }
+      if (.@r >= 9) {
+         bonus bDelayRate,-10;
+         bonus bPAtk,3;
+      }
+      if (.@r >= 11) {
+         bonus2 bSkillAtk,"MT_SPARK_BLASTER",10;
+      }
+      if (.@g >= ENCHANTGRADE_D) {
+         bonus bPAtk,2;
+      }
+      if (.@g >= ENCHANTGRADE_C) {
+         bonus2 bSkillAtk,"MT_SPARK_BLASTER",10;
+      }
+      if (.@g >= ENCHANTGRADE_B) {
+         bonus bLongAtkRate,10;
+      }
+      if (.@g >= ENCHANTGRADE_A) {
+         bonus bPAtk,2*(.@r/2);
+      }
+  - Id: 570095
+    AegisName: LMN_TR_Harp
+    Name: Orrivane Musical Harp
+    Type: Weapon
+    SubType: Musical
+    Weight: 1800
+    Attack: 230
+    Range: 1
+    Slots: 2
+    Jobs:
+      BardDancer: true
+    Classes:
+      Fourth: true
+    Gender: Male
+    Locations:
+      Right_Hand: true
+    WeaponLevel: 5
+    EquipLevelMin: 230
+    Refineable: true
+    Gradable: true
+    Script: |
+      .@r = getrefine();
+      .@g = getenchantgrade();
+      bonus bAtkRate,3;
+      bonus bBaseAtk,10*(.@r/2);
+      bonus bAtkRate,.@r/2;
+      bonus2 bSkillAtk,"TR_RHYTHMSHOOTING",5+2*(.@r/3);
+      if (.@r >= 7) {
+         bonus bLongAtkRate,15;
+      }
+      if (.@r >= 9) {
+         bonus bDelayRate,-10;
+         bonus bPAtk,3;
+      }
+      if (.@r >= 11) {
+         bonus2 bSkillAtk,"TR_RHYTHMSHOOTING",10;
+      }
+      if (.@g >= ENCHANTGRADE_D) {
+         bonus bPAtk,2;
+      }
+      if (.@g >= ENCHANTGRADE_C) {
+         bonus2 bSkillAtk,"TR_RHYTHMSHOOTING",10;
+      }
+      if (.@g >= ENCHANTGRADE_B) {
+         bonus bLongAtkRate,10;
+      }
+      if (.@g >= ENCHANTGRADE_A) {
+         bonus bPAtk,2*(.@r/2);
+      }
+  - Id: 580095
+    AegisName: LMN_TR_Ribbon
+    Name: Orrivane Musical Ribbon
+    Type: Weapon
+    SubType: Whip
+    Weight: 1800
+    Attack: 100
+    Range: 2
+    Slots: 2
+    Jobs:
+      BardDancer: true
+    Classes:
+      Fourth: true
+    Gender: Female
+    Locations:
+      Right_Hand: true
+    WeaponLevel: 5
+    EquipLevelMin: 230
+    Refineable: true
+    Gradable: true
+    Script: |
+      .@r = getrefine();
+      .@g = getenchantgrade();
+      bonus bMatk,200+10*(.@r/2);
+      bonus bMatkRate,3+(.@r/2);
+      bonus2 bSkillAtk,"TR_METALIC_FURY",5+5*(.@r/3);
+      if (.@r >= 7) {
+         bonus2 bMagicAtkEle,Ele_All,15;
+      }
+      if (.@r >= 9) {
+         bonus bVariableCastrate,-10;
+         bonus bSMatk,3;
+      }
+      if (.@r >= 11) {
+         bonus2 bSkillAtk,"TR_METALIC_FURY",10;
+      }
+      if (.@g >= ENCHANTGRADE_D) {
+         bonus bSMatk,2;
+      }
+      if (.@g >= ENCHANTGRADE_C) {
+         bonus2 bSkillAtk,"TR_METALIC_FURY",10;
+      }
+      if (.@g >= ENCHANTGRADE_B) {
+         bonus2 bMagicAtkEle,Ele_All,10;
+      }
+      if (.@g >= ENCHANTGRADE_A) {
+         bonus bSMatk,2*(.@r/2);
+      }
+  - Id: 580094
+    AegisName: LMN_TR_Rope
+    Name: Orrivane Musical Rope
+    Type: Weapon
+    SubType: Whip
+    Weight: 1800
+    Attack: 230
+    Range: 2
+    Slots: 2
+    Jobs:
+      BardDancer: true
+    Classes:
+      Fourth: true
+    Gender: Female
+    Locations:
+      Right_Hand: true
+    WeaponLevel: 5
+    EquipLevelMin: 230
+    Refineable: true
+    Gradable: true
+    Script: |
+      .@r = getrefine();
+      .@g = getenchantgrade();
+      bonus bAtkRate,3;
+      bonus bBaseAtk,10*(.@r/2);
+      bonus bAtkRate,.@r/2;
+      bonus2 bSkillAtk,"TR_RHYTHMSHOOTING",5+2*(.@r/3);
+      if (.@r >= 7) {
+         bonus bLongAtkRate,15;
+      }
+      if (.@r >= 9) {
+         bonus bDelayRate,-10;
+         bonus bPAtk,3;
+      }
+      if (.@r >= 11) {
+         bonus2 bSkillAtk,"TR_RHYTHMSHOOTING",10;
+      }
+      if (.@g >= ENCHANTGRADE_D) {
+         bonus bPAtk,2;
+      }
+      if (.@g >= ENCHANTGRADE_C) {
+         bonus2 bSkillAtk,"TR_RHYTHMSHOOTING",10;
+      }
+      if (.@g >= ENCHANTGRADE_B) {
+         bonus bLongAtkRate,10;
+      }
+      if (.@g >= ENCHANTGRADE_A) {
+         bonus bPAtk,2*(.@r/2);
+      }
+  - Id: 570094
+    AegisName: LMN_TR_Violin
+    Name: Orrivane Musical Violin
+    Type: Weapon
+    SubType: Musical
+    Weight: 1800
+    Attack: 100
+    Range: 1
+    Slots: 2
+    Jobs:
+      BardDancer: true
+    Classes:
+      Fourth: true
+    Gender: Male
+    Locations:
+      Right_Hand: true
+    WeaponLevel: 5
+    EquipLevelMin: 230
+    Refineable: true
+    Gradable: true
+    Script: |
+      .@r = getrefine();
+      .@g = getenchantgrade();
+      bonus bMatk,200+10*(.@r/2);
+      bonus bMatkRate,3+(.@r/2);
+      bonus2 bSkillAtk,"TR_METALIC_FURY",5+5*(.@r/3);
+      if (.@r >= 7) {
+         bonus2 bMagicAtkEle,Ele_All,15;
+      }
+      if (.@r >= 9) {
+         bonus bVariableCastrate,-10;
+         bonus bSMatk,3;
+      }
+      if (.@r >= 11) {
+         bonus2 bSkillAtk,"TR_METALIC_FURY",10;
+      }
+      if (.@g >= ENCHANTGRADE_D) {
+         bonus bSMatk,2;
+      }
+      if (.@g >= ENCHANTGRADE_C) {
+         bonus2 bSkillAtk,"TR_METALIC_FURY",10;
+      }
+      if (.@g >= ENCHANTGRADE_B) {
+         bonus2 bMagicAtkEle,Ele_All,10;
+      }
+      if (.@g >= ENCHANTGRADE_A) {
+         bonus bSMatk,2*(.@r/2);
+      }
+  - Id: 830048
+    AegisName: LMN_NW_Gatling
+    Name: Orrivane Night Gatling
+    Type: Weapon
+    SubType: Gatling
+    Weight: 3500
+    Attack: 350
+    Range: 9
+    Slots: 2
+    Jobs:
+      Rebellion: true
+    Classes:
+      Fourth: true
+    Locations:
+      Both_Hand: true
+    WeaponLevel: 5
+    EquipLevelMin: 230
+    Refineable: true
+    Gradable: true
+    Script: |
+      .@r = getrefine();
+      .@g = getenchantgrade();
+      bonus bAtkRate,3;
+      bonus bBaseAtk,10*(.@r/2);
+      bonus bAtkRate,.@r/2;
+      bonus2 bSkillAtk,"NW_THE_VIGILANTE_AT_NIGHT",5+2*(.@r/3);
+      if (.@r >= 7) {
+         bonus bLongAtkRate,15;
+      }
+      if (.@r >= 9) {
+         bonus bDelayRate,-10;
+         bonus bPAtk,3;
+      }
+      if (.@r >= 11) {
+         bonus2 bSkillAtk,"NW_THE_VIGILANTE_AT_NIGHT",10;
+      }
+      if (.@g >= ENCHANTGRADE_D) {
+         bonus bPAtk,2;
+      }
+      if (.@g >= ENCHANTGRADE_C) {
+         bonus2 bSkillAtk,"NW_THE_VIGILANTE_AT_NIGHT",10;
+      }
+      if (.@g >= ENCHANTGRADE_B) {
+         bonus bLongAtkRate,10;
+      }
+      if (.@g >= ENCHANTGRADE_A) {
+         bonus bPAtk,2*(.@r/2);
+      }
+  - Id: 800050
+    AegisName: LMN_NW_Pistol
+    Name: Orrivane Night Pistol
+    Type: Weapon
+    SubType: Revolver
+    Weight: 2200
+    Attack: 230
+    Range: 7
+    Slots: 2
+    Jobs:
+      Rebellion: true
+    Classes:
+      Fourth: true
+    Locations:
+      Both_Hand: true
+    WeaponLevel: 5
+    EquipLevelMin: 230
+    Refineable: true
+    Gradable: true
+    Script: |
+      .@r = getrefine();
+      .@g = getenchantgrade();
+      bonus bCritical,5;
+      bonus bBaseAtk,10*(.@r/2);
+      bonus bAtkRate,.@r/2;
+      bonus2 bSkillAtk,"NW_MAGAZINE_FOR_ONE",5+2*(.@r/3);
+      if (.@r >= 7) {
+         bonus bCritAtkRate,15;
+      }
+      if (.@r >= 9) {
+         bonus bCritical,10;
+         bonus bCRate,3;
+      }
+      if (.@r >= 11) {
+         bonus2 bSkillAtk,"NW_MAGAZINE_FOR_ONE",10;
+      }
+      if (.@g >= ENCHANTGRADE_D) {
+         bonus bPAtk,2;
+      }
+      if (.@g >= ENCHANTGRADE_C) {
+         bonus2 bSkillAtk,"NW_MAGAZINE_FOR_ONE",10;
+      }
+      if (.@g >= ENCHANTGRADE_B) {
+         bonus bLongAtkRate,10;
+      }
+      if (.@g >= ENCHANTGRADE_A) {
+         bonus bPAtk,2*(.@r/2);
+      }
+  - Id: 540128
+    AegisName: LMN_CD_Book
+    Name: Orrivane Saint Book
+    Type: Weapon
+    SubType: Book
+    Weight: 1800
+    Attack: 230
+    Range: 1
+    Slots: 2
+    Jobs:
+      Priest: true
+    Classes:
+      Fourth: true
+    Locations:
+      Right_Hand: true
+    WeaponLevel: 5
+    EquipLevelMin: 230
+    Refineable: true
+    Gradable: true
+    Script: |
+      .@r = getrefine();
+      .@g = getenchantgrade();
+      bonus bCritical,5;
+      bonus bBaseAtk,10*(.@r/2);
+      bonus bAtkRate,.@r/2;
+      bonus2 bSkillAtk,"CD_PETITIO",5+2*(.@r/3);
+      if (.@r >= 7) {
+         bonus bCritAtkRate,15;
+      }
+      if (.@r >= 9) {
+         bonus bCritical,10;
+         bonus bCRate,3;
+      }
+      if (.@r >= 11) {
+         bonus2 bSkillAtk,"CD_PETITIO",10;
+      }
+      if (.@g >= ENCHANTGRADE_D) {
+         bonus bPAtk,2;
+      }
+      if (.@g >= ENCHANTGRADE_C) {
+         bonus2 bSkillAtk,"CD_PETITIO",10;
+      }
+      if (.@g >= ENCHANTGRADE_B) {
+         bonus bShortAtkRate,10;
+      }
+      if (.@g >= ENCHANTGRADE_A) {
+         bonus bPAtk,2*(.@r/2);
+      }
+  - Id: 550201
+    AegisName: LMN_CD_Wand
+    Name: Orrivane Saint Wand
+    Type: Weapon
+    SubType: Staff
+    Weight: 2000
+    Attack: 100
+    Range: 1
+    Slots: 2
+    Jobs:
+      Priest: true
+    Classes:
+      Fourth: true
+    Locations:
+      Right_Hand: true
+    WeaponLevel: 5
+    EquipLevelMin: 230
+    Refineable: true
+    Gradable: true
+    Script: |
+      .@r = getrefine();
+      .@g = getenchantgrade();
+      bonus bUnbreakableWeapon;
+      bonus bMatk,200+10*(.@r/2);
+      bonus bMatkRate,3+(.@r/2);
+      bonus2 bSkillAtk,"CD_ARBITRIUM",5+2*(.@r/3);
+      bonus2 bSkillAtk,"CD_ARBITRIUM_ATK",5+2*(.@r/3);
+      if (.@r >= 7) {
+         bonus2 bMagicAtkEle,Ele_Holy,15;
+      }
+      if (.@r >= 9) {
+         bonus bVariableCastrate,-10;
+         bonus bSMatk,3;
+      }
+      if (.@r >= 11) {
+         bonus2 bSkillAtk,"CD_ARBITRIUM",10;
+         bonus2 bSkillAtk,"CD_ARBITRIUM_ATK",10;
+      }
+      if (.@g >= ENCHANTGRADE_D) {
+         bonus bSMatk,2;
+      }
+      if (.@g >= ENCHANTGRADE_C) {
+         bonus2 bSkillAtk,"CD_ARBITRIUM",10;
+         bonus2 bSkillAtk,"CD_ARBITRIUM_ATK",10;
+      }
+      if (.@g >= ENCHANTGRADE_B) {
+         bonus2 bMagicAtkEle,Ele_Holy,10;
+      }
+      if (.@g >= ENCHANTGRADE_A) {
+         bonus bSMatk,2*(.@r/2);
+      }
+  - Id: 610095
+    AegisName: LMN_SHC_Cakram
+    Name: Orrivane Shadow Cakram
+    Type: Weapon
+    SubType: Katar
+    Weight: 2200
+    Attack: 320
+    Range: 1
+    Slots: 2
+    Jobs:
+      Assassin: true
+    Classes:
+      Fourth: true
+    Locations:
+      Both_Hand: true
+    WeaponLevel: 5
+    EquipLevelMin: 230
+    Refineable: true
+    Gradable: true
+    Script: |
+      .@r = getrefine();
+      .@g = getenchantgrade();
+      bonus bCritical,5;
+      bonus bBaseAtk,10*(.@r/2);
+      bonus bAtkRate,.@r/2;
+      bonus2 bSkillAtk,"SHC_ETERNAL_SLASH",5+2*(.@r/3);
+      if (.@r >= 7) {
+         bonus bCritAtkRate,15;
+      }
+      if (.@r >= 9) {
+         bonus bCritical,10;
+         bonus bCRate,3;
+      }
+      if (.@r >= 11) {
+         bonus2 bSkillAtk,"SHC_ETERNAL_SLASH",10;
+      }
+      if (.@g >= ENCHANTGRADE_D) {
+         bonus bPAtk,2;
+      }
+      if (.@g >= ENCHANTGRADE_C) {
+         bonus2 bSkillAtk,"SHC_ETERNAL_SLASH",10;
+      }
+      if (.@g >= ENCHANTGRADE_B) {
+         bonus bShortAtkRate,10;
+      }
+      if (.@g >= ENCHANTGRADE_A) {
+         bonus bPAtk,2*(.@r/2);
+      }
+  - Id: 610094
+    AegisName: LMN_SHC_Katar
+    Name: Orrivane Shadow Katar
+    Type: Weapon
+    SubType: Katar
+    Weight: 2200
+    Attack: 320
+    Range: 1
+    Slots: 2
+    Jobs:
+      Assassin: true
+    Classes:
+      Fourth: true
+    Locations:
+      Both_Hand: true
+    WeaponLevel: 5
+    EquipLevelMin: 230
+    Refineable: true
+    Gradable: true
+    Script: |
+      .@r = getrefine();
+      .@g = getenchantgrade();
+      bonus bCritical,5;
+      bonus bBaseAtk,10*(.@r/2);
+      bonus bAtkRate,.@r/2;
+      bonus2 bSkillAtk,"SHC_SAVAGE_IMPACT",5+2*(.@r/3);
+      if (.@r >= 7) {
+         bonus bCritAtkRate,15;
+      }
+      if (.@r >= 9) {
+         bonus bCritical,10;
+         bonus bCRate,3;
+      }
+      if (.@r >= 11) {
+         bonus2 bSkillAtk,"SHC_SAVAGE_IMPACT",10;
+      }
+      if (.@g >= ENCHANTGRADE_D) {
+         bonus bPAtk,2;
+      }
+      if (.@g >= ENCHANTGRADE_C) {
+         bonus2 bSkillAtk,"SHC_SAVAGE_IMPACT",10;
+      }
+      if (.@g >= ENCHANTGRADE_B) {
+         bonus bShortAtkRate,10;
+      }
+      if (.@g >= ENCHANTGRADE_A) {
+         bonus bPAtk,2*(.@r/2);
+      }
+  - Id: 550204
+    AegisName: LMN_SOA_Stick
+    Name: Orrivane Soul Stick
+    Type: Weapon
+    SubType: Staff
+    Weight: 1800
+    Attack: 120
+    Range: 1
+    Slots: 2
+    Jobs:
+      SoulLinker: true
+    Classes:
+      Fourth: true
+    Locations:
+      Right_Hand: true
+    WeaponLevel: 5
+    EquipLevelMin: 230
+    Refineable: true
+    Gradable: true
+    Script: |
+      .@r = getrefine();
+      .@g = getenchantgrade();
+      bonus bUnbreakableWeapon;
+      bonus bMatk,200+10*(.@r/2);
+      bonus bMatkRate,3+(.@r/2);
+      bonus2 bSkillAtk,"SOA_EXORCISM_OF_MALICIOUS_SOUL",5+5*(.@r/3);
+      if (.@r >= 7) {
+         bonus2 bMagicAtkEle,Ele_All,15;
+      }
+      if (.@r >= 9) {
+         bonus bVariableCastrate,-10;
+         bonus bSMatk,3;
+      }
+      if (.@r >= 11) {
+         bonus2 bSkillAtk,"SOA_EXORCISM_OF_MALICIOUS_SOUL",10;
+      }
+      if (.@g >= ENCHANTGRADE_D) {
+         bonus bSMatk,2;
+      }
+      if (.@g >= ENCHANTGRADE_C) {
+         bonus2 bSkillAtk,"SOA_EXORCISM_OF_MALICIOUS_SOUL",10;
+      }
+      if (.@g >= ENCHANTGRADE_B) {
+         bonus2 bMagicAtkEle,Ele_All,10;
+      }
+      if (.@g >= ENCHANTGRADE_A) {
+         bonus bSMatk,2*(.@r/2);
+      }
+  - Id: 550203
+    AegisName: LMN_SOA_Wand
+    Name: Orrivane Soul Wand
+    Type: Weapon
+    SubType: Staff
+    Weight: 1800
+    Attack: 120
+    Range: 1
+    Slots: 2
+    Jobs:
+      SoulLinker: true
+    Classes:
+      Fourth: true
+    Locations:
+      Right_Hand: true
+    WeaponLevel: 5
+    EquipLevelMin: 230
+    Refineable: true
+    Gradable: true
+    Script: |
+      .@r = getrefine();
+      .@g = getenchantgrade();
+      bonus bUnbreakableWeapon;
+      bonus bMatk,200+10*(.@r/2);
+      bonus bMatkRate,3+(.@r/2);
+      bonus2 bSkillAtk,"SOA_TALISMAN_OF_FOUR_BEARING_GOD",5+5*(.@r/3);
+      if (.@r >= 7) {
+         bonus2 bMagicAtkEle,Ele_All,15;
+      }
+      if (.@r >= 9) {
+         bonus bVariableCastrate,-10;
+         bonus bSMatk,3;
+      }
+      if (.@r >= 11) {
+         bonus2 bSkillAtk,"SOA_TALISMAN_OF_FOUR_BEARING_GOD",10;
+      }
+      if (.@g >= ENCHANTGRADE_D) {
+         bonus bSMatk,2;
+      }
+      if (.@g >= ENCHANTGRADE_C) {
+         bonus2 bSkillAtk,"SOA_TALISMAN_OF_FOUR_BEARING_GOD",10;
+      }
+      if (.@g >= ENCHANTGRADE_B) {
+         bonus2 bMagicAtkEle,Ele_All,10;
+      }
+      if (.@g >= ENCHANTGRADE_A) {
+         bonus bSMatk,2*(.@r/2);
+      }
+  - Id: 550206
+    AegisName: LMN_SH_Foxtail
+    Name: Orrivane Spirit Foxtail
+    Type: Weapon
+    SubType: Staff
+    Weight: 2000
+    Attack: 300
+    Range: 1
+    Slots: 2
+    Jobs:
+      Spirit_Handler: true
+    Classes:
+      Fourth: true
+    Locations:
+      Right_Hand: true
+    WeaponLevel: 5
+    EquipLevelMin: 230
+    Refineable: true
+    Gradable: true
+    Script: |
+      .@r = getrefine();
+      .@g = getenchantgrade();
+      bonus bUnbreakableWeapon;
+      bonus bCritical,5;
+      bonus bBaseAtk,10*(.@r/2);
+      bonus bAtkRate,.@r/2;
+      bonus2 bSkillAtk,"SH_HOGOGONG_STRIKE",5+2*(.@r/3);
+      if (.@r >= 7) {
+         bonus bCritAtkRate,15;
+      }
+      if (.@r >= 9) {
+         bonus bCritical,15;
+         bonus bCRate,3;
+      }
+      if (.@r >= 11) {
+         bonus2 bSkillAtk,"SH_HOGOGONG_STRIKE",10;
+      }
+      if (.@g >= ENCHANTGRADE_D) {
+         bonus bPAtk,2;
+      }
+      if (.@g >= ENCHANTGRADE_C) {
+         bonus2 bSkillAtk,"SH_HOGOGONG_STRIKE",10;
+      }
+      if (.@g >= ENCHANTGRADE_B) {
+         bonus bLongAtkRate,10;
+      }
+      if (.@g >= ENCHANTGRADE_A) {
+         bonus bPAtk,2*(.@r/2);
+      }
+  - Id: 550207
+    AegisName: LMN_SH_F_Foxtail
+    Name: Orrivane Spirit Foxtail Model
+    Type: Weapon
+    SubType: Staff
+    Weight: 2000
+    Attack: 300
+    Range: 1
+    Slots: 2
+    Jobs:
+      Spirit_Handler: true
+    Classes:
+      Fourth: true
+    Locations:
+      Right_Hand: true
+    WeaponLevel: 5
+    EquipLevelMin: 230
+    Refineable: true
+    Gradable: true
+    Script: |
+      .@r = getrefine();
+      .@g = getenchantgrade();
+      bonus bUnbreakableWeapon;
+      bonus bMatk,300+10*(.@r/2);
+      bonus bMatkRate,3+(.@r/2);
+      bonus2 bSkillAtk,"SH_HYUN_ROKS_BREEZE",5+2*(.@r/3);
+      if (.@r >= 7) {
+         bonus2 bMagicAtkEle,Ele_All,15;
+      }
+      if (.@r >= 9) {
+         bonus bVariableCastrate,-10;
+         bonus bSMatk,3;
+      }
+      if (.@r >= 11) {
+         bonus2 bSkillAtk,"SH_HYUN_ROKS_BREEZE",10;
+      }
+      if (.@g >= ENCHANTGRADE_D) {
+         bonus bSMatk,2;
+      }
+      if (.@g >= ENCHANTGRADE_C) {
+         bonus2 bSkillAtk,"SH_HYUN_ROKS_BREEZE",10;
+      }
+      if (.@g >= ENCHANTGRADE_B) {
+         bonus2 bMagicAtkEle,Ele_All,10;
+      }
+      if (.@g >= ENCHANTGRADE_A) {
+         bonus bSMatk,2*(.@r/2);
+      }
+  - Id: 650063
+    AegisName: LMN_SS_M_Humma
+    Name: Orrivane Wheel Shuriken
+    Type: Weapon
+    SubType: Huuma
+    Weight: 2800
+    Attack: 120
+    Range: 1
+    Slots: 2
+    Jobs:
+      KagerouOboro: true
+    Classes:
+      Fourth: true
+    Locations:
+      Both_Hand: true
+    WeaponLevel: 5
+    EquipLevelMin: 230
+    Refineable: true
+    Gradable: true
+    Script: |
+      .@r = getrefine();
+      .@g = getenchantgrade();
+      bonus bMatk,200+10*(.@r/2);
+      bonus bMatkRate,3+(.@r/2);
+      bonus2 bSkillAtk,"SS_REIKETSUHOU",5+5*(.@r/3);
+      if (.@r >= 7) {
+         bonus2 bMagicAtkEle,Ele_All,15;
+      }
+      if (.@r >= 9) {
+         bonus bVariableCastrate,-10;
+         bonus bSMatk,3;
+      }
+      if (.@r >= 11) {
+         bonus2 bSkillAtk,"SS_REIKETSUHOU",10;
+      }
+      if (.@g >= ENCHANTGRADE_D) {
+         bonus bSMatk,2;
+      }
+      if (.@g >= ENCHANTGRADE_C) {
+         bonus2 bSkillAtk,"SS_REIKETSUHOU",10;
+      }
+      if (.@g >= ENCHANTGRADE_B) {
+         bonus2 bMagicAtkEle,Ele_All,10;
+      }
+      if (.@g >= ENCHANTGRADE_A) {
+         bonus bSMatk,2*(.@r/2);
+      }
+  - Id: 700134
+    AegisName: LMN_WH_Bow
+    Name: Orrivane Wind Bow
+    Type: Weapon
+    SubType: Bow
+    Weight: 2100
+    Attack: 340
+    Range: 5
+    Slots: 2
+    Jobs:
+      Hunter: true
+    Classes:
+      Fourth: true
+    Locations:
+      Both_Hand: true
+    WeaponLevel: 5
+    EquipLevelMin: 230
+    Refineable: true
+    Gradable: true
+    Script: |
+      .@r = getrefine();
+      .@g = getenchantgrade();
+      bonus bCritical,5;
+      bonus bBaseAtk,10*(.@r/2);
+      bonus bAtkRate,.@r/2;
+      bonus2 bSkillAtk,"WH_GALESTORM",5+5*(.@r/3);
+      if (.@r >= 7) {
+         bonus bCritAtkRate,15;
+      }
+      if (.@r >= 9) {
+         bonus bCritical,10;
+         bonus bCRate,3;
+      }
+      if (.@r >= 11) {
+         bonus2 bSkillAtk,"WH_GALESTORM",10;
+      }
+      if (.@g >= ENCHANTGRADE_D) {
+         bonus bPAtk,2;
+      }
+      if (.@g >= ENCHANTGRADE_C) {
+         bonus2 bSkillAtk,"WH_GALESTORM",10;
+      }
+      if (.@g >= ENCHANTGRADE_B) {
+         bonus bLongAtkRate,10;
+      }
+      if (.@g >= ENCHANTGRADE_A) {
+         bonus bPAtk,2*(.@r/2);
+      }
+  - Id: 700135
+    AegisName: LMN_WH_C_Bow
+    Name: Orrivane Wind Crossbow
+    Type: Weapon
+    SubType: Bow
+    Weight: 2100
+    Attack: 320
+    Range: 5
+    Slots: 2
+    Jobs:
+      Hunter: true
+    Classes:
+      Fourth: true
+    Locations:
+      Both_Hand: true
+    WeaponLevel: 5
+    EquipLevelMin: 230
+    Refineable: true
+    Gradable: true
+    Script: |
+      .@r = getrefine();
+      .@g = getenchantgrade();
+      bonus bCritical,5;
+      bonus bBaseAtk,10*(.@r/2);
+      bonus bAtkRate,.@r/2;
+      bonus2 bSkillAtk,"WH_CRESCIVE_BOLT",5+2*(.@r/3);
+      if (.@r >= 7) {
+         bonus bCritAtkRate,15;
+      }
+      if (.@r >= 9) {
+         bonus bCritical,10;
+         bonus bCRate,3;
+      }
+      if (.@r >= 11) {
+         bonus2 bSkillAtk,"WH_CRESCIVE_BOLT",10;
+      }
+      if (.@g >= ENCHANTGRADE_D) {
+         bonus bPAtk,2;
+      }
+      if (.@g >= ENCHANTGRADE_C) {
+         bonus2 bSkillAtk,"WH_CRESCIVE_BOLT",10;
+      }
+      if (.@g >= ENCHANTGRADE_B) {
+         bonus bLongAtkRate,10;
+      }
+      if (.@g >= ENCHANTGRADE_A) {
+         bonus bPAtk,2*(.@r/2);
       }
