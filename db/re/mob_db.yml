@@ -125064,20 +125064,28 @@ Body:
     Drops:
       - Item: EP19_D_P_Stone
         Rate: 500
+        StealProtected: true
       - Item: EP19_S_F_1_Extract
         Rate: 2000
+        StealProtected: true
       - Item: EP19_S_F_2_Extract
         Rate: 3000
+        StealProtected: true
       - Item: EP19_S_F_3_Extract
         Rate: 1500
+        StealProtected: true
       - Item: EP19_Gla_Extract
         Rate: 1200
+        StealProtected: true
       - Item: Snow_F_Ore
         Rate: 2000
+        StealProtected: true
       - Item: Snow_F_Stone1
         Rate: 1500
+        StealProtected: true
       - Item: Snow_F_Stone2
         Rate: 1000
+        StealProtected: true
       - Item: Snow_F_Stone3
         Rate: 800
         StealProtected: true
@@ -125101,6 +125109,37 @@ Body:
     Element: Neutral
     ElementLevel: 1
     Class: Boss
+    Ai: 06
+    Modes:
+      Detector: true
+    Drops:
+      - Item: EP19_D_P_Stone
+        Rate: 625
+        StealProtected: true
+      - Item: EP19_S_F_1_Extract
+        Rate: 1875
+        StealProtected: true
+      - Item: EP19_S_F_2_Extract
+        Rate: 3750
+        StealProtected: true
+      - Item: EP19_S_F_3_Extract
+        Rate: 2750
+        StealProtected: true
+      - Item: EP19_Gla_Extract
+        Rate: 1500
+        StealProtected: true
+      - Item: Snow_F_Ore
+        Rate: 2500
+        StealProtected: true
+      - Item: Snow_F_Stone1
+        Rate: 1875
+        StealProtected: true
+      - Item: Snow_F_Stone2
+        Rate: 1250
+        StealProtected: true
+      - Item: Snow_F_Stone3
+        Rate: 1000
+        StealProtected: true
 #  - Id: 21855
 #    AegisName: HEROS_DRAGON_1
 #  - Id: 21856

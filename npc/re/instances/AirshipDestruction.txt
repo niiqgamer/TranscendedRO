@@ -1293,13 +1293,14 @@ OnMyMobDead:
 	donpcevent instance_npcname("#y_2") + "::OnStop";
 
 	// Additional rewards
-	if ('mode == 1)	// medium
-		monster 'map_whl$,160,155,"--ja--","EP19_MD_BOX1",1;
-	else if ('mode == 2)	// hard
-		monster 'map_whl$,160,155,"--ja--","EP19_MD_BOX2",1;
-	else if ('mode == 3) {	// brutal: x2 hard boxes
-		monster 'map_whl$,159,155,"--ja--","EP19_MD_BOX2",1;
-		monster 'map_whl$,161,155,"--ja--","EP19_MD_BOX2",1;
+	// Reward boxes by mode: easy / medium / hard / brutal
+	setarray .@box$[0], "EP19_MD_BOX1", "EP19_MD_BOX1", "EP19_MD_BOX2", "EP19_MD_BOX2";
+	setarray .@box_count[0], 1, 2, 3, 6;
+	for ( .@i = 0; .@i < .@box_count['mode]; ++.@i ) {
+		// rows of 3 boxes around 160,155
+		.@bx = 158 + (.@i % 3) * 2;
+		.@by = 155 - (.@i / 3) * 2;
+		monster 'map_whl$, .@bx, .@by, "--ja--", .@box$['mode], 1;
 	}
 
 	// Relic (brutal: x2 chance)
