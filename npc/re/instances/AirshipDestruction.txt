@@ -433,14 +433,14 @@ OnInstanceInit:
 		0,
 		100,
 		200,
-		400;	// brutal: x2 hard
+		500;	// brutal: x2 hard
 
 	// boss mres by mode (custom, unknown value)
 	setarray 'mode_mres[0],
 		0,
 		100,
 		200,
-		400;	// brutal: x2 hard
+		500;	// brutal: x2 hard
 
 	// Brutal-only buffs (applied with sc_start on every patrol and the boss)
 	'brutal_atk = 0;	// +ATK% (0 = off, damage is scaled by DamageDealt below instead, which also covers magic skills)
@@ -456,13 +456,13 @@ OnInstanceInit:
 
 	// DamageDealt by mode (custom src: UMOB_DAMAGEDEALT), % of the final damage monsters deal to
 	// players / homunculi / mercenaries. 100 = normal, 300 = x3. 0 = don't touch.
-	setarray 'mode_dmgdealt_mob[0], 0, 0, 0, 300;	// every monster except the boss and its adds
-	setarray 'mode_dmgdealt_boss[0], 0, 0, 0, 500;	// Aquila
-	'brutal_dmgdealt_boss_p2 = 700;	// Aquila at HP <= 25% (brutal phase 2)
-	'brutal_dmgdealt_add = 400;	// Brutal Inspector (boss adds)
+	setarray 'mode_dmgdealt_mob[0], 0, 0, 0, 500;	// every monster except the boss and its adds
+	setarray 'mode_dmgdealt_boss[0], 0, 0, 0, 1000;	// Aquila
+	'brutal_dmgdealt_boss_p2 = 1500;	// Aquila at HP <= 25% (brutal phase 2)
+	'brutal_dmgdealt_add = 500;	// Brutal Inspector (boss adds)
 
 	// Brutal: random skills for every monster on the map (airshipD_mobskill)
-	'brutal_mob_skill_rate = 25;	// % chance per monster per tick to cast
+	'brutal_mob_skill_rate = 50;	// % chance per monster per tick to cast
 	'brutal_mob_skill_max = 12;	// max casts per tick (anti-lag)
 	'brutal_mob_skill_tick = 2;	// seconds between ticks
 
@@ -470,7 +470,7 @@ OnInstanceInit:
 	setarray 'brutal_cd[0], 7, 5, 3;
 
 	// number of broken cleaning robots summoned during the boss fight by mode
-	setarray 'mode_cleaner_count[0], 20, 20, 20, 40;
+	setarray 'mode_cleaner_count[0], 20, 20, 20, 30;
 
 	// [1/value] chance to activate the event from airshipD_DE_BERSERKAIZER by mode every 1s
 	setarray 'rate_event_2[0],
