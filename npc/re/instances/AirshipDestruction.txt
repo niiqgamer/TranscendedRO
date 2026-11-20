@@ -1405,9 +1405,9 @@ OnStart:
 				continue;
 			.@casts++;
 
-			switch( rand(16) ) {
+			switch( rand(20) ) {
 			// self area
-			case 0:  unitskilluseid .@gid, "NPC_WIDEBLEEDING", 3; break;
+			case 0:  unitskilluseid .@gid, "NPC_ALL_STAT_DOWN", 3; break;
 			case 1:  unitskilluseid .@gid, "NPC_WIDESILENCE", 2; break;
 			case 2:  unitskilluseid .@gid, "NPC_WIDECURSE", 2; break;
 			case 3:  unitskilluseid .@gid, "NPC_WIDECONFUSE", 2; break;
@@ -1415,15 +1415,19 @@ OnStart:
 			case 5:  unitskilluseid .@gid, "NPC_PULSESTRIKE", 3; break;
 			case 6:  unitskilluseid .@gid, "NPC_SLOWCAST", 3; break;
 			// on target
-			case 7:  unitskilluseid .@gid, "NPC_STUNATTACK", 3, .@t; break;
-			case 8:  unitskilluseid .@gid, "NPC_RAYOFGENESIS", 3, .@t; break;
+			case 7:  unitskilluseid .@gid, "NPC_FATALMENACE", 5, .@t; break;
+			case 8:  unitskilluseid .@gid, "NPC_RAYOFGENESIS", 5, .@t; break;
 			case 9:  unitskilluseid .@gid, "NPC_FIREBREATH", 5, .@t; break;
 			case 10: unitskilluseid .@gid, "NPC_ICEBREATH", 5, .@t; break;
 			case 11: unitskilluseid .@gid, "NPC_THUNDERBREATH", 5, .@t; break;
 			case 12: unitskilluseid .@gid, "NPC_DARKNESSATTACK", 5, .@t; break;
 			case 13: unitskilluseid .@gid, "NPC_MAGMA_ERUPTION", 5, .@t; break;
 			case 14: unitskilluseid .@gid, "NPC_PIERCINGATT", 5, .@t; break;
-			default: unitskilluseid .@gid, "NPC_ARROWSTORM", 3, .@t; break;
+			case 15: unitskilluseid .@gid, "NPC_MAGMA_ERUPTION", 5, .@t; break;
+			case 16: unitskilluseid .@gid, "MG_FIREBALL", 5, .@t; break;
+			case 17: unitskilluseid .@gid, "MT_AXE_STOMP", 2, .@t; break;
+			case 18: unitskilluseid .@gid, "LG_CANNONSPEAR", 5, .@t; break;
+			default: unitskilluseid .@gid, "NPC_ARROWSTORM", 5, .@t; break;
 			}
 		}
 		sleep 'brutal_mob_skill_tick * 1000;
@@ -1515,6 +1519,8 @@ S_Cast:
 		unittalk 'boss_id, "Stun field.";
 		sleep 1000;
 		unitskilluseid 'boss_id, "NPC_WIDESTUN", 3;
+		sleep 500;
+		unitskilluseid 'boss_id, "NPC_ARROWSTORM", 5, .@target;
 		break;
 	case 6:
 		unitskilluseid 'boss_id, "NPC_SLOWCAST", 5;
@@ -1533,7 +1539,7 @@ S_Cast:
 			unittalk 'boss_id, "Orbital strike. Move!";
 			sleep 2000;
 			if (unitexists('boss_id))
-				unitskillusepos 'boss_id, "NPC_COMET", 3, .@x, .@y;
+				unitskillusepos 'boss_id, "AG_ASTRAL_STRIKE", 3, .@x, .@y;
 		}
 		break;
 	}
