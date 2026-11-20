@@ -444,10 +444,10 @@ OnInstanceInit:
 
 	// Brutal-only buffs (applied with sc_start on every patrol and the boss)
 	'brutal_atk = 50;	// +ATK% (0 = off, damage is scaled by DamageDealt below instead, which also covers magic skills)
-	'brutal_def = 50;	// +50% DEF
-	'brutal_hit = 100;	// +100% HIT
-	'brutal_aspd = 30;	// +30% ASPD
-	'brutal_speed = 100;	// walk speed (lower = faster)
+	'brutal_def = 50;	// default +50% DEF
+	'brutal_hit = 200;	// default +100% HIT
+	'brutal_aspd = 50;	// default +30% ASPD
+	'brutal_speed = 100;	// default 100 walk speed (lower = faster)
 
 	// DamageTaken by mode, same scale as mob_db.yml DamageTaken (10000 = 100% damage, 1000 = 10%, 100 = 1%, 10 = 0.1%)
 	// 0 = keep the mob_db value
@@ -1416,14 +1416,14 @@ OnStart:
 			case 6:  unitskilluseid .@gid, "NPC_SLOWCAST", 3; break;
 			// on target
 			case 7:  unitskilluseid .@gid, "NPC_STUNATTACK", 3, .@t; break;
-			case 8:  unitskilluseid .@gid, "NPC_BLEEDING", 3, .@t; break;
+			case 8:  unitskilluseid .@gid, "NPC_RAYOFGENESIS", 3, .@t; break;
 			case 9:  unitskilluseid .@gid, "NPC_FIREBREATH", 5, .@t; break;
 			case 10: unitskilluseid .@gid, "NPC_ICEBREATH", 5, .@t; break;
 			case 11: unitskilluseid .@gid, "NPC_THUNDERBREATH", 5, .@t; break;
 			case 12: unitskilluseid .@gid, "NPC_DARKNESSATTACK", 5, .@t; break;
-			case 13: unitskilluseid .@gid, "NPC_ARMORBRAKE", 5, .@t; break;
-			case 14: unitskilluseid .@gid, "NPC_COMBOATTACK", 5, .@t; break;
-			default: unitskilluseid .@gid, "NPC_CRITICALWOUND", 3, .@t; break;
+			case 13: unitskilluseid .@gid, "NPC_MAGMA_ERUPTION", 5, .@t; break;
+			case 14: unitskilluseid .@gid, "NPC_PIERCINGATT", 5, .@t; break;
+			default: unitskilluseid .@gid, "NPC_ARROWSTORM", 3, .@t; break;
 			}
 		}
 		sleep 'brutal_mob_skill_tick * 1000;
