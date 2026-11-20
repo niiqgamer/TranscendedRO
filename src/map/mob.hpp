@@ -397,6 +397,7 @@ struct mob_data : public block_list {
 	 **/
 	int32 tomb_nid;
 	uint16 damagetaken;
+	uint32 damagedealt; ///< Custom: % of damage this mob deals to players/homunculi/mercenaries (100 = normal), set via UMOB_DAMAGEDEALT
 
 	e_mob_bosstype get_bosstype() const;
 	map_session_data* get_mvp_player(map_session_data* first_sd);

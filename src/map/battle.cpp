@@ -2056,6 +2056,14 @@ int64 battle_calc_damage(block_list *src,block_list *bl,struct Damage *d,int64 d
 			damage = i64max(damage * ed->db->damagetaken / 10000, 1);
 	}
 
+	// Custom: per-mob outgoing damage multiplier (UMOB_DAMAGEDEALT, 100 = normal), applied after the target's own reductions
+	if (damage > 0 && src->type == BL_MOB && (bl->type == BL_PC || bl->type == BL_HOM || bl->type == BL_MER)) {
+		mob_data *smd = BL_CAST(BL_MOB, src);
+
+		if (smd != nullptr && smd->damagedealt != 100)
+			damage = i64max(damage * smd->damagedealt / 100, 1);
+	}
+
 	if (tsc != nullptr && !tsc->empty()) {
 		if (!battle_status_block_damage(src, bl, tsc, d, damage, skill_id, skill_lv)) // Statuses that reduce damage to 0.
 			return 0;

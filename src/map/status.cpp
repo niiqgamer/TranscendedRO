@@ -2785,6 +2785,7 @@ int32 status_calc_mob_(mob_data* md, uint8 opt)
 			md->level = md->db->lv;
 		safestrncpy(md->ud.title, md->db->title.c_str(), NAME_LENGTH);
 		md->damagetaken = md->db->damagetaken;
+		md->damagedealt = 100;
 		md->ud.group_id = md->db->group_id;
 	}
 

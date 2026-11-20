@@ -501,6 +501,7 @@ enum unitdata_mobtypes {
 	UMOB_RES,
 	UMOB_MRES,
 	UMOB_DAMAGETAKEN,
+	UMOB_DAMAGEDEALT, // Custom
 };
 
 enum unitdata_homuntypes {

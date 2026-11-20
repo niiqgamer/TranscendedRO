@@ -246,8 +246,8 @@ OnReach2:
 	else
 		mapannounce 'map_whl$, "Aircraft management robot: This person is being forged into class " + 'mode_word$['mode] + ". Response level is " + 'mode_letter$['mode] + ".", bc_map, 0xFFDDAA;
 
-	// DamageTaken + brutal monster skills
-	if ('mode_dmgtaken_mob['mode] > 0 || 'mode_dmgtaken_boss['mode] > 0 || 'mode == 3)
+	// DamageTaken / DamageDealt + brutal monster skills
+	if ('mode_dmgtaken_mob['mode] > 0 || 'mode_dmgtaken_boss['mode] > 0 || 'mode_dmgdealt_mob['mode] > 0 || 'mode_dmgdealt_boss['mode] > 0 || 'mode == 3)
 		donpcevent instance_npcname("airshipD_mobskill") + "::OnStart";
 	end;
 
@@ -351,7 +351,7 @@ OnInstanceInit:
 		400;	// brutal: x2 hard
 
 	// Brutal-only buffs (applied with sc_start on every patrol and the boss)
-	'brutal_atk = 100;	// +100% ATK
+	'brutal_atk = 0;	// +ATK% (0 = off, damage is scaled by DamageDealt below instead, which also covers magic skills)
 	'brutal_def = 50;	// +50% DEF
 	'brutal_hit = 100;	// +100% HIT
 	'brutal_aspd = 30;	// +30% ASPD
@@ -361,6 +361,13 @@ OnInstanceInit:
 	// 0 = keep the mob_db value
 	setarray 'mode_dmgtaken_mob[0], 0, 0, 0, 100;	// every monster except the boss
 	setarray 'mode_dmgtaken_boss[0], 0, 0, 0, 10;	// Aquila
+
+	// DamageDealt by mode (custom src: UMOB_DAMAGEDEALT), % of the final damage monsters deal to
+	// players / homunculi / mercenaries. 100 = normal, 300 = x3. 0 = don't touch.
+	setarray 'mode_dmgdealt_mob[0], 0, 0, 0, 300;	// every monster except the boss and its adds
+	setarray 'mode_dmgdealt_boss[0], 0, 0, 0, 500;	// Aquila
+	'brutal_dmgdealt_boss_p2 = 700;	// Aquila at HP <= 25% (brutal phase 2)
+	'brutal_dmgdealt_add = 400;	// Brutal Inspector (boss adds)
 
 	// Brutal: random skills for every monster on the map (airshipD_mobskill)
 	'brutal_mob_skill_rate = 25;	// % chance per monster per tick to cast
@@ -927,7 +934,8 @@ S_BrutalBuff:
 	.@gid = getarg(0);
 	.@t = 3600000;	// 1 hour
 	.@f = SCSTART_NOAVOID|SCSTART_NORATEDEF|SCSTART_NOTICKDEF;
-	sc_start SC_INCATKRATE, .@t, 'brutal_atk, 10000, .@f, .@gid;	// +ATK%
+	if ('brutal_atk > 0)
+		sc_start SC_INCATKRATE, .@t, 'brutal_atk, 10000, .@f, .@gid;	// +ATK%
 	sc_start SC_INCDEFRATE, .@t, 'brutal_def, 10000, .@f, .@gid;	// +DEF%
 	sc_start SC_INCHITRATE, .@t, 'brutal_hit, 10000, .@f, .@gid;	// +HIT%
 	sc_start SC_INCASPDRATE, .@t, 'brutal_aspd, 10000, .@f, .@gid;	// +ASPD%
@@ -1138,6 +1146,8 @@ OnStart:
 	setunitdata 'boss_id, UMOB_MRES, 'mode_mres[ 'mode ];
 	if ('mode_dmgtaken_boss[ 'mode ] > 0)
 		setunitdata 'boss_id, UMOB_DAMAGETAKEN, 'mode_dmgtaken_boss[ 'mode ];
+	if ('mode_dmgdealt_boss[ 'mode ] > 0)
+		setunitdata 'boss_id, UMOB_DAMAGEDEALT, 'mode_dmgdealt_boss[ 'mode ];
 
 	initnpctimer;
 	donpcevent instance_npcname("airshipD_hp_regen") + "::OnStart";
@@ -1248,6 +1258,7 @@ OnStart:
 	'mobskill_on = true;
 	.@dt_mob = 'mode_dmgtaken_mob[ 'mode ];
 	.@dt_boss = 'mode_dmgtaken_boss[ 'mode ];
+	.@dd_mob = 'mode_dmgdealt_mob[ 'mode ];
 
 	while ('mobskill_on) {
 		.@count = getmapunits(BL_MOB, 'map_whl$, .@units);
@@ -1263,6 +1274,24 @@ OnStart:
 			if (.@dt > 0) {
 				if (.@d[UMOB_DAMAGETAKEN] != .@dt)
 					setunitdata .@gid, UMOB_DAMAGETAKEN, .@dt;
+			}
+
+			// DamageDealt: boss follows its phase; other monsters only while still at the default 100,
+			// so values set elsewhere (Brutal Inspector adds) are kept
+			if (.@gid == 'boss_id) {
+				.@dd = 'mode_dmgdealt_boss[ 'mode ];
+				if ('mode == 3) {
+					if ('brutal_phase >= 2)
+						.@dd = 'brutal_dmgdealt_boss_p2;
+				}
+				if (.@dd > 0) {
+					if (.@d[UMOB_DAMAGEDEALT] != .@dd)
+						setunitdata .@gid, UMOB_DAMAGEDEALT, .@dd;
+				}
+			}
+			else if (.@dd_mob > 0) {
+				if (.@d[UMOB_DAMAGEDEALT] == 100)
+					setunitdata .@gid, UMOB_DAMAGEDEALT, .@dd_mob;
 			}
 
 			// Random skills (brutal only, boss has its own rotation in airshipD_brutal)
@@ -1341,6 +1370,7 @@ OnStart:
 			'brutal_phase = 2;
 			mapannounce 'map_whl$, "Aquila: Core critical!! All output to weapons. I will take you down with this airship!", bc_map, 0xFF0000;
 			unitskilluseid 'boss_id, "NPC_POWERUP", 5;
+			setunitdata 'boss_id, UMOB_DAMAGEDEALT, 'brutal_dmgdealt_boss_p2;
 			callsub( S_Adds, 8 );
 		}
 
@@ -1427,6 +1457,7 @@ S_Adds:
 		setunitdata $@mobid[0], UMOB_MAXHP, 'hp[ 'mode ];
 		setunitdata $@mobid[0], UMOB_HP, 'hp[ 'mode ];
 		unitskilluseid $@mobid[0], "NPC_RELIEVE_ON", 10;
+		setunitdata $@mobid[0], UMOB_DAMAGEDEALT, 'brutal_dmgdealt_add;
 		callsub( S_Buff, $@mobid[0] );
 	}
 	return;
@@ -1435,7 +1466,8 @@ S_Buff:
 	.@gid = getarg(0);
 	.@t = 3600000;
 	.@f = SCSTART_NOAVOID|SCSTART_NORATEDEF|SCSTART_NOTICKDEF;
-	sc_start SC_INCATKRATE, .@t, 'brutal_atk, 10000, .@f, .@gid;
+	if ('brutal_atk > 0)
+		sc_start SC_INCATKRATE, .@t, 'brutal_atk, 10000, .@f, .@gid;
 	sc_start SC_INCDEFRATE, .@t, 'brutal_def, 10000, .@f, .@gid;
 	sc_start SC_INCHITRATE, .@t, 'brutal_hit, 10000, .@f, .@gid;
 	sc_start SC_INCASPDRATE, .@t, 'brutal_aspd, 10000, .@f, .@gid;
