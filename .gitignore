@@ -111,6 +111,7 @@ Thumbs.db
 /tools/*.ilk
 /tools/*.pdb
 /tools/discord*.*
+/tools/logs/
 
 # Visual Studio
 .vs
