@@ -1543,3 +1543,93 @@ Body:
     Name: "SP Gain Token [10]"
     Type: Etc
     Weight: 0
+  - Id: 315362
+    AegisName: Orrivane_Enc_BO
+    Name: "Orrivane Orb (Biolo)"
+    Type: Card
+    SubType: Enchant
+  - Id: 315412
+    AegisName: Orrivane_Enc_CA
+    Name: "Orrivane Orb (Cardinal)"
+    Type: Card
+    SubType: Enchant
+  - Id: 315728
+    AegisName: Orrivane_Enc_EM
+    Name: "Orrivane Orb (Elemental Master)"
+    Type: Card
+    SubType: Enchant
+  - Id: 315414
+    AegisName: Orrivane_Enc_HN
+    Name: "Orrivane Orb (Hyper Novice)"
+    Type: Card
+    SubType: Enchant
+  - Id: 315714
+    AegisName: Orrivane_Enc_IQ
+    Name: "Orrivane Orb (Inquisitor)"
+    Type: Card
+    SubType: Enchant
+  - Id: 315726
+    AegisName: Orrivane_Enc_NW
+    Name: "Orrivane Orb (Night Watch)"
+    Type: Card
+    SubType: Enchant
+  - Id: 315361
+    AegisName: Orrivane_Enc_SHC
+    Name: "Orrivane Orb (Shadow Cross)"
+    Type: Card
+    SubType: Enchant
+  - Id: 315363
+    AegisName: Orrivane_Enc_SS
+    Name: "Orrivane Orb (Shinkiro & Shiranui)"
+    Type: Card
+    SubType: Enchant
+  - Id: 315413
+    AegisName: Orrivane_Enc_SKE
+    Name: "Orrivane Orb (Sky Emperor)"
+    Type: Card
+    SubType: Enchant
+  - Id: 315727
+    AegisName: Orrivane_Enc_SOA
+    Name: "Orrivane Orb (Soul Ascetic)"
+    Type: Card
+    SubType: Enchant
+  - Id: 315716
+    AegisName: Orrivane_Enc_SH
+    Name: "Orrivane Orb (Spirit Handler)"
+    Type: Card
+    SubType: Enchant
+  - Id: 315715
+    AegisName: Orrivane_Enc_TR
+    Name: "Orrivane Orb (Troubadour & Trouvere)"
+    Type: Card
+    SubType: Enchant
+  - Id: 300993
+    AegisName: LMN_Range_Card
+    Name: Orrivane Range Card
+    Type: Card
+    Weight: 10
+    Locations:
+      Right_Accessory: true
+    Script: |
+      bonus bLongAtkRate,10;
+      bonus bDelayRate,-10;
+  - Id: 300992
+    AegisName: LMN_Fighter_Card
+    Name: Orrivane Fighter Card
+    Type: Card
+    Weight: 10
+    Locations:
+      Right_Accessory: true
+    Script: |
+      bonus bShortAtkRate,10;
+      bonus bDelayRate,-10;
+  - Id: 300991
+    AegisName: LMN_Magical_Card
+    Name: Orrivane Magical Card
+    Type: Card
+    Weight: 10
+    Locations:
+      Right_Accessory: true
+    Script: |
+      bonus bMatkRate,10;
+      bonus bDelayRate,-10;

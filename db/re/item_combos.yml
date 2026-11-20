@@ -62892,7 +62892,7 @@ Body:
       bonus2 bSkillAtk,"AG_CRIMSON_ARROW_ATK",10;
       bonus2 bMagicAtkEle,Ele_Fire,10;
       if (getenchantgrade(EQI_HEAD_TOP) >= ENCHANTGRADE_A) {
-         if (.@r >= 22) {
+         if (.@sum >= 22) {
             bonus2 bSkillCooldown,"AG_CRIMSON_ARROW",-100;
             bonus2 bSkillAtk,"AG_CRIMSON_ARROW",10;
             bonus2 bSkillAtk,"AG_CRIMSON_ARROW_ATK",10;
@@ -62937,7 +62937,7 @@ Body:
       bonus2 bSkillAtk,"AG_MYSTERY_ILLUSION",10;
       bonus2 bMagicAtkEle,Ele_Dark,10;
       if (getenchantgrade(EQI_HEAD_TOP) >= ENCHANTGRADE_A) {
-         if (.@r >= 22) {
+         if (.@sum >= 22) {
             bonus2 bSkillCooldown,"AG_MYSTERY_ILLUSION",-1000;
             bonus2 bSkillAtk,"AG_MYSTERY_ILLUSION",10;
          }

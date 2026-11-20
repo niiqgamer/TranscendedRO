@@ -17,7 +17,13 @@ rAthena-based Ragnarok Online server (Renewal).
 - "Increase movement speed", "increase moving speed", "movement speed" with no number → `bonus bSpeedRate,25;` (25%).
 - "Indestructible in battle" → `bUnbreakableArmor` / `bUnbreakableHelm` / `bUnbreakableShoes` / `bUnbreakableWeapon`, depending on slot.
 - "Permanent endure" → `bonus bNoWalkDelay;`
-- "Damage taken from all races (include player)" and similar → apply to `RC_All`, `RC_Player_Human` and `RC_Player_Doram`.
+- `RC_All` already covers players (rAthena adds the `RC_ALL` bonus for every target race, players included).
+  - "All races (include player)" → `RC_All` only. Adding `RC_Player_Human`/`RC_Player_Doram` on top double-counts against players.
+  - "All races (except player)" → `RC_All` plus `RC_Player_Human` and `RC_Player_Doram` at the negative value.
+- The skill "Power" (thRO text, e.g. "สามารถใช้สกิล Power Lv.2") → `TK_POWER`.
+- Items that exist only on thROG have no English text: the Thai description is in the page's "Other Servers" tab (`#other-servers`).
+- "Global Cooldown" in thRO text → `bDelayRate`.
+- "Autospell at the highest learned level (min Lv.1)" → level `max(getskilllv("SKILL"),1)`.
 - "Normal and Boss monsters" → `Class_All`.
 - Arbitrium / Violent Quake skill damage → add `bSkillAtk` for both the skill and its `_ATK` variant.
 - Grade bonuses: `.@g = getenchantgrade();` with `ENCHANTGRADE_D/C/B/A`, and set `Gradable: true`.
