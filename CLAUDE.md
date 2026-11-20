@@ -23,6 +23,7 @@ rAthena-based Ragnarok Online server (Renewal).
 - The skill "Power" (thRO text, e.g. "สามารถใช้สกิล Power Lv.2") → `TK_POWER`.
 - Items that exist only on thROG have no English text: the Thai description is in the page's "Other Servers" tab (`#other-servers`).
 - "Global Cooldown" in thRO text → `bDelayRate`.
+- "HIT Damage" (thRO "เพิ่ม HIT Damage ทางกายภาพ x%") → `bonus bNonCritAtkRate,x;`. This is not Perfect Hit; English "Perfect Hit +x%" stays `bPerfectHitAddRate`.
 - "Autospell at the highest learned level (min Lv.1)" → level `max(getskilllv("SKILL"),1)`.
 - "Normal and Boss monsters" → `Class_All`.
 - Arbitrium / Violent Quake skill damage → add `bSkillAtk` for both the skill and its `_ATK` variant.

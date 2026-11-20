@@ -10307,7 +10307,7 @@ Body:
       bonus bDelayRate,-10;
       bonus bPow,10;
       bonus bCon,10;
-      bonus bPerfectHitAddRate,10;
+      bonus bNonCritAtkRate,10;
       bonus bCritical,15;
       bonus2 bAddClass,Class_All,15;
   - Id: 401268
@@ -10387,7 +10387,7 @@ Body:
       bonus bDelayRate,-10;
       bonus bPow,10;
       bonus bCritical,15;
-      bonus bPerfectHitAddRate,10;
+      bonus bNonCritAtkRate,10;
       bonus2 bAddClass,Class_All,15;
   - Id: 401271
     AegisName: LMN_Orrivane_C_CD
@@ -10967,7 +10967,7 @@ Body:
       bonus bBaseAtk,100;
       bonus bDelayRate,-10;
       bonus bPow,10;
-      bonus bPerfectHitAddRate,10;
+      bonus bNonCritAtkRate,10;
       bonus2 bAddClass,Class_All,15;
   - Id: 401279
     AegisName: LMN_Orrivane_C_NW
@@ -11289,7 +11289,7 @@ Body:
       bonus bDelayRate,-10;
       bonus bPow,10;
       bonus bCritical,15;
-      bonus bPerfectHitAddRate,10;
+      bonus bNonCritAtkRate,10;
       bonus2 bAddClass,Class_All,15;
   - Id: 401278
     AegisName: LMN_Orrivane_C_SOA
@@ -11543,7 +11543,7 @@ Body:
       bonus bPow,10;
       bonus bSpl,10;
       bonus bMatkRate,10;
-      bonus bPerfectHitAddRate,10;
+      bonus bNonCritAtkRate,10;
       bonus2 bAddClass,Class_All,15;
       bonus2 bMagicAddClass,Class_All,15;
   - Id: 401275

@@ -1433,7 +1433,7 @@ Body:
       }
       if (getenchantgrade(EQI_HAND_R) >= ENCHANTGRADE_C && .@r >= 10) {
          skill "TK_POWER",2;
-         // TODO: "WH_CRESCIVE_BOLT" autocasts itself (infinite loop in rAthena) - waiting for replacement skill
+         bonus4 bAutoSpellOnSkill,"WH_CRESCIVE_BOLT","WH_GALESTORM",max(getskilllv("WH_GALESTORM"),1),300; // placeholder: text says "WH_CRESCIVE_BOLT" autocasts itself
          bonus2 bSkillCooldown,"WH_CALAMITYGALE",-30000;
          bonus2 bSkillAtk,"WH_CRESCIVE_BOLT",20;
       }
@@ -1443,7 +1443,7 @@ Body:
           - Orrivane_Enc_TR
     Script: |
       .@r = getequiprefinerycnt(EQI_HAND_R);
-      bonus bPerfectHitAddRate,10;
+      bonus bNonCritAtkRate,10;
       bonus2 bSkillAtk,"TR_RHYTHMSHOOTING",6*(.@r/2);
       bonus2 bSkillAtk,"TR_ROSEBLOSSOM",6*(.@r/2);
       if (getenchantgrade(EQI_HAND_R) >= ENCHANTGRADE_C) {
@@ -1453,8 +1453,8 @@ Body:
       }
       if (getenchantgrade(EQI_HAND_R) >= ENCHANTGRADE_C && .@r >= 10) {
          skill "TK_POWER",4;
-         // TODO: "TR_ROSEBLOSSOM" autocasts itself (infinite loop in rAthena) - waiting for replacement skill
-         // TODO: "TR_RHYTHMSHOOTING" autocasts itself (infinite loop in rAthena) - waiting for replacement skill
+         bonus4 bAutoSpellOnSkill,"TR_ROSEBLOSSOM","TR_ROKI_CAPRICCIO",max(getskilllv("TR_ROKI_CAPRICCIO"),1),300; // placeholder: text says "TR_ROSEBLOSSOM" autocasts itself
+         bonus4 bAutoSpellOnSkill,"TR_RHYTHMSHOOTING","TR_ROSEBLOSSOM",max(getskilllv("TR_ROSEBLOSSOM"),1),300; // placeholder: text says "TR_RHYTHMSHOOTING" autocasts itself
          bonus2 bSkillAtk,"TR_RHYTHMSHOOTING",25;
          bonus2 bSkillAtk,"TR_ROSEBLOSSOM",25;
       }
@@ -1464,7 +1464,7 @@ Body:
           - Orrivane_Enc_TR
     Script: |
       .@r = getequiprefinerycnt(EQI_HAND_R);
-      bonus bPerfectHitAddRate,10;
+      bonus bNonCritAtkRate,10;
       bonus2 bSkillAtk,"TR_RHYTHMSHOOTING",6*(.@r/2);
       bonus2 bSkillAtk,"TR_ROSEBLOSSOM",6*(.@r/2);
       if (getenchantgrade(EQI_HAND_R) >= ENCHANTGRADE_C) {
@@ -1474,8 +1474,8 @@ Body:
       }
       if (getenchantgrade(EQI_HAND_R) >= ENCHANTGRADE_C && .@r >= 10) {
          skill "TK_POWER",4;
-         // TODO: "TR_ROSEBLOSSOM" autocasts itself (infinite loop in rAthena) - waiting for replacement skill
-         // TODO: "TR_RHYTHMSHOOTING" autocasts itself (infinite loop in rAthena) - waiting for replacement skill
+         bonus4 bAutoSpellOnSkill,"TR_ROSEBLOSSOM","TR_ROKI_CAPRICCIO",max(getskilllv("TR_ROKI_CAPRICCIO"),1),300; // placeholder: text says "TR_ROSEBLOSSOM" autocasts itself
+         bonus4 bAutoSpellOnSkill,"TR_RHYTHMSHOOTING","TR_ROSEBLOSSOM",max(getskilllv("TR_ROSEBLOSSOM"),1),300; // placeholder: text says "TR_RHYTHMSHOOTING" autocasts itself
          bonus2 bSkillAtk,"TR_RHYTHMSHOOTING",25;
          bonus2 bSkillAtk,"TR_ROSEBLOSSOM",25;
       }
@@ -1495,7 +1495,7 @@ Body:
       if (getenchantgrade(EQI_HAND_R) >= ENCHANTGRADE_C && .@r >= 10) {
          bonus2 bMagicAtkEle,Ele_All,20;
          bonus4 bAutoSpellOnSkill,"TR_SOUNDBLEND","TR_METALIC_FURY",max(getskilllv("TR_METALIC_FURY"),1),1000;
-         // TODO: "TR_METALIC_FURY" autocasts itself (infinite loop in rAthena) - waiting for replacement skill
+         bonus4 bAutoSpellOnSkill,"TR_METALIC_FURY","TR_NIPELHEIM_REQUIEM",max(getskilllv("TR_NIPELHEIM_REQUIEM"),1),300; // placeholder: text says "TR_METALIC_FURY" autocasts itself
          autobonus3 "{}",1000,60000,"TR_JAWAII_SERENADE","{ active_transform 1150,60000; }";
          bonus2 bSkillAtk,"TR_SOUNDBLEND",20;
          bonus2 bSkillAtk,"TR_METALIC_FURY",20;
@@ -1516,7 +1516,7 @@ Body:
       if (getenchantgrade(EQI_HAND_R) >= ENCHANTGRADE_C && .@r >= 10) {
          bonus2 bMagicAtkEle,Ele_All,20;
          bonus4 bAutoSpellOnSkill,"TR_SOUNDBLEND","TR_METALIC_FURY",max(getskilllv("TR_METALIC_FURY"),1),1000;
-         // TODO: "TR_METALIC_FURY" autocasts itself (infinite loop in rAthena) - waiting for replacement skill
+         bonus4 bAutoSpellOnSkill,"TR_METALIC_FURY","TR_NIPELHEIM_REQUIEM",max(getskilllv("TR_NIPELHEIM_REQUIEM"),1),300; // placeholder: text says "TR_METALIC_FURY" autocasts itself
          autobonus3 "{}",1000,60000,"TR_JAWAII_SERENADE","{ active_transform 1150,60000; }";
          bonus2 bSkillAtk,"TR_SOUNDBLEND",20;
          bonus2 bSkillAtk,"TR_METALIC_FURY",20;
@@ -1539,7 +1539,7 @@ Body:
       if (getenchantgrade(EQI_HAND_R) >= ENCHANTGRADE_C && .@r >= 10) {
          bonus2 bMagicAtkEle,Ele_All,20;
          autobonus3 "{ bonus bSpl,50; }",1000,10000,"SH_TEMPORARY_COMMUNION";
-         // TODO: "SH_HYUN_ROK_CANNON" autocasts itself (infinite loop in rAthena) - waiting for replacement skill
+         bonus4 bAutoSpellOnSkill,"SH_HYUN_ROK_CANNON","SH_HYUN_ROKS_BREEZE",max(getskilllv("SH_HYUN_ROKS_BREEZE"),1),300; // placeholder: text says "SH_HYUN_ROK_CANNON" autocasts itself
          bonus2 bSkillAtk,"SH_HYUN_ROKS_BREEZE",20;
          bonus2 bSkillAtk,"SH_HYUN_ROK_CANNON",20;
       }
@@ -1594,7 +1594,7 @@ Body:
       }
       if (getenchantgrade(EQI_HAND_R) >= ENCHANTGRADE_C && .@r >= 10) {
          bonus2 bMagicAtkEle,Ele_All,20;
-         // TODO: "SOA_TALISMAN_OF_FOUR_BEARING_GOD" autocasts itself (infinite loop in rAthena) - waiting for replacement skill
+         bonus4 bAutoSpellOnSkill,"SOA_TALISMAN_OF_FOUR_BEARING_GOD","SOA_TALISMAN_OF_WHITE_TIGER",max(getskilllv("SOA_TALISMAN_OF_WHITE_TIGER"),1),300; // placeholder: text says "SOA_TALISMAN_OF_FOUR_BEARING_GOD" autocasts itself
          bonus2 bSkillAtk,"SOA_TALISMAN_OF_FOUR_BEARING_GOD",20;
       }
   - Combos:
@@ -1612,7 +1612,7 @@ Body:
       if (getenchantgrade(EQI_HAND_R) >= ENCHANTGRADE_C && .@r >= 10) {
          bonus bShortAtkRate,6*getskilllv("TK_POWER");
          bonus4 bAutoSpellOnSkill,"TK_JUMPKICK","SKE_NOON_BLAST",max(getskilllv("SKE_NOON_BLAST"),1),1000;
-         // TODO: "SKE_NOON_BLAST" autocasts itself (infinite loop in rAthena) - waiting for replacement skill
+         bonus4 bAutoSpellOnSkill,"SKE_NOON_BLAST","SKE_SUNSET_BLAST",max(getskilllv("SKE_SUNSET_BLAST"),1),300; // placeholder: text says "SKE_NOON_BLAST" autocasts itself
          bonus2 bSkillAtk,"SKE_NOON_BLAST",25;
       }
   - Combos:
@@ -1621,7 +1621,7 @@ Body:
           - Orrivane_Enc_SKE
     Script: |
       .@r = getequiprefinerycnt(EQI_HAND_R);
-      bonus bPerfectHitAddRate,10;
+      bonus bNonCritAtkRate,10;
       bonus2 bSkillAtk,"SKE_TWINKLING_GALAXY",6*(.@r/2);
       bonus2 bSkillAtk,"SKE_STAR_CANNON",6*(.@r/2);
       bonus2 bSkillAtk,"SKE_STAR_BURST",6*(.@r/2);
@@ -1674,7 +1674,7 @@ Body:
       if (getenchantgrade(EQI_HAND_R) >= ENCHANTGRADE_C && .@r >= 10) {
          skill "TK_POWER",2;
          skill "GC_DARKCROW",5;
-         // TODO: "SS_KAGEGISSEN" autocasts itself (infinite loop in rAthena) - waiting for replacement skill
+         bonus4 bAutoSpellOnSkill,"SS_KAGEGISSEN","SS_KUNAIKAITEN",max(getskilllv("SS_KUNAIKAITEN"),1),300; // placeholder: text says "SS_KAGEGISSEN" autocasts itself
          bonus2 bSkillAtk,"SS_KAGEGISSEN",20;
       }
   - Combos:
@@ -1691,7 +1691,7 @@ Body:
       }
       if (getenchantgrade(EQI_HAND_R) >= ENCHANTGRADE_C && .@r >= 10) {
          skill "TK_POWER",2;
-         // TODO: "SHC_ETERNAL_SLASH" autocasts itself (infinite loop in rAthena) - waiting for replacement skill
+         bonus4 bAutoSpellOnSkill,"SHC_ETERNAL_SLASH","SHC_SAVAGE_IMPACT",max(getskilllv("SHC_SAVAGE_IMPACT"),1),300; // placeholder: text says "SHC_ETERNAL_SLASH" autocasts itself
          bonus2 bSkillCooldown,"GC_DARKCROW",-30000;
          bonus2 bSkillAtk,"SHC_ETERNAL_SLASH",20;
       }
@@ -1709,7 +1709,7 @@ Body:
       }
       if (getenchantgrade(EQI_HAND_R) >= ENCHANTGRADE_C && .@r >= 10) {
          skill "TK_POWER",2;
-         // TODO: "SHC_SAVAGE_IMPACT" autocasts itself (infinite loop in rAthena) - waiting for replacement skill
+         bonus4 bAutoSpellOnSkill,"SHC_SAVAGE_IMPACT","SHC_ETERNAL_SLASH",max(getskilllv("SHC_ETERNAL_SLASH"),1),300; // placeholder: text says "SHC_SAVAGE_IMPACT" autocasts itself
          bonus2 bSkillCooldown,"GC_DARKCROW",-30000;
          bonus2 bSkillAtk,"SHC_SAVAGE_IMPACT",20;
       }
@@ -1729,7 +1729,7 @@ Body:
          skill "TK_POWER",2;
          bonus bCritical,30;
          bonus bCRate,5;
-         // TODO: "NW_MAGAZINE_FOR_ONE" autocasts itself (infinite loop in rAthena) - waiting for replacement skill
+         bonus4 bAutoSpellOnSkill,"NW_MAGAZINE_FOR_ONE","NW_ONLY_ONE_BULLET",max(getskilllv("NW_ONLY_ONE_BULLET"),1),300; // placeholder: text says "NW_MAGAZINE_FOR_ONE" autocasts itself
          bonus2 bSkillAtk,"NW_MAGAZINE_FOR_ONE",20;
       }
   - Combos:
@@ -1738,7 +1738,7 @@ Body:
           - Orrivane_Enc_NW
     Script: |
       .@r = getequiprefinerycnt(EQI_HAND_R);
-      bonus bPerfectHitAddRate,10;
+      bonus bNonCritAtkRate,10;
       bonus2 bSkillAtk,"NW_THE_VIGILANTE_AT_NIGHT",6*(.@r/2);
       if (getenchantgrade(EQI_HAND_R) >= ENCHANTGRADE_C) {
          bonus bPAtk,10;
@@ -1746,7 +1746,7 @@ Body:
       }
       if (getenchantgrade(EQI_HAND_R) >= ENCHANTGRADE_C && .@r >= 10) {
          skill "TK_POWER",4;
-         // TODO: "NW_THE_VIGILANTE_AT_NIGHT" autocasts itself (infinite loop in rAthena) - waiting for replacement skill
+         bonus4 bAutoSpellOnSkill,"NW_THE_VIGILANTE_AT_NIGHT","NW_WILD_FIRE",max(getskilllv("NW_WILD_FIRE"),1),300; // placeholder: text says "NW_THE_VIGILANTE_AT_NIGHT" autocasts itself
          bonus2 bSkillAtk,"NW_THE_VIGILANTE_AT_NIGHT",25;
       }
   - Combos:
@@ -1755,7 +1755,7 @@ Body:
           - Orrivane_Enc_MT
     Script: |
       .@r = getequiprefinerycnt(EQI_HAND_R);
-      bonus bPerfectHitAddRate,10;
+      bonus bNonCritAtkRate,10;
       bonus2 bSkillAtk,"MT_MIGHTY_SMASH",6*(.@r/2);
       if (getenchantgrade(EQI_HAND_R) >= ENCHANTGRADE_C) {
          bonus bPAtk,10;
@@ -1763,7 +1763,7 @@ Body:
       }
       if (getenchantgrade(EQI_HAND_R) >= ENCHANTGRADE_C && .@r >= 10) {
          skill "TK_POWER",4;
-         // TODO: "MT_MIGHTY_SMASH" autocasts itself (infinite loop in rAthena) - waiting for replacement skill
+         bonus4 bAutoSpellOnSkill,"MT_MIGHTY_SMASH","MT_AXE_STOMP",max(getskilllv("MT_AXE_STOMP"),1),300; // placeholder: text says "MT_MIGHTY_SMASH" autocasts itself
          bonus2 bSkillAtk,"MT_MIGHTY_SMASH",25;
       }
   - Combos:
@@ -1772,7 +1772,7 @@ Body:
           - Orrivane_Enc_MT
     Script: |
       .@r = getequiprefinerycnt(EQI_HAND_R);
-      bonus bPerfectHitAddRate,10;
+      bonus bNonCritAtkRate,10;
       bonus2 bSkillAtk,"MT_SPARK_BLASTER",6*(.@r/2);
       if (getenchantgrade(EQI_HAND_R) >= ENCHANTGRADE_C) {
          bonus bPAtk,10;
@@ -1780,7 +1780,7 @@ Body:
       }
       if (getenchantgrade(EQI_HAND_R) >= ENCHANTGRADE_C && .@r >= 10) {
          skill "TK_POWER",4;
-         // TODO: "MT_SPARK_BLASTER" autocasts itself (infinite loop in rAthena) - waiting for replacement skill
+         bonus4 bAutoSpellOnSkill,"MT_SPARK_BLASTER","MT_RUSH_STRIKE",max(getskilllv("MT_RUSH_STRIKE"),1),300; // placeholder: text says "MT_SPARK_BLASTER" autocasts itself
          bonus2 bSkillAtk,"MT_SPARK_BLASTER",25;
       }
   - Combos:
@@ -1801,7 +1801,7 @@ Body:
          skill "TK_POWER",2;
          bonus bDelayRate,-15;
          bonus4 bAutoSpellOnSkill,"IQ_OLEUM_SANCTUM","IQ_EXPOSION_BLASTER",max(getskilllv("IQ_EXPOSION_BLASTER"),1),1000;
-         // TODO: "IQ_EXPOSION_BLASTER" autocasts itself (infinite loop in rAthena) - waiting for replacement skill
+         bonus4 bAutoSpellOnSkill,"IQ_EXPOSION_BLASTER","IQ_MASSIVE_F_BLASTER",max(getskilllv("IQ_MASSIVE_F_BLASTER"),1),300; // placeholder: text says "IQ_EXPOSION_BLASTER" autocasts itself
          bonus2 bSkillAtk,"IQ_EXPOSION_BLASTER",20;
          bonus2 bSkillAtk,"IQ_OLEUM_SANCTUM",25;
       }
@@ -1850,7 +1850,7 @@ Body:
           - Orrivane_Enc_IG
     Script: |
       .@r = getequiprefinerycnt(EQI_HAND_R);
-      bonus bPerfectHitAddRate,10;
+      bonus bNonCritAtkRate,10;
       bonus2 bSkillAtk,"IG_OVERSLASH",6*(.@r/2);
       if (getenchantgrade(EQI_HAND_R) >= ENCHANTGRADE_C) {
          bonus bPAtk,10;
@@ -1859,7 +1859,7 @@ Body:
       if (getenchantgrade(EQI_HAND_R) >= ENCHANTGRADE_C && .@r >= 10) {
          autobonus3 "{}",1000,60000,"CR_AUTOGUARD","{ active_transform 1150,60000; }";
          skill "TK_POWER",4;
-         // TODO: "IG_OVERSLASH" autocasts itself (infinite loop in rAthena) - waiting for replacement skill
+         bonus4 bAutoSpellOnSkill,"IG_OVERSLASH","IG_SHIELD_SHOOTING",max(getskilllv("IG_SHIELD_SHOOTING"),1),300; // placeholder: text says "IG_OVERSLASH" autocasts itself
          bonus4 bAutoSpellOnSkill,"IG_OVERSLASH","IG_GRAND_JUDGEMENT",max(getskilllv("IG_GRAND_JUDGEMENT"),1),400;
          bonus2 bSkillAtk,"IG_OVERSLASH",25;
          bonus2 bSkillAtk,"IG_GRAND_JUDGEMENT",25;
@@ -1881,7 +1881,7 @@ Body:
       if (getenchantgrade(EQI_HAND_R) >= ENCHANTGRADE_C && .@r >= 10) {
          bonus2 bMagicAtkEle,Ele_Wind,25;
          bonus2 bMagicAtkEle,Ele_Water,25;
-         // TODO: "HN_JUPITEL_THUNDER_STORM" autocasts itself (infinite loop in rAthena) - waiting for replacement skill
+         bonus4 bAutoSpellOnSkill,"HN_JUPITEL_THUNDER_STORM","HN_JACK_FROST_NOVA",max(getskilllv("HN_JACK_FROST_NOVA"),1),300; // placeholder: text says "HN_JUPITEL_THUNDER_STORM" autocasts itself
          bonus2 bSkillAtk,"HN_JACK_FROST_NOVA",20;
          bonus2 bSkillAtk,"HN_JUPITEL_THUNDER_STORM",20;
       }
@@ -1902,7 +1902,7 @@ Body:
       if (getenchantgrade(EQI_HAND_R) >= ENCHANTGRADE_C && .@r >= 10) {
          skill "GC_RESEARCHNEWPOISON",5;
          skill "ASC_EDP",5;
-         // TODO: "HN_MEGA_SONIC_BLOW" autocasts itself (infinite loop in rAthena) - waiting for replacement skill
+         bonus4 bAutoSpellOnSkill,"HN_MEGA_SONIC_BLOW","HN_DOUBLEBOWLINGBASH",max(getskilllv("HN_DOUBLEBOWLINGBASH"),1),300; // placeholder: text says "HN_MEGA_SONIC_BLOW" autocasts itself
          bonus2 bSkillAtk,"HN_MEGA_SONIC_BLOW",20;
          bonus2 bSkillAtk,"HN_DOUBLEBOWLINGBASH",25;
       }
@@ -1920,7 +1920,7 @@ Body:
       }
       if (getenchantgrade(EQI_HAND_R) >= ENCHANTGRADE_C && .@r >= 10) {
          bonus2 bMagicAtkEle,Ele_Poison,30;
-         // TODO: "EM_VENOM_SWAMP" autocasts itself (infinite loop in rAthena) - waiting for replacement skill
+         bonus4 bAutoSpellOnSkill,"EM_VENOM_SWAMP","EM_TERRA_DRIVE",max(getskilllv("EM_TERRA_DRIVE"),1),300; // placeholder: text says "EM_VENOM_SWAMP" autocasts itself
          bonus2 bSkillAtk,"EM_VENOM_SWAMP",20;
       }
   - Combos:
@@ -1954,7 +1954,7 @@ Body:
       }
       if (getenchantgrade(EQI_HAND_R) >= ENCHANTGRADE_C && .@r >= 10) {
          skill "TK_POWER",2;
-         // TODO: "DK_HACKANDSLASHER" autocasts itself (infinite loop in rAthena) - waiting for replacement skill
+         bonus4 bAutoSpellOnSkill,"DK_HACKANDSLASHER","DK_MADNESS_CRUSHER",max(getskilllv("DK_MADNESS_CRUSHER"),1),300; // placeholder: text says "DK_HACKANDSLASHER" autocasts itself
          bonus2 bSkillAtk,"DK_HACKANDSLASHER",20;
       }
   - Combos:
@@ -1971,7 +1971,7 @@ Body:
       }
       if (getenchantgrade(EQI_HAND_R) >= ENCHANTGRADE_C && .@r >= 10) {
          bonus bVariableCastrate,-20;
-         // TODO: "DK_DRAGONIC_BREATH" autocasts itself (infinite loop in rAthena) - waiting for replacement skill
+         bonus4 bAutoSpellOnSkill,"DK_DRAGONIC_BREATH","DK_SERVANT_W_PHANTOM",max(getskilllv("DK_SERVANT_W_PHANTOM"),1),300; // placeholder: text says "DK_DRAGONIC_BREATH" autocasts itself
          bonus2 bSkillCooldown,"DK_DRAGONIC_AURA",-30000;
          bonus2 bSkillAtk,"DK_DRAGONIC_BREATH",20;
       }
@@ -2019,7 +2019,7 @@ Body:
           - Orrivane_Enc_BO
     Script: |
       .@r = getequiprefinerycnt(EQI_HAND_R);
-      bonus bPerfectHitAddRate,10;
+      bonus bNonCritAtkRate,10;
       bonus2 bSkillAtk,"BO_EXPLOSIVE_POWDER",6*(.@r/2);
       if (getenchantgrade(EQI_HAND_R) >= ENCHANTGRADE_C) {
          bonus bPAtk,10;
@@ -2029,7 +2029,7 @@ Body:
          skill "TK_POWER",4;
          skill "TK_JUMPKICK",7;
          bonus4 bAutoSpellOnSkill,"TK_JUMPKICK","BO_EXPLOSIVE_POWDER",max(getskilllv("BO_EXPLOSIVE_POWDER"),1),1000;
-         // TODO: "BO_EXPLOSIVE_POWDER" autocasts itself (infinite loop in rAthena) - waiting for replacement skill
+         bonus4 bAutoSpellOnSkill,"BO_EXPLOSIVE_POWDER","BO_MAYHEMIC_THORNS",max(getskilllv("BO_MAYHEMIC_THORNS"),1),300; // placeholder: text says "BO_EXPLOSIVE_POWDER" autocasts itself
          bonus2 bSkillAtk,"BO_EXPLOSIVE_POWDER",25;
       }
   - Combos:
@@ -2046,7 +2046,7 @@ Body:
       }
       if (getenchantgrade(EQI_HAND_R) >= ENCHANTGRADE_C && .@r >= 10) {
          skill "TK_POWER",2;
-         // TODO: "BO_MAYHEMIC_THORNS" autocasts itself (infinite loop in rAthena) - waiting for replacement skill
+         bonus4 bAutoSpellOnSkill,"BO_MAYHEMIC_THORNS","BO_EXPLOSIVE_POWDER",max(getskilllv("BO_EXPLOSIVE_POWDER"),1),300; // placeholder: text says "BO_MAYHEMIC_THORNS" autocasts itself
          bonus2 bSkillAtk,"BO_MAYHEMIC_THORNS",20;
       }
   - Combos:
@@ -2055,7 +2055,7 @@ Body:
           - Orrivane_Enc_ABC
     Script: |
       .@r = getequiprefinerycnt(EQI_HAND_R);
-      bonus bPerfectHitAddRate,10;
+      bonus bNonCritAtkRate,10;
       bonus2 bSkillAtk,"ABC_DEFT_STAB",6*(.@r/2);
       bonus2 bSkillAtk,"ABC_ABYSS_DAGGER",6*(.@r/2);
       if (getenchantgrade(EQI_HAND_R) >= ENCHANTGRADE_C) {
@@ -2067,7 +2067,7 @@ Body:
          skill "TK_POWER",4;
          skill "GC_DARKCROW",4;
          bonus2 bSkillCooldown,"GC_DARKCROW",-30000;
-         // TODO: "ABC_DEFT_STAB" autocasts itself (infinite loop in rAthena) - waiting for replacement skill
+         bonus4 bAutoSpellOnSkill,"ABC_DEFT_STAB","ABC_ABYSS_DAGGER",max(getskilllv("ABC_ABYSS_DAGGER"),1),300; // placeholder: text says "ABC_DEFT_STAB" autocasts itself
          bonus2 bSkillAtk,"ABC_DEFT_STAB",25;
          bonus2 bSkillAtk,"ABC_ABYSS_DAGGER",25;
       }
@@ -2088,7 +2088,7 @@ Body:
       if (getenchantgrade(EQI_HAND_R) >= ENCHANTGRADE_C && .@r >= 10) {
          skill "TK_POWER",2;
          skill "RA_UNLIMIT",1;
-         // TODO: "ABC_FRENZY_SHOT" autocasts itself (infinite loop in rAthena) - waiting for replacement skill
+         bonus4 bAutoSpellOnSkill,"ABC_FRENZY_SHOT","ABC_CHAIN_REACTION_SHOT",max(getskilllv("ABC_CHAIN_REACTION_SHOT"),1),300; // placeholder: text says "ABC_FRENZY_SHOT" autocasts itself
          bonus2 bSkillAtk,"ABC_FRENZY_SHOT",20;
          bonus2 bSkillAtk,"ABC_CHAIN_REACTION_SHOT",25;
       }
@@ -2106,7 +2106,7 @@ Body:
           - MT_Orrivane_R_TH
           - LMN_Range_Card
     Script: |
-      bonus bPerfectHitAddRate,10;
+      bonus bNonCritAtkRate,10;
       bonus bLongAtkRate,10;
   - Combos:
       - Combo:
@@ -2174,7 +2174,7 @@ Body:
           - TR_Orrivane_R_TH
           - LMN_Range_Card
     Script: |
-      bonus bPerfectHitAddRate,10;
+      bonus bNonCritAtkRate,10;
       bonus2 bAddSize,Size_All,10;
   - Combos:
       - Combo:
@@ -2198,7 +2198,7 @@ Body:
           - MT_Orrivane_R_TH
           - LMN_Fighter_Card
     Script: |
-      bonus bPerfectHitAddRate,10;
+      bonus bNonCritAtkRate,10;
       bonus bShortAtkRate,10;
   - Combos:
       - Combo:
@@ -2206,7 +2206,7 @@ Body:
           - BO_Orrivane_R_TH
           - LMN_Fighter_Card
     Script: |
-      bonus bPerfectHitAddRate,10;
+      bonus bNonCritAtkRate,10;
       bonus bShortAtkRate,10;
   - Combos:
       - Combo:
