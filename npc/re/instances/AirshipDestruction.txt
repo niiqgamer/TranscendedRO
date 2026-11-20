@@ -443,11 +443,11 @@ OnInstanceInit:
 		500;	// brutal: x2 hard
 
 	// Brutal-only buffs (applied with sc_start on every patrol and the boss)
-	'brutal_atk = 50;	// +ATK% (0 = off, damage is scaled by DamageDealt below instead, which also covers magic skills)
+	'brutal_atk = 60;	// +ATK% (0 = off, damage is scaled by DamageDealt below instead, which also covers magic skills)
 	'brutal_def = 50;	// default +50% DEF
 	'brutal_hit = 200;	// default +100% HIT
 	'brutal_aspd = 50;	// default +30% ASPD
-	'brutal_speed = 100;	// default 100 walk speed (lower = faster)
+	'brutal_speed = 90;	// default 100 walk speed (lower = faster)
 
 	// DamageTaken by mode, same scale as mob_db.yml DamageTaken (10000 = 100% damage, 1000 = 10%, 100 = 1%, 10 = 0.1%)
 	// 0 = keep the mob_db value
@@ -462,7 +462,7 @@ OnInstanceInit:
 	'brutal_dmgdealt_add = 500;	// Brutal Inspector (boss adds)
 
 	// Brutal: random skills for every monster on the map (airshipD_mobskill)
-	'brutal_mob_skill_rate = 50;	// % chance per monster per tick to cast
+	'brutal_mob_skill_rate = 75;	// % chance per monster per tick to cast
 	'brutal_mob_skill_max = 12;	// max casts per tick (anti-lag)
 	'brutal_mob_skill_tick = 2;	// seconds between ticks
 
