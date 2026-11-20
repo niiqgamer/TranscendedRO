@@ -1633,3 +1633,31 @@ Body:
     Script: |
       bonus bMatkRate,10;
       bonus bDelayRate,-10;
+  - Id: 30000
+    AegisName: Vending_Zeny
+    Name: Zeny
+    Type: Etc
+    Weight: 0
+    Trade:
+      NoDrop: true
+      NoTrade: true
+      NoSell: true
+      NoCart: true
+      NoStorage: true
+      NoGuildStorage: true
+      NoMail: true
+      NoAuction: true
+  - Id: 30001
+    AegisName: Vending_Cash
+    Name: Cash Points
+    Type: Etc
+    Weight: 0
+    Trade:
+      NoDrop: true
+      NoTrade: true
+      NoSell: true
+      NoCart: true
+      NoStorage: true
+      NoGuildStorage: true
+      NoMail: true
+      NoAuction: true

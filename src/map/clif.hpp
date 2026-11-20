@@ -919,6 +919,7 @@ void clif_changetraplook( const block_list* bl,int32 val ); // area
 void clif_arrowequip( const map_session_data& sd );
 void clif_arrow_fail( const map_session_data& sd, e_action_failure type );
 void clif_arrow_create_list( map_session_data& sd );
+void clif_vending_currency_list( map_session_data& sd, const std::vector<t_itemid>& currencies );
 void clif_statusupack( const map_session_data& sd, int32 type, bool success, int32 val = 0 );
 void clif_equipitemack( const map_session_data& sd, uint8 flag, int32 index, int32 pos = 0 ); // self
 void clif_unequipitemack( const map_session_data& sd, uint16 server_index, int32 pos, bool success );

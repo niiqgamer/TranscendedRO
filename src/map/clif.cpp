@@ -4281,6 +4281,31 @@ void clif_arrow_create_list( map_session_data& sd ){
 }
 
 
+/// Extended Vending: presents the list of shop currencies, reusing the arrow crafting dialog (ZC_MAKINGARROW_LIST).
+/// 01ad <packet len>.W { <name id>.W }*
+void clif_vending_currency_list( map_session_data& sd, const std::vector<t_itemid>& currencies ){
+	PACKET_ZC_MAKINGARROW_LIST* p = reinterpret_cast<PACKET_ZC_MAKINGARROW_LIST*>( packet_buffer );
+
+	p->packetType = HEADER_ZC_MAKINGARROW_LIST;
+	p->packetLength = sizeof( *p );
+
+	int32 count = 0;
+
+	for( const t_itemid& nameid : currencies ){
+		p->items[count].itemId = client_nameid( nameid );
+		p->packetLength += static_cast<decltype(p->packetLength)>( sizeof( p->items[0] ) );
+		count++;
+	}
+
+	clif_send( p, p->packetLength, &sd, SELF );
+
+	if( count > 0 ){
+		sd.menuskill_id = MC_VENDING;
+		sd.menuskill_val = count;
+	}
+}
+
+
 /// Notifies the client, about the result of an status change request.
 /// 00bc <status id>.W <result>.B <value>.B (ZC_STATUS_CHANGE_ACK)
 /// status id:
@@ -13481,6 +13506,10 @@ void clif_parse_SelectArrow(int32 fd,map_session_data *sd) {
 		case NC_MAGICDECOY:
 			skill_magicdecoy(*sd,p->itemId);
 			break;
+		case MC_VENDING: // Extended Vending currency selection
+			clif_menuskill_clear(sd);
+			vending_select_currency(*sd, p->itemId);
+			return;
 	}
 
 	clif_menuskill_clear(sd);
@@ -14251,6 +14280,15 @@ void clif_parse_OpenVending(int32 fd, map_session_data* sd){
 
 	if( message[0] == '\0' ) // invalid input
 		return;
+
+	// Extended Vending: prefix the shop title with the currency name, e.g. "[Donation Coin] My Shop"
+	if( battle_config.extended_vending && battle_config.show_item_vending && sd->vend_loot != 0 && sd->state.prevend ){
+		char title[MESSAGE_SIZE];
+
+		safesnprintf( title, sizeof( title ), "[%s] %.*s", vending_currency_name( sd->vend_loot ), MESSAGE_SIZE - 1, message );
+		vending_openvending( *sd, title, data, len/8, nullptr );
+		return;
+	}
 
 	vending_openvending(*sd, message, data, len/8, nullptr);
 }
