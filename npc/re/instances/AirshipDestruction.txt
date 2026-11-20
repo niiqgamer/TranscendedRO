@@ -443,7 +443,7 @@ OnInstanceInit:
 		500;	// brutal: x2 hard
 
 	// Brutal-only buffs (applied with sc_start on every patrol and the boss)
-	'brutal_atk = 0;	// +ATK% (0 = off, damage is scaled by DamageDealt below instead, which also covers magic skills)
+	'brutal_atk = 50;	// +ATK% (0 = off, damage is scaled by DamageDealt below instead, which also covers magic skills)
 	'brutal_def = 50;	// +50% DEF
 	'brutal_hit = 100;	// +100% HIT
 	'brutal_aspd = 30;	// +30% ASPD
