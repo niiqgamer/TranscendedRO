@@ -4163,3 +4163,38 @@ Body:
       - Index: 3
         Item: BP_Mat_Fusion
         Rate: 1000
+  - Map: 1@whl
+    GlobalDrops:
+      - Index: 0
+        Item: EP19_D_P_Stone
+        Rate: 10000
+      - Index: 1
+        Item: EP19_S_F_1_Extract
+        Rate: 12000
+      - Index: 2
+        Item: EP19_S_F_2_Extract
+        Rate: 12000
+      - Index: 3
+        Item: EP19_S_F_3_Extract
+        Rate: 15000
+      - Index: 4
+        Item: EP19_Gla_Extract
+        Rate: 10000
+    SpecificDrops:
+      - Monster: EP19_MD_BOX2
+        Drops:
+          - Index: 0
+            Item: EP19_D_P_Stone
+            Rate: 10000
+          - Index: 1
+            Item: EP19_S_F_1_Extract
+            Rate: 12000
+          - Index: 2
+            Item: EP19_S_F_2_Extract
+            Rate: 12000
+          - Index: 3
+            Item: EP19_S_F_3_Extract
+            Rate: 15000
+          - Index: 4
+            Item: EP19_Gla_Extract
+            Rate: 10000
