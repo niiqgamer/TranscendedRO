@@ -126,6 +126,100 @@ wolfvill,79,260,4	script(CLOAKED)	Aira#con	4_M_BRZ_JACI,{
 	end;
 }
 
+wolfvill,74,259,4	script	Aira Re Instance#con	4_RED_FLOWER,{
+	.@md_name_normal$ = "Villa of Deception";
+	.@md_name_hard$ = "Villa of Deception Advanced";
+	.@quest = 12522;	// Villa of Deception - Wait (set on entry by Aira#con, both modes)
+	.@item = 6417;	// Silvervine Fruit
+	.@amount = 5;
+	.@npc$ = "[" + strnpcinfo(1) + "]";
+
+	// What can be reset? (&& and || don't short-circuit, so guard calls with nested ifs)
+	.@cd = checkquest(.@quest, PLAYTIME);	// -1 = none, 0/1 = cooling down, 2 = expired
+	if (.@cd == 0 || .@cd == 1)
+		.@can_reset = 1;
+
+	.@ins = instance_id(IM_PARTY);
+	if (.@ins > 0) {
+		.@live_name$ = instance_live_info(ILI_NAME, .@ins);
+		if (.@live_name$ == .@md_name_normal$ || .@live_name$ == .@md_name_hard$) {
+			.@live = 1;
+			if (is_party_leader())
+				.@can_close = 1;
+		}
+	}
+
+	if (.@can_reset == 0 && .@can_close == 0) {
+		mes .@npc$;
+		if (.@live)
+			mes "Your cooldown is already clear. Only your party leader can close the villa your party is running now.";
+		else
+			mes "You have nothing to reset. Talk to Aira to enter the villa.";
+		close;
+	}
+
+	mes .@npc$;
+	mes "For " + .@amount + "x " + mesitemlink(.@item) + " I can:";
+	if (.@can_reset)
+		mes "- ^FF0000Reset^000000 your Villa of Deception cooldown (Normal and Advanced).";
+	if (.@can_close) {
+		mes "- ^FF0000Close^000000 your party's current " + .@live_name$ + ", so Aira can create a new one.";
+		.@inside = getmapusers(instance_mapname("1@advs", .@ins));
+		if (.@inside > 0)
+			mes "^FF0000" + .@inside + " player(s) are still inside and will be sent out.^000000";
+	}
+	next;
+	if (select("Not now", "Yes, do it") == 1) {
+		mes .@npc$;
+		mes "All right, come back when you are ready.";
+		close;
+	}
+	if (countitem(.@item) < .@amount) {
+		mes .@npc$;
+		mes "You don't have enough " + mesitemlink(.@item) + ".";
+		close;
+	}
+
+	// The state may have changed while the menu was open: check again before acting
+	.@done = 0;
+	if (.@can_reset) {
+		if (checkquest(.@quest) != -1) {
+			erasequest .@quest;
+			.@done = 1;
+		}
+	}
+	if (.@can_close) {
+		if (instance_id(IM_PARTY) == .@ins) {
+			if (instance_live_info(ILI_NAME, .@ins) == .@live_name$) {
+				instance_destroy .@ins;
+				.@done = 1;
+			}
+		}
+	}
+	if (.@done == 0) {
+		mes .@npc$;
+		mes "There is nothing left to reset. Nothing was taken.";
+		close;
+	}
+	delitem .@item, .@amount;
+	specialeffect2 300;
+	dispbottom "Villa of Deception has been reset. Talk to Aira to enter again.";
+	mes .@npc$;
+	mes "Done! Talk to Aira to enter the villa again.";
+	if (.@can_close)
+		mes "Party members who still have a cooldown need to reset it with me too.";
+	close3;
+
+OnInit:
+	initnpctimer;
+	end;
+
+OnTimer1000:
+	showscript(" ! Reset Instance ! ");
+	setnpctimer 0;
+	end;
+}
+
 
 
 

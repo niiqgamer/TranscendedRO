@@ -8,37 +8,86 @@
 //============================================================
 
 glast_01,147,283,4	script	Oscar Re Instance#gh	4_RED_FLOWER,{
-	
-	if (checkquest(12493,PLAYTIME) != 0){
-		mes "You don't want to do anything with me, go away!";
-		end;
+	.@md_name$ = "Old Glast Heim (Challenge Mode)";
+	.@quest = 12493;	// Old Glast Heim Challenge Mode - Wait (set on entry by Oscar#oghcm_main)
+	.@item = 6417;	// Silvervine Fruit
+	.@amount = 5;
+	.@npc$ = "[" + strnpcinfo(1) + "]";
+
+	// What can be reset? (&& and || don't short-circuit, so guard calls with nested ifs)
+	.@cd = checkquest(.@quest, PLAYTIME);	// -1 = none, 0/1 = cooling down, 2 = expired
+	if (.@cd == 0 || .@cd == 1)
+		.@can_reset = 1;
+
+	.@ins = instance_id(IM_PARTY);
+	if (.@ins > 0) {
+		if (instance_live_info(ILI_NAME, .@ins) == .@md_name$) {
+			.@live = 1;
+			if (is_party_leader())
+				.@can_close = 1;
+		}
 	}
-	
-	mes "If you have 5x Silvervine Fruits. ^i[6417]";
-	mes "I can ^FF0000RESET^000000 Old Glastheim Challenge Mode Instance for you.";
-	mes "Do you interest?";
+
+	if (.@can_reset == 0 && .@can_close == 0) {
+		mes .@npc$;
+		if (.@live)
+			mes "Your cooldown is already clear. Only your party leader can close the instance your party is running now.";
+		else
+			mes "You have nothing to reset. Talk to Oscar to enter Challenge Mode.";
+		close;
+	}
+
+	mes .@npc$;
+	mes "For " + .@amount + "x " + mesitemlink(.@item) + " I can:";
+	if (.@can_reset)
+		mes "- ^FF0000Reset^000000 your " + .@md_name$ + " cooldown.";
+	if (.@can_close) {
+		mes "- ^FF0000Close^000000 your party's current instance, so Oscar can create a new one.";
+		.@inside = getmapusers(instance_mapname("1@gl_he", .@ins));
+		if (.@inside > 0)
+			mes "^FF0000" + .@inside + " player(s) are still inside and will be sent out.^000000";
+	}
 	next;
-	switch(select("Please wait.:Yes, I'm in.")) {
-	case 1:
-		mes "All right, don't forget we don't have much time.";
-		end;
-	case 2:
-		.@itemNeeded = 6417;
-		.@itemCount = 5;
-		if (countitem(.@itemNeeded) < .@itemCount) {
-			mes "["+strnpcinfo(1)+"]", "What gives? You don't have enough " + mesitemlink(.@itemNeeded) + ".";
-			end;
-		}
-		if (checkquest(12493,PLAYTIME) != -1){
-			erasequest 12493;
-		}
-		delitem .@itemNeeded, .@itemCount;
-		specialeffect2 300;
-		dispbottom "The Old Glastheim Challenge Mode is now RESET!!!";
-		mes "Successful Reset Instance!";
-		close3;
-		end;
+	if (select("Not now", "Yes, do it") == 1) {
+		mes .@npc$;
+		mes "All right, come back when you are ready.";
+		close;
 	}
+	if (countitem(.@item) < .@amount) {
+		mes .@npc$;
+		mes "You don't have enough " + mesitemlink(.@item) + ".";
+		close;
+	}
+
+	// The state may have changed while the menu was open: check again before acting
+	.@done = 0;
+	if (.@can_reset) {
+		if (checkquest(.@quest) != -1) {
+			erasequest .@quest;
+			.@done = 1;
+		}
+	}
+	if (.@can_close) {
+		if (instance_id(IM_PARTY) == .@ins) {
+			if (instance_live_info(ILI_NAME, .@ins) == .@md_name$) {
+				instance_destroy .@ins;
+				.@done = 1;
+			}
+		}
+	}
+	if (.@done == 0) {
+		mes .@npc$;
+		mes "There is nothing left to reset. Nothing was taken.";
+		close;
+	}
+	delitem .@item, .@amount;
+	specialeffect2 300;
+	dispbottom "Old Glast Heim Challenge Mode has been reset. Talk to Oscar to enter again.";
+	mes .@npc$;
+	mes "Done! Talk to Oscar to enter Challenge Mode again.";
+	if (.@can_close)
+		mes "Party members who still have a cooldown need to reset it with me too.";
+	close3;
 
 OnInit:
 	initnpctimer;

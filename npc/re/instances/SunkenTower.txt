@@ -10,37 +10,86 @@
 //============================================================
 
 alberta,211,72,4	script	Leticia Re Instance#s_alberta	4_F_FAIRYKID6,{
-	
-	if (checkquest(12541,PLAYTIME) != 0){
-		mes "You don't want to do anything with me, go away!";
-		end;
+	.@md_name$ = "Sunken Tower";
+	.@quest = 12541;	// Sunken Tower - Wait (set on entry by Leticia#s_alberta)
+	.@item = 6417;	// Silvervine Fruit
+	.@amount = 3;
+	.@npc$ = "[" + strnpcinfo(1) + "]";
+
+	// What can be reset? (&& and || don't short-circuit, so guard calls with nested ifs)
+	.@cd = checkquest(.@quest, PLAYTIME);	// -1 = none, 0/1 = cooling down, 2 = expired
+	if (.@cd == 0 || .@cd == 1)
+		.@can_reset = 1;
+
+	.@ins = instance_id(IM_PARTY);
+	if (.@ins > 0) {
+		if (instance_live_info(ILI_NAME, .@ins) == .@md_name$) {
+			.@live = 1;
+			if (is_party_leader())
+				.@can_close = 1;
+		}
 	}
-	
-	mes "If you have 3x Silvervine Fruits. ^i[6417]";
-	mes "I can ^FF0000RESET^000000 Sunken Tower Instance for you.";
-	mes "Do you interest?";
+
+	if (.@can_reset == 0 && .@can_close == 0) {
+		mes .@npc$;
+		if (.@live)
+			mes "Your cooldown is already clear. Only your party leader can close the tower your party is running now.";
+		else
+			mes "You have nothing to reset. Talk to Leticia to enter the tower.";
+		close;
+	}
+
+	mes .@npc$;
+	mes "For " + .@amount + "x " + mesitemlink(.@item) + " I can:";
+	if (.@can_reset)
+		mes "- ^FF0000Reset^000000 your " + .@md_name$ + " cooldown.";
+	if (.@can_close) {
+		mes "- ^FF0000Close^000000 your party's current tower, so Leticia can create a new one.";
+		.@inside = getmapusers(instance_mapname("1@ch_u", .@ins));
+		if (.@inside > 0)
+			mes "^FF0000" + .@inside + " player(s) are still inside and will be sent out.^000000";
+	}
 	next;
-	switch(select("Please wait.:Yes, I'm in.")) {
-	case 1:
-		mes "All right, don't forget we don't have much time.";
-		end;
-	case 2:
-		.@itemNeeded = 6417;
-		.@itemCount = 3;
-		if (countitem(.@itemNeeded) < .@itemCount) {
-			mes "["+strnpcinfo(1)+"]", "What gives? You don't have enough " + mesitemlink(.@itemNeeded) + ".";
-			end;
-		}
-		if (checkquest(12541,PLAYTIME) != -1){
-			erasequest 12541;
-		}
-		delitem .@itemNeeded, .@itemCount;
-		specialeffect2 300;
-		dispbottom "The Sunken Tower's distortion is now RESET!!!";
-		mes "Successful Reset Instance!";
-		close3;
-		end;
+	if (select("Not now", "Yes, do it") == 1) {
+		mes .@npc$;
+		mes "All right, come back when you are ready.";
+		close;
 	}
+	if (countitem(.@item) < .@amount) {
+		mes .@npc$;
+		mes "You don't have enough " + mesitemlink(.@item) + ".";
+		close;
+	}
+
+	// The state may have changed while the menu was open: check again before acting
+	.@done = 0;
+	if (.@can_reset) {
+		if (checkquest(.@quest) != -1) {
+			erasequest .@quest;
+			.@done = 1;
+		}
+	}
+	if (.@can_close) {
+		if (instance_id(IM_PARTY) == .@ins) {
+			if (instance_live_info(ILI_NAME, .@ins) == .@md_name$) {
+				instance_destroy .@ins;
+				.@done = 1;
+			}
+		}
+	}
+	if (.@done == 0) {
+		mes .@npc$;
+		mes "There is nothing left to reset. Nothing was taken.";
+		close;
+	}
+	delitem .@item, .@amount;
+	specialeffect2 300;
+	dispbottom "Sunken Tower has been reset. Talk to Leticia to enter again.";
+	mes .@npc$;
+	mes "Done! Talk to Leticia to enter the tower again.";
+	if (.@can_close)
+		mes "Party members who still have a cooldown need to reset it with me too.";
+	close3;
 
 OnInit:
 	initnpctimer;
