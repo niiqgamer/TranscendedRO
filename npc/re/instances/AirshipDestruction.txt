@@ -1992,3 +1992,9 @@ OnStop:
 	close;
 }
 1@whl,173,181,5	duplicate(#clear_1)	#clear_2	CLEAR_NPC,1,1
+
+// Mapflags (instance copies inherit these from 1@whl)
+// noteleport = no Fly Wing / Teleport, noreturn = no Butterfly Wing, nobranch = no Dead Branch / Bloody Branch
+1@whl	mapflag	noteleport
+1@whl	mapflag	noreturn
+1@whl	mapflag	nobranch
