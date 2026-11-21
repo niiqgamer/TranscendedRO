@@ -11444,9 +11444,8 @@ Body:
     Defense: 0
     Slots: 1
     Jobs:
+      Summoner: true
       Spirit_Handler: true
-    Classes:
-      Fourth: true
     Locations:
       Right_Accessory: true
     ArmorLevel: 2
@@ -13138,9 +13137,8 @@ Body:
     Range: 1
     Slots: 2
     Jobs:
+      Summoner: true
       Spirit_Handler: true
-    Classes:
-      Fourth: true
     Locations:
       Right_Hand: true
     WeaponLevel: 5
@@ -13187,9 +13185,8 @@ Body:
     Range: 1
     Slots: 2
     Jobs:
+      Summoner: true
       Spirit_Handler: true
-    Classes:
-      Fourth: true
     Locations:
       Right_Hand: true
     WeaponLevel: 5
