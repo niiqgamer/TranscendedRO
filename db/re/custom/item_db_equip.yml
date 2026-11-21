@@ -11383,9 +11383,8 @@ Body:
     Defense: 35
     Slots: 1
     Jobs:
+      Summoner: true
       Spirit_Handler: true
-    Classes:
-      Fourth: true
     Locations:
       Head_Top: true
     ArmorLevel: 2
