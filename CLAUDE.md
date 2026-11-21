@@ -29,7 +29,7 @@ rAthena-based Ragnarok Online server (Renewal).
 - Arbitrium / Violent Quake skill damage → add `bSkillAtk` for both the skill and its `_ATK` variant.
 - Grade bonuses: `.@g = getenchantgrade();` with `ENCHANTGRADE_D/C/B/A`, and set `Gradable: true`.
 - Autocast rates are in 1/10 %: 5% → `50`, 100% → `1000`.
-- Never write an autocast that casts the same skill that triggers it (e.g. `bonus4 bAutoSpellOnSkill,"AG_DEADLY_PROJECTION","AG_DEADLY_PROJECTION",...`). rAthena loops infinitely on it. When the description asks for one ("When using X, chance to autocast X"), ask the user which skill to cast instead. Already decided:
+- Never write an autocast that casts the same skill that triggers it (e.g. `bonus4 bAutoSpellOnSkill,"AG_DEADLY_PROJECTION","AG_DEADLY_PROJECTION",...`). rAthena's per-entry `lock` (`skill_onskillusage`, `src/map/skill.cpp`) stops endless recursion, but the lock is released after each autocast and `skill_onskillusage` also fires once per target hit in `skill_attack`. A splash skill that hits N targets then autocasts itself about N+1 times, and each autocast hits N targets again: about N² hits per press, which can lag the server. When the description asks for one ("When using X, chance to autocast X"), ask the user which skill to cast instead. Already decided:
   - Deadly Projection → `AG_MYSTERY_ILLUSION`
   - Petitio → `CD_EFFLIGO` (Purified Forbidden Grimoire)
   - Arbitrium → `CD_PNEUMATICUS_PROCELLA` (Purified Forbidden Grimoire)
